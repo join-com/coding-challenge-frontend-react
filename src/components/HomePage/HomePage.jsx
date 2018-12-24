@@ -1,10 +1,34 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 class HomePage extends Component {
+  componentDidMount = () => {
+    this.props.fetchIncidents();
+  };
+
   render() {
+    const { incidents, isLoading, error, totalIncidentsLength } = this.props;
+
     return (
       <div>
-        Home <Link to="/case/1">Details</Link>
+        {!isLoading &&
+          !error && (
+            <div>
+              {totalIncidentsLength === 0 && <p>No results</p>}
+              {totalIncidentsLength > 0 && (
+                <div>
+                  Total: {totalIncidentsLength}
+                  <ul>
+                    {incidents.map(({ id, title }) => (
+                      <li key={id}>{title}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+        {isLoading && <p>Loading ...</p>}
+        {!isLoading && error && <p>{error} </p>}
       </div>
     );
   }

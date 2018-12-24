@@ -24,4 +24,8 @@ const reducer = (state = initialState, { type, payload }) => {
   }
 };
 
+// selectors
+export const getLoading = state => state.ui.isLoading;
+export const getError = state => state.ui.error;
+
 export default reducer;

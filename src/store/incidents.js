@@ -1,7 +1,9 @@
+import { createSelector } from "reselect";
+
 import { createPrefix, createAction } from "../helpers/actionHelpers";
 import { loadIncidents, loadIncidentById } from "../api";
-import { createCollectionFromArray } from "../helpers/normalizeData";
 import { changeUi } from "./ui";
+import { createCollectionFromArray } from "../helpers/normalizeData";
 
 const prefix = createPrefix("INCIDENTS");
 
@@ -61,5 +63,13 @@ export const fetchIncidentById = id => {
       .catch(error => onError(dispatch, error.message));
   };
 };
+
+const getIncidents = state => state.incidents;
+
+export const getIncidentsSelector = createSelector(getIncidents, incidents =>
+  Object.keys(incidents).map(key => incidents[key])
+);
+
+export const getTotalIncidentsSelector = createSelector(getIncidentsSelector, incidents => incidents.length);
 
 export default reducer;
