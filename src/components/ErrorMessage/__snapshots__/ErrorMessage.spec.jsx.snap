@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage component test should match snapshot 1`] = `
+<Styled(styled.p)>
+  error message
+</Styled(styled.p)>
+`;

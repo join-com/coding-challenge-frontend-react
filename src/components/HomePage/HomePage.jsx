@@ -4,6 +4,8 @@ import Filter from "../Filter";
 import Card from "../Card";
 import Pagination from "../Pagination";
 import { Container } from "../ui/Layout/StyledLayout";
+import ErrorMessage from "../ErrorMessage";
+import Text from "../ui/Text";
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -25,7 +27,7 @@ class HomePage extends Component {
         {!isLoading &&
           !error && (
             <div>
-              {totalIncidentsLength === 0 && <p>No results</p>}
+              {totalIncidentsLength === 0 && <Text>No results</Text>}
               {totalIncidentsLength > 0 && (
                 <div>
                   Total: {totalIncidentsLength}
@@ -39,8 +41,8 @@ class HomePage extends Component {
               )}
             </div>
           )}
-        {isLoading && <p>Loading ...</p>}
-        {!isLoading && error && <p>{error} </p>}
+        {isLoading && <Text>Loading ...</Text>}
+        {!isLoading && error && <ErrorMessage message={error} />}
       </Container>
     );
   }

@@ -3,7 +3,7 @@
  * @param {Array} array for transformation
  * @returns {Object}
  */
-export const createCollectionFromArray = array => {
+export const createCollectionFromArray = (array = []) => {
   const collection = {};
   array.forEach(item => {
     collection[item.id] = item;
