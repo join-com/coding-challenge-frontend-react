@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component test should match snapshot 1`] = `
+<styled.p
+  bold={false}
+  size="normal"
+  uppercase={false}
+>
+  Text
+</styled.p>
+`;

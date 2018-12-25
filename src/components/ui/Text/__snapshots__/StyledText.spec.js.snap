@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledErrorText component should match snapshot  1`] = `
+.c0 {
+  position: relative;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1D232B;
+  text-transform: none;
+  margin: 0 0 0.5rem 0;
+  color: #DC3545;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`StyledText component should match snapshot  1`] = `
+.c0 {
+  position: relative;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1D232B;
+  text-transform: none;
+  margin: 0 0 0.5rem 0;
+}
+
+<p
+  className="c0"
+  disabled={false}
+/>
+`;
+
+exports[`StyledText component should match snapshot for different size prop  1`] = `
+.c0 {
+  position: relative;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1D232B;
+  text-transform: none;
+  margin: 0 0 0.75rem 0;
+}
+
+<p
+  className="c0"
+  disabled={false}
+  size="large"
+/>
+`;
+
+exports[`StyledText component should match snapshot for textAlign prop  1`] = `
+.c0 {
+  position: relative;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #1D232B;
+  text-transform: none;
+  margin: 0 0 0.5rem 0;
+}
+
+<p
+  className="c0"
+  disabled={false}
+/>
+`;
+
+exports[`StyledText component should match snapshot for uppercase prop  1`] = `
+.c0 {
+  position: relative;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1D232B;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+<p
+  className="c0"
+  disabled={false}
+/>
+`;

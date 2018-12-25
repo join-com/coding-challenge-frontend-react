@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Filter from "../Filter";
-
+import Card from "../Card";
 class HomePage extends Component {
   componentDidMount = () => {
     this.props.fetchIncidents();
@@ -26,11 +26,11 @@ class HomePage extends Component {
               {totalIncidentsLength > 0 && (
                 <div>
                   Total: {totalIncidentsLength}
-                  <ul>
-                    {incidents.map(({ id, title }) => (
-                      <li key={id}>{title}</li>
+                  <div>
+                    {incidents.map(item => (
+                      <Card key={item.id} item={item} />
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
             </div>

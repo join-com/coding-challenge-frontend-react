@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BikeImage component should match snapshot 1`] = `
+.c0 {
+  width: 100%;
+  background-color: #F9F9F9;
+}
+
+@media (min-width:320px) {
+  .c0 {
+    width: 50%;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 {
+    width: 25%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 20%;
+  }
+}
+
+<img
+  className="c0"
+/>
+`;
+
+exports[`BikeInfo component should match snapshot 1`] = `
+@media (min-width:320px) {
+  .c0 {
+    padding-left: 0.5rem;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 {
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    padding-left: 1.5rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`BikeTitle component should match snapshot 1`] = `
+.c0 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+<h5
+  className="c0"
+/>
+`;
+
+exports[`StyledCard component should match snapshot 1`] = `
+.c0 {
+  border: solid 2px #1D232B;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #90D3DC;
+}
+
+@media (min-width:320px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:640px) {
+  .c0 {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

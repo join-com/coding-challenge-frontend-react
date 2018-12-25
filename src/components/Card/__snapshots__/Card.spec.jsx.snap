@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component test should match snapshot 1`] = `
+<styled.div
+  key="24134"
+>
+  <styled.img
+    alt="Stolen di Florino (red and white)"
+    src="https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/small_dsc_1293.jpg"
+  />
+  <styled.div>
+    <Link
+      replace={false}
+      to="/case/24134"
+    >
+      <Heading
+        bold={false}
+        level={3}
+        uppercase={false}
+      >
+        Stolen di Florino (red and white)
+      </Heading>
+    </Link>
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      Occurred at: 
+      Di., 17. Juni 2014
+       - 
+      Berlin, 10245, DE
+    </Text>
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      Updated at: 
+      So., 23. Dez. 2018
+    </Text>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Button component test should match snapshot without description and image 1`] = `
+<styled.div
+  key="24134"
+>
+  <styled.img
+    alt="Stolen di Florino (red and white)"
+    src="/bicycle.svg"
+  />
+  <styled.div>
+    <Link
+      replace={false}
+      to="/case/24134"
+    >
+      <Heading
+        bold={false}
+        level={3}
+        uppercase={false}
+      >
+        Stolen di Florino (red and white)
+      </Heading>
+    </Link>
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      Occurred at: 
+      Di., 17. Juni 2014
+       - 
+      Berlin, 10245, DE
+    </Text>
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      Updated at: 
+      So., 23. Dez. 2018
+    </Text>
+  </styled.div>
+</styled.div>
+`;
