@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Filter from "../Filter";
 import Card from "../Card";
 import Pagination from "../Pagination";
+import { Container } from "../ui/Layout/StyledLayout";
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -19,7 +20,7 @@ class HomePage extends Component {
     const { incidents, isLoading, error, totalIncidentsLength, searchValue } = this.props;
 
     return (
-      <div>
+      <Container>
         <Filter onChange={this.changeSearchValue} value={searchValue} disableInput={isLoading} />
         {!isLoading &&
           !error && (
@@ -40,7 +41,7 @@ class HomePage extends Component {
           )}
         {isLoading && <p>Loading ...</p>}
         {!isLoading && error && <p>{error} </p>}
-      </div>
+      </Container>
     );
   }
 }
