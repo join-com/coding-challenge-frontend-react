@@ -2,7 +2,7 @@
 
 exports[`StyledHeader component should match snapshot 1`] = `
 .c0 {
-  background-color: #F9F9F9;
+  background-color: #90D3DC;
   padding: 1.5rem 0;
 }
 
