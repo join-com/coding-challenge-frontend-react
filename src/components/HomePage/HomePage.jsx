@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Filter from "../Filter";
-import Card from "../Card";
 import Pagination from "../Pagination";
 import { Container } from "../ui/Layout/StyledLayout";
 import ErrorMessage from "../ErrorMessage";
 import Text from "../ui/Text";
+import IncidentsList from "../IncidentsList/IncidentsList";
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -23,23 +23,23 @@ class HomePage extends Component {
 
     return (
       <Container>
-        <Filter onChange={this.changeSearchValue} value={searchValue} disableInput={isLoading} />
+        <Filter
+          onChange={this.changeSearchValue}
+          value={searchValue}
+          disableInput={isLoading}
+          totalIncidentsLength={totalIncidentsLength}
+        />
         {!isLoading &&
           !error && (
-            <div>
+            <Fragment>
               {totalIncidentsLength === 0 && <Text>No results</Text>}
               {totalIncidentsLength > 0 && (
-                <div>
-                  Total: {totalIncidentsLength}
-                  <div>
-                    {incidents.map(item => (
-                      <Card key={item.id} item={item} />
-                    ))}
-                  </div>
+                <Fragment>
+                  <IncidentsList items={incidents} />
                   <Pagination />
-                </div>
+                </Fragment>
               )}
-            </div>
+            </Fragment>
           )}
         {isLoading && <Text>Loading ...</Text>}
         {!isLoading && error && <ErrorMessage message={error} />}

@@ -1,17 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Filter component test should match snapshot  1`] = `
-<styled.div>
-  <Input
-    disabled={false}
-    id="filter"
-    name="filter"
-    onChange={[MockFunction]}
-    placeholder=""
-    size="large"
-    type="text"
-    uppercase={true}
-    value=""
-  />
-</styled.div>
+<Fragment>
+  <styled.div>
+    <Input
+      disabled={false}
+      id="filter"
+      name="filter"
+      onChange={[MockFunction]}
+      placeholder=""
+      size="large"
+      type="text"
+      uppercase={true}
+      value=""
+    />
+  </styled.div>
+  <styled.div>
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      Total: 
+      23
+    </Text>
+  </styled.div>
+</Fragment>
 `;

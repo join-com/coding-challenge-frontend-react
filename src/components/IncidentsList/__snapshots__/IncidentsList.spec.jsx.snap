@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncidentsList component test should match snapshot  1`] = `
+<div>
+  <Card
+    item={
+      Object {
+        "address": "Berlin, 10245, DE",
+        "description": "",
+        "id": 24134,
+        "location_description": null,
+        "location_type": null,
+        "media": Object {
+          "image_url": "https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/large_dsc_1293.jpg",
+          "image_url_thumb": "https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/small_dsc_1293.jpg",
+        },
+        "occurred_at": 1402984800,
+        "source": Object {
+          "api_url": "https://bikeindex.org/api/v1/bikes/27159",
+          "html_url": "https://bikeindex.org/bikes/27159",
+          "name": "BikeIndex.org",
+        },
+        "title": "Stolen di Florino (red and white)",
+        "type": "Theft",
+        "type_properties": null,
+        "updated_at": 1545551568,
+        "url": "https://bikewise.org/api/v1/incidents/24134",
+      }
+    }
+    key="24134"
+  />
+</div>
+`;
+
+exports[`IncidentsList component test should match snapshot with empty items 1`] = `<div />`;

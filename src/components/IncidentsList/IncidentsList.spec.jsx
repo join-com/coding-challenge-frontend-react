@@ -1,13 +1,13 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Component from "./Filter";
-import Input from "../ui/Input";
+import Component from "./IncidentsList";
+import incidentMock from "../../mocks/incidentMock";
 
-describe("Filter component test", () => {
+describe("IncidentsList component test", () => {
   const defaultProps = {
-    onChange: jest.fn(),
-    value: "",
-    disableInput: false,
+    items: [incidentMock],
+    itemsPerPage: 10,
+    changeShowItemsPerPage: jest.fn(),
     totalIncidentsLength: 23
   };
 
@@ -19,8 +19,10 @@ describe("Filter component test", () => {
   it("should match snapshot ", () => {
     const wrapper = getWrapper();
     expect(wrapper).toMatchSnapshot();
+  });
 
-    wrapper.find(Input).simulate("change");
-    expect(defaultProps.onChange).toHaveBeenCalledTimes(1);
+  it("should match snapshot with empty items", () => {
+    const wrapper = getWrapper({ items: [] });
+    expect(wrapper).toMatchSnapshot();
   });
 });
