@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component test should match snapshot 1`] = `
+<styled.button
+  disabled={false}
+  onClick={[MockFunction]}
+  size="normal"
+  type="button"
+  uppercase={false}
+>
+  Button text
+</styled.button>
+`;

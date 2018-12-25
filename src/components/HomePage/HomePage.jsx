@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Filter from "../Filter";
 import Card from "../Card";
+import Pagination from "../Pagination";
+
 class HomePage extends Component {
   componentDidMount = () => {
     this.props.fetchIncidents();
@@ -31,6 +33,7 @@ class HomePage extends Component {
                       <Card key={item.id} item={item} />
                     ))}
                   </div>
+                  <Pagination />
                 </div>
               )}
             </div>

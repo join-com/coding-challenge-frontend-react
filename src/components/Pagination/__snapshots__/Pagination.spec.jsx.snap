@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component test should match snapshot  1`] = `
+<Fragment>
+  <div>
+    <Button
+      disabled={true}
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      « First
+    </Button>
+    <Button
+      disabled={true}
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      ‹ Prev
+    </Button>
+    <Button
+      disabled={true}
+      key="1"
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      1
+    </Button>
+    <Button
+      disabled={false}
+      key="2"
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      2
+    </Button>
+    <Button
+      disabled={false}
+      key="3"
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      3
+    </Button>
+    <Button
+      disabled={false}
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      Next ›
+    </Button>
+    <Button
+      disabled={false}
+      onClick={[Function]}
+      size="normal"
+      type="button"
+      uppercase={true}
+    >
+      Last »
+    </Button>
+  </div>
+</Fragment>
+`;
+
+exports[`Pagination component test should match snapshot for empty pages  1`] = `<Fragment />`;
