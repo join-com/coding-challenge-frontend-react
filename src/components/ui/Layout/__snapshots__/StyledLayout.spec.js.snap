@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled Container component should match snapshot  1`] = `
+<div
+  className="sc-bdVaJa kXzCAO"
+/>
+`;
+
+exports[`Styled PageWrapper component should match snapshot  1`] = `
+<div
+  className="sc-bwzfXH iGqocH"
+/>
+`;

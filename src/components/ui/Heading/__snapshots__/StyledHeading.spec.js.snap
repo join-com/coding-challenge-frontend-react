@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled StyledHeading component should match snapshot with bold prop 1`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: none;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+<h1
+  bold={true}
+  className="c0"
+  uppercase={false}
+/>
+`;
+
+exports[`Styled StyledHeading component should match snapshot with different level prop 1`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: none;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+<h1
+  bold={false}
+  className="c0"
+  uppercase={false}
+/>
+`;
+
+exports[`Styled StyledHeading component should match snapshot with different level prop 2`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: none;
+  font-size: 1.7999999999999998rem;
+  margin-bottom: 0.8999999999999999rem;
+}
+
+<h2
+  bold={false}
+  className="c0"
+  uppercase={false}
+/>
+`;
+
+exports[`Styled StyledHeading component should match snapshot with different level prop 3`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: none;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+<h3
+  bold={false}
+  className="c0"
+  uppercase={false}
+/>
+`;
+
+exports[`Styled StyledHeading component should match snapshot with different level prop 4`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: none;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+<h4
+  bold={false}
+  className="c0"
+  uppercase={false}
+/>
+`;
+
+exports[`Styled StyledHeading component should match snapshot with different level prop 5`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: none;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+<h5
+  bold={false}
+  className="c0"
+  uppercase={false}
+/>
+`;
+
+exports[`Styled StyledHeading component should match snapshot with uppercase prop 1`] = `
+.c0 {
+  font-family: 'Oswald',sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #1D232B;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+<h1
+  bold={false}
+  className="c0"
+  uppercase={true}
+/>
+`;

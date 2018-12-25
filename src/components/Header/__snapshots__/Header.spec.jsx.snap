@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component test should match snapshot  1`] = `
+<styled.div>
+  <styled.div>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Heading
+        bold={false}
+        level={1}
+        uppercase={false}
+      >
+        Police Department of Berlin
+      </Heading>
+    </Link>
+    <Heading
+      bold={false}
+      level={3}
+      uppercase={false}
+    >
+      Stolen bikes
+    </Heading>
+  </styled.div>
+</styled.div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading component test should match snapshot 1`] = `
+<Styled(Component)
+  bold={0}
+  level={1}
+  uppercase={0}
+>
+  Heading text
+</Styled(Component)>
+`;
