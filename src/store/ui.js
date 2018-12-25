@@ -2,7 +2,8 @@ import { createPrefix, createAction } from "../helpers/actionHelpers";
 
 const initialState = {
   isLoading: false,
-  error: null
+  error: null,
+  searchValue: ""
 };
 
 const prefix = createPrefix("UI");
@@ -27,5 +28,6 @@ const reducer = (state = initialState, { type, payload }) => {
 // selectors
 export const getLoading = state => state.ui.isLoading;
 export const getError = state => state.ui.error;
+export const getSearchValue = state => state.ui.searchValue;
 
 export default reducer;

@@ -8,6 +8,12 @@ exports[`Styled Container component should match snapshot  1`] = `
 
 exports[`Styled PageWrapper component should match snapshot  1`] = `
 <div
-  className="sc-bwzfXH iGqocH"
+  className="sc-htpNat eTxYmJ"
+/>
+`;
+
+exports[`Styled Row component should match snapshot  1`] = `
+<div
+  className="sc-bwzfXH cavdTd"
 />
 `;

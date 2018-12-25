@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component test should match snapshot 1`] = `
+<styled.input
+  disabled={false}
+  id="name"
+  name="name"
+  onChange={[MockFunction]}
+  placeholder=""
+  size="normal"
+  type="text"
+  uppercase={false}
+  value=""
+/>
+`;

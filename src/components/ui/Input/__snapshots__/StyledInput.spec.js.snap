@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled StyledInput component should match snapshot  1`] = `
+.c0 {
+  border: solid 2px #1D232B;
+  border-radius: 3px;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  background-color: #F9F9F9;
+  color: #1D232B;
+  opacity: 1;
+  padding: 0.5rem;
+  outline: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  border-radius: 3px;
+  text-transform: none;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c0:hover {
+  border-color: #90D3DC;
+}
+
+.c0:focus {
+  border-color: #90D3DC;
+}
+
+<input
+  className="c0"
+  disabled={false}
+  id="id"
+  name="name"
+  onChange={[MockFunction]}
+  placeholder=""
+  size="normal"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`Styled StyledInput component should match snapshot for disabled prop  1`] = `
+.c0 {
+  border: solid 2px #1D232B;
+  border-radius: 3px;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  background-color: #F9F9F9;
+  color: #1D232B;
+  opacity: 0.5;
+  padding: 0.5rem;
+  outline: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  border-radius: 3px;
+  text-transform: none;
+  cursor: not-allowed;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+<input
+  className="c0"
+  disabled={true}
+  id="id"
+  name="name"
+  onChange={[MockFunction]}
+  placeholder=""
+  size="normal"
+  type="text"
+  value=""
+/>
+`;

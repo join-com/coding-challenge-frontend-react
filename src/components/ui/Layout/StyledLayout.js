@@ -18,6 +18,13 @@ export const Container = styled.div`
   `}
 `;
 
+export const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: ${({ alignItems = "center" }) => alignItems};
+  margin: ${indents.mobile}rem 0;
+`;
+
 export const PageWrapper = styled.div`
   margin: 0 0 ${indents.desktop}rem 0;
 `;

@@ -1,16 +1,24 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Filter from "../Filter";
 
 class HomePage extends Component {
   componentDidMount = () => {
     this.props.fetchIncidents();
   };
 
+  changeSearchValue = ({ target: { value } }) => {
+    const { changeUi } = this.props;
+    changeUi({ name: "searchValue", value });
+    changeUi({ name: "currentPage", value: 0 });
+  };
+
   render() {
-    const { incidents, isLoading, error, totalIncidentsLength } = this.props;
+    const { incidents, isLoading, error, totalIncidentsLength, searchValue } = this.props;
 
     return (
       <div>
+        <Filter onChange={this.changeSearchValue} value={searchValue} disableInput={isLoading} />
         {!isLoading &&
           !error && (
             <div>
