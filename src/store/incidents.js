@@ -104,4 +104,12 @@ export const getSlicedIncidentsSelector = createSelector(
   }
 );
 
+export const getIncidentById = createSelector(
+  getIncidents,
+  (_, props) => props.match.params.id,
+  (incidents, id) => {
+    return incidents[id] || {};
+  }
+);
+
 export default reducer;

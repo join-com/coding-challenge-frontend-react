@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsInfo component should match snapshot 1`] = `
+.c0 {
+  border: solid 2px #1D232B;
+  border-radius: 3px;
+  padding: 0.5rem;
+  background-color: #90D3DC;
+  margin: 1.5rem 0;
+}
+
+@media (min-width:640px) {
+  .c0 {
+    padding: 1rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    padding: 1.5rem;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
