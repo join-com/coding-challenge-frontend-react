@@ -1,9 +1,12 @@
 import { createPrefix, createAction } from "../helpers/actionHelpers";
+import { INCIDENTS_PER_PAGE } from "../constants/global";
 
 const initialState = {
   isLoading: false,
+  currentPage: 0,
+  searchValue: "",
   error: null,
-  searchValue: ""
+  itemsPerPage: INCIDENTS_PER_PAGE
 };
 
 const prefix = createPrefix("UI");
@@ -26,8 +29,10 @@ const reducer = (state = initialState, { type, payload }) => {
 };
 
 // selectors
+export const getCurrentPage = state => state.ui.currentPage;
+export const getSearchValue = state => state.ui.searchValue;
+export const getItemsPerPage = state => state.ui.itemsPerPage;
 export const getLoading = state => state.ui.isLoading;
 export const getError = state => state.ui.error;
-export const getSearchValue = state => state.ui.searchValue;
 
 export default reducer;

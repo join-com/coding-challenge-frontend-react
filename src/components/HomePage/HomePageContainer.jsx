@@ -1,15 +1,16 @@
 import { connect } from "react-redux";
 import HomePage from "./HomePage";
-import { fetchIncidents, getTotalIncidentsSelector, getIncidentsSelector } from "../../store/incidents";
-import { getLoading, getError, getSearchValue, changeUi } from "../../store/ui";
+import { fetchIncidents, getSlicedIncidentsSelector, getTotalIncidentsSelector } from "../../store/incidents";
+import { changeUi, getSearchValue, getLoading, getError, getItemsPerPage } from "../../store/ui";
 
 const mapStateToProps = state => {
   return {
-    incidents: getIncidentsSelector(state),
+    incidents: getSlicedIncidentsSelector(state),
     isLoading: getLoading(state),
-    totalIncidentsLength: getTotalIncidentsSelector(state),
     searchValue: getSearchValue(state),
-    error: getError(state)
+    totalIncidentsLength: getTotalIncidentsSelector(state),
+    error: getError(state),
+    itemsPerPage: getItemsPerPage(state)
   };
 };
 

@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 
 import { createPrefix, createAction } from "../helpers/actionHelpers";
 import { loadIncidents, loadIncidentById } from "../api";
-import { changeUi } from "./ui";
+import { changeUi, getSearchValue, getCurrentPage, getItemsPerPage } from "./ui";
 import { createCollectionFromArray } from "../helpers/normalizeData";
 
 const prefix = createPrefix("INCIDENTS");
@@ -70,6 +70,38 @@ export const getIncidentsSelector = createSelector(getIncidents, incidents =>
   Object.keys(incidents).map(key => incidents[key])
 );
 
-export const getTotalIncidentsSelector = createSelector(getIncidentsSelector, incidents => incidents.length);
+export const getFilteredIncidentsSelector = createSelector(
+  getIncidentsSelector,
+  getSearchValue,
+  (incidents, searchValue) => {
+    return incidents.filter(({ title }) => {
+      return title.toUpperCase().includes(searchValue.toUpperCase());
+    });
+  }
+);
+
+export const getTotalIncidentsSelector = createSelector(getFilteredIncidentsSelector, incidents => incidents.length);
+
+export const getPaginationSelector = createSelector(
+  getTotalIncidentsSelector,
+  getItemsPerPage,
+  (totalIncidentsLength, itemsPerPage) => {
+    const totalPages = Math.ceil(totalIncidentsLength / itemsPerPage);
+    const pages = [];
+    for (let index = 0; index < totalPages; index++) {
+      pages.push(index + 1);
+    }
+    return pages;
+  }
+);
+
+export const getSlicedIncidentsSelector = createSelector(
+  getFilteredIncidentsSelector,
+  getCurrentPage,
+  getItemsPerPage,
+  (incidents, currentPage, itemsPerPage) => {
+    return incidents.slice(currentPage * itemsPerPage, itemsPerPage * (currentPage + 1));
+  }
+);
 
 export default reducer;
