@@ -6,6 +6,7 @@ import Input from "../ui/Input";
 describe("Filter component test", () => {
   const defaultProps = {
     onChange: jest.fn(),
+    changeShowItemsPerPage: jest.fn(),
     value: "",
     disableInput: false,
     totalIncidentsLength: 23

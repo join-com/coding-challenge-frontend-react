@@ -16,6 +16,29 @@ exports[`Filter component test should match snapshot  1`] = `
     />
   </styled.div>
   <styled.div>
+    <Select
+      id="item_per_page"
+      label="Show item per page: "
+      name="item_per_page"
+      onChange={[MockFunction]}
+      options={
+        Array [
+          Object {
+            "label": 5,
+            "value": 5,
+          },
+          Object {
+            "label": 10,
+            "value": 10,
+          },
+          Object {
+            "label": 25,
+            "value": 25,
+          },
+        ]
+      }
+      value=""
+    />
     <Text
       bold={false}
       size="normal"

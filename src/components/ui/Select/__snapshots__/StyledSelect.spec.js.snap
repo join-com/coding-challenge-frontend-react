@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled Label component should match snapshot  1`] = `
+.c0 {
+  position: relative;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1D232B;
+  text-transform: none;
+  margin: 0 0 0.5rem 0;
+  padding-right: 0.5rem;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`StyledSelect component should match snapshot  1`] = `
+.c0 {
+  border: solid 2px #1D232B;
+  border-radius: 3px;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  background-color: #F9F9F9;
+  color: #1D232B;
+  opacity: 1;
+  padding: 0.5rem;
+  outline: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  border-radius: 3px;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c0:hover {
+  border-color: #90D3DC;
+}
+
+<select
+  className="c0"
+  disabled={false}
+/>
+`;
+
+exports[`StyledSelect component should match snapshot for disabled prop  1`] = `
+.c0 {
+  border: solid 2px #1D232B;
+  border-radius: 3px;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  background-color: #F9F9F9;
+  color: #1D232B;
+  opacity: 0.5;
+  padding: 0.5rem;
+  outline: none;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  border-radius: 3px;
+  text-transform: none;
+  cursor: not-allowed;
+}
+
+<select
+  className="c0"
+  disabled={true}
+/>
+`;

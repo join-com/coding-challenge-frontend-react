@@ -18,8 +18,14 @@ class HomePage extends Component {
     changeUi({ name: "currentPage", value: 0 });
   };
 
+  changeShowItemsPerPage = ({ target: { value } }) => {
+    const { changeUi } = this.props;
+    changeUi({ name: "itemsPerPage", value });
+    changeUi({ name: "currentPage", value: 0 });
+  };
+
   render() {
-    const { incidents, isLoading, error, totalIncidentsLength, searchValue } = this.props;
+    const { incidents, isLoading, error, totalIncidentsLength, searchValue, itemsPerPage } = this.props;
 
     return (
       <Container>
@@ -28,6 +34,8 @@ class HomePage extends Component {
           value={searchValue}
           disableInput={isLoading}
           totalIncidentsLength={totalIncidentsLength}
+          itemsPerPage={itemsPerPage}
+          changeShowItemsPerPage={this.changeShowItemsPerPage}
         />
         {!isLoading &&
           !error && (

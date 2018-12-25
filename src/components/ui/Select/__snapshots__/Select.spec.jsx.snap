@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component test should match snapshot 1`] = `
+<div>
+  <styled.select
+    id="id"
+    name="name"
+    onChange={[MockFunction]}
+    value=""
+  >
+    <option
+      key="1"
+      value={1}
+    >
+      1
+    </option>
+  </styled.select>
+</div>
+`;
+
+exports[`Select component test should match snapshot with label 1`] = `
+<div>
+  <Styled(styled.p)
+    as="label"
+    htmlFor="id"
+  >
+    label
+  </Styled(styled.p)>
+  <styled.select
+    id="id"
+    name="name"
+    onChange={[MockFunction]}
+    value=""
+  >
+    <option
+      key="1"
+      value={1}
+    >
+      1
+    </option>
+  </styled.select>
+</div>
+`;
