@@ -5,7 +5,8 @@ import Pagination from "../Pagination";
 import { Container } from "../ui/Layout/StyledLayout";
 import ErrorMessage from "../ErrorMessage";
 import Text from "../ui/Text";
-import IncidentsList from "../IncidentsList/IncidentsList";
+import IncidentsList from "../IncidentsList";
+import { incidentPropTypes } from "../../constants/propTypes";
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -56,6 +57,15 @@ class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {};
+HomePage.propTypes = {
+  incidents: PropTypes.arrayOf(incidentPropTypes).isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+  totalIncidentsLength: PropTypes.number.isRequired,
+  searchValue: PropTypes.string.isRequired,
+  itemsPerPage: PropTypes.number.isRequired,
+  fetchIncidents: PropTypes.func.isRequired,
+  changeUi: PropTypes.func.isRequired
+};
 
 export default HomePage;
