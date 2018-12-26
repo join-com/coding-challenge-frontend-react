@@ -27,6 +27,9 @@ exports[`DetailsPage component test should match snapshot and call fetchIncident
        
       Berlin, 10245, DE
     </Text>
+    <MapWrapper
+      address="Berlin, 10245, DE"
+    />
   </styled.div>
 </styled.div>
 `;
