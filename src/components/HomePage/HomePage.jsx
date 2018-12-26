@@ -60,12 +60,16 @@ class HomePage extends Component {
 HomePage.propTypes = {
   incidents: PropTypes.arrayOf(incidentPropTypes).isRequired,
   isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
   totalIncidentsLength: PropTypes.number.isRequired,
   searchValue: PropTypes.string.isRequired,
   itemsPerPage: PropTypes.number.isRequired,
   fetchIncidents: PropTypes.func.isRequired,
   changeUi: PropTypes.func.isRequired
+};
+
+HomePage.defaultProps = {
+  error: null
 };
 
 export default HomePage;
