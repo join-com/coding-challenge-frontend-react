@@ -6,12 +6,12 @@ import api from "../api";
 
 let composeEnhancers = compose;
 
-// if (__DEV__) {
-const composeWithDevToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
-if (typeof composeWithDevToolsExtension === "function") {
-  composeEnhancers = composeWithDevToolsExtension;
+if (process.env.NODE_ENV === "development") {
+  const composeWithDevToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+  if (typeof composeWithDevToolsExtension === "function") {
+    composeEnhancers = composeWithDevToolsExtension;
+  }
 }
-// }
 
 const enhancer = composeEnhancers(applyMiddleware(thunk.withExtraArgument(api)));
 
