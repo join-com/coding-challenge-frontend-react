@@ -8,15 +8,23 @@ const checkSuccessResponse = response => {
   }
 };
 
-export const loadIncidents = () =>
+const loadIncidents = () =>
   fetch(`${API_PATH}incidents?proximity=berlin`)
     .then(checkSuccessResponse)
     .then(response => {
       return response;
     });
-export const loadIncidentById = id =>
+
+const loadIncidentById = id =>
   fetch(`${API_PATH}incidents/${id}`)
     .then(checkSuccessResponse)
     .then(response => {
       return response;
     });
+
+const api = {
+  loadIncidentById,
+  loadIncidents
+};
+
+export default api;

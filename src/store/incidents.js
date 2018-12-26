@@ -1,7 +1,6 @@
 import { createSelector } from "reselect";
 
 import { createPrefix, createAction } from "../helpers/actionHelpers";
-import { loadIncidents, loadIncidentById } from "../api";
 import { changeUi, getSearchValue, getCurrentPage, getItemsPerPage } from "./ui";
 import { createCollectionFromArray } from "../helpers/normalizeData";
 
@@ -41,9 +40,10 @@ const hideLoaderAndClearError = dispatch => {
 };
 
 export const fetchIncidents = () => {
-  return dispatch => {
+  return (dispatch, _, api) => {
     dispatch(changeUi({ name: "isLoading", value: true }));
-    loadIncidents()
+    api
+      .loadIncidents()
       .then(({ incidents }) => {
         hideLoaderAndClearError(dispatch);
         dispatch(fetchIncidentsSuccess(incidents));
@@ -53,9 +53,10 @@ export const fetchIncidents = () => {
 };
 
 export const fetchIncidentById = id => {
-  return dispatch => {
+  return (dispatch, _, api) => {
     dispatch(changeUi({ name: "isLoading", value: true }));
-    loadIncidentById(id)
+    api
+      .loadIncidentById(id)
       .then(({ incident }) => {
         hideLoaderAndClearError(dispatch);
         dispatch(fetchIncidentSuccess(incident));

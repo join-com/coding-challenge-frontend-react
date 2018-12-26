@@ -49,16 +49,16 @@ describe("ui redux module", () => {
     it("should return correct value for getCurrentPage selector", () => {
       expect(getCurrentPage(globalStateMock)).toEqual(globalStateMock.ui.currentPage);
     });
-    it("should return correct value for getCurrentPage selector", () => {
+    it("should return correct value for getSearchValue selector", () => {
       expect(getSearchValue(globalStateMock)).toEqual(globalStateMock.ui.searchValue);
     });
-    it("should return correct value for getCurrentPage selector", () => {
+    it("should return correct value for getItemsPerPage selector", () => {
       expect(getItemsPerPage(globalStateMock)).toEqual(globalStateMock.ui.itemsPerPage);
     });
-    it("should return correct value for getCurrentPage selector", () => {
+    it("should return correct value for getLoading selector", () => {
       expect(getLoading(globalStateMock)).toEqual(globalStateMock.ui.isLoading);
     });
-    it("should return correct value for getCurrentPage selector", () => {
+    it("should return correct value for getError selector", () => {
       expect(getError(globalStateMock)).toEqual(globalStateMock.ui.error);
     });
   });

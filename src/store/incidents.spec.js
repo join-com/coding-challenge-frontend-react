@@ -1,115 +1,108 @@
-import { createSelector } from "reselect";
-
-import { createPrefix, createAction } from "../helpers/actionHelpers";
-import { loadIncidents, loadIncidentById } from "../api";
-import { changeUi, getSearchValue, getCurrentPage, getItemsPerPage } from "./ui";
-import { createCollectionFromArray } from "../helpers/normalizeData";
-
-const prefix = createPrefix("INCIDENTS");
-
-export const FETCH_INCIDENTS_SUCCESS = prefix("FETCH_INCIDENTS_SUCCESS");
-export const FETCH_INCIDENT_SUCCESS = prefix("FETCH_INCIDENT_SUCCESS");
-
-export const fetchIncidentsSuccess = createAction(FETCH_INCIDENTS_SUCCESS);
-export const fetchIncidentSuccess = createAction(FETCH_INCIDENT_SUCCESS);
-export const initialState = {};
-
-const reducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case FETCH_INCIDENTS_SUCCESS:
-      return {
-        ...state,
-        ...createCollectionFromArray(payload)
-      };
-    case FETCH_INCIDENT_SUCCESS:
-      return {
-        ...state,
-        [payload.id]: payload
-      };
-    default:
-      return state;
-  }
-};
-
-const onError = (dispatch, message) => {
-  dispatch(changeUi({ name: "isLoading", value: false }));
-  dispatch(changeUi({ name: "error", value: message }));
-};
-const hideLoaderAndClearError = dispatch => {
-  dispatch(changeUi({ name: "isLoading", value: false }));
-  dispatch(changeUi({ name: "error", value: null }));
-};
-
-export const fetchIncidents = () => {
-  return dispatch => {
-    dispatch(changeUi({ name: "isLoading", value: true }));
-    loadIncidents()
-      .then(({ incidents }) => {
-        hideLoaderAndClearError(dispatch);
-        dispatch(fetchIncidentsSuccess(incidents));
-      })
-      .catch(error => onError(dispatch, error.message));
-  };
-};
-
-export const fetchIncidentById = id => {
-  return dispatch => {
-    dispatch(changeUi({ name: "isLoading", value: true }));
-    loadIncidentById(id)
-      .then(({ incident }) => {
-        hideLoaderAndClearError(dispatch);
-        dispatch(fetchIncidentSuccess(incident));
-      })
-      .catch(error => onError(dispatch, error.message));
-  };
-};
-
-const getIncidents = state => state.incidents;
-
-export const getIncidentsSelector = createSelector(getIncidents, incidents =>
-  Object.keys(incidents).map(key => incidents[key])
-);
-
-export const getFilteredIncidentsSelector = createSelector(
+import reducer, {
+  initialState,
+  FETCH_INCIDENTS_SUCCESS,
+  FETCH_INCIDENT_SUCCESS,
+  fetchIncidentsSuccess,
+  fetchIncidentSuccess,
   getIncidentsSelector,
-  getSearchValue,
-  (incidents, searchValue) => {
-    return incidents.filter(({ title }) => {
-      return title.toUpperCase().includes(searchValue.toUpperCase());
-    });
-  }
-);
-
-export const getTotalIncidentsSelector = createSelector(getFilteredIncidentsSelector, incidents => incidents.length);
-
-export const getPaginationSelector = createSelector(
-  getTotalIncidentsSelector,
-  getItemsPerPage,
-  (totalIncidentsLength, itemsPerPage) => {
-    const totalPages = Math.ceil(totalIncidentsLength / itemsPerPage);
-    const pages = [];
-    for (let index = 0; index < totalPages; index++) {
-      pages.push(index + 1);
-    }
-    return pages;
-  }
-);
-
-export const getSlicedIncidentsSelector = createSelector(
   getFilteredIncidentsSelector,
-  getCurrentPage,
-  getItemsPerPage,
-  (incidents, currentPage, itemsPerPage) => {
-    return incidents.slice(currentPage * itemsPerPage, itemsPerPage * (currentPage + 1));
-  }
-);
+  getTotalIncidentsSelector,
+  getPaginationSelector,
+  getSlicedIncidentsSelector,
+  getIncidentById
+} from "./incidents";
+import globalStateMock from "../mocks/storeMock";
 
-export const getIncidentById = createSelector(
-  getIncidents,
-  (_, props) => props.match.params.id,
-  (incidents, id) => {
-    return incidents[id] || {};
-  }
-);
+const item1 = { id: 1, title: "title" };
+const item2 = { id: 2, title: "title2" };
 
-export default reducer;
+describe("incidents redux module", () => {
+  describe("incidents reducer", () => {
+    it("should return default state", () => {
+      expect(reducer(undefined, {})).toEqual(initialState);
+    });
+
+    it("should return default state for not serviced action", () => {
+      expect(reducer(initialState, { type: "SOME_ACTION" })).toEqual(initialState);
+    });
+
+    it("should return correct state for FETCH_INCIDENTS_SUCCESS action", () => {
+      expect(
+        reducer(initialState, {
+          type: FETCH_INCIDENTS_SUCCESS,
+          payload: [item1]
+        })
+      ).toEqual({ "1": item1 });
+    });
+
+    it("should return correct state for FETCH_INCIDENT_SUCCESS action", () => {
+      expect(
+        reducer(
+          { 1: item1 },
+          {
+            type: FETCH_INCIDENT_SUCCESS,
+            payload: item2
+          }
+        )
+      ).toEqual({ 1: item1, 2: item2 });
+    });
+  });
+
+  describe("incidents actions", () => {
+    it("should create correct action by fetchIncidentsSuccess ", () => {
+      const expectedAction = { payload: [item1, item2], type: FETCH_INCIDENTS_SUCCESS };
+      expect(fetchIncidentsSuccess([item1, item2])).toEqual(expectedAction);
+    });
+
+    it("should create correct action by fetchIncidentSuccess ", () => {
+      const expectedAction = { payload: item1, type: FETCH_INCIDENT_SUCCESS };
+      expect(fetchIncidentSuccess(item1)).toEqual(expectedAction);
+    });
+  });
+
+  describe("incidents selectors", () => {
+    it("should return correct value for getIncidentsSelector selector", () => {
+      const expectedValue = Object.keys(globalStateMock.incidents).map(key => globalStateMock.incidents[key]);
+      expect(getIncidentsSelector(globalStateMock)).toEqual(expectedValue);
+    });
+    it("should return correct value for getFilteredIncidentsSelector selector", () => {
+      expect(
+        getFilteredIncidentsSelector({
+          ...globalStateMock,
+          ui: {
+            ...globalStateMock.ui,
+            searchValue: "Stolen 2012 Cannondale Caad8 7 "
+          }
+        })
+      ).toEqual([globalStateMock.incidents[3522]]);
+    });
+    it("should return correct value for getTotalIncidentsSelector selector", () => {
+      expect(getTotalIncidentsSelector(globalStateMock)).toEqual(5);
+    });
+    it("should return correct value for getPaginationSelector selector", () => {
+      expect(getPaginationSelector(globalStateMock)).toEqual([1, 2, 3]);
+      expect(
+        getPaginationSelector({
+          ...globalStateMock,
+          ui: {
+            ...globalStateMock.ui,
+            itemsPerPage: 10
+          }
+        })
+      ).toEqual([1]);
+    });
+    it("should return correct value for getSlicedIncidentsSelector selector", () => {
+      expect(getSlicedIncidentsSelector(globalStateMock)).toHaveLength(2);
+      expect(getSlicedIncidentsSelector(globalStateMock)).toEqual([
+        globalStateMock.incidents[3522],
+        globalStateMock.incidents[4853]
+      ]);
+    });
+
+    it("should return correct value for getIncidentById selector", () => {
+      expect(getIncidentById(globalStateMock, { match: { params: { id: 3522 } } })).toEqual(
+        globalStateMock.incidents[3522]
+      );
+    });
+  });
+});

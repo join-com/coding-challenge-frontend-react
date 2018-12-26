@@ -2,6 +2,7 @@ import { createStore, compose, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import uiReducer from "./ui";
 import incidentsReducer from "./incidents";
+import api from "../api";
 
 let composeEnhancers = compose;
 
@@ -12,7 +13,7 @@ if (typeof composeWithDevToolsExtension === "function") {
 }
 // }
 
-const enhancer = composeEnhancers(applyMiddleware(thunk));
+const enhancer = composeEnhancers(applyMiddleware(thunk.withExtraArgument(api)));
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
