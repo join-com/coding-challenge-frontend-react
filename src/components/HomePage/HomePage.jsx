@@ -6,7 +6,7 @@ import { Container } from "../ui/Layout/StyledLayout";
 import Text from "../ui/Text";
 import IncidentsList from "../IncidentsList";
 import { incidentPropTypes } from "../../constants/propTypes";
-import ErrorMessage from "../ErrorMessage";
+import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
 
 class HomePage extends Component {
   componentDidMount = () => {
