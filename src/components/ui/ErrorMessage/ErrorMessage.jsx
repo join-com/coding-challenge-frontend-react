@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyledErrorText } from "../ui/Text/StyledText";
+import { StyledErrorText } from "../Text/StyledText";
 
 const ErrorMessage = ({ message }) => {
   return <StyledErrorText>{message}</StyledErrorText>;

@@ -1,8 +1,8 @@
 import React, { PureComponent, Fragment } from "react";
 import PropTypes from "prop-types";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { ERROR_MESSAGE } from "../../constants/global";
+import ErrorMessage from "../ui/ErrorMessage";
 
 class Map extends PureComponent {
   constructor(props) {

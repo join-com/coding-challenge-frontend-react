@@ -5,10 +5,10 @@ import formatTimeStampToDate from "../../helpers/formatDate";
 import { incidentPropTypes } from "../../constants/propTypes";
 import { Container } from "../ui/Layout/StyledLayout";
 import { DetailsInfo } from "./StyledDetailsPage";
-import ErrorMessage from "../ErrorMessage";
 import Heading from "../ui/Heading";
 import Map from "../Map";
 import Text from "../ui/Text";
+import ErrorMessage from "../ui/ErrorMessage";
 
 class DetailsPage extends Component {
   componentDidMount = () => {

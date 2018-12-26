@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import Filter from "../Filter";
 import Pagination from "../Pagination";
 import { Container } from "../ui/Layout/StyledLayout";
-import ErrorMessage from "../ErrorMessage";
 import Text from "../ui/Text";
 import IncidentsList from "../IncidentsList";
 import { incidentPropTypes } from "../../constants/propTypes";
+import ErrorMessage from "../ErrorMessage";
 
 class HomePage extends Component {
   componentDidMount = () => {
