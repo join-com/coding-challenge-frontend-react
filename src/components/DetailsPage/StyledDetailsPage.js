@@ -1,6 +1,7 @@
 import styled from "styled-components";
+
+import { colors, indents } from "../../constants/styles";
 import { defaultBorder } from "../../helpers/stylesMixins";
-import { indents, colors } from "../../constants/styles";
 import media from "../../helpers/mediaQuery";
 
 export const DetailsInfo = styled.div`

@@ -1,12 +1,14 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import Heading from "../ui/Heading";
-import Text from "../ui/Text";
+
 import formatTimeStampToDate from "../../helpers/formatDate";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import { DetailsInfo } from "./StyledDetailsPage";
-import { Container } from "../ui/Layout/StyledLayout";
 import { incidentPropTypes } from "../../constants/propTypes";
+import { Container } from "../ui/Layout/StyledLayout";
+import { DetailsInfo } from "./StyledDetailsPage";
+import ErrorMessage from "../ErrorMessage";
+import Heading from "../ui/Heading";
+import Map from "../Map";
+import Text from "../ui/Text";
 
 class DetailsPage extends Component {
   componentDidMount = () => {
@@ -23,6 +25,7 @@ class DetailsPage extends Component {
     const { isLoading, item, error } = this.props;
     const { id, title, description, address, occurred_at } = item;
     const showItemCondition = !isLoading && !error && id;
+
     return (
       <Container>
         {showItemCondition && (
@@ -31,6 +34,7 @@ class DetailsPage extends Component {
             <Text>
               <b>Stolen</b> {formatTimeStampToDate(occurred_at)} <b>at</b> {address}
             </Text>
+            <Map address={address} />
             {description && (
               <Fragment>
                 <Heading level={5}>Description of incident</Heading>
