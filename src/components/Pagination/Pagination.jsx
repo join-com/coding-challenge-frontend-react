@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import Button from "../ui/Button/Button";
+import Button from "../ui/Button";
 
 function Pagination({ currentPage, pages, changeUi }) {
   const totalPages = pages.length;

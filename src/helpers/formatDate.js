@@ -1,5 +1,9 @@
 import { LOCALE } from "../constants/global";
 
+/**
+ * Create local string date from timestamp
+ * @param {Number} timestamp  in seconds
+ */
 const formatTimeStampToDate = timestamp => {
   const second = 1000;
   const date = new Date(timestamp * second);

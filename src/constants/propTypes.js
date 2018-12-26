@@ -16,4 +16,4 @@ export const childrenPropTypes = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.arrayOf(PropTypes.node),
   PropTypes.node
-]).isRequired;
+]);

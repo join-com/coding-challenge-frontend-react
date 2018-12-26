@@ -34,6 +34,7 @@ const onError = (dispatch, message) => {
   dispatch(changeUi({ name: "isLoading", value: false }));
   dispatch(changeUi({ name: "error", value: message }));
 };
+
 const hideLoaderAndClearError = dispatch => {
   dispatch(changeUi({ name: "isLoading", value: false }));
   dispatch(changeUi({ name: "error", value: null }));
@@ -65,6 +66,7 @@ export const fetchIncidentById = id => {
   };
 };
 
+// selectors
 const getIncidents = state => state.incidents;
 
 export const getIncidentsSelector = createSelector(getIncidents, incidents =>

@@ -6,7 +6,7 @@ import { Container } from "../ui/Layout/StyledLayout";
 import Text from "../ui/Text";
 import IncidentsList from "../IncidentsList";
 import { incidentPropTypes } from "../../constants/propTypes";
-import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
+import ErrorMessage from "../ui/ErrorMessage";
 import ErrorBoundary from "../ErrorBoundary";
 
 class HomePage extends Component {
@@ -62,7 +62,7 @@ class HomePage extends Component {
 HomePage.propTypes = {
   incidents: PropTypes.arrayOf(incidentPropTypes).isRequired,
   isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.bool,
+  error: PropTypes.string,
   totalIncidentsLength: PropTypes.number.isRequired,
   searchValue: PropTypes.string.isRequired,
   itemsPerPage: PropTypes.number.isRequired,
