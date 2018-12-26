@@ -1,7 +1,7 @@
 import { createPrefix, createAction } from "../helpers/actionHelpers";
 import { INCIDENTS_PER_PAGE } from "../constants/global";
 
-const initialState = {
+export const initialState = {
   isLoading: false,
   currentPage: 0,
   searchValue: "",
