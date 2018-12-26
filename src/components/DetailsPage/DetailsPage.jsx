@@ -9,6 +9,7 @@ import Heading from "../ui/Heading";
 import Map from "../Map";
 import Text from "../ui/Text";
 import ErrorMessage from "../ui/ErrorMessage";
+import ErrorBoundary from "../ErrorBoundary";
 
 class DetailsPage extends Component {
   componentDidMount = () => {
@@ -27,25 +28,27 @@ class DetailsPage extends Component {
     const showItemCondition = !isLoading && !error && id;
 
     return (
-      <Container>
-        {showItemCondition && (
-          <DetailsInfo>
-            <Heading level={3}>{title}</Heading>
-            <Text>
-              <b>Stolen</b> {formatTimeStampToDate(occurred_at)} <b>at</b> {address}
-            </Text>
-            <Map address={address} />
-            {description && (
-              <Fragment>
-                <Heading level={5}>Description of incident</Heading>
-                <Text>{description}</Text>
-              </Fragment>
-            )}
-          </DetailsInfo>
-        )}
-        {isLoading && <Text>Loading ...</Text>}
-        {!isLoading && error && <ErrorMessage message={error} />}
-      </Container>
+      <ErrorBoundary>
+        <Container>
+          {showItemCondition && (
+            <DetailsInfo>
+              <Heading level={3}>{title}</Heading>
+              <Text>
+                <b>Stolen</b> {formatTimeStampToDate(occurred_at)} <b>at</b> {address}
+              </Text>
+              <Map address={address} />
+              {description && (
+                <Fragment>
+                  <Heading level={5}>Description of incident</Heading>
+                  <Text>{description}</Text>
+                </Fragment>
+              )}
+            </DetailsInfo>
+          )}
+          {isLoading && <Text>Loading ...</Text>}
+          {!isLoading && error && <ErrorMessage message={error} />}
+        </Container>
+      </ErrorBoundary>
     );
   }
 }

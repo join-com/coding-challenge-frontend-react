@@ -7,6 +7,7 @@ import Text from "../ui/Text";
 import IncidentsList from "../IncidentsList";
 import { incidentPropTypes } from "../../constants/propTypes";
 import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
+import ErrorBoundary from "../ErrorBoundary";
 
 class HomePage extends Component {
   componentDidMount = () => {
@@ -27,32 +28,33 @@ class HomePage extends Component {
 
   render() {
     const { incidents, isLoading, error, totalIncidentsLength, searchValue, itemsPerPage } = this.props;
-
     return (
-      <Container>
-        <Filter
-          onChange={this.changeSearchValue}
-          value={searchValue}
-          disableInput={isLoading}
-          totalIncidentsLength={totalIncidentsLength}
-          itemsPerPage={itemsPerPage}
-          changeShowItemsPerPage={this.changeShowItemsPerPage}
-        />
-        {!isLoading &&
-          !error && (
-            <Fragment>
-              {totalIncidentsLength === 0 && <Text>No results</Text>}
-              {totalIncidentsLength > 0 && (
-                <Fragment>
-                  <IncidentsList items={incidents} />
-                  <Pagination />
-                </Fragment>
-              )}
-            </Fragment>
-          )}
-        {isLoading && <Text>Loading ...</Text>}
-        {!isLoading && error && <ErrorMessage message={error} />}
-      </Container>
+      <ErrorBoundary>
+        <Container>
+          <Filter
+            onChange={this.changeSearchValue}
+            value={searchValue}
+            disableInput={isLoading}
+            totalIncidentsLength={totalIncidentsLength}
+            itemsPerPage={itemsPerPage}
+            changeShowItemsPerPage={this.changeShowItemsPerPage}
+          />
+          {!isLoading &&
+            !error && (
+              <Fragment>
+                {totalIncidentsLength === 0 && <Text>No results</Text>}
+                {totalIncidentsLength > 0 && (
+                  <Fragment>
+                    <IncidentsList items={incidents} />
+                    <Pagination />
+                  </Fragment>
+                )}
+              </Fragment>
+            )}
+          {isLoading && <Text>Loading ...</Text>}
+          {!isLoading && error && <ErrorMessage message={error} />}
+        </Container>
+      </ErrorBoundary>
     );
   }
 }

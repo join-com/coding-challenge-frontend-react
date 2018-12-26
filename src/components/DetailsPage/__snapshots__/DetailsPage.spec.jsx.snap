@@ -1,55 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetailsPage component test should match snapshot and call fetchIncidentById prop function 1`] = `
-<styled.div>
+<ErrorBoundary>
   <styled.div>
-    <Heading
-      bold={false}
-      level={3}
-      uppercase={false}
-    >
-      Stolen di Florino (red and white)
-    </Heading>
+    <styled.div>
+      <Heading
+        bold={false}
+        level={3}
+        uppercase={false}
+      >
+        Stolen di Florino (red and white)
+      </Heading>
+      <Text
+        bold={false}
+        size="normal"
+        uppercase={false}
+      >
+        <b>
+          Stolen
+        </b>
+         
+        Di., 17. Juni 2014
+         
+        <b>
+          at
+        </b>
+         
+        Berlin, 10245, DE
+      </Text>
+      <MapWrapper
+        address="Berlin, 10245, DE"
+      />
+    </styled.div>
+  </styled.div>
+</ErrorBoundary>
+`;
+
+exports[`DetailsPage component test should match snapshot for loading state 1`] = `
+<ErrorBoundary>
+  <styled.div>
     <Text
       bold={false}
       size="normal"
       uppercase={false}
     >
-      <b>
-        Stolen
-      </b>
-       
-      Di., 17. Juni 2014
-       
-      <b>
-        at
-      </b>
-       
-      Berlin, 10245, DE
+      Loading ...
     </Text>
-    <MapWrapper
-      address="Berlin, 10245, DE"
-    />
   </styled.div>
-</styled.div>
-`;
-
-exports[`DetailsPage component test should match snapshot for loading state 1`] = `
-<styled.div>
-  <Text
-    bold={false}
-    size="normal"
-    uppercase={false}
-  >
-    Loading ...
-  </Text>
-</styled.div>
+</ErrorBoundary>
 `;
 
 exports[`DetailsPage component test should match snapshot for loading state 2`] = `
-<styled.div>
-  <ErrorMessage
-    message="error message"
-  />
-</styled.div>
+<ErrorBoundary>
+  <styled.div>
+    <ErrorMessage
+      message="error message"
+    />
+  </styled.div>
+</ErrorBoundary>
 `;

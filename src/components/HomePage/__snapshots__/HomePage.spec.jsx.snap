@@ -1,99 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage component test should match snapshot and call fetchIncidents prop function 1`] = `
-<styled.div>
-  <Filter
-    changeShowItemsPerPage={[Function]}
-    disableInput={false}
-    itemsPerPage={10}
-    onChange={[Function]}
-    totalIncidentsLength={22}
-    value=""
-  />
-  <IncidentsList
-    items={
-      Array [
-        Object {
-          "address": "Berlin, 10245, DE",
-          "description": "",
-          "id": 24134,
-          "location_description": null,
-          "location_type": null,
-          "media": Object {
-            "image_url": "https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/large_dsc_1293.jpg",
-            "image_url_thumb": "https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/small_dsc_1293.jpg",
+<ErrorBoundary>
+  <styled.div>
+    <Filter
+      changeShowItemsPerPage={[Function]}
+      disableInput={false}
+      itemsPerPage={10}
+      onChange={[Function]}
+      totalIncidentsLength={22}
+      value=""
+    />
+    <IncidentsList
+      items={
+        Array [
+          Object {
+            "address": "Berlin, 10245, DE",
+            "description": "",
+            "id": 24134,
+            "location_description": null,
+            "location_type": null,
+            "media": Object {
+              "image_url": "https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/large_dsc_1293.jpg",
+              "image_url_thumb": "https://bikeindex.s3.amazonaws.com/uploads/Pu/9564/small_dsc_1293.jpg",
+            },
+            "occurred_at": 1402984800,
+            "source": Object {
+              "api_url": "https://bikeindex.org/api/v1/bikes/27159",
+              "html_url": "https://bikeindex.org/bikes/27159",
+              "name": "BikeIndex.org",
+            },
+            "title": "Stolen di Florino (red and white)",
+            "type": "Theft",
+            "type_properties": null,
+            "updated_at": 1545551568,
+            "url": "https://bikewise.org/api/v1/incidents/24134",
           },
-          "occurred_at": 1402984800,
-          "source": Object {
-            "api_url": "https://bikeindex.org/api/v1/bikes/27159",
-            "html_url": "https://bikeindex.org/bikes/27159",
-            "name": "BikeIndex.org",
-          },
-          "title": "Stolen di Florino (red and white)",
-          "type": "Theft",
-          "type_properties": null,
-          "updated_at": 1545551568,
-          "url": "https://bikewise.org/api/v1/incidents/24134",
-        },
-      ]
-    }
-  />
-  <Connect(Pagination) />
-</styled.div>
+        ]
+      }
+    />
+    <Connect(Pagination) />
+  </styled.div>
+</ErrorBoundary>
 `;
 
 exports[`HomePage component test should match snapshot empty results 1`] = `
-<styled.div>
-  <Filter
-    changeShowItemsPerPage={[Function]}
-    disableInput={false}
-    itemsPerPage={10}
-    onChange={[Function]}
-    totalIncidentsLength={0}
-    value=""
-  />
-  <Text
-    bold={false}
-    size="normal"
-    uppercase={false}
-  >
-    No results
-  </Text>
-</styled.div>
+<ErrorBoundary>
+  <styled.div>
+    <Filter
+      changeShowItemsPerPage={[Function]}
+      disableInput={false}
+      itemsPerPage={10}
+      onChange={[Function]}
+      totalIncidentsLength={0}
+      value=""
+    />
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      No results
+    </Text>
+  </styled.div>
+</ErrorBoundary>
 `;
 
 exports[`HomePage component test should match snapshot for loading state 1`] = `
-<styled.div>
-  <Filter
-    changeShowItemsPerPage={[Function]}
-    disableInput={true}
-    itemsPerPage={10}
-    onChange={[Function]}
-    totalIncidentsLength={22}
-    value=""
-  />
-  <Text
-    bold={false}
-    size="normal"
-    uppercase={false}
-  >
-    Loading ...
-  </Text>
-</styled.div>
+<ErrorBoundary>
+  <styled.div>
+    <Filter
+      changeShowItemsPerPage={[Function]}
+      disableInput={true}
+      itemsPerPage={10}
+      onChange={[Function]}
+      totalIncidentsLength={22}
+      value=""
+    />
+    <Text
+      bold={false}
+      size="normal"
+      uppercase={false}
+    >
+      Loading ...
+    </Text>
+  </styled.div>
+</ErrorBoundary>
 `;
 
 exports[`HomePage component test should match snapshot with error 1`] = `
-<styled.div>
-  <Filter
-    changeShowItemsPerPage={[Function]}
-    disableInput={false}
-    itemsPerPage={10}
-    onChange={[Function]}
-    totalIncidentsLength={22}
-    value=""
-  />
-  <ErrorMessage
-    message="error message"
-  />
-</styled.div>
+<ErrorBoundary>
+  <styled.div>
+    <Filter
+      changeShowItemsPerPage={[Function]}
+      disableInput={false}
+      itemsPerPage={10}
+      onChange={[Function]}
+      totalIncidentsLength={22}
+      value=""
+    />
+    <ErrorMessage
+      message="error message"
+    />
+  </styled.div>
+</ErrorBoundary>
 `;

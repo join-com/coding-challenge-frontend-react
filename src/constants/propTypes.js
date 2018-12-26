@@ -11,3 +11,9 @@ export const incidentPropTypes = PropTypes.shape({
     image_url_thumb: PropTypes.string
   })
 });
+
+export const childrenPropTypes = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.arrayOf(PropTypes.node),
+  PropTypes.node
+]).isRequired;
