@@ -1,5 +1,26 @@
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 
+##Demo 
+
+https://react-bike-test.herokuapp.com/
+
+## Run project locally 
+
+create .env.local file with content
+
+`REACT_APP_GOOGLE_MAPS_KEY=your_google_map_api_key`
+
+run commands
+
+`yarn install`
+
+`yarn start`
+
+for run tests 
+
+`yarn test`
+
+
 ## The context
 
 Stolen bikes are a typical problem in Berlin. The Police want to be more efficient in resolving stolen bike cases. They decided to build a software that can automate their processes — the software that you're going to develop.
@@ -10,20 +31,20 @@ This app needs to display the list of reported bike thefts based on the Bikewise
 
 As a police officer:
 
-- [ ] I want to see a list of reported bike thefts for the Berlin area.
-- [ ] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
-- [ ] I want to see a total number of bike theft cases.
-- [ ] For each reported bike theft I want to see:
-  - [ ] Case title
-  - [ ] Case description
-  - [ ] Date of the theft
-  - [ ] Date of when the case was reported
-  - [ ] Location of the theft
-  - [ ] Picture of the bike, if available
-- [ ] I want to filter reported bike thefts by partial case title.
-- [ ] I want to see a loading state until the list is available.
-- [ ] I want to see an error state if the list is unavailable.
-- [ ] I want to see an empty state if there are no results.
+- [x] I want to see a list of reported bike thefts for the Berlin area.
+- [x] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
+- [x] I want to see a total number of bike theft cases.
+- [x] For each reported bike theft I want to see:
+  - [x] Case title
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Picture of the bike, if available
+- [x] I want to filter reported bike thefts by partial case title.
+- [x] I want to see a loading state until the list is available.
+- [x] I want to see an error state if the list is unavailable.
+- [x] I want to see an empty state if there are no results.
 
 ## Nice-to-Have Requirements
 
@@ -32,12 +53,12 @@ After all must-have requirements have been met, some of the following nice-to-ha
 As a police officer:
 
 - [ ] I want to filter reported bike thefts by date range.
-- [ ] I want to see a case detail page that shows:
-  - [ ] Case description
-  - [ ] Date of the theft
-  - [ ] Date of when the case was reported
-  - [ ] Location of the theft
-  - [ ] Map of the location
+- [x] I want to see a case detail page that shows:
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Map of the location
 
 ## Task
 
