@@ -22,7 +22,7 @@ class HomePage extends Component {
 
   changeShowItemsPerPage = ({ target: { value } }) => {
     const { changeUi } = this.props;
-    changeUi({ name: "itemsPerPage", value });
+    changeUi({ name: "itemsPerPage", value: Number(value) });
     changeUi({ name: "currentPage", value: 0 });
   };
 
