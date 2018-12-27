@@ -1,6 +1,6 @@
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 
-##Demo 
+## Demo 
 
 https://react-bike-test.herokuapp.com/
 
