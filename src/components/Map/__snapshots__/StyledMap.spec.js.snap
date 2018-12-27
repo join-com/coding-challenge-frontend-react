@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapContainerElement component should match snapshot 1`] = `
+.c0 {
+  height: 300px;
+  margin: 0.5rem 0;
+}
+
+@media (min-width:640px) {
+  .c0 {
+    height: 400px;
+    margin: 1rem 0;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    height: 500px;
+    margin: 1.5rem 0;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`MapElement component should match snapshot 1`] = `
+.c0 {
+  height: 100%;
+}
+
+<div
+  className="c0"
+/>
+`;
