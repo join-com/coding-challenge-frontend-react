@@ -18,6 +18,7 @@ function Filter({ onChange, value, disableInput, itemsPerPage, changeShowItemsPe
           uppercase
           onChange={onChange}
           value={value}
+          placeholder="Search"
         />
       </Row>
       <Row>
