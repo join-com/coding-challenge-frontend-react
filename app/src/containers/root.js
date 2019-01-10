@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Listing from '../components/listing/index.jsx'
 import Filter from './filter'
+import Counter from '../components/counter'
 
 const mapStateToProps = state => {
   return { banner: state.root.banner }
@@ -20,6 +21,9 @@ class Root extends Component {
         <Listing banner={banner} />
         <hr />
         <Filter />
+        <hr />
+        <Counter total={821} />
+        <hr />
       </React.Fragment>
     )
   }
