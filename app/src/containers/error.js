@@ -4,7 +4,7 @@ import Error from '../components/error'
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
-    this.state = { hasError: false }
+    this.state = { ...props }
   }
 
   static getDerivedStateFromError(error) {

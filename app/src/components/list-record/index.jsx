@@ -9,7 +9,7 @@ const ListRecord = props => {
         <img src={'https://images-eu.ssl-images-amazon.com/images/I/51VTh1X6vcL._SY300_QL70_.jpg'} alt="Logo here" width="150px" />
       </div>
       <div className="col">
-        <a href="#">
+        <a href="/">
         <h4 className="row">{item.title}</h4>
         </a>
         <div className="row">{item.description}</div>

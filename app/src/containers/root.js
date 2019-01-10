@@ -10,7 +10,11 @@ import Listing from '../components/listing'
 import Counter from '../components/counter'
 
 const mapStateToProps = state => {
-  return { banner: state.root.banner }
+  return {
+    banner: state.root.banner,
+    isLoading: state.root.isLoading,
+    hasError: state.root.hasError
+  }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -19,7 +23,8 @@ const mapDispatchToProps = dispatch => {
 
 class Root extends Component {
   render() {
-    const { banner } = this.props
+    console.log(this.props)
+    const { banner, isLoading, hasError } = this.props
     return (
       <React.Fragment>
         <Listing banner={banner} />
@@ -28,8 +33,8 @@ class Root extends Component {
         <hr />
         <Counter total={821} />
         <hr />
-        <ErrorBoundary>
-          <List loading={true} />
+        <ErrorBoundary hasError={hasError}>
+          <List isLoading={isLoading} />
         </ErrorBoundary>
         <hr />
         <Pagination />

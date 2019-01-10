@@ -28,7 +28,7 @@ const NoResult = props => {
 }
 class List extends Component {
   render() {
-    if (true) {
+    if (false) {
       return <NoResult />
     }
     return (
@@ -56,17 +56,17 @@ class ListLoader extends Component {
   // TODO: refactor temp loading component
   constructor(props) {
     super(props)
-    this.state = this.props
+    this.state = {...this.props}
   }
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ loading: false })
+      this.setState({ isLoading: false })
     }, 1000)
   }
 
   render() {
-    return <ListWithLoading isLoading={this.state.loading} />
+    return <ListWithLoading isLoading={this.state.isLoading} />
   }
 }
 
