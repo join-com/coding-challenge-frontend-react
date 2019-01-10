@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Counter = props => {
-  const total = props.total
+  const totalRecords = props.totalRecords
   return (
     <div className="container">
-      <button type="button" className="btn btn-primary">
-        total <span className="badge badge-light">{total}</span>
+      <button type="button" disabled className="btn btn-primary">
+        Total <span className="badge badge-light">{totalRecords}</span>
       </button>
     </div>
   )

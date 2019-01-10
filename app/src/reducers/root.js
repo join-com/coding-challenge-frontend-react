@@ -3,7 +3,8 @@ import { REQUEST, FAILURE, SUCCESS } from '../constants'
 const initState = {
   banner: 'Police department of Berlin',
   isLoading: true,
-  hasError: false
+  hasError: false,
+  totalRecords: 1024
 }
 
 export default function root(state = initState, action) {

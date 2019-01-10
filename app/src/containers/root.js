@@ -13,7 +13,8 @@ const mapStateToProps = state => {
   return {
     banner: state.root.banner,
     isLoading: state.root.isLoading,
-    hasError: state.root.hasError
+    hasError: state.root.hasError,
+    totalRecords: state.root.totalRecords
   }
 }
 
@@ -23,15 +24,14 @@ const mapDispatchToProps = dispatch => {
 
 class Root extends Component {
   render() {
-    console.log(this.props)
-    const { banner, isLoading, hasError } = this.props
+    const { banner, isLoading, hasError, totalRecords } = this.props
     return (
       <React.Fragment>
         <Listing banner={banner} />
         <hr />
         <Filter />
         <hr />
-        <Counter total={821} />
+        <Counter totalRecords={totalRecords} />
         <hr />
         <ErrorBoundary hasError={hasError}>
           <List isLoading={isLoading} />
