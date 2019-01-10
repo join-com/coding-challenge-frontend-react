@@ -23,8 +23,14 @@ const item = {
   country: 'DE'
 }
 
+const NoResult = props => {
+  return <div className="container">No results</div>
+}
 class List extends Component {
   render() {
+    if (true) {
+      return <NoResult />
+    }
     return (
       <div className="container">
         <div className="list-group">
@@ -46,24 +52,21 @@ connect(
 
 const ListWithLoading = Loading(List)
 
-class ListLoader extends Component { // TODO: refactor temp loading component
+class ListLoader extends Component {
+  // TODO: refactor temp loading component
   constructor(props) {
     super(props)
     this.state = this.props
   }
 
-  componentDidMount () {
+  componentDidMount() {
     setTimeout(() => {
-      this.setState({loading: false})
+      this.setState({ loading: false })
     }, 1000)
   }
 
   render() {
-    return (
-      <ListWithLoading
-        isLoading={this.state.loading}
-      />
-    )
+    return <ListWithLoading isLoading={this.state.loading} />
   }
 }
 
