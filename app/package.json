@@ -1,0 +1,40 @@
+{
+  "name": "coding-challenge-frontend-react",
+  "version": "0.0.1",
+  "description": "shahzaibalikhan coding challenge for join",
+  "private": true,
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahzaibalikhan/coding-challenge-frontend-react.git"
+  },
+  "keywords": [
+    "coding-challenge",
+    "react"
+  ],
+  "author": "shahzaibalikhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahzaibalikhan/coding-challenge-frontend-react/issues"
+  },
+  "homepage": "https://github.com/shahzaibalikhan/coding-challenge-frontend-react#readme"
+}
