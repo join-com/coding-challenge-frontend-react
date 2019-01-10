@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Listing from '../components/listing/index.jsx'
-import Filter from './filter'
+import FilterComponent from '../components/filter/index'
 
 const mapStateToProps = state => {
-  return { banner: state.root.banner }
+  return {}
 }
 
 const mapDispatchToProps = dispatch => {
@@ -14,13 +13,10 @@ const mapDispatchToProps = dispatch => {
 
 class Root extends Component {
   render() {
-    const { banner } = this.props
     return (
-      <React.Fragment>
-        <Listing banner={banner} />
-        <hr />
-        <Filter />
-      </React.Fragment>
+      <div className="container">
+        <FilterComponent />
+      </div>
     )
   }
 }
