@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Listing from '../components/listing/index.jsx'
 import Filter from './filter'
+import List from './list'
+import Pagination from './pagination';
+
+
+import Listing from '../components/listing'
 import Counter from '../components/counter'
 
 const mapStateToProps = state => {
@@ -24,6 +28,9 @@ class Root extends Component {
         <hr />
         <Counter total={821} />
         <hr />
+        <List />
+        <hr />
+        <Pagination />
       </React.Fragment>
     )
   }
