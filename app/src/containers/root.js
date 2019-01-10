@@ -28,7 +28,7 @@ class Root extends Component {
         <hr />
         <Counter total={821} />
         <hr />
-        <List />
+        <List loading={true} />
         <hr />
         <Pagination />
       </React.Fragment>
