@@ -9,7 +9,9 @@ import ErrorBoundary from './error'
 import Listing from '../components/listing'
 import Counter from '../components/counter'
 
-import { REQUEST, FAILURE, SUCCESS } from '../constants'
+import { REQUEST } from '../constants'
+
+import { fetchIncidents } from '../actions/root'
 
 const mapStateToProps = state => {
   return {
@@ -24,8 +26,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchIncidents: () => {
       dispatch({ type: REQUEST })
-      dispatch({ type: 'fetchIncidents' })
-      setTimeout(() => dispatch({ type: SUCCESS }), 5000)
+      dispatch(fetchIncidents())
     }
   }
 }
@@ -35,7 +36,6 @@ class Root extends Component {
     this.props.fetchIncidents()
   }
   render() {
-    console.log(this.props)
     const { banner, isLoading, hasError, totalRecords } = this.props
     return (
       <React.Fragment>
