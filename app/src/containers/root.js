@@ -9,6 +9,8 @@ import ErrorBoundary from './error'
 import Listing from '../components/listing'
 import Counter from '../components/counter'
 
+import { REQUEST, FAILURE, SUCCESS } from '../constants'
+
 const mapStateToProps = state => {
   return {
     banner: state.root.banner,
@@ -19,11 +21,21 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {}
+  return {
+    fetchIncidents: () => {
+      dispatch({ type: REQUEST })
+      dispatch({ type: 'fetchIncidents' })
+      setTimeout(() => dispatch({ type: SUCCESS }), 5000)
+    }
+  }
 }
 
 class Root extends Component {
+  componentDidMount() {
+    this.props.fetchIncidents()
+  }
   render() {
+    console.log(this.props)
     const { banner, isLoading, hasError, totalRecords } = this.props
     return (
       <React.Fragment>

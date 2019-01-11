@@ -52,22 +52,8 @@ connect(
 
 const ListWithLoading = Loading(List)
 
-class ListLoader extends Component {
-  // TODO: refactor temp loading component
-  constructor(props) {
-    super(props)
-    this.state = {...this.props}
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false })
-    }, 1000)
-  }
-
-  render() {
-    return <ListWithLoading isLoading={this.state.isLoading} />
-  }
+const ListLoader = ({ isLoading }) => {
+  return <ListWithLoading isLoading={isLoading} />
 }
 
 export default ListLoader

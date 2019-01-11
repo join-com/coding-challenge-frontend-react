@@ -2,21 +2,20 @@ import { REQUEST, FAILURE, SUCCESS } from '../constants'
 
 const initState = {
   banner: 'Police department of Berlin',
-  isLoading: true,
+  isLoading: false,
   hasError: false,
   totalRecords: 1024
 }
 
 export default function root(state = initState, action) {
-  console.log(state)
   const nextState = Object.assign({}, state)
   switch (action.type) {
     case REQUEST:
-      return { isLoading: true, ...nextState }
+      return { ...nextState, isLoading: true }
     case FAILURE:
-      return { hasError: true, ...nextState }
+      return { ...nextState, hasError: true }
     case SUCCESS:
-      return nextState
+      return { ...nextState, isLoading: false }
     default:
       return state
   }
