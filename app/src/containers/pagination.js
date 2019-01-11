@@ -3,19 +3,37 @@ import { connect } from 'react-redux'
 
 import PaginationComponent from '../components/pagination'
 
+import { CHANGE_PAGE_NUMBER } from '../constants'
+
 const mapStateToProps = state => {
-  return {}
+  return {
+    totalRecords: state.root.totalRecords,
+    currentPage: state.root.currentPage
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-  return {}
+  return {
+    changeCurrentPage: pageNo => {
+      dispatch({ type: CHANGE_PAGE_NUMBER, payload: pageNo })
+    }
+  }
 }
 
-class Root extends Component {
+class Pagination extends Component {
+  changeCurrentPage = pageNo => {
+    this.props.changeCurrentPage(pageNo)
+  }
+
   render() {
+    const { totalRecords, currentPage } = this.props
     return (
       <div className="container">
-        <PaginationComponent />
+        <PaginationComponent
+          currentPage={currentPage}
+          totalRecords={totalRecords}
+          changeCurrentPage={this.changeCurrentPage}
+        />
       </div>
     )
   }
@@ -24,4 +42,4 @@ class Root extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Root)
+)(Pagination)

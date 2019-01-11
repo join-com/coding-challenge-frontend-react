@@ -2,7 +2,8 @@ import {
   REQUEST,
   FAILURE,
   SUCCESS,
-  REQUEST_INCIDENTS_FULFILLED
+  REQUEST_INCIDENTS_FULFILLED,
+  CHANGE_PAGE_NUMBER
 } from '../constants'
 
 const initState = {
@@ -10,7 +11,8 @@ const initState = {
   isLoading: false,
   hasError: false,
   totalRecords: 0,
-  incidents: []
+  incidents: [],
+  currentPage: 1
 }
 
 export default function root(state = initState, action) {
@@ -29,6 +31,8 @@ export default function root(state = initState, action) {
       return { ...nextState, hasError: true }
     case SUCCESS:
       return { ...nextState, isLoading: false }
+    case CHANGE_PAGE_NUMBER:
+      return { ...nextState, currentPage: action.payload }
     default:
       return state
   }
