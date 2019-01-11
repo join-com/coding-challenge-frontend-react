@@ -9,7 +9,8 @@ const initState = {
   banner: 'Police department of Berlin',
   isLoading: false,
   hasError: false,
-  totalRecords: 1024
+  totalRecords: 0,
+  incidents: []
 }
 
 export default function root(state = initState, action) {

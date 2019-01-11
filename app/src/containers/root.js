@@ -46,7 +46,7 @@ class Root extends Component {
         <Counter totalRecords={totalRecords} />
         <hr />
         <ErrorBoundary hasError={hasError}>
-          <List isLoading={isLoading} />
+          <List isLoading={isLoading} key={totalRecords}/>
         </ErrorBoundary>
         <hr />
         <Pagination />

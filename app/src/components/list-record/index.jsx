@@ -1,28 +1,30 @@
 import React from 'react'
 import dayjs from 'dayjs'
 
+import defaultImage from './not_available.jpg'
+import './style.css'
+
 const ListRecord = props => {
-  const item = props.item
+  const { title, address, description, media, occurred_at } = props.incident
 
   return (
     <div className="row list-group-item">
-      <div className="col-3">
+      <div className="col-sm-2 float-left">
         <img
-          src={
-            'https://images-eu.ssl-images-amazon.com/images/I/51VTh1X6vcL._SY300_QL70_.jpg'
-          }
-          alt="Logo here"
-          width="150px"
+          src={media.image_url_thumb || defaultImage}
+          alt="not available"
+          className="img-thumbnail"
         />
       </div>
-      <div className="col">
-        <a href="/">
-          <h4 className="row">{item.title}</h4>
-        </a>
-        <div className="row">{item.description}</div>
-        <div className="row">
-          {dayjs(item.date * 1000).format('dd MM DD YYYY')} - {item.city},
-          {item.postalCode}, {item.country}
+      <div className="col-sm">
+        <div className="row align-items-end">
+          <div className="col-9">
+            <a href="/">{title}</a>
+          </div>
+          <div className="col-12">{description}</div>
+          <div className="col-9">
+            {dayjs(occurred_at * 1000).format('ddd MMM DD YYYY')} - {address}
+          </div>
         </div>
       </div>
     </div>

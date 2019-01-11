@@ -7,7 +7,7 @@ const Header = props => {
   return (
     <div className="row">
       <div className="col-3">
-        <img src={logo} alt="Logo here" width="150px" />
+        <img src={logo} alt="Logo here" className="img-thumbnail" />
       </div>
       <div className="col">
         <h2 className="row">{props.banner}</h2>
