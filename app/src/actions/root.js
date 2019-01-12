@@ -24,7 +24,7 @@ export const fetchIncidents = () => {
   }
 }
 
-export const fetchIncidentsByID = (id) => {
+export const fetchIncidentByID = (id) => {
   return {
     type: REQUEST_INCIDENTS_BY_ID,
     payload: fetch(`${config.endpoint}incidents/${id}`)

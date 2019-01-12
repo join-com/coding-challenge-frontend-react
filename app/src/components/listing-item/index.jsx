@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 
 import Image from '../image'
@@ -23,6 +24,7 @@ const Description = ({ description }) => {
 
 const Incident = props => {
   const {
+    id,
     title,
     address,
     description,
@@ -39,9 +41,9 @@ const Incident = props => {
       <div className="col-sm">
         <div className="row align-items-end">
           <h6 className="col-9">
-            <a href="/">{title}</a>
+            <Link to={`/case/${id}`} onClick={props.pageChange}> {title}</Link>
           </h6>
-          {description ? <Description description={description} /> : (null)}
+          {description ? <Description description={description} /> : null}
           <InfoWithDate
             text={'occurred on: '}
             date={occurred_at}

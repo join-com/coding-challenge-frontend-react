@@ -1,14 +1,17 @@
 import {
-  REQUEST,
+  REQUEST_INCIDENTS,
+  REQUEST_INCIDENTS_BY_ID_FULFILLED,
+  REQUEST_INCIDENTS_BY_ID,
   FAILURE,
   SUCCESS,
   REQUEST_INCIDENTS_FULFILLED,
+  CHANGE_PAGE,
   CHANGE_PAGE_NUMBER
 } from '../constants'
 
 const initState = {
   banner: 'Police department of Berlin',
-  isLoading: false,
+  isLoading: true,
   hasError: false,
   totalRecords: 0,
   incidents: [],
@@ -25,7 +28,15 @@ export default function root(state = initState, action) {
         isLoading: false,
         totalRecords: action.payload.incidents.length
       }
-    case REQUEST:
+    case REQUEST_INCIDENTS_BY_ID_FULFILLED:
+      return {
+        ...nextState,
+        incident: action.payload.incident,
+        isLoading: false
+      }
+    case CHANGE_PAGE:
+    case REQUEST_INCIDENTS_BY_ID:
+    case REQUEST_INCIDENTS:
       return { ...nextState, isLoading: true }
     case FAILURE:
       return { ...nextState, hasError: true }

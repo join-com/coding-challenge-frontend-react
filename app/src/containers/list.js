@@ -3,31 +3,36 @@ import { connect } from 'react-redux'
 
 import ListingItem from '../components/listing-item'
 import HCILoader from '../components/loading'
+import { CHANGE_PAGE } from '../constants'
 
 const NoResult = props => {
   return <div className="container">No results</div>
 }
 
-const ShowList = ({ incidents }) => {
+const ShowList = ({ incidents, pageChange }) => {
   return (
     <div className="container">
       <div className="list-group">
         {incidents.map(incident => (
-          <ListingItem incident={incident} key={incident.id} />
+          <ListingItem
+            incident={incident}
+            key={incident.id}
+            pageChange={pageChange}
+          />
         ))}
       </div>
     </div>
   )
 }
 
-const List = ({ currentPage, totalRecords, incidents }) => {
+const List = ({ currentPage, totalRecords, incidents, pageChange }) => {
   const perPageItems = 10
   const from = (currentPage - 1) * perPageItems
   const pageRecords = incidents.slice(from, from + perPageItems)
   if (!totalRecords || totalRecords === 0) {
     return <NoResult />
   }
-  return <ShowList incidents={pageRecords} />
+  return <ShowList incidents={pageRecords} pageChange={pageChange} />
 }
 
 const mapStateToProps = state => {
@@ -39,7 +44,11 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {}
+  return {
+    pageChange: () => {
+      dispatch({ type: CHANGE_PAGE })
+    }
+  }
 }
 
 const ListWithLoading = HCILoader(List)

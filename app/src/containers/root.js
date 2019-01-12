@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 import Filter from './filter'
 import List from './list'
@@ -8,8 +9,6 @@ import ErrorBoundary from './error'
 
 import HeaderComponent from '../components/header'
 import CounterComponent from '../components/counter'
-
-import { REQUEST } from '../constants'
 
 import { fetchIncidents } from '../actions/root'
 import Footer from '../components/footer'
@@ -26,7 +25,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchIncidents: () => {
-      dispatch({ type: REQUEST })
       dispatch(fetchIncidents())
     }
   }
@@ -57,7 +55,9 @@ class Root extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Root)
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Root)
+)
