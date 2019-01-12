@@ -1,13 +1,20 @@
 import React from 'react'
 
-const Counter = props => {
-  const totalRecords = props.totalRecords
+const Counter = ({ totalRecords, isLoading }) => {
+  if (isLoading) {
+    return null
+  }
   return (
-    <div className="container">
-      <button type="button" disabled className="btn btn-primary">
-        Total <span className="badge badge-light">{totalRecords}</span>
-      </button>
-    </div>
+    <React.Fragment>
+      <hr />
+      <div className="container text-right">
+        <h5>
+          Total reported incidents
+          <span class="badge badge-primary mx-2">{totalRecords}</span>
+        </h5>
+      </div>
+      <hr />
+    </React.Fragment>
   )
 }
 

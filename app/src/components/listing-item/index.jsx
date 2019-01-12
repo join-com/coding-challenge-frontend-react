@@ -34,7 +34,7 @@ const Incident = props => {
   } = props.incident
 
   return (
-    <div className="row list-group-item">
+    <div className="row list-group-item my-1">
       <div className="col-sm-2 float-left">
         <Image src={media.image_url_thumb} />
       </div>

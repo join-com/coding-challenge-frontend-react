@@ -41,9 +41,7 @@ class Root extends Component {
         <HeaderComponent banner={banner} />
         <hr />
         <Filter />
-        <hr />
-        <CounterComponent totalRecords={totalRecords} />
-        <hr />
+        <CounterComponent totalRecords={totalRecords} isLoading={isLoading} />
         <ErrorBoundary hasError={hasError}>
           <List isLoading={isLoading} key={totalRecords} />
         </ErrorBoundary>
