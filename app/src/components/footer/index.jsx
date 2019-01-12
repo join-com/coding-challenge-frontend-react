@@ -9,7 +9,11 @@ const Footer = props => {
             <ul className="list-unstyled list-inline social text-center">
               <li className="list-item">
                 <p className="h6">
-                  <a href="https://github.com/shahzaibalikhan/coding-challenge-frontend-react" target="_blank">
+                  <a
+                    href="https://github.com/shahzaibalikhan/coding-challenge-frontend-react"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Github
                   </a>
                 </p>
@@ -20,7 +24,12 @@ const Footer = props => {
 
               <li className="list-item">
                 <p className="h6">
-                  <a className="text-green ml-2" href="https://github.com/shahzaibalikhan" target="_blank">
+                  <a
+                    className="text-green ml-2"
+                    href="https://github.com/shahzaibalikhan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Shahzaib Ali Khan
                   </a>
                 </p>

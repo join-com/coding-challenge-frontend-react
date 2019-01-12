@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import Error from '../components/error'
 
+/**
+ * Taken direcly from react documentation
+ * https://reactjs.org/docs/error-boundaries.html
+ */
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props)

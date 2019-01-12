@@ -6,8 +6,8 @@ import List from './list'
 import Pagination from './pagination'
 import ErrorBoundary from './error'
 
-import Listing from '../components/listing'
-import Counter from '../components/counter'
+import HeaderComponent from '../components/header'
+import CounterComponent from '../components/counter'
 
 import { REQUEST } from '../constants'
 
@@ -40,11 +40,11 @@ class Root extends Component {
     const { banner, isLoading, hasError, totalRecords } = this.props
     return (
       <React.Fragment>
-        <Listing banner={banner} />
+        <HeaderComponent banner={banner} />
         <hr />
         <Filter />
         <hr />
-        <Counter totalRecords={totalRecords} />
+        <CounterComponent totalRecords={totalRecords} />
         <hr />
         <ErrorBoundary hasError={hasError}>
           <List isLoading={isLoading} key={totalRecords} />

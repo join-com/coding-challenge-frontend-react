@@ -9,9 +9,9 @@ const Element = ({ text, disable, changeTo, changeCurrentPage }) => {
   }
   return (
     <li className="page-item" onClick={ () => changeCurrentPage(changeTo)}>
-      <a className="page-link" aria-disabled={disable + ''}>
+      <button className="page-link" aria-disabled={disable + ''}>
         {text}
-      </a>
+      </button>
     </li>
   )
 }

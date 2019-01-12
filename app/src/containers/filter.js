@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => {
   return {}
 }
 
-class Root extends Component {
+class Filter extends Component {
   render() {
     return (
       <div className="container">
@@ -24,4 +24,4 @@ class Root extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Root)
+)(Filter)
