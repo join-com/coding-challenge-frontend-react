@@ -1,8 +1,34 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import ListRecord from '../components/list-record'
-import Loading from '../components/loading'
+import ListingItem from '../components/listing-item'
+import HCILoader from '../components/loading'
+
+const NoResult = props => {
+  return <div className="container">No results</div>
+}
+
+const ShowList = ({ incidents }) => {
+  return (
+    <div className="container">
+      <div className="list-group">
+        {incidents.map(incident => (
+          <ListingItem incident={incident} key={incident.id} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const List = ({ currentPage, totalRecords, incidents }) => {
+  const perPageItems = 10
+  const from = (currentPage - 1) * perPageItems
+  const pageRecords = incidents.slice(from, from + perPageItems)
+  if (!totalRecords || totalRecords === 0) {
+    return <NoResult />
+  }
+  return <ShowList incidents={pageRecords} />
+}
 
 const mapStateToProps = state => {
   return {
@@ -16,35 +42,11 @@ const mapDispatchToProps = dispatch => {
   return {}
 }
 
-const NoResult = props => {
-  return <div className="container">No results</div>
-}
-class List extends Component {
-  render() {
-    const { currentPage, totalRecords, incidents} = this.props
-    const from = (currentPage - 1) * 10
-    const page = incidents.slice(from, from + 10)
-    if (!totalRecords || totalRecords === 0) {
-      return <NoResult />
-    } else {
-      return (
-        <div className="container">
-          <div className="list-group">
-            { page.map((incident) => <ListRecord incident={incident} key={incident.id} />)}
-          </div>
-        </div>
-      )
-    }
-  }
-}
+const ListWithLoading = HCILoader(List)
 
-
-const ListWithLoading = Loading(List)
-
-const ListLoader = (props) => {
+const ListLoader = props => {
   return <ListWithLoading {...props} />
 }
-
 
 export default connect(
   mapStateToProps,
