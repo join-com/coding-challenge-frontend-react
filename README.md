@@ -37,12 +37,12 @@ After all must-have requirements have been met, some of the following nice-to-ha
 As a police officer:
 
 - [ ] I want to filter reported bike thefts by date range.
-- [ ] I want to see a case detail page that shows:
-  - [ ] Case description
-  - [ ] Date of the theft
-  - [ ] Date of when the case was reported
-  - [ ] Location of the theft
-  - [ ] Map of the location
+- [x] I want to see a case detail page that shows:
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Map of the location
 
 ## Your Mission
 
