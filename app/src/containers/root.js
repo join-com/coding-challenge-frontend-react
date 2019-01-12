@@ -12,6 +12,7 @@ import Counter from '../components/counter'
 import { REQUEST } from '../constants'
 
 import { fetchIncidents } from '../actions/root'
+import Footer from '../components/footer'
 
 const mapStateToProps = state => {
   return {
@@ -46,10 +47,11 @@ class Root extends Component {
         <Counter totalRecords={totalRecords} />
         <hr />
         <ErrorBoundary hasError={hasError}>
-          <List isLoading={isLoading} key={totalRecords}/>
+          <List isLoading={isLoading} key={totalRecords} />
         </ErrorBoundary>
         <hr />
         <Pagination />
+        <Footer />
       </React.Fragment>
     )
   }
