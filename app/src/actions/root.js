@@ -15,23 +15,13 @@ const isSuccess = response => {
 export const fetchIncidents = () => {
   return {
     type: REQUEST_INCIDENTS,
-    payload: fetch(`${config.endpoint}incidents?proximity=berlin`)
-      .then(isSuccess)
-      .then(response => {
-        console.log(response)
-        return response
-      })
+    payload: fetch(`${config.endpoint}incidents?proximity=berlin`).then(isSuccess)
   }
 }
 
-export const fetchIncidentByID = (id) => {
+export const fetchIncidentByID = id => {
   return {
     type: REQUEST_INCIDENTS_BY_ID,
-    payload: fetch(`${config.endpoint}incidents/${id}`)
-      .then(isSuccess)
-      .then(response => {
-        console.log(response)
-        return response
-      })
+    payload: fetch(`${config.endpoint}incidents/${id}`).then(isSuccess)
   }
 }

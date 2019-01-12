@@ -7,10 +7,9 @@ import Footer from '../components/footer'
 
 import { fetchIncidentByID } from '../actions/root'
 
-import Incident from '../components/listing-item'
-
 import HCILoader from '../components/loading'
 import { CHANGE_PAGE } from '../constants'
+import IncidentDetailsComponent from '../components/incident-details'
 
 const mapStateToProps = state => {
   return {
@@ -33,7 +32,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const ShowLoader = HCILoader(Incident)
+const ShowLoader = HCILoader(IncidentDetailsComponent)
 
 class IncidentDetails extends Component {
   componentDidMount() {
@@ -50,7 +49,9 @@ class IncidentDetails extends Component {
         <Header banner={banner} />
         <div className="container">
           <Link to={'/'} onClick={this.props.pageChange}>
-            <button type="button" className="btn my-3 btn-primary btn-sm">Back to records</button>
+            <button type="button" className="btn my-3 btn-primary btn-sm">
+              Back to records
+            </button>
           </Link>
           <ShowLoader
             incident={incident}
