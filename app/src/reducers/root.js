@@ -5,6 +5,7 @@ import {
   FAILURE,
   SUCCESS,
   REQUEST_INCIDENTS_FULFILLED,
+  CHANGE_PAGE,
   CHANGE_PAGE_NUMBER,
   SET_TOTAL_RECORDS
 } from '../constants'
@@ -35,6 +36,7 @@ export default (state = initState, action) => {
         incident: action.payload.incident,
         isLoading: false
       }
+    case CHANGE_PAGE:
     case REQUEST_INCIDENTS_BY_ID:
     case REQUEST_INCIDENTS:
       return { ...nextState, isLoading: true }
