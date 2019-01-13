@@ -5,8 +5,8 @@ import {
   FAILURE,
   SUCCESS,
   REQUEST_INCIDENTS_FULFILLED,
-  CHANGE_PAGE,
-  CHANGE_PAGE_NUMBER
+  CHANGE_PAGE_NUMBER,
+  SET_TOTAL_RECORDS
 } from '../constants'
 
 const initState = {
@@ -18,7 +18,7 @@ const initState = {
   currentPage: 1
 }
 
-export default function root(state = initState, action) {
+export default (state = initState, action) => {
   const nextState = Object.assign({}, state)
   switch (action.type) {
     case REQUEST_INCIDENTS_FULFILLED:
@@ -26,7 +26,8 @@ export default function root(state = initState, action) {
         ...nextState,
         incidents: action.payload.incidents,
         isLoading: false,
-        totalRecords: action.payload.incidents.length
+        totalRecords: action.payload.incidents.length,
+        currentPage: 1
       }
     case REQUEST_INCIDENTS_BY_ID_FULFILLED:
       return {
@@ -34,7 +35,6 @@ export default function root(state = initState, action) {
         incident: action.payload.incident,
         isLoading: false
       }
-    case CHANGE_PAGE:
     case REQUEST_INCIDENTS_BY_ID:
     case REQUEST_INCIDENTS:
       return { ...nextState, isLoading: true }
@@ -44,6 +44,8 @@ export default function root(state = initState, action) {
       return { ...nextState, isLoading: false }
     case CHANGE_PAGE_NUMBER:
       return { ...nextState, currentPage: action.payload }
+    case SET_TOTAL_RECORDS:
+      return { ...nextState, currentPage: 1, totalRecords: action.payload }
     default:
       return state
   }

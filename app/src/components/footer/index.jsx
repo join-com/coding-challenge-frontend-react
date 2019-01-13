@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = props => {
   return (
     <footer>
-      <div className="container-fluid bg-white">
+      <div className="container-fluid bg-dark text-white my-2">
         <div className="row">
           <div className="col">
             <ul className="list-unstyled list-inline social text-center">

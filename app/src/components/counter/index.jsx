@@ -10,7 +10,7 @@ const Counter = ({ totalRecords, isLoading }) => {
       <div className="container text-right">
         <h5>
           Total reported incidents
-          <span class="badge badge-primary mx-2">{totalRecords}</span>
+          <span className="badge badge-primary mx-2">{totalRecords}</span>
         </h5>
       </div>
       <hr />

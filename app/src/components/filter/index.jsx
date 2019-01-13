@@ -2,12 +2,13 @@ import React from 'react'
 
 const Filter = props => {
   return (
-    <form className="form-inline">
+    <div className="form-inline">
       <div className="form-group">
         <input
           type="text"
           className="form-control mb-2 mr-sm-2"
-          placeholder="Search case descriptions"
+          placeholder="search case"
+          onChange={props.textChange}
         />
       </div>
       <div className="form-group">
@@ -15,6 +16,7 @@ const Filter = props => {
           type="text"
           className="form-control mb-2 mr-sm-2"
           placeholder="from"
+          onChange={props.dateChangeFrom}
         />
       </div>
 
@@ -23,13 +25,10 @@ const Filter = props => {
           type="text"
           className="form-control mb-2 mr-sm-2"
           placeholder="to"
+          onChange={props.dateChangeTo}
         />
       </div>
-
-      <button type="submit" className="btn btn-primary mb-2 mr-sm-2">
-        Find Cases
-      </button>
-    </form>
+    </div>
   )
 }
 

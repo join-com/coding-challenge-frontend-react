@@ -25,7 +25,10 @@ const ShowList = ({ incidents, pageChange }) => {
   )
 }
 
-const List = ({ currentPage, totalRecords, incidents, pageChange }) => {
+const List = ({ currentPage, totalRecords, incidents, pageChange, filterApplied, filteredIncidents }) => {
+  if(filterApplied) {
+    incidents = filteredIncidents
+  }
   const perPageItems = 10
   const from = (currentPage - 1) * perPageItems
   const pageRecords = incidents.slice(from, from + perPageItems)
@@ -39,7 +42,9 @@ const mapStateToProps = state => {
   return {
     incidents: state.root.incidents,
     totalRecords: state.root.totalRecords,
-    currentPage: state.root.currentPage
+    currentPage: state.root.currentPage,
+    filterApplied: state.filter.filterApplied,
+    filteredIncidents: state.filter.filteredIncidents
   }
 }
 
