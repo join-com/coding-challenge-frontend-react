@@ -11,7 +11,7 @@ const Header = props => {
   const { banner } = props
   return (
     <Container splitLines={false}>
-      <Row style={{ backgroundColor: 'white' }}>
+      <Row style={{ backgroundColor: 'white', margin: '1px'}}>
         <Column style={{ maxWidth: '20%' }}>
           <Image src={logo} />
         </Column>
