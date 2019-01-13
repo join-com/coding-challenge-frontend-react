@@ -25,7 +25,7 @@ As a police officer:
   - [x] Date of when the case was reported
   - [x] Location of the theft
   - [x] Picture of the bike, if available
-- [ ] I want to filter reported bike thefts by partial case title.
+- [x] I want to filter reported bike thefts by partial case title.
 - [x] I want to see a loading state until the list is available.
 - [x] I want to see an error state if the list is unavailable.
 - [x] I want to see an empty state if there are no results.
