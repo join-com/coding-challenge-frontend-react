@@ -11,8 +11,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  filterIncidents: (incidents, filterOn) =>
-    dispatch(filterIncidents({ incidents, filterOn })),
+  filterIncidents: (incidents, filter) =>
+    dispatch(filterIncidents({ incidents, filter })),
   removeFilter: incidents => dispatch(clearFilter(incidents))
 })
 
@@ -30,9 +30,13 @@ class Filter extends Component {
   applyFilter = () => {
     const incidents = this.props.incidents
     const filter = this.state
+
     clearTimeout(this.timeout)
     this.timeout = setTimeout(() => {
-      if (filter.search === null || filter.search === '') {
+      if (
+        (filter.search === null || filter.search === '') &&
+        this.props.filterApplied && filter.toDate === null && filter.fromDate === null
+      ) {
         this.props.removeFilter(incidents)
       } else {
         this.props.filterIncidents(incidents, filter)
@@ -43,18 +47,19 @@ class Filter extends Component {
     this.setState({ search: e.target.value }, this.applyFilter)
   }
   dateChangeTo = e => {
-    this.setState({ toDate: e.target.value }, this.applyFilter)
+    this.setState({ toDate: e }, this.applyFilter)
   }
   dateChangeFrom = e => {
-    this.setState({ fromDate: e.target.value }, this.applyFilter)
+    this.setState({ fromDate: e }, this.applyFilter)
   }
 
   render() {
     return (
       <div className="container">
-        {this.props.filterApplied.toString()}
         <FilterComponent
           textChange={this.textChange}
+          toDate={this.state.toDate}
+          fromDate={this.state.fromDate}
           dateChangeFrom={this.dateChangeFrom}
           dateChangeTo={this.dateChangeTo}
         />
