@@ -12,7 +12,7 @@ const MapComponent = ({ lat, lon }) => {
       containerStyle={mapboxConfig.containerStyle}
       style={mapboxConfig.style}
       center={[lat, lon]}
-      zoom={[mapboxConfig.zoom]}
+      zoom={[mapboxConfig.zoom]} className="mx-2"
     >
       <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
         <Feature coordinates={[lat, lon]} />

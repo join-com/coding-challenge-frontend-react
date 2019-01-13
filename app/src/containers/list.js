@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import ListingItem from '../components/listing-item'
 import HCILoader from '../components/loading'
 import { CHANGE_PAGE } from '../constants'
+import Container from '../components/shared/container'
+import { ListGroup } from '../components/shared/list'
 
 const NoResult = props => {
   return <div className="container">No results</div>
@@ -11,22 +13,18 @@ const NoResult = props => {
 
 const ShowList = ({ incidents, pageChange }) => {
   return (
-    <div className="container">
-      <div className="list-group">
+    <Container splitLines={false}>
+      <ListGroup>
         {incidents.map(incident => (
-          <ListingItem
-            incident={incident}
-            key={incident.id}
-            pageChange={pageChange}
-          />
+          <ListingItem incident={incident} key={incident.id} pageChange={pageChange} />
         ))}
-      </div>
-    </div>
+      </ListGroup>
+    </Container>
   )
 }
 
 const List = ({ currentPage, totalRecords, incidents, pageChange, filterApplied, filteredIncidents }) => {
-  if(filterApplied) {
+  if (filterApplied) {
     incidents = filteredIncidents
   }
   const perPageItems = 10

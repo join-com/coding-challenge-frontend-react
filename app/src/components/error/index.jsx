@@ -1,10 +1,11 @@
 import React from 'react'
+import Container from '../shared/container'
 
 const Error = props => {
   return (
-    <div className="container">
-      An error has occured 
-    </div>
+    <Container>
+      <p className="text-danger">An error has occured</p>
+    </Container>
   )
 }
 

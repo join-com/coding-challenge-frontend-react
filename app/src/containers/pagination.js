@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import PaginationComponent from '../components/pagination'
 
 import { CHANGE_PAGE_NUMBER } from '../constants'
+import Container from '../components/shared/container'
 
 const mapStateToProps = state => {
   return {
@@ -28,13 +29,13 @@ class Pagination extends Component {
   render() {
     const { totalRecords, currentPage } = this.props
     return (
-      <div className="container">
+      <Container splitLines={false}>
         <PaginationComponent
           currentPage={currentPage}
           totalRecords={totalRecords}
           changeCurrentPage={this.changeCurrentPage}
         />
-      </div>
+      </Container>
     )
   }
 }

@@ -1,14 +1,18 @@
 import React from 'react'
+import Container from '../shared/container'
+import RowComponent from '../shared/row'
+import ColComponent from '../shared/col'
+import { List, ListItem } from '../shared/list'
 
 const Footer = props => {
   return (
     <footer>
-      <div className="container-fluid bg-dark text-white my-2">
-        <div className="row">
-          <div className="col">
-            <ul className="list-unstyled list-inline social text-center">
-              <li className="list-item">
-                <p className="h6">
+      <Container className="container-fluid bg-dark text-white my-2" splitLines={false}>
+        <RowComponent>
+          <ColComponent>
+            <List>
+              <ListItem>
+                <h6>
                   <a
                     href="https://github.com/shahzaibalikhan/coding-challenge-frontend-react"
                     target="_blank"
@@ -16,14 +20,14 @@ const Footer = props => {
                   >
                     Github
                   </a>
-                </p>
-              </li>
-              <li className="list-item">
+                </h6>
+              </ListItem>
+              <ListItem>
                 <p>React coding challenge</p>
-              </li>
+              </ListItem>
 
-              <li className="list-item">
-                <p className="h6">
+              <ListItem>
+                <h6>
                   <a
                     className="text-green ml-2"
                     href="https://github.com/shahzaibalikhan"
@@ -32,13 +36,13 @@ const Footer = props => {
                   >
                     Shahzaib Ali Khan
                   </a>
-                </p>
-              </li>
-            </ul>
-          </div>
+                </h6>
+              </ListItem>
+            </List>
+          </ColComponent>
           <hr />
-        </div>
-      </div>
+        </RowComponent>
+      </Container>
     </footer>
   )
 }

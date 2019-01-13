@@ -8,7 +8,7 @@ const Element = ({ text, disable, changeTo, changeCurrentPage }) => {
     changeTo = parseInt(text)
   }
   return (
-    <li className="page-item" onClick={ () => changeCurrentPage(changeTo)}>
+    <li className="page-item" onClick={() => changeCurrentPage(changeTo)}>
       <button className="page-link" aria-disabled={disable + ''}>
         {text}
       </button>
@@ -20,25 +20,14 @@ const Pagination = props => {
   const noOfRecords = 10
   const numrows = Math.ceil(totalRecords / noOfRecords)
   let numbers = []
-  for (var i = 0; i < numrows; ) {
-    numbers.push(
-      <Element
-        text={' ' + ++i + ' '}
-        key={i}
-        changeCurrentPage={changeCurrentPage}
-      />
-    )
+  for (var i = 1; i <= numrows; i++) {
+    numbers.push(<Element text={` ${i} `} key={i} changeCurrentPage={changeCurrentPage} />)
   }
 
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination">
-        <Element
-          text={'<< First'}
-          changeTo={1}
-          disable={currentPage === 1}
-          changeCurrentPage={changeCurrentPage}
-        />
+        <Element text={'<< First'} changeTo={1} disable={currentPage === 1} changeCurrentPage={changeCurrentPage} />
         <Element
           text={'< Prev'}
           changeTo={currentPage - 1}

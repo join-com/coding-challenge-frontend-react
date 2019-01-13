@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import FilterComponent from '../components/filter/index'
 import { filterIncidents, clearFilter } from '../actions/filter'
+import Container from '../components/shared/container'
 
 const mapStateToProps = state => ({
   incidents: state.root.incidents,
@@ -11,8 +12,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  filterIncidents: (incidents, filter) =>
-    dispatch(filterIncidents({ incidents, filter })),
+  filterIncidents: (incidents, filter) => dispatch(filterIncidents({ incidents, filter })),
   removeFilter: incidents => dispatch(clearFilter(incidents))
 })
 
@@ -35,7 +35,9 @@ class Filter extends Component {
     this.timeout = setTimeout(() => {
       if (
         (filter.search === null || filter.search === '') &&
-        this.props.filterApplied && filter.toDate === null && filter.fromDate === null
+        this.props.filterApplied &&
+        filter.toDate === null &&
+        filter.fromDate === null
       ) {
         this.props.removeFilter(incidents)
       } else {
@@ -55,7 +57,7 @@ class Filter extends Component {
 
   render() {
     return (
-      <div className="container">
+      <Container splitLines={false}>
         <FilterComponent
           textChange={this.textChange}
           toDate={this.state.toDate}
@@ -63,7 +65,7 @@ class Filter extends Component {
           dateChangeFrom={this.dateChangeFrom}
           dateChangeTo={this.dateChangeTo}
         />
-      </div>
+      </Container>
     )
   }
 }

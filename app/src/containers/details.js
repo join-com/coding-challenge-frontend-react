@@ -7,9 +7,12 @@ import Footer from '../components/footer'
 
 import { fetchIncidentByID } from '../actions/root'
 
-import HCILoader from '../components/loading'
 import { CHANGE_PAGE } from '../constants'
+
+import HCILoader from '../components/loading'
 import IncidentDetailsComponent from '../components/incident-details'
+import Container from '../components/shared/container'
+import Button from '../components/shared/button'
 
 const mapStateToProps = state => {
   return {
@@ -47,18 +50,12 @@ class IncidentDetails extends Component {
     return (
       <React.Fragment>
         <Header banner={banner} />
-        <div className="container">
+        <Container>
           <Link to={'/'} onClick={this.props.pageChange}>
-            <button type="button" className="btn my-3 btn-primary btn-sm">
-              Back to records
-            </button>
+            <Button>Back to records</Button>
           </Link>
-          <ShowLoader
-            incident={incident}
-            isLoading={isLoading}
-            pageChange={() => {}}
-          />
-        </div>
+          <ShowLoader incident={incident} isLoading={isLoading} pageChange={() => {}} />
+        </Container>
         <Footer />
       </React.Fragment>
     )

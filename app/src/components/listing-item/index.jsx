@@ -3,56 +3,49 @@ import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 
 import Image from '../image'
+import Row from '../shared/row'
+import Column from '../shared/col'
+import { ListGroupItem } from '../shared/list'
 
 const InfoWithDate = ({ text, date, additionalText }) => {
   return (
-    <span className="col-9 text-secondary">
+    <Row style={{ fontSize: '12px' }}>
       {text}
       {dayjs(date * 1000).format('ddd MMM DD YYYY')}
       {additionalText ? ` - ${additionalText}` : ''}
-    </span>
+    </Row>
   )
 }
 
 const Description = ({ description }) => {
-  return (
-    <div className="col-10 text-justify">
-      <p>{description}</p>
-    </div>
-  )
+  return <Row style={{ maxWidth: '80%' }}>{description}</Row>
 }
 
 const Incident = props => {
-  const {
-    id,
-    title,
-    address,
-    description,
-    media,
-    occurred_at,
-    updated_at
-  } = props.incident
+  const { id, title, address, description, media, occurred_at, updated_at } = props.incident
 
   return (
-    <div className="row list-group-item my-1">
-      <div className="col-sm-2 float-left">
+    <ListGroupItem style={{ backgroundColor: 'white' }}>
+      <Column style={{ maxWidth: '20%', float: 'left' }}>
         <Image src={media.image_url_thumb} />
-      </div>
-      <div className="col-sm">
-        <div className="row align-items-end">
-          <h6 className="col-9">
-            <Link to={`/case/${id}`} onClick={props.pageChange}> {title}</Link>
+      </Column>
+      <Column>
+        <Row>
+          <h6>
+            <Link to={`/case/${id}`} onClick={props.pageChange}>
+              {title}
+            </Link>
           </h6>
-          {description ? <Description description={description} /> : null}
-          <InfoWithDate
-            text={'occurred on: '}
-            date={occurred_at}
-            additionalText={address}
-          />
-          <InfoWithDate text={'last updated on: '} date={updated_at} />
-        </div>
-      </div>
-    </div>
+        </Row>
+        {description ? <Description description={description} /> : null}
+        <Row>
+          <Column>
+            <InfoWithDate text={'occurred on: '} date={occurred_at} additionalText={address} />
+            <InfoWithDate text={'last updated on: '} date={updated_at} />
+          </Column>
+        </Row>
+      </Column>
+    </ListGroupItem>
   )
 }
 
