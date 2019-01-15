@@ -5,6 +5,8 @@ import { withRouter, Link } from 'react-router-dom'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
+import MapContainer from './map'
+
 import { fetchIncidentByID } from '../actions/root'
 
 import { CHANGE_PAGE } from '../constants'
@@ -54,7 +56,7 @@ class IncidentDetails extends Component {
           <Link to={'/'} onClick={this.props.pageChange}>
             <Button>Back to records</Button>
           </Link>
-          <ShowLoader incident={incident} isLoading={isLoading} pageChange={() => {}} />
+          <ShowLoader incident={incident} isLoading={isLoading} pageChange={() => {}} MapContainer={MapContainer}/>
         </Container>
         <Footer />
       </React.Fragment>

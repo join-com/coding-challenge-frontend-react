@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Image from '../image'
-import Map from '../map'
+
 import DateInfo from '../shared/dateInfo'
 import Description from '../shared/description'
 import Row from '../shared/row'
@@ -10,7 +10,7 @@ import Container from '../shared/container'
 
 const IncidentDetailsComponent = props => {
   const { id, title, address, description, media, occurred_at, updated_at } = props.incident
-
+  const Map = props.MapContainer
   return (
     <Container style={{ backgroundColor: 'white' }}>
       <Row>

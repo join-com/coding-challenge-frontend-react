@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import Image from '../image'
 import Row from '../shared/row'
@@ -10,7 +9,8 @@ import Description from '../shared/description'
 
 const Incident = props => {
   const { id, title, address, description, media, occurred_at, updated_at } = props.incident
-
+  const Link = props.Link
+  
   return (
     <ListGroupItem style={{ backgroundColor: 'white' }}>
       <Column style={{ maxWidth: '20%', float: 'left' }}>

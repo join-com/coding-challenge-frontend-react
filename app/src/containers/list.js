@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import ListingItem from '../components/listing-item'
 import HCILoader from '../components/loading'
@@ -16,7 +17,7 @@ const ShowList = ({ incidents, pageChange }) => {
     <Container splitLines={false}>
       <ListGroup>
         {incidents.map(incident => (
-          <ListingItem incident={incident} key={incident.id} pageChange={pageChange} />
+          <ListingItem incident={incident} key={incident.id} pageChange={pageChange} Link={Link}/>
         ))}
       </ListGroup>
     </Container>
