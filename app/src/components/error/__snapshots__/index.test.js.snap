@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component should show error 1`] = `
+Array [
+  <hr />,
+  <div
+    class="container"
+  >
+    <p
+      class="text-danger"
+    >
+      An error has occured
+    </p>
+  </div>,
+  <hr />,
+]
+`;
+
+exports[`Should render error component 1`] = `
+Array [
+  <hr />,
+  <div
+    className="container"
+  >
+    <p
+      className="text-danger"
+    >
+      An error has occured
+    </p>
+  </div>,
+  <hr />,
+]
+`;

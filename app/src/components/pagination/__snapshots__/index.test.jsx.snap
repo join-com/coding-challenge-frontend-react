@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render loading component 1`] = `
+<nav
+  aria-label="Page navigation example"
+>
+  <ul
+    class="pagination"
+  >
+    <li
+      class="page-item"
+    >
+      <button
+        aria-disabled="false"
+        class="page-link"
+      >
+        &lt;&lt; First
+      </button>
+    </li>
+    <li
+      class="page-item"
+    >
+      <button
+        aria-disabled="false"
+        class="page-link"
+      >
+        &lt; Prev
+      </button>
+    </li>
+    <li
+      class="page-item"
+    >
+      <button
+        aria-disabled="false"
+        class="page-link"
+      >
+        Next &gt;
+      </button>
+    </li>
+    <li
+      class="page-item"
+    >
+      <button
+        aria-disabled="false"
+        class="page-link"
+      >
+        Last &gt;&gt;
+      </button>
+    </li>
+  </ul>
+</nav>
+`;

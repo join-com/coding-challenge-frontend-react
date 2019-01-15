@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render loading component 1`] = `
+<div
+  class="d-flex justify-content-center"
+>
+  <div
+    class="spinner-border"
+    role="status"
+  >
+    <span
+      class="sr-only"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Should render provided component when not in loading 1`] = `
+<div>
+  Test Component
+</div>
+`;

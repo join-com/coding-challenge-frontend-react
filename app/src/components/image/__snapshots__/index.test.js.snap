@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render image component with image not available 1`] = `
+<img
+  alt="not available"
+  className="img-thumbnail img-fluid"
+  src="not_available.jpg"
+/>
+`;
+
+exports[`Should render image component with image src 1`] = `
+<img
+  alt="not available"
+  class="img-thumbnail img-fluid"
+  src="/path/to/image"
+/>
+`;
+
+exports[`Should render image component with image src and style 1`] = `
+<img
+  alt="not available"
+  class="img-thumbnail img-fluid"
+  src="/path/to/image"
+  style="max-width:50px"
+/>
+`;

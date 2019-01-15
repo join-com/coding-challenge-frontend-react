@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render error component 1`] = `
+<footer>
+  <div
+    className="container-fluid bg-dark text-white my-2"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <ul
+          className="list-unstyled list-inline social text-center"
+        >
+          <li
+            className="list-item"
+          >
+            <h6>
+              <a
+                href="https://github.com/shahzaibalikhan/coding-challenge-frontend-react"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Github
+              </a>
+            </h6>
+          </li>
+          <li
+            className="list-item"
+          >
+            <p>
+              React coding challenge
+            </p>
+          </li>
+          <li
+            className="list-item"
+          >
+            <h6>
+              <a
+                className="text-green ml-2"
+                href="https://github.com/shahzaibalikhan"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Shahzaib Ali Khan
+              </a>
+            </h6>
+          </li>
+        </ul>
+      </div>
+      <hr />
+    </div>
+  </div>
+</footer>
+`;

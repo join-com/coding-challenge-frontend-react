@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter should return count 1`] = `
+Array [
+  <hr />,
+  <div
+    class="container"
+  >
+    <h5
+      class="text-right"
+    >
+      Total reported incidents
+      <span
+        class="badge badge-primary mx-2"
+      >
+        5
+      </span>
+    </h5>
+  </div>,
+  <hr />,
+]
+`;

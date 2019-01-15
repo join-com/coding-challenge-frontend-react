@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render incident details component 1`] = `
+<li
+  class="list-group-item"
+>
+  <div
+    class="col"
+    style="max-width:20%;float:left"
+  >
+    <img
+      alt="not available"
+      class="img-thumbnail img-fluid"
+      src="https://files.bikeindex.org/uploads/Pu/139855/small_bike-3.jpg"
+    />
+  </div>
+  <div
+    class="col"
+  >
+    <div
+      class="row"
+    >
+      <h6>
+        <a
+          href="/case/93593"
+        >
+          Stolen 2018 UNIMOKE-Urban Drivestyle UNIMOKE Swing(black)
+        </a>
+      </h6>
+    </div>
+    <div
+      class="text-justify"
+    >
+      <p>
+        someone broke into the house, cut the wooden railings beside the stairs that my bike was locked to.
+      </p>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col"
+      >
+        <div
+          class="row"
+          style="font-size:12px"
+        >
+          occurred on: Tue Oct 30 2018 - Berlin, 10405, DE
+        </div>
+        <div
+          class="row"
+          style="font-size:12px"
+        >
+          last updated on: Tue Jan 15 2019
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+`;
