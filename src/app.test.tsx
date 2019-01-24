@@ -8,6 +8,7 @@ it('renders without crashing', () => {
   expect(wrapper).toMatchInlineSnapshot(`
 <Fragment>
   <Header />
+  <Cases />
 </Fragment>
 `);
 });
