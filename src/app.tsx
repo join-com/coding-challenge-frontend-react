@@ -1,5 +1,9 @@
 import React from 'react';
 
-export function App() {
-  return <div />;
-}
+import { Header } from './sections/common/header';
+
+export const App: React.FC<{}> = () => (
+  <>
+    <Header />
+  </>
+);
