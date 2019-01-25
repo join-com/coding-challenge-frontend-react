@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<Form
+  hideRequiredMark={false}
+  layout="inline"
+  onSubmit={[Function]}
+>
+  <FormItem
+    colon={true}
+    hasFeedback={false}
+  >
+    <Input
+      defaultValue="test"
+      disabled={false}
+      placeholder="Search case descriptions"
+      type="text"
+    />
+  </FormItem>
+  <FormItem
+    colon={true}
+    hasFeedback={false}
+  >
+    <Button
+      block={false}
+      ghost={false}
+      htmlType="submit"
+      loading={false}
+      type="primary"
+    >
+      Find cases
+    </Button>
+  </FormItem>
+</Form>
+`;

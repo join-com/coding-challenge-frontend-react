@@ -1,3 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const Cases: React.FC<{}> = () => null;
+import { SearchBar } from './search-bar';
+
+export const Cases: React.FC<{}> = () => {
+  const [query, setQuery] = useState<string>('');
+
+  return (
+    <>
+      <SearchBar query={query} onChange={setQuery} />
+    </>
+  );
+};
