@@ -8,7 +8,7 @@ import { Theme, GlobalStyle } from './theme';
 
 import Home from './views/Home';
 import Details from './views/Details';
-import NotFound from './views/NotFound';
+// import NotFound from './views/NotFound';
 
 import ScrollTop from './components/ScrollTop';
 
@@ -19,9 +19,9 @@ const App = () => (
         <BrowserRouter>
           <Switch>
             <ScrollTop>
-              <Route path="/" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route path="/case/:id" component={Details} />
-              <Route path="*" component={NotFound} />
+              {/* <Route component={NotFound} /> */}
             </ScrollTop>
           </Switch>
         </ BrowserRouter>
