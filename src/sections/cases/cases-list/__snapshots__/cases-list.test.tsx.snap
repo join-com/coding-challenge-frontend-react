@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders item 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`renders with error state 1`] = `
+<Alert
+  message="Ooops, something went wrong"
+  showIcon={true}
+  type="error"
+/>
+`;
+
+exports[`renders without crashing 1`] = `
+<Fragment>
+  <Row
+    gutter={0}
+    justify="end"
+    type="flex"
+  >
+    <Col>
+      total: 
+      0
+    </Col>
+  </Row>
+  <List
+    bordered={false}
+    dataSource={Array []}
+    itemLayout="vertical"
+    loading={false}
+    pagination={
+      Object {
+        "current": 1,
+        "onChange": [Function],
+        "pageSize": 3,
+        "total": 0,
+      }
+    }
+    renderItem={[Function]}
+    split={true}
+  />
+</Fragment>
+`;

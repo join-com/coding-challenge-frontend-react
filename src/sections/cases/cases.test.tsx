@@ -11,6 +11,20 @@ it('renders without crashing', () => {
     onChange={[Function]}
     query=""
   />
+  <CasesList
+    data={
+      Object {
+        "loading": true,
+      }
+    }
+    page={
+      Object {
+        "set": [Function],
+        "value": 1,
+      }
+    }
+    pageSize={5}
+  />
 </Fragment>
 `);
 });
