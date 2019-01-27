@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import { Cases } from './cases';
+import { Cases, setQueryResetPage } from './cases';
 
 it('renders without crashing', () => {
   const wrapper = shallow(<Cases />);
@@ -27,4 +27,14 @@ it('renders without crashing', () => {
   />
 </Fragment>
 `);
+});
+
+it('setQueryResetPage resets page to first', () => {
+  const mockSetQuery = jest.fn();
+  const mockSetPage = jest.fn();
+  const handleChange = setQueryResetPage(mockSetQuery, mockSetPage);
+
+  handleChange('new query');
+  expect(mockSetQuery).toBeCalledWith('new query');
+  expect(mockSetPage).toBeCalledWith(1);
 });

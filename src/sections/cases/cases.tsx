@@ -20,16 +20,25 @@ export interface ICasesData {
   total: number;
 }
 
+export const setQueryResetPage = (setQuery: React.Dispatch<string>, setPage: React.Dispatch<number>) => (
+  newQuery: string,
+) => {
+  setQuery(newQuery);
+  setPage(1);
+};
+
 export const Cases: React.FC<{}> = () => {
   const [query, setQuery] = useState<string>('');
   const [page, setPage] = useState<number>(1);
+
+  const handleChange = setQueryResetPage(setQuery, setPage);
 
   const request = createAPIRequest(query, page, PAGE_SIZE);
   const data = useAsync<ICasesData>(request, [query, page]);
 
   return (
     <>
-      <SearchBar query={query} onChange={setQuery} />
+      <SearchBar query={query} onChange={handleChange} />
       <CasesList data={data} page={{ value: page, set: setPage }} pageSize={PAGE_SIZE} />
     </>
   );
