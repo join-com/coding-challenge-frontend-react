@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     &:hover,
     &:focus,
     &:active {
-      text-decoration: underline;
+      text-decoration: none;
       color: #333333;
     }
   }
@@ -34,9 +34,11 @@ export const Theme = {
   clearColor: '#FAFAFA',
   baseColor: '#333333',
   mutedColor: '#999999',
+  white: '#FFF',
 
   fontXLarge: '4em',
   fontLarge: '2em',
+  fontDefault: '1.3em',
   fontMedium: '1em',
   fontSmall: '0.8em',
 };

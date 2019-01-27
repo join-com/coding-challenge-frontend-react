@@ -10,6 +10,7 @@ import Home from './views/Home';
 import Details from './views/Details';
 // import NotFound from './views/NotFound';
 
+import Layout from './views/Layout';
 import ScrollTop from './components/ScrollTop';
 
 const App = () => (
@@ -19,9 +20,11 @@ const App = () => (
         <BrowserRouter>
           <Switch>
             <ScrollTop>
-              <Route exact path="/" component={Home} />
-              <Route path="/case/:id" component={Details} />
-              {/* <Route component={NotFound} /> */}
+              <Layout>
+                <Route exact path="/" component={Home} />
+                <Route path="/incidents/:id" component={Details} />
+                {/* <Route component={NotFound} /> */}
+              </Layout>
             </ScrollTop>
           </Switch>
         </ BrowserRouter>

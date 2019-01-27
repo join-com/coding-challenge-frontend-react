@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import Incident from '../../components/Incident';
+
 class Details extends Component {
   render() {
     return (
-      <h1>Details Page</h1>
+      <Incident.Details />
     );
   }
 };
