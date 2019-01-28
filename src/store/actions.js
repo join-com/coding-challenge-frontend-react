@@ -1,2 +1,3 @@
+export * from './error/actions';
 export * from './loading/actions';
-export * from './cases/actions';
+export * from './incidents/actions';

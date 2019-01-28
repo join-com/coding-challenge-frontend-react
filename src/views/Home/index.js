@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
+import { compose } from 'redux';
 
+import withIncidents from '../../containers/Incidents';
 import Incident from '../../components/Incident';
 
 class Home extends Component {
+  componentWillMount() {
+    this.props.getIncidentsList({
+      incident_type: 'theft',
+    });
+  }
+
   render() {
+    const { list } = this.props.incidents;
     return (
       <>
-        {/* <h1>Home Page</h1> */}
-        <Incident.List />
+        <Incident.List items={list} />
       </>
     );
   }
 };
 
-export default Home;
+export default compose(withIncidents)(Home);

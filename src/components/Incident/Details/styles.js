@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  min-width: 960px;
   width: calc(100% - 60px);
   padding: 45px 30px;
 

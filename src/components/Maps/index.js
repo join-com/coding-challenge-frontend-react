@@ -23,7 +23,7 @@ class Maps extends Component {
         height={this.props.height}
         mapStyle={this.props.mapStyle}
         onViewportChange={this._onViewportChange}
-        mapboxApiAccessToken={this.props.access_token} >
+        mapboxApiAccessToken={this.props.access_token}>
           <MarkerComponent latitude={viewport.latitude} longitude={viewport.longitude} />
       </MapGL>
     );

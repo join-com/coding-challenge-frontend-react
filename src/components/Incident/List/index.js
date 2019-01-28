@@ -6,12 +6,9 @@ import {
   Wrapper,
 } from './styles';
 
-const List = props => (
+const List = ({ items }) => (
   <Wrapper>
-    <Item full={false} />
-    <Item full={false} />
-    <Item full={false} />
-    <Item full={false} />
+    { items.map((item, i) => <Item key={i} {...item} full={false} />)}
   </Wrapper>
 );
 

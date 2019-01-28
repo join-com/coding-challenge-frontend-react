@@ -19,4 +19,5 @@ export const OccurredAt = styled.p`
   color: ${props => props.theme.mutedColor};
   margin-top: 0px;
   margin-bottom: 15px;
+  text-transform: capitalize;
 `;

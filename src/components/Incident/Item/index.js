@@ -2,6 +2,7 @@ import React from 'react';
 
 import Card from '../../Card';
 import Button from '../../Button';
+import { fromNow } from '../../../helpers/DateTime';
 
 import {
   Wrapper,
@@ -38,18 +39,24 @@ import {
 //   "type_properties": null
 // },
 
-const Item = props => (
-  <Wrapper full={props.full}>
-    <Card>
-      <Image image='https://seeclickfix.com/files/issue_images/0124/4123/20190126_SAT_WISSY_Bikeway_Upper_MissingGuardRail.jpg' alt='Incident' />
-      <Body>
-        <Title>Wissahickon Bikeway – missing guardrail on Lincoln Drive next to the bikeway</Title>
-        <Address>Lincoln Dr Philadelphia, PA, 19144, USA</Address>
-        <OccurredAt>23/10/2018 14:34</OccurredAt>
-        <Button to='/incidents/123'>Details</Button>
-      </Body>
-    </Card>
-  </Wrapper>
-);
+const Item = props => {
+  const image = props.media && props.media.image_url 
+    ? props.media.image_url 
+    : 'https://via.placeholder.com/250x250?text=No+Picture';
+
+  return (
+    <Wrapper full={props.full}>
+      <Card>
+        <Image image={image} alt={props.title || 'Incident'} />
+        <Body>
+          <Title>{props.title}</Title>
+          <Address>{props.address}</Address>
+          <OccurredAt>{fromNow(props.occurred_at)} ago</OccurredAt>
+          <Button to={`/incidents/${props.id}`}>Details</Button>
+        </Body>
+      </Card>
+    </Wrapper>
+  );
+};
 
 export default Item;

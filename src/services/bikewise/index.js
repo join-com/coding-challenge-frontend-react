@@ -1,4 +1,4 @@
-import { createInstance, request } from './utils';
+import { createInstance, request } from '../utils';
 
 const baseURL = 'https://bikewise.org/api/v2/';
 
@@ -19,7 +19,7 @@ const BikeWise = {
     });
   },
 
-  get: id => {
+  get: ({ id }) => {
     const instance = createInstance({ baseURL });
 
     return request({
