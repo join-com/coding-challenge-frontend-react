@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useAsync } from 'react-use';
+import { createAPIRequest } from './cases.api';
 
 import { CasesList } from './cases-list';
 import { SearchBar } from './search-bar';
@@ -22,9 +24,8 @@ export const Cases: React.FC<{}> = () => {
   const [query, setQuery] = useState<string>('');
   const [page, setPage] = useState<number>(1);
 
-  const data = {
-    loading: true,
-  };
+  const request = createAPIRequest(query, page, PAGE_SIZE);
+  const data = useAsync<ICasesData>(request, [query, page]);
 
   return (
     <>
