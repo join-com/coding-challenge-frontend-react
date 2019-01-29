@@ -1,4 +1,5 @@
 import BikeWise from '../../services/bikewise';
+
 import { startLoading, stopLoading } from '../loading/actions';
 import { setError, clearError } from '../error/actions';
 
@@ -74,5 +75,18 @@ export function getIncidentsDetails(params) {
 		} finally {
       dispatch(stopLoading());
     }
+	};
+}
+
+export function applyIncidentsFilters(params) {
+	return async (dispatch, getState) => {
+		try {
+      dispatch(setIncidentsFilters(params));
+
+      const { filters } = getState().incidents;
+      dispatch(getIncidentsList(filters));
+		} catch (err) {
+      dispatch(setError(err));
+		}
 	};
 }

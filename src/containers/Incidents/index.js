@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 import {
   getIncidentsDetails,
-  getIncidentsList
+  getIncidentsList,
+  clearIncidentsDetails,
+  applyIncidentsFilters,
 } from '../../store/actions';
 
 const mapStateToProps = state  => ({
@@ -13,6 +15,8 @@ const mapStateToProps = state  => ({
 const mapDispatchToProps = dispatch => ({
   getIncidentsList: params => dispatch(getIncidentsList(params)),
   getIncidentsDetails: params => dispatch(getIncidentsDetails(params)),
+  applyIncidentsFilters: params => dispatch(applyIncidentsFilters(params)),
+  clearIncidentsDetails: () => dispatch(clearIncidentsDetails()),
 });
 
 export default function withIncidents(WrappedComponent) {

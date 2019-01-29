@@ -7,6 +7,7 @@
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "react": "^16.7.0",
+    "react-datetime": "^2.16.3",
     "react-dom": "^16.7.0",
     "react-map-gl": "^4.0.9",
     "react-redux": "^6.0.0",

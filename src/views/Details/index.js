@@ -1,6 +1,10 @@
-import React, { Component } from 'react';import { compose } from 'redux';
+import React, { Component } from 'react';
+import { compose } from 'redux';
 
+import withLoading from '../../containers/Loading';
 import withIncidents from '../../containers/Incidents';
+
+import Loader from '../../components/Loader';
 import Incident from '../../components/Incident';
 
 import Mapbox from '../../services/mapbox';
@@ -23,14 +27,20 @@ class Details extends Component {
       this.getCoordinates(details.address);
     }
   }
+
+  componentWillUnmount() {
+    this.props.clearIncidentsDetails();
+  }
   
   getCoordinates = async address => {
     try {
       const geo = await Mapbox.get({ address });
-      // console.log(geo);
-      this.setState({
-        coordinates: geo.features[0].geometry.coordinates,
-      });
+      const coordinates = geo.features[0].center || geo.features[0].geometry.coordinates;
+      const validCoord = coord => (-90 <= coord >= 90); /* eslint-disable-line */
+      
+      if (validCoord(coordinates[0]) && validCoord(coordinates[1])) {
+        this.setState({ coordinates });
+      }
     } catch (err) {
       console.log(err);
     }
@@ -40,8 +50,10 @@ class Details extends Component {
     const { coordinates } = this.state;
     const { details } = this.props.incidents;
 
-    return details && <Incident.Details {...details} coordinates={coordinates} />;
+    return this.props.loading && details
+        ? <Loader />
+        : <Incident.Details {...details} coordinates={coordinates} />;
   }
 };
 
-export default compose(withIncidents)(Details);
+export default compose(withIncidents, withLoading)(Details);

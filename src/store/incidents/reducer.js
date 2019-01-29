@@ -15,8 +15,8 @@ const defaultState = {
     per_page: 10,
     occurred_before: null,
     occurred_after: null,
-    incident_type: null,
-    proximity: null,
+    incident_type: 'theft',
+    proximity: 'berlin',
     query: null,
   },
 }
