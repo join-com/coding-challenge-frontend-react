@@ -1,0 +1,6 @@
+.rc-pagination.ant-pagination li {
+  color: gray;
+}
+.rc-pagination.ant-pagination li.rc-pagination-item-active {
+  color: white;
+}

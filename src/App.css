@@ -1,0 +1,9 @@
+body {
+  background-color: #282c34;
+  color: white;
+}
+.App {
+  max-width: 992px;
+  margin: 0 auto;
+  padding-top: 10px;
+}

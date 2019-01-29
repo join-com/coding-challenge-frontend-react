@@ -1,0 +1,7 @@
+.incidentCard {
+  border: 1px solid black;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px black;
+}
