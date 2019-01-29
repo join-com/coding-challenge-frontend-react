@@ -20,7 +20,7 @@ const Filter = (props) => (
       <Fields.Select
         label="Proximy"
         name='proximity'
-        options={['berlin', 'san francisco', 'london']}
+        options={['berlin', 'san francisco', 'london', 'hamburg']}
         onChange={props.onChange}
       />
 

@@ -7,6 +7,6 @@ export const Wrapper = styled.div`
 
 export const Text = styled.p`
   font-size: ${props => props.theme.fontDefault};
-  color: ${props => props.theme.primaryColor};
+  color: ${props => props.color || props.theme.primaryColor};
   font-weight: bold;
 `;

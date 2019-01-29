@@ -5,9 +5,9 @@ import {
   Text,
 } from './styles';
 
-const Message = ({ align, text }) => (
+const Message = ({ align, text, color }) => (
   <Wrapper align={align}>
-    <Text>{ text }</Text>
+    <Text color={color}>{ text }</Text>
   </Wrapper>
 );
 
