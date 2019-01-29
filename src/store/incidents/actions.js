@@ -1,3 +1,4 @@
+import qs from 'querystring';
 import BikeWise from '../../services/bikewise';
 
 import { startLoading, stopLoading } from '../loading/actions';
@@ -78,12 +79,13 @@ export function getIncidentsDetails(params) {
 	};
 }
 
-export function applyIncidentsFilters(params) {
+export function applyIncidentsFilters(params, history) {
 	return async (dispatch, getState) => {
 		try {
       dispatch(setIncidentsFilters(params));
 
       const { filters } = getState().incidents;
+      if (history) history.push({ search: qs.stringify(filters) });
       dispatch(getIncidentsList(filters));
 		} catch (err) {
       dispatch(setError(err));

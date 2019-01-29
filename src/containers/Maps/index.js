@@ -8,7 +8,7 @@ export default function withMaps(WrappedComponent) {
     width: '100%',
     height: '300px',
     viewport: {
-      zoom: 15,
+      zoom: 6,
       bearing: 0,
       pitch: 0
     },

@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: ${props => props.full ? '100%' : '45%'};
+  width: 100%;
   min-height: 200px;
   
   margin: 15px auto;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    width: 45%;
+  }
 `;
 
 export const Body = styled.div`

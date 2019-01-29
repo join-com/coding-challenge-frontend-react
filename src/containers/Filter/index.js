@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  applyIncidentsFilters,
-} from '../../store/actions';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
+
+import { applyIncidentsFilters } from '../../store/actions';
 
 import Filter from '../../components/Filter';
 
@@ -14,7 +15,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    applyIncidentsFilters: params => dispatch(applyIncidentsFilters(params)),
+    applyIncidentsFilters: (params, history) => dispatch(applyIncidentsFilters(params, history)),
   };
 }
 
@@ -25,7 +26,7 @@ class FilterContainer extends Component {
     this.props.applyIncidentsFilters({
       [name]: value,
       page: 0,
-    });
+    }, this.props.history);
   }
 
   render() {
@@ -35,4 +36,6 @@ class FilterContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterContainer);
+export default compose(
+  withRouter
+)(connect(mapStateToProps, mapDispatchToProps)(FilterContainer));

@@ -15,17 +15,17 @@ const mapStateToProps = state  => ({
 const mapDispatchToProps = dispatch => ({
   getIncidentsList: params => dispatch(getIncidentsList(params)),
   getIncidentsDetails: params => dispatch(getIncidentsDetails(params)),
-  applyIncidentsFilters: params => dispatch(applyIncidentsFilters(params)),
+  applyIncidentsFilters: (params, history) => dispatch(applyIncidentsFilters(params, history)),
   clearIncidentsDetails: () => dispatch(clearIncidentsDetails()),
 });
 
 export default function withIncidents(WrappedComponent) {
-  class withDrawComponent extends Component {
+  class withIncidentsComponent extends Component {
     render = () => <WrappedComponent {...this.props} />
   }
 
   return connect(
     mapStateToProps,
     mapDispatchToProps
-  )(withDrawComponent);
+  )(withIncidentsComponent);
 }

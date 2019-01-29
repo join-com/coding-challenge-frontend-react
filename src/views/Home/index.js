@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 import withError from '../../containers/Error';
 import withLoading from '../../containers/Loading';
@@ -16,14 +17,15 @@ class Home extends Component {
     this.props.getIncidentsList(filters);
   }
 
-  nextPage = ({ page, direction }) => {
-    this.props.applyIncidentsFilters({ page: page || this.props.incidents.filters.page + direction });
+  changePage = ({ page, direction }) => {
+    const { history } = this.props;
+    this.props.applyIncidentsFilters({ page: page || this.props.incidents.filters.page + direction }, history);
   }
 
   render() {
     const { list } = this.props.incidents;
     const { incidents, error } = this.props;
-    const pagination = <Pagination onClick={this.nextPage} page={incidents.filters.page} />
+    const pagination = <Pagination onClick={this.changePage} page={incidents.filters.page} />
 
     if (error) {
       return <ErrorMessage error={error} />
@@ -40,4 +42,4 @@ class Home extends Component {
   }
 };
 
-export default compose(withIncidents, withLoading, withError)(Home);
+export default compose(withIncidents, withLoading, withError, withRouter)(Home);

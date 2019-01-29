@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { compose } from 'redux';
 
+import withError from '../../containers/Error';
 import withLoading from '../../containers/Loading';
 import withIncidents from '../../containers/Incidents';
 
 import Loader from '../../components/Loader';
 import Incident from '../../components/Incident';
+import ErrorMessage from '../../components/ErrorMessage';
 
 import Mapbox from '../../services/mapbox';
 
@@ -34,26 +36,29 @@ class Details extends Component {
   
   getCoordinates = async address => {
     try {
-      const geo = await Mapbox.get({ address });
-      const coordinates = geo.features[0].center || geo.features[0].geometry.coordinates;
-      const validCoord = coord => (-90 <= coord >= 90); /* eslint-disable-line */
-      
-      if (validCoord(coordinates[0]) && validCoord(coordinates[1])) {
-        this.setState({ coordinates });
-      }
+      const response = await Mapbox.get({ address });
+      const [features] = response.features;
+      const validCoord = coord => (-90 >= coord && coord <= 90);
+
+      if (validCoord(features.center[0] && validCoord(features.center[1])))
+        this.setState({ coordinates: features.center });
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 
   render() {
     const { coordinates } = this.state;
-    const { details } = this.props.incidents;
+    const { incidents, error } = this.props;
 
-    return this.props.loading && details
-        ? <Loader />
-        : <Incident.Details {...details} coordinates={coordinates} />;
+    if (error) {
+      return <ErrorMessage error={error} />
+    }
+
+    return this.props.loading
+      ? <Loader />
+      : <Incident.Details {...incidents.details} coordinates={coordinates} />;
   }
 };
 
-export default compose(withIncidents, withLoading)(Details);
+export default compose(withIncidents, withLoading, withError)(Details);
