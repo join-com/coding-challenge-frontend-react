@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent Header should render correctly 1`] = `
+<WithStyles(AppBar)
+  color="default"
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(Typography)
+      color="inherit"
+      variant="h6"
+    >
+      Stolen Bike Index
+    </WithStyles(Typography)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<WithStyles(AppBar)
+  color="default"
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(Typography)
+      color="inherit"
+      variant="h6"
+    >
+      Stolen Bike Index
+    </WithStyles(Typography)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
