@@ -87,6 +87,9 @@ Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 - Create a pull request
 - Please complete your working solution within 7 days of receiving this challenge, and be sure to notify us when it is ready for review.
 
+## Demo
+[View](https://antitheftsquadberlin.now.sh/)
+
 ## License
 
 We have licensed this project under the MIT license so that you may use this for a portfolio piece (or anything else!).
