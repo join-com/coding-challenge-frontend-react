@@ -27,14 +27,20 @@ export const listActions = {
                 callBack("Some Error Occured")
             })
     },
-    fetchIncidentMapDetails: (title) => dispatch => {
+    fetchIncidentMapDetails: (title, callback = null) => dispatch => {
         Api.fetchIncidentMapDetails(title)
             .then(
                 response => {
-                    dispatch({
-                        type: ListActionTypes.FETCH_SINGLE_INCIDENT_MAP,
-                        payload: response.data.features[0].geometry.coordinates
-                    })
+                    if (response.data.features.length > 0) {
+                        dispatch({
+                            type: ListActionTypes.FETCH_SINGLE_INCIDENT_MAP,
+                            payload: response.data.features[0].geometry.coordinates
+                        })
+                    }
+                    else {
+                        if (!!callback)
+                            callback("No map Found")
+                    }
                 }
             )
     },

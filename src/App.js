@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
@@ -8,9 +8,10 @@ import store from './store';
 import { theme as Theme } from "./resources/themes/overrides";
 
 
-import Header from "./components/header/header";
-import List from "./components/list/list";
-import BikeDetail from "./components/detail/bikeDetail";
+const Header = React.lazy(() => import("./components/header/header"));
+const List = React.lazy(() => import("./components/list/list"));
+const BikeDetail = React.lazy(() => import("./components/detail/bikeDetail"));
+
 
 const styles = {
   root: {
@@ -25,21 +26,23 @@ class App extends Component {
     const Main = () =>
       <Redirect to="/list" />
     const Footer = () =>
-    <div>
-      <h5 className="fr">Default bike icon has been taken from https://www.flaticon.com/ for free use</h5>
-    </div>
+      <div>
+        <h5 className="fr">Default bike icon has been taken from https://www.flaticon.com/ for free use</h5>
+      </div>
     return (
       <Provider store={store}>
         <Router>
-          <MuiThemeProvider theme={Theme}>
-            <div className={classes.root}>
-              <Header />
-              <Route exact path="/" component={Main} />
-              <Route exact path="/list" component={List} />
-              <Route exact path="/list/:id" component={BikeDetail} />
-              <Footer />
-            </div>
-          </MuiThemeProvider>
+          <Suspense fallback={<div>Loading...</div>}>
+            <MuiThemeProvider theme={Theme}>
+              <div className={classes.root}>
+                <Header />
+                <Route exact path="/" component={Main} />
+                <Route exact path="/list" component={List} />
+                <Route exact path="/list/:id" component={BikeDetail} />
+                <Footer />
+              </div>
+            </MuiThemeProvider>
+          </Suspense>
         </Router>
       </Provider>
     );
