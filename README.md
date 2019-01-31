@@ -1,6 +1,14 @@
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 ![JOIN Stolen Bike Cases](https://github.com/join-com/coding-challenge-frontend-react/raw/master/illustration.png)
 
+## Demo
+please use following link for demo
+[Demo](https://stolen-bike-demo.herokuapp.com/).
+
+
+also add following in .env file
+`REACT_APP_GOOGLE_MAP_KEYS=YOUR_KEYS`
+
 ## Context
 
 Stolen bikes are a typical problem in Berlin. The Police want to be more efficient in resolving stolen bike cases. They decided to build a software that can automate their processes — the software that you're going to develop.
