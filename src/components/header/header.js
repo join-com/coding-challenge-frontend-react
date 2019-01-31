@@ -18,8 +18,7 @@ class Header extends Component {
 
                     <div>
                         <Typography variant="h2" color="inherit">
-                            {/* {`Police Department of Berlin`} */}
-                            {`Unit Testing React`}
+                            {`Police Department of Berlin`}
                         </Typography>
                         <Typography variant="h4" color="inherit">
                             {`Stolen Bikes`}

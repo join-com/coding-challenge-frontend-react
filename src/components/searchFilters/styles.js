@@ -34,6 +34,12 @@ export const styles = theme => ({
     },
     searchIcon: {
         fontSize: 35
+    },
+    title : {
+        '&:hover':{
+            cursor : 'pointer'
+        }
+
     }
 
 })

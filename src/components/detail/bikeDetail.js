@@ -28,7 +28,7 @@ class BikeDetail extends Component {
         this.props.fetchIncident(this.props.match.params.id, this.fetchIncident);
     }
     componentWillUnmount = () => {
-        this.props.resetState();
+        this.props.resetDetailState();
     }
 
     fetchIncident = (error = null) => {

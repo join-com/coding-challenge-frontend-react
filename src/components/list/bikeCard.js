@@ -17,6 +17,10 @@ function dateFormater(stamp) {
 }
 
 class BikeCard extends Component {
+
+    gotoDetails=()=>{
+        this.props.history.push(`list/${this.props.data.id}`);
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -49,7 +53,7 @@ class BikeCard extends Component {
                                 </Grid>
                                 <Grid xl={10}>
                                     <div className="cardParent mg-10">
-                                        <Typography component="h5" variant="h5" color="primary" >
+                                        <Typography className={classes.title} component="h5" variant="h5" color="primary" onClick={this.gotoDetails} >
                                             {this.props.data.title || ""}
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary" className="cardChild">

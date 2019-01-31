@@ -35,6 +35,10 @@ class List extends Component {
         this.initialCall();
     }
 
+    componentWillUnmount = () => {
+        this.props.resetListState();
+    }
+
     responseCallback = (error = null) => {
         if (!!error) {
             this.setState({
@@ -120,7 +124,7 @@ class List extends Component {
                                                 this.props.stolenBikeList.map(
                                                     (item, i) => (
                                                         <div className={i % 2 == 0 ? 'even' : 'odd'}>
-                                                            <BikeCard data={item} />
+                                                            <BikeCard data={item} history={this.props.history} />
                                                         </div>
                                                     )
                                                 )
