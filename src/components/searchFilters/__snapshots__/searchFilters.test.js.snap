@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Filters it should render correctly 1`] = `
+<SearchFilters
+  classes={
+    Object {
+      "cardFooterContent": "SearchFilters-cardFooterContent-6",
+      "dateRangeIcon": "SearchFilters-dateRangeIcon-5",
+      "gridPad": "SearchFilters-gridPad-3",
+      "gridPadInner": "SearchFilters-gridPadInner-4",
+      "imgHover": "SearchFilters-imgHover-7",
+      "main": "SearchFilters-main-1",
+      "searchBtn": "SearchFilters-searchBtn-2",
+      "searchIcon": "SearchFilters-searchIcon-8",
+    }
+  }
+/>
+`;

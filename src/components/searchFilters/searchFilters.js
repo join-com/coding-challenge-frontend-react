@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import DateRange from '@material-ui/icons/DateRange';
 import SearchIcon from '@material-ui/icons/Search';
+import PropTypes from 'prop-types';
 
 import DatePicker from "react-datepicker";
 
@@ -88,6 +89,7 @@ class SearchFilters extends Component {
               variant="contained"
               size="large"
               color="primary"
+              id="search-button"
               className={classes.searchBtn}
               onClick={this.searchBtnClick}
             >
@@ -101,5 +103,9 @@ class SearchFilters extends Component {
   }
 }
 
+
+SearchFilters.propTypes = {
+  handleSearch: PropTypes.func.isRequired
+}
 
 export default withStyles(styles)(SearchFilters);

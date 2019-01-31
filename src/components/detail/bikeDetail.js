@@ -21,7 +21,8 @@ function dateFormater(stamp) {
 
 class BikeDetail extends Component {
     state = {
-        errorMsg: ''
+        errorMsg: '',
+        mapError: ''
     }
     componentDidMount = () => {
         this.props.fetchIncident(this.props.match.params.id, this.fetchIncident);
@@ -40,8 +41,14 @@ class BikeDetail extends Component {
             this.setState({
                 errorMsg: ''
             })
-            this.props.fetchIncidentMapDetails(this.props.stolenBikeDetail.title);
+            this.props.fetchIncidentMapDetails(this.props.stolenBikeDetail.title, this.errorCallback);
         }
+    }
+
+    errorCallback = (error) => {
+        this.setState({
+            mapError: error
+        })
     }
 
     render() {
@@ -72,7 +79,7 @@ class BikeDetail extends Component {
                                         </div>
                                         <div className={classes.map}>
 
-                                            {this.props.stolenBikeMap.length > 1
+                                            {this.props.stolenBikeMap.length > 1 || this.state.mapError !== ''
                                                 ?
                                                 <GoogleMapReact
                                                     bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_KEYS }}
@@ -82,7 +89,7 @@ class BikeDetail extends Component {
                                                     <BikeLocation
                                                         lat={this.props.stolenBikeMap[0]}
                                                         lng={this.props.stolenBikeMap[1]}
-                                                        text={'Bike Location'}
+                                                        text={this.state.mapError || 'Bike Location'}
                                                     />
                                                 </GoogleMapReact>
                                                 :
@@ -112,6 +119,12 @@ class BikeDetail extends Component {
             </div>
         )
     }
+}
+
+BikeDetail.propTypes = {
+    stolenBikeDetail: PropTypes.Object,
+    stolenBikeMap: PropTypes.Object,
+    resetState: PropTypes.func
 }
 
 function mapStateToProps(state) {

@@ -20,7 +20,9 @@
     "react-thunk": "^1.0.0",
     "react-tooltip": "^3.9.2",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-mock-store": "^1.5.3",
+    "redux-thunk": "^2.3.0",
+    "react-router-dom": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,6 +48,5 @@
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.8.0",
     "enzyme-to-json": "^3.3.5",
-    "react-router-dom": "^4.3.1"
   }
 }

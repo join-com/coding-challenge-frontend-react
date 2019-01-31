@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bike Details Bike Details should render correctly 1`] = `
+<Connect(BikeDetail)
+  classes={
+    Object {
+      "card": "Connect-BikeDetail--card-4",
+      "content": "Connect-BikeDetail--content-6",
+      "cover": "Connect-BikeDetail--cover-7",
+      "descriptions": "Connect-BikeDetail--descriptions-10",
+      "detailScreen": "Connect-BikeDetail--detailScreen-8",
+      "details": "Connect-BikeDetail--details-5",
+      "error": "Connect-BikeDetail--error-12",
+      "fullPageHeight": "Connect-BikeDetail--fullPageHeight-2",
+      "mainContainer": "Connect-BikeDetail--mainContainer-1",
+      "map": "Connect-BikeDetail--map-9",
+      "subHeading": "Connect-BikeDetail--subHeading-11",
+      "totalCasesText": "Connect-BikeDetail--totalCasesText-3",
+    }
+  }
+/>
+`;

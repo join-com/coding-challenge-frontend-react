@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BikeCard it should render correctly 1`] = `
+<BikeCard
+  classes={
+    Object {
+      "cardFooterContent": "BikeCard-cardFooterContent-6",
+      "dateRangeIcon": "BikeCard-dateRangeIcon-5",
+      "gridPad": "BikeCard-gridPad-3",
+      "gridPadInner": "BikeCard-gridPadInner-4",
+      "imgHover": "BikeCard-imgHover-7",
+      "main": "BikeCard-main-1",
+      "searchBtn": "BikeCard-searchBtn-2",
+      "searchIcon": "BikeCard-searchIcon-8",
+    }
+  }
+/>
+`;

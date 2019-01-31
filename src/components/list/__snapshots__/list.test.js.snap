@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List it should render correctly 1`] = `
+<Connect(List)
+  classes={
+    Object {
+      "card": "Connect-List--card-4",
+      "content": "Connect-List--content-6",
+      "controls": "Connect-List--controls-8",
+      "cover": "Connect-List--cover-7",
+      "details": "Connect-List--details-5",
+      "error": "Connect-List--error-10",
+      "fullPageHeight": "Connect-List--fullPageHeight-2",
+      "mainContainer": "Connect-List--mainContainer-1",
+      "noRecords": "Connect-List--noRecords-11",
+      "playIcon": "Connect-List--playIcon-9",
+      "totalCasesText": "Connect-List--totalCasesText-3",
+    }
+  }
+/>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader it should render correctly 1`] = `
+<div
+  className="in-place-loader"
+>
+  <WithStyles(CircularProgress)
+    thickness={5}
+  />
+</div>
+`;

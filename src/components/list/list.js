@@ -69,7 +69,8 @@ class List extends Component {
         this.setState({
             searchParams: {
                 ...this.state.searchParams,
-                search: params.search,
+                search: params.search.trim(),
+                page:1,
                 dateFrom: params.dateFrom !== '' ? (new Date(params.dateFrom).getTime()) / 1000 : '',
                 dateTo: params.dateTo !== '' ? (new Date(params.dateTo).getTime()) / 1000 : '',
             }
