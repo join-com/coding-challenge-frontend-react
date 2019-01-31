@@ -40,6 +40,12 @@ class SearchFilters extends Component {
   searchBtnClick = () => {
     this.props.handleSearch(this.state)
   }
+  handleKeyPress = (target) => {
+    if (target.charCode == 13) {
+      this.props.handleSearch(this.state)
+    }
+
+  }
   render() {
     const { classes } = this.props;
     return (
@@ -53,6 +59,7 @@ class SearchFilters extends Component {
                 placeholder="Search case description"
                 value={this.state.search}
                 onChange={this.handleSearchChange}
+                onKeyPress={this.handleKeyPress}
               />
             </Grid>
             <Grid container >

@@ -52,8 +52,8 @@ class BikeCard extends Component {
                                     </a>
                                 </Grid>
                                 <Grid xl={10}>
-                                    <div className="cardParent mg-10">
-                                        <Typography className={classes.title} component="h5" variant="h5" color="primary" onClick={this.gotoDetails} >
+                                    <div className={`cardParent mg-10 ${classes.title}`}  onClick={this.gotoDetails}>
+                                        <Typography className={classes.title} component="h5" variant="h5" color="primary"  >
                                             {this.props.data.title || ""}
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary" className="cardChild">

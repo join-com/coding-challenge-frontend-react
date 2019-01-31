@@ -7,7 +7,7 @@ import store from './store';
 
 import { theme as Theme } from "./resources/themes/overrides";
 
-
+import Loader from './components/loader/loader';
 const Header = React.lazy(() => import("./components/header/header"));
 const List = React.lazy(() => import("./components/list/list"));
 const BikeDetail = React.lazy(() => import("./components/detail/bikeDetail"));
@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div><Loader size={50} /></div>}>
             <MuiThemeProvider theme={Theme}>
               <div className={classes.root}>
                 <Header />
