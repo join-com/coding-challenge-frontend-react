@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div>
+  <div
+    className="media"
+  >
+    <a
+      className="logoStyle media-middle"
+      href="#"
+    >
+      <img
+        alt="Logo"
+        src="https://via.placeholder.com/100"
+      />
+    </a>
+    <div
+      className="media-body"
+    >
+      <h4
+        className="appHeading media-heading"
+      >
+        Anti Theft squad Berlin
+      </h4>
+      <div
+        className="appSubHeading"
+      >
+        Stolen bykes
+      </div>
+    </div>
+  </div>
+</div>
+`;

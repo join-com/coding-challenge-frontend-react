@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <div
+      className="media"
+    >
+      <a
+        className="logoStyle media-middle"
+        href="#"
+      >
+        <img
+          alt="Logo"
+          src="https://via.placeholder.com/100"
+        />
+      </a>
+      <div
+        className="media-body"
+      >
+        <h4
+          className="appHeading media-heading"
+        >
+          Anti Theft squad Berlin
+        </h4>
+        <div
+          className="appSubHeading"
+        >
+          Stolen bykes
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form
+      className="filterForm form-inline"
+      onSubmit={[Function]}
+    >
+      <div
+        className="mb-2 mr-sm-2 mb-sm-0 form-group"
+      >
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Search incident descriptions"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        onClick={[Function]}
+        type="submit"
+      >
+        Find incidents
+      </button>
+    </form>
+    <div>
+      Loading...
+    </div>
+  </div>
+</div>
+`;

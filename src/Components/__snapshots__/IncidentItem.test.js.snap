@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="incidentCard"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-2 col-lg-2 col-xl-2"
+      >
+        <div>
+          <img
+            alt="Stolen 2015 Gepida Alboin crs 500(silver, gray or bare metal)"
+            src="https://via.placeholder.com/80"
+            width="80"
+          />
+        </div>
+      </div>
+      <div
+        className="col-md-10 col-lg-10 col-xl-10"
+      >
+        <div>
+          <a
+            href="/incident/94547"
+            onClick={[Function]}
+          >
+            Stolen 2015 Gepida Alboin crs 500(silver, gray or bare metal)
+          </a>
+        </div>
+        <div>
+          Locked cellar in Warthestrasse 8, Kryptonite U-lock with cable both tyres locked to frame. Someone got in and took the whole thing as well as forced some storage doors open. 
+        </div>
+        <div>
+          <span
+            className="text-warning"
+          >
+            Berlin, 12051, DE
+          </span>
+        </div>
+        <div
+          className="text-info"
+        >
+          Theft on Tue Nov 27 2018. Reported on Wed Jan 30 2019
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

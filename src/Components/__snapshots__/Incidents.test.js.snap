@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div>
+  <form
+    className="filterForm form-inline"
+    onSubmit={[Function]}
+  >
+    <div
+      className="mb-2 mr-sm-2 mb-sm-0 form-group"
+    >
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search incident descriptions"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      aria-label={null}
+      className="btn btn-secondary"
+      onClick={[Function]}
+      type="submit"
+    >
+      Find incidents
+    </button>
+  </form>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
