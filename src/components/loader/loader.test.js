@@ -9,7 +9,7 @@ describe('Loader', () => {
         expect(component).toMatchSnapshot();
     });
     
-    it('props are correct', () => {
+    it('props are correct ', () => {
         let testSize = 30;
         const component = mount(<Loader size={testSize}/>);
         expect(component.props().size).toEqual(testSize);

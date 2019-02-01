@@ -1,22 +1,1831 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Bike Details Bike Details should render correctly 1`] = `
-<Connect(BikeDetail)
-  classes={
+<Provider
+  store={
     Object {
-      "card": "Connect-BikeDetail--card-4",
-      "content": "Connect-BikeDetail--content-6",
-      "cover": "Connect-BikeDetail--cover-7",
-      "descriptions": "Connect-BikeDetail--descriptions-10",
-      "detailScreen": "Connect-BikeDetail--detailScreen-8",
-      "details": "Connect-BikeDetail--details-5",
-      "error": "Connect-BikeDetail--error-12",
-      "fullPageHeight": "Connect-BikeDetail--fullPageHeight-2",
-      "mainContainer": "Connect-BikeDetail--mainContainer-1",
-      "map": "Connect-BikeDetail--map-9",
-      "subHeading": "Connect-BikeDetail--subHeading-11",
-      "totalCasesText": "Connect-BikeDetail--totalCasesText-3",
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
     }
   }
-/>
+>
+  <WithStyles(Connect(BikeDetail))
+    match={
+      Object {
+        "params": Object {
+          "id": 23,
+        },
+      }
+    }
+  >
+    <Connect(BikeDetail)
+      classes={
+        Object {
+          "card": "Connect-BikeDetail--card-4",
+          "content": "Connect-BikeDetail--content-6",
+          "cover": "Connect-BikeDetail--cover-7",
+          "descriptions": "Connect-BikeDetail--descriptions-10",
+          "detailScreen": "Connect-BikeDetail--detailScreen-8",
+          "details": "Connect-BikeDetail--details-5",
+          "error": "Connect-BikeDetail--error-12",
+          "fullPageHeight": "Connect-BikeDetail--fullPageHeight-2",
+          "mainContainer": "Connect-BikeDetail--mainContainer-1",
+          "map": "Connect-BikeDetail--map-9",
+          "subHeading": "Connect-BikeDetail--subHeading-11",
+          "totalCasesText": "Connect-BikeDetail--totalCasesText-3",
+        }
+      }
+      match={
+        Object {
+          "params": Object {
+            "id": 23,
+          },
+        }
+      }
+    >
+      <BikeDetail
+        classes={
+          Object {
+            "card": "Connect-BikeDetail--card-4",
+            "content": "Connect-BikeDetail--content-6",
+            "cover": "Connect-BikeDetail--cover-7",
+            "descriptions": "Connect-BikeDetail--descriptions-10",
+            "detailScreen": "Connect-BikeDetail--detailScreen-8",
+            "details": "Connect-BikeDetail--details-5",
+            "error": "Connect-BikeDetail--error-12",
+            "fullPageHeight": "Connect-BikeDetail--fullPageHeight-2",
+            "mainContainer": "Connect-BikeDetail--mainContainer-1",
+            "map": "Connect-BikeDetail--map-9",
+            "subHeading": "Connect-BikeDetail--subHeading-11",
+            "totalCasesText": "Connect-BikeDetail--totalCasesText-3",
+          }
+        }
+        fetchIncident={[Function]}
+        fetchIncidentMapDetails={[Function]}
+        fetchIncidents={[Function]}
+        match={
+          Object {
+            "params": Object {
+              "id": 23,
+            },
+          }
+        }
+        resetDetailState={[Function]}
+        resetListState={[Function]}
+        stolenBikeDetail={Object {}}
+        stolenBikeMap={Object {}}
+      >
+        <div>
+          <HelmetWrapper
+            defer={true}
+            encodeSpecialCharacters={true}
+          >
+            <SideEffect(NullComponent)
+              defer={true}
+              encodeSpecialCharacters={true}
+              title="Stolen Bikes List"
+              titleAttributes={Object {}}
+            >
+              <NullComponent
+                defer={true}
+                encodeSpecialCharacters={true}
+                title="Stolen Bikes List"
+                titleAttributes={Object {}}
+              />
+            </SideEffect(NullComponent)>
+          </HelmetWrapper>
+          <WithStyles(Grid)
+            alignItems="flex-start"
+            className="Connect-BikeDetail--mainContainer-1 Connect-BikeDetail--fullPageHeight-2"
+            container={true}
+            direction="row"
+          >
+            <Grid
+              alignContent="stretch"
+              alignItems="flex-start"
+              className="Connect-BikeDetail--mainContainer-1 Connect-BikeDetail--fullPageHeight-2"
+              classes={
+                Object {
+                  "align-content-xs-center": "MuiGrid-align-content-xs-center-25",
+                  "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-27",
+                  "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-26",
+                  "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-29",
+                  "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-28",
+                  "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-24",
+                  "align-items-xs-center": "MuiGrid-align-items-xs-center-21",
+                  "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-23",
+                  "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-22",
+                  "container": "MuiGrid-container-13",
+                  "direction-xs-column": "MuiGrid-direction-xs-column-16",
+                  "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-17",
+                  "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-18",
+                  "grid-lg-1": "MuiGrid-grid-lg-1-84",
+                  "grid-lg-10": "MuiGrid-grid-lg-10-93",
+                  "grid-lg-11": "MuiGrid-grid-lg-11-94",
+                  "grid-lg-12": "MuiGrid-grid-lg-12-95",
+                  "grid-lg-2": "MuiGrid-grid-lg-2-85",
+                  "grid-lg-3": "MuiGrid-grid-lg-3-86",
+                  "grid-lg-4": "MuiGrid-grid-lg-4-87",
+                  "grid-lg-5": "MuiGrid-grid-lg-5-88",
+                  "grid-lg-6": "MuiGrid-grid-lg-6-89",
+                  "grid-lg-7": "MuiGrid-grid-lg-7-90",
+                  "grid-lg-8": "MuiGrid-grid-lg-8-91",
+                  "grid-lg-9": "MuiGrid-grid-lg-9-92",
+                  "grid-lg-auto": "MuiGrid-grid-lg-auto-82",
+                  "grid-lg-true": "MuiGrid-grid-lg-true-83",
+                  "grid-md-1": "MuiGrid-grid-md-1-70",
+                  "grid-md-10": "MuiGrid-grid-md-10-79",
+                  "grid-md-11": "MuiGrid-grid-md-11-80",
+                  "grid-md-12": "MuiGrid-grid-md-12-81",
+                  "grid-md-2": "MuiGrid-grid-md-2-71",
+                  "grid-md-3": "MuiGrid-grid-md-3-72",
+                  "grid-md-4": "MuiGrid-grid-md-4-73",
+                  "grid-md-5": "MuiGrid-grid-md-5-74",
+                  "grid-md-6": "MuiGrid-grid-md-6-75",
+                  "grid-md-7": "MuiGrid-grid-md-7-76",
+                  "grid-md-8": "MuiGrid-grid-md-8-77",
+                  "grid-md-9": "MuiGrid-grid-md-9-78",
+                  "grid-md-auto": "MuiGrid-grid-md-auto-68",
+                  "grid-md-true": "MuiGrid-grid-md-true-69",
+                  "grid-sm-1": "MuiGrid-grid-sm-1-56",
+                  "grid-sm-10": "MuiGrid-grid-sm-10-65",
+                  "grid-sm-11": "MuiGrid-grid-sm-11-66",
+                  "grid-sm-12": "MuiGrid-grid-sm-12-67",
+                  "grid-sm-2": "MuiGrid-grid-sm-2-57",
+                  "grid-sm-3": "MuiGrid-grid-sm-3-58",
+                  "grid-sm-4": "MuiGrid-grid-sm-4-59",
+                  "grid-sm-5": "MuiGrid-grid-sm-5-60",
+                  "grid-sm-6": "MuiGrid-grid-sm-6-61",
+                  "grid-sm-7": "MuiGrid-grid-sm-7-62",
+                  "grid-sm-8": "MuiGrid-grid-sm-8-63",
+                  "grid-sm-9": "MuiGrid-grid-sm-9-64",
+                  "grid-sm-auto": "MuiGrid-grid-sm-auto-54",
+                  "grid-sm-true": "MuiGrid-grid-sm-true-55",
+                  "grid-xl-1": "MuiGrid-grid-xl-1-98",
+                  "grid-xl-10": "MuiGrid-grid-xl-10-107",
+                  "grid-xl-11": "MuiGrid-grid-xl-11-108",
+                  "grid-xl-12": "MuiGrid-grid-xl-12-109",
+                  "grid-xl-2": "MuiGrid-grid-xl-2-99",
+                  "grid-xl-3": "MuiGrid-grid-xl-3-100",
+                  "grid-xl-4": "MuiGrid-grid-xl-4-101",
+                  "grid-xl-5": "MuiGrid-grid-xl-5-102",
+                  "grid-xl-6": "MuiGrid-grid-xl-6-103",
+                  "grid-xl-7": "MuiGrid-grid-xl-7-104",
+                  "grid-xl-8": "MuiGrid-grid-xl-8-105",
+                  "grid-xl-9": "MuiGrid-grid-xl-9-106",
+                  "grid-xl-auto": "MuiGrid-grid-xl-auto-96",
+                  "grid-xl-true": "MuiGrid-grid-xl-true-97",
+                  "grid-xs-1": "MuiGrid-grid-xs-1-42",
+                  "grid-xs-10": "MuiGrid-grid-xs-10-51",
+                  "grid-xs-11": "MuiGrid-grid-xs-11-52",
+                  "grid-xs-12": "MuiGrid-grid-xs-12-53",
+                  "grid-xs-2": "MuiGrid-grid-xs-2-43",
+                  "grid-xs-3": "MuiGrid-grid-xs-3-44",
+                  "grid-xs-4": "MuiGrid-grid-xs-4-45",
+                  "grid-xs-5": "MuiGrid-grid-xs-5-46",
+                  "grid-xs-6": "MuiGrid-grid-xs-6-47",
+                  "grid-xs-7": "MuiGrid-grid-xs-7-48",
+                  "grid-xs-8": "MuiGrid-grid-xs-8-49",
+                  "grid-xs-9": "MuiGrid-grid-xs-9-50",
+                  "grid-xs-auto": "MuiGrid-grid-xs-auto-40",
+                  "grid-xs-true": "MuiGrid-grid-xs-true-41",
+                  "item": "MuiGrid-item-14",
+                  "justify-xs-center": "MuiGrid-justify-xs-center-30",
+                  "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-31",
+                  "justify-xs-space-around": "MuiGrid-justify-xs-space-around-33",
+                  "justify-xs-space-between": "MuiGrid-justify-xs-space-between-32",
+                  "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-34",
+                  "spacing-xs-16": "MuiGrid-spacing-xs-16-36",
+                  "spacing-xs-24": "MuiGrid-spacing-xs-24-37",
+                  "spacing-xs-32": "MuiGrid-spacing-xs-32-38",
+                  "spacing-xs-40": "MuiGrid-spacing-xs-40-39",
+                  "spacing-xs-8": "MuiGrid-spacing-xs-8-35",
+                  "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-19",
+                  "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-20",
+                  "zeroMinWidth": "MuiGrid-zeroMinWidth-15",
+                }
+              }
+              component="div"
+              container={true}
+              direction="row"
+              item={false}
+              justify="flex-start"
+              lg={false}
+              md={false}
+              sm={false}
+              spacing={0}
+              wrap="wrap"
+              xl={false}
+              xs={false}
+              zeroMinWidth={false}
+            >
+              <div
+                className="MuiGrid-container-13 MuiGrid-align-items-xs-flex-start-22 Connect-BikeDetail--mainContainer-1 Connect-BikeDetail--fullPageHeight-2"
+              >
+                <WithStyles(Grid)
+                  item={true}
+                  md={10}
+                  sm={12}
+                  xl={10}
+                  xs={12}
+                >
+                  <Grid
+                    alignContent="stretch"
+                    alignItems="stretch"
+                    classes={
+                      Object {
+                        "align-content-xs-center": "MuiGrid-align-content-xs-center-25",
+                        "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end-27",
+                        "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start-26",
+                        "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around-29",
+                        "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between-28",
+                        "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline-24",
+                        "align-items-xs-center": "MuiGrid-align-items-xs-center-21",
+                        "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end-23",
+                        "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start-22",
+                        "container": "MuiGrid-container-13",
+                        "direction-xs-column": "MuiGrid-direction-xs-column-16",
+                        "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse-17",
+                        "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse-18",
+                        "grid-lg-1": "MuiGrid-grid-lg-1-84",
+                        "grid-lg-10": "MuiGrid-grid-lg-10-93",
+                        "grid-lg-11": "MuiGrid-grid-lg-11-94",
+                        "grid-lg-12": "MuiGrid-grid-lg-12-95",
+                        "grid-lg-2": "MuiGrid-grid-lg-2-85",
+                        "grid-lg-3": "MuiGrid-grid-lg-3-86",
+                        "grid-lg-4": "MuiGrid-grid-lg-4-87",
+                        "grid-lg-5": "MuiGrid-grid-lg-5-88",
+                        "grid-lg-6": "MuiGrid-grid-lg-6-89",
+                        "grid-lg-7": "MuiGrid-grid-lg-7-90",
+                        "grid-lg-8": "MuiGrid-grid-lg-8-91",
+                        "grid-lg-9": "MuiGrid-grid-lg-9-92",
+                        "grid-lg-auto": "MuiGrid-grid-lg-auto-82",
+                        "grid-lg-true": "MuiGrid-grid-lg-true-83",
+                        "grid-md-1": "MuiGrid-grid-md-1-70",
+                        "grid-md-10": "MuiGrid-grid-md-10-79",
+                        "grid-md-11": "MuiGrid-grid-md-11-80",
+                        "grid-md-12": "MuiGrid-grid-md-12-81",
+                        "grid-md-2": "MuiGrid-grid-md-2-71",
+                        "grid-md-3": "MuiGrid-grid-md-3-72",
+                        "grid-md-4": "MuiGrid-grid-md-4-73",
+                        "grid-md-5": "MuiGrid-grid-md-5-74",
+                        "grid-md-6": "MuiGrid-grid-md-6-75",
+                        "grid-md-7": "MuiGrid-grid-md-7-76",
+                        "grid-md-8": "MuiGrid-grid-md-8-77",
+                        "grid-md-9": "MuiGrid-grid-md-9-78",
+                        "grid-md-auto": "MuiGrid-grid-md-auto-68",
+                        "grid-md-true": "MuiGrid-grid-md-true-69",
+                        "grid-sm-1": "MuiGrid-grid-sm-1-56",
+                        "grid-sm-10": "MuiGrid-grid-sm-10-65",
+                        "grid-sm-11": "MuiGrid-grid-sm-11-66",
+                        "grid-sm-12": "MuiGrid-grid-sm-12-67",
+                        "grid-sm-2": "MuiGrid-grid-sm-2-57",
+                        "grid-sm-3": "MuiGrid-grid-sm-3-58",
+                        "grid-sm-4": "MuiGrid-grid-sm-4-59",
+                        "grid-sm-5": "MuiGrid-grid-sm-5-60",
+                        "grid-sm-6": "MuiGrid-grid-sm-6-61",
+                        "grid-sm-7": "MuiGrid-grid-sm-7-62",
+                        "grid-sm-8": "MuiGrid-grid-sm-8-63",
+                        "grid-sm-9": "MuiGrid-grid-sm-9-64",
+                        "grid-sm-auto": "MuiGrid-grid-sm-auto-54",
+                        "grid-sm-true": "MuiGrid-grid-sm-true-55",
+                        "grid-xl-1": "MuiGrid-grid-xl-1-98",
+                        "grid-xl-10": "MuiGrid-grid-xl-10-107",
+                        "grid-xl-11": "MuiGrid-grid-xl-11-108",
+                        "grid-xl-12": "MuiGrid-grid-xl-12-109",
+                        "grid-xl-2": "MuiGrid-grid-xl-2-99",
+                        "grid-xl-3": "MuiGrid-grid-xl-3-100",
+                        "grid-xl-4": "MuiGrid-grid-xl-4-101",
+                        "grid-xl-5": "MuiGrid-grid-xl-5-102",
+                        "grid-xl-6": "MuiGrid-grid-xl-6-103",
+                        "grid-xl-7": "MuiGrid-grid-xl-7-104",
+                        "grid-xl-8": "MuiGrid-grid-xl-8-105",
+                        "grid-xl-9": "MuiGrid-grid-xl-9-106",
+                        "grid-xl-auto": "MuiGrid-grid-xl-auto-96",
+                        "grid-xl-true": "MuiGrid-grid-xl-true-97",
+                        "grid-xs-1": "MuiGrid-grid-xs-1-42",
+                        "grid-xs-10": "MuiGrid-grid-xs-10-51",
+                        "grid-xs-11": "MuiGrid-grid-xs-11-52",
+                        "grid-xs-12": "MuiGrid-grid-xs-12-53",
+                        "grid-xs-2": "MuiGrid-grid-xs-2-43",
+                        "grid-xs-3": "MuiGrid-grid-xs-3-44",
+                        "grid-xs-4": "MuiGrid-grid-xs-4-45",
+                        "grid-xs-5": "MuiGrid-grid-xs-5-46",
+                        "grid-xs-6": "MuiGrid-grid-xs-6-47",
+                        "grid-xs-7": "MuiGrid-grid-xs-7-48",
+                        "grid-xs-8": "MuiGrid-grid-xs-8-49",
+                        "grid-xs-9": "MuiGrid-grid-xs-9-50",
+                        "grid-xs-auto": "MuiGrid-grid-xs-auto-40",
+                        "grid-xs-true": "MuiGrid-grid-xs-true-41",
+                        "item": "MuiGrid-item-14",
+                        "justify-xs-center": "MuiGrid-justify-xs-center-30",
+                        "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end-31",
+                        "justify-xs-space-around": "MuiGrid-justify-xs-space-around-33",
+                        "justify-xs-space-between": "MuiGrid-justify-xs-space-between-32",
+                        "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly-34",
+                        "spacing-xs-16": "MuiGrid-spacing-xs-16-36",
+                        "spacing-xs-24": "MuiGrid-spacing-xs-24-37",
+                        "spacing-xs-32": "MuiGrid-spacing-xs-32-38",
+                        "spacing-xs-40": "MuiGrid-spacing-xs-40-39",
+                        "spacing-xs-8": "MuiGrid-spacing-xs-8-35",
+                        "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap-19",
+                        "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse-20",
+                        "zeroMinWidth": "MuiGrid-zeroMinWidth-15",
+                      }
+                    }
+                    component="div"
+                    container={false}
+                    direction="row"
+                    item={true}
+                    justify="flex-start"
+                    lg={false}
+                    md={10}
+                    sm={12}
+                    spacing={0}
+                    wrap="wrap"
+                    xl={10}
+                    xs={12}
+                    zeroMinWidth={false}
+                  >
+                    <div
+                      className="MuiGrid-item-14 MuiGrid-grid-xs-12-53 MuiGrid-grid-sm-12-67 MuiGrid-grid-md-10-79 MuiGrid-grid-xl-10-107"
+                    >
+                      <WithStyles(Paper)
+                        className="Connect-BikeDetail--fullPageHeight-2"
+                      >
+                        <Paper
+                          className="Connect-BikeDetail--fullPageHeight-2"
+                          classes={
+                            Object {
+                              "elevation0": "MuiPaper-elevation0-112",
+                              "elevation1": "MuiPaper-elevation1-113",
+                              "elevation10": "MuiPaper-elevation10-122",
+                              "elevation11": "MuiPaper-elevation11-123",
+                              "elevation12": "MuiPaper-elevation12-124",
+                              "elevation13": "MuiPaper-elevation13-125",
+                              "elevation14": "MuiPaper-elevation14-126",
+                              "elevation15": "MuiPaper-elevation15-127",
+                              "elevation16": "MuiPaper-elevation16-128",
+                              "elevation17": "MuiPaper-elevation17-129",
+                              "elevation18": "MuiPaper-elevation18-130",
+                              "elevation19": "MuiPaper-elevation19-131",
+                              "elevation2": "MuiPaper-elevation2-114",
+                              "elevation20": "MuiPaper-elevation20-132",
+                              "elevation21": "MuiPaper-elevation21-133",
+                              "elevation22": "MuiPaper-elevation22-134",
+                              "elevation23": "MuiPaper-elevation23-135",
+                              "elevation24": "MuiPaper-elevation24-136",
+                              "elevation3": "MuiPaper-elevation3-115",
+                              "elevation4": "MuiPaper-elevation4-116",
+                              "elevation5": "MuiPaper-elevation5-117",
+                              "elevation6": "MuiPaper-elevation6-118",
+                              "elevation7": "MuiPaper-elevation7-119",
+                              "elevation8": "MuiPaper-elevation8-120",
+                              "elevation9": "MuiPaper-elevation9-121",
+                              "root": "MuiPaper-root-110",
+                              "rounded": "MuiPaper-rounded-111",
+                            }
+                          }
+                          component="div"
+                          elevation={2}
+                          square={false}
+                        >
+                          <div
+                            className="MuiPaper-root-110 MuiPaper-elevation2-114 MuiPaper-rounded-111 Connect-BikeDetail--fullPageHeight-2"
+                          >
+                            <div
+                              className="Connect-BikeDetail--detailScreen-8"
+                            >
+                              <WithStyles(Typography)
+                                color="primary"
+                                component="h4"
+                                variant="h4"
+                              >
+                                <Typography
+                                  align="inherit"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTypography-alignCenter-160",
+                                      "alignJustify": "MuiTypography-alignJustify-162",
+                                      "alignLeft": "MuiTypography-alignLeft-159",
+                                      "alignRight": "MuiTypography-alignRight-161",
+                                      "body1": "MuiTypography-body1-146",
+                                      "body2": "MuiTypography-body2-145",
+                                      "button": "MuiTypography-button-148",
+                                      "caption": "MuiTypography-caption-147",
+                                      "colorError": "MuiTypography-colorError-171",
+                                      "colorInherit": "MuiTypography-colorInherit-166",
+                                      "colorPrimary": "MuiTypography-colorPrimary-167",
+                                      "colorSecondary": "MuiTypography-colorSecondary-168",
+                                      "colorTextPrimary": "MuiTypography-colorTextPrimary-169",
+                                      "colorTextSecondary": "MuiTypography-colorTextSecondary-170",
+                                      "display1": "MuiTypography-display1-141",
+                                      "display2": "MuiTypography-display2-140",
+                                      "display3": "MuiTypography-display3-139",
+                                      "display4": "MuiTypography-display4-138",
+                                      "gutterBottom": "MuiTypography-gutterBottom-164",
+                                      "h1": "MuiTypography-h1-149",
+                                      "h2": "MuiTypography-h2-150",
+                                      "h3": "MuiTypography-h3-151",
+                                      "h4": "MuiTypography-h4-152",
+                                      "h5": "MuiTypography-h5-153",
+                                      "h6": "MuiTypography-h6-154",
+                                      "headline": "MuiTypography-headline-142",
+                                      "inline": "MuiTypography-inline-172",
+                                      "noWrap": "MuiTypography-noWrap-163",
+                                      "overline": "MuiTypography-overline-157",
+                                      "paragraph": "MuiTypography-paragraph-165",
+                                      "root": "MuiTypography-root-137",
+                                      "srOnly": "MuiTypography-srOnly-158",
+                                      "subheading": "MuiTypography-subheading-144",
+                                      "subtitle1": "MuiTypography-subtitle1-155",
+                                      "subtitle2": "MuiTypography-subtitle2-156",
+                                      "title": "MuiTypography-title-143",
+                                    }
+                                  }
+                                  color="primary"
+                                  component="h4"
+                                  gutterBottom={false}
+                                  headlineMapping={
+                                    Object {
+                                      "body1": "p",
+                                      "body2": "p",
+                                      "display1": "h1",
+                                      "display2": "h1",
+                                      "display3": "h1",
+                                      "display4": "h1",
+                                      "h1": "h1",
+                                      "h2": "h2",
+                                      "h3": "h3",
+                                      "h4": "h4",
+                                      "h5": "h5",
+                                      "h6": "h6",
+                                      "headline": "h1",
+                                      "subheading": "h3",
+                                      "subtitle1": "h6",
+                                      "subtitle2": "h6",
+                                      "title": "h2",
+                                    }
+                                  }
+                                  inline={false}
+                                  noWrap={false}
+                                  paragraph={false}
+                                  theme={
+                                    Object {
+                                      "breakpoints": Object {
+                                        "between": [Function],
+                                        "down": [Function],
+                                        "keys": Array [
+                                          "xs",
+                                          "sm",
+                                          "md",
+                                          "lg",
+                                          "xl",
+                                        ],
+                                        "only": [Function],
+                                        "up": [Function],
+                                        "values": Object {
+                                          "lg": 1280,
+                                          "md": 960,
+                                          "sm": 600,
+                                          "xl": 1920,
+                                          "xs": 0,
+                                        },
+                                        "width": [Function],
+                                      },
+                                      "direction": "ltr",
+                                      "mixins": Object {
+                                        "gutters": [Function],
+                                        "toolbar": Object {
+                                          "@media (min-width:0px) and (orientation: landscape)": Object {
+                                            "minHeight": 48,
+                                          },
+                                          "@media (min-width:600px)": Object {
+                                            "minHeight": 64,
+                                          },
+                                          "minHeight": 56,
+                                        },
+                                      },
+                                      "overrides": Object {},
+                                      "palette": Object {
+                                        "action": Object {
+                                          "active": "rgba(0, 0, 0, 0.54)",
+                                          "disabled": "rgba(0, 0, 0, 0.26)",
+                                          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                          "hover": "rgba(0, 0, 0, 0.08)",
+                                          "hoverOpacity": 0.08,
+                                          "selected": "rgba(0, 0, 0, 0.14)",
+                                        },
+                                        "augmentColor": [Function],
+                                        "background": Object {
+                                          "default": "#fafafa",
+                                          "paper": "#fff",
+                                        },
+                                        "common": Object {
+                                          "black": "#000",
+                                          "white": "#fff",
+                                        },
+                                        "contrastThreshold": 3,
+                                        "divider": "rgba(0, 0, 0, 0.12)",
+                                        "error": Object {
+                                          "contrastText": "#fff",
+                                          "dark": "#d32f2f",
+                                          "light": "#e57373",
+                                          "main": "#f44336",
+                                        },
+                                        "getContrastText": [Function],
+                                        "grey": Object {
+                                          "100": "#f5f5f5",
+                                          "200": "#eeeeee",
+                                          "300": "#e0e0e0",
+                                          "400": "#bdbdbd",
+                                          "50": "#fafafa",
+                                          "500": "#9e9e9e",
+                                          "600": "#757575",
+                                          "700": "#616161",
+                                          "800": "#424242",
+                                          "900": "#212121",
+                                          "A100": "#d5d5d5",
+                                          "A200": "#aaaaaa",
+                                          "A400": "#303030",
+                                          "A700": "#616161",
+                                        },
+                                        "primary": Object {
+                                          "contrastText": "#fff",
+                                          "dark": "#303f9f",
+                                          "light": "#7986cb",
+                                          "main": "#3f51b5",
+                                        },
+                                        "secondary": Object {
+                                          "contrastText": "#fff",
+                                          "dark": "#c51162",
+                                          "light": "#ff4081",
+                                          "main": "#f50057",
+                                        },
+                                        "text": Object {
+                                          "disabled": "rgba(0, 0, 0, 0.38)",
+                                          "hint": "rgba(0, 0, 0, 0.38)",
+                                          "primary": "rgba(0, 0, 0, 0.87)",
+                                          "secondary": "rgba(0, 0, 0, 0.54)",
+                                        },
+                                        "tonalOffset": 0.2,
+                                        "type": "light",
+                                      },
+                                      "props": Object {},
+                                      "shadows": Array [
+                                        "none",
+                                        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                                        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                                        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                        "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                        "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                        "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                        "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                        "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                        "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                        "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                        "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                        "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                        "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                        "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                        "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                        "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                        "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                        "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                      ],
+                                      "shape": Object {
+                                        "borderRadius": 4,
+                                      },
+                                      "spacing": Object {
+                                        "unit": 8,
+                                      },
+                                      "transitions": Object {
+                                        "create": [Function],
+                                        "duration": Object {
+                                          "complex": 375,
+                                          "enteringScreen": 225,
+                                          "leavingScreen": 195,
+                                          "short": 250,
+                                          "shorter": 200,
+                                          "shortest": 150,
+                                          "standard": 300,
+                                        },
+                                        "easing": Object {
+                                          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                        },
+                                        "getAutoHeightDuration": [Function],
+                                      },
+                                      "typography": Object {
+                                        "body1": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.875rem",
+                                          "fontWeight": 400,
+                                          "lineHeight": "1.46429em",
+                                        },
+                                        "body1Next": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0.00938em",
+                                          "lineHeight": 1.5,
+                                        },
+                                        "body2": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.875rem",
+                                          "fontWeight": 500,
+                                          "lineHeight": "1.71429em",
+                                        },
+                                        "body2Next": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.875rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0.01071em",
+                                          "lineHeight": 1.5,
+                                        },
+                                        "button": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.875rem",
+                                          "fontWeight": 500,
+                                          "textTransform": "uppercase",
+                                        },
+                                        "buttonNext": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.875rem",
+                                          "fontWeight": 500,
+                                          "letterSpacing": "0.02857em",
+                                          "lineHeight": 1.75,
+                                          "textTransform": "uppercase",
+                                        },
+                                        "caption": Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.75rem",
+                                          "fontWeight": 400,
+                                          "lineHeight": "1.375em",
+                                        },
+                                        "captionNext": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.75rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0.03333em",
+                                          "lineHeight": 1.66,
+                                        },
+                                        "display1": Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "2.125rem",
+                                          "fontWeight": 400,
+                                          "lineHeight": "1.20588em",
+                                        },
+                                        "display2": Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "2.8125rem",
+                                          "fontWeight": 400,
+                                          "lineHeight": "1.13333em",
+                                          "marginLeft": "-.02em",
+                                        },
+                                        "display3": Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "3.5rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "-.02em",
+                                          "lineHeight": "1.30357em",
+                                          "marginLeft": "-.02em",
+                                        },
+                                        "display4": Object {
+                                          "color": "rgba(0, 0, 0, 0.54)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "7rem",
+                                          "fontWeight": 300,
+                                          "letterSpacing": "-.04em",
+                                          "lineHeight": "1.14286em",
+                                          "marginLeft": "-.04em",
+                                        },
+                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                        "fontSize": 14,
+                                        "fontWeightLight": 300,
+                                        "fontWeightMedium": 500,
+                                        "fontWeightRegular": 400,
+                                        "h1": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "6rem",
+                                          "fontWeight": 300,
+                                          "letterSpacing": "-0.01562em",
+                                          "lineHeight": 1,
+                                        },
+                                        "h2": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "3.75rem",
+                                          "fontWeight": 300,
+                                          "letterSpacing": "-0.00833em",
+                                          "lineHeight": 1,
+                                        },
+                                        "h3": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "3rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0em",
+                                          "lineHeight": 1.04,
+                                        },
+                                        "h4": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "2.125rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0.00735em",
+                                          "lineHeight": 1.17,
+                                        },
+                                        "h5": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1.5rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0em",
+                                          "lineHeight": 1.33,
+                                        },
+                                        "h6": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1.25rem",
+                                          "fontWeight": 500,
+                                          "letterSpacing": "0.0075em",
+                                          "lineHeight": 1.6,
+                                        },
+                                        "headline": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1.5rem",
+                                          "fontWeight": 400,
+                                          "lineHeight": "1.35417em",
+                                        },
+                                        "overline": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.75rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0.08333em",
+                                          "lineHeight": 2.66,
+                                          "textTransform": "uppercase",
+                                        },
+                                        "pxToRem": [Function],
+                                        "round": [Function],
+                                        "subheading": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1rem",
+                                          "fontWeight": 400,
+                                          "lineHeight": "1.5em",
+                                        },
+                                        "subtitle1": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1rem",
+                                          "fontWeight": 400,
+                                          "letterSpacing": "0.00938em",
+                                          "lineHeight": 1.75,
+                                        },
+                                        "subtitle2": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "0.875rem",
+                                          "fontWeight": 500,
+                                          "letterSpacing": "0.00714em",
+                                          "lineHeight": 1.57,
+                                        },
+                                        "title": Object {
+                                          "color": "rgba(0, 0, 0, 0.87)",
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": "1.3125rem",
+                                          "fontWeight": 500,
+                                          "lineHeight": "1.16667em",
+                                        },
+                                        "useNextVariants": false,
+                                      },
+                                      "zIndex": Object {
+                                        "appBar": 1100,
+                                        "drawer": 1200,
+                                        "mobileStepper": 1000,
+                                        "modal": 1300,
+                                        "snackbar": 1400,
+                                        "tooltip": 1500,
+                                      },
+                                    }
+                                  }
+                                  variant="h4"
+                                >
+                                  <h4
+                                    className="MuiTypography-root-137 MuiTypography-h4-152 MuiTypography-colorPrimary-167"
+                                  />
+                                </Typography>
+                              </WithStyles(Typography)>
+                              <div
+                                className="Connect-BikeDetail--subHeading-11"
+                              >
+                                <span>
+                                  Stolen on 
+                                </span>
+                                Invalid date
+                                 
+                                <span>
+                                  at
+                                </span>
+                                 
+                              </div>
+                              <div
+                                className="Connect-BikeDetail--map-9"
+                              >
+                                <InPlaceLoader
+                                  size={50}
+                                >
+                                  <div
+                                    className="in-place-loader"
+                                  >
+                                    <WithStyles(CircularProgress)
+                                      size={50}
+                                      thickness={5}
+                                    >
+                                      <CircularProgress
+                                        classes={
+                                          Object {
+                                            "circle": "MuiCircularProgress-circle-179",
+                                            "circleDisableShrink": "MuiCircularProgress-circleDisableShrink-182",
+                                            "circleIndeterminate": "MuiCircularProgress-circleIndeterminate-181",
+                                            "circleStatic": "MuiCircularProgress-circleStatic-180",
+                                            "colorPrimary": "MuiCircularProgress-colorPrimary-176",
+                                            "colorSecondary": "MuiCircularProgress-colorSecondary-177",
+                                            "indeterminate": "MuiCircularProgress-indeterminate-175",
+                                            "root": "MuiCircularProgress-root-173",
+                                            "static": "MuiCircularProgress-static-174",
+                                            "svg": "MuiCircularProgress-svg-178",
+                                          }
+                                        }
+                                        color="primary"
+                                        disableShrink={false}
+                                        size={50}
+                                        thickness={5}
+                                        value={0}
+                                        variant="indeterminate"
+                                      >
+                                        <div
+                                          className="MuiCircularProgress-root-173 MuiCircularProgress-colorPrimary-176 MuiCircularProgress-indeterminate-175"
+                                          role="progressbar"
+                                          style={
+                                            Object {
+                                              "height": 50,
+                                              "width": 50,
+                                            }
+                                          }
+                                        >
+                                          <svg
+                                            className="MuiCircularProgress-svg-178"
+                                            viewBox="22 22 44 44"
+                                          >
+                                            <circle
+                                              className="MuiCircularProgress-circle-179 MuiCircularProgress-circleIndeterminate-181"
+                                              cx={44}
+                                              cy={44}
+                                              fill="none"
+                                              r={19.5}
+                                              strokeWidth={5}
+                                              style={Object {}}
+                                            />
+                                          </svg>
+                                        </div>
+                                      </CircularProgress>
+                                    </WithStyles(CircularProgress)>
+                                  </div>
+                                </InPlaceLoader>
+                              </div>
+                              <div
+                                className="Connect-BikeDetail--descriptions-10"
+                              >
+                                <WithStyles(Typography)
+                                  color="primary"
+                                  component="h4"
+                                  variant="h4"
+                                >
+                                  <Typography
+                                    align="inherit"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTypography-alignCenter-160",
+                                        "alignJustify": "MuiTypography-alignJustify-162",
+                                        "alignLeft": "MuiTypography-alignLeft-159",
+                                        "alignRight": "MuiTypography-alignRight-161",
+                                        "body1": "MuiTypography-body1-146",
+                                        "body2": "MuiTypography-body2-145",
+                                        "button": "MuiTypography-button-148",
+                                        "caption": "MuiTypography-caption-147",
+                                        "colorError": "MuiTypography-colorError-171",
+                                        "colorInherit": "MuiTypography-colorInherit-166",
+                                        "colorPrimary": "MuiTypography-colorPrimary-167",
+                                        "colorSecondary": "MuiTypography-colorSecondary-168",
+                                        "colorTextPrimary": "MuiTypography-colorTextPrimary-169",
+                                        "colorTextSecondary": "MuiTypography-colorTextSecondary-170",
+                                        "display1": "MuiTypography-display1-141",
+                                        "display2": "MuiTypography-display2-140",
+                                        "display3": "MuiTypography-display3-139",
+                                        "display4": "MuiTypography-display4-138",
+                                        "gutterBottom": "MuiTypography-gutterBottom-164",
+                                        "h1": "MuiTypography-h1-149",
+                                        "h2": "MuiTypography-h2-150",
+                                        "h3": "MuiTypography-h3-151",
+                                        "h4": "MuiTypography-h4-152",
+                                        "h5": "MuiTypography-h5-153",
+                                        "h6": "MuiTypography-h6-154",
+                                        "headline": "MuiTypography-headline-142",
+                                        "inline": "MuiTypography-inline-172",
+                                        "noWrap": "MuiTypography-noWrap-163",
+                                        "overline": "MuiTypography-overline-157",
+                                        "paragraph": "MuiTypography-paragraph-165",
+                                        "root": "MuiTypography-root-137",
+                                        "srOnly": "MuiTypography-srOnly-158",
+                                        "subheading": "MuiTypography-subheading-144",
+                                        "subtitle1": "MuiTypography-subtitle1-155",
+                                        "subtitle2": "MuiTypography-subtitle2-156",
+                                        "title": "MuiTypography-title-143",
+                                      }
+                                    }
+                                    color="primary"
+                                    component="h4"
+                                    gutterBottom={false}
+                                    headlineMapping={
+                                      Object {
+                                        "body1": "p",
+                                        "body2": "p",
+                                        "display1": "h1",
+                                        "display2": "h1",
+                                        "display3": "h1",
+                                        "display4": "h1",
+                                        "h1": "h1",
+                                        "h2": "h2",
+                                        "h3": "h3",
+                                        "h4": "h4",
+                                        "h5": "h5",
+                                        "h6": "h6",
+                                        "headline": "h1",
+                                        "subheading": "h3",
+                                        "subtitle1": "h6",
+                                        "subtitle2": "h6",
+                                        "title": "h2",
+                                      }
+                                    }
+                                    inline={false}
+                                    noWrap={false}
+                                    paragraph={false}
+                                    theme={
+                                      Object {
+                                        "breakpoints": Object {
+                                          "between": [Function],
+                                          "down": [Function],
+                                          "keys": Array [
+                                            "xs",
+                                            "sm",
+                                            "md",
+                                            "lg",
+                                            "xl",
+                                          ],
+                                          "only": [Function],
+                                          "up": [Function],
+                                          "values": Object {
+                                            "lg": 1280,
+                                            "md": 960,
+                                            "sm": 600,
+                                            "xl": 1920,
+                                            "xs": 0,
+                                          },
+                                          "width": [Function],
+                                        },
+                                        "direction": "ltr",
+                                        "mixins": Object {
+                                          "gutters": [Function],
+                                          "toolbar": Object {
+                                            "@media (min-width:0px) and (orientation: landscape)": Object {
+                                              "minHeight": 48,
+                                            },
+                                            "@media (min-width:600px)": Object {
+                                              "minHeight": 64,
+                                            },
+                                            "minHeight": 56,
+                                          },
+                                        },
+                                        "overrides": Object {},
+                                        "palette": Object {
+                                          "action": Object {
+                                            "active": "rgba(0, 0, 0, 0.54)",
+                                            "disabled": "rgba(0, 0, 0, 0.26)",
+                                            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                            "hover": "rgba(0, 0, 0, 0.08)",
+                                            "hoverOpacity": 0.08,
+                                            "selected": "rgba(0, 0, 0, 0.14)",
+                                          },
+                                          "augmentColor": [Function],
+                                          "background": Object {
+                                            "default": "#fafafa",
+                                            "paper": "#fff",
+                                          },
+                                          "common": Object {
+                                            "black": "#000",
+                                            "white": "#fff",
+                                          },
+                                          "contrastThreshold": 3,
+                                          "divider": "rgba(0, 0, 0, 0.12)",
+                                          "error": Object {
+                                            "contrastText": "#fff",
+                                            "dark": "#d32f2f",
+                                            "light": "#e57373",
+                                            "main": "#f44336",
+                                          },
+                                          "getContrastText": [Function],
+                                          "grey": Object {
+                                            "100": "#f5f5f5",
+                                            "200": "#eeeeee",
+                                            "300": "#e0e0e0",
+                                            "400": "#bdbdbd",
+                                            "50": "#fafafa",
+                                            "500": "#9e9e9e",
+                                            "600": "#757575",
+                                            "700": "#616161",
+                                            "800": "#424242",
+                                            "900": "#212121",
+                                            "A100": "#d5d5d5",
+                                            "A200": "#aaaaaa",
+                                            "A400": "#303030",
+                                            "A700": "#616161",
+                                          },
+                                          "primary": Object {
+                                            "contrastText": "#fff",
+                                            "dark": "#303f9f",
+                                            "light": "#7986cb",
+                                            "main": "#3f51b5",
+                                          },
+                                          "secondary": Object {
+                                            "contrastText": "#fff",
+                                            "dark": "#c51162",
+                                            "light": "#ff4081",
+                                            "main": "#f50057",
+                                          },
+                                          "text": Object {
+                                            "disabled": "rgba(0, 0, 0, 0.38)",
+                                            "hint": "rgba(0, 0, 0, 0.38)",
+                                            "primary": "rgba(0, 0, 0, 0.87)",
+                                            "secondary": "rgba(0, 0, 0, 0.54)",
+                                          },
+                                          "tonalOffset": 0.2,
+                                          "type": "light",
+                                        },
+                                        "props": Object {},
+                                        "shadows": Array [
+                                          "none",
+                                          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                                          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                                          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                        ],
+                                        "shape": Object {
+                                          "borderRadius": 4,
+                                        },
+                                        "spacing": Object {
+                                          "unit": 8,
+                                        },
+                                        "transitions": Object {
+                                          "create": [Function],
+                                          "duration": Object {
+                                            "complex": 375,
+                                            "enteringScreen": 225,
+                                            "leavingScreen": 195,
+                                            "short": 250,
+                                            "shorter": 200,
+                                            "shortest": 150,
+                                            "standard": 300,
+                                          },
+                                          "easing": Object {
+                                            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                          },
+                                          "getAutoHeightDuration": [Function],
+                                        },
+                                        "typography": Object {
+                                          "body1": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.46429em",
+                                          },
+                                          "body1Next": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.00938em",
+                                            "lineHeight": 1.5,
+                                          },
+                                          "body2": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "lineHeight": "1.71429em",
+                                          },
+                                          "body2Next": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.01071em",
+                                            "lineHeight": 1.5,
+                                          },
+                                          "button": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "textTransform": "uppercase",
+                                          },
+                                          "buttonNext": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "letterSpacing": "0.02857em",
+                                            "lineHeight": 1.75,
+                                            "textTransform": "uppercase",
+                                          },
+                                          "caption": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.75rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.375em",
+                                          },
+                                          "captionNext": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.75rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.03333em",
+                                            "lineHeight": 1.66,
+                                          },
+                                          "display1": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "2.125rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.20588em",
+                                          },
+                                          "display2": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "2.8125rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.13333em",
+                                            "marginLeft": "-.02em",
+                                          },
+                                          "display3": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "3.5rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "-.02em",
+                                            "lineHeight": "1.30357em",
+                                            "marginLeft": "-.02em",
+                                          },
+                                          "display4": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "7rem",
+                                            "fontWeight": 300,
+                                            "letterSpacing": "-.04em",
+                                            "lineHeight": "1.14286em",
+                                            "marginLeft": "-.04em",
+                                          },
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": 14,
+                                          "fontWeightLight": 300,
+                                          "fontWeightMedium": 500,
+                                          "fontWeightRegular": 400,
+                                          "h1": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "6rem",
+                                            "fontWeight": 300,
+                                            "letterSpacing": "-0.01562em",
+                                            "lineHeight": 1,
+                                          },
+                                          "h2": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "3.75rem",
+                                            "fontWeight": 300,
+                                            "letterSpacing": "-0.00833em",
+                                            "lineHeight": 1,
+                                          },
+                                          "h3": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "3rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0em",
+                                            "lineHeight": 1.04,
+                                          },
+                                          "h4": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "2.125rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.00735em",
+                                            "lineHeight": 1.17,
+                                          },
+                                          "h5": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.5rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0em",
+                                            "lineHeight": 1.33,
+                                          },
+                                          "h6": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.25rem",
+                                            "fontWeight": 500,
+                                            "letterSpacing": "0.0075em",
+                                            "lineHeight": 1.6,
+                                          },
+                                          "headline": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.5rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.35417em",
+                                          },
+                                          "overline": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.75rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.08333em",
+                                            "lineHeight": 2.66,
+                                            "textTransform": "uppercase",
+                                          },
+                                          "pxToRem": [Function],
+                                          "round": [Function],
+                                          "subheading": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.5em",
+                                          },
+                                          "subtitle1": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.00938em",
+                                            "lineHeight": 1.75,
+                                          },
+                                          "subtitle2": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "letterSpacing": "0.00714em",
+                                            "lineHeight": 1.57,
+                                          },
+                                          "title": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.3125rem",
+                                            "fontWeight": 500,
+                                            "lineHeight": "1.16667em",
+                                          },
+                                          "useNextVariants": false,
+                                        },
+                                        "zIndex": Object {
+                                          "appBar": 1100,
+                                          "drawer": 1200,
+                                          "mobileStepper": 1000,
+                                          "modal": 1300,
+                                          "snackbar": 1400,
+                                          "tooltip": 1500,
+                                        },
+                                      }
+                                    }
+                                    variant="h4"
+                                  >
+                                    <h4
+                                      className="MuiTypography-root-137 MuiTypography-h4-152 MuiTypography-colorPrimary-167"
+                                    >
+                                      Description of incident 
+                                    </h4>
+                                  </Typography>
+                                </WithStyles(Typography)>
+                                <WithStyles(Typography)
+                                  className="cardChild"
+                                  color="textSecondary"
+                                  variant="subtitle1"
+                                >
+                                  <Typography
+                                    align="inherit"
+                                    className="cardChild"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTypography-alignCenter-160",
+                                        "alignJustify": "MuiTypography-alignJustify-162",
+                                        "alignLeft": "MuiTypography-alignLeft-159",
+                                        "alignRight": "MuiTypography-alignRight-161",
+                                        "body1": "MuiTypography-body1-146",
+                                        "body2": "MuiTypography-body2-145",
+                                        "button": "MuiTypography-button-148",
+                                        "caption": "MuiTypography-caption-147",
+                                        "colorError": "MuiTypography-colorError-171",
+                                        "colorInherit": "MuiTypography-colorInherit-166",
+                                        "colorPrimary": "MuiTypography-colorPrimary-167",
+                                        "colorSecondary": "MuiTypography-colorSecondary-168",
+                                        "colorTextPrimary": "MuiTypography-colorTextPrimary-169",
+                                        "colorTextSecondary": "MuiTypography-colorTextSecondary-170",
+                                        "display1": "MuiTypography-display1-141",
+                                        "display2": "MuiTypography-display2-140",
+                                        "display3": "MuiTypography-display3-139",
+                                        "display4": "MuiTypography-display4-138",
+                                        "gutterBottom": "MuiTypography-gutterBottom-164",
+                                        "h1": "MuiTypography-h1-149",
+                                        "h2": "MuiTypography-h2-150",
+                                        "h3": "MuiTypography-h3-151",
+                                        "h4": "MuiTypography-h4-152",
+                                        "h5": "MuiTypography-h5-153",
+                                        "h6": "MuiTypography-h6-154",
+                                        "headline": "MuiTypography-headline-142",
+                                        "inline": "MuiTypography-inline-172",
+                                        "noWrap": "MuiTypography-noWrap-163",
+                                        "overline": "MuiTypography-overline-157",
+                                        "paragraph": "MuiTypography-paragraph-165",
+                                        "root": "MuiTypography-root-137",
+                                        "srOnly": "MuiTypography-srOnly-158",
+                                        "subheading": "MuiTypography-subheading-144",
+                                        "subtitle1": "MuiTypography-subtitle1-155",
+                                        "subtitle2": "MuiTypography-subtitle2-156",
+                                        "title": "MuiTypography-title-143",
+                                      }
+                                    }
+                                    color="textSecondary"
+                                    gutterBottom={false}
+                                    headlineMapping={
+                                      Object {
+                                        "body1": "p",
+                                        "body2": "p",
+                                        "display1": "h1",
+                                        "display2": "h1",
+                                        "display3": "h1",
+                                        "display4": "h1",
+                                        "h1": "h1",
+                                        "h2": "h2",
+                                        "h3": "h3",
+                                        "h4": "h4",
+                                        "h5": "h5",
+                                        "h6": "h6",
+                                        "headline": "h1",
+                                        "subheading": "h3",
+                                        "subtitle1": "h6",
+                                        "subtitle2": "h6",
+                                        "title": "h2",
+                                      }
+                                    }
+                                    inline={false}
+                                    noWrap={false}
+                                    paragraph={false}
+                                    theme={
+                                      Object {
+                                        "breakpoints": Object {
+                                          "between": [Function],
+                                          "down": [Function],
+                                          "keys": Array [
+                                            "xs",
+                                            "sm",
+                                            "md",
+                                            "lg",
+                                            "xl",
+                                          ],
+                                          "only": [Function],
+                                          "up": [Function],
+                                          "values": Object {
+                                            "lg": 1280,
+                                            "md": 960,
+                                            "sm": 600,
+                                            "xl": 1920,
+                                            "xs": 0,
+                                          },
+                                          "width": [Function],
+                                        },
+                                        "direction": "ltr",
+                                        "mixins": Object {
+                                          "gutters": [Function],
+                                          "toolbar": Object {
+                                            "@media (min-width:0px) and (orientation: landscape)": Object {
+                                              "minHeight": 48,
+                                            },
+                                            "@media (min-width:600px)": Object {
+                                              "minHeight": 64,
+                                            },
+                                            "minHeight": 56,
+                                          },
+                                        },
+                                        "overrides": Object {},
+                                        "palette": Object {
+                                          "action": Object {
+                                            "active": "rgba(0, 0, 0, 0.54)",
+                                            "disabled": "rgba(0, 0, 0, 0.26)",
+                                            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                            "hover": "rgba(0, 0, 0, 0.08)",
+                                            "hoverOpacity": 0.08,
+                                            "selected": "rgba(0, 0, 0, 0.14)",
+                                          },
+                                          "augmentColor": [Function],
+                                          "background": Object {
+                                            "default": "#fafafa",
+                                            "paper": "#fff",
+                                          },
+                                          "common": Object {
+                                            "black": "#000",
+                                            "white": "#fff",
+                                          },
+                                          "contrastThreshold": 3,
+                                          "divider": "rgba(0, 0, 0, 0.12)",
+                                          "error": Object {
+                                            "contrastText": "#fff",
+                                            "dark": "#d32f2f",
+                                            "light": "#e57373",
+                                            "main": "#f44336",
+                                          },
+                                          "getContrastText": [Function],
+                                          "grey": Object {
+                                            "100": "#f5f5f5",
+                                            "200": "#eeeeee",
+                                            "300": "#e0e0e0",
+                                            "400": "#bdbdbd",
+                                            "50": "#fafafa",
+                                            "500": "#9e9e9e",
+                                            "600": "#757575",
+                                            "700": "#616161",
+                                            "800": "#424242",
+                                            "900": "#212121",
+                                            "A100": "#d5d5d5",
+                                            "A200": "#aaaaaa",
+                                            "A400": "#303030",
+                                            "A700": "#616161",
+                                          },
+                                          "primary": Object {
+                                            "contrastText": "#fff",
+                                            "dark": "#303f9f",
+                                            "light": "#7986cb",
+                                            "main": "#3f51b5",
+                                          },
+                                          "secondary": Object {
+                                            "contrastText": "#fff",
+                                            "dark": "#c51162",
+                                            "light": "#ff4081",
+                                            "main": "#f50057",
+                                          },
+                                          "text": Object {
+                                            "disabled": "rgba(0, 0, 0, 0.38)",
+                                            "hint": "rgba(0, 0, 0, 0.38)",
+                                            "primary": "rgba(0, 0, 0, 0.87)",
+                                            "secondary": "rgba(0, 0, 0, 0.54)",
+                                          },
+                                          "tonalOffset": 0.2,
+                                          "type": "light",
+                                        },
+                                        "props": Object {},
+                                        "shadows": Array [
+                                          "none",
+                                          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                                          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                                          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                        ],
+                                        "shape": Object {
+                                          "borderRadius": 4,
+                                        },
+                                        "spacing": Object {
+                                          "unit": 8,
+                                        },
+                                        "transitions": Object {
+                                          "create": [Function],
+                                          "duration": Object {
+                                            "complex": 375,
+                                            "enteringScreen": 225,
+                                            "leavingScreen": 195,
+                                            "short": 250,
+                                            "shorter": 200,
+                                            "shortest": 150,
+                                            "standard": 300,
+                                          },
+                                          "easing": Object {
+                                            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                          },
+                                          "getAutoHeightDuration": [Function],
+                                        },
+                                        "typography": Object {
+                                          "body1": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.46429em",
+                                          },
+                                          "body1Next": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.00938em",
+                                            "lineHeight": 1.5,
+                                          },
+                                          "body2": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "lineHeight": "1.71429em",
+                                          },
+                                          "body2Next": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.01071em",
+                                            "lineHeight": 1.5,
+                                          },
+                                          "button": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "textTransform": "uppercase",
+                                          },
+                                          "buttonNext": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "letterSpacing": "0.02857em",
+                                            "lineHeight": 1.75,
+                                            "textTransform": "uppercase",
+                                          },
+                                          "caption": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.75rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.375em",
+                                          },
+                                          "captionNext": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.75rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.03333em",
+                                            "lineHeight": 1.66,
+                                          },
+                                          "display1": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "2.125rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.20588em",
+                                          },
+                                          "display2": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "2.8125rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.13333em",
+                                            "marginLeft": "-.02em",
+                                          },
+                                          "display3": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "3.5rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "-.02em",
+                                            "lineHeight": "1.30357em",
+                                            "marginLeft": "-.02em",
+                                          },
+                                          "display4": Object {
+                                            "color": "rgba(0, 0, 0, 0.54)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "7rem",
+                                            "fontWeight": 300,
+                                            "letterSpacing": "-.04em",
+                                            "lineHeight": "1.14286em",
+                                            "marginLeft": "-.04em",
+                                          },
+                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                          "fontSize": 14,
+                                          "fontWeightLight": 300,
+                                          "fontWeightMedium": 500,
+                                          "fontWeightRegular": 400,
+                                          "h1": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "6rem",
+                                            "fontWeight": 300,
+                                            "letterSpacing": "-0.01562em",
+                                            "lineHeight": 1,
+                                          },
+                                          "h2": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "3.75rem",
+                                            "fontWeight": 300,
+                                            "letterSpacing": "-0.00833em",
+                                            "lineHeight": 1,
+                                          },
+                                          "h3": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "3rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0em",
+                                            "lineHeight": 1.04,
+                                          },
+                                          "h4": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "2.125rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.00735em",
+                                            "lineHeight": 1.17,
+                                          },
+                                          "h5": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.5rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0em",
+                                            "lineHeight": 1.33,
+                                          },
+                                          "h6": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.25rem",
+                                            "fontWeight": 500,
+                                            "letterSpacing": "0.0075em",
+                                            "lineHeight": 1.6,
+                                          },
+                                          "headline": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.5rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.35417em",
+                                          },
+                                          "overline": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.75rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.08333em",
+                                            "lineHeight": 2.66,
+                                            "textTransform": "uppercase",
+                                          },
+                                          "pxToRem": [Function],
+                                          "round": [Function],
+                                          "subheading": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1rem",
+                                            "fontWeight": 400,
+                                            "lineHeight": "1.5em",
+                                          },
+                                          "subtitle1": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1rem",
+                                            "fontWeight": 400,
+                                            "letterSpacing": "0.00938em",
+                                            "lineHeight": 1.75,
+                                          },
+                                          "subtitle2": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "0.875rem",
+                                            "fontWeight": 500,
+                                            "letterSpacing": "0.00714em",
+                                            "lineHeight": 1.57,
+                                          },
+                                          "title": Object {
+                                            "color": "rgba(0, 0, 0, 0.87)",
+                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                            "fontSize": "1.3125rem",
+                                            "fontWeight": 500,
+                                            "lineHeight": "1.16667em",
+                                          },
+                                          "useNextVariants": false,
+                                        },
+                                        "zIndex": Object {
+                                          "appBar": 1100,
+                                          "drawer": 1200,
+                                          "mobileStepper": 1000,
+                                          "modal": 1300,
+                                          "snackbar": 1400,
+                                          "tooltip": 1500,
+                                        },
+                                      }
+                                    }
+                                    variant="subtitle1"
+                                  >
+                                    <h6
+                                      className="MuiTypography-root-137 MuiTypography-subtitle1-155 MuiTypography-colorTextSecondary-170 cardChild"
+                                    />
+                                  </Typography>
+                                </WithStyles(Typography)>
+                              </div>
+                            </div>
+                          </div>
+                        </Paper>
+                      </WithStyles(Paper)>
+                    </div>
+                  </Grid>
+                </WithStyles(Grid)>
+              </div>
+            </Grid>
+          </WithStyles(Grid)>
+        </div>
+      </BikeDetail>
+    </Connect(BikeDetail)>
+  </WithStyles(Connect(BikeDetail))>
+</Provider>
 `;

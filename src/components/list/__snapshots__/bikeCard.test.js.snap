@@ -12,6 +12,7 @@ exports[`BikeCard it should render correctly 1`] = `
       "main": "BikeCard-main-1",
       "searchBtn": "BikeCard-searchBtn-2",
       "searchIcon": "BikeCard-searchIcon-8",
+      "title": "BikeCard-title-9",
     }
   }
 />

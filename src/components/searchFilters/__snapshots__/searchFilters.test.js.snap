@@ -12,6 +12,7 @@ exports[`Search Filters it should render correctly 1`] = `
       "main": "SearchFilters-main-1",
       "searchBtn": "SearchFilters-searchBtn-2",
       "searchIcon": "SearchFilters-searchIcon-8",
+      "title": "SearchFilters-title-9",
     }
   }
 />
