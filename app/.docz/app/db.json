@@ -1,0 +1,29 @@
+{
+  "config": {
+    "title": "React project",
+    "description": "Fronend documentation",
+    "themeConfig": {},
+    "ordering": "descending",
+    "version": "4.5.3",
+    "repository": "https://github.com/serheyShmyg/frontend"
+  },
+  "entries": {
+    "src/components/Button/readme.mdx": {
+      "name": "Button",
+      "id": "a15f175d75a52aa1482465482c122099",
+      "filepath": "src/components/Button/readme.mdx",
+      "link": "https://github.com/serheyShmyg/frontend/edit/master/src/components/Button/readme.mdx",
+      "slug": "src-components-button-readme",
+      "route": "/src-components-button-readme",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "button",
+          "value": "Button"
+        }
+      ]
+    }
+  }
+}
