@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import chunk from 'lodash/chunk';
 import {
     compose,
     setDisplayName,
@@ -6,7 +7,9 @@ import {
     branch,
     renderComponent,
     withProps,
-    withState
+    withState,
+    defaultProps,
+    withPropsOnChange
 } from 'recompose';
 
 import * as reportActions from 'app/redux/reports/actions';
@@ -25,6 +28,10 @@ export default compose(
 
     setDisplayName('main-page-logic'),
 
+    defaultProps({
+        incidentsPerPage: 10,
+    }),
+
     withState(
         'currentPage',
         'setCurrentPage',
@@ -36,7 +43,8 @@ export default compose(
             status,
             uuid,
             loading,
-            incidents
+            incidents,
+            incidentsPerPage
         } = props;
         const isSuccess = status === 'success';
         const isMessage = uuid && !loading && !incidents.length;
@@ -45,19 +53,30 @@ export default compose(
         return {
             isSuccess,
             isMessage,
+            totalPages: Math.ceil(incidents.length / incidentsPerPage),
             message: isMessage ? message : undefined,
             color: isSuccess ? 'primary' : 'secondary'
         };
     }),
 
+    withPropsOnChange(
+        ['incidents'],
+
+        props => {
+            const {
+                incidentsPerPage,
+                incidents
+            } = props;
+
+            return {
+                incidentsByChunks: chunk(incidents, incidentsPerPage)
+            };
+        }
+    ),
+
     lifecycle({
         componentDidMount() {
-            const {
-                currentPage,
-                getIncidents
-            } = this.props;
-
-            getIncidents();
+            this.props.getIncidents();
         }
     }),
 

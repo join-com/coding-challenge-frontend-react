@@ -2,7 +2,6 @@ import c from './constants';
 import api from 'app/redux/api';
 
 const defaultReq = {
-    per_page: 10,
     incident_type: 'theft',
     proximity: 'Berlin',
     proximity_square: 100

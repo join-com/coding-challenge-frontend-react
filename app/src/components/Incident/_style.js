@@ -14,9 +14,10 @@ export default styled.div`
         margin-right: 20px;
         flex-grow: 0;
         flex-shrink: 0;
+        border: 1px solid #bbb;
 
         &.is-empty {
-            border: 1px solid #bbb;
+            background-color: #bbb;
         }
     }
 
