@@ -1,21 +1,19 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const tagsMap = {
-    a: <a />,
-    button: <button />
-};
+import {
+    Link,
+    Button as ButtonStyledComponent
+} from './_style';
 
 export default function Button({
     tag,
     children,
     ...attrs
 }) {
-    return cloneElement(
-        tagsMap[tag],
-        attrs,
-        children
-    );
+    const Component = tag === 'a' ? Link : ButtonStyledComponent;
+
+    return <Component {...attrs}>{ children }</Component>;
 }
 
 Button.propTypes = {

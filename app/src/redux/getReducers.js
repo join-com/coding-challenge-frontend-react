@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import reports from './reports/reducer';
+import incidents from './incidents/reducer';
 
 export const reducersMap = {
-    reports
+    incidents
 };
 
 export default function() {

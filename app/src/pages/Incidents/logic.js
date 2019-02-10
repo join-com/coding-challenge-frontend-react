@@ -4,29 +4,25 @@ import {
     compose,
     setDisplayName,
     lifecycle,
-    branch,
-    renderComponent,
     withProps,
     withState,
     defaultProps,
-    withPropsOnChange
+    withPropsOnChange,
+    withHandlers
 } from 'recompose';
 
-import * as reportActions from 'app/redux/reports/actions';
-
-import Throbber from 'app/components/Throbber';
-import Message from 'app/components/Message';
+import * as incidentsActions from 'app/redux/incidents/actions';
 
 function mapStateToProps(state) {
     return {
-        ...state.reports
+        ...state.incidents
     };
 }
 
 export default compose(
-    connect(mapStateToProps, reportActions),
+    connect(mapStateToProps, incidentsActions),
 
-    setDisplayName('main-page-logic'),
+    setDisplayName('incidents-page-logic'),
 
     defaultProps({
         incidentsPerPage: 10,
@@ -74,19 +70,25 @@ export default compose(
         }
     ),
 
+    withHandlers({
+        handleFilter: ({ getIncidents }) => formData => {
+            const actualizedDate = {...formData};
+
+            if (actualizedDate.occurred_after) {
+                actualizedDate.occurred_after = (new Date(actualizedDate.occurred_after)).valueOf();
+            }
+
+            if (actualizedDate.occurred_before) {
+                actualizedDate.occurred_before = (new Date(actualizedDate.occurred_before)).valueOf();
+            }
+
+            getIncidents(actualizedDate);
+        }
+    }),
+
     lifecycle({
         componentDidMount() {
             this.props.getIncidents();
         }
-    }),
-
-    branch(
-        ({ loading }) => loading,
-        renderComponent(Throbber)
-    ),
-
-    branch(
-        ({ isMessage }) => isMessage,
-        renderComponent(Message)
-    )
+    })
 );

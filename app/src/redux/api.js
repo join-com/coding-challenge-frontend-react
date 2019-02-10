@@ -16,7 +16,7 @@ const getMethod = ({
             method,
             headers,
             timeout: 20000,
-            withCredentials: true
+            withCredentials: false
         });
 
         res.__proto__.cancel = () => source.cancel('Operation canceled by the user.');
@@ -33,5 +33,15 @@ export default {
             makeUrl('incidents'),
             data
         );
+    },
+
+    getIncident({ id } = {}) {
+        return this._get(
+            makeUrl(`incidents/${id}`),
+        );
+    },
+
+    getBike({ url } = {}) {
+        return this._get(url);
     }
 };

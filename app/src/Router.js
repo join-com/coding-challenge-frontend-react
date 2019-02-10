@@ -1,21 +1,36 @@
 import React from 'react';
 import {
     BrowserRouter,
-    Route
+    Route,
+    Switch
 } from 'react-router-dom';
 
 import Layout from 'app/pages/Layout';
-import MainPage from 'app/pages/Main';
+import IncidentsPage from 'app/pages/Incidents';
+import IncidentPage from 'app/pages/Incident';
+import NotFoundPage from 'app/pages/NotFound';
 
 export default function RouterWrapper() {
     return (
         <BrowserRouter>
             <Layout>
-                <Route
-                    exact
-                    path="/"
-                    component={MainPage}
-                />
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        component={IncidentsPage}
+                    />
+                    <Route
+                        exact
+                        path="/incidents/:id"
+                        component={IncidentPage}
+                    />
+                    <Route
+                        exact
+                        path="*"
+                        component={NotFoundPage}
+                    />
+                </Switch>
             </Layout>
         </BrowserRouter>
     );

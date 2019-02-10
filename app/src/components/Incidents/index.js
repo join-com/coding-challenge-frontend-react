@@ -18,6 +18,7 @@ export default function Incidents({
                 list.map(item => (
                     <Incident
                         key={item.id}
+                        id={item.id}
                         src={item.media.image_url_thumb}
                         title={item.title}
                         description={item.description}

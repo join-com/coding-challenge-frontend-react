@@ -9,16 +9,25 @@ export default styled.div`
     border-bottom: 1px solid #bbb;
 
     .c-incident__img {
-        width: 100px;
-        height: 100px;
         margin-right: 20px;
         flex-grow: 0;
         flex-shrink: 0;
         border: 1px solid #bbb;
 
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
         &.is-empty {
             background-color: #bbb;
         }
+    }
+
+    .c-incident__link {
+        width: 100px;
+        height: 100px;
+        display: block;
     }
 
     .c-incident__content {
