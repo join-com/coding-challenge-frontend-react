@@ -25,8 +25,8 @@ export default styled.div`
     }
 
     .c-incident__link {
-        width: 100px;
-        height: 100px;
+        width: 180px;
+        height: 180px;
         display: block;
     }
 

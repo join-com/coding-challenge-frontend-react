@@ -10,5 +10,9 @@ export default styled.header`
         font-weight: 400;
         text-align: center;
         color: #1187d2;
+
+        a {
+            text-decoration: none;
+        }
     }
 `;

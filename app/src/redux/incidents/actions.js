@@ -7,16 +7,12 @@ const defaultReq = {
     proximity_square: 100
 };
 
-function setLoading(loading = false) {
-    return {
-        type: c.LOADING,
-        payload: { loading }
-    };
-}
-
 export function getIncidents(data = {}) {
     return dispatch => {
-        dispatch(setLoading(true));
+        dispatch({
+            type: c.INCIDENTS_LOADING,
+            payload: { loading: true }
+        });
 
         (async () => {
             let payload;
@@ -42,7 +38,7 @@ export function getIncidents(data = {}) {
                 type: c.GET_INCIDENTS,
                 payload: {
                     uuid: Date.now(),
-                    ...setLoading(false).payload,
+                    loading: false,
                     ...payload
                 }
             });
@@ -52,7 +48,10 @@ export function getIncidents(data = {}) {
 
 export function getIncident(data = {}) {
     return dispatch => {
-        dispatch(setLoading(true));
+        dispatch({
+            type: c.INCIDENT_LOADING,
+            payload: { loading: true }
+        });
 
         (async () => {
             let payload;
@@ -75,7 +74,7 @@ export function getIncident(data = {}) {
                 type: c.GET_INCIDENT,
                 payload: {
                     uuid: Date.now(),
-                    ...setLoading(false).payload,
+                    loading: false,
                     ...payload
                 }
             });
@@ -85,7 +84,10 @@ export function getIncident(data = {}) {
 
 export function getBike(data = {}) {
     return dispatch => {
-        dispatch(setLoading(true));
+        dispatch({
+            type: c.BIKE_LOADING,
+            payload: { loading: true }
+        });
 
         (async () => {
             let payload;
@@ -108,7 +110,7 @@ export function getBike(data = {}) {
                 type: c.GET_BIKE,
                 payload: {
                     uuid: Date.now(),
-                    ...setLoading(false).payload,
+                    loading: false,
                     ...payload
                 }
             });

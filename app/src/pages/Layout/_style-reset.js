@@ -15,4 +15,17 @@ export default createGlobalStyle`
         margin: 0;
         background-color: #eceff1;
     }
+
+    a {
+        color: #1187d2;
+    }
+
+    .c-map {
+        margin-bottom: 20px;
+
+        &__loader,
+        &__element  {
+            height: 400px;
+        }
+    }
 `;

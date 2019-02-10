@@ -1,21 +1,80 @@
 import c from './constants';
 
 const defaultState = {
-    uuid: undefined,
-    incidents: [],
-    incident: {},
-    loading: false,
-    bike: {}
+    incidents: {
+        uuid: undefined,
+        loading: false,
+        data: []
+    },
+    incident: {
+        uuid: undefined,
+        loading: false,
+        data: {}
+    },
+    bike: {
+        uuid: undefined,
+        loading: false,
+        data: []
+    }
 };
 
 export default function commentsReducer(state = defaultState, { type, payload }) {
     switch (type) {
-        case c.LOADING:
-        case c.GET_INCIDENTS:
-        case c.GET_INCIDENT:
+        case c.INCIDENTS_LOADING:
             return {
                 ...state,
-                ...payload
+                incidents: {
+                    ...state.incidents,
+                    ...payload
+                }
+            };
+
+        case c.GET_INCIDENTS: {
+            const {
+                incidents: data,
+                ...rest
+            } = payload;
+
+            return {
+                ...state,
+                incidents: {
+                    data,
+                    ...rest
+                }
+            };
+        }
+
+        case c.INCIDENT_LOADING:
+            return {
+                ...state,
+                incident: {
+                    ...state.incident,
+                    ...payload
+                }
+            };
+
+        case c.GET_INCIDENT: {
+            const {
+                incident: data,
+                ...rest
+            } = payload;
+
+            return {
+                ...state,
+                incident: {
+                    data,
+                    ...rest
+                }
+            };
+        }
+
+        case c.BIKE_LOADING:
+            return {
+                ...state,
+                bike: {
+                    ...state.bike,
+                    ...payload
+                }
             };
 
         case c.GET_BIKE: {

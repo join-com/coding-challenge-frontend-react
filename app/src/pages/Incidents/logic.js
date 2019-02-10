@@ -14,8 +14,13 @@ import {
 import * as incidentsActions from 'app/redux/incidents/actions';
 
 function mapStateToProps(state) {
+    const { incidents } = state.incidents;
+
     return {
-        ...state.incidents
+        uuid: incidents.uuid,
+        status: incidents.status,
+        incidents: incidents.data,
+        loading: incidents.loading
     };
 }
 
@@ -75,11 +80,11 @@ export default compose(
             const actualizedDate = {...formData};
 
             if (actualizedDate.occurred_after) {
-                actualizedDate.occurred_after = (new Date(actualizedDate.occurred_after)).valueOf();
+                actualizedDate.occurred_after = (new Date(actualizedDate.occurred_after)).valueOf() / 1000;
             }
 
             if (actualizedDate.occurred_before) {
-                actualizedDate.occurred_before = (new Date(actualizedDate.occurred_before)).valueOf();
+                actualizedDate.occurred_before = (new Date(actualizedDate.occurred_before)).valueOf() / 1000;
             }
 
             getIncidents(actualizedDate);
