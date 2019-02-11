@@ -93,7 +93,13 @@ export default compose(
 
     lifecycle({
         componentDidMount() {
-            this.props.getIncidents();
+            const {
+                incidents,
+                getIncidents
+            } = this.props;
+
+            //Cache
+            !incidents.length && getIncidents();
         }
     })
 );

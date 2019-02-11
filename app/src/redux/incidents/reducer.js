@@ -14,7 +14,7 @@ const defaultState = {
     bike: {
         uuid: undefined,
         loading: false,
-        data: []
+        data: {}
     }
 };
 

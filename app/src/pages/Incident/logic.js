@@ -34,6 +34,7 @@ function mapStateToProps(state, { match }) {
         incident: incidentFromList || incident.data,
         loading: incident.loading,
         bikeLoading: bike.loading,
+        bike: bike.data,
         coordinates: {
             lat: get(bike, ['data', 'stolen_record', 'latitude']),
             lng: get(bike, ['data', 'stolen_record', 'longitude'])
@@ -69,8 +70,14 @@ export default compose(
                 getIncident,
                 getBikeByIncident,
                 incident,
+                bike,
                 match: { params }
             } = this.props;
+
+            //Cache
+            if (!isEmpty(incident) && !isEmpty(bike)) {
+                return;
+            }
 
             !isFound
                 ? getIncident({ id: params.id })
