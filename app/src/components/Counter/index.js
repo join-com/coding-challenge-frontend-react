@@ -6,8 +6,12 @@ import StyledComponent from './_style';
 export default function Counter({
     children
 }) {
+    if (typeof children !== 'number') {
+        return;
+    }
+
     return (
-        <StyledComponent>
+        <StyledComponent className="c-counter">
             Total: { children }
         </StyledComponent>
     );

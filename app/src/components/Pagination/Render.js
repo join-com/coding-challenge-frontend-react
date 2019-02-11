@@ -35,20 +35,17 @@ export default function PaginatorRender(props) {
                     />
                 )
             }
-            <ul className="c-paginator__list">
-                {
-                    result.map((resultItem, i) => (
-                        <li key={i}>
-                            <Item
-                                index={resultItem[0]}
-                                label={resultItem[1]}
-                                onChange={handleChangePage}
-                                isActive={resultItem[0] === activePage}
-                            />
-                        </li>
-                    ))
-                }
-            </ul>
+            {
+                result.map((resultItem, i) => (
+                    <Item
+                        key={i}
+                        index={resultItem[0]}
+                        label={resultItem[1]}
+                        onChange={handleChangePage}
+                        isActive={resultItem[0] === activePage}
+                    />
+                ))
+            }
             {
                 isNavigation && activePage < pages && (
                     <Item

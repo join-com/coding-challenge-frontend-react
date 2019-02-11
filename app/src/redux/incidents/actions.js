@@ -1,119 +1,25 @@
 import c from './constants';
-import api from 'app/redux/api';
+import createAction from 'app/redux/createAction';
 
-const defaultReq = {
-    incident_type: 'theft',
-    proximity: 'Berlin',
-    proximity_square: 100
-};
+export const getIncidents = createAction({
+    loadingType: c.INCIDENTS_LOADING,
+    type: c.GET_INCIDENTS,
+    apiName: 'getIncidents',
+    defaultReq: {
+        incident_type: 'theft',
+        proximity: 'Berlin',
+        proximity_square: 100
+    }
+});
 
-export function getIncidents(data = {}) {
-    return dispatch => {
-        dispatch({
-            type: c.INCIDENTS_LOADING,
-            payload: { loading: true }
-        });
+export const getIncident = createAction({
+    loadingType: c.INCIDENT_LOADING,
+    type: c.GET_INCIDENT,
+    apiName: 'getIncident'
+});
 
-        (async () => {
-            let payload;
-
-            try {
-                const res = await api.getIncidents({
-                    ...defaultReq,
-                    ...data
-                });
-
-                payload = {
-                    status: 'success',
-                    ...res.data
-                };
-            } catch (error) {
-                payload = {
-                    status: 'error',
-                    error
-                };
-            }
-
-            dispatch({
-                type: c.GET_INCIDENTS,
-                payload: {
-                    uuid: Date.now(),
-                    loading: false,
-                    ...payload
-                }
-            });
-        })();
-    };
-}
-
-export function getIncident(data = {}) {
-    return dispatch => {
-        dispatch({
-            type: c.INCIDENT_LOADING,
-            payload: { loading: true }
-        });
-
-        (async () => {
-            let payload;
-
-            try {
-                const res = await api.getIncident(data);
-
-                payload = {
-                    status: 'success',
-                    ...res.data
-                };
-            } catch (error) {
-                payload = {
-                    status: 'error',
-                    error
-                };
-            }
-
-            dispatch({
-                type: c.GET_INCIDENT,
-                payload: {
-                    uuid: Date.now(),
-                    loading: false,
-                    ...payload
-                }
-            });
-        })();
-    };
-}
-
-export function getBike(data = {}) {
-    return dispatch => {
-        dispatch({
-            type: c.BIKE_LOADING,
-            payload: { loading: true }
-        });
-
-        (async () => {
-            let payload;
-
-            try {
-                const res = await api.getBike(data);
-
-                payload = {
-                    status: 'success',
-                    ...res.data
-                };
-            } catch (error) {
-                payload = {
-                    status: 'error',
-                    error
-                };
-            }
-
-            dispatch({
-                type: c.GET_BIKE,
-                payload: {
-                    uuid: Date.now(),
-                    loading: false,
-                    ...payload
-                }
-            });
-        })();
-    };
-}
+export const getBike = createAction({
+    loadingType: c.BIKE_LOADING,
+    type: c.GET_BIKE,
+    apiName: 'getBike'
+});

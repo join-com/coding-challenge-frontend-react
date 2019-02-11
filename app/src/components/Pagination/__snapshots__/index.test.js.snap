@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> should matches the snapshot 1`] = `
+<defaultProps(withProps(withState(withHandlers(PaginatorRender))))
+  isNavigation={true}
+  pages={5}
+>
+  <withProps(withState(withHandlers(PaginatorRender)))
+    isNavigation={true}
+    pages={5}
+  >
+    <withState(withHandlers(PaginatorRender))
+      isNavigation={true}
+      pages={5}
+    >
+      <withHandlers(PaginatorRender)
+        activePage={1}
+        isNavigation={true}
+        pages={5}
+        setActivePage={[Function]}
+      >
+        <PaginatorRender
+          activePage={1}
+          getActivePage={[Function]}
+          getPages={[Function]}
+          handleChangePage={[Function]}
+          isNavigation={true}
+          pages={5}
+          setActivePage={[Function]}
+        >
+          <styled.div
+            className="c-paginator"
+          >
+            <StyledComponent
+              className="c-paginator"
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": true,
+                    "lastClassName": "chkXYd",
+                    "rules": Array [
+                      "
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    margin: 10px auto;
+    font-weight: bold;
+    max-width: 100%;
+    overflow: hidden;
+
+    .c-paginator__prev {
+        border-right: 2px solid currentColor;
+
+        &::before {
+            content: \\"\\";
+            width: 0.75em;
+            height: 0.75em;
+            border-bottom: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+            transform: rotate(45deg);
+        }
+    }
+
+    .c-paginator__next {
+        border-left: 2px solid currentColor;
+
+        &::after {
+            content: \\"\\";
+            width: 0.75em;
+            height: 0.75em;
+            border-bottom: 2px solid currentColor;
+            border-left: 2px solid currentColor;
+
+            transform: rotate(-135deg);
+        }
+    }
+
+    .c-paginator__list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        color: green;
+    }
+
+    .c-paginator__item {
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        color: #000;
+        font-size: 1em;
+        white-space: nowrap;
+        text-decoration: none;
+
+        &.is-active {
+            font-weight: 700;
+            color: #bbb;
+            cursor: default;
+        }
+
+        &.is-disabled {
+            cursor: default;
+            color: #bbb;
+        }
+    }
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="c-paginator sc-bdVaJa chkXYd"
+              >
+                <PaginatorItem
+                  index={1}
+                  isActive={true}
+                  key="0"
+                  label="1"
+                  onChange={[Function]}
+                >
+                  <a
+                    className="c-paginator__item is-active"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    1
+                  </a>
+                </PaginatorItem>
+                <PaginatorItem
+                  index={2}
+                  isActive={false}
+                  key="1"
+                  label="2"
+                  onChange={[Function]}
+                >
+                  <a
+                    className="c-paginator__item"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    2
+                  </a>
+                </PaginatorItem>
+                <PaginatorItem
+                  index={3}
+                  isActive={false}
+                  key="2"
+                  label="3"
+                  onChange={[Function]}
+                >
+                  <a
+                    className="c-paginator__item"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    3
+                  </a>
+                </PaginatorItem>
+                <PaginatorItem
+                  index={4}
+                  isActive={false}
+                  key="3"
+                  label="4"
+                  onChange={[Function]}
+                >
+                  <a
+                    className="c-paginator__item"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    4
+                  </a>
+                </PaginatorItem>
+                <PaginatorItem
+                  index={5}
+                  isActive={false}
+                  key="4"
+                  label="5"
+                  onChange={[Function]}
+                >
+                  <a
+                    className="c-paginator__item"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    5
+                  </a>
+                </PaginatorItem>
+                <PaginatorItem
+                  className="c-paginator__next"
+                  index={2}
+                  label="Next page"
+                  onChange={[Function]}
+                >
+                  <a
+                    className="c-paginator__item c-paginator__next"
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    Next page
+                  </a>
+                </PaginatorItem>
+              </div>
+            </StyledComponent>
+          </styled.div>
+        </PaginatorRender>
+      </withHandlers(PaginatorRender)>
+    </withState(withHandlers(PaginatorRender))>
+  </withProps(withState(withHandlers(PaginatorRender)))>
+</defaultProps(withProps(withState(withHandlers(PaginatorRender))))>
+`;
