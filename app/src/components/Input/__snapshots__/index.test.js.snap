@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should matches the snapshot 1`] = `
+<Input>
+  <styled.input
+    className="c-input"
+  >
+    <StyledComponent
+      className="c-input"
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "eMKLvb",
+            "rules": Array [
+              "
+    margin: 0;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    height: 30px;
+    font-size: .9em;
+
+    &.c-input--search {
+        width: 400px;
+    }
+
+    &.c-input--date {
+        width: 170px;
+    }
+",
+            ],
+          },
+          "displayName": "styled.input",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "input",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <input
+        className="c-input sc-bdVaJa eMKLvb"
+      />
+    </StyledComponent>
+  </styled.input>
+</Input>
+`;
