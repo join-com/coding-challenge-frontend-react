@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import { CasesList, handlePageChange, renderItem } from './cases-list';
+import { CasesListUI, handlePageChange, renderItem } from './cases-list';
 
 const mockProps = {
   data: {
@@ -16,13 +16,13 @@ const mockProps = {
 };
 
 it('renders without crashing', () => {
-  const wrapper = shallow(<CasesList {...mockProps} />);
+  const wrapper = shallow(<CasesListUI {...mockProps} />);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('renders with error state', () => {
   const props = { ...mockProps, data: { ...mockProps.data, value: undefined, error: new Error() } };
-  const wrapper = shallow(<CasesList {...props} />);
+  const wrapper = shallow(<CasesListUI {...props} />);
   expect(wrapper).toMatchSnapshot();
 });
 

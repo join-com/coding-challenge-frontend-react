@@ -1,9 +1,11 @@
+import { gql } from 'apollo-boost';
 import React from 'react';
+import { useQuery } from 'react-apollo-hooks';
 
 import { Alert, Col, List, Row } from 'antd';
 import { ICaseData, ICasesData } from '../cases';
 
-interface IProps {
+interface IUIProps {
   data: {
     loading: boolean;
     error?: Error;
@@ -19,9 +21,7 @@ interface IProps {
 export const renderItem = (item: ICaseData) => (
   <List.Item key={item.id}>
     <Row gutter={16}>
-      <Col span={8}>
-        <img src={item.image} alt="bike" width="100%" />
-      </Col>
+      <Col span={8}>{item.image && <img src={item.image} alt="bike" width="100%" />}</Col>
       <Col span={16}>
         <h3>{item.title}</h3>
         <p>{item.content}</p>
@@ -35,7 +35,7 @@ export const handlePageChange = (setPage: React.Dispatch<number>) => (pageValue:
   setPage(pageValue);
 };
 
-export const CasesList: React.FC<IProps> = ({ data, page, pageSize }) => {
+export const CasesListUI: React.FC<IUIProps> = ({ data, page, pageSize }) => {
   const { value, error, loading } = data;
   const totalCases = value && value.total;
 
@@ -62,4 +62,36 @@ export const CasesList: React.FC<IProps> = ({ data, page, pageSize }) => {
       />
     </>
   );
+};
+
+interface IProps {
+  filters: {
+    query: string;
+  };
+  page: {
+    value: number;
+    set: React.Dispatch<number>;
+  };
+  pageSize: number;
+}
+
+const QUERY = gql`
+  query getCases($query: String, $page: Int, $pageSize: Int) {
+    getCases(query: $query, page: $page, pageSize: $pageSize) {
+      total
+      list {
+        id
+        image
+        title
+        description
+        content
+      }
+    }
+  }
+`;
+
+export const CasesList: React.FC<IProps> = ({ filters, page, pageSize }) => {
+  const data = useQuery(QUERY, { suspend: false, variables: { query: filters.query, page: page.value, pageSize } });
+
+  return <CasesListUI data={{ ...data, value: data.data.getCases }} page={page} pageSize={pageSize} />;
 };

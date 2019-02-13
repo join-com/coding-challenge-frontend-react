@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useAsync } from 'react-use';
-import { createAPIRequest } from './cases.api';
 
 import { CasesList } from './cases-list';
 import { SearchBar } from './search-bar';
@@ -33,13 +31,10 @@ export const Cases: React.FC<{}> = () => {
 
   const handleChange = setQueryResetPage(setQuery, setPage);
 
-  const request = createAPIRequest(query, page, PAGE_SIZE);
-  const data = useAsync<ICasesData>(request, [query, page]);
-
   return (
     <>
       <SearchBar query={query} onChange={handleChange} />
-      <CasesList data={data} page={{ value: page, set: setPage }} pageSize={PAGE_SIZE} />
+      <CasesList filters={{ query }} page={{ value: page, set: setPage }} pageSize={PAGE_SIZE} />
     </>
   );
 };

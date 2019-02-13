@@ -12,9 +12,9 @@ it('renders without crashing', () => {
     query=""
   />
   <CasesList
-    data={
+    filters={
       Object {
-        "loading": true,
+        "query": "",
       }
     }
     page={
