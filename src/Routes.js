@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import IndexView from './pages/IndexView';
 import DetailsView from './pages/DetailsView';
 import NotFound from './pages/NotFound';
 
-const routes = () => {
+const routes = props => {
   return (
     <Switch>
       <Route path="/" exact component={IndexView} />
@@ -14,4 +15,10 @@ const routes = () => {
   );
 };
 
-export default routes;
+const mapStateToProps = state => {
+  return {
+    state
+  };
+};
+
+export default connect(mapStateToProps)(routes);
