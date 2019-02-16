@@ -4,7 +4,7 @@ import IndexView from './pages/IndexView';
 import DetailsView from './pages/DetailsView';
 import NotFound from './pages/NotFound';
 
-const Routes = () => {
+const routes = () => {
   return (
     <Switch>
       <Route path="/" exact component={IndexView} />
@@ -14,4 +14,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default routes;
