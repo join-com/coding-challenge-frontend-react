@@ -11,6 +11,14 @@ const pagination = ({
     updatePageFn({ page: pageNumber });
   };
 
+  const getPagesArray = () => {
+    let pageList = [];
+    for (var i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+      pageList.push(i);
+    }
+    return pageList;
+  };
+
   return (
     <div className="pagination__list">
       {currentPage > 1 && (
@@ -26,7 +34,17 @@ const pagination = ({
           &lt; Prev
         </div>
       )}
-
+      {getPagesArray().map(index => (
+        <div
+          key={index}
+          className={`pagination__item ${
+            currentPage === index ? ' current' : ''
+          }`}
+          onClick={changeToPage.bind(this, index)}
+        >
+          {index}
+        </div>
+      ))}
       {currentPage < totalItems / itemsPerPage && (
         <div
           className="pagination__item"

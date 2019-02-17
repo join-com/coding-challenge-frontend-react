@@ -7,7 +7,11 @@ import Pagination from '../components/Pagination';
 
 class IndexView extends Component {
   onUpdateSearchParams = filterParams => {
-    const filters = { ...this.props.state.incidents.filters, ...filterParams };
+    const filters = {
+      ...this.props.state.incidents.filters,
+      ...filterParams,
+      page: 1
+    };
     this.props.fetchStolenBikesList(filters);
   };
 

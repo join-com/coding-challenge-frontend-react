@@ -4,7 +4,19 @@
     justify-content: center;
 }
 
-
 .pagination__item {
     margin: 1rem;
+    font-weight: bold;
+    color: #565a5f
+}
+
+.pagination__item.current{
+    margin: 1rem;
+    color: #3c3d3f;
+}
+
+.pagination__item:hover,
+.pagination__item:active {
+    color: #3c3d3f;
+    cursor: pointer;
 }

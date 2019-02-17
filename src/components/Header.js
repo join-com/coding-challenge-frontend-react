@@ -5,6 +5,7 @@ const header = () => (
   <header className="main-navigation">
     <img
       className="main-navigation__logo"
+      alt="Stolen Bykes"
       src={process.env.PUBLIC_URL + '/main-logo.jpg'}
     />
     <div className="main-navigation__title">

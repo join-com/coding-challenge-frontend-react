@@ -37,8 +37,8 @@ form button:hover,
 form button:active,
 .btn:hover,
 .btn:active {
-  background: #6b7581;
-  border-color: #6b7581;
+  background: #565a5f;
+  border-color: #565a5f;
 }
 
 a, a:hover, a:active {
