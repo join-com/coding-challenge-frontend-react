@@ -12,7 +12,7 @@
 
 .pagination__item.current{
     margin: 1rem;
-    color: #3c3d3f;
+    color: #000000;
 }
 
 .pagination__item:hover,
