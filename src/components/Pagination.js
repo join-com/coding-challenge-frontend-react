@@ -26,7 +26,7 @@ const pagination = ({
           className="pagination__item btn"
           onClick={changeToPage.bind(this, 1)}
         >
-          &lt;&lt; First
+          « First
         </div>
       )}
       {currentPage > 1 && (
@@ -34,7 +34,7 @@ const pagination = ({
           className="pagination__item btn"
           onClick={changeToPage.bind(this, currentPage - 1)}
         >
-          &lt; Prev
+          ‹ Prev
         </div>
       )}
       {getPagesArray().map(index => (
@@ -53,7 +53,7 @@ const pagination = ({
           className="pagination__item btn"
           onClick={changeToPage.bind(this, currentPage + 1)}
         >
-          Next &gt;
+          Next ›
         </div>
       )}
       {currentPage < totalItems / itemsPerPage && (
@@ -64,7 +64,7 @@ const pagination = ({
             Math.ceil(totalItems / itemsPerPage)
           )}
         >
-          Last &gt;&gt;
+          Last »
         </div>
       )}
     </div>
