@@ -63,6 +63,7 @@ const filters = ({
             placeholder="To"
             ref={searchToElRef}
             id="search-to"
+            max={new Date().toISOString().split('.')[0]}
             defaultValue={
               occurred_before
                 ? new Date(occurred_before * 1000).toISOString().split('.')[0]
