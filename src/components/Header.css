@@ -1,0 +1,23 @@
+.main-navigation {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: #6b7581;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color: #fff
+  }
+
+  .main-navigation__logo{
+    width: 100px;
+    height: 100px;
+  }
+
+  .main-navigation__title {
+      margin-left: 10px;
+  }
+  

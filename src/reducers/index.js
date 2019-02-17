@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import incidents from './incidents';
+import { incidents } from './incidents';
 
 export const reducers = {
   incidents

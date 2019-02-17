@@ -1,0 +1,18 @@
+.filters__list {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .filters__item {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  

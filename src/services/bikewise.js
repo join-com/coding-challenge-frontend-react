@@ -1,7 +1,8 @@
 const baseURL = 'https://bikewise.org/api/v2/';
 const defaults = {
   incident_type: 'theft',
-  proximity: 'berlin'
+  proximity: 'berlin',
+  proximity_square: 100
 };
 
 const convertToQueryParams = params => {

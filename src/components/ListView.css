@@ -1,0 +1,33 @@
+.incidents__list {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: stretch; 
+}
+
+.incidents__item {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border: solid 2px #6b7581;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.incidents__item img {
+  width: 20%;
+}
+
+.incidents__item--description {
+  width: 80%;
+  margin-left: 1.5rem;
+}
+
+.incidents__item div{
+  margin-bottom: 1rem;
+}
+

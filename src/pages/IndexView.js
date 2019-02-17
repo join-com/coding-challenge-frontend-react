@@ -6,34 +6,60 @@ import Filters from '../components/Filters';
 import Pagination from '../components/Pagination';
 
 class IndexView extends Component {
-  async componentDidMount() {
-    await this.props.fetchStolenBikesList();
+  onUpdateSearchParams = filterParams => {
+    const filters = { ...this.props.state.incidents.filters, ...filterParams };
+    this.props.fetchStolenBikesList(filters);
+  };
+
+  onUpdatePagination = pageParams => {
+    console.log('pageParams', pageParams);
+    const filters = { ...this.props.state.incidents.filters, ...pageParams };
+    this.props.fetchStolenBikesList(filters);
+  };
+
+  componentDidMount() {
+    this.props.fetchStolenBikesList(this.props.state.incidents.filters);
   }
-  renderMainSection() {
+
+  renderMainSection = () => {
     switch (this.props.state.incidents.queryState) {
       case 'loading':
-        return <div>Loading...</div>;
+        return <div style={{ textAlign: 'center' }}>Loading...</div>;
       case 'error':
-        return <div>Error!</div>;
+        return <div style={{ textAlign: 'center' }}>Error!</div>;
       default:
         return (
           <div>
-            {this.props.state.incidents.items ? (
+            {this.props.state.incidents.cases.length ? (
               <Fragment>
-                <ListView items={this.props.state.incidents.items} />
-                <Pagination />
+                <div style={{ textAlign: 'right' }}>
+                  Total Cases: {this.props.state.incidents.totalCases}
+                </div>
+                <ListView items={this.props.state.incidents.cases} />
+                <Pagination
+                  currentPage={this.props.state.incidents.filters.page}
+                  totalItems={this.props.state.incidents.totalCases}
+                  itemsPerPage={this.props.state.incidents.filters.per_page}
+                  updatePageFn={this.onUpdatePagination}
+                />
               </Fragment>
             ) : (
-              <div>No results found.</div>
+              <div style={{ textAlign: 'center' }}>No results found.</div>
             )}
           </div>
         );
     }
-  }
+  };
+
   render() {
     return (
       <Fragment>
-        <Filters />
+        <Filters
+          onUpdateSearchParams={this.onUpdateSearchParams}
+          occurred_after={this.props.state.incidents.filters.occurred_after}
+          occurred_before={this.props.state.incidents.filters.occurred_before}
+          query={this.props.state.incidents.filters.query}
+        />
         {this.renderMainSection()}
       </Fragment>
     );

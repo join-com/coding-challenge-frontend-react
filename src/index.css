@@ -8,7 +8,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+form input {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+
+form {
+  margin-bottom: 1rem;
+}
+
+form button,
+.btn {
+  background: #6b7581;
+  font: inherit;
+  border: 1px solid #6b7581;
+  border-radius: 3px;
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+form button:hover,
+form button:active,
+.btn:hover,
+.btn:active {
+  background: #6b7581;
+  border-color: #6b7581;
+}
+
+a, a:hover, a:active {
+  color: #000;
 }
