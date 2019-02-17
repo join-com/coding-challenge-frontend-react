@@ -40,7 +40,7 @@ class DetailsView extends Component {
           <div className="case__details--description">
             {currentCase.description
               ? currentCase.description
-              : 'NO DESCRIPTION'}
+              : 'DESCRIPTION MISSING'}
           </div>
         )}
       </div>
