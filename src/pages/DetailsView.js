@@ -32,10 +32,7 @@ class DetailsView extends Component {
             </h4>
           </Fragment>
         )}
-        <div
-          ref={this.googleMapsRef}
-          style={{ width: '100%', height: '400px' }}
-        />
+        <div ref={this.googleMapsRef} className="case__details--maps" />
         <h3 className="case__details--description--title">
           Description of incident
         </h3>

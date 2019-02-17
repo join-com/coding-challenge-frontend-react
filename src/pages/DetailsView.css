@@ -7,6 +7,7 @@
     margin: 1rem 0 0.5rem;
 }
 
-.case__details--description {
-    
+.case__details--maps {
+    width: 100%;
+    height: 500px;
 }
