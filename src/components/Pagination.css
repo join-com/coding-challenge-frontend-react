@@ -7,16 +7,15 @@
 .pagination__item {
     margin: 1rem;
     font-weight: bold;
-    color: #565a5f
 }
 
 .pagination__item.current{
     margin: 1rem;
-    color: #000000;
+    background: #1e2023;
+    border-color: #1e2023;
 }
 
 .pagination__item:hover,
 .pagination__item:active {
-    color: #3c3d3f;
     cursor: pointer;
 }

@@ -5,14 +5,21 @@
     height: auto;
     padding: 0 2rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     box-sizing: border-box;
   }
 
   .filters__item {
+    margin-left: 1rem;
+  }
+
+  .filters__item input{
+    width: 15rem;
     padding: 0.5rem;
-    margin: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1em;
+    
   }
 
   

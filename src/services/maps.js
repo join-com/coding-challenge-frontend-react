@@ -34,7 +34,7 @@ export const setGoogleMapsMarker = async (el, position) => {
   await loadGoogleMapsAPI();
   const map = new window.google.maps.Map(el, {
     center: position,
-    zoom: 8
+    zoom: 14
   });
   new window.google.maps.Marker({ position: position, map: map });
 };

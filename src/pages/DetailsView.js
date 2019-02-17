@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getCaseDetails } from '../actions/incidents';
 import { setGoogleMapsMarker } from '../services/maps';
+import './DetailsView.css';
 
 class DetailsView extends Component {
   constructor(props) {
@@ -14,32 +15,35 @@ class DetailsView extends Component {
     const coordinates = this.props.state.incidents.currentCase.coordinates;
     // const coordinates = [13.4275004, 52.5444];
     setGoogleMapsMarker(this.googleMapsRef.current, {
-      lat: coordinates[0],
-      lng: coordinates[1]
+      lat: coordinates[1],
+      lng: coordinates[0]
     });
   }
 
   render() {
     const currentCase = this.props.state.incidents.currentCase;
     return (
-      <div>
+      <div className="case__details--container">
         {currentCase && (
-          <div>
-            <div>{currentCase.title}</div>
-            <div>
+          <Fragment>
+            <h2 className="case__details--title">{currentCase.title}</h2>
+            <h4 className="case__details--location">
               Stolen {currentCase.occurred_at} at {currentCase.address}
-            </div>
-            <div>Description of Incident</div>
-          </div>
+            </h4>
+          </Fragment>
         )}
         <div
           ref={this.googleMapsRef}
-          style={{ width: '100%', height: '100px' }}
+          style={{ width: '100%', height: '400px' }}
         />
+        <h3 className="case__details--description--title">
+          Description of incident
+        </h3>
         {currentCase && (
-          <div>
-            <div>{currentCase.description}</div>
-            <div ref={this.googleMapsRef} />
+          <div className="case__details--description">
+            {currentCase.description
+              ? currentCase.description
+              : 'NO DESCRIPTION'}
           </div>
         )}
       </div>

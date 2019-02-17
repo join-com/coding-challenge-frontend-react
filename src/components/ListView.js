@@ -20,7 +20,7 @@ const listView = props => (
         />
         <div className="incidents__item--description">
           <Link to={`/case/${item.id}`} style={{ marginBottom: '1rem' }}>
-            <div>{item.title}</div>
+            <h3>{item.title}</h3>
           </Link>
           <div>
             {item.description ? item.description : 'DESCRIPTION MISSING'}

@@ -1,0 +1,12 @@
+.case__details--container {
+    display: flex;
+    flex-direction: column;
+}
+
+.case__details--description--title {
+    margin: 1rem 0 0.5rem;
+}
+
+.case__details--description {
+    
+}

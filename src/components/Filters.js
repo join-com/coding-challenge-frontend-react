@@ -32,37 +32,47 @@ const filters = ({
   return (
     <div>
       <form onSubmit={handleSubmit} className="filters__list">
-        <input
-          type="text"
-          placeholder="Search case description"
-          ref={searchDescriptionElRef}
-          className="filters__item"
-          defaultValue={query}
-        />
-
-        <input
-          type="datetime-local"
-          ref={searchFromElRef}
-          className="filters__item"
-          defaultValue={
-            occurred_after
-              ? new Date(occurred_after * 1000).toISOString().split('.')[0]
-              : ''
-          }
-        />
-
-        <input
-          type="datetime-local"
-          ref={searchToElRef}
-          className="filters__item"
-          defaultValue={
-            occurred_before
-              ? new Date(occurred_before * 1000).toISOString().split('.')[0]
-              : ''
-          }
-        />
-
-        <input type="submit" value="Find Cases" className="btn" />
+        <div className="filters__item font-light">
+          <label htmlFor="search-description">Search case description</label>
+          <input
+            type="text"
+            placeholder="Search case description"
+            ref={searchDescriptionElRef}
+            id="search-description"
+            defaultValue={query}
+          />
+        </div>
+        <div className="filters__item font-light">
+          <label htmlFor="search-from">From</label>
+          <input
+            type="datetime-local"
+            placeholder="From"
+            ref={searchFromElRef}
+            id="search-from"
+            defaultValue={
+              occurred_after
+                ? new Date(occurred_after * 1000).toISOString().split('.')[0]
+                : ''
+            }
+          />
+        </div>
+        <div className="filters__item font-light">
+          <label htmlFor="search-to">To</label>
+          <input
+            type="datetime-local"
+            placeholder="To"
+            ref={searchToElRef}
+            id="search-to"
+            defaultValue={
+              occurred_before
+                ? new Date(occurred_before * 1000).toISOString().split('.')[0]
+                : ''
+            }
+          />
+        </div>
+        <div className="filters__item">
+          <input type="submit" value="Find Cases" className="btn" />
+        </div>
       </form>
     </div>
   );

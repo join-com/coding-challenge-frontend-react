@@ -22,13 +22,16 @@ const pagination = ({
   return (
     <div className="pagination__list">
       {currentPage > 1 && (
-        <div className="pagination__item" onClick={changeToPage.bind(this, 1)}>
+        <div
+          className="pagination__item btn"
+          onClick={changeToPage.bind(this, 1)}
+        >
           &lt;&lt; First
         </div>
       )}
       {currentPage > 1 && (
         <div
-          className="pagination__item"
+          className="pagination__item btn"
           onClick={changeToPage.bind(this, currentPage - 1)}
         >
           &lt; Prev
@@ -37,7 +40,7 @@ const pagination = ({
       {getPagesArray().map(index => (
         <div
           key={index}
-          className={`pagination__item ${
+          className={`pagination__item btn ${
             currentPage === index ? ' current' : ''
           }`}
           onClick={changeToPage.bind(this, index)}
@@ -47,7 +50,7 @@ const pagination = ({
       ))}
       {currentPage < totalItems / itemsPerPage && (
         <div
-          className="pagination__item"
+          className="pagination__item btn"
           onClick={changeToPage.bind(this, currentPage + 1)}
         >
           Next &gt;
@@ -55,7 +58,7 @@ const pagination = ({
       )}
       {currentPage < totalItems / itemsPerPage && (
         <div
-          className="pagination__item"
+          className="pagination__item btn"
           onClick={changeToPage.bind(
             this,
             Math.ceil(totalItems / itemsPerPage)
