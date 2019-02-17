@@ -9,7 +9,7 @@ const header = () => (
       src={process.env.PUBLIC_URL + '/main-logo.jpg'}
     />
     <div className="main-navigation__title">
-      <h1>Police Department of Berlin</h1>
+      <h1>Police Departament of Berlin</h1>
       <h2>Stolen Bykes</h2>
     </div>
   </header>
