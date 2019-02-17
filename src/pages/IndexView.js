@@ -16,7 +16,6 @@ class IndexView extends Component {
   };
 
   onUpdatePagination = pageParams => {
-    console.log('pageParams', pageParams);
     const filters = { ...this.props.state.incidents.filters, ...pageParams };
     this.props.fetchStolenBikesList(filters);
   };

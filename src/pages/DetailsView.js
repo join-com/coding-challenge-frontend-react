@@ -13,7 +13,6 @@ class DetailsView extends Component {
   async componentDidMount() {
     await this.props.getCaseDetails(this.props.match.params.caseId);
     const coordinates = this.props.state.incidents.currentCase.coordinates;
-    // const coordinates = [13.4275004, 52.5444];
     setGoogleMapsMarker(this.googleMapsRef.current, {
       lat: coordinates[1],
       lng: coordinates[0]

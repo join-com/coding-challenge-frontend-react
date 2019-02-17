@@ -3,9 +3,9 @@ const loadGoogleMapsAPI = () => {
   if (!gMapsPromise) {
     gMapsPromise = new Promise((resolve, reject) => {
       const tag = document.createElement('script');
-      tag.src =
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyDjvScCVoxXOHRDfzit4uQUGXnZI4LjJPw';
-
+      tag.src = `https://maps.googleapis.com/maps/api/js?key=${
+        process.env.REACT_APP_GMAPS_API_KEY
+      }`;
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
