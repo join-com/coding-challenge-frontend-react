@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getCaseDetails } from '../actions/incidents';
 import { setGoogleMapsMarker } from '../services/maps';
+import { toHumanReadableFormat } from '../utils/date';
 import './DetailsView.css';
 
 class DetailsView extends Component {
@@ -27,7 +28,8 @@ class DetailsView extends Component {
           <Fragment>
             <h2 className="case__details--title">{currentCase.title}</h2>
             <h4 className="case__details--location">
-              Stolen {currentCase.occurred_at} at {currentCase.address}
+              Stolen {toHumanReadableFormat(currentCase.occurred_at)} at{' '}
+              {currentCase.address}
             </h4>
           </Fragment>
         )}

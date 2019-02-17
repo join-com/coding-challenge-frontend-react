@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toHumanReadableFormat } from '../utils/date';
 import './ListView.css';
 
 const listView = props => (
@@ -26,8 +27,7 @@ const listView = props => (
             {item.description ? item.description : 'DESCRIPTION MISSING'}
           </div>
           <div>
-            {new Date(item.occurred_at * 1000).toLocaleString()} -{' '}
-            {item.address}
+            {toHumanReadableFormat(item.occurred_at)} - {item.address}
           </div>
         </div>
       </li>
