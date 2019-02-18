@@ -1,4 +1,4 @@
-const baseURL = 'https://bikewise.org/api/v2/';
+const baseURL = 'https://bikewise.org/api/v2';
 const defaults = {
   incident_type: 'theft',
   proximity: 'berlin',
@@ -10,7 +10,7 @@ const convertToQueryParams = params => {
     return '';
   } else {
     return Object.keys(params)
-      .map(key => `${key}=${params[key]}`)
+      .map(key => `${key}=${encodeURIComponent(params[key])}`)
       .join('&');
   }
 };
