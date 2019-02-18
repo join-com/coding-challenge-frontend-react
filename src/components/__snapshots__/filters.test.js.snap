@@ -15,6 +15,7 @@ exports[`<Fillters> tests should match with the snapshot 1`] = `
         Search case description
       </label>
       <input
+        defaultValue=""
         id="search-description"
         placeholder="Search case description"
         type="text"
@@ -29,7 +30,7 @@ exports[`<Fillters> tests should match with the snapshot 1`] = `
         From
       </label>
       <input
-        defaultValue=""
+        defaultValue="2018-10-24T16:56:55"
         id="search-from"
         placeholder="From"
         type="datetime-local"
@@ -44,7 +45,7 @@ exports[`<Fillters> tests should match with the snapshot 1`] = `
         To
       </label>
       <input
-        defaultValue=""
+        defaultValue="2019-02-18T14:48:55"
         id="search-to"
         max="2019-02-18T14:48:55"
         placeholder="To"
@@ -81,6 +82,7 @@ exports[`<Fillters> tests should match with the snapshot 2`] = `
         Search case description
       </label>
       <input
+        defaultValue=""
         id="search-description"
         placeholder="Search case description"
         type="text"
@@ -95,7 +97,7 @@ exports[`<Fillters> tests should match with the snapshot 2`] = `
         From
       </label>
       <input
-        defaultValue=""
+        defaultValue="2018-10-24T16:56:55"
         id="search-from"
         placeholder="From"
         type="datetime-local"
@@ -110,7 +112,7 @@ exports[`<Fillters> tests should match with the snapshot 2`] = `
         To
       </label>
       <input
-        defaultValue=""
+        defaultValue="2019-02-18T14:48:55"
         id="search-to"
         max="2019-02-18T14:48:55"
         placeholder="To"
