@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListView> tests should match with the snapshot 1`] = `
+<ul
+  className="incidents__list"
+>
+  <li
+    className="incidents__item"
+  >
+    <img
+      alt="Stolen 2014 Flyer Wave(silver or gray)"
+      onError={[Function]}
+      src="/bike-image-missing.jpg"
+    />
+    <div
+      className="incidents__item--description"
+    >
+      <a
+        href="/case/72790"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": "1rem",
+          }
+        }
+      >
+        <h3>
+          Stolen 2014 Flyer Wave(silver or gray)
+        </h3>
+      </a>
+      <div>
+        having seen a man interested in this e-bike, but hurrying away, when I came out of the house. 20 later the bike has gone.
+      </div>
+      <div>
+        Thu May 25 2017
+         - 
+        Berlin, 10779, DE
+      </div>
+    </div>
+  </li>
+  <li
+    className="incidents__item"
+  >
+    <img
+      alt="Stolen 2005 Trek 4300 Disc (silver or gray)"
+      onError={[Function]}
+      src="https://bikebook.s3.amazonaws.com/uploads/Fr/112/small_Asset_140338"
+    />
+    <div
+      className="incidents__item--description"
+    >
+      <a
+        href="/case/4853"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": "1rem",
+          }
+        }
+      >
+        <h3>
+          Stolen 2005 Trek 4300 Disc (silver or gray)
+        </h3>
+      </a>
+      <div>
+        Bike was parked in a locked cellar compartment. During night the door of the compartment was forced open and two bikes were stolen: Trek 4300 Disc and Trek Fuel Ex 8.
+      </div>
+      <div>
+        Mon Sep 15 2014
+         - 
+        Halle, 06120, DE
+      </div>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`<ListView> tests should match with the snapshot 2`] = `
+<ul
+  className="incidents__list"
+  items={
+    Array [
+      Object {
+        "address": "Halle, 06120, DE",
+        "description": "Bike was parked in a locked cellar compartment. During night the door of the compartment was forced open and two bikes were stolen: Trek 4300 Disc and Trek Fuel Ex 8.",
+        "id": 4853,
+        "media": Object {
+          "image_url": "https://bikebook.s3.amazonaws.com/uploads/Fr/112/Asset_140338",
+          "image_url_thumb": "https://bikebook.s3.amazonaws.com/uploads/Fr/112/small_Asset_140338",
+        },
+        "occurred_at": 1410760800,
+        "title": "Stolen 2005 Trek 4300 Disc (silver or gray)",
+        "updated_at": 1550387537,
+      },
+      Object {
+        "address": "Halle, 06120, DE",
+        "description": "Bike was parked in a locked cellar compartment. During night the door of the comparment was forced open and two bikes wer stolen: Trek Fuel EX 8 and Trek 4300 Disc. ",
+        "id": 4879,
+        "media": Object {
+          "image_url": "https://bikebook.s3.amazonaws.com/uploads/Fr/112/Asset_140338",
+          "image_url_thumb": "https://bikebook.s3.amazonaws.com/uploads/Fr/112/small_Asset_140338",
+        },
+        "occurred_at": 1410760800,
+        "title": "Stolen 2014 Trek Fuel EX 8 26 (black)",
+        "updated_at": 1550387699,
+      },
+      Object {
+        "address": "Berlin, 10115, DE",
+        "description": "Stolen during the day from yard bike stands between three offices in front of restaurant.",
+        "id": 3522,
+        "media": Object {
+          "image_url": "https://bikebook.s3.amazonaws.com/uploads/Fr/9764/c_13_3RA87C_gry_14.png",
+          "image_url_thumb": "https://bikebook.s3.amazonaws.com/uploads/Fr/9764/small_c_13_3RA87C_gry_14.png",
+        },
+        "occurred_at": 1408341600,
+        "title": "Stolen 2012 Cannondale Caad8 7 Sora (black and white)",
+        "updated_at": 1550387281,
+      },
+    ]
+  }
+>
+  <li
+    className="incidents__item"
+  >
+    <img
+      alt="Stolen 2014 Flyer Wave(silver or gray)"
+      onError={[Function]}
+      src="/bike-image-missing.jpg"
+    />
+    <div
+      className="incidents__item--description"
+    >
+      <a
+        href="/case/72790"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": "1rem",
+          }
+        }
+      >
+        <h3>
+          Stolen 2014 Flyer Wave(silver or gray)
+        </h3>
+      </a>
+      <div>
+        having seen a man interested in this e-bike, but hurrying away, when I came out of the house. 20 later the bike has gone.
+      </div>
+      <div>
+        Thu May 25 2017
+         - 
+        Berlin, 10779, DE
+      </div>
+    </div>
+  </li>
+  <li
+    className="incidents__item"
+  >
+    <img
+      alt="Stolen 2005 Trek 4300 Disc (silver or gray)"
+      onError={[Function]}
+      src="https://bikebook.s3.amazonaws.com/uploads/Fr/112/small_Asset_140338"
+    />
+    <div
+      className="incidents__item--description"
+    >
+      <a
+        href="/case/4853"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": "1rem",
+          }
+        }
+      >
+        <h3>
+          Stolen 2005 Trek 4300 Disc (silver or gray)
+        </h3>
+      </a>
+      <div>
+        Bike was parked in a locked cellar compartment. During night the door of the compartment was forced open and two bikes were stolen: Trek 4300 Disc and Trek Fuel Ex 8.
+      </div>
+      <div>
+        Mon Sep 15 2014
+         - 
+        Halle, 06120, DE
+      </div>
+    </div>
+  </li>
+</ul>
+`;
