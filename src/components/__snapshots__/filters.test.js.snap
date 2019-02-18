@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Fillters> tests should match with the snapshot 1`] = `
+<div>
+  <form
+    className="filters__list"
+    onSubmit={[Function]}
+  >
+    <div
+      className="filters__item font-light"
+    >
+      <label
+        htmlFor="search-description"
+      >
+        Search case description
+      </label>
+      <input
+        id="search-description"
+        placeholder="Search case description"
+        type="text"
+      />
+    </div>
+    <div
+      className="filters__item font-light"
+    >
+      <label
+        htmlFor="search-from"
+      >
+        From
+      </label>
+      <input
+        defaultValue=""
+        id="search-from"
+        placeholder="From"
+        type="datetime-local"
+      />
+    </div>
+    <div
+      className="filters__item font-light"
+    >
+      <label
+        htmlFor="search-to"
+      >
+        To
+      </label>
+      <input
+        defaultValue=""
+        id="search-to"
+        max="2019-02-18T14:48:55"
+        placeholder="To"
+        type="datetime-local"
+      />
+    </div>
+    <div
+      className="filters__item"
+    >
+      <input
+        className="btn"
+        type="submit"
+        value="Find Cases"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<Fillters> tests should match with the snapshot 2`] = `
+<div
+  query="hello world"
+>
+  <form
+    className="filters__list"
+    onSubmit={[Function]}
+  >
+    <div
+      className="filters__item font-light"
+    >
+      <label
+        htmlFor="search-description"
+      >
+        Search case description
+      </label>
+      <input
+        id="search-description"
+        placeholder="Search case description"
+        type="text"
+      />
+    </div>
+    <div
+      className="filters__item font-light"
+    >
+      <label
+        htmlFor="search-from"
+      >
+        From
+      </label>
+      <input
+        defaultValue=""
+        id="search-from"
+        placeholder="From"
+        type="datetime-local"
+      />
+    </div>
+    <div
+      className="filters__item font-light"
+    >
+      <label
+        htmlFor="search-to"
+      >
+        To
+      </label>
+      <input
+        defaultValue=""
+        id="search-to"
+        max="2019-02-18T14:48:55"
+        placeholder="To"
+        type="datetime-local"
+      />
+    </div>
+    <div
+      className="filters__item"
+    >
+      <input
+        className="btn"
+        type="submit"
+        value="Find Cases"
+      />
+    </div>
+  </form>
+</div>
+`;
