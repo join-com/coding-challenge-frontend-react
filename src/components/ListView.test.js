@@ -1,4 +1,4 @@
-import ListView from '../components/ListView';
+import ListView from './ListView';
 import renderer from 'react-test-renderer';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
