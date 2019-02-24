@@ -40,8 +40,8 @@ describe("The main app component", () => {
       return pathMap;
     }, {});
 
-    expect(paths['/']).toBe('MasterPage');
-    expect(paths['/:id(\\d+)']).toBe('DetailPage');
+    expect(paths['/bikes']).toBe('MasterPage');
+    expect(paths['/bikes/:id(\\d+)']).toBe('DetailPage');
     expect(paths['/:else']).toBe('NotFound');
   });
 });
