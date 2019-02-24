@@ -7,11 +7,11 @@ exports[`Master should pass the error message to the DataStateNotifier component
   <div
     className="Master__header"
   >
-    <h3
+    <h2
       className="Master__title"
     >
       Stolen Bikes in Berlin
-    </h3>
+    </h2>
   </div>
   <div
     className="Master__container"
@@ -260,11 +260,11 @@ exports[`Master should pass the loading message to the DataStateNotifier compone
   <div
     className="Master__header"
   >
-    <h3
+    <h2
       className="Master__title"
     >
       Stolen Bikes in Berlin
-    </h3>
+    </h2>
   </div>
   <div
     className="Master__container"
@@ -513,11 +513,11 @@ exports[`Master should render the component correctly 1`] = `
   <div
     className="Master__header"
   >
-    <h3
+    <h2
       className="Master__title"
     >
       Stolen Bikes in Berlin
-    </h3>
+    </h2>
   </div>
   <div
     className="Master__container"

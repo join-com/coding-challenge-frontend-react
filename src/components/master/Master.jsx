@@ -9,6 +9,8 @@ import DataStateNotifier from '../../global/components/DataStateNotifier';
 
 import MasterList from './MasterList';
 
+import './css/Master.css';
+
 const Master = ({
   data, ...otherProps
 }) => {
@@ -17,9 +19,9 @@ const Master = ({
   return (
     <div className="Master">
       <div className="Master__header">
-        <h3 className="Master__title">
+        <h2 className="Master__title">
           {I18n.t('en.data.title')}
-        </h3>
+        </h2>
       </div>
       <div className="Master__container">
         <DataStateNotifier {...otherProps}>

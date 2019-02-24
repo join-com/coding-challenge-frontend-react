@@ -23,6 +23,7 @@ const translations = {
     route: {
       notFound: 'Unfortunately, the requested route does not exist.',
     },
+    title: 'Police Department of Berlin',
   },
 };
 
