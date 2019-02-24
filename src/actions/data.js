@@ -23,7 +23,7 @@ export function fetchData(params) {
           type: types.DATA_GET_ERROR,
           loading: '',
           error: `${
-            I18n.t('en.data.states.error.loading')}: ${
+            I18n.t('en.data.states.error.loading')} – ${
             getErrorMessage(e, 'en.data.states.error')
           }`,
         });

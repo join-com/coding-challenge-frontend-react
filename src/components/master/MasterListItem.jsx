@@ -8,7 +8,7 @@ const MasterListItem = ({ item }) => {
           {Object.keys(item).map(key => (
             typeof item[key] !== 'object'
               && (
-                <div className="MasterListItem__property">
+                <div className="MasterListItem__property" key={key}>
                   <div className="MasterListItem__property__name">{key}</div>
                   <div className="MasterListItem__property__value">{item[key]}</div>
                 </div>
