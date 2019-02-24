@@ -1,5 +1,9 @@
 {
-  "name": "coding-challenge-frontend-react",
+  "name": "stolen-bike",
+  "author": {
+    "name": "Arnaud Orieux",
+    "email": "arnaudox@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
