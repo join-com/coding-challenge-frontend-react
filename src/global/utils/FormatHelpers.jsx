@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { timestampToDate } from './DatetimeHelpers';
 
 export function getLastKeyValueFromObject(key, item) {
@@ -32,7 +33,7 @@ export function formatKeyValueByType(key, item) {
           ? item[key.linkParam]
           : item.id);
 
-        return <a href={href}>{value || ''}</a>;
+        return <Link to={href}>{value || ''}</Link>;
 
       case 'date':
         return value ? timestampToDate(value, key.format) : '';
