@@ -1,3 +1,3 @@
 .App {
-  padding: calc(var(--section-padding) * 3 );
+  padding: 0 calc(var(--section-padding) * 3 );
 }
