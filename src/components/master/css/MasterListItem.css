@@ -1,5 +1,6 @@
 .MasterListItem:nth-child(odd) {
   background-color: var(--list-element-odd-background-color);
+  margin: var(--section-margin) 0;
 }
 
 .MasterListItem__container {
