@@ -4,9 +4,9 @@ const initialState = {
   data: [],
   pagination: {
     totalElements: 23,
-    totalPages: 5,
+    totalPages: 3,
     page: 1,
-    per_page: 5,
+    per_page: 10,
   },
   error: '',
   loading: '',
