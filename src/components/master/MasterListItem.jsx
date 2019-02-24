@@ -7,16 +7,15 @@ import {
 
 import defaultBikeImg from '../../media/img/bike.png';
 
+import './css/MasterListItem.css';
+
 const keys = [
-  {
-    name: 'media.image_url_thumb',
-    type: 'image',
-    default: defaultBikeImg,
-  },
   {
     name: 'title',
     label: '',
-    type: 'string',
+    type: 'link',
+    href: '/{{linkParam}}',
+    linkParam: 'id',
   },
   {
     name: 'description',
@@ -30,35 +29,54 @@ const keys = [
     format: 'ddd MMM DD YYYY',
   },
   {
-    name: 'updated_at',
-    label: 'Reported on:',
-    type: 'date',
-    format: 'ddd MMM DD YYYY',
-  },
-  {
     name: 'address',
     label: '–',
     type: 'string',
   },
+  {
+    name: 'updated_at',
+    label: 'Reported on: ',
+    type: 'date',
+    format: 'ddd MMM DD YYYY',
+  },
 ];
+
+const imgKey = {
+  name: 'media.image_url_thumb',
+  type: 'image',
+  format: 'thumbnail',
+  default: defaultBikeImg,
+};
 
 const MasterListItem = ({ item }) => {
   if (item) {
+    const imgSrc = getLastKeyValueFromObject(imgKey.name, item);
+
     return (
       <div className="MasterListItem">
         <div className="MasterListItem__container">
-          {keys.map(key => {
-            const value = getLastKeyValueFromObject(key.name, item);
-
-            return (
-              <div className="MasterListItem__property" key={key.name}>
-                <div className="MasterListItem__property__name">{key.label}</div>
+          <div className="MasterListItem__img" key={imgKey.name}>
+            <img
+              alt={imgSrc || 'default'}
+              className={`Image Image--${imgKey.format}`}
+              src={imgSrc || imgKey.default}
+            />
+          </div>
+          <div className="MasterListItem__infos">
+            {keys.map(key => (
+              <div
+                className={`MasterListItem__property MasterListItem__property--${key.name}`}
+                key={key.name}
+              >
+                {key.label
+                  && <div className="MasterListItem__property__label">{key.label}</div>
+                }
                 <div className="MasterListItem__property__value">
-                  {formatKeyValueByType(value, key)}
+                  {formatKeyValueByType(key, item)}
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     );

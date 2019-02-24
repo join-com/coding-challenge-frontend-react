@@ -1,28 +1,6 @@
 import React from 'react';
 import { timestampToDate } from './DatetimeHelpers';
 
-export function formatKeyValueByType(value, key) {
-  if (key) {
-    switch (key.type) {
-      case 'date':
-        return value ? timestampToDate(value, key.format) : '';
-
-      case 'image':
-        return (
-          <img
-            alt={value || 'default'}
-            className="Image"
-            src={value || key.default}
-          />
-        );
-
-      default:
-        return value;
-    }
-  }
-  return value;
-}
-
 export function getLastKeyValueFromObject(key, item) {
   const keys = key && key.split('.');
 
@@ -42,6 +20,29 @@ export function getLastKeyValueFromObject(key, item) {
   }
 
   return getObjectPropertyKeyValue(keys, item);
+}
+
+export function formatKeyValueByType(key, item) {
+  if (key && key.type && key.name) {
+    const value = getLastKeyValueFromObject(key.name, item);
+
+    switch (key.type) {
+      case 'link':
+        const href = key.href.replace('{{linkParam}}', key.linkParam
+          ? item[key.linkParam]
+          : item.id);
+
+        return <a href={href}>{value || ''}</a>;
+
+      case 'date':
+        return value ? timestampToDate(value, key.format) : '';
+
+      default:
+        return value;
+    }
+  }
+
+  return '';
 }
 
 const FormatHelpers = {
