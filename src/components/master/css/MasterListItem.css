@@ -1,0 +1,39 @@
+.MasterListItem:nth-child(odd) {
+  background-color: var(--list-element-odd-background-color);
+  margin: var(--section-margin) 0;
+}
+
+.MasterListItem__container {
+  display: flex;
+}
+
+.MasterListItem__infos {
+  padding: var(--section-padding);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.MasterListItem__property {
+  display: inline-flex;
+  padding: var(--element-padding);
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.MasterListItem__property__label {
+  margin-right: var(--section-margin);
+}
+
+.MasterListItem__property--image_url_thumb {
+  padding: 0;
+}
+
+.MasterListItem__property--occurred_at,
+.MasterListItem__property--address {
+  width: auto;
+  flex-basis: auto;
+}
+
+.MasterListItem__property--address {
+  padding-left: 0;
+}

@@ -1,0 +1,46 @@
+:root {
+  --space: 2rem;
+  --border-radius: 3px;
+  --color-alert: var(--color-red);
+  --color-warning: var(--color-orange);
+  --color-action: var(--color-brand-primary);
+  --color-confirm: var(--color-green);
+  --color-cancel: var(--color-extra-light-grey);
+
+  /* Section */
+  --section-padding: calc(var(--space) / 2);
+  --section-margin: calc(var(--space) / 2);
+  --section-background-color: var(--color-white);
+  --section-box-shadow: 1px 1px 5px var(--color-light-grey);
+  --section-border-radius: var(--border-radius);
+
+  /* Element */
+  --element-padding: calc(var(--space) / 3) calc(var(--space) / 2);
+  --element-margin: calc(var(--space) / 4);
+
+  /* List */
+  --list-element-odd-background-color: var(--color-extra-light-grey);
+
+  /* Link */
+  --link-color: var(--color-brand-primary);
+  --link-hover-color: var(--color-brand-secondary);
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.Image--thumbnail {
+  width: 180px;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}

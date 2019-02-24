@@ -5,7 +5,9 @@ import { BrowserRouter, withRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+import './config/css/default.css';
+import './config/css/variables.css';
+import './config/css/layout.css';
 
 const AppWithRouter = withRouter(App);
 

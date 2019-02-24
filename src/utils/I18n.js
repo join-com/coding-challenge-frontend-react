@@ -1,8 +1,29 @@
 const translations = {
   en: {
+    actions: {
+      back: 'Back',
+      ok: 'OK',
+    },
+    data: {
+      actions: {
+        loading: 'Loading data ...',
+      },
+      title: 'Stolen Bikes in Berlin',
+      states: {
+        empty: 'No data available.',
+        error: {
+          400: 'Bad Request',
+          404: 'Not found',
+          422: 'Unprocessable Entities',
+          500: 'Internal server error',
+          loading: 'Oops something went wrong :(',
+        },
+      },
+    },
     route: {
       notFound: 'Unfortunately, the requested route does not exist.',
     },
+    title: 'Police Department of Berlin',
   },
 };
 
@@ -28,3 +49,21 @@ class I18n {
 }
 
 export default I18n;
+
+export function getErrorStatusTranslation(e, translationPath) {
+  const status = e.request && e.request.status;
+  const knownErrorsStatus = [400, 404, 422];
+  if (status && knownErrorsStatus.some(errorStatus => errorStatus === status)) {
+    return I18n.t(`${translationPath}.${status}`);
+  }
+  return I18n.t(`${translationPath}.500`);
+}
+
+export function getErrorMessage(e, translationPath) {
+  if (e.response
+    && e.response.data
+    && Object.prototype.hasOwnProperty.call(e.response.data, 'errorMessage')) {
+    return e.response.data.errorMessage;
+  }
+  return getErrorStatusTranslation(e, translationPath);
+}
