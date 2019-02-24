@@ -16,7 +16,7 @@ import staticData from '../static/data.json';
 //     : ''
 // );
 
-const fakeServerRequest = (params = { latency: 2000 }) => {
+const fakeServerRequest = (params = { latency: 500 }) => {
   const { latency } = params;
   return new Promise((resolve, reject) => {
     if (staticData) {
