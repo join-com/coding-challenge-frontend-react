@@ -21,6 +21,15 @@ exports[`Master should pass the error message to the DataStateNotifier component
       dataLoading=""
       resetDataError={[Function]}
     >
+      <PaginationTotal
+        dataPagination={
+          Object {
+            "page": 0,
+            "totalElements": 0,
+            "totalPages": 1,
+          }
+        }
+      />
       <MasterList
         data={
           Array [
@@ -246,14 +255,23 @@ exports[`Master should pass the error message to the DataStateNotifier component
             },
           ]
         }
-        dataLoading=""
+      />
+      <PaginationWrapper
+        dataPagination={
+          Object {
+            "page": 0,
+            "totalElements": 0,
+            "totalPages": 1,
+          }
+        }
+        onPageNumberChange={[Function]}
       />
     </DataStateNotifier>
   </div>
 </div>
 `;
 
-exports[`Master should pass the loading message to the DataStateNotifier component 1`] = `
+exports[`Master should pass the loading message to the DataStateNotifier component and not render the pagination 1`] = `
 <div
   className="Master"
 >
@@ -273,235 +291,7 @@ exports[`Master should pass the loading message to the DataStateNotifier compone
       dataError=""
       dataLoading="Loading data ..."
       resetDataError={[Function]}
-    >
-      <MasterList
-        data={
-          Array [
-            Object {
-              "address": "Berlin, 12051, DE",
-              "description": "Locked cellar in Warthestrasse 8, Kryptonite U-lock with cable both tyres locked to frame. Someone got in and took the whole thing as well as forced some storage doors open. ",
-              "id": 94547,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": null,
-                "image_url_thumb": null,
-              },
-              "occurred_at": 1543309200,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/480323",
-                "html_url": "https://bikeindex.org/bikes/480323",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2015 Gepida Alboin crs 500(silver, gray or bare metal)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550866132,
-              "url": "https://bikewise.org/api/v1/incidents/94547",
-            },
-            Object {
-              "address": "Berlin, 10405, DE",
-              "description": "someone broke into the house, cut the wooden railings beside the stairs that my bike was locked to.",
-              "id": 93593,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": "https://files.bikeindex.org/uploads/Pu/139855/large_bike-3.jpg",
-                "image_url_thumb": "https://files.bikeindex.org/uploads/Pu/139855/small_bike-3.jpg",
-              },
-              "occurred_at": 1540929600,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/458285",
-                "html_url": "https://bikeindex.org/bikes/458285",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2018 UNIMOKE-Urban Drivestyle UNIMOKE Swing(black)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550866121,
-              "url": "https://bikewise.org/api/v1/incidents/93593",
-            },
-            Object {
-              "address": "Berlin, 10999, DE",
-              "description": null,
-              "id": 92457,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": null,
-                "image_url_thumb": null,
-              },
-              "occurred_at": 1538931327,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/439032",
-                "html_url": "https://bikeindex.org/bikes/439032",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen ROCKRIDER black-grey(black and blue)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550866046,
-              "url": "https://bikewise.org/api/v1/incidents/92457",
-            },
-            Object {
-              "address": "Berlin, 12047, DE",
-              "description": "Stolen from my courtyard",
-              "id": 88377,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": null,
-                "image_url_thumb": null,
-              },
-              "occurred_at": 1532152800,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/403765",
-                "html_url": "https://bikeindex.org/bikes/403765",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2018 VAUN VELO(black)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865824,
-              "url": "https://bikewise.org/api/v1/incidents/88377",
-            },
-            Object {
-              "address": "Berlin, 13585, DE",
-              "description": null,
-              "id": 83616,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": "https://files.bikeindex.org/uploads/Pu/113637/large_Screenshot_2018-03-30-11-55-03.png",
-                "image_url_thumb": "https://files.bikeindex.org/uploads/Pu/113637/small_Screenshot_2018-03-30-11-55-03.png",
-              },
-              "occurred_at": 1522427812,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/387604",
-                "html_url": "https://bikeindex.org/bikes/387604",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen Unity MTB Unity 18´´(silver or gray)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865608,
-              "url": "https://bikewise.org/api/v1/incidents/83616",
-            },
-            Object {
-              "address": "Berlin, 10407, DE",
-              "description": "",
-              "id": 83629,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": null,
-                "image_url_thumb": null,
-              },
-              "occurred_at": 1522130400,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/387620",
-                "html_url": "https://bikeindex.org/bikes/387620",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2015 Pegasus Solero SL, Damen 28\\", 50 cm frame(black)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865581,
-              "url": "https://bikewise.org/api/v1/incidents/83629",
-            },
-            Object {
-              "address": "Berlin, 13086, DE",
-              "description": "",
-              "id": 82936,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": "https://files.bikeindex.org/uploads/Pu/112133/large_27709588_1782480685106226_4475511125443073991_o.jpg",
-                "image_url_thumb": "https://files.bikeindex.org/uploads/Pu/112133/small_27709588_1782480685106226_4475511125443073991_o.jpg",
-              },
-              "occurred_at": 1518242400,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/385425",
-                "html_url": "https://bikeindex.org/bikes/385425",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2017 Cannondale CAAD12 Disc, SmartForm C1 Premium Alloy, SPEED SAVE, BB30a, Di2 Ready, flat-mount disc(black and blue)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865576,
-              "url": "https://bikewise.org/api/v1/incidents/82936",
-            },
-            Object {
-              "address": "Berlin, 10997, DE",
-              "description": "Bike was left in a hof (courtyard) for 45 minutes, with a cable lock attaching the front wheel to the frame and a folding Abus lock attaching the frame to a fence. The bike and cable lock were removed and the folding lock was left in place, locked.",
-              "id": 77832,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": "https://files.bikeindex.org/uploads/Pu/98933/large_surly_crosscheckcropped.jpg",
-                "image_url_thumb": "https://files.bikeindex.org/uploads/Pu/98933/small_surly_crosscheckcropped.jpg",
-              },
-              "occurred_at": 1504936800,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/360966",
-                "html_url": "https://bikeindex.org/bikes/360966",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2017 Surly Cross-Check(black)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865291,
-              "url": "https://bikewise.org/api/v1/incidents/77832",
-            },
-            Object {
-              "address": "Berlin, 10099, DE",
-              "description": "The bicycle was stolen in bright daylight on Hegelplatz behind the Humboldt University Berlin on 2nd August 2017 between 1:30 and 5:30 pm. ",
-              "id": 76058,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": "https://files.bikeindex.org/uploads/Pu/93377/large_IMG-20170512-WA0011_1__2_.jpg",
-                "image_url_thumb": "https://files.bikeindex.org/uploads/Pu/93377/small_IMG-20170512-WA0011_1__2_.jpg",
-              },
-              "occurred_at": 1501740000,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/351525",
-                "html_url": "https://bikeindex.org/bikes/351525",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2015 Carrera bicycles Virtuoso(white)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865191,
-              "url": "https://bikewise.org/api/v1/incidents/76058",
-            },
-            Object {
-              "address": "Berlin, 10779, DE",
-              "description": "having seen a man interested in this e-bike, but hurrying away, when I came out of the house. 20 later the bike has gone.",
-              "id": 72790,
-              "location_description": null,
-              "location_type": null,
-              "media": Object {
-                "image_url": null,
-                "image_url_thumb": null,
-              },
-              "occurred_at": 1495692000,
-              "source": Object {
-                "api_url": "https://bikeindex.org/api/v1/bikes/121203",
-                "html_url": "https://bikeindex.org/bikes/121203",
-                "name": "BikeIndex.org",
-              },
-              "title": "Stolen 2014 Flyer Wave(silver or gray)",
-              "type": "Theft",
-              "type_properties": null,
-              "updated_at": 1550865018,
-              "url": "https://bikewise.org/api/v1/incidents/72790",
-            },
-          ]
-        }
-        dataLoading="Loading data ..."
-      />
-    </DataStateNotifier>
+    />
   </div>
 </div>
 `;
@@ -527,6 +317,15 @@ exports[`Master should render the component correctly 1`] = `
       dataLoading=""
       resetDataError={[Function]}
     >
+      <PaginationTotal
+        dataPagination={
+          Object {
+            "page": 0,
+            "totalElements": 0,
+            "totalPages": 1,
+          }
+        }
+      />
       <MasterList
         data={
           Array [
@@ -752,7 +551,16 @@ exports[`Master should render the component correctly 1`] = `
             },
           ]
         }
-        dataLoading=""
+      />
+      <PaginationWrapper
+        dataPagination={
+          Object {
+            "page": 0,
+            "totalElements": 0,
+            "totalPages": 1,
+          }
+        }
+        onPageNumberChange={[Function]}
       />
     </DataStateNotifier>
   </div>

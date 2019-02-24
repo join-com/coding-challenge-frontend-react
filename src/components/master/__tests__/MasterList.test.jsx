@@ -9,20 +9,11 @@ const { incidents } = staticData;
 
 const props = {
   data: incidents,
-  dataLoading: '',
 };
 
 describe('MasterList', () => {
   it('should render the component correctly', () => {
     const tree = shallow(<MasterList {...props} />);
-    expect(shallowToJson(tree)).toMatchSnapshot();
-  });
-
-  it('should not render the component on loading data', () => {
-    const tree = shallow(<MasterList
-      {...props}
-      dataLoading="Loading data ..."
-    />);
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 });

@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MasterList should not render the component on loading data 1`] = `""`;
-
 exports[`MasterList should render the component correctly 1`] = `
 <div
   className="MasterList"
