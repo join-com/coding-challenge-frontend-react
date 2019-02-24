@@ -16,7 +16,7 @@ const translations = {
           404: 'Not found',
           422: 'Unprocessable Entities',
           500: 'Internal server error',
-          loading: 'An error has occurred while fetching the data',
+          loading: 'Oops something went wrong :(',
         },
       },
     },

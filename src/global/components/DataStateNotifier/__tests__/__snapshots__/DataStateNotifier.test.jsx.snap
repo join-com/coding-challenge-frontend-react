@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataStateNotifier should give priority to error over loading 1`] = `
+<div
+  className="DataStateNotifier DataStateNotifier--error"
+>
+  <div
+    className="DataStateNotifier__container"
+  >
+    <div
+      className="DataStateNotifier__states"
+    >
+      <h4
+        className="DataStateNotifier__error"
+      >
+        Oops something went wrong :(
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataStateNotifier should render a loading message if dataLoading present and dataError blank 1`] = `
+<div
+  className="DataStateNotifier"
+>
+  <h4
+    className="DataStateNotifier__actions"
+  >
+    Loading data ...
+  </h4>
+  <div
+    className="DataStateNotifier__container DataStateNotifier__container--loading"
+  >
+    <div>
+      The Child Component
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataStateNotifier should render an error message if dataError present 1`] = `
+<div
+  className="DataStateNotifier DataStateNotifier--error"
+>
+  <div
+    className="DataStateNotifier__container"
+  >
+    <div
+      className="DataStateNotifier__states"
+    >
+      <h4
+        className="DataStateNotifier__error"
+      >
+        Oops something went wrong :(
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataStateNotifier should render the child component correctly without notification 1`] = `
+<div
+  className="DataStateNotifier"
+>
+  <div
+    className="DataStateNotifier__container "
+  >
+    <div>
+      The Child Component
+    </div>
+  </div>
+</div>
+`;
