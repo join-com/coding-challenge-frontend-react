@@ -6,10 +6,13 @@ import store from '../../store';
 import {
   fetchData,
   resetDataError,
+  onPageNumberChange,
 } from '../../actions/data';
 
 import {
   getData,
+  getDataPagination,
+  getDataPageNumber,
   getDataError,
   getDataLoading,
 } from '../../reducers/data';
@@ -18,6 +21,8 @@ import MasterWrapper from './MasterWrapper';
 
 const mapStateToProps = state => ({
   data: getData(state),
+  dataPagination: getDataPagination(state),
+  dataPageNumber: getDataPageNumber(state),
   dataError: getDataError(state),
   dataLoading: getDataLoading(state),
 });
@@ -25,6 +30,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchData: params => dispatch(fetchData(params)),
   resetDataError: () => dispatch(resetDataError()),
+  onPageNumberChange: params => dispatch(onPageNumberChange(params)),
 });
 
 const ConnectedMasterContainer = connect(
