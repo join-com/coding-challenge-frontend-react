@@ -20,6 +20,11 @@ const translations = {
         },
       },
     },
+    pagination: {
+      next: 'Next',
+      prev: 'Prev',
+      total: 'total: %{count}',
+    },
     route: {
       notFound: 'Unfortunately, the requested route does not exist.',
     },

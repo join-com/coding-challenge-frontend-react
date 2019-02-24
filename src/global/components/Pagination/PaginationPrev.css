@@ -1,0 +1,9 @@
+.PaginationPrev__button {
+  margin-right: var(--section-margin);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.PaginationPrev__button__text {
+  color: var(--color-dark-grey);
+}

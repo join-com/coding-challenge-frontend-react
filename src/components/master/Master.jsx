@@ -2,17 +2,21 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import dataItemType from '../types/dataItem';
+import paginationType from '../../global/components/Pagination/types/pagination';
+import paginationDefaults from '../../global/components/Pagination/defaults/pagination';
 
 import I18n from '../../utils/I18n';
 
 import DataStateNotifier from '../../global/components/DataStateNotifier';
+import Pagination from '../../global/components/Pagination';
+import PaginationTotal from '../../global/components/Pagination/PaginationTotal';
 
 import MasterList from './MasterList';
 
 import './css/Master.css';
 
 const Master = ({
-  data, ...otherProps
+  data, dataPagination, onPageNumberChange, ...otherProps
 }) => {
   const { dataLoading } = otherProps;
 
@@ -25,10 +29,28 @@ const Master = ({
       </div>
       <div className="Master__container">
         <DataStateNotifier {...otherProps}>
-          <MasterList
-            data={data}
-            dataLoading={dataLoading}
-          />
+          {data && !!data.length && !dataLoading
+            && (
+              <PaginationTotal
+                dataPagination={dataPagination}
+              />
+            )
+          }
+          {data && !dataLoading
+            && (
+              <MasterList
+                data={data}
+              />
+            )
+          }
+          {data && !!data.length && !dataLoading
+            && (
+              <Pagination
+                dataPagination={dataPagination}
+                onPageNumberChange={onPageNumberChange}
+              />
+            )
+          }
         </DataStateNotifier>
       </div>
     </div>
@@ -40,9 +62,13 @@ export default Master;
 Master.propTypes = {
   data: PropTypes.arrayOf(dataItemType),
   dataLoading: PropTypes.string,
+  dataPagination: paginationType,
+  onPageNumberChange: PropTypes.func,
 };
 
 Master.defaultProps = {
   data: [],
   dataLoading: '',
+  dataPagination: paginationDefaults,
+  onPageNumberChange: () => {},
 };

@@ -2,6 +2,12 @@ import * as types from '../actionTypes/data';
 
 const initialState = {
   data: [],
+  pagination: {
+    totalElements: 23,
+    totalPages: 3,
+    page: 1,
+    per_page: 10,
+  },
   error: '',
   loading: '',
 };
@@ -12,6 +18,13 @@ function getContent(data) {
     return incidents;
   }
   return [];
+}
+
+function getPagination(state, params) {
+  return {
+    ...state.pagination,
+    page: params.page,
+  };
 }
 
 const data = (state = initialState, action) => {
@@ -39,6 +52,11 @@ const data = (state = initialState, action) => {
         ...state,
         error: action.error,
       };
+    case types.DATA_PAGE_NUMBER_CHANGE:
+      return {
+        ...state,
+        pagination: getPagination(state, action.params),
+      };
     default:
       return state;
   }
@@ -48,6 +66,15 @@ export default data;
 
 export function getData(state) {
   return state.data && state.data.data;
+}
+
+export function getDataPagination(state) {
+  return state.data && state.data.pagination;
+}
+
+export function getDataPageNumber(state) {
+  const pagination = getDataPagination(state);
+  return (pagination && pagination.page) || 1;
 }
 
 export function getDataError(state) {

@@ -39,3 +39,12 @@ export function resetDataError() {
     });
   };
 }
+
+export function onPageNumberChange(params) {
+  return (dispatch) => {
+    dispatch({
+      type: types.DATA_PAGE_NUMBER_CHANGE,
+      params,
+    });
+  };
+}

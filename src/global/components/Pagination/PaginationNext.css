@@ -1,0 +1,9 @@
+.PaginationNext__button {
+  margin-left: var(--section-margin);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.PaginationNext__button__text {
+  color: var(--color-dark-grey);
+}

@@ -1,0 +1,22 @@
+.Pagination {
+  padding: var(--section-padding);
+}
+
+.Pagination__container {
+  padding: var(--section-padding) calc(var(--section-padding) * 2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+}
+
+.Pagination__tabs {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.PaginationSeparator {
+  margin: 0 var(--element-margin);
+  cursor: default;
+}

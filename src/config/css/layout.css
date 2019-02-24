@@ -29,6 +29,7 @@
 body {
   background-color: var(--color-white);
   color: var(--color-black);
+  min-width: 600px;
 }
 
 .Image--thumbnail {

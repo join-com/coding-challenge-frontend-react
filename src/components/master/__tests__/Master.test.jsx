@@ -27,7 +27,7 @@ describe('Master', () => {
     expect(shallowToJson(tree)).toMatchSnapshot();
   });
 
-  it('should pass the loading message to the DataStateNotifier component', () => {
+  it('should pass the loading message to the DataStateNotifier component and not render the pagination', () => {
     const tree = shallow(<Master
       {...props}
       dataLoading="Loading data ..."

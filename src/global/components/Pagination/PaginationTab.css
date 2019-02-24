@@ -1,0 +1,21 @@
+.Pagination__tab {
+  background-color: var(--color-extra-light-grey);
+}
+
+.Pagination__tab__text {
+  color: var(--color-dark-grey);
+}
+
+.Pagination__tab--active {
+  background-color: var(--color-brand-primary);
+  border-radius: 0;
+}
+
+.Pagination__tab--active:hover {
+  cursor: default;
+  opacity: 1;
+}
+
+.Pagination__tab--active__text {
+  color: var(--color-white);
+}

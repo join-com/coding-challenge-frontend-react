@@ -1,0 +1,9 @@
+.PaginationLast__container {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.PaginationLastTab {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

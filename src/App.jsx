@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import I18n from './utils/I18n';
 
@@ -15,15 +15,16 @@ const App = () => (
     <Switch>
       <Route
         exact
-        path="/"
+        path="/bikes"
         render={routerProps => <MasterPage {...routerProps} />}
       />
       <Route
         exact
-        path="/:id(\d+)"
+        path="/bikes/:id(\d+)"
         render={routerProps => <DetailPage {...routerProps} />}
       />
       <Route path="/:else" component={NotFound} />
+      <Redirect path="/" to="/bikes" />
     </Switch>
   </div>
 );

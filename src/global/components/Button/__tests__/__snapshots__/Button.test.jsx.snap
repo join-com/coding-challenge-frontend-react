@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should not render the component if onClick is undefined and type not submit 1`] = `""`;
+
+exports[`Button should not render the component if text is blank 1`] = `""`;
+
+exports[`Button should not render the component if text is undefined 1`] = `""`;
+
+exports[`Button should render the component correctly with text 1`] = `
+<button
+  className="Button myClassname "
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="Button__text myClassname__text "
+  >
+    Mytext
+  </div>
+</button>
+`;
+
+exports[`Button should render the component for disabled state 1`] = `
+<button
+  className="Button myClassname Button--disabled myClassname--disabled"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="Button__text myClassname__text Button__text--disabled myClassname__text--disabled"
+  >
+    Mytext
+  </div>
+</button>
+`;
+
+exports[`Button should render the component if onClick is undefined and type is submit 1`] = `
+<button
+  className="Button myClassname "
+  disabled={false}
+  type="submit"
+>
+  <div
+    className="Button__text myClassname__text "
+  >
+    Mytext
+  </div>
+</button>
+`;
