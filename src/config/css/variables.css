@@ -1,0 +1,17 @@
+:root {
+  /** Colors **/
+  --color-transparent: rgba(0, 0, 0, 0);
+  --color-white: #fff;
+  --color-black: #333;
+  --color-dark-grey: #666;
+  --color-grey: #999;
+  --color-light-grey: #d3d3d3;
+  --color-extra-light-grey: #f4f4f4;
+
+  --color-brand-primary: rgba(40, 153, 213, 1); /* blue */
+  --color-brand-secondary: rgba(20, 53, 153, 1); /* dark blue */
+
+  --color-red: rgba(202, 29, 48, 1);
+  --color-orange: rgba(218, 169, 32, 1);
+  --color-green: rgba(61, 125, 81, 1);
+}
