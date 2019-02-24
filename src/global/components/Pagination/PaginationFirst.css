@@ -1,0 +1,9 @@
+.PaginationFirst__container {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.PaginationFirstTab {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

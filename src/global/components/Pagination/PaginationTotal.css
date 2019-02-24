@@ -1,0 +1,7 @@
+.PaginationTotal {
+  text-align: right;
+}
+
+.PaginationTotal__text {
+  color: var(--color-dark-grey);
+}
