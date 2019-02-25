@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText should render the component correctly with type text 1`] = `
+<div
+  className="InputText MyInputClass"
+>
+  <label
+    className="InputText__label MyInputClass__label"
+    key="myInputName"
+  >
+    My Input Label
+    <input
+      className="InputText__input MyInputClass__input"
+      name="myInputName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder=""
+      type="text"
+      value="My String Value"
+    />
+  </label>
+</div>
+`;
