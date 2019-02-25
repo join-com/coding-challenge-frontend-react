@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import PaginationTab from './PaginationTab';
 
-import './PaginationLast.css';
+import './css/PaginationLast.css';
 
 const PaginationLast = ({
   totalPages, pageNumber, onPageNumberChange,

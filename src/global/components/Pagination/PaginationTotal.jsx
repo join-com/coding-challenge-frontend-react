@@ -5,7 +5,7 @@ import paginationDefaults from './defaults/pagination';
 
 import I18n from '../../../utils/I18n';
 
-import './PaginationTotal.css';
+import './css/PaginationTotal.css';
 
 const PaginationTotal = ({ dataPagination }) => {
   if (dataPagination) {

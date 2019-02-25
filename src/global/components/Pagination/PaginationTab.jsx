@@ -5,7 +5,7 @@ import { bemCls } from '../../utils/ClassNameHelpers';
 
 import Button from '../Button';
 
-import './PaginationTab.css';
+import './css/PaginationTab.css';
 
 const PaginationTab = ({
   currentPageNumber, pageNumber, onPageNumberChange,

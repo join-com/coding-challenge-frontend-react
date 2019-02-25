@@ -5,7 +5,7 @@ import I18n from '../../../utils/I18n';
 
 import Button from '../Button';
 
-import './PaginationNext.css';
+import './css/PaginationNext.css';
 
 const PaginationNext = ({
   totalPages, pageNumber, onPageNumberChange,

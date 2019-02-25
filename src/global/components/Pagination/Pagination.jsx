@@ -10,7 +10,7 @@ import PaginationTab from './PaginationTab';
 import PaginationLast from './PaginationLast';
 import PaginationNext from './PaginationNext';
 
-import './Pagination.css';
+import './css/Pagination.css';
 
 const Pagination = ({
   dataPagination, onPageNumberChange,
