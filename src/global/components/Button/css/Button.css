@@ -14,7 +14,7 @@
   /** Layout **/
   --button-border-radius: var(--border-radius);
   --button-space: var(--space);
-  --button-padding: calc(var(--button-space) / 3) calc(var(--button-space) / 2);
+  --button-padding: calc(var(--button-space) / 2);
 
   /** Typography **/
   --button-font-family: inherit;

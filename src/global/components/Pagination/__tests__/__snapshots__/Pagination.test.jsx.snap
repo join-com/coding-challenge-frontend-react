@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should render the component and pass the totalPages & page props correctly 1`] = `
+<div
+  className="Pagination"
+>
+  <div
+    className="Pagination__container"
+  >
+    <div
+      className="Pagination__tabs"
+    >
+      <PaginationFirst
+        onPageNumberChange={[Function]}
+        pageNumber={1}
+        totalPages={3}
+      />
+      <PaginationPrev
+        onPageNumberChange={[Function]}
+        pageNumber={1}
+        totalPages={3}
+      />
+      <PaginationTab
+        currentPageNumber={1}
+        onPageNumberChange={[Function]}
+        pageNumber={1}
+      />
+      <PaginationNext
+        onPageNumberChange={[Function]}
+        pageNumber={1}
+        totalPages={3}
+      />
+      <PaginationLast
+        onPageNumberChange={[Function]}
+        pageNumber={1}
+        totalPages={3}
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationNext should not render the component for pageNumber = totalPages 1`] = `""`;
+
+exports[`PaginationNext should not render the component for totalPages = 1 1`] = `""`;
+
+exports[`PaginationNext should render the component for totalPages > 1 & pageNumber < totalPages 1`] = `
+<ButtonWrapper
+  className="PaginationNext__button"
+  onClick={[Function]}
+  params={
+    Object {
+      "pageNumber": 3,
+    }
+  }
+  text="Next"
+/>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationFirst should not render the component for pageNumber = 1 1`] = `""`;
+
+exports[`PaginationFirst should not render the component for totalPages = 1 1`] = `""`;
+
+exports[`PaginationFirst should render the component for totalPages > 1 & pageNumber > 1 1`] = `
+<div
+  className="PaginationFirst"
+>
+  <div
+    className="PaginationFirst__container"
+  >
+    <PaginationTab
+      className="PaginationFirstTab"
+      currentPageNumber={1}
+      onPageNumberChange={[Function]}
+      pageNumber={2}
+    />
+  </div>
+</div>
+`;

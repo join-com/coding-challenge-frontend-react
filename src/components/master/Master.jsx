@@ -12,11 +12,13 @@ import Pagination from '../../global/components/Pagination';
 import PaginationTotal from '../../global/components/Pagination/PaginationTotal';
 
 import MasterList from './MasterList';
+import MasterFilter from './MasterFilter';
 
 import './css/Master.css';
 
 const Master = ({
-  data, dataPagination, onPageNumberChange, ...otherProps
+  data, dataPagination, dataFiltersParams,
+  onPageNumberChange, fetchFilteredData, ...otherProps
 }) => {
   const { dataLoading } = otherProps;
 
@@ -28,6 +30,10 @@ const Master = ({
         </h2>
       </div>
       <div className="Master__container">
+        <MasterFilter
+          dataFiltersParams={dataFiltersParams}
+          fetchFilteredData={fetchFilteredData}
+        />
         <DataStateNotifier {...otherProps}>
           {data && !!data.length && !dataLoading
             && (
@@ -64,6 +70,7 @@ Master.propTypes = {
   dataLoading: PropTypes.string,
   dataPagination: paginationType,
   onPageNumberChange: PropTypes.func,
+  handleFilterItems: PropTypes.func,
 };
 
 Master.defaultProps = {
@@ -71,4 +78,5 @@ Master.defaultProps = {
   dataLoading: '',
   dataPagination: paginationDefaults,
   onPageNumberChange: () => {},
+  handleFilterItems: () => {},
 };

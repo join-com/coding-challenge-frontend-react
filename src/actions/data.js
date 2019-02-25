@@ -11,9 +11,14 @@ export function fetchData(params) {
     });
     ApiClient.fetchData(params)
       .then((res) => {
+        const {
+          page, per_page, ...filterParams
+        } = params;
+
         dispatch({
           type: types.DATA_GET_SUCCESS,
           data: res.data,
+          filterParams,
           loading: '',
           error: '',
         });

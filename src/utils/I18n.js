@@ -20,6 +20,16 @@ const translations = {
         },
       },
     },
+    filter: {
+      clearFilters: 'Clear Filters',
+      filter: 'Find cases',
+    },
+    filters: {
+      query: {
+        label: '',
+        placeholder: 'Search for case description',
+      },
+    },
     pagination: {
       next: 'Next',
       prev: 'Prev',

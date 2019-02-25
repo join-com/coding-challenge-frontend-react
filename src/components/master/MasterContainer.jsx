@@ -13,6 +13,7 @@ import {
   getData,
   getDataPagination,
   getDataPageNumber,
+  getDataFiltersParams,
   getDataError,
   getDataLoading,
 } from '../../reducers/data';
@@ -23,6 +24,7 @@ const mapStateToProps = state => ({
   data: getData(state),
   dataPagination: getDataPagination(state),
   dataPageNumber: getDataPageNumber(state),
+  dataFiltersParams: getDataFiltersParams(state),
   dataError: getDataError(state),
   dataLoading: getDataLoading(state),
 });

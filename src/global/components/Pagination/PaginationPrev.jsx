@@ -5,7 +5,7 @@ import I18n from '../../../utils/I18n';
 
 import Button from '../Button';
 
-import './PaginationPrev.css';
+import './css/PaginationPrev.css';
 
 const PaginationPrev = ({
   totalPages, pageNumber, onPageNumberChange,

@@ -1,0 +1,7 @@
+.FilterSubmitButton {
+  background-color: var(--filter-submit-background-color);
+}
+
+.FilterSubmitButton__text {
+  color: var(--filter-submit-color);
+}

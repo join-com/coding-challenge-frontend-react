@@ -16,9 +16,15 @@ exports[`Master should pass the error message to the DataStateNotifier component
   <div
     className="Master__container"
   >
+    <MasterFilter
+      data={Array []}
+      dataFiltersParams={Object {}}
+      fetchFilteredData={[Function]}
+    />
     <DataStateNotifier
       dataError="Oops something went wrong :("
       dataLoading=""
+      handleFilterItems={[Function]}
       resetDataError={[Function]}
     >
       <PaginationTotal
@@ -287,9 +293,15 @@ exports[`Master should pass the loading message to the DataStateNotifier compone
   <div
     className="Master__container"
   >
+    <MasterFilter
+      data={Array []}
+      dataFiltersParams={Object {}}
+      fetchFilteredData={[Function]}
+    />
     <DataStateNotifier
       dataError=""
       dataLoading="Loading data ..."
+      handleFilterItems={[Function]}
       resetDataError={[Function]}
     />
   </div>
@@ -312,9 +324,15 @@ exports[`Master should render the component correctly 1`] = `
   <div
     className="Master__container"
   >
+    <MasterFilter
+      data={Array []}
+      dataFiltersParams={Object {}}
+      fetchFilteredData={[Function]}
+    />
     <DataStateNotifier
       dataError=""
       dataLoading=""
+      handleFilterItems={[Function]}
       resetDataError={[Function]}
     >
       <PaginationTotal

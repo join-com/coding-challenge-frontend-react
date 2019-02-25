@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationTab should render a Button component with active state for pageNumber === currentNumber 1`] = `
+<ButtonWrapper
+  className="Pagination__tab Pagination__tab--active"
+  onClick={[Function]}
+  params={
+    Object {
+      "pageNumber": 3,
+    }
+  }
+  text="3"
+/>
+`;
+
+exports[`PaginationTab should render the component correctly 1`] = `
+<ButtonWrapper
+  className="Pagination__tab "
+  onClick={[Function]}
+  params={
+    Object {
+      "pageNumber": 3,
+    }
+  }
+  text="3"
+/>
+`;

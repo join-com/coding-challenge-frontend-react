@@ -16,11 +16,12 @@ class MasterWrapper extends Component {
   constructor() {
     super();
     this.handleOnPageNumberChange = this.handleOnPageNumberChange.bind(this);
+    this.fetchFilteredData = this.fetchFilteredData.bind(this);
   }
 
   componentDidMount() {
     const {
-      fetchData, dataPageNumber, dataPagination,
+      fetchData, dataPageNumber, dataPagination, dataFiltersParams,
     } = this.props;
 
     const { per_page } = dataPagination;
@@ -33,6 +34,7 @@ class MasterWrapper extends Component {
     const defaultParams = {
       ...paginationParams,
       ...filterParams,
+      ...dataFiltersParams,
     };
 
     fetchData(defaultParams);
@@ -41,7 +43,7 @@ class MasterWrapper extends Component {
 
   handleOnPageNumberChange({ pageNumber }) {
     const {
-      fetchData, dataPagination, onPageNumberChange,
+      fetchData, dataPagination, dataFiltersParams, onPageNumberChange,
     } = this.props;
 
     const { per_page } = dataPagination;
@@ -54,9 +56,32 @@ class MasterWrapper extends Component {
     const queryParams = {
       ...paginationParams,
       ...filterParams,
+      ...dataFiltersParams,
     };
 
     onPageNumberChange({ page: pageNumber });
+    fetchData(queryParams);
+    historyPush('/bikes', queryParams);
+  }
+
+  fetchFilteredData(dataFiltersParams) {
+    const {
+      fetchData, dataPagination,
+    } = this.props;
+
+    const { per_page } = dataPagination;
+
+    const paginationParams = {
+      page: 1,
+      per_page,
+    };
+
+    const queryParams = {
+      ...paginationParams,
+      ...filterParams,
+      ...dataFiltersParams,
+    };
+
     fetchData(queryParams);
     historyPush('/bikes', queryParams);
   }
@@ -66,6 +91,7 @@ class MasterWrapper extends Component {
       <Master
         {...this.props}
         onPageNumberChange={this.handleOnPageNumberChange}
+        fetchFilteredData={this.fetchFilteredData}
       />
     );
   }

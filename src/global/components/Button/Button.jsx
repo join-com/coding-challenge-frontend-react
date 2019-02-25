@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { bemCls } from '../../utils/ClassNameHelpers';
 
-import './Button.css';
+import './css/Button.css';
 
 const Button = ({
   className, text, type, disabled, onClick,
