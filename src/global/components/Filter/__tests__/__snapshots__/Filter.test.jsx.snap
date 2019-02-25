@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should render the component correctly 1`] = `
+<form
+  className="Filter MyFilterClassname"
+  name="Filter"
+  onSubmit={[Function]}
+>
+  <div
+    className="Filter__container MyFilterClassname__container"
+  >
+    <div
+      className="FilterInputs"
+    >
+      <FilterText
+        className="MyFilterClassnameInput"
+        filter={
+          Object {
+            "label": "MyFilterInputLAbel",
+            "name": "myFilterInputName",
+            "placeholder": "My Filter Input Placeholder",
+            "type": "text",
+          }
+        }
+        handleFiltersChange={[Function]}
+        key="myFilterInputName"
+        value="MyFilterValue"
+      />
+    </div>
+    <div
+      className="FilterActions"
+    >
+      <FilterSubmitButton
+        className="MyFilterClassname__submitButton"
+        handleSubmitFilters={[Function]}
+      />
+      <FilterClearButton
+        className="MyFilterClassname__clearButton"
+        handleClearFilters={[Function]}
+      />
+    </div>
+  </div>
+</form>
+`;

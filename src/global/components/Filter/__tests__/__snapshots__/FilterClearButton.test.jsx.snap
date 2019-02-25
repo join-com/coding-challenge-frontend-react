@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterClearButton should render the component correctly 1`] = `
+<ButtonWrapper
+  className="FilterClearButton MyFilterClearButtonClassname"
+  iconName="remove"
+  onClick={[Function]}
+  params={Object {}}
+  text="Clear Filters"
+/>
+`;
