@@ -8,6 +8,7 @@ const initialState = {
     page: 1,
     per_page: 10,
   },
+  filterParams: {},
   error: '',
   loading: '',
 };
@@ -38,6 +39,7 @@ const data = (state = initialState, action) => {
       return {
         ...state,
         data: getContent(action.data),
+        filterParams: action.filterParams,
         error: action.error,
         loading: action.loading,
       };
@@ -75,6 +77,10 @@ export function getDataPagination(state) {
 export function getDataPageNumber(state) {
   const pagination = getDataPagination(state);
   return (pagination && pagination.page) || 1;
+}
+
+export function getDataFiltersParams(state) {
+  return state.data && state.data.filterParams;
 }
 
 export function getDataError(state) {
