@@ -1,6 +1,7 @@
 :root {
   --space: 2rem;
   --border-radius: 3px;
+  --border-color: var(--color-light-grey);
   --color-alert: var(--color-red);
   --color-warning: var(--color-orange);
   --color-action: var(--color-brand-primary);
@@ -15,7 +16,7 @@
   --section-border-radius: var(--border-radius);
 
   /* Element */
-  --element-padding: calc(var(--space) / 3) calc(var(--space) / 2);
+  --element-padding: calc(var(--space) / 2);
   --element-margin: calc(var(--space) / 4);
 
   /* List */
@@ -44,4 +45,15 @@ a {
 
 a:hover {
   color: var(--link-hover-color);
+}
+
+button,
+input {
+  border: 1px solid var(--border-color);
+  padding: var(--element-padding);
+  font-size: 1.6rem;
+}
+
+button {
+  border-radius: var(--border-radius);
 }
