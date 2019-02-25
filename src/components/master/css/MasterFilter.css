@@ -1,0 +1,13 @@
+.MasterFilter {
+  width: 100%;
+  padding-bottom: var(--section-padding);
+}
+
+.MasterFilterInput {
+  padding-right: calc(var(--section-padding) * 1.5);
+  padding-bottom: var(--section-padding);
+}
+
+.MasterFilterInput__query__input {
+  min-width: 300px;
+}
