@@ -20,6 +20,10 @@ const translations = {
         },
       },
     },
+    filter: {
+      clearFilters: 'Clear Filters',
+      filter: 'Find cases',
+    },
     pagination: {
       next: 'Next',
       prev: 'Prev',

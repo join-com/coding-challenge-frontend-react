@@ -1,0 +1,14 @@
+.FilterText__label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.FilterText__input {
+  margin-top: calc(var(--space) / 3);
+  display: block;
+}
+
+.FilterText__input[placeholder] {
+  font-weight: normal;
+}

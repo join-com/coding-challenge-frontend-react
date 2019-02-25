@@ -1,0 +1,34 @@
+:root {
+  /** Typography **/
+  --filter-input-alert-message-font-size: 14px;
+  --filter-input-alert-message-font-weight: 400;
+  --filter-input-alert-message-font-style: italic;
+  --filter-input-alert-message-color: var(--color-alert);
+  --filter-clear-color: var(--color-black);
+  --filter-clear-background-color: var(--color-cancel);
+  --filter-submit-color: var(--color-white);
+  --filter-submit-background-color: var(--color-brand-primary);
+}
+
+.Filter {
+  padding: var(--section-padding) 0;
+}
+
+.Filter__container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.FilterInputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.FilterActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: var(--section-padding);
+}
