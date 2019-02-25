@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationPrev should not render the component for pageNumber = 1 1`] = `""`;
+
+exports[`PaginationPrev should not render the component for totalPages = 1 1`] = `""`;
+
+exports[`PaginationPrev should render the component for totalPages > 1 & pageNumber > 1 1`] = `
+<ButtonWrapper
+  className="PaginationPrev__button"
+  onClick={[Function]}
+  params={
+    Object {
+      "pageNumber": 1,
+    }
+  }
+  text="Prev"
+/>
+`;

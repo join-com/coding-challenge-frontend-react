@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationTotal should render the component correctly 1`] = `
+<div
+  className="PaginationTotal"
+>
+  <div
+    className="PaginationTotal__text"
+  >
+    total: 23
+  </div>
+</div>
+`;
