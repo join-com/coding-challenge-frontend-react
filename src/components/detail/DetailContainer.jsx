@@ -14,6 +14,8 @@ import {
   getDataLoading,
 } from '../../reducers/data';
 
+import DetailWrapper from './DetailWrapper';
+
 const mapStateToProps = state => ({
   data: getData(state),
   dataError: getDataError(state),
