@@ -21,11 +21,15 @@ const MasterFilter = ({
       placeholder: I18n.t('en.filters.query.placeholder'),
     },
     {
-      name: 'occurred_after',
+      name: 'occurred_at',
       type: 'date',
+      from: 'occurred_after',
+      to: 'occurred_before',
       format: 'YYYY-MM-DD',
-      label: I18n.t('en.filters.occurred_at.label'),
-      placeholder: I18n.t('en.filters.occurred_at.placeholder'),
+      labelFrom: I18n.t('en.filters.occurred_at.labelFrom'),
+      labelTo: I18n.t('en.filters.occurred_at.labelTo'),
+      placeholderFrom: I18n.t('en.filters.occurred_at.placeholderFrom'),
+      placeholderTo: I18n.t('en.filters.occurred_at.placeholderTo'),
     },
   ];
 
