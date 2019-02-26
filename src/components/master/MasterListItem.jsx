@@ -14,7 +14,7 @@ const keys = [
     name: 'title',
     label: '',
     type: 'link',
-    href: '/{{linkParam}}',
+    href: '/bikes/{{linkParam}}',
     linkParam: 'id',
   },
   {
