@@ -27,7 +27,7 @@ const translations = {
     filters: {
       occurred_at: {
         labelFrom: 'From',
-        labelTo: 'To',
+        labelTo: 'To (excl.)',
         placeholderFrom: 'dd.mm.yyyy',
         placeholderTo: 'dd.mm.yyyy',
       },
