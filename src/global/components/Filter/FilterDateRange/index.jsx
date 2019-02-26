@@ -14,19 +14,29 @@ const FilterDateRange = ({
 }) => {
   if (filter) {
     const {
-      name, type, label, placeholder,
+      name, type, labelFrom, labelTo, placeholderFrom, placeholderTo,
     } = filter;
 
     return (
       <div className={`FilterDateRange ${className}`}>
         <InputDate
           className={`FilterDateRange ${className} ${
-            bemCls(`FilterDateRange ${className}`, `__${name}`)}`}
-          name={name}
+            bemCls(`FilterDateRange ${className}`, `__${name}From`)}`}
+          name={`${name}From`}
           type={type}
-          label={label}
-          placeholder={placeholder}
-          value={value}
+          label={labelFrom}
+          placeholder={placeholderFrom}
+          value={value.from}
+          onChange={handleFiltersChange}
+        />
+        <InputDate
+          className={`FilterDateRange ${className} ${
+            bemCls(`FilterDateRange ${className}`, `__${name}To`)}`}
+          name={`${name}To`}
+          type={type}
+          label={labelTo}
+          placeholder={placeholderTo}
+          value={value.to}
           onChange={handleFiltersChange}
         />
       </div>
@@ -39,14 +49,26 @@ export default FilterDateRange;
 
 FilterDateRange.propTypes = {
   filter: filterType,
-  value: PropTypes.string,
+  value: PropTypes.shape({
+    from: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
+    to: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
+  }),
   className: PropTypes.string,
   handleFiltersChange: PropTypes.func,
 };
 
 FilterDateRange.defaultProps = {
   filter: null,
-  value: '',
+  value: {
+    from: '',
+    to: '',
+  },
   className: '',
   handleFiltersChange: () => {},
 };
