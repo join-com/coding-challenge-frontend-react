@@ -52,13 +52,10 @@ class FilterWrapper extends Component {
   }
 
   handleClearFilters() {
-    const { filters, fetchFilteredData } = this.props;
-    const filtersValues = initFiltersValues(filters);
-    const data = formatFiltersValuesToDataParams(filtersValues, filters);
+    const { fetchFilteredData } = this.props;
+    fetchFilteredData({});
 
-    fetchFilteredData(data);
-
-    this.setState({ filtersValues });
+    this.setState({ filtersValues: {} });
   }
 
   render() {
