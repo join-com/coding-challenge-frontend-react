@@ -6,12 +6,20 @@ import FilterDateRange from '../index';
 
 const props = {
   filter: {
-    label: 'MyFilterInputLabel',
-    name: 'myFilterInputName',
-    placeholder: 'My Filter Input Placeholder',
+    name: 'myPropertyName',
     type: 'date',
+    from: 'myParamNameFrom',
+    to: 'myParamNameTo',
+    format: 'YYYY-MM-DD',
+    labelFrom: 'MyFilterInputLabel From',
+    labelTo: 'MyFilterInputLabel To',
+    placeholderFrom: 'My Filter Input Placeholder From',
+    placeholderTo: 'My Filter Input Placeholder To',
   },
-  value: 'MyFilterValue',
+  value: {
+    from: 1543309200,
+    to: 1553309200,
+  },
   className: 'MyFilterClassname',
   handleFiltersChange: () => {},
 };

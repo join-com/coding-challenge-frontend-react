@@ -5,14 +5,24 @@ exports[`FilterDateRange should render the component correctly 1`] = `
   className="FilterDateRange MyFilterClassname"
 >
   <InputDateWrapper
-    className="FilterDateRange MyFilterClassname FilterDateRange__myFilterInputName MyFilterClassname__myFilterInputName"
-    label="MyFilterInputLabel"
-    name="myFilterInputName"
+    className="FilterDateRange MyFilterClassname FilterDateRange__myPropertyNameFrom MyFilterClassname__myPropertyNameFrom"
+    label="MyFilterInputLabel From"
+    name="myPropertyNameFrom"
     onBlur={[Function]}
     onChange={[Function]}
-    placeholder="My Filter Input Placeholder"
+    placeholder="My Filter Input Placeholder From"
     type="date"
-    value="MyFilterValue"
+    value={1543309200}
+  />
+  <InputDateWrapper
+    className="FilterDateRange MyFilterClassname FilterDateRange__myPropertyNameTo MyFilterClassname__myPropertyNameTo"
+    label="MyFilterInputLabel To"
+    name="myPropertyNameTo"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="My Filter Input Placeholder To"
+    type="date"
+    value={1553309200}
   />
 </div>
 `;
