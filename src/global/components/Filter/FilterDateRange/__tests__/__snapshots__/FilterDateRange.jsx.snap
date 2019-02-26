@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterDateRange should render the component correctly 1`] = `
+<div
+  className="FilterDateRange MyFilterClassname"
+>
+  <InputDateWrapper
+    className="FilterDateRange MyFilterClassname FilterDateRange__myFilterInputName MyFilterClassname__myFilterInputName"
+    label="MyFilterInputLabel"
+    name="myFilterInputName"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="My Filter Input Placeholder"
+    type="date"
+    value="MyFilterValue"
+  />
+</div>
+`;
