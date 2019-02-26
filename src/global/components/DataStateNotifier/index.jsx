@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { bemCls } from '../../utils/ClassNameHelpers';
 
+import './css/DataStateNotifier.css';
+
 const DataStateNotifier = ({
   resetDataError,
   dataError,
