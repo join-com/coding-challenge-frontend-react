@@ -6,11 +6,11 @@ const translations = {
     },
     data: {
       actions: {
-        loading: 'Loading data ...',
+        loading: 'Loading ...',
       },
       title: 'Stolen Bikes in Berlin',
       states: {
-        empty: 'No data available.',
+        empty: 'No results.',
         error: {
           400: 'Bad Request',
           404: 'Not found',
