@@ -16,10 +16,10 @@ class FilterWrapper extends Component {
   constructor(props) {
     super(props);
 
-    const { filters, dataFilters } = props;
+    const { filters, dataFiltersParams } = props;
     const filtersValues = {
       ...initFiltersValues(filters),
-      ...formatDataFiltersParamsToValues(dataFilters, filters),
+      ...formatDataFiltersParamsToValues(dataFiltersParams, filters),
     };
 
     this.state = {
@@ -52,13 +52,10 @@ class FilterWrapper extends Component {
   }
 
   handleClearFilters() {
-    const { filters, fetchFilteredData } = this.props;
-    const filtersValues = initFiltersValues(filters);
-    const data = formatFiltersValuesToDataParams(filtersValues, filters);
+    const { fetchFilteredData } = this.props;
+    fetchFilteredData({});
 
-    fetchFilteredData(data);
-
-    this.setState({ filtersValues });
+    this.setState({ filtersValues: {} });
   }
 
   render() {
@@ -79,12 +76,12 @@ export default FilterWrapper;
 
 FilterWrapper.propTypes = {
   filters: PropTypes.arrayOf(filterType),
-  dataFilters: filtersValuesType,
+  dataFiltersParams: filtersValuesType,
   fetchFilteredData: PropTypes.func,
 };
 
 FilterWrapper.defaultProps = {
   filters: [],
-  dataFilters: {},
+  dataFiltersParams: {},
   fetchFilteredData: () => {},
 };

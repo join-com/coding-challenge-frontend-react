@@ -25,8 +25,14 @@ const translations = {
       filter: 'Find cases',
     },
     filters: {
+      occurred_at: {
+        labelFrom: 'From',
+        labelTo: 'To (excl.)',
+        placeholderFrom: 'dd.mm.yyyy',
+        placeholderTo: 'dd.mm.yyyy',
+      },
       query: {
-        label: '',
+        label: 'Description',
         placeholder: 'Search for case description',
       },
     },

@@ -11,4 +11,5 @@
 
 .FilterText__input[placeholder] {
   font-weight: normal;
+  color: var(--color-dark-grey);
 }
