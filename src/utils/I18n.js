@@ -8,6 +8,20 @@ const translations = {
       actions: {
         loading: 'Loading ...',
       },
+      attribute: {
+        address: {
+          label: 'CET at',
+        },
+        description: {
+          label: 'Description of incident',
+        },
+        occurredAt: {
+          label: 'Stolen',
+        },
+        updatedAt: {
+          label: 'Reported on:',
+        },
+      },
       title: 'Stolen Bikes in Berlin',
       states: {
         empty: 'No results.',
