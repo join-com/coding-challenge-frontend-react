@@ -9,10 +9,8 @@ export function initFiltersValues(filters) {
       case 'date':
         return {
           ...filtersValues,
-          [filterKey]: {
-            from: '',
-            to:'',
-          },
+          [`${filterKey}From`]: '',
+          [`${filterKey}To`]: '',
         };
 
       default:
