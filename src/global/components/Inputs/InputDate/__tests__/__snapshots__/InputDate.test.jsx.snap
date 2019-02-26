@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputDate should render the component correctly with type date 1`] = `
+<div
+  className="InputDate MyInputClass"
+>
+  <label
+    className="InputDate__label MyInputClass__label"
+    key="myInputName"
+  >
+    My Input Label
+    <input
+      className="InputDate__input MyInputClass__input"
+      name="myInputName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="MM/DD/YYYY"
+      type="date"
+      value="My Date Value"
+    />
+  </label>
+</div>
+`;
