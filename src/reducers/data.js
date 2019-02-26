@@ -28,9 +28,19 @@ function getPagination(state, params) {
   };
 }
 
+function addItemToDataState(state, data) { // unique values
+  return Array.from(
+    new Set([
+      ...state.data,
+      ...[data],
+    ])
+  );
+}
+
 const data = (state = initialState, action) => {
   switch (action.type) {
     case types.DATA_GET:
+    case types.DATA_GET_BY_ID:
       return {
         ...state,
         loading: action.loading,
@@ -40,6 +50,13 @@ const data = (state = initialState, action) => {
         ...state,
         data: getContent(action.data),
         filterParams: action.filterParams,
+        error: action.error,
+        loading: action.loading,
+      };
+    case types.DATA_GET_BY_ID_SUCCESS:
+      return {
+        ...state,
+        data: addItemToDataState(state, action.data),
         error: action.error,
         loading: action.loading,
       };
