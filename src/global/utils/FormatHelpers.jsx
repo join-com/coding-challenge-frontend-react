@@ -46,9 +46,14 @@ export function formatKeyValueByType(key, item) {
   return '';
 }
 
+export function getItemById(id, items) {
+  return items && items.find(item => item.id === id);
+}
+
 const FormatHelpers = {
   formatKeyValueByType,
   getLastKeyValueFromObject,
+  getItemById,
 };
 
 export default FormatHelpers;
