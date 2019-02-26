@@ -12,7 +12,6 @@ import {
 import {
   getData,
   getDataPagination,
-  getDataPageNumber,
   getDataFiltersParams,
   getDataError,
   getDataLoading,
@@ -23,7 +22,6 @@ import MasterWrapper from './MasterWrapper';
 const mapStateToProps = state => ({
   data: getData(state),
   dataPagination: getDataPagination(state),
-  dataPageNumber: getDataPageNumber(state),
   dataFiltersParams: getDataFiltersParams(state),
   dataError: getDataError(state),
   dataLoading: getDataLoading(state),

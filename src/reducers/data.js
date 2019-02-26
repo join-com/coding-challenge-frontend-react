@@ -99,11 +99,6 @@ export function getDataPagination(state) {
   return state.data && state.data.pagination;
 }
 
-export function getDataPageNumber(state) {
-  const pagination = getDataPagination(state);
-  return (pagination && pagination.page) || 1;
-}
-
 export function getDataFiltersParams(state) {
   return state.data && state.data.filterParams;
 }
