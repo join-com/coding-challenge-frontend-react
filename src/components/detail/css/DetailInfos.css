@@ -45,6 +45,8 @@
   text-transform: uppercase;
   font-size: 1.4em;
   margin: var(--section-margin) 0;
+  width: 100%;
+  flex-basis: 100%;
 }
 
 .DetailInfos__property--description {
