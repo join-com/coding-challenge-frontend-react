@@ -17,7 +17,7 @@ const DetailHeader = ({
       <div className="DetailHeader">
         <div className="DetailHeader__container">
           <h2 className="DetailHeader__title">
-            {I18n.t('en.data.title', { id })}
+            {I18n.t('en.item.title', { id })}
           </h2>
           <Link
             className="DetailHeader__back Button"

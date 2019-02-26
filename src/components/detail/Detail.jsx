@@ -14,7 +14,7 @@ const Detail = ({
     {...otherProps}
   >
     <div className="Detail">
-      <DetailHeader />
+      <DetailHeader item={item} />
       <DetailInfos item={item} />
     </div>
   </DataStateNotifier>

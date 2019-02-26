@@ -50,6 +50,9 @@ const translations = {
         placeholder: 'Search for case description',
       },
     },
+    item: {
+      title: 'Stolen Bike N° %{id}',
+    },
     pagination: {
       next: 'Next',
       prev: 'Prev',
