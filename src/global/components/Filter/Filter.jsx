@@ -37,7 +37,15 @@ const Filter = ({
 
           switch (filter.type) {
             case 'date':
-              return <FilterDateRange {...filterProps} />;
+              return (
+                <FilterDateRange
+                  {...filterProps}
+                  value={{
+                    from: filtersValues[`${name}From`],
+                    to: filtersValues[`${name}To`],
+                  }}
+                />
+              );
 
             default:
               return <FilterText {...filterProps} />;
