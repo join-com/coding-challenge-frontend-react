@@ -42,10 +42,10 @@ export function fetchDataById(params) {
       type: types.DATA_GET_BY_ID,
       loading: I18n.t('en.data.actions.loading'),
     });
-    ApiClient.fetchData(params)
+    ApiClient.fetchDataById(params)
       .then((res) => {
         dispatch({
-          type: types.DATA_GET_SUCCESS,
+          type: types.DATA_GET_BY_ID_SUCCESS,
           data: res.data,
           loading: '',
           error: '',

@@ -21,6 +21,14 @@ function getContent(data) {
   return [];
 }
 
+function getItem(data) {
+  if (data && Object.keys(data).some(key => key === 'incident')) {
+    const { incident } = data;
+    return incident;
+  }
+  return {};
+}
+
 function getPagination(state, params) {
   return {
     ...state.pagination,
@@ -56,7 +64,7 @@ const data = (state = initialState, action) => {
     case types.DATA_GET_BY_ID_SUCCESS:
       return {
         ...state,
-        data: addItemToDataState(state, action.data),
+        data: addItemToDataState(state, getItem(action.data)),
         error: action.error,
         loading: action.loading,
       };

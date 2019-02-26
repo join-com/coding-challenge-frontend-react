@@ -33,6 +33,9 @@ const ApiClient = {
   fetchData: params => axiosClient.get(
     `incidents?${getDataParams(params)}`,
   ),
+  fetchDataById: params => axiosClient.get(
+    `incidents/${params.id}`,
+  ),
 };
 
 export default ApiClient;
