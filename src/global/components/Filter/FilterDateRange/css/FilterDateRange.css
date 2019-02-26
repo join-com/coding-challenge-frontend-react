@@ -1,3 +1,7 @@
+.FilterDateRange {
+  display: inline-flex;
+}
+
 .FilterDateRange__label {
   display: block;
   font-size: 1.5rem;
