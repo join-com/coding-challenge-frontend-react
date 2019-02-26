@@ -25,8 +25,12 @@ const translations = {
       filter: 'Find cases',
     },
     filters: {
+      occurred_at: {
+        label: 'Occurred at',
+        placeholder: 'dd.mm.yyyy',
+      },
       query: {
-        label: '',
+        label: 'Description',
         placeholder: 'Search for case description',
       },
     },

@@ -6,9 +6,10 @@ import filtersValuesType from './types/filtersValues';
 
 import { bemCls } from '../../utils/ClassNameHelpers';
 
-import FilterText from './FilterText';
 import FilterClearButton from './FilterClearButton';
 import FilterSubmitButton from './FilterSubmitButton';
+import FilterText from './FilterText';
+import FilterDateRange from './FilterDateRange';
 
 import './css/Filter.css';
 
@@ -26,15 +27,21 @@ const Filter = ({
         {filters.map((filter) => {
           const { name } = filter;
 
-          return (
-            <FilterText
-              key={name}
-              filter={filter}
-              value={filtersValues[name]}
-              handleFiltersChange={handleFiltersChange}
-              className={bemCls(className, 'Input')}
-            />
-          );
+          const filterProps = {
+            key: name,
+            filter,
+            value: filtersValues[name],
+            handleFiltersChange: handleFiltersChange,
+            className: bemCls(className, 'Input'),
+          };
+
+          switch (filter.type) {
+            case 'date':
+              return <FilterDateRange {...filterProps} />;
+
+            default:
+              return <FilterText {...filterProps} />;
+          }
         })}
       </div>
 

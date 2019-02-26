@@ -20,6 +20,12 @@ const MasterFilter = ({
       label: I18n.t('en.filters.query.label'),
       placeholder: I18n.t('en.filters.query.placeholder'),
     },
+    {
+      name: 'occurred_at',
+      type: 'date',
+      label: I18n.t('en.filters.occurred_at.label'),
+      placeholder: I18n.t('en.filters.occurred_at.placeholder'),
+    },
   ];
 
   return (
