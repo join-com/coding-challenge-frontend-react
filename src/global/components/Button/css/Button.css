@@ -47,7 +47,7 @@
   background-image: none;
   user-select: none;
   touch-action: manipulation;
-  -webkit-appearance: button;
+  -webkit-appearance: none;
   overflow: visible;
 }
 

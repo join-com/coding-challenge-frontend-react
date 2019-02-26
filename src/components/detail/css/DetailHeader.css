@@ -1,0 +1,14 @@
+.DetailHeader__container {
+  background-color: var(--section-background-color);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.DetailHeader__title {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.DetailHeader__back {
+  margin: var(--section-margin) 0;
+}
