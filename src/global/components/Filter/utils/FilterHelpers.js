@@ -1,3 +1,6 @@
+import { formatKeyValueByType } from '../../../utils/FormatHelpers';
+import { dateToTimestamp } from '../../../utils/DatetimeHelpers';
+
 export function initFiltersValues(filters) {
   return filters.reduce((filtersValues, filter) => {
     const filterKey = filter.name;
@@ -16,9 +19,19 @@ export function formatDataFiltersParamsToValues(params, filters) {
 
     return {
       ...filtersValues,
-      [filterKey]: paramFilterName,
+      [filterKey]: formatKeyValueByType(filter, paramFilterName),
     };
   }, {});
+}
+
+function formatFilterValueToParamByType(filter, value) {
+  switch (filter.type) {
+    case 'date':
+      return dateToTimestamp(value, 'YYYY-MM-DD');
+
+    default:
+      return value;
+  }
 }
 
 export function formatFiltersValuesToDataParams(values, filters) {
@@ -28,7 +41,7 @@ export function formatFiltersValuesToDataParams(values, filters) {
 
     return {
       ...filtersParams,
-      [filterKey]: filterKeyValue,
+      [filterKey]: formatFilterValueToParamByType(filter, filterKeyValue),
     };
   }, {});
 }

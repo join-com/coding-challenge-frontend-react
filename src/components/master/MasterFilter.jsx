@@ -21,8 +21,9 @@ const MasterFilter = ({
       placeholder: I18n.t('en.filters.query.placeholder'),
     },
     {
-      name: 'occurred_at',
+      name: 'occurred_after',
       type: 'date',
+      format: 'YYYY-MM-DD',
       label: I18n.t('en.filters.occurred_at.label'),
       placeholder: I18n.t('en.filters.occurred_at.placeholder'),
     },
