@@ -1,9 +1,6 @@
 import React from 'react';
 
-import {
-  formatKeyValueByType,
-  getLastKeyValueFromObject,
-} from '../../global/utils/FormatHelpers';
+import { formatKeyValueByType } from '../../global/utils/FormatHelpers';
 
 import I18n from '../../utils/I18n';
 
