@@ -1,0 +1,53 @@
+.DetailInfos:nth-child(odd) {
+  background-color: var(--list-element-odd-background-color);
+  margin: var(--section-margin) 0;
+}
+
+.DetailInfos__container {
+  display: flex;
+}
+
+.DetailInfos__infos {
+  padding: var(--section-padding) 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.DetailInfos__property {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--element-padding) 0;
+  width: 100%;
+  flex-basis: 100%;
+  margin-right: calc(var(--section-margin) / 2);
+}
+
+.DetailInfos__property__label {
+  margin-right: calc(var(--section-margin) / 2);
+}
+
+.DetailInfos__property--title {
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+.DetailInfos__property--occurred_at,
+.DetailInfos__property--address {
+  width: auto;
+  flex-basis: auto;
+}
+
+.DetailInfos__property--address {
+  padding-left: 0;
+}
+
+.DetailInfos__property--description .DetailInfos__property__label {
+  text-transform: uppercase;
+  font-size: 1.4em;
+  margin: var(--section-margin) 0;
+}
+
+.DetailInfos__property--description {
+  width: 100%;
+  flex-basis: 100%;
+}

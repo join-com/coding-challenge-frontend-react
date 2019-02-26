@@ -5,6 +5,7 @@ import dataItemType from '../types/dataItem';
 import DataStateNotifier from '../../global/components/DataStateNotifier';
 
 import DetailHeader from './DetailHeader';
+import DetailInfos from './DetailInfos';
 
 const Detail = ({
   item, ...otherProps
@@ -13,7 +14,8 @@ const Detail = ({
     {...otherProps}
   >
     <div className="Detail">
-      <DetailHeader item={item} />
+      <DetailHeader />
+      <DetailInfos item={item} />
     </div>
   </DataStateNotifier>
 );
