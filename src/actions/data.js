@@ -39,7 +39,7 @@ export function fetchData(params) {
 export function fetchDataById(params) {
   return (dispatch) => {
     dispatch({
-      type: types.DATA_GET,
+      type: types.DATA_GET_BY_ID,
       loading: I18n.t('en.data.actions.loading'),
     });
     ApiClient.fetchData(params)
