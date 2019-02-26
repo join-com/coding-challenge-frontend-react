@@ -1,7 +1,7 @@
 const translations = {
   en: {
     actions: {
-      back: '< Back',
+      back: '< Back to list',
       ok: 'OK',
     },
     data: {
