@@ -26,8 +26,10 @@ const translations = {
     },
     filters: {
       occurred_at: {
-        label: 'Occurred at',
-        placeholder: 'dd.mm.yyyy',
+        labelFrom: 'From',
+        labelTo: 'To',
+        placeholderFrom: 'dd.mm.yyyy',
+        placeholderTo: 'dd.mm.yyyy',
       },
       query: {
         label: 'Description',
