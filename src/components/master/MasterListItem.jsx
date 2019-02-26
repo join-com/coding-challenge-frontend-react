@@ -5,6 +5,8 @@ import {
   getLastKeyValueFromObject,
 } from '../../global/utils/FormatHelpers';
 
+import I18n from '../../utils/I18n';
+
 import defaultBikeImg from '../../media/img/bike.png';
 
 import './css/MasterListItem.css';
@@ -14,7 +16,7 @@ const keys = [
     name: 'title',
     label: '',
     type: 'link',
-    href: '/{{linkParam}}',
+    href: '/bikes/{{linkParam}}',
     linkParam: 'id',
   },
   {
@@ -35,7 +37,7 @@ const keys = [
   },
   {
     name: 'updated_at',
-    label: 'Reported on: ',
+    label: I18n.t('en.data.attribute.updatedAt.label'),
     type: 'date',
     format: 'ddd MMM DD YYYY',
   },

@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+import dataItemType from '../types/dataItem';
+import paginationType from '../../global/components/Pagination/types/pagination';
+import paginationDefaults from '../../global/components/Pagination/defaults/pagination';
+import filtersValuesType from '../../global/components/Filter/types/filtersValues';
+
 import {
   historyPush,
 } from '../../global/utils/UrlHelpers';
@@ -21,13 +27,13 @@ class MasterWrapper extends Component {
 
   componentDidMount() {
     const {
-      fetchData, dataPageNumber, dataPagination, dataFiltersParams,
+      fetchData, data, dataPagination, dataFiltersParams,
     } = this.props;
 
-    const { per_page } = dataPagination;
+    const { page, per_page } = dataPagination;
 
     const paginationParams = {
-      page: dataPageNumber,
+      page,
       per_page,
     };
 
@@ -37,7 +43,9 @@ class MasterWrapper extends Component {
       ...dataFiltersParams,
     };
 
-    fetchData(defaultParams);
+    if (!data || data.length < 2) { // one item fetched (coming from detail page for the 1st time)
+      fetchData(defaultParams);
+    }
     historyPush('/bikes', defaultParams);
   }
 
@@ -98,3 +106,19 @@ class MasterWrapper extends Component {
 }
 
 export default MasterWrapper;
+
+MasterWrapper.propTypes = {
+  data: PropTypes.arrayOf(dataItemType),
+  dataLoading: PropTypes.string,
+  dataPagination: paginationType,
+  dataFiltersParams: filtersValuesType,
+  onPageNumberChange: PropTypes.func,
+};
+
+MasterWrapper.defaultProps = {
+  data: [],
+  dataLoading: '',
+  dataPagination: paginationDefaults,
+  dataFiltersParams: {},
+  onPageNumberChange: () => {},
+};

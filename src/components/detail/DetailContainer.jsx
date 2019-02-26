@@ -4,44 +4,38 @@ import { connect, Provider } from 'react-redux';
 import store from '../../store';
 
 import {
-  fetchData,
+  fetchDataById,
   resetDataError,
-  onPageNumberChange,
 } from '../../actions/data';
 
 import {
   getData,
-  getDataPagination,
-  getDataFiltersParams,
   getDataError,
   getDataLoading,
 } from '../../reducers/data';
 
-import MasterWrapper from './MasterWrapper';
+import DetailWrapper from './DetailWrapper';
 
 const mapStateToProps = state => ({
   data: getData(state),
-  dataPagination: getDataPagination(state),
-  dataFiltersParams: getDataFiltersParams(state),
   dataError: getDataError(state),
   dataLoading: getDataLoading(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchData: params => dispatch(fetchData(params)),
+  fetchDataById: params => dispatch(fetchDataById(params)),
   resetDataError: () => dispatch(resetDataError()),
-  onPageNumberChange: params => dispatch(onPageNumberChange(params)),
 });
 
-const ConnectedMasterContainer = connect(
+const ConnectedDetailContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MasterWrapper);
+)(DetailWrapper);
 
-const MasterContainer = props => (
+const DetailContainer = props => (
   <Provider store={store}>
-    <ConnectedMasterContainer {...props} />
+    <ConnectedDetailContainer {...props} />
   </Provider>
 );
 
-export default MasterContainer;
+export default DetailContainer;

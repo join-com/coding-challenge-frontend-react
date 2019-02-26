@@ -1,16 +1,30 @@
 const translations = {
   en: {
     actions: {
-      back: 'Back',
+      back: '< Back to list',
       ok: 'OK',
     },
     data: {
       actions: {
-        loading: 'Loading data ...',
+        loading: 'Loading ...',
+      },
+      attribute: {
+        address: {
+          label: 'CET at',
+        },
+        description: {
+          label: 'Description of incident',
+        },
+        occurredAt: {
+          label: 'Stolen',
+        },
+        updatedAt: {
+          label: 'Reported on:',
+        },
       },
       title: 'Stolen Bikes in Berlin',
       states: {
-        empty: 'No data available.',
+        empty: 'No results.',
         error: {
           400: 'Bad Request',
           404: 'Not found',
@@ -35,6 +49,9 @@ const translations = {
         label: 'Description',
         placeholder: 'Search for case description',
       },
+    },
+    item: {
+      title: 'Stolen Bike N° %{id}',
     },
     pagination: {
       next: 'Next',

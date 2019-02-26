@@ -21,6 +21,14 @@ function getContent(data) {
   return [];
 }
 
+function getItem(data) {
+  if (data && Object.keys(data).some(key => key === 'incident')) {
+    const { incident } = data;
+    return incident;
+  }
+  return {};
+}
+
 function getPagination(state, params) {
   return {
     ...state.pagination,
@@ -28,9 +36,19 @@ function getPagination(state, params) {
   };
 }
 
+function addItemToDataState(state, data) { // unique values
+  return Array.from(
+    new Set([
+      ...state.data,
+      ...[data],
+    ])
+  );
+}
+
 const data = (state = initialState, action) => {
   switch (action.type) {
     case types.DATA_GET:
+    case types.DATA_GET_BY_ID:
       return {
         ...state,
         loading: action.loading,
@@ -40,6 +58,13 @@ const data = (state = initialState, action) => {
         ...state,
         data: getContent(action.data),
         filterParams: action.filterParams,
+        error: action.error,
+        loading: action.loading,
+      };
+    case types.DATA_GET_BY_ID_SUCCESS:
+      return {
+        ...state,
+        data: addItemToDataState(state, getItem(action.data)),
         error: action.error,
         loading: action.loading,
       };
@@ -72,11 +97,6 @@ export function getData(state) {
 
 export function getDataPagination(state) {
   return state.data && state.data.pagination;
-}
-
-export function getDataPageNumber(state) {
-  const pagination = getDataPagination(state);
-  return (pagination && pagination.page) || 1;
 }
 
 export function getDataFiltersParams(state) {
