@@ -5,22 +5,48 @@ export function initFiltersValues(filters) {
   return filters.reduce((filtersValues, filter) => {
     const filterKey = filter.name;
 
-    return {
-      ...filtersValues,
-      [filterKey]: '',
-    };
+    switch (filter.type) {
+      case 'date':
+        return {
+          ...filtersValues,
+          [filterKey]: {
+            from: '',
+            to:'',
+          },
+        };
+
+      default:
+        return {
+          ...filtersValues,
+          [filterKey]: '',
+        };
+    }
   }, {});
 }
 
 export function formatDataFiltersParamsToValues(params, filters) {
   return filters.reduce((filtersValues, filter) => {
     const filterKey = filter.name;
-    const paramFilterName = params[filterKey];
 
-    return {
-      ...filtersValues,
-      [filterKey]: formatKeyValueByType(filter, paramFilterName),
-    };
+    switch (filter.type) {
+      case 'date':
+        const paramFilterNameFrom = params[filter.from];
+        const paramFilterNameTo = params[filter.to];
+
+        return {
+          ...filtersValues,
+          [`${filterKey}From`]: formatKeyValueByType(filter, paramFilterNameFrom),
+          [`${filterKey}To`]: formatKeyValueByType(filter, paramFilterNameTo),
+        };
+
+      default:
+        const paramFilterName = params[filterKey];
+
+        return {
+          ...filtersValues,
+          [filterKey]: formatKeyValueByType(filter, paramFilterName),
+        };
+    }
   }, {});
 }
 
@@ -37,12 +63,32 @@ function formatFilterValueToParamByType(filter, value) {
 export function formatFiltersValuesToDataParams(values, filters) {
   return filters.reduce((filtersParams, filter) => {
     const filterKey = filter.name;
-    const filterKeyValue = values[filterKey];
 
-    return {
-      ...filtersParams,
-      [filterKey]: formatFilterValueToParamByType(filter, filterKeyValue),
-    };
+    switch (filter.type) {
+      case 'date':
+        const filterKeyValueFrom = values[`${filterKey}From`];
+        const filterKeyValueTo = values[`${filterKey}To`];
+
+        return {
+          ...filtersParams,
+          ...(filterKeyValueFrom
+            ? { [filter.from]: formatFilterValueToParamByType(filter, filterKeyValueFrom) }
+            : {}
+          ),
+          ...(filterKeyValueTo
+            ? { [filter.to]: formatFilterValueToParamByType(filter, filterKeyValueTo) }
+            : {}
+          ),
+        };
+
+      default:
+        const filterKeyValue = values[filterKey];
+
+        return {
+          ...filtersParams,
+          [filterKey]: formatFilterValueToParamByType(filter, filterKeyValue),
+        };
+    }
   }, {});
 }
 
