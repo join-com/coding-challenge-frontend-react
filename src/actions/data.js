@@ -36,6 +36,34 @@ export function fetchData(params) {
   };
 }
 
+export function fetchDataById(params) {
+  return (dispatch) => {
+    dispatch({
+      type: types.DATA_GET,
+      loading: I18n.t('en.data.actions.loading'),
+    });
+    ApiClient.fetchData(params)
+      .then((res) => {
+        dispatch({
+          type: types.DATA_GET_SUCCESS,
+          data: res.data,
+          loading: '',
+          error: '',
+        });
+      })
+      .catch((e) => {
+        dispatch({
+          type: types.DATA_GET_ERROR,
+          loading: '',
+          error: `${
+            I18n.t('en.data.states.error.loading')}: ${
+            getErrorMessage(e, 'en.data.states.error')
+          }`,
+        });
+      });
+  };
+}
+
 export function resetDataError() {
   return (dispatch) => {
     dispatch({
