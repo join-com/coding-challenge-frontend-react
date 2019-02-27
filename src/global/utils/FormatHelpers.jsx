@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { timestampToDate } from './DatetimeHelpers';
+import Map from '../components/Map';
 
 export function getLastKeyValueFromObject(key, item) {
   const keys = key && key.split('.');
@@ -37,6 +39,9 @@ export function formatKeyValueByType(key, item) {
 
       case 'date':
         return value ? timestampToDate(value, key.format) : '';
+
+      case 'map':
+        return <Map location={value} name={key.name} zoom={key.zoom} />;
 
       default:
         return value;

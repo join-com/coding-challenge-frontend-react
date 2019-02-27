@@ -53,6 +53,9 @@ const translations = {
     item: {
       title: 'Stolen Bike N° %{id}',
     },
+    map: {
+      geocodingError: 'Sorry, an error has occurred while geocoding the location :(',
+    },
     pagination: {
       next: 'Next',
       prev: 'Prev',

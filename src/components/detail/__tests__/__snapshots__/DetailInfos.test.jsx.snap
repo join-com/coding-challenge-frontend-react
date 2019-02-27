@@ -53,6 +53,19 @@ exports[`DetailInfos should render the component correctly 1`] = `
         </div>
       </div>
       <div
+        className="DetailInfos__property DetailInfos__property--location"
+        key="location"
+      >
+        <div
+          className="DetailInfos__property__value"
+        >
+          <MapWrapper
+            name="location"
+            zoom={15}
+          />
+        </div>
+      </div>
+      <div
         className="DetailInfos__property DetailInfos__property--description"
         key="description"
       >
