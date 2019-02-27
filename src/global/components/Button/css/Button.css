@@ -1,0 +1,81 @@
+:root {
+  /** Colors **/
+  --button-background-color: var(--color-extra-light-grey);
+  --button-color: var(--color-black);
+  --button-border-color: var(--color-light-grey);
+
+  --button-hover-background-color: var(--color-white);
+  --button-hover-border-color: var(--color-light-grey);
+  --button-hover-color: var(--color-black);
+
+  --button-disabled-background-color: var(--state-disabled-background-color);
+  --button-disabled-color: var(--state-disabled-color);
+
+  /** Layout **/
+  --button-border-radius: var(--border-radius);
+  --button-space: var(--space);
+  --button-padding: calc(var(--button-space) / 2);
+
+  /** Typography **/
+  --button-font-family: inherit;
+  --button-font-weight: normal;
+  --button-font-size: 1.4rem;
+  --button-line-height: default;
+}
+
+.Button {
+  opacity: 1;
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--button-border-radius);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: var(--button-padding);
+
+  font-family: var(--button-font-family);
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
+  line-height: var(--button-line-height);
+  white-space: nowrap;
+  text-transform: none;
+
+  background-image: none;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  overflow: visible;
+}
+
+.Button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.Button:active {
+  box-shadow: inset 3px 3px 5px var(--button-border-color);
+  background-color: var(--button-hover-background-color);
+  border-color: var(--button-hover-border-color);
+  color: var(--button-hover-color);
+}
+
+.Button--disabled {
+  background-color: var(--button-disabled-background-color);
+}
+
+.Button--disabled .Button__text {
+  color: var(--button-disabled-color);
+}
+
+.Button--disabled:hover {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.Button__text {
+  display: inline-block;
+}

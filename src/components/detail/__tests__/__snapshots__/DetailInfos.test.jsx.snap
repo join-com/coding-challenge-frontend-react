@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailInfos should not render the component if no item 1`] = `""`;
+
+exports[`DetailInfos should render the component correctly 1`] = `
+<div
+  className="DetailInfos"
+>
+  <div
+    className="DetailInfos__container"
+  >
+    <div
+      className="DetailInfos__infos"
+    >
+      <div
+        className="DetailInfos__property DetailInfos__property--title"
+        key="title"
+      >
+        <div
+          className="DetailInfos__property__value"
+        >
+          Stolen 2015 Gepida Alboin crs 500(silver, gray or bare metal)
+        </div>
+      </div>
+      <div
+        className="DetailInfos__property DetailInfos__property--occurred_at"
+        key="occurred_at"
+      >
+        <div
+          className="DetailInfos__property__label"
+        >
+          Stolen
+        </div>
+        <div
+          className="DetailInfos__property__value"
+        >
+          Tue Nov 27 2018
+        </div>
+      </div>
+      <div
+        className="DetailInfos__property DetailInfos__property--address"
+        key="address"
+      >
+        <div
+          className="DetailInfos__property__label"
+        >
+          CET at
+        </div>
+        <div
+          className="DetailInfos__property__value"
+        >
+          Berlin, 12051, DE
+        </div>
+      </div>
+      <div
+        className="DetailInfos__property DetailInfos__property--location"
+        key="location"
+      >
+        <div
+          className="DetailInfos__property__value"
+        >
+          <MapWrapper
+            name="location"
+            zoom={15}
+          />
+        </div>
+      </div>
+      <div
+        className="DetailInfos__property DetailInfos__property--description"
+        key="description"
+      >
+        <div
+          className="DetailInfos__property__label"
+        >
+          Description of incident
+        </div>
+        <div
+          className="DetailInfos__property__value"
+        >
+          Locked cellar in Warthestrasse 8, Kryptonite U-lock with cable both tyres locked to frame. Someone got in and took the whole thing as well as forced some storage doors open. 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

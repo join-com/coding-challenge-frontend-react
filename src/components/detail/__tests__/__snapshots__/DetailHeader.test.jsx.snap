@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailHeader should not render the component if no item 1`] = `""`;
+
+exports[`DetailHeader should render the component correctly 1`] = `
+<div
+  className="DetailHeader"
+>
+  <div
+    className="DetailHeader__container"
+  >
+    <h2
+      className="DetailHeader__title"
+    >
+      Stolen Bike N° 94547
+    </h2>
+    <Link
+      className="DetailHeader__back Button"
+      replace={false}
+      to="/bikes"
+    >
+      &lt; Back to list
+    </Link>
+  </div>
+</div>
+`;

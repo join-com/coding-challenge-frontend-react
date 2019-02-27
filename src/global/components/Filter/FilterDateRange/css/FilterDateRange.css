@@ -1,0 +1,21 @@
+.FilterDateRange {
+  display: inline-flex;
+}
+
+.FilterDateRange__label {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.FilterDateRange__input {
+  margin-top: calc(var(--space) / 3);
+  display: block;
+  font-family: inherit;
+  font-weight: normal;
+  padding: calc(var(--element-padding) / 1.4);
+}
+
+.FilterDateRange__input[placeholder] {
+  color: var(--color-dark-grey);
+}

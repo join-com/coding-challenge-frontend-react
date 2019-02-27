@@ -1,0 +1,9 @@
+.Map__mapContainer {
+  height: 400px;
+  width: 90vw;
+}
+
+.Map__map,
+.Map__loading {
+  height: 100%;
+}

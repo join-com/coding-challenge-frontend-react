@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterSubmitButton should render the component correctly 1`] = `
+<ButtonWrapper
+  className="FilterSubmitButton MyFilterSubmitButtonClassname"
+  iconName="filter"
+  onClick={[Function]}
+  params={Object {}}
+  text="Find cases"
+  type="submit"
+/>
+`;
