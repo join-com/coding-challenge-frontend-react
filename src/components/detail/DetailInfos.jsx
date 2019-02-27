@@ -24,6 +24,12 @@ const keys = [
     type: 'string',
   },
   {
+    name: 'location',
+    label: '',
+    type: 'map',
+    zoom: 15,
+  },
+  {
     name: 'description',
     label: I18n.t('en.data.attribute.description.label'),
     type: 'string',
