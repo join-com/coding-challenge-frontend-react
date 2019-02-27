@@ -28,21 +28,16 @@ export function formatDataFiltersParamsToValues(params, filters) {
 
     switch (filter.type) {
       case 'date':
-        const paramFilterNameFrom = params[filter.from];
-        const paramFilterNameTo = params[filter.to];
-
         return {
           ...filtersValues,
-          [`${filterKey}From`]: formatKeyValueByType(filter, paramFilterNameFrom),
-          [`${filterKey}To`]: formatKeyValueByType(filter, paramFilterNameTo),
+          [`${filterKey}From`]: formatKeyValueByType({ ...filter, name: filter.from }, params),
+          [`${filterKey}To`]: formatKeyValueByType({ ...filter, name: filter.to }, params),
         };
 
       default:
-        const paramFilterName = params[filterKey];
-
         return {
           ...filtersValues,
-          [filterKey]: formatKeyValueByType(filter, paramFilterName),
+          [filterKey]: formatKeyValueByType(filter, params),
         };
     }
   }, {});
