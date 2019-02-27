@@ -30,7 +30,17 @@ class DetailWrapper extends Component {
 
     const item = getItemById(id, data);
 
-    if (item) return <Detail {...this.props} item={item} />;
+    if (item) {
+      return (
+        <Detail
+          {...this.props}
+          item={{
+            ...item,
+            location: item.address,
+          }}
+        />
+      )
+    }
 
     return (
       <DataStateNotifier
