@@ -13,3 +13,8 @@
     color: var(--secondary-color);
     border-bottom: .2rem solid var(--primary-color);
 }
+.appBar__label {
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--text-color-lite);
+}

@@ -7,8 +7,9 @@ class AppBar extends Component {
             <div className="appBar">
                 <div className="appBar__logo">
                     <span className="appBar__logo--first">STOLEN</span>
-                    <span className="appBar__logo--second">BIKES</span>
+                    <span className="appBar__logo--second">BYKES</span>
                 </div>
+                <div className="appBar__label">Police Department of Berlin</div>
             </div>
         );
     }

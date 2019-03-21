@@ -3,6 +3,8 @@
 :root {
   --primary-color: #262262;
   --secondary-color: #dfab82;
+  --text-color-lite: #777;
+  --text-color-dark: #333;
 }
 
 *,
@@ -31,4 +33,20 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-
+.sectWrap{
+  margin-top: 2rem;
+  width: 100%;
+  height: 58rem;
+  overflow-y: auto;
+  padding: 2rem 0;
+  font-size: 1.4rem;
+  color: #000;
+}
+.sectWrap__header--controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: .1rem solid var(--text-color-lite);
+  padding-bottom: .6rem;
+}

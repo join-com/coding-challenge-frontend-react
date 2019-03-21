@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './IncidentListItem.scss';
 
-class IncidentList extends Component {
+class IncidentListItem extends Component {
     render() {
         return (
             <div className="listItem">
@@ -11,4 +11,4 @@ class IncidentList extends Component {
     }
 }
 
-export default IncidentList;
+export default IncidentListItem;
