@@ -1,0 +1,15 @@
+.hero{
+        
+}
+.appBar__logo{
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.appBar__logo--first{
+    color: var(--primary-color);
+    border-bottom: .2rem solid var(--secondary-color);
+}
+.appBar__logo--second{
+    color: var(--secondary-color);
+    border-bottom: .2rem solid var(--primary-color);
+}

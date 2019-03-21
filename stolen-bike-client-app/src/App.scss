@@ -1,0 +1,21 @@
+.app{
+  position: relative;
+  background: url(./assets/bg/img1.svg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 2rem 10rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .app{
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+}
