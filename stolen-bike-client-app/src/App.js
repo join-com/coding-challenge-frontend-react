@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'react-dates/initialize';
 import './App.scss';
 
 import AppBar from './components/app-bar/AppBar';
