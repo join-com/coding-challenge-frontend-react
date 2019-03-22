@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SearchInput.scss';
 
-const InputGroup = ({
+const SearchInput = ({
     name,
     placeholder,
     value,
@@ -24,7 +24,7 @@ const InputGroup = ({
     );
 };
 
-InputGroup.propTypes = {
+SearchInput.propTypes = {
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.string.isRequired,
@@ -34,8 +34,8 @@ InputGroup.propTypes = {
     onChange: PropTypes.func.isRequired
 };
 
-InputGroup.defaultProps = {
+SearchInput.defaultProps = {
     type: 'text'
 };
 
-export default InputGroup;
+export default SearchInput;

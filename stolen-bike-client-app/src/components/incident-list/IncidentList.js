@@ -44,8 +44,14 @@ class IncidentList extends Component {
                         onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
                     />
                 </div>
+
                 <div className="sectWrap__header--subTitle">21 Cases Returned</div>
-                <IncidentListItem />
+
+                <div className="pageList">
+                    <IncidentListItem />
+                    <IncidentListItem />
+                    <IncidentListItem />
+                </div>
             </div>
         );
     }

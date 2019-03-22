@@ -11,4 +11,10 @@
     text-align: center !important;
     font-size: 1.4rem !important;
     line-height: 0px !important;
+    margin-top: .4rem;
+}
+
+.pageList {
+    max-height: 60vh;
+    overflow-y: auto;
 }
