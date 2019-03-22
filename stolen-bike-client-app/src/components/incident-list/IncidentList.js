@@ -27,7 +27,9 @@ class IncidentList extends Component {
                 currentPage: 0,
                 perPage: 0,
                 totalPages: 0
-            }
+            },
+
+            search: ""
         };
     }
     componentDidMount() {
@@ -76,7 +78,7 @@ class IncidentList extends Component {
         this.loadedCollection(pagination_data.currentPage, 10);
     }
     loadedCollection = (page = 1, perPage = 10) => {
-        const getdata = this.props.dataset.incidents.incidents;
+        const getdata = this.filteredCollections();
         let updatePagination = this.state.pagination_data;
 
         if (!this.state.pagination_data.currentPage) {
@@ -94,6 +96,26 @@ class IncidentList extends Component {
             this.state.pagination_data.perPage
         );
     }
+    filteredCollections = () => {
+        const criteria = this.state.search.toLowerCase();
+        const key = "title";
+        if (criteria && key) {
+            return Object.values(this.props.dataset.incidents.incidents).filter(item => {
+                if (item[key]) {
+                    const to_compare = item[key].toLowerCase();
+                    return to_compare.includes(criteria)
+                }
+                return this.props.dataset.incidents.incidents;
+            });
+        } else {
+            return this.props.dataset.incidents.incidents;
+        }
+    }
+    handleSearchCriteria = (event) => {
+        this.setState({
+            search: event.target.value
+        })
+    }
 
     render() {
         const {
@@ -104,20 +126,15 @@ class IncidentList extends Component {
         return (
             <div className="sectWrap">
                 <div className="sectWrap__header--controls">
-                    <Pagination
-                        pagination_data={this.state.pagination_data}
-                        next={this.next}
-                        prev={this.prev}
-                    />
                     <SearchInput
                         name="listSearch"
-                        placeholder="...search for case title"
-                        value=""
+                        placeholder="...search by case title"
+                        value={null}
                         icon={SearchICO}
                         label={null}
                         error={null}
                         type="search"
-                        onChange={this.handleChange}
+                        onChange={this.handleSearchCriteria}
                     />
                     <DateRangePicker
                         startDateId="startDate"
@@ -127,6 +144,11 @@ class IncidentList extends Component {
                         onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate }) }}
                         focusedInput={this.state.focusedInput}
                         onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
+                    />
+                    <Pagination
+                        pagination_data={this.state.pagination_data}
+                        next={this.next}
+                        prev={this.prev}
                     />
                 </div>
                 <div className="sectWrap__header--subTitle">
