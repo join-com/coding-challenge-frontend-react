@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './IncidentListItem.scss';
 import Bike from '../../../assets/bykes/default.svg';
 
@@ -49,9 +48,5 @@ const IncidentListItem = ({ incident }) => {
         </div>
     );
 }
-
-IncidentListItem.propTypes = {
-    incident: PropTypes.string.isRequired
-};
 
 export default IncidentListItem;

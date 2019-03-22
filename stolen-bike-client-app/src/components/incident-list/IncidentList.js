@@ -21,14 +21,80 @@ class IncidentList extends Component {
             startDate: null,
             endDate: null,
             focusedInput: null,
+
+            pagination_data: {
+                currentPage: 0,
+                perPage: 0,
+                totalPages: 0
+            }
         };
     }
     componentDidMount() {
         this.props.getIncidents();
     }
 
+    paginate = (collection, page, numItems) => {
+        if (!Array.isArray(collection)) {
+            throw `Expect array and got ${typeof collection}`;
+        }
+        const currentPage = parseInt(page);
+        const perPage = parseInt(numItems);
+        const offset = (page - 1) * perPage;
+        const paginatedItems = collection.slice(offset, offset + perPage);
+
+        return {
+            currentPage,
+            perPage,
+            total: collection.length,
+            totalPages: Math.ceil(collection.length / perPage),
+            data: paginatedItems
+        };
+    }
+    prev = () => {
+        let pagination_data = this.state.pagination_data;
+        if (this.state.pagination_data.currentPage <= 1) {
+            pagination_data.currentPage = 1;
+        } else {
+            pagination_data.currentPage -= 1;
+        }
+        this.setState({
+            pagination_data: pagination_data
+        });
+        this.loadedCollection(pagination_data.currentPage, 10);
+    }
+    next = () => {
+        let pagination_data = this.state.pagination_data;
+        if (this.state.pagination_data.currentPage >= this.state.pagination_data.totalPages) {
+            pagination_data.currentPage = this.state.pagination_data.totalPages;
+        } else {
+            pagination_data.currentPage += 1;
+        }
+        this.setState({
+            pagination_data: pagination_data
+        });
+        this.loadedCollection(pagination_data.currentPage, 10);
+    }
+    loadedCollection = (page = 1, perPage = 10) => {
+        const getdata = this.props.dataset.incidents.incidents;
+        let updatePagination = this.state.pagination_data;
+
+        if (!this.state.pagination_data.currentPage) {
+            updatePagination.currentPage = page;
+            updatePagination.perPage = perPage;
+            updatePagination.totalPages = Math.ceil(getdata.length / perPage);
+            this.setState({
+                pagination_data: updatePagination
+            });
+        }
+
+        return this.paginate(
+            getdata,
+            this.state.pagination_data.currentPage,
+            this.state.pagination_data.perPage
+        );
+    }
+
     render() {
-        console.log(this.props);
         const {
             dataset,
             loading
@@ -37,7 +103,11 @@ class IncidentList extends Component {
         return (
             <div className="sectWrap">
                 <div className="sectWrap__header--controls">
-                    <Pagination />
+                    <Pagination
+                        pagination_data={this.state.pagination_data}
+                        next={this.next}
+                        prev={this.prev}
+                    />
                     <SearchInput
                         name="listSearch"
                         placeholder="...search for case title"
@@ -66,7 +136,7 @@ class IncidentList extends Component {
                         : (
                             <React.Fragment>
                                 {
-                                    dataset.incidents.incidents.map(incident => {
+                                    this.loadedCollection().data.map(incident => {
                                         return (<IncidentListItem key={incident.id} incident={incident} />)
                                     })
                                 }
