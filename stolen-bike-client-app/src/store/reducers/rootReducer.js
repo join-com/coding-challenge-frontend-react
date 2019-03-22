@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import alertReducer from "./alertReducer";
 import errorReducer from "./errorReducer";
-import bikesReducer from "./incidentsReducer";
+import incidentsReducer from "./incidentsReducer";
 
 const rootReducer = combineReducers({
   alerts: alertReducer,
   errors: errorReducer,
-  bokes: bikesReducer,
+  incidentsReducer: incidentsReducer,
 });
 
 export default rootReducer;

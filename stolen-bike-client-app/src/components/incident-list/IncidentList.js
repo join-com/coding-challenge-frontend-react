@@ -4,10 +4,10 @@ import 'react-dates/lib/css/_datepicker.css';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import store from '../../store/Store';
 import { getIncidents } from '../../store/actions/incidentsActions';
 
 import IncidentListItem from './incident-list-item/IncidentListItem';
+import Spinner from '../common/Spinner'
 import Pagination from '../common/pagination/Pagination';
 import SearchInput from '../common/search-input/SearchInput';
 import { DateRangePicker } from 'react-dates';
@@ -28,6 +28,22 @@ class IncidentList extends Component {
     }
 
     render() {
+        console.log(this.props);
+        const {
+            dataset,
+            loading
+        } = this.props;
+
+        let renderer;
+
+        if (dataset.incidents === null || loading) {
+            renderer = <Spinner />
+        } else {
+            renderer = dataset.incidents.incidents.forEach(function (incident) {
+                return <IncidentListItem incident={incident} />
+            })
+        }
+
         return (
             <div className="sectWrap">
                 <div className="sectWrap__header--controls">
@@ -52,13 +68,10 @@ class IncidentList extends Component {
                         onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
                     />
                 </div>
-
                 <div className="sectWrap__header--subTitle">21 Cases Returned</div>
 
                 <div className="pageList">
-                    <IncidentListItem />
-                    <IncidentListItem />
-                    <IncidentListItem />
+                    {renderer}
                 </div>
             </div>
         );
@@ -71,7 +84,7 @@ IncidentList.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    incidents: state.incidents,
+    dataset: state.incidentsReducer,
 });
 
 export default connect(mapStateToProps, { getIncidents })(IncidentList)

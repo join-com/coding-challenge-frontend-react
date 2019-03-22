@@ -81,3 +81,16 @@ ul {
   color: #fff;
   background: var(--primary-color);
 }
+
+.spinner-wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  svg{
+    width: 10rem;
+    height: 10rem;
+  }
+}
