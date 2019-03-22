@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './IncidentList.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import store from '../../store/Store';
+import { getIncidents } from '../../store/actions/incidentsActions';
+
 import IncidentListItem from './incident-list-item/IncidentListItem';
 import Pagination from '../common/pagination/Pagination';
 import SearchInput from '../common/search-input/SearchInput';
@@ -17,6 +22,9 @@ class IncidentList extends Component {
             endDate: null,
             focusedInput: null,
         };
+    }
+    componentDidMount() {
+        this.props.getIncidents();
     }
 
     render() {
@@ -57,4 +65,13 @@ class IncidentList extends Component {
     }
 }
 
-export default IncidentList;
+IncidentList.propTypes = {
+    getIncidents: PropTypes.func.isRequired,
+    incidents: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    incidents: state.incidents,
+});
+
+export default connect(mapStateToProps, { getIncidents })(IncidentList)
