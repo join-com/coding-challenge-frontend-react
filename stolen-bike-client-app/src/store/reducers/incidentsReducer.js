@@ -1,8 +1,7 @@
 import {
     GET_INCIDENT,
     GET_INCIDENTS,
-    INCIDENT_LOADING,
-    INCIDENT_NOT_FOUND
+    INCIDENT_LOADING
 } from '../actions/types';
 
 const initialState = {

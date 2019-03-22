@@ -1,6 +1,3 @@
-export const GET_ERRORS = 'GET_ERRORS';
-export const GET_ALERTS = 'GET_ALERTS';
-
 export const GET_INCIDENT = 'GET_INCIDENT';
 export const GET_INCIDENTS = 'GET_INCIDENTS';
 export const INCIDENT_LOADING = 'INCIDENT_LOADING';

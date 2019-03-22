@@ -34,16 +34,6 @@ class IncidentList extends Component {
             loading
         } = this.props;
 
-        let renderer;
-
-        if (dataset.incidents === null || loading) {
-            renderer = <Spinner />
-        } else {
-            renderer = dataset.incidents.incidents.forEach(function (incident) {
-                return <IncidentListItem incident={incident} />
-            })
-        }
-
         return (
             <div className="sectWrap">
                 <div className="sectWrap__header--controls">
@@ -71,7 +61,18 @@ class IncidentList extends Component {
                 <div className="sectWrap__header--subTitle">21 Cases Returned</div>
 
                 <div className="pageList">
-                    {renderer}
+                    {dataset.incidents === null || loading
+                        ? <Spinner />
+                        : (
+                            <React.Fragment>
+                                {
+                                    dataset.incidents.incidents.map(incident => {
+                                        return (<IncidentListItem key={incident.id} incident={incident} />)
+                                    })
+                                }
+                            </React.Fragment>
+                        )
+                    }
                 </div>
             </div>
         );
@@ -80,7 +81,7 @@ class IncidentList extends Component {
 
 IncidentList.propTypes = {
     getIncidents: PropTypes.func.isRequired,
-    incidents: PropTypes.object.isRequired
+    dataset: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
