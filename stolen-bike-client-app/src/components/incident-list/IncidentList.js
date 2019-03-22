@@ -18,6 +18,7 @@ class IncidentList extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            loadedCollection: null,
             startDate: null,
             endDate: null,
             focusedInput: null,
@@ -128,7 +129,13 @@ class IncidentList extends Component {
                         onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
                     />
                 </div>
-                <div className="sectWrap__header--subTitle">21 Cases Returned</div>
+                <div className="sectWrap__header--subTitle">
+                    {dataset.incidents === null || loading
+                        ? null
+                        : this.loadedCollection().total + ' Cases Returned'
+                    }
+
+                </div>
 
                 <div className="pageList">
                     {dataset.incidents === null || loading
