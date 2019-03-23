@@ -1,0 +1,8 @@
+.SearchPanel {
+  form{
+    display: grid;
+    grid-template-columns: auto 130px 130px 100px;
+    grid-column-gap: 10px;
+
+  }
+}

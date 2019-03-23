@@ -1,0 +1,15 @@
+.IncidentCard{
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-column-gap: 10px;
+  border: solid 2px darkgray;
+  padding: 10px;
+
+  .description{
+    margin-top: 5px;
+  }
+
+  .dateLocation{
+    margin-top: 10px;
+  }
+}
