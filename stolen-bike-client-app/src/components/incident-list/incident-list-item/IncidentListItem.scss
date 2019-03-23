@@ -7,6 +7,7 @@
     cursor: pointer;
     border-top: .1rem solid transparent;
     border-bottom: .1rem solid transparent;
+    animation: moveInUp .5s ease-out;
     &:hover{
         background: #fff;
         border-top: .1rem solid #ddd;

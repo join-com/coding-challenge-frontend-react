@@ -1,5 +1,5 @@
-.modal__content{
-    
+.modal{
+    animation: moveInRight .5s ease-out;
 }
 .modal__content__body{
     display: flex;

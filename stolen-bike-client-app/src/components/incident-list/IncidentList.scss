@@ -18,6 +18,7 @@
     position: relative;
     max-height: 60vh;
     overflow-y: auto;
+    animation: moveInUp .5s ease-out;
 }
 
 @media only screen and (max-width: 900px) {

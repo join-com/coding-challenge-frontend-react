@@ -189,11 +189,11 @@ class IncidentList extends Component {
 
                 </div>
 
-                <div className="pageList">
+                <div>
                     {dataset.incidents === null || loading
                         ? <Spinner />
                         : (
-                            <React.Fragment>
+                            <div className="pageList">
                                 {
                                     this.loadedCollection().data.map(incident => {
                                         return (
@@ -211,7 +211,7 @@ class IncidentList extends Component {
                                         )
                                     })
                                 }
-                            </React.Fragment>
+                            </div>
                         )
                     }
                 </div>
