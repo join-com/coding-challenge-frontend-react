@@ -57,3 +57,9 @@
         margin-right: 3rem;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .listItem__content__footer{
+      display: block;
+    }
+}

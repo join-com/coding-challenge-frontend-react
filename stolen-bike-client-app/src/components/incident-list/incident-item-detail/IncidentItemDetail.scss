@@ -42,3 +42,27 @@
     padding-left: 10px;
     background: #eee;
 }
+
+@media only screen and (max-width: 600px) {
+    .modal__content__body{
+        flex-direction: column;
+        align-items: left;
+    }
+    .modal__content__body__img{
+        width: 100%;
+    }
+    .listItem__content__footer{
+        margin-right: 3rem;
+        border-left: 1px solid #333;
+        padding-left: 10px;
+        background: #eee;
+    }
+    .listItem__content__others{
+        margin-right: 0 !important;
+        border-left: 0 solid transparent !important;
+        padding-left: 0 !important;
+    }
+    .modal__content__body{
+        margin-bottom: 1rem;
+    }
+}

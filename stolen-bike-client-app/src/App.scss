@@ -17,11 +17,13 @@
   padding: 2rem 10rem;
 }
 
-@media only screen and (max-width: 900px) {
-  .app{
+@media only screen and (max-width: 1050px) {
+  .app__overlay{
     padding: 2rem;
+  }
+  .sectWrap__header--controls{
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
-@media only screen and (max-width: 600px) {
-}

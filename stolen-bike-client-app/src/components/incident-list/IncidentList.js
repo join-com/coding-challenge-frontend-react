@@ -160,19 +160,21 @@ class IncidentList extends Component {
                         type="search"
                         onChange={this.handleSearchCriteria}
                     />
-                    <DateRangePicker
-                        startDateId="startDate"
-                        endDateId="endDate"
-                        startDate={this.state.startDate}
-                        endDate={this.state.endDate}
-                        onDatesChange={({ startDate, endDate }) => {
-                            this.setState({ startDate, endDate });
-                            this.handleDateRange();
-                        }}
-                        focusedInput={this.state.focusedInput}
-                        onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
-                        isOutsideRange={() => false}
-                    />
+                    <div className="datepicker">
+                        <DateRangePicker
+                            startDateId="startDate"
+                            endDateId="endDate"
+                            startDate={this.state.startDate}
+                            endDate={this.state.endDate}
+                            onDatesChange={({ startDate, endDate }) => {
+                                this.setState({ startDate, endDate });
+                                this.handleDateRange();
+                            }}
+                            focusedInput={this.state.focusedInput}
+                            onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
+                            isOutsideRange={() => false}
+                        />
+                    </div>
                     <Pagination
                         pagination_data={this.state.pagination_data}
                         next={this.next}
@@ -182,7 +184,7 @@ class IncidentList extends Component {
                 <div className="sectWrap__header--subTitle">
                     {dataset.incidents === null || loading
                         ? null
-                        : this.filteredCollections().total + ' Cases Returned'
+                        : this.loadedCollection().total + ' Cases Returned'
                     }
 
                 </div>
