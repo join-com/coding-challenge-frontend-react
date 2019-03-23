@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getIncidentById } from '../../../store/actions/incidentsActions';
+import { getLocation } from '../../../store/actions/incidentsActions';
 
 import './IncidentItemDetail.scss';
 import Spinner from '../../common/Spinner'
@@ -14,7 +14,7 @@ class IncidentItemDetail extends Component {
         super(props);
     }
     componentDidMount() {
-        //this.props.getIncidentById(this.props.id);
+        this.props.getLocation(this.props.incident.title);
     }
     timeConverter = (UNIX_timestamp) => {
         var a = new Date(UNIX_timestamp * 1000);
@@ -33,9 +33,11 @@ class IncidentItemDetail extends Component {
         const {
             togglePopup,
             incident,
-            loading
+            dataset,
+            loading,
+            locationLoading
         } = this.props;
-
+        console.log(dataset);
         return (
             <div className="modal">
                 {incident === null || loading
@@ -47,7 +49,26 @@ class IncidentItemDetail extends Component {
                                 <img className="x" onClick={togglePopup} src={TimesICO} alt="" />
                             </div>
                             <div class="modal__content">
-                                <div className="modal__content__lhs"></div>
+                                <div className="modal__content__lhs">
+                                    {dataset.location === null || locationLoading
+                                        ? <Spinner />
+                                        : (
+                                            <React.Fragment>
+                                                {dataset.location.features.map(loc => {
+                                                    if (loc.properties.id === incident.id) {
+                                                        return (
+                                                            <div>
+                                                                {loc.geometry.coordinates[0]}
+                                                                {loc.geometry.coordinates[1]}
+                                                            </div>
+                                                        )
+                                                    }
+                                                    return <span>no location data for this entry</span>
+                                                })}
+                                            </React.Fragment>
+                                        )
+                                    }
+                                </div>
                                 <div className="modal__content__rhs">
                                     {incident.media.image_url
                                         ? <img alt="Bike" src={incident.media.image_url} />
@@ -64,7 +85,7 @@ class IncidentItemDetail extends Component {
 }
 
 IncidentItemDetail.propTypes = {
-    getIncidentById: PropTypes.func.isRequired,
+    getLocation: PropTypes.func.isRequired,
     dataset: PropTypes.object.isRequired
 }
 
@@ -72,4 +93,4 @@ const mapStateToProps = (state) => ({
     dataset: state.incidentsReducer
 });
 
-export default connect(mapStateToProps, { getIncidentById })(IncidentItemDetail)
+export default connect(mapStateToProps, { getLocation })(IncidentItemDetail)

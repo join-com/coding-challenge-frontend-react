@@ -3,7 +3,9 @@ import axios from "axios";
 import {
   GET_INCIDENT,
   GET_INCIDENTS,
-  INCIDENT_LOADING
+  GET_INCIDENT_LOCATION,
+  INCIDENT_LOADING,
+  INCIDENT_LOCATION_LOADING
 } from "./types";
 
 // Get incident by id
@@ -46,9 +48,35 @@ export const getIncidents = (start = '', end = '') => dispatch => {
     );
 };
 
+// Get incident location data
+export const getLocation = (query) => dispatch => {
+  dispatch(setIncidentLocationLoading());
+  axios
+    .get(`/v2/locations?query=${query}`)
+    .then(res => {
+      dispatch({
+        type: GET_INCIDENT_LOCATION,
+        payload: res.data
+      })
+    }
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_INCIDENTS,
+        payload: null
+      })
+    );
+};
+
 // incident loading
 export const setIncidentLoading = () => {
   return {
     type: INCIDENT_LOADING
+  };
+};
+// incident location loading
+export const setIncidentLocationLoading = () => {
+  return {
+    type: INCIDENT_LOCATION_LOADING
   };
 };

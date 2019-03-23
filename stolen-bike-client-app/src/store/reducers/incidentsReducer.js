@@ -1,13 +1,17 @@
 import {
     GET_INCIDENT,
     GET_INCIDENTS,
-    INCIDENT_LOADING
+    GET_INCIDENT_LOCATION,
+    INCIDENT_LOADING,
+    INCIDENT_LOCATION_LOADING
 } from '../actions/types';
 
 const initialState = {
     incident: null,
     incidents: null,
-    loading: false
+    location: null,
+    loading: false,
+    locationLoading: false
 };
 
 export default function (state = initialState, action) {
@@ -16,6 +20,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 loading: true
+            };
+        case INCIDENT_LOCATION_LOADING:
+            return {
+                ...state,
+                locationLoading: true
             };
         case GET_INCIDENT:
             return {
@@ -27,6 +36,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 incidents: action.payload,
+                loading: false
+            };
+        case GET_INCIDENT_LOCATION:
+            return {
+                ...state,
+                location: action.payload,
                 loading: false
             };
         default:

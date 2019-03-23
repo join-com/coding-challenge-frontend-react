@@ -4,6 +4,8 @@
 }
 .modal__content__lhs, .modal__content__rhs{
     width: 49%;
+    height: 40rem;
+    overflow-y: auto;
 }
 .modal__content__lhs{
     border: .1rem solid #eee;
