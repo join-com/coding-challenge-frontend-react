@@ -1,23 +1,29 @@
 .modal__content{
+    
+}
+.modal__content__body{
     display: flex;
-    justify-content: space-between;
-}
-.modal__content__lhs, .modal__content__rhs{
-    width: 49%;
-    height: 40rem;
-    overflow-y: auto;
-}
-.modal__content__lhs{
-    border: .1rem solid #eee;
-}
-.modal__content__rhs{
+    align-items: center;
+    margin-bottom: 4rem;
     background: #f8f8f8;
+    padding: 4rem 2rem;
+}
+.modal__content__body__img{
+    width: 40rem;
+    overflow: hidden;
     img{
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items:  center;
     }
+}
+.modal__content__body__content{
+    width: 100%;
+}
+.modal__content__map{
+    border-top: .1rem solid #aaa;
+    border-bottom: .1rem solid #aaa;
+    width: 100%;
+    padding: 4rem 0;
+
 }
 .mapWrap{
     height: 39rem;

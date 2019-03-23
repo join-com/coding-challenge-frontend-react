@@ -50,13 +50,21 @@ class IncidentItemDetail extends Component {
                                 <img className="x" onClick={togglePopup} src={TimesICO} alt="" />
                             </div>
                             <div class="modal__content">
-                                <div className="modal__content__lhs">
+                                <div className="modal__content__body">
+                                    <div className="modal__content__body__content">blahhh</div>
+                                    <div className="modal__content__body__img">
+                                        {incident.media.image_url
+                                            ? <img alt="Bike" src={incident.media.image_url} />
+                                            : <img alt="Bike" src={Bike} />
+                                        }
+                                    </div>
+                                </div>
+                                <div className="modal__content__map">
                                     {dataset.location === null || locationLoading
                                         ? <Spinner />
                                         : (
                                             <React.Fragment>
                                                 {dataset.location.features.map(loc => {
-                                                    console.log(loc);
                                                     if (loc.properties.id === incident.id) {
                                                         let center = {
                                                             lat: loc.geometry.coordinates[1],
@@ -70,25 +78,13 @@ class IncidentItemDetail extends Component {
                                                                     bounds={center}
                                                                     defaultZoom={zoom}
                                                                 >
-                                                                    {/* <AnyReactComponent
-                                                                        lat={loc.geometry.coordinates[0]}
-                                                                        lng={loc.geometry.coordinates[1]}
-                                                                        text="My Marker"
-                                                                    /> */}
                                                                 </GoogleMapReact>
                                                             </div>
                                                         )
                                                     }
-                                                    return <Spinner />
                                                 })}
                                             </React.Fragment>
                                         )
-                                    }
-                                </div>
-                                <div className="modal__content__rhs">
-                                    {incident.media.image_url
-                                        ? <img alt="Bike" src={incident.media.image_url} />
-                                        : <img alt="Bike" src={Bike} />
                                     }
                                 </div>
                             </div>
