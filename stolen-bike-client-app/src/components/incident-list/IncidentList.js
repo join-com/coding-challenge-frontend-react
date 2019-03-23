@@ -200,7 +200,7 @@ class IncidentList extends Component {
                                                     this.state.popup.isOpen && this.state.popup.id === incident.id
                                                         ? (
                                                             <div className="modalOverlay">
-                                                                <IncidentItemDetail id={incident.id} togglePopup={this.togglePopup} />
+                                                                <IncidentItemDetail incident={incident} togglePopup={this.togglePopup} />
                                                             </div>
                                                         ) : null
                                                 }

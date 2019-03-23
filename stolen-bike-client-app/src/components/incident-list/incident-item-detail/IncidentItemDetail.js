@@ -14,7 +14,7 @@ class IncidentItemDetail extends Component {
         super(props);
     }
     componentDidMount() {
-        this.props.getIncidentById(this.props.id);
+        //this.props.getIncidentById(this.props.id);
     }
     timeConverter = (UNIX_timestamp) => {
         var a = new Date(UNIX_timestamp * 1000);
@@ -32,25 +32,25 @@ class IncidentItemDetail extends Component {
     render() {
         const {
             togglePopup,
-            dataset,
+            incident,
             loading
         } = this.props;
 
         return (
             <div className="modal">
-                {dataset.incident === null || loading
+                {incident === null || loading
                     ? <Spinner />
                     : (
                         <React.Fragment>
                             <div className="modal__header">
-                                <div className="modal__title">{dataset.incident.incident.title}</div>
+                                <div className="modal__title">{incident.title}</div>
                                 <img className="x" onClick={togglePopup} src={TimesICO} alt="" />
                             </div>
                             <div class="modal__content">
                                 <div className="modal__content__lhs"></div>
                                 <div className="modal__content__rhs">
-                                    {dataset.incident.incident.media.image_url
-                                        ? <img alt="Bike" src={dataset.incident.incident.media.image_url} />
+                                    {incident.media.image_url
+                                        ? <img alt="Bike" src={incident.media.image_url} />
                                         : <img alt="Bike" src={Bike} />
                                     }
                                 </div>
