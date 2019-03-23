@@ -51,7 +51,14 @@ class IncidentItemDetail extends Component {
                             </div>
                             <div class="modal__content">
                                 <div className="modal__content__body">
-                                    <div className="modal__content__body__content">blahhh</div>
+                                    <div className="listItem__content">
+                                        <div className="listItem__content__title">{incident.title}</div>
+                                        <div className="listItem__content__others">{incident.description}</div>
+                                        <div className="listItem__content__footer">
+                                            <div className="listItem__content__others">Stolen: <strong>{this.timeConverter(incident.occurred_at)} at {incident.address}</strong></div>
+                                            <div className="listItem__content__others">Reported: <strong>{this.timeConverter(incident.updated_at)}</strong></div>
+                                        </div>
+                                    </div>
                                     <div className="modal__content__body__img">
                                         {incident.media.image_url
                                             ? <img alt="Bike" src={incident.media.image_url} />
@@ -60,6 +67,7 @@ class IncidentItemDetail extends Component {
                                     </div>
                                 </div>
                                 <div className="modal__content__map">
+                                    <div className="listItem__content__title">Find location on map</div>
                                     {dataset.location === null || locationLoading
                                         ? <Spinner />
                                         : (
