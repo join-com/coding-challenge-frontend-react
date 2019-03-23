@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -37,7 +38,7 @@ class IncidentItemDetail extends Component {
             loading,
             locationLoading
         } = this.props;
-        console.log(dataset);
+
         return (
             <div className="modal">
                 {incident === null || loading
@@ -55,15 +56,30 @@ class IncidentItemDetail extends Component {
                                         : (
                                             <React.Fragment>
                                                 {dataset.location.features.map(loc => {
+                                                    console.log(loc);
                                                     if (loc.properties.id === incident.id) {
+                                                        let center = {
+                                                            lat: loc.geometry.coordinates[1],
+                                                            lng: loc.geometry.coordinates[0]
+                                                        };
+                                                        let zoom = 14;
                                                         return (
-                                                            <div>
-                                                                {loc.geometry.coordinates[0]}
-                                                                {loc.geometry.coordinates[1]}
+                                                            <div className="mapWrap">
+                                                                <GoogleMapReact
+                                                                    defaultCenter={center}
+                                                                    bounds={center}
+                                                                    defaultZoom={zoom}
+                                                                >
+                                                                    {/* <AnyReactComponent
+                                                                        lat={loc.geometry.coordinates[0]}
+                                                                        lng={loc.geometry.coordinates[1]}
+                                                                        text="My Marker"
+                                                                    /> */}
+                                                                </GoogleMapReact>
                                                             </div>
                                                         )
                                                     }
-                                                    return <span>no location data for this entry</span>
+                                                    return <Spinner />
                                                 })}
                                             </React.Fragment>
                                         )

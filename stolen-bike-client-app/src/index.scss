@@ -108,12 +108,11 @@ ul {
 }
 .modal {
   width: 100%;
-  max-width: 100rem;
-  height: 90vh;
+  max-width: 80rem;
+  height: 100vh;
   position: fixed;
   background: #fff;
   padding: 2rem;
-  border-radius: 0.4rem;
 }
 .modal__header {
   width: 100%;

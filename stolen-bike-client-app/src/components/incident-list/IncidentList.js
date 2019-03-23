@@ -129,6 +129,7 @@ class IncidentList extends Component {
         })
     }
     togglePopup = (id) => {
+        //e.stopPropagation();
         let popupData = {
             isOpen: false,
             id: null
