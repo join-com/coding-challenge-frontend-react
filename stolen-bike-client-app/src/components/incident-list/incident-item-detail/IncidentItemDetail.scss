@@ -1,0 +1,19 @@
+.modal__content{
+    display: flex;
+    justify-content: space-between;
+}
+.modal__content__lhs, .modal__content__rhs{
+    width: 49%;
+}
+.modal__content__lhs{
+    border: .1rem solid #eee;
+}
+.modal__content__rhs{
+    background: #f8f8f8;
+    img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items:  center;
+    }
+}

@@ -27,10 +27,10 @@ export const getIncidentById = incidentId => dispatch => {
 };
 
 // Get all incidents
-export const getIncidents = (page = 1) => dispatch => {
+export const getIncidents = (start = '', end = '') => dispatch => {
   dispatch(setIncidentLoading());
   axios
-    .get(`/v2/incidents?incident_type=theft&proximity=Berlin&proximity_square=100`)
+    .get(`/v2/incidents?incident_type=theft&proximity=Berlin&proximity_square=100&occurred_before=${start}&occurred_after=${end}`)
     .then(res => {
       dispatch({
         type: GET_INCIDENTS,

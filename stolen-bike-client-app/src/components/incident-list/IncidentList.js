@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './IncidentList.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import * as moment from 'moment';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getIncidents } from '../../store/actions/incidentsActions';
 
 import IncidentListItem from './incident-list-item/IncidentListItem';
+import IncidentItemDetail from './incident-item-detail/IncidentItemDetail';
 import Spinner from '../common/Spinner'
 import Pagination from '../common/pagination/Pagination';
 import SearchInput from '../common/search-input/SearchInput';
@@ -29,6 +31,11 @@ class IncidentList extends Component {
                 totalPages: 0
             },
 
+            popup: {
+                isOpen: false,
+                id: null
+            },
+
             search: ""
         };
     }
@@ -36,6 +43,11 @@ class IncidentList extends Component {
         this.props.getIncidents();
     }
 
+    handleDateRange = () => {
+        const startDate = moment(this.state.startDate).utc();
+        const endDate = moment(this.state.endDate).utc();
+        this.props.getIncidents(startDate, endDate);
+    }
     paginate = (collection, page, numItems) => {
         if (!Array.isArray(collection)) {
             throw `Expect array and got ${typeof collection}`;
@@ -116,6 +128,17 @@ class IncidentList extends Component {
             search: event.target.value
         })
     }
+    togglePopup = (id) => {
+        let popupData = {
+            isOpen: false,
+            id: null
+        };
+        popupData.id = id;
+        popupData.isOpen = !this.state.popup.isOpen;
+        this.setState({
+            popup: popupData
+        })
+    }
 
     render() {
         const {
@@ -141,9 +164,13 @@ class IncidentList extends Component {
                         endDateId="endDate"
                         startDate={this.state.startDate}
                         endDate={this.state.endDate}
-                        onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate }) }}
+                        onDatesChange={({ startDate, endDate }) => {
+                            this.setState({ startDate, endDate });
+                            this.handleDateRange();
+                        }}
                         focusedInput={this.state.focusedInput}
                         onFocusChange={(focusedInput) => { this.setState({ focusedInput }) }}
+                        isOutsideRange={() => false}
                     />
                     <Pagination
                         pagination_data={this.state.pagination_data}
@@ -154,7 +181,7 @@ class IncidentList extends Component {
                 <div className="sectWrap__header--subTitle">
                     {dataset.incidents === null || loading
                         ? null
-                        : this.loadedCollection().total + ' Cases Returned'
+                        : this.filteredCollections().total + ' Cases Returned'
                     }
 
                 </div>
@@ -166,7 +193,19 @@ class IncidentList extends Component {
                             <React.Fragment>
                                 {
                                     this.loadedCollection().data.map(incident => {
-                                        return (<IncidentListItem key={incident.id} incident={incident} />)
+                                        return (
+                                            <div key={incident.id}>
+                                                <IncidentListItem incident={incident} togglePopup={this.togglePopup} />
+                                                {
+                                                    this.state.popup.isOpen && this.state.popup.id === incident.id
+                                                        ? (
+                                                            <div className="modalOverlay">
+                                                                <IncidentItemDetail id={incident.id} togglePopup={this.togglePopup} />
+                                                            </div>
+                                                        ) : null
+                                                }
+                                            </div>
+                                        )
                                     })
                                 }
                             </React.Fragment>
