@@ -9,15 +9,20 @@ import styles from './Main.module.scss';
 import SearchPanel from '../SearchPanel/SearchPanel';
 import ErrorInfo from '../ErrorInfo/ErrorInfo';
 import IncidentList from '../IncidentList/IncidentList';
+import Header from '../Header/Header';
 
 export default class Main extends PureComponent {
   state = {
     isDataError: false,
+    isDataLoading: false,
     incidents: {},
+    currentPage: 1,
   };
 
   getData = async ({ dateFrom, dateTo, query }) => {
-    this.setState({ isDataError: false });
+    this.setState({
+      isDataError: false, isDataLoading: true, dateFrom, dateTo, query,
+    });
 
     try {
       const incidents = await callApi({ dateFrom, dateTo, query });
@@ -25,24 +30,56 @@ export default class Main extends PureComponent {
       this.setState({ incidents });
     } catch (error) {
       this.setState({ isDataError: true });
+    } finally {
+      this.setState({ isDataLoading: false });
     }
   };
 
+  onFind = ({ dateFrom, dateTo, query }) => {
+    this.setState({ currentPage: 1 });
+    this.getData({ dateFrom, dateTo, query });
+  };
+
+  openPage = (pageNumber) => {
+    const { dateFrom, dateTo, query } = this.state;
+    console.log('openPage::pageNumber', pageNumber);
+
+    this.setState({ currentPage: pageNumber });
+
+    this.getData({
+      dateFrom, dateTo, query, page: pageNumber,
+    });
+  };
+
+  dataLayout = () => {
+    const {
+      isDataError, incidents, currentPage, isDataLoading,
+    } = this.state;
+
+    if (isDataError) {
+      return <ErrorInfo />;
+    } if (isDataLoading) {
+      return <p>Loading ... </p>;
+    }
+    return (
+      <IncidentList
+        incidentsData={incidents}
+        currentPage={currentPage}
+        openPage={this.openPage}
+      />
+    );
+  };
+
   render() {
-    const { isDataError, incidents } = this.state;
+    const { isDataLoading } = this.state;
 
     return (
       <div className={styles.Main}>
-        <h1>Police Department of Berlin</h1>
-        <div>Stolen bikes</div>
+        <Header />
 
-        <SearchPanel getData={this.getData} />
+        <SearchPanel onFind={this.onFind} isDataLoading={isDataLoading} />
 
-        <div>
-          {
-            isDataError ? <ErrorInfo /> : <IncidentList incidentsData={incidents} />
-          }
-        </div>
+        {this.dataLayout()}
       </div>
     );
   }

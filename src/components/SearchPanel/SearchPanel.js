@@ -7,7 +7,7 @@ import styles from './SearchPanel.module.scss';
 
 export default class SearchPanel extends PureComponent {
   state = {
-    // TODO remove from
+    // TODO remove from value
     dateFrom: moment('2018-01-01').format('YYYY-MM-DD'),
     dateTo: moment().format('YYYY-MM-DD'),
     query: '',
@@ -18,7 +18,7 @@ export default class SearchPanel extends PureComponent {
   };
 
   onSubmit = (event) => {
-    const { getData } = this.props;
+    const { onFind } = this.props;
     const { dateFrom, dateTo, query } = this.state;
 
     let isError = false;
@@ -35,12 +35,8 @@ export default class SearchPanel extends PureComponent {
       console.log('dateTo is not valid', dateTo);
     }
 
-    console.log('moment(dateFrom).valueOf()', moment(dateFrom).unix());
-
-    console.log('moment(dateTo).valueOf()', moment(dateTo).unix());
-
     if (!isError) {
-      getData({
+      onFind({
         dateFrom: moment(dateFrom).unix(),
         dateTo: moment(dateTo).unix(),
         query,
@@ -49,6 +45,7 @@ export default class SearchPanel extends PureComponent {
   };
 
   render() {
+    const { isDataLoading } = this.props;
     const { dateFrom, dateTo } = this.state;
 
 
@@ -64,7 +61,8 @@ export default class SearchPanel extends PureComponent {
           To
             <input type="date" placeholder="to" name="dateTo" onChange={this.onChangeData} value={dateTo} />
           </div>
-          <button type="submit" onClick={this.onSubmit}>Find cases</button>
+
+          <button type="submit" disabled={isDataLoading} onClick={this.onSubmit}>Find cases</button>
         </form>
       </div>
     );

@@ -8,9 +8,17 @@ export default function callApi({
   // TODO add default value
   dateFrom,
   query = '',
+  id,
 } = {}) {
-  return fetch(`https://bikewise.org:443/api/v2/incidents?page=${page}&per_page=${perPage}&occurred_before=${dateTo}&occurred_after=${dateFrom}&query=${query}&proximity_square=100`, {
-  // return fetch(`https://bikewise.org:443/api/v2/incidents?page=${page}&per_page=${perPage}&occurred_before=${dateTo}&proximity_square=100`, {
+  let url = 'https://bikewise.org:443/api/v2/incidents';
+
+  if (id) {
+    url += `/${id}`;
+  } else {
+    url += `?page=${page}&per_page=${perPage}&occurred_before=${dateTo}&occurred_after=${dateFrom}&query=${query}&proximity_square=100`;
+  }
+
+  return fetch(url, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -19,20 +27,6 @@ export default function callApi({
   })
     .then((response) => {
       console.log('response', response);
-
-      response.headers.forEach((val, key) => {
-        console.log(key, val);
-      });
-
-      for (const pair of response.headers.entries()) {
-        console.log(`${pair[0]}: ${pair[1]}`);
-      }
-
-      console.log('Total', response.headers.get('Total'));
-
-      console.log("1:",response.headers.get('Content-Type'));
-      console.log("2:",response.headers.get('date'));
-
 
       if (response.status !== 200) {
         console.log('ERROR response status incorrect', response.status);

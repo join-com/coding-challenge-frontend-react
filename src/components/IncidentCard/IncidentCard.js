@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 // Instruments
 import styles from './IncidentCard.module.scss';
@@ -10,7 +11,7 @@ export default class IncidentCard extends PureComponent {
   render() {
     const {
       incident, incident: {
-        title, description, occurred_at, media, address,
+        title, description, occurred_at, updated_at, media, address, id
       },
     } = this.props;
 
@@ -24,9 +25,11 @@ export default class IncidentCard extends PureComponent {
           }
         </div>
         <div className={styles.textInfo}>
-          <div className={styles.title}>{title}</div>
+          <Link to={{ pathname: `case/${id}`, state: { incident } }}><div className={styles.title}>{title}</div></Link>
           <div className={styles.description}>{description}</div>
-          <div className={styles.dateLocation}>{`${moment.unix(occurred_at).format('llll')} - ${address}`}</div>
+          <div className={styles.dateTheft}>{`Date of the theft: ${moment.unix(occurred_at).format('llll')}`}</div>
+          <div className={styles.dateReport}>{`Report date: ${moment.unix(updated_at).format('llll')}`}</div>
+          <div className={styles.location}>{`Location: ${address}`}</div>
         </div>
       </div>
     );

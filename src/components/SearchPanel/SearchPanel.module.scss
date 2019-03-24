@@ -1,8 +1,9 @@
 .SearchPanel {
   form{
     display: grid;
-    grid-template-columns: auto 130px 130px 100px;
+    // TODO move to the next row if not fit
+    grid-template-columns: auto fit-content(180px)  fit-content(180px)  90px;
     grid-column-gap: 10px;
-
+    align-items: end;
   }
 }
