@@ -54,11 +54,11 @@ export default class SearchPanel extends PureComponent {
         <form onSubmit={this.onSubmit}>
           <input type="text" placeholder="Search case descriptions" name="query" maxLength={30} onChange={this.onChangeData} />
           <div>
-          From
+            <div>From</div>
             <input type="date" placeholder="from" name="dateFrom" onChange={this.onChangeData} value={dateFrom} />
           </div>
           <div>
-          To
+            <div>To</div>
             <input type="date" placeholder="to" name="dateTo" onChange={this.onChangeData} value={dateTo} />
           </div>
 

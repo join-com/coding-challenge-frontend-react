@@ -44,7 +44,10 @@ export default class Main extends PureComponent {
     this.getData({ dateFrom, dateTo, query });
   };
 
-  openPage = pageNumber => this.setState({ currentPage: pageNumber });
+  openPage = (pageNumber) => {
+    this.setState({ currentPage: pageNumber });
+    window.scrollTo(0, 0);
+  };
 
   dataLayout = () => {
     const {
