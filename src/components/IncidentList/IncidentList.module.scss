@@ -1,5 +1,11 @@
 .incidentList {
 
+  .total {
+    display: grid;
+    justify-items: end;
+    margin-top: 40px;
+  }
+
   .incidentCard {
     margin: 10px;
   }

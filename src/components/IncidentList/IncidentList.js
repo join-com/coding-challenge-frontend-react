@@ -18,6 +18,7 @@ export default class IncidentList extends PureComponent {
 
     return (
       <>
+        <div className={styles.total}>{`total: ${incidents.length}`}</div>
         {incidents
           .filter((element, index) => (CASES_ON_PAGE * (currentPage - 1) <= index) && (index < CASES_ON_PAGE * currentPage))
           .map(
