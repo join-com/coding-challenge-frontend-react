@@ -1,0 +1,15 @@
+.Map {
+  height: 100%;
+  width: 100%;
+
+  .text {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 4px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+}

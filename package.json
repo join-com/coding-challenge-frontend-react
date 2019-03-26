@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-map-react": "^1.1.2",
     "history": "^4.9.0",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",

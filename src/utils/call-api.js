@@ -1,13 +1,15 @@
 export default function callApi({
-  dateTo = '',
-  dateFrom = '',
+  occurredBefore = '',
+  occurredAfter = '',
   query = '',
+  path = 'incidents',
+  incidentType = '',
   id,
 } = {}) {
-  const URL_DOMAIN_PATH = 'https://bikewise.org:443/api/v2/incidents';
+  const URL_DOMAIN_PATH = `https://bikewise.org:443/api/v2/${path}`;
   const url = id
     ? `${URL_DOMAIN_PATH}/${id}`
-    : `${URL_DOMAIN_PATH}?proximity=berlin&proximity_square=100&occurred_before=${dateTo}&occurred_after=${dateFrom}&query=${query}`;
+    : `${URL_DOMAIN_PATH}?proximity=berlin&proximity_square=100&occurred_before=${occurredBefore}&occurred_after=${occurredAfter}&query=${query}&incident_type=${incidentType}`;
 
   return fetch(url, {
     method: 'GET',
