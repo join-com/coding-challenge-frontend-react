@@ -22,5 +22,6 @@ module.exports = {
   rules: {
     "react/prefer-stateless-function": "off",
     "react/jsx-filename-extension": "off",
+    "import/prefer-default-export": "off",
   },
 };

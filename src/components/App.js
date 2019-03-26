@@ -13,7 +13,7 @@ const App = () => (
   <Router history={createBrowserHistory()}>
     <Switch>
       <Route exact path="/" component={Main} />
-      <Route exact path="/case/:caseId?" component={Case} />
+      <Route exact path="/case/:id?" component={Case} />
       <Redirect to="/" />
     </Switch>
   </Router>

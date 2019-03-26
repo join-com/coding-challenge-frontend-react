@@ -15,17 +15,21 @@ export default class Main extends PureComponent {
   state = {
     isDataError: false,
     isDataLoading: false,
-    incidents: {},
+    incidents: [],
     currentPage: 1,
   };
 
-  getData = async ({ dateFrom, dateTo, query }) => {
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData = async ({ dateFrom, dateTo, query } = {}) => {
     this.setState({
       isDataError: false, isDataLoading: true, dateFrom, dateTo, query,
     });
 
     try {
-      const incidents = await callApi({ dateFrom, dateTo, query });
+      const { incidents } = await callApi({ dateFrom, dateTo, query });
       console.log('data', incidents);
       this.setState({ incidents });
     } catch (error) {
@@ -40,16 +44,7 @@ export default class Main extends PureComponent {
     this.getData({ dateFrom, dateTo, query });
   };
 
-  openPage = (pageNumber) => {
-    const { dateFrom, dateTo, query } = this.state;
-    console.log('openPage::pageNumber', pageNumber);
-
-    this.setState({ currentPage: pageNumber });
-
-    this.getData({
-      dateFrom, dateTo, query, page: pageNumber,
-    });
-  };
+  openPage = pageNumber => this.setState({ currentPage: pageNumber });
 
   dataLayout = () => {
     const {
@@ -63,7 +58,7 @@ export default class Main extends PureComponent {
     }
     return (
       <IncidentList
-        incidentsData={incidents}
+        incidents={incidents}
         currentPage={currentPage}
         openPage={this.openPage}
       />

@@ -15,17 +15,17 @@ export default class Case extends PureComponent {
   };
 
   async componentDidMount() {
-    const { match: { params: { caseId } }, location: { state: { incident } = {} } } = this.props;
+    const { match: { params: { id } }, location: { state: { incident } = {} } } = this.props;
 
     if (incident) {
       this.setState({ incident });
     } else {
       try {
-        const { incident } = await callApi({ id: caseId });
+        const { incident } = await callApi({ id });
         console.log('NEW incident', incident);
         this.setState({ incident });
       } catch (error) {
-        throw new Error(`ERROR call api with caseId : ${caseId}`);
+        throw new Error(`ERROR call api with caseId : ${id}`);
       }
     }
   }

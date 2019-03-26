@@ -6,7 +6,7 @@ export default class Header extends PureComponent {
     return (
       <>
         <h1>Police Department of Berlin</h1>
-        <div>Stolen bikes</div>
+        <h2>Stolen bikes</h2>
       </>
     );
   }
