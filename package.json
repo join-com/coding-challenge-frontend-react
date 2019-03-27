@@ -2,7 +2,9 @@
   "name": "coding-challenge-frontend-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Vlad-UA.github.io/coding-challenge-frontend-react",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "google-map-react": "^1.1.2",
     "history": "^4.9.0",
     "moment": "^2.24.0",
@@ -14,6 +16,8 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
