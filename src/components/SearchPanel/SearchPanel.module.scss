@@ -6,4 +6,9 @@
     grid-column-gap: 10px;
     align-items: end;
   }
+
+  .errorMessage {
+    color: red;
+    font-weight: bold;
+  }
 }

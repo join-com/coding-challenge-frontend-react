@@ -20,6 +20,7 @@ export default class IncidentList extends PureComponent {
       <>
         <div className={styles.total}>{`total: ${incidents.length}`}</div>
         {incidents
+          // eslint-disable-next-line
           .filter((element, index) => (CASES_ON_PAGE * (currentPage - 1) <= index) && (index < CASES_ON_PAGE * currentPage))
           .map(
             incident => (
@@ -47,8 +48,7 @@ export default class IncidentList extends PureComponent {
 }
 
 IncidentList.propTypes = {
-  // TODO
-  incidents: PropTypes.array.isRequired,
+  incidents: PropTypes.arrayOf(PropTypes.object).isRequired,
   currentPage: PropTypes.number.isRequired,
   openPage: PropTypes.func.isRequired,
 };

@@ -25,12 +25,11 @@ export default class Main extends PureComponent {
 
   getData = async ({ dateFrom, dateTo, query } = {}) => {
     this.setState({
-      isDataError: false, isDataLoading: true, dateFrom, dateTo, query,
+      isDataError: false, isDataLoading: true,
     });
 
     try {
       const { incidents } = await callApi({ dateFrom, dateTo, query });
-      console.log('data', incidents);
       this.setState({ incidents });
     } catch (error) {
       this.setState({ isDataError: true });

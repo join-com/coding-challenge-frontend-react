@@ -11,36 +11,48 @@ export default class IncidentCard extends PureComponent {
   render() {
     const {
       incident, incident: {
-        title, description, occurred_at, updated_at, media, address, id
+        title, description, occurred_at, updated_at, media: { image_url_thumb }, address, id,
       },
     } = this.props;
 
-    // console.log('incident.id', incident.id);
-
     return (
       <div className={styles.IncidentCard}>
-        <div className={styles.picture}>
+        <div>
           {
-            media.image_url_thumb && <img width={100} height={100} alt="bike" src={media.image_url_thumb} />
+            image_url_thumb && <img width={100} height={100} alt="bike" src={image_url_thumb} />
           }
         </div>
-        <div className={styles.textInfo}>
-          <Link to={{ pathname: `case/${id}`, state: { incident } }}><div className={styles.title}>{title}</div></Link>
+        <div>
+          <Link to={{ pathname: `case/${id}`, state: { incident } }}><div>{title}</div></Link>
           <div className={styles.description}>{description}</div>
-          <div className={styles.dateTheft}>{`Date of the theft: ${moment.unix(occurred_at).format('llll')}`}</div>
-          <div className={styles.dateReport}>{`Report date: ${moment.unix(updated_at).format('llll')}`}</div>
-          <div className={styles.location}>{`Location: ${address}`}</div>
+          <div>
+            <strong>Date of the theft:</strong>
+            {` ${moment.unix(occurred_at).format('ddd MMM D YYYY')}`}
+          </div>
+          <div>
+            <strong>Report date:</strong>
+            {`: ${moment.unix(updated_at).format('ddd MMM D YYYY')}`}
+          </div>
+          <div>
+            <strong>Location:</strong>
+            {` ${address}`}
+          </div>
         </div>
       </div>
     );
   }
 }
 
-// TODO add propTypes
 IncidentCard.propTypes = {
-  incident: PropTypes.object,
-};
-
-IncidentCard.defaultProps = {
-  incident: { },
+  incident: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    address: PropTypes.string,
+    description: PropTypes.string,
+    occurred_at: PropTypes.number,
+    updated_at: PropTypes.number,
+    media: PropTypes.shape({
+      image_url_thumb: PropTypes.string,
+    }),
+  }).isRequired,
 };

@@ -6,13 +6,6 @@ import PropTypes from 'prop-types';
 import styles from './Map.module.scss';
 
 export default class Map extends Component {
-  static defaultProps = {
-    center: {
-      lat: 52.51444,
-      lng: 13.3954199,
-    },
-  };
-
   render() {
     const { center } = this.props;
 
@@ -30,7 +23,9 @@ export default class Map extends Component {
   }
 }
 
-// TODO add propTypes
 Map.propTypes = {
-  center: PropTypes.object.isRequired,
+  center: PropTypes.shape({
+    lat: PropTypes.number,
+    lng: PropTypes.number,
+  }).isRequired,
 };

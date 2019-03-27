@@ -1,6 +1,7 @@
 // Core
 import React, { PureComponent } from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import callApi from '../../utils/call-api';
 
 // Instruments
@@ -54,7 +55,7 @@ export default class Case extends PureComponent {
   render() {
     const {
       incident: {
-        title, updated_at, description, address,
+        title, updated_at: updatedAt, description, address,
       },
       mapCoordinates,
     } = this.state;
@@ -63,8 +64,15 @@ export default class Case extends PureComponent {
       <div className={styles.Case}>
         <Header />
         <div>{title}</div>
-        <div>{`Stolen ${moment.unix(updated_at).format('llll')} at ${address}`}</div>
-        { mapCoordinates && <div className={styles.Map}><Map /></div> }
+        <div>{`Stolen ${moment.unix(updatedAt).format('llll')} at ${address}`}</div>
+        {
+          mapCoordinates
+            && (
+            <div className={styles.Map}>
+              <Map center={{ lng: mapCoordinates[0], lat: mapCoordinates[1] }} />
+            </div>
+            )
+        }
         <h2>DESCRIPTION OF INCIDENT</h2>
         <div>{description}</div>
       </div>
@@ -72,4 +80,12 @@ export default class Case extends PureComponent {
   }
 }
 
-// TODO add propTypes
+Case.propTypes = {
+  location: PropTypes.shape,
+  match: PropTypes.shape,
+};
+
+Case.defaultProps = {
+  location: {},
+  match: {},
+};
