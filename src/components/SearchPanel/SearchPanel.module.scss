@@ -1,10 +1,17 @@
 .SearchPanel {
   form{
-    display: grid;
-    // TODO move to the next row if not fit
-    grid-template-columns: auto fit-content(180px)  fit-content(180px)  90px;
-    grid-column-gap: 10px;
-    align-items: end;
+    text-align: center;
+
+    .inline {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+
+    .date {
+      display: inline-block;
+      margin-right: 10px;
+    }
   }
 
   .errorMessage {

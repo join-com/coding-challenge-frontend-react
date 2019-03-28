@@ -40,13 +40,19 @@ export default class Pagination extends PureComponent {
 
     return (
       <div className={styles.Pagination}>
-        <button type="button" onClick={this.openFirstPage} disabled={currentPage === 1}>{'<< First'}</button>
-        <button type="button" onClick={this.openPreviousPage} disabled={currentPage === 1}>{'< Prev'}</button>
+        <div className={styles.columns}>
+          <button type="button" onClick={this.openFirstPage} disabled={currentPage === 1}>{'<< First'}</button>
+          <button type="button" onClick={this.openPreviousPage} disabled={currentPage === 1}>{'< Prev'}</button>
+        </div>
 
-        { pages.map(pageIndex => <button type="button" onClick={() => openPage(pageIndex)} disabled={currentPage === pageIndex} key={pageIndex}>{pageIndex}</button>) }
+        <div className={styles.columns}>
+          { pages.map(pageIndex => <button type="button" onClick={() => openPage(pageIndex)} disabled={currentPage === pageIndex} key={pageIndex}>{pageIndex}</button>) }
+        </div>
 
-        <button type="button" onClick={this.openNextPage} disabled={currentPage === pages.length}>{'Next >'}</button>
-        <button type="button" onClick={this.openLastPage} disabled={currentPage === pages.length}>{'Last >>'}</button>
+        <div className={styles.columns}>
+          <button type="button" onClick={this.openNextPage} disabled={currentPage === pages.length}>{'Next >'}</button>
+          <button type="button" onClick={this.openLastPage} disabled={currentPage === pages.length}>{'Last >>'}</button>
+        </div>
       </div>
     );
   }

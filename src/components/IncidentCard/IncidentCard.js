@@ -22,7 +22,7 @@ export default class IncidentCard extends PureComponent {
             image_url_thumb && <img width={100} height={100} alt="bike" src={image_url_thumb} />
           }
         </div>
-        <div>
+        <div className={styles.data}>
           <Link to={{ pathname: `case/${id}`, state: { incident } }}><div>{title}</div></Link>
           <div className={styles.description}>{description}</div>
           <div>

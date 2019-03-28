@@ -1,15 +1,24 @@
-.IncidentCard{
+.IncidentCard {
   display: grid;
   grid-template-columns: 100px auto;
   grid-column-gap: 10px;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+
   border: solid 2px darkgray;
   padding: 10px;
 
-  .description{
-    margin-top: 5px;
-  }
+  .data {
+    display: inline-block;
 
-  .dateLocation{
-    margin-top: 10px;
+    .description {
+      margin-top: 5px;
+    }
+
+    .dateLocation {
+      margin-top: 10px;
+    }
   }
 }
