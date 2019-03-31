@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Header: Must match snapshot: 1`] = `
+<div
+  className="Header"
+>
+  <img
+    alt="logo"
+    src="logo.png"
+  />
+  <div>
+    <h1>
+      Police Department of Berlin
+    </h1>
+    <h2>
+      Stolen bikes
+    </h2>
+  </div>
+</div>
+`;

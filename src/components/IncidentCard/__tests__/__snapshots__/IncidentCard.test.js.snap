@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component IncidentCard: Must match snapshot: 1`] = `
+<div
+  className="IncidentCard"
+>
+  <div />
+  <div
+    className="data"
+  >
+    <a
+      href="case/undefined"
+      onClick={[Function]}
+    >
+      <div />
+    </a>
+    <div
+      className="description"
+    />
+    <div>
+      <strong>
+        Date of the theft:
+      </strong>
+       Invalid date
+    </div>
+    <div>
+      <strong>
+        Report date:
+      </strong>
+      : Invalid date
+    </div>
+    <div>
+      <strong>
+        Location:
+      </strong>
+       undefined
+    </div>
+  </div>
+</div>
+`;

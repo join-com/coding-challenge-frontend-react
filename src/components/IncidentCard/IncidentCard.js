@@ -11,7 +11,7 @@ export default class IncidentCard extends PureComponent {
   render() {
     const {
       incident, incident: {
-        title, description, occurred_at, updated_at, media: { image_url_thumb }, address, id,
+        title, description, occurred_at, updated_at, media: { image_url_thumb } = {}, address, id,
       },
     } = this.props;
 

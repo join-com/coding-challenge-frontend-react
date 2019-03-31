@@ -81,8 +81,11 @@ export default class Case extends PureComponent {
 }
 
 Case.propTypes = {
-  location: PropTypes.shape,
-  match: PropTypes.shape,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      incident: PropTypes.object,
+    }),
+  }),
 };
 
 Case.defaultProps = {

@@ -20,7 +20,13 @@ export default class Main extends PureComponent {
   };
 
   componentDidMount() {
+    this.isComponentMounted = true;
+
     this.getData();
+  }
+
+  componentWillUnmount() {
+    this.isComponentMounted = false;
   }
 
   getData = async ({ dateFrom, dateTo, query } = {}) => {
@@ -30,11 +36,18 @@ export default class Main extends PureComponent {
 
     try {
       const { incidents } = await callApi({ dateFrom, dateTo, query });
-      this.setState({ incidents });
+
+      if (this.isComponentMounted) {
+        this.setState({ incidents });
+      }
     } catch (error) {
-      this.setState({ isDataError: true });
+      if (this.isComponentMounted) {
+        this.setState({ isDataError: true });
+      }
     } finally {
-      this.setState({ isDataLoading: false });
+      if (this.isComponentMounted) {
+        this.setState({ isDataLoading: false });
+      }
     }
   };
 

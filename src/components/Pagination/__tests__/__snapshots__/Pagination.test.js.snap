@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Pagination: Must match snapshot: 1`] = `
+<div
+  className="Pagination"
+>
+  <div
+    className="columns"
+  >
+    <button
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      &lt;&lt; First
+    </button>
+    <button
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      &lt; Prev
+    </button>
+  </div>
+  <div
+    className="columns"
+  >
+    <button
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      1
+    </button>
+  </div>
+  <div
+    className="columns"
+  >
+    <button
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      Next &gt;
+    </button>
+    <button
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      Last &gt;&gt;
+    </button>
+  </div>
+</div>
+`;

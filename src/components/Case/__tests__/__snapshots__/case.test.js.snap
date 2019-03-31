@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Case: Must match snapshot: 1`] = `
+<div
+  className="Case"
+>
+  <div
+    className="Header"
+  >
+    <img
+      alt="logo"
+      src="logo.png"
+    />
+    <div>
+      <h1>
+        Police Department of Berlin
+      </h1>
+      <h2>
+        Stolen bikes
+      </h2>
+    </div>
+  </div>
+  <div />
+  <div>
+    Stolen Invalid date at undefined
+  </div>
+  <h2>
+    DESCRIPTION OF INCIDENT
+  </h2>
+  <div />
+</div>
+`;

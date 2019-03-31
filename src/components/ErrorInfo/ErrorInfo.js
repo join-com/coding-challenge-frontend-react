@@ -13,5 +13,3 @@ export default class ErrorInfo extends PureComponent {
     );
   }
 }
-
-// TODO add propTypes

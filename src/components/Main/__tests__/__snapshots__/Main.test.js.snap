@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Main: Must match snapshot: 1`] = `
+<div
+  className="Main"
+>
+  <div
+    className="Header"
+  >
+    <img
+      alt="logo"
+      src="logo.png"
+    />
+    <div>
+      <h1>
+        Police Department of Berlin
+      </h1>
+      <h2>
+        Stolen bikes
+      </h2>
+    </div>
+  </div>
+  <div
+    className="SearchPanel"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="inline"
+        maxLength={30}
+        name="query"
+        onChange={[Function]}
+        placeholder="Search case descriptions"
+        type="text"
+      />
+      <div
+        className="inline"
+      >
+        <div
+          className="date"
+        >
+          <div>
+            From
+          </div>
+          <input
+            name="dateFrom"
+            onChange={[Function]}
+            placeholder="from"
+            type="date"
+          />
+        </div>
+        <div
+          className="date"
+        >
+          <div>
+            To
+          </div>
+          <input
+            name="dateTo"
+            onChange={[Function]}
+            placeholder="to"
+            type="date"
+          />
+        </div>
+      </div>
+      <button
+        className="inline"
+        disabled={true}
+        onClick={[Function]}
+        type="submit"
+      >
+        Find cases
+      </button>
+    </form>
+  </div>
+  <p>
+    Loading ... 
+  </p>
+</div>
+`;

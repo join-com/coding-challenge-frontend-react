@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Map: Must match snapshot: 1`] = `
+<div
+  className="Map"
+>
+  <div
+    onClick={[Function]}
+    onMouseDownCapture={[Function]}
+    onMouseMove={[Function]}
+    style={
+      Object {
+        "height": "100%",
+        "margin": 0,
+        "padding": 0,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "left": 0,
+          "margin": 0,
+          "padding": 0,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "50%",
+          "left": "50%",
+          "margin": 0,
+          "padding": 0,
+          "position": "absolute",
+          "top": "50%",
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "margin": 0,
+            "padding": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          $geoService={
+            Geo {
+              "hasSize_": false,
+              "hasView_": true,
+              "transform_": Transform {
+                "_maxZoom": 52,
+                "_minZoom": 0,
+                "_zoom": 15,
+                "angle": -0,
+                "center": LatLng {
+                  "lat": 45.5164386,
+                  "lng": -122.6244177,
+                },
+                "height": 0,
+                "latRange": Array [
+                  -85.05113,
+                  85.05113,
+                ],
+                "scale": 32768,
+                "tileSize": 256,
+                "tileZoom": 15,
+                "width": 0,
+                "zoomFraction": 0,
+              },
+            }
+          }
+          $onMouseAllow={[Function]}
+          $prerender={true}
+          className="text"
+        >
+          * Incident location
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

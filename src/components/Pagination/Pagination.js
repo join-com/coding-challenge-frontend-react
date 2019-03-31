@@ -26,7 +26,7 @@ export default class Pagination extends PureComponent {
 
   openLastPage = () => {
     const { openPage } = this.props;
-    openPage(this.getTotalPages);
+    openPage(this.getTotalPages());
   };
 
   getTotalPages = () => {
