@@ -1,0 +1,31 @@
+.DateRangePickerInput__withBorder {
+    border-radius: 10rem !important;
+    overflow: hidden !important;
+    margin-top: 6px;
+}
+.DateInput_input__focused {
+    border-bottom: 2px solid var(--primary-color) !important;
+}
+.DateInput_input{
+    padding: 10px !important;
+    text-align: center !important;
+    font-size: 1.4rem !important;
+    line-height: 0px !important;
+    margin-top: .4rem;
+}
+
+.pageList {
+    position: relative;
+    max-height: 60vh;
+    overflow-y: auto;
+    animation: moveInUp .5s ease-out;
+}
+
+@media only screen and (max-width: 900px) {
+    .datepicker{
+        display: none;
+    }
+    .list-pagination{
+        margin: 1rem 0;
+    }
+}

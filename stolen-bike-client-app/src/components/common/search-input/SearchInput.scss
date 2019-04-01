@@ -1,0 +1,21 @@
+.inputWrap {
+    width: 30rem;
+    position: relative;
+    border: .1rem solid #dbdbdb;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0 2rem;
+    border-radius: 3rem;
+    input{
+        width: 100%;
+        border: 0;
+        outline: 0;
+        padding: 1rem;
+        font-size: 1.6rem;
+        margin-left: .2rem;
+        background: transparent;
+    }
+    .inputIco{
+    }
+}
