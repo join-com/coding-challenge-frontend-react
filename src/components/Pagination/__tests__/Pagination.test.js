@@ -29,7 +29,7 @@ describe('Component Pagination:', () => {
       <Pagination totalRecords={25} currentPage={3} openPage={jestSpy} />,
     );
 
-    pagination.find('button').at(0).simulate('click');
+    pagination.find({ name: 'button-first' }).simulate('click');
 
     expect(jestSpy).toBeCalledWith(1);
   });
@@ -41,7 +41,7 @@ describe('Component Pagination:', () => {
       <Pagination totalRecords={25} currentPage={CURRENT_PAGE_NUMBER} openPage={jestSpy} />,
     );
 
-    pagination.find('button').at(1).simulate('click');
+    pagination.find({ name: 'button-prev' }).simulate('click');
 
     expect(jestSpy).toBeCalledWith(CURRENT_PAGE_NUMBER - 1);
   });
@@ -53,10 +53,7 @@ describe('Component Pagination:', () => {
       <Pagination totalRecords={25} currentPage={CURRENT_PAGE_NUMBER} openPage={jestSpy} />,
     );
 
-    const buttons = pagination.find('button');
-    const { length } = buttons;
-
-    buttons.at(length - 2).simulate('click');
+    pagination.find({ name: 'button-next' }).simulate('click');
 
     expect(jestSpy).toBeCalledWith(CURRENT_PAGE_NUMBER + 1);
   });
@@ -67,10 +64,7 @@ describe('Component Pagination:', () => {
       <Pagination totalRecords={25} currentPage={1} openPage={jestSpy} />,
     );
 
-    const buttons = pagination.find('button');
-    const { length } = buttons;
-
-    buttons.at(length - 1).simulate('click');
+    pagination.find({ name: 'button-last' }).simulate('click');
 
     expect(jestSpy).toBeCalledWith(3);
   });

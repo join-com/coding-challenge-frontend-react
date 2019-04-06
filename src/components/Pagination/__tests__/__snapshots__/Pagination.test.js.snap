@@ -2,20 +2,24 @@
 
 exports[`Component Pagination: Must match snapshot: 1`] = `
 <div
-  className="Pagination"
+  className="sc-bdVaJa fpPwqq"
 >
   <div
-    className="columns"
+    className="sc-htpNat dEQUjC"
   >
     <button
+      className="sc-bwzfXH gPFPEk"
       disabled={true}
+      name="button-first"
       onClick={[Function]}
       type="button"
     >
       &lt;&lt; First
     </button>
     <button
+      className="sc-bwzfXH gPFPEk"
       disabled={true}
+      name="button-prev"
       onClick={[Function]}
       type="button"
     >
@@ -23,9 +27,10 @@ exports[`Component Pagination: Must match snapshot: 1`] = `
     </button>
   </div>
   <div
-    className="columns"
+    className="sc-htpNat dEQUjC"
   >
     <button
+      className="sc-bwzfXH gPFPEk"
       disabled={true}
       onClick={[Function]}
       type="button"
@@ -34,17 +39,21 @@ exports[`Component Pagination: Must match snapshot: 1`] = `
     </button>
   </div>
   <div
-    className="columns"
+    className="sc-htpNat dEQUjC"
   >
     <button
+      className="sc-bwzfXH gPFPEk"
       disabled={true}
+      name="button-next"
       onClick={[Function]}
       type="button"
     >
       Next &gt;
     </button>
     <button
+      className="sc-bwzfXH gPFPEk"
       disabled={true}
+      name="button-last"
       onClick={[Function]}
       type="button"
     >

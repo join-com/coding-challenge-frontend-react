@@ -3,10 +3,24 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Instruments
-import styles from './Pagination.module.scss';
+import styled from 'styled-components';
 
 // Constants
 import { CASES_ON_PAGE } from '../../constants/pages';
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 9fr 3fr;
+  grid-column-gap: 10px;
+`;
+
+const Button = styled.button`
+  margin: 10px;
+`;
+
+const Columns = styled.div`
+  text-align: center;
+`;
 
 export default class Pagination extends PureComponent {
   openFirstPage = () => {
@@ -39,21 +53,21 @@ export default class Pagination extends PureComponent {
     const pages = new Array(this.getTotalPages()).fill(0).map((v, i) => i + 1);
 
     return (
-      <div className={styles.Pagination}>
-        <div className={styles.columns}>
-          <button type="button" onClick={this.openFirstPage} disabled={currentPage === 1}>{'<< First'}</button>
-          <button type="button" onClick={this.openPreviousPage} disabled={currentPage === 1}>{'< Prev'}</button>
-        </div>
+      <Wrapper>
+        <Columns>
+          <Button type="button" name="button-first" onClick={this.openFirstPage} disabled={currentPage === 1}>{'<< First'}</Button>
+          <Button type="button" name="button-prev" onClick={this.openPreviousPage} disabled={currentPage === 1}>{'< Prev'}</Button>
+        </Columns>
 
-        <div className={styles.columns}>
-          { pages.map(pageIndex => <button type="button" onClick={() => openPage(pageIndex)} disabled={currentPage === pageIndex} key={pageIndex}>{pageIndex}</button>) }
-        </div>
+        <Columns>
+          { pages.map(pageIndex => <Button type="button" onClick={() => openPage(pageIndex)} disabled={currentPage === pageIndex} key={pageIndex}>{pageIndex}</Button>) }
+        </Columns>
 
-        <div className={styles.columns}>
-          <button type="button" onClick={this.openNextPage} disabled={currentPage === pages.length}>{'Next >'}</button>
-          <button type="button" onClick={this.openLastPage} disabled={currentPage === pages.length}>{'Last >>'}</button>
-        </div>
-      </div>
+        <Columns>
+          <Button type="button" name="button-next" onClick={this.openNextPage} disabled={currentPage === pages.length}>{'Next >'}</Button>
+          <Button type="button" name="button-last" onClick={this.openLastPage} disabled={currentPage === pages.length}>{'Last >>'}</Button>
+        </Columns>
+      </Wrapper>
     );
   }
 }
