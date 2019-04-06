@@ -4,36 +4,47 @@ exports[`Component IncidentCard: Must match snapshot: 1`] = `
 <div
   className="IncidentCard"
 >
-  <div />
+  <div>
+    <img
+      alt="bike"
+      height={100}
+      src="https://files.bikeindex.org/uploads/Pu/148912/small_IMG_20170705_191324.jpg"
+      width={100}
+    />
+  </div>
   <div
     className="data"
   >
     <a
-      href="case/undefined"
+      href="case/83629"
       onClick={[Function]}
     >
-      <div />
+      <div>
+        Title 83629
+      </div>
     </a>
     <div
       className="description"
-    />
+    >
+      Description 83629
+    </div>
     <div>
       <strong>
         Date of the theft:
       </strong>
-       Invalid date
+       Mon Mar 11 2019
     </div>
     <div>
       <strong>
         Report date:
       </strong>
-      : Invalid date
+      : Mon Mar 25 2019
     </div>
     <div>
       <strong>
         Location:
       </strong>
-       undefined
+       Address 83629
     </div>
   </div>
 </div>

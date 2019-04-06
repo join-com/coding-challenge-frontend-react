@@ -19,10 +19,10 @@ export default class Main extends PureComponent {
     currentPage: 1,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.isComponentMounted = true;
 
-    this.getData();
+    await this.getData();
   }
 
   componentWillUnmount() {
@@ -51,9 +51,9 @@ export default class Main extends PureComponent {
     }
   };
 
-  onFind = ({ dateFrom, dateTo, query }) => {
+  onFind = async ({ dateFrom, dateTo, query }) => {
     this.setState({ currentPage: 1 });
-    this.getData({ dateFrom, dateTo, query });
+    await this.getData({ dateFrom, dateTo, query });
   };
 
   openPage = (pageNumber) => {

@@ -16,8 +16,6 @@ describe('Module call-api:', () => {
     ).toBe('function');
   });
 
-  // must return async method
-
   test('must send fetch—request', () => {
     callApi();
     expect(fetch).toHaveBeenCalledTimes(1);

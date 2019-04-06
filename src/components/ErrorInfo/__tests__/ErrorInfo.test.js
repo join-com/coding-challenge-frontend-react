@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 // Core
 import React from 'react';
 

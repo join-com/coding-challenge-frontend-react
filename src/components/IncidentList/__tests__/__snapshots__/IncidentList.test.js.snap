@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component IncidentList: Must match snapshot: 1`] = `
+exports[`Component IncidentList: Must match snapshot -- with some incidents: 1`] = `
 <div
   className="incidentList"
 >
@@ -12,155 +12,23 @@ exports[`Component IncidentList: Must match snapshot: 1`] = `
   <div
     className="incidentCard"
   >
-    <div
-      className="IncidentCard"
-    >
-      <div>
-        <img
-          alt="bike"
-          height={100}
-          src="https://files.bikeindex.org/uploads/Pu/148912/small_IMG_20170705_191324.jpg"
-          width={100}
-        />
-      </div>
-      <div
-        className="data"
-      >
-        <a
-          href="case/97572"
-          onClick={[Function]}
-        >
-          <div>
-            Title 97572
-          </div>
-        </a>
-        <div
-          className="description"
-        >
-          Description 97572
-        </div>
-        <div>
-          <strong>
-            Date of the theft:
-          </strong>
-           Mon Mar 11 2019
-        </div>
-        <div>
-          <strong>
-            Report date:
-          </strong>
-          : Mon Mar 25 2019
-        </div>
-        <div>
-          <strong>
-            Location:
-          </strong>
-           Address 97572
-        </div>
-      </div>
-    </div>
+    IncidentCard
   </div>
   <div
     className="incidentCard"
   >
-    <div
-      className="IncidentCard"
-    >
-      <div>
-        <img
-          alt="bike"
-          height={100}
-          src="https://files.bikeindex.org/uploads/Pu/148912/small_IMG_20170705_191324.jpg"
-          width={100}
-        />
-      </div>
-      <div
-        className="data"
-      >
-        <a
-          href="case/94547"
-          onClick={[Function]}
-        >
-          <div>
-            Title 94547
-          </div>
-        </a>
-        <div
-          className="description"
-        >
-          Description 94547
-        </div>
-        <div>
-          <strong>
-            Date of the theft:
-          </strong>
-           Mon Mar 11 2019
-        </div>
-        <div>
-          <strong>
-            Report date:
-          </strong>
-          : Mon Mar 25 2019
-        </div>
-        <div>
-          <strong>
-            Location:
-          </strong>
-           Address 94547
-        </div>
-      </div>
-    </div>
+    IncidentCard
   </div>
-  <div
-    className="Pagination"
-  >
-    <div
-      className="columns"
-    >
-      <button
-        disabled={true}
-        onClick={[Function]}
-        type="button"
-      >
-        &lt;&lt; First
-      </button>
-      <button
-        disabled={true}
-        onClick={[Function]}
-        type="button"
-      >
-        &lt; Prev
-      </button>
-    </div>
-    <div
-      className="columns"
-    >
-      <button
-        disabled={true}
-        onClick={[Function]}
-        type="button"
-      >
-        1
-      </button>
-    </div>
-    <div
-      className="columns"
-    >
-      <button
-        disabled={true}
-        onClick={[Function]}
-        type="button"
-      >
-        Next &gt;
-      </button>
-      <button
-        disabled={true}
-        onClick={[Function]}
-        type="button"
-      >
-        Last &gt;&gt;
-      </button>
-    </div>
-  </div>
+  Pagination
+</div>
+`;
+
+exports[`Component IncidentList: Must match snapshot -- without incidents: 1`] = `
+<div
+  className="incidentList"
+>
+  <p>
+    No results
+  </p>
 </div>
 `;

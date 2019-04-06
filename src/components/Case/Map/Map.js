@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import PropTypes from 'prop-types';

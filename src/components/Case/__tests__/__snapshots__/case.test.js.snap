@@ -4,29 +4,30 @@ exports[`Component Case: Must match snapshot: 1`] = `
 <div
   className="Case"
 >
-  <div
-    className="Header"
-  >
-    <img
-      alt="logo"
-      src="logo.png"
-    />
-    <div>
-      <h1>
-        Police Department of Berlin
-      </h1>
-      <h2>
-        Stolen bikes
-      </h2>
-    </div>
-  </div>
-  <div />
+  <Header />
   <div>
-    Stolen Invalid date at undefined
+    Title 97572
+  </div>
+  <div>
+    Stolen Mon, Mar 25, 2019 9:38 PM at Address 97572
+  </div>
+  <div
+    className="Map"
+  >
+    <Map
+      center={
+        Object {
+          "lat": 43.6334557,
+          "lng": -116.1960257,
+        }
+      }
+    />
   </div>
   <h2>
     DESCRIPTION OF INCIDENT
   </h2>
-  <div />
+  <div>
+    Description 97572
+  </div>
 </div>
 `;

@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 // Core
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,8 +13,14 @@ import IncidentCard from '../IncidentCard';
 
 describe('Component IncidentCard:', () => {
   test('Must match snapshot:', () => {
+    const { incident } = new IncidentModel({ id: 83629 });
+
     const incidentCard = renderer
-      .create(<BrowserRouter><IncidentCard incident={new IncidentModel({ id: 83629 })} /></BrowserRouter>)
+      .create(
+        <BrowserRouter>
+          <IncidentCard incident={incident} />
+        </BrowserRouter>,
+      )
       .toJSON();
 
     expect(incidentCard).toMatchSnapshot();

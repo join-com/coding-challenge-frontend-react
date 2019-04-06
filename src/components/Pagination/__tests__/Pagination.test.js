@@ -1,8 +1,11 @@
+/* eslint-env jest */
+
 // Core
 import React from 'react';
 
 // Test utilities
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 // Component
 import Pagination from '../Pagination';
@@ -18,5 +21,57 @@ describe('Component Pagination:', () => {
       .toJSON();
 
     expect(pagination).toMatchSnapshot();
+  });
+
+  it('Should handle click button "<< First" and call method with correct page number', () => {
+    const jestSpy = jest.fn();
+    const pagination = shallow(
+      <Pagination totalRecords={25} currentPage={3} openPage={jestSpy} />,
+    );
+
+    pagination.find('button').at(0).simulate('click');
+
+    expect(jestSpy).toBeCalledWith(1);
+  });
+
+  it('Should handle click button "< Prev" and call method correct page number', () => {
+    const jestSpy = jest.fn();
+    const CURRENT_PAGE_NUMBER = 3;
+    const pagination = shallow(
+      <Pagination totalRecords={25} currentPage={CURRENT_PAGE_NUMBER} openPage={jestSpy} />,
+    );
+
+    pagination.find('button').at(1).simulate('click');
+
+    expect(jestSpy).toBeCalledWith(CURRENT_PAGE_NUMBER - 1);
+  });
+
+  it('Should handle click button "Next >" and call method correct page number', () => {
+    const jestSpy = jest.fn();
+    const CURRENT_PAGE_NUMBER = 1;
+    const pagination = shallow(
+      <Pagination totalRecords={25} currentPage={CURRENT_PAGE_NUMBER} openPage={jestSpy} />,
+    );
+
+    const buttons = pagination.find('button');
+    const { length } = buttons;
+
+    buttons.at(length - 2).simulate('click');
+
+    expect(jestSpy).toBeCalledWith(CURRENT_PAGE_NUMBER + 1);
+  });
+
+  it('Should handle click button "Last >>" and call method correct page number', () => {
+    const jestSpy = jest.fn();
+    const pagination = shallow(
+      <Pagination totalRecords={25} currentPage={1} openPage={jestSpy} />,
+    );
+
+    const buttons = pagination.find('button');
+    const { length } = buttons;
+
+    buttons.at(length - 1).simulate('click');
+
+    expect(jestSpy).toBeCalledWith(3);
   });
 });
