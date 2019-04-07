@@ -39,8 +39,9 @@ export default class Main extends PureComponent {
     });
 
     try {
-      const { incidents } = await callApi({ dateFrom, dateTo, query });
-
+      const { incidents } = await callApi(
+        { occurredAfter: dateFrom, occurredBefore: dateTo, query },
+      );
       if (this.isComponentMounted) {
         this.setState({ incidents });
       }

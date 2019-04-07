@@ -67,7 +67,7 @@ export default class SearchPanel extends PureComponent {
     if (!errorMessage) {
       onFind({
         dateFrom: moment(dateFrom).unix(),
-        dateTo: moment(dateTo).unix(),
+        dateTo: moment(`${dateTo} 24:00:00`).unix(),
         query,
       });
     }
