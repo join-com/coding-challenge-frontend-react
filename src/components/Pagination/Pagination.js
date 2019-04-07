@@ -73,10 +73,7 @@ export default class Pagination extends PureComponent {
 }
 
 Pagination.propTypes = {
-  // TODO add check must be equal or bigger 0
   totalRecords: PropTypes.number.isRequired,
   openPage: PropTypes.func.isRequired,
-
-  // TODO add check must be bigger 0
   currentPage: PropTypes.number.isRequired,
 };

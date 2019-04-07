@@ -2,7 +2,7 @@
 
 exports[`Component Map: Must match snapshot: 1`] = `
 <div
-  className="Map"
+  className="sc-bdVaJa fHgTKa"
 >
   <div
     onClick={[Function]}
@@ -58,35 +58,7 @@ exports[`Component Map: Must match snapshot: 1`] = `
         }
       >
         <div
-          $geoService={
-            Geo {
-              "hasSize_": false,
-              "hasView_": true,
-              "transform_": Transform {
-                "_maxZoom": 52,
-                "_minZoom": 0,
-                "_zoom": 15,
-                "angle": -0,
-                "center": LatLng {
-                  "lat": 45.5164386,
-                  "lng": -122.6244177,
-                },
-                "height": 0,
-                "latRange": Array [
-                  -85.05113,
-                  85.05113,
-                ],
-                "scale": 32768,
-                "tileSize": 256,
-                "tileZoom": 15,
-                "width": 0,
-                "zoomFraction": 0,
-              },
-            }
-          }
-          $onMouseAllow={[Function]}
-          $prerender={true}
-          className="text"
+          className="sc-bwzfXH hNMTzI"
         >
           * Incident location
         </div>

@@ -1,15 +1,19 @@
 // Core
 import React, { PureComponent } from 'react';
-import callApi from '../../utils/call-api';
 
 // Instruments
-import styles from './Main.module.scss';
+import styled from 'styled-components';
+
+// Utils
+import callApi from '../../utils/call-api';
 
 // Components
 import SearchPanel from '../SearchPanel/SearchPanel';
 import ErrorInfo from '../ErrorInfo/ErrorInfo';
 import IncidentList from '../IncidentList/IncidentList';
 import Header from '../Header/Header';
+
+const Wrapper = styled.div`margin: 50px;`;
 
 export default class Main extends PureComponent {
   state = {
@@ -84,13 +88,13 @@ export default class Main extends PureComponent {
     const { isDataLoading } = this.state;
 
     return (
-      <div className={styles.Main}>
+      <Wrapper>
         <Header />
 
         <SearchPanel onFind={this.onFind} isDataLoading={isDataLoading} />
 
         {this.dataLayout()}
-      </div>
+      </Wrapper>
     );
   }
 }

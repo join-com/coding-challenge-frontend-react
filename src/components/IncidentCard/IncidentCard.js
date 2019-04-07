@@ -5,7 +5,23 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 // Instruments
-import styles from './IncidentCard.module.scss';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-column-gap: 10px;
+  border: solid 2px darkgray;
+  padding: 10px;
+  
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+`;
+
+const Data = styled.div`display: inline-block;`;
+
+const Description = styled.p`margin-top: 5px;`;
 
 export default class IncidentCard extends PureComponent {
   render() {
@@ -16,15 +32,15 @@ export default class IncidentCard extends PureComponent {
     } = this.props;
 
     return (
-      <div className={styles.IncidentCard}>
+      <Wrapper>
         <div>
           {
             image_url_thumb && <img width={100} height={100} alt="bike" src={image_url_thumb} />
           }
         </div>
-        <div className={styles.data}>
+        <Data>
           <Link to={{ pathname: `case/${id}`, state: { incident } }}><div>{title}</div></Link>
-          <div className={styles.description}>{description}</div>
+          <Description>{description}</Description>
           <div>
             <strong>Date of the theft:</strong>
             {` ${moment.unix(occurred_at).format('ddd MMM D YYYY')}`}
@@ -37,8 +53,8 @@ export default class IncidentCard extends PureComponent {
             <strong>Location:</strong>
             {` ${address}`}
           </div>
-        </div>
-      </div>
+        </Data>
+      </Wrapper>
     );
   }
 }

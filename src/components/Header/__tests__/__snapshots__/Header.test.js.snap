@@ -2,12 +2,16 @@
 
 exports[`Component Header: Must match snapshot: 1`] = `
 <div
-  className="Header"
+  className="sc-bdVaJa iLFGeg"
 >
-  <img
-    alt="logo"
-    src="logo.png"
-  />
+  <div
+    className="sc-bwzfXH hhtDoX"
+  >
+    <img
+      alt="logo"
+      src="logo.png"
+    />
+  </div>
   <div>
     <h1>
       Police Department of Berlin

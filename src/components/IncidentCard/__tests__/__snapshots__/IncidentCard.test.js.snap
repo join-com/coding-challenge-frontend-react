@@ -2,7 +2,7 @@
 
 exports[`Component IncidentCard: Must match snapshot: 1`] = `
 <div
-  className="IncidentCard"
+  className="sc-bdVaJa fevvfU"
 >
   <div>
     <img
@@ -13,7 +13,7 @@ exports[`Component IncidentCard: Must match snapshot: 1`] = `
     />
   </div>
   <div
-    className="data"
+    className="sc-bwzfXH hTRGCN"
   >
     <a
       href="case/83629"
@@ -23,11 +23,11 @@ exports[`Component IncidentCard: Must match snapshot: 1`] = `
         Title 83629
       </div>
     </a>
-    <div
-      className="description"
+    <p
+      className="sc-htpNat kFFtJI"
     >
       Description 83629
-    </div>
+    </p>
     <div>
       <strong>
         Date of the theft:

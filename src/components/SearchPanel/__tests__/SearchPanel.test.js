@@ -25,7 +25,7 @@ describe('Component SearchPanel:', () => {
       const event = { preventDefault: () => {} };
 
       const wrapper = shallow(<SearchPanel isDataLoading={false} onFind={onButtonClick} />);
-      wrapper.find('form').simulate('submit', event);
+      wrapper.find({ type: 'submit' }).simulate('click', event);
       expect(onButtonClick).toBeCalled();
     });
 
@@ -34,9 +34,10 @@ describe('Component SearchPanel:', () => {
       const onButtonClick = jest.fn();
       const event = { preventDefault: () => {} };
       const wrapper = shallow(<SearchPanel isDataLoading={false} onFind={onButtonClick} />);
-      wrapper.find('input').at(1).simulate('change', { target: { value: '2019-04-02', name: 'dateFrom' } });
-      wrapper.find('input').at(2).simulate('change', { target: { value: '2019-01-03', name: 'dateTo' } });
-      wrapper.find('form').simulate('submit', event);
+
+      wrapper.find({ name: 'dateFrom' }).simulate('change', { target: { value: '2019-04-02', name: 'dateFrom' } });
+      wrapper.find({ name: 'dateTo' }).simulate('change', { target: { value: '2019-01-03', name: 'dateTo' } });
+      wrapper.find({ type: 'submit' }).simulate('click', event);
       expect(wrapper.text().includes('"From" date is greater than date "To"')).toBe(true);
     });
 });

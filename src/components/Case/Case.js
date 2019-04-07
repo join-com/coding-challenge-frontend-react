@@ -2,14 +2,23 @@
 import React, { PureComponent } from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import callApi from '../../utils/call-api';
 
 // Instruments
-import styles from './Case.module.scss';
+import styled from 'styled-components';
 
 // Components
 import Header from '../Header/Header';
 import Map from './Map/Map';
+
+// Utils
+import callApi from '../../utils/call-api';
+
+const Wrapper = styled.div`margin: 50px;`;
+
+const MapWrapper = styled.div`
+    height: 400px;
+    margin: 30px;
+`;
 
 export default class Case extends PureComponent {
   state = {
@@ -61,21 +70,21 @@ export default class Case extends PureComponent {
     } = this.state;
 
     return (
-      <div className={styles.Case}>
+      <Wrapper>
         <Header />
         <div>{title}</div>
         <div>{`Stolen ${moment.unix(updatedAt).format('llll')} at ${address}`}</div>
         {
           mapCoordinates
             && (
-            <div className={styles.Map}>
+            <MapWrapper>
               <Map center={{ lng: mapCoordinates[0], lat: mapCoordinates[1] }} />
-            </div>
+            </MapWrapper>
             )
         }
         <h2>DESCRIPTION OF INCIDENT</h2>
         <div>{description}</div>
-      </div>
+      </Wrapper>
     );
   }
 }
@@ -88,7 +97,7 @@ Case.propTypes = {
   }),
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
     }),
   }),
 };

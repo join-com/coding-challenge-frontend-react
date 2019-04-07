@@ -2,19 +2,28 @@
 import React, { PureComponent } from 'react';
 
 // Instruments
-import styles from './Header.module.scss';
+import styled from 'styled-components';
 import logo from '../../assets/logo.png';
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 100px auto;
+`;
+
+const Img = styled.div`align-self: center;`;
 
 export default class Header extends PureComponent {
   render() {
     return (
-      <div className={styles.Header}>
-        <img src={logo} alt="logo" />
+      <Wrapper>
+        <Img>
+          <img src={logo} alt="logo" />
+        </Img>
         <div>
           <h1>Police Department of Berlin</h1>
           <h2>Stolen bikes</h2>
         </div>
-      </div>
+      </Wrapper>
     );
   }
 }

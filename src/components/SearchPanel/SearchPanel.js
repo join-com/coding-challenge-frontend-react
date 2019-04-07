@@ -4,7 +4,38 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 // Instruments
-import styles from './SearchPanel.module.scss';
+import styled from 'styled-components';
+
+const Form = styled.div`text-align: center;`;
+
+const DescriptionSearchField = styled.input`
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+`;
+
+const WrapperDateFields = styled.div`
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+`;
+
+const DateWrapper = styled.div`
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+`;
+
+const SubmitButton = styled.button`
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+`;
+
+const ErrorMessage = styled.div`
+  color: red;
+  font-weight: bold;
+`;
 
 export default class SearchPanel extends PureComponent {
   state = {};
@@ -49,26 +80,26 @@ export default class SearchPanel extends PureComponent {
     const { errorMessage } = this.state;
 
     return (
-      <div className={styles.SearchPanel}>
-        <form onSubmit={this.onSubmit}>
-          <input className={styles.inline} type="text" placeholder="Search case descriptions" name="query" maxLength={30} onChange={this.onChangeData} />
+      <WrapperDateFields>
+        <Form onSubmit={this.onSubmit}>
+          <DescriptionSearchField type="text" placeholder="Search case descriptions" name="query" maxLength={30} onChange={this.onChangeData} />
 
-          <div className={styles.inline}>
-            <div className={styles.date}>
+          <WrapperDateFields>
+            <DateWrapper>
               <div>From</div>
               <input type="date" placeholder="from" name="dateFrom" onChange={this.onChangeData} />
-            </div>
+            </DateWrapper>
 
-            <div className={styles.date}>
+            <DateWrapper>
               <div>To</div>
               <input type="date" placeholder="to" name="dateTo" onChange={this.onChangeData} />
-            </div>
-          </div>
+            </DateWrapper>
+          </WrapperDateFields>
 
-          <button className={styles.inline} type="submit" disabled={isDataLoading} onClick={this.onSubmit}>Find cases</button>
-        </form>
-        {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
-      </div>
+          <SubmitButton type="submit" disabled={isDataLoading} onClick={this.onSubmit}>Find cases</SubmitButton>
+        </Form>
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      </WrapperDateFields>
     );
   }
 }

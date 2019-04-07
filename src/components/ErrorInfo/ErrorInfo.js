@@ -2,13 +2,15 @@
 import React, { PureComponent } from 'react';
 
 // Instruments
-import styles from './ErrorInfo.module.scss';
+import styled from 'styled-components';
+
+const Message = styled.p`color: red;`;
 
 export default class ErrorInfo extends PureComponent {
   render() {
     return (
-      <div className={styles.ErrorInfo}>
-        <p>Ooops, something went wrong</p>
+      <div>
+        <Message>Ooops, something went wrong</Message>
       </div>
     );
   }

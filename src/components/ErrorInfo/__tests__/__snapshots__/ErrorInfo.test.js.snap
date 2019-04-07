@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component ErrorInfo: Must match snapshot: 1`] = `
-<div
-  className="ErrorInfo"
->
-  <p>
+<div>
+  <p
+    className="sc-bdVaJa erWExG"
+  >
     Ooops, something went wrong
   </p>
 </div>

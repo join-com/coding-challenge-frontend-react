@@ -2,13 +2,14 @@
 
 exports[`Component SearchPanel: Must match snapshot: 1`] = `
 <div
-  className="SearchPanel"
+  className="sc-htpNat kbhOdm"
 >
-  <form
+  <div
+    className="sc-bdVaJa hUHDVF"
     onSubmit={[Function]}
   >
     <input
-      className="inline"
+      className="sc-bwzfXH jgHJGE"
       maxLength={30}
       name="query"
       onChange={[Function]}
@@ -16,10 +17,10 @@ exports[`Component SearchPanel: Must match snapshot: 1`] = `
       type="text"
     />
     <div
-      className="inline"
+      className="sc-htpNat kbhOdm"
     >
       <div
-        className="date"
+        className="sc-bxivhb loeuYe"
       >
         <div>
           From
@@ -32,7 +33,7 @@ exports[`Component SearchPanel: Must match snapshot: 1`] = `
         />
       </div>
       <div
-        className="date"
+        className="sc-bxivhb loeuYe"
       >
         <div>
           To
@@ -46,13 +47,13 @@ exports[`Component SearchPanel: Must match snapshot: 1`] = `
       </div>
     </div>
     <button
-      className="inline"
+      className="sc-ifAKCX jXExSD"
       disabled={false}
       onClick={[Function]}
       type="submit"
     >
       Find cases
     </button>
-  </form>
+  </div>
 </div>
 `;

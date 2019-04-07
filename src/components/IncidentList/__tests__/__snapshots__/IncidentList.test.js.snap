@@ -1,21 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component IncidentList: Must match snapshot -- with some incidents: 1`] = `
-<div
-  className="incidentList"
->
+<div>
   <div
-    className="total"
+    className="sc-bdVaJa clxIpz"
   >
     total: 2
   </div>
   <div
-    className="incidentCard"
+    className="sc-bwzfXH gHczxP"
   >
     IncidentCard
   </div>
   <div
-    className="incidentCard"
+    className="sc-bwzfXH gHczxP"
   >
     IncidentCard
   </div>
@@ -24,9 +22,7 @@ exports[`Component IncidentList: Must match snapshot -- with some incidents: 1`]
 `;
 
 exports[`Component IncidentList: Must match snapshot -- without incidents: 1`] = `
-<div
-  className="incidentList"
->
+<div>
   <p>
     No results
   </p>

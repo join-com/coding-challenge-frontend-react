@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component Case: Must match snapshot: 1`] = `
-<div
-  className="Case"
->
+<styled.div>
   <Header />
   <div>
     Title 97572
@@ -11,9 +9,7 @@ exports[`Component Case: Must match snapshot: 1`] = `
   <div>
     Stolen Mon, Mar 25, 2019 9:38 PM at Address 97572
   </div>
-  <div
-    className="Map"
-  >
+  <styled.div>
     <Map
       center={
         Object {
@@ -22,12 +18,12 @@ exports[`Component Case: Must match snapshot: 1`] = `
         }
       }
     />
-  </div>
+  </styled.div>
   <h2>
     DESCRIPTION OF INCIDENT
   </h2>
   <div>
     Description 97572
   </div>
-</div>
+</styled.div>
 `;
