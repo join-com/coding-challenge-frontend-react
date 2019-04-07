@@ -6,6 +6,7 @@ https://vlad-ua.github.io/coding-challenge-frontend-react/
 ## Features and technical stack
 1. React
 2. Tests: Jest + Enzyme (coverage 92%)
+![Tests coverage](https://github.com/Vlad-UA/coding-challenge-frontend-react/blob/master/test-coverage.png)
 3. ESLint -- all errors and warnings solved.
 4. CSSinJS (styled-components).
 5. When visitor come to the Case Page from the list, there is no additional request to /v2/incidents/{id}.
