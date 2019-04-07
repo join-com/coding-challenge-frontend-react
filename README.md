@@ -5,7 +5,7 @@ https://vlad-ua.github.io/coding-challenge-frontend-react/
 
 ## Features and technical stack
 1. React
-2. Tests: Jest + Enzyme
+2. Tests: Jest + Enzyme (coverage 92%)
 3. ESLint -- all errors and warnings solved.
 4. CSSinJS (styled-components).
 5. When visitor come to the Case Page from the list, there is no additional request to /v2/incidents/{id}.
@@ -13,6 +13,31 @@ https://vlad-ua.github.io/coding-challenge-frontend-react/
 7. In Search block added an additional check: "To" must be greater than date "From".
 8. For usability added scrolling to top of the page on opening a new page of incidents.
 9. For the Case Page added Google Map with a position of an incident.
+
+### Must have (DONE)
+- [x] I want to see a list of reported bike thefts for the Berlin area.
+- [x] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
+- [x] I want to see a total number of bike theft cases.
+- [x] For each reported bike theft I want to see:
+  - [x] Case title
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Picture of the bike, if available
+- [x] I want to filter reported bike thefts by partial case title.
+- [x] I want to see a loading state until the list is available.
+- [x] I want to see an error state if the list is unavailable.
+- [x] I want to see an empty state if there are no results.
+
+### Nice to have (DONE)
+- [x] I want to filter reported bike thefts by date range.
+- [x] I want to see a case detail page that shows:
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Map of the location
 
 ## Recommendation for API improvements (based on the test task):
 1. Add the value of Total incidents into JSON or change CORS restrictions. 

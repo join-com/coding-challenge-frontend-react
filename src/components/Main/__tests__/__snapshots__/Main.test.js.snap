@@ -10,6 +10,9 @@ exports[`Component Main: Must match snapshot with "Loading...": 1`] = `
   <p>
     Loading ... 
   </p>
+  <p>
+    v 1.0.0
+  </p>
 </styled.div>
 `;
 
@@ -52,5 +55,8 @@ exports[`Component Main: Must match snapshot with component "IncidentList": 1`] 
     }
     openPage={[Function]}
   />
+  <p>
+    v 1.0.0
+  </p>
 </styled.div>
 `;

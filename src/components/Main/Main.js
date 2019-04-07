@@ -95,6 +95,7 @@ export default class Main extends PureComponent {
         <SearchPanel onFind={this.onFind} isDataLoading={isDataLoading} />
 
         {this.dataLayout()}
+        <p>v 1.0.0</p>
       </Wrapper>
     );
   }
