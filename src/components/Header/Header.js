@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import LogoImage from './logo.png'
 
 import {
@@ -12,7 +12,9 @@ import {
 
 const Header = () => (
   <Container>
-    <Logo src={LogoImage} alt="logo" />
+    <Link to="/">
+      <Logo src={LogoImage} alt="logo" />
+    </Link>
     <Content>
       <Title>Police Department of Berlin</Title>
       <Subtitle>Stolen Bikes</Subtitle>
