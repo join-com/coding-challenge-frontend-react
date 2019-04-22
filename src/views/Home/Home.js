@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Pagination } from 'antd'
+import SearchForm from '../../components/SearchForm'
 import TotalFound from '../../components/TotalFound'
 import { getIncidents } from '../../api'
 import 'antd/dist/antd.css'
@@ -20,17 +21,12 @@ class Home extends Component {
       .catch(error => this.setState({ error: error.message, isLoading: false }))
   }
 
-  handleChange = event => {
-    this.setState({ query: event.target.value })
-  }
-
   render () {
     const { isLoading, incidents } = this.state
     return (
       <div>
         <div>
-          <input onChange={this.handleChange} type="text" placeholder="Search case descriptions" />
-          <button>Find cases</button>
+          <SearchForm />
         </div>
         <div>
           <TotalFound amount={incidents.length} />
