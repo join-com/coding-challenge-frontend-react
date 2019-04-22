@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Pagination } from 'antd'
 import SearchForm from '../../components/SearchForm'
 import TotalFound from '../../components/TotalFound'
+import BikeList from '../../components/BikeList'
 import { getIncidents } from '../../api'
 import 'antd/dist/antd.css'
 
@@ -49,7 +50,7 @@ class Home extends Component {
         </div>
         {isLoading
           ? <p>Loading...</p>
-          : <div>Done</div>
+          : <BikeList list={incidents.slice(0, 10)} />
         }
         <div>
           <Pagination total={incidents.length} />
