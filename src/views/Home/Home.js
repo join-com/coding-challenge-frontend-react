@@ -1,9 +1,10 @@
 import React, { Fragment, Component } from 'react'
-import { Row, Col, Pagination } from 'antd'
+import { Row, Col, Pagination, Spin } from 'antd'
 import Header from '../../components/Header'
 import SearchForm from '../../components/SearchForm'
 import TotalFound from '../../components/TotalFound'
 import BikeList from '../../components/BikeList'
+import Loader from '../../components/Loader'
 import { getIncidents } from '../../api'
 import 'antd/dist/antd.css'
 
@@ -58,7 +59,7 @@ class Home extends Component {
     }
 
     if (isLoading) {
-      return <h1>Is loading...</h1>
+      return <Loader />
     }
 
     if (incidents.length === 0) {
@@ -70,10 +71,7 @@ class Home extends Component {
         <TotalContainer>
           <TotalFound amount={incidents && incidents.length} />
         </TotalContainer>
-        {isLoading
-          ? <p>Loading...</p>
-          : <BikeList list={incidents && incidents.slice(startIndex, endIndex)} />
-        }
+        <BikeList list={incidents && incidents.slice(startIndex, endIndex)} />
         <PaginationContainer>
           <Pagination onChange={this.handlePagination} total={incidents && incidents.length} />
         </PaginationContainer>
