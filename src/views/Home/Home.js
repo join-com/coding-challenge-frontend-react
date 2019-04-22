@@ -11,6 +11,8 @@ class Home extends Component {
     isLoading: true,
     error: '',
     query: '',
+    startDate: '',
+    endDate: '',
     currentPage: 1
   }
 
@@ -21,12 +23,26 @@ class Home extends Component {
       .catch(error => this.setState({ error: error.message, isLoading: false }))
   }
 
+  handleQuery = event => {
+    this.setState({query: event.target.value})
+  }
+
+  handleDate = (date, dateStrings) => {
+    this.setState({
+      startDate: dateStrings[0],
+      endDate: dateStrings[1]
+    })
+  }
+
   render () {
     const { isLoading, incidents } = this.state
     return (
       <div>
         <div>
-          <SearchForm />
+          <SearchForm
+            handleQuery={this.handleQuery}
+            handleDate={this.handleDate}
+          />
         </div>
         <div>
           <TotalFound amount={incidents.length} />
