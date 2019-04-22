@@ -14,7 +14,8 @@ class Home extends Component {
     query: '',
     startDate: '',
     endDate: '',
-    currentPage: 1
+    currentPage: 1,
+    itemsPerPage: 10
   }
 
   componentDidMount () {
@@ -35,8 +36,15 @@ class Home extends Component {
     })
   }
 
+  handlePagination = page => {
+    this.setState({ currentPage: page })
+  }
+
   render () {
-    const { isLoading, incidents } = this.state
+    const { isLoading, incidents, itemsPerPage, currentPage } = this.state
+    const endIndex = itemsPerPage * currentPage
+    const startIndex = endIndex - itemsPerPage
+
     return (
       <div>
         <div>
@@ -50,10 +58,10 @@ class Home extends Component {
         </div>
         {isLoading
           ? <p>Loading...</p>
-          : <BikeList list={incidents.slice(0, 10)} />
+          : <BikeList list={incidents.slice(startIndex, endIndex)} />
         }
         <div>
-          <Pagination total={incidents.length} />
+          <Pagination onChange={this.handlePagination} total={incidents.length} />
         </div>
       </div>
     )
