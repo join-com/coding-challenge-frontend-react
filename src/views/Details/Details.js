@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../../components/Header'
+import BikeDescription from '../../components/BikeDescription'
 import { fetchIncident, fetchLocations } from '../../api'
 
 import { Container, HeaderContainer } from './styled'
@@ -32,11 +33,14 @@ class Details extends Component {
   }
 
   render () {
+    const { incident } = this.state
+
     return (
       <Container>
         <HeaderContainer>
           <Header />
         </HeaderContainer>
+        <BikeDescription incident={incident} />
       </Container>
     )
   }
