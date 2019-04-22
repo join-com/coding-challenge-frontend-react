@@ -33,14 +33,14 @@ class Details extends Component {
   }
 
   render () {
-    const { incident } = this.state
+    const { incident, coordinates } = this.state
 
     return (
       <Container>
         <HeaderContainer>
           <Header />
         </HeaderContainer>
-        <BikeDescription incident={incident} />
+        <BikeDescription incident={incident} coordinates={coordinates} />
       </Container>
     )
   }
