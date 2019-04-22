@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Pagination } from 'antd'
+import TotalFound from '../../components/TotalFound'
 import { getIncidents } from '../../api'
 import 'antd/dist/antd.css'
 
@@ -32,7 +33,7 @@ class Home extends Component {
           <button>Find cases</button>
         </div>
         <div>
-          Found cases: {incidents.length}
+          <TotalFound amount={incidents.length} />
         </div>
         {isLoading
           ? <p>Loading...</p>
