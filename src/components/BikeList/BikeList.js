@@ -9,4 +9,8 @@ const BikeList = ({list}) => (
   </List>
 )
 
+BikeList.defaultProps = {
+  list: []
+}
+
 export default BikeList

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { Row, Col, Pagination } from 'antd'
 import Header from '../../components/Header'
 import SearchForm from '../../components/SearchForm'
@@ -23,9 +23,14 @@ class Home extends Component {
 
   componentDidMount () {
     getIncidents()
-      .then(response => response.json())
-      .then(data => this.setState({ incidents: data.incidents, isLoading: false }))
-      .catch(error => this.setState({ error: error.message, isLoading: false }))
+      .then(response => {
+        if (response.status === 404) {
+          this.setState({error: 'Endpoint not found'})
+        }
+        return response.json()
+      })
+      .then(data => this.setState({incidents: data.incidents, isLoading: false}))
+      .catch(error => this.setState({error: error.message, isLoading: false }))
   }
 
   handleQuery = event => {
@@ -43,11 +48,40 @@ class Home extends Component {
     this.setState({ currentPage: page })
   }
 
-  render () {
-    const { isLoading, incidents, itemsPerPage, currentPage } = this.state
+  renderResult = () => {
+    const { isLoading, incidents, itemsPerPage, currentPage, error } = this.state
     const endIndex = itemsPerPage * currentPage
     const startIndex = endIndex - itemsPerPage
 
+    if (error) {
+      return <h1>{error}</h1>
+    }
+
+    if (isLoading) {
+      return <h1>Is loading...</h1>
+    }
+
+    if (incidents.length === 0) {
+      return <h1>No results</h1>
+    }
+
+    return (
+      <Fragment>
+        <TotalContainer>
+          <TotalFound amount={incidents && incidents.length} />
+        </TotalContainer>
+        {isLoading
+          ? <p>Loading...</p>
+          : <BikeList list={incidents && incidents.slice(startIndex, endIndex)} />
+        }
+        <PaginationContainer>
+          <Pagination onChange={this.handlePagination} total={incidents && incidents.length} />
+        </PaginationContainer>
+      </Fragment>
+    )
+  }
+
+  render () {
     return (
       <Container>
         <HeaderContainer>
@@ -57,16 +91,7 @@ class Home extends Component {
           handleQuery={this.handleQuery}
           handleDate={this.handleDate}
         />
-        <TotalContainer>
-          <TotalFound amount={incidents.length} />
-        </TotalContainer>
-        {isLoading
-          ? <p>Loading...</p>
-          : <BikeList list={incidents.slice(startIndex, endIndex)} />
-        }
-        <PaginationContainer>
-          <Pagination onChange={this.handlePagination} total={incidents.length} />
-        </PaginationContainer>
+        {this.renderResult()}
       </Container>
     )
   }
