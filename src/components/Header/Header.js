@@ -4,16 +4,19 @@ import LogoImage from './logo.png'
 
 import {
   Container,
-  Logo
+  Logo,
+  Content,
+  Title,
+  Subtitle
 } from './styled'
 
 const Header = () => (
   <Container>
     <Logo src={LogoImage} alt="logo" />
-    <div>
-      <h1>Police Department of Berlin</h1>
-      <h3>Stolen Bikes</h3>
-    </div>
+    <Content>
+      <Title>Police Department of Berlin</Title>
+      <Subtitle>Stolen Bikes</Subtitle>
+    </Content>
   </Container>
 )
 

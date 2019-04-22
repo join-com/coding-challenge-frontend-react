@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   Form,
+  Row,
+  Col,
   Input,
   Button,
   DatePicker
@@ -11,15 +13,24 @@ const { RangePicker } = DatePicker
 const SearchForm = ({handleQuery, handleDate}) => {
   return (
     <Form layout="inline">
-      <Form.Item>
-        <Input onChange={handleQuery} placeholder="Search case descriptions" />
-      </Form.Item>
-      <Form.Item>
-        <RangePicker onChange={handleDate} />
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary" icon="search" htmlType="submit">Find cases</Button>
-      </Form.Item>
+      <Row gutter={16} type="flex" justify="space-between">
+        <Col span={12}>
+          <Input onChange={handleQuery} placeholder="Search case descriptions" />
+        </Col>
+        <Col span={8}>
+          <RangePicker onChange={handleDate} />
+        </Col>
+        <Col span={4}>
+          <Button
+            type="primary"
+            icon="search"
+            htmlType="submit"
+            block
+          >
+            Find cases
+          </Button>
+        </Col>
+      </Row>
     </Form>
   )
 }

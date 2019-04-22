@@ -1,10 +1,12 @@
 import React from 'react'
 import BikeItem from './BikeItem'
 
+import { List } from './styled'
+
 const BikeList = ({list}) => (
-  <ul>
+  <List>
     {list.map(item => <BikeItem key={item.id} item={item} />)}
-  </ul>
+  </List>
 )
 
 export default BikeList
