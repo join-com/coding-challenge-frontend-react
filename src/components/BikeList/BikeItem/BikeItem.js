@@ -15,7 +15,7 @@ const BikeItem = ({item}) => (
   <Container>
     <Image src={item.media.image_url_thumb || bikeImage} alt="Bike img" />
     <Content>
-      <Link to={`/${item.id}`}>
+      <Link to={`/bike/${item.id}`}>
         <Title>{item.title}</Title>
       </Link>
       <p>{item.description || 'No description'}</p>
