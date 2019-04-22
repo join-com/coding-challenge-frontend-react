@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import Header from '../../components/Header'
 import { fetchIncident, fetchLocations } from '../../api'
+
+import { Container, HeaderContainer } from './styled'
 
 class Details extends Component {
   state = {
@@ -30,9 +33,11 @@ class Details extends Component {
 
   render () {
     return (
-      <div>
-        Details view
-      </div>
+      <Container>
+        <HeaderContainer>
+          <Header />
+        </HeaderContainer>
+      </Container>
     )
   }
 }
