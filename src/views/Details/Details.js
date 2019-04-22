@@ -4,7 +4,9 @@ import { fetchIncident, fetchLocations } from '../../api'
 class Details extends Component {
   state = {
     incident: {},
-    coordinates: [0, 0]
+    incidentError: '',
+    coordinates: [0, 0],
+    coordinatesError: ''
   }
 
   componentDidMount () {
@@ -13,7 +15,7 @@ class Details extends Component {
       .then(response => response.json())
       .then(({ incident }) => {
         this.setState({incident})
-        
+
         //Now when we have all required data, we can fetch coordinates
         fetchLocations(incident.occurred_at, incident.title)
           .then(response => response.json())
@@ -21,9 +23,9 @@ class Details extends Component {
           .then(coordinates => {
             this.setState({coordinates})
           })
-          .catch(error => console.log(error))
+          .catch(error => this.setState({coordinatesError: error}))
       })
-      .catch(error => console.log(error))
+      .catch(error => this.setState({incidentError: error}))
   }
 
   render () {

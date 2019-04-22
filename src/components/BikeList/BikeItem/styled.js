@@ -15,6 +15,10 @@ const Image = styled.img`
   height: 200px;
 `
 
+const Title = styled.h1`
+  color: #1890ff;
+`
+
 const Address = styled.p`
   font-weight: bold;
 `
@@ -23,5 +27,6 @@ export {
   Container,
   Content,
   Image,
+  Title,
   Address
 }
