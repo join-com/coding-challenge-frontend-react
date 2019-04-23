@@ -68,7 +68,7 @@ class Home extends Component {
     const startIndex = endIndex - itemsPerPage
 
     if (error) {
-      return <Error message={error} />
+      return <Error message={error || 'Somethin h'} />
     }
 
     if (isLoading) {
