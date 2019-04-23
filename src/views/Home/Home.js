@@ -4,7 +4,9 @@ import Header from '../../components/Header'
 import SearchForm from '../../components/SearchForm'
 import TotalFound from '../../components/TotalFound'
 import BikeList from '../../components/BikeList'
+import Error from '../../components/Error'
 import Loader from '../../components/Loader'
+
 import { getIncidents } from '../../api'
 import 'antd/dist/antd.css'
 
@@ -55,7 +57,7 @@ class Home extends Component {
     const startIndex = endIndex - itemsPerPage
 
     if (error) {
-      return <h1>{error}</h1>
+      return <Error message={error} />
     }
 
     if (isLoading) {
