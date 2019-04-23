@@ -47,6 +47,17 @@ class Home extends Component {
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault()
+    const { query, startDate, endDate } = this.state
+    this.setState({isLoading: true})
+
+    getIncidents(query, startDate, endDate)
+      .then(response => response.json())
+      .then(data => this.setState({incidents: data.incidents, isLoading: false}))
+      .catch(error => this.setState({error: error.message, isLoading: false }))
+  }
+
   handlePagination = page => {
     this.setState({ currentPage: page })
   }
@@ -90,6 +101,7 @@ class Home extends Component {
         <SearchForm
           handleQuery={this.handleQuery}
           handleDate={this.handleDate}
+          handleSubmit={this.handleSubmit}
         />
         {this.renderResult()}
       </Container>
