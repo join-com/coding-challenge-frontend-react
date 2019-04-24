@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "standard": "standard",
-    "standard:fix": "standard --fix"
+    "standard:fix": "standard --fix",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/Elderbrest/coding-challenge-frontend-react/issues"
   },
-  "homepage": "https://github.com/Elderbrest/coding-challenge-frontend-react#readme",
+  "homepage": "https://elderbrest.github.io/coding-challenge-frontend-react#readme",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
@@ -43,6 +44,7 @@
   },
   "dependencies": {
     "antd": "^3.16.3",
+    "gh-pages": "^2.0.1",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
