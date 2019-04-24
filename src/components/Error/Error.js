@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Message } from './styled'
 
-const Error = ({message}) => (
+const Error = ({ message }) => (
   <Message>
     {message}
   </Message>

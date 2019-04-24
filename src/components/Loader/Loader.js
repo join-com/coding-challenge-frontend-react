@@ -5,7 +5,7 @@ import { Container } from './styled'
 
 const Loader = () => (
   <Container>
-    <Spin tip="Loading..." />
+    <Spin tip='Loading...' />
   </Container>
 )
 

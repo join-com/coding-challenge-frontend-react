@@ -24,11 +24,16 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {},
-          },
-        ],
+            options: {}
+          }
+        ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'assets': path.resolve(__dirname, 'src/assets/')
+    }
   },
   devServer: {
     contentBase: './dist',

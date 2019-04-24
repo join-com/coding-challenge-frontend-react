@@ -7,7 +7,7 @@ configure({ adapter: new Adapter() })
 
 describe('<Error />', () => {
   it('Error component accepts message prop', () => {
-    const wrapper = shallow(<Error message="Oops, something goes wrong"/>)
+    const wrapper = shallow(<Error message='Oops, something goes wrong' />)
     expect(wrapper.getElement().props.children).toBe('Oops, something goes wrong')
   })
 })

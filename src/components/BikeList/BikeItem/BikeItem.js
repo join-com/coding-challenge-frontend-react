@@ -11,9 +11,9 @@ import {
 
 import bikeImage from '../../../assets/img/bike.png'
 
-const BikeItem = ({item}) => (
+const BikeItem = ({ item }) => (
   <Container>
-    <Image src={item.media.image_url_thumb || bikeImage} alt="Bike img" />
+    <Image src={item.media.image_url_thumb || bikeImage} alt='Bike img' />
     <Content>
       <Link to={`/bike/${item.id}`}>
         <Title>{item.title}</Title>

@@ -4,5 +4,5 @@ export const stampToDate = (timestamp = 0) => {
 }
 
 export const dateToStamp = (date = '') => {
-  return (new Date(date).getTime()/1000)
+  return (new Date(date).getTime() / 1000)
 }
