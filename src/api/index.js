@@ -1,5 +1,6 @@
 import { dateToStamp } from '../utils/dateUtil'
-import { API_DOMAIN } from 'constants'
+import { API_DOMAIN } from 'constant'
+const fetch = require('isomorphic-fetch')
 
 export const getIncidents = (query = '', startDate = '', endDate = '') => (
   fetch(`${API_DOMAIN}/incidents?incident_type=theft&page=1&per_page=1000${startDate && '&occurred_at=' + dateToStamp(startDate)}${endDate && '&occurred_before=' + dateToStamp(endDate)}&proximity=Berlin${query && '&query=' + query}`)

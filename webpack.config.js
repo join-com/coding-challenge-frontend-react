@@ -33,7 +33,7 @@ module.exports = {
   resolve: {
     alias: {
       'assets': path.resolve(__dirname, 'src/assets/'),
-      'constants': path.resolve(__dirname, 'src/constants/')
+      'constant': path.resolve(__dirname, 'src/const/')
     }
   },
   devServer: {

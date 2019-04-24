@@ -28,6 +28,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
@@ -56,5 +57,17 @@
     "moduleNameMapper": {
       ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
     }
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "expect"
+    ]
   }
 }

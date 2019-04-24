@@ -3,7 +3,7 @@ import Map from '../Map'
 import Error from '../Error'
 import Loader from '../Loader'
 import { stampToDate } from '../../utils/dateUtil'
-import { GOOGLE_API_KEY } from 'constants'
+import { GOOGLE_API_KEY } from 'constant'
 
 import { Title, Label, MapContainer, MapContent } from './styled'
 
