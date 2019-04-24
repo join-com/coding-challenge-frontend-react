@@ -11,6 +11,7 @@ const Content = styled.div`
 `
 
 const Image = styled.img`
+  min-width: 200px;
   width: 200px;
   height: 200px;
 `
