@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react'
-import { Row, Col, Pagination, Spin } from 'antd'
+import { Pagination } from 'antd'
 import Header from '../../components/Header'
 import SearchForm from '../../components/SearchForm'
 import TotalFound from '../../components/TotalFound'
