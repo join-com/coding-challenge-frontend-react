@@ -14,7 +14,7 @@ import {
 const Header = () => (
   <Container>
     <Link to='/'>
-      <Logo src={LogoImage} alt='logo' />
+      <Logo src={`/${LogoImage}`} alt='logo' />
     </Link>
     <Content>
       <Title>Police Department of Berlin</Title>
