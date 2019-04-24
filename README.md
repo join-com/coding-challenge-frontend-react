@@ -1,6 +1,17 @@
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 ![JOIN Stolen Bike Cases](https://github.com/join-com/coding-challenge-frontend-react/raw/master/illustration.png)
 
+##My sumup
+The task was done in the most simple and classic way:
+- basic webpack config
+- no features such as storage (Redux | Context API ),HOCS, recompose, etc, that would be useful in the real big
+ scalable app
+
+And i would like to thank you for the challenge.
+
+## Demo
+[https://elderbrest.github.io/](https://elderbrest.github.io/)
+
 ## Context
 
 Stolen bikes are a typical problem in Berlin. The Police want to be more efficient in resolving stolen bike cases. They decided to build a software that can automate their processes — the software that you're going to develop.
