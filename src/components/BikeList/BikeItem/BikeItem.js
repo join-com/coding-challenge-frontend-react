@@ -9,7 +9,7 @@ import {
   Address
 } from './styled'
 
-import bikeImage from '../../../assets/img/bike.png'
+import bikeImage from 'assets/img/bike.png'
 
 const BikeItem = ({ item }) => (
   <Container>
