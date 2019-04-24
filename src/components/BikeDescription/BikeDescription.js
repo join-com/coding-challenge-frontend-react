@@ -3,6 +3,7 @@ import Map from '../Map'
 import Error from '../Error'
 import Loader from '../Loader'
 import { stampToDate } from '../../utils/dateUtil'
+import { GOOGLE_API_KEY } from 'constants'
 
 import { Title, Label, MapContainer, MapContent } from './styled'
 
@@ -25,7 +26,7 @@ const BikeDescription = ({ isLoading, incident, coordinates, locationError, loca
       {coordinates &&
         <Map
           isMarkerShown
-          googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBCh3IccYne8EWyPRhxg7AUANOXkF8kcjA&v=3.exp&libraries=geometry,drawing,places'
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<MapContent />}
           containerElement={<MapContainer />}
           mapElement={<MapContent />}

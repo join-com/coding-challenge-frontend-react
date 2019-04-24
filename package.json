@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "standard": "standard",
     "standard:fix": "standard --fix",
-    "deploy": "gh-pages -d build"
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
