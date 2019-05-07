@@ -39,52 +39,52 @@ export default class IncidentModal extends Component {
             >
                 <Header icon='bicycle' content='Bike Details' />
                 <Modal.Content>
-                    <div class="ui items">
-                        <div class="item">
-                            <div class="image ui large">
+                    <div className="ui items">
+                        <div className="item">
+                            <div className="image ui large">
                                 <img src={photo ? photo : require('../assets/images/not-found-bike.png')} />
                             </div>
-                            <div class="content" >
-                                <a class="header" style={{ color: '#ffffff' }}>{title}</a>
-                                <div class="meta">
+                            <div className="content" >
+                                <a className="header" style={{ color: '#ffffff' }}>{title}</a>
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Bike Name: </span>
                                     <span style={{ color: '#ffffff' }}>{name}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Bike Manufacturer: </span>
                                     <span style={{ color: '#ffffff' }}>{manufacturer_name}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Year: </span>
                                     <span style={{ color: '#ffffff' }}>{year}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Color: </span>
                                     <span style={{ color: '#ffffff' }}>{this.state.color}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Stolen On: </span>
                                     <span style={{ color: '#ffffff' }}>{this.state.date_stolen}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Case reported On: </span>
                                     <span style={{ color: '#ffffff' }}>{this.state.date_reported}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Location: </span>
                                     <span style={{ color: '#ffffff' }}>{this.props.bikeDetails.stolen_record.location}</span>
                                 </div>
-                                <div class="meta">
+                                <div className="meta">
                                     <span style={{ color: '#ffffff' }}>Serial No.: </span>
                                     <span style={{ color: '#ffffff' }}>{serial}</span>
                                 </div>
-                                <div class="extra" style={{ color: '#ffffff' }}>
+                                <div className="extra" style={{ color: '#ffffff' }}>
                                     Additional Details: {this.props.bikeDetails.stolen_record.lock_defeat_description}
                                 </div>
                             </div>
                         </div>
-                        <div class="ui text container">
-                            <div class="ui container">
+                        <div className="ui text container">
+                            <div className="ui container">
                                 <p>Theft Details</p>
                                 <p>{this.props.bikeDetails.stolen_record.theft_description}</p>
                             </div>

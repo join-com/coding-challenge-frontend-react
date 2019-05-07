@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import styles from "../assets/style/style.css";
 
 class Search extends Component {
     constructor() {
@@ -13,7 +14,10 @@ class Search extends Component {
 
     onFormSubit = (e) => {
         e.preventDefault();
-        this.props.onSubmit(this.state);
+        if (this.state.proximity) {
+            this.props.onSubmit(this.state)
+        }
+
     }
 
     handleChange = (event) => {
@@ -28,7 +32,7 @@ class Search extends Component {
                     <div className="fields">
                         <div className="seven wide field">
                             <label>Location</label>
-                            <input type="text" placeholder="Enter an address, zipcode or city" value={this.state.proximity}
+                            <input type="text" required placeholder="Enter an address, zipcode or city" value={this.state.proximity}
                                 onChange={(e) => this.setState({ proximity: e.target.value })} />
                         </div>
                         <div className="three wide field">
@@ -47,7 +51,7 @@ class Search extends Component {
                         </div>
                     </div>
                     <div className="field submit-button">
-                        <div className="ui button">Find Cases</div>
+                        <div className="ui button" onClick={this.onFormSubit}>Find Cases</div>
                     </div>
                 </form>
 

@@ -6,6 +6,9 @@ import Search from "./Search";
 import IncidentList from "./IncidentList";
 import Pagination from "./Pagination";
 import IncidentModal from './IncidentModal';
+import Error from './Error';
+
+import styles from "../assets/style/style.css";
 
 class App extends Component {
 
@@ -18,7 +21,8 @@ class App extends Component {
             bikeDetails: '',
             pageOfItems: [],
             loading: false,
-            loadingModal: false
+            loadingModal: false,
+            error: false
         };
         this.onChangePage = this.onChangePage.bind(this);
     }
@@ -28,10 +32,10 @@ class App extends Component {
         Object.keys(args).forEach((key) => (args[key] === "") && delete args[key]);
         axios.get('https://bikewise.org:443/api/v2/incidents?per_page=100000&incident_type=theft', {
             params: args
-        }).then(response => this.setState({ incidents: response.data.incidents, results: [], loading: false })
+        }).then(response => this.setState({ incidents: response.data.incidents, results: [], loading: false, error: false })
         ).catch(error => {
             console.log(error);
-            this.setState({ loading: false });
+            this.setState({ loading: false, error: true });
         });
     };
 
@@ -82,16 +86,15 @@ class App extends Component {
             <Header />
             <div className="ui container">
                 <Search onSubmit={this.onSearchSubmit} />
-                {this.state.incidents.length ? <div class="count item"><input id="filter" type="search" placeholder="Search by title." onChange={this.filterResults} />
-                    <div class="ui label " style={{ float: 'right' }}>
+                {this.state.incidents.length ? <div className="count item"><input id="filter" type="search" placeholder="Search by title." onChange={this.filterResults} />
+                    <div className="ui label " style={{ float: 'right' }}>
                         Total Thefts:
-                    <div class="detail">{this.state.results.length ? this.state.results.length : this.state.incidents.length} </div>
+                    <div className="detail">{this.state.results.length ? this.state.results.length : this.state.incidents.length} </div>
                     </div>
                 </div> : null}
-                <div>
+                {this.state.error ? <Error /> :
                     <div >{this.state.loading ? this.loaderSpinner() : <IncidentList incidents={this.state.incidents} results={this.state.results} itemsPerPage={this.state.pageOfItems} onItemClick={this.itemClicked} />}  </div>
-
-                </div>
+                }
                 {this.state.showIncidentModal ?
                     <IncidentModal onToggle={this.modalToggled} isOpen={this.state.showIncidentModal} bikeDetails={this.state.bikeDetails} /> :
                     null
@@ -102,7 +105,7 @@ class App extends Component {
                             {this.state.pageOfItems.map(item =>
                                 <div key={item.id}>{item.name}</div>
                             )}
-                            {this.state.loading ? null :
+                            {this.state.loading && !this.state.error ? null :
                                 <Pagination items={this.state.results.length ? this.state.results : this.state.incidents} onChangePage={this.onChangePage} />
                             }
                         </div>

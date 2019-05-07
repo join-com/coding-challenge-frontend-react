@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import styles from "../assets/style/style.css";
+
 const propTypes = {
     items: PropTypes.array.isRequired,
     onChangePage: PropTypes.func.isRequired,
@@ -92,8 +94,8 @@ class Pagination extends Component {
         }
 
         return (
-            <div class="pagination_align">
-                <div class="pagination clearfix">
+            <div className="pagination_align">
+                <div className="pagination clearfix">
                     <div className={pager.currentPage === 1 ? 'disabled' : ''}>
                         <a href="javascript:void(0)" onClick={() => this.setPage(1)}>First</a>
                     </div>
