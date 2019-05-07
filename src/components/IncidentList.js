@@ -3,8 +3,8 @@ import React from 'react';
 const IncidentList = props => {
 
     console.log(props.incidents);
-    const incidents = props.incidents.map((incident) => {
-        return (<div className="item">
+    const incidents = props.itemsPerPage.map((incident) => {
+        return (<div className="item" onClick={() => { props.onItemClick(incident); }}>
             <div className="image">
                 <img icon="bicycle" src={incident.media.image_url_thumb ? incident.media.image_url_thumb : require('../assets/images/not-found-bike.png')} />
             </div>
