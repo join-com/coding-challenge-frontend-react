@@ -8,7 +8,7 @@ import Pagination from "./Pagination";
 import IncidentModal from './IncidentModal';
 import Error from './Error';
 
-import styles from "../assets/style/style.css";
+import "../assets/style/style.css";
 
 class App extends Component {
 
@@ -29,12 +29,11 @@ class App extends Component {
 
     onSearchSubmit = (args) => {
         this.setState({ loading: true, incidents: [] });
-        Object.keys(args).forEach((key) => (args[key] === "") && delete args[key]);
+        Object.keys(args).forEach((key) => (args[key] === "" || key === "fromValid" || key === "toValid" || key === "proximityValid") && delete args[key]);
         axios.get('https://bikewise.org:443/api/v2/incidents?per_page=100000&incident_type=theft', {
             params: args
         }).then(response => this.setState({ incidents: response.data.incidents, results: [], loading: false, error: false })
         ).catch(error => {
-            console.log(error);
             this.setState({ loading: false, error: true });
         });
     };
@@ -50,19 +49,14 @@ class App extends Component {
         console.log("Now inci", this.state.incidents);
     };
 
-    searchItem = async (item) => {
+    searchItem = (item) => {
         let url = item.source.api_url;
-        const response = await axios.get(url);
-
-        this.setState({ bikeDetails: response.data.bikes, showIncidentModal: !this.state.showIncidentModal, loadingModal: false });
-        console.log("my state", this.state.bikeDetails);
-
-    };
-
-    itemClicked = (item) => {
-        this.setState({ loadingModal: true });
-        console.log("Clicked Item:", item);
-        this.searchItem(item);
+        axios.get(url).then(response => this.setState({
+            bikeDetails: response.data.bikes, showIncidentModal: !this.state.showIncidentModal, loadingModal: false
+        })
+        ).catch(error => {
+            this.setState({ error: true });
+        });
     };
 
     modalToggled = (toggleFlag) => {
@@ -72,41 +66,43 @@ class App extends Component {
     loaderSpinner = () => (
         <div>
             <Segment>
-                <Dimmer active inverted>
-                    <Loader inverted content='Fetching results...' />
+                <Dimmer active >
+                    <Loader content='Fetching results...' />
                 </Dimmer>
 
-                <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+                <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' className="fetch" />
             </Segment>
         </div>
     );
 
     render() {
+        const { incidents, results, loading, pageOfItems, showIncidentModal, bikeDetails, error } = this.state;
         return (<div>
             <Header />
             <div className="ui container">
                 <Search onSubmit={this.onSearchSubmit} />
-                {this.state.incidents.length ? <div className="count item"><input id="filter" type="search" placeholder="Search by title." onChange={this.filterResults} />
+                {incidents.length ? <div className="count item"><input id="filter" type="search" placeholder="Search by title." onChange={this.filterResults} />
                     <div className="ui label " style={{ float: 'right' }}>
                         Total Thefts:
-                    <div className="detail">{this.state.results.length ? this.state.results.length : this.state.incidents.length} </div>
+                    <div className="detail">{results.length ? results.length : incidents.length} </div>
                     </div>
                 </div> : null}
-                {this.state.error ? <Error /> :
-                    <div >{this.state.loading ? this.loaderSpinner() : <IncidentList incidents={this.state.incidents} results={this.state.results} itemsPerPage={this.state.pageOfItems} onItemClick={this.itemClicked} />}  </div>
+                {error ? <Error /> :
+                    <div >{loading ? this.loaderSpinner() : <IncidentList incidents results itemsPerPage={pageOfItems} onItemClick={this.searchItem} />}  </div>
                 }
-                {this.state.showIncidentModal ?
-                    <IncidentModal onToggle={this.modalToggled} isOpen={this.state.showIncidentModal} bikeDetails={this.state.bikeDetails} /> :
+                {showIncidentModal ?
+                    <IncidentModal onToggle={this.modalToggled} isOpen={showIncidentModal} bikeDetails={bikeDetails} /> :
                     null
                 }
+
                 <div>
                     <div className="container">
                         <div className="text-center">
-                            {this.state.pageOfItems.map(item =>
+                            {pageOfItems.map(item =>
                                 <div key={item.id}>{item.name}</div>
                             )}
-                            {this.state.loading && !this.state.error ? null :
-                                <Pagination items={this.state.results.length ? this.state.results : this.state.incidents} onChangePage={this.onChangePage} />
+                            {loading && !error ? null :
+                                <Pagination items={results.length ? results : incidents} onChangePage={this.onChangePage} />
                             }
                         </div>
                     </div>

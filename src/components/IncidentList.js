@@ -1,16 +1,14 @@
 import React from 'react';
-import styles from "../assets/style/style.css";
+import "../assets/style/style.css";
 
 const IncidentList = props => {
-
-    console.log(props.incidents);
     const incidents = props.itemsPerPage.map((incident) => {
-        return (<div className="item" key={incident.id} onClick={() => { props.onItemClick(incident); }}>
+        return (<div className="item incident" key={incident.id} onClick={() => { props.onItemClick(incident); }}>
             <div className="image">
-                <img icon="bicycle" src={incident.media.image_url_thumb ? incident.media.image_url_thumb : require('../assets/images/not-found-bike.png')} />
+                <img icon="bicycle" alt="bike" src={incident.media.image_url_thumb ? incident.media.image_url_thumb : require('../assets/images/not-found-bike.png')} />
             </div>
             <div className="content">
-                <a className="header">{incident.title}</a>
+                <a className="header" href="#">{incident.title}</a>
                 <div className="meta">
                     <span><strong>Description of theft: </strong> </span>
                     <span>{incident.description ? incident.description : "Not Available"}</span>
@@ -27,13 +25,7 @@ const IncidentList = props => {
                 <div className="description">
                     <p></p>
                 </div>
-                <div className="extra">
-                    Additional Details
-          </div>
             </div>
-
-
-
         </div>)
     });
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from "../assets/style/style.css";
+import "../assets/style/style.css";
 
 const propTypes = {
     items: PropTypes.array.isRequired,
