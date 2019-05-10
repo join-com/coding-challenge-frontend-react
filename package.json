@@ -8,6 +8,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@atlaskit/button": "^13.0.0",
+    "@atlaskit/dynamic-table": "^13.0.0",
     "@craco/craco": "^5.0.2",
     "@types/axios": "^0.14.0",
     "@types/react": "^16.8.17",

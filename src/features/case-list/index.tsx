@@ -10,7 +10,7 @@ const CaseListView = ({ requestCases }: Props) => {
   useEffect(() => {
     requestCases()
   })
-  return <div>Main Page</div>
+  return <div>Case List</div>
 }
 
 export const CaseList = connect(
