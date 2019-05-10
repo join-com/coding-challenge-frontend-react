@@ -6,7 +6,7 @@
     "axios": "^0.18.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0",
+    "react-scripts": "1.1.4",
     "semantic-ui-react": "^0.87.1"
   },
   "scripts": {
@@ -21,7 +21,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
@@ -29,5 +28,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "jest-cli": "^24.8.0",
+    "react-test-renderer": "^16.8.6"
   }
 }

@@ -39,9 +39,7 @@ class Search extends Component {
                 fromValid = Math.floor(new Date(fieldValue) / 1000) <= Math.floor(new Date() / 1000);
                 break;
             case "occurred_before":
-                console.log(fieldValue);
-                console.log(this.state.occurred_after);
-                toValid = this.state.occurred_after ? Math.floor(new Date(fieldValue) / 1000) > this.state.occurred_after : true;
+                toValid = this.state.occurred_after ? Math.floor(new Date(fieldValue) / 1000) >= this.state.occurred_after : true;
 
                 break;
             default:
@@ -57,7 +55,6 @@ class Search extends Component {
     render() {
         const { proximity, proximityValid, fromValid, toValid } = this.state;
 
-        console.log("State", proximity);
         return (
             <div className="ui segment" id="searchBox">
 

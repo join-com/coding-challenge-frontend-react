@@ -42,6 +42,7 @@ export default class IncidentModal extends Component {
                 onClose={this.handleClose}
                 basic
                 size='small'
+                onClick={this.handleClose}
             >
                 <Header icon='bicycle' content='Bike Details' />
                 <Modal.Content>
