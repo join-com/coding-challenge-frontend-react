@@ -8,13 +8,6 @@ import DefaultTemplate from '../../../templates/default';
 
 import NotFoundPage from '../../../pages/404-NotFound';
 import HomePage from '../../../pages/Home';
-import FeatureListPage from '../../../pages/FeatureList';
-
-import SignInPage from '../../../pages/SignIn';
-import SignOutPage from '../../../pages/SignOut';
-import SignUpPage from '../../../pages/SignUp';
-
-import UnauthorizedRoute from '../UnauthorizedRoute';
 
 import App from './';
 
@@ -75,10 +68,6 @@ describe('<App />', () => {
     };
 
     checkRoute('home', 0, '/', true, HomePage, Route);
-    checkRoute('features list', 1, '/features', false, FeatureListPage, Route);
-    checkRoute('sign in', 2, '/signin', false, SignInPage, UnauthorizedRoute);
-    checkRoute('sign up', 3, '/signup', false, SignUpPage, UnauthorizedRoute);
-    checkRoute('sign out', 4, '/signout', false, SignOutPage, Route);
-    checkRoute('not found', 5, '', false, NotFoundPage, Route);
+    checkRoute('not found', 1, '', false, NotFoundPage, Route);
   });
 });

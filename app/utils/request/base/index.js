@@ -1,9 +1,8 @@
 import 'whatwg-fetch';
 
 import { apiBaseUrl } from '../../../env';
-import { isTokenSet, getToken } from '../../auth';
 
-function getRequestParams(method, useJsonHeaders, data, tokenUsed) {
+function getRequestParams(method, useJsonHeaders, data) {
   const params = { method };
 
   if (useJsonHeaders) {
@@ -13,10 +12,6 @@ function getRequestParams(method, useJsonHeaders, data, tokenUsed) {
     };
   } else {
     params.headers = {};
-  }
-
-  if (tokenUsed && isTokenSet()) {
-    params.headers.Authorization = `Bearer ${getToken()}`;
   }
 
   if (data !== undefined) {
