@@ -8,41 +8,30 @@ exports[`<RepositoriesList /> renders a loading spinner if the loading flag is s
     className="component__Wrapper-sc-1v3e81z-0 gjQjkD"
   >
     <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 lmtFYx"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 ilfvYA"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 dufGFp"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 eYmTeu"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 ksuiKX"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 klXKrK"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 kEwzjM"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 bbTZeY"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 MGAPO"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 jiLNcn"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 jAmdJg"
-    />
-    <div
-      className="component__CirclePrimitive-sc-1ls99zz-0 Xlsli"
-    />
+      className="MuiCircularProgress-root-1 MuiCircularProgress-colorPrimary-4 MuiCircularProgress-indeterminate-3"
+      role="progressbar"
+      style={
+        Object {
+          "height": 40,
+          "width": 40,
+        }
+      }
+    >
+      <svg
+        className="MuiCircularProgress-svg-6"
+        viewBox="22 22 44 44"
+      >
+        <circle
+          className="MuiCircularProgress-circle-7 MuiCircularProgress-circleIndeterminate-9"
+          cx={44}
+          cy={44}
+          fill="none"
+          r={20.2}
+          strokeWidth={3.6}
+          style={Object {}}
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;

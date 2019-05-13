@@ -1,16 +1,21 @@
 import React from 'react';
-import Enzyme, { render } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import LoadingIndicator from './';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<LoadingIndicator />', () => {
-  it('should render 12 divs', () => {
-    const renderedComponent = render(
+  let progress;
+
+  beforeEach(() => {
+    progress = shallow(
       <LoadingIndicator />
-    );
-    expect(renderedComponent.find('div').length).toBe(12);
+    ).childAt(0);
   });
+
+  it('renders circular progress', () => expect(progress.type()).toEqual(CircularProgress));
+  it('sets the progress color', () => expect(progress.prop('color')).toBe('primary'));
 });
