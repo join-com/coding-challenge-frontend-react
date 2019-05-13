@@ -1,0 +1,16 @@
+.section {
+  margin: 3em auto;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.centered-section {
+  composes: section;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 1em;
+}

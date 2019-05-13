@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainPage /> renders an empty main page 1`] = `
+<article>
+  <div>
+    <section
+      className="centered-section"
+    >
+      <h2
+        className="component__H2-s3sj03-0 bgrCjd"
+      >
+        <span>
+          Start your next react project in seconds
+        </span>
+      </h2>
+      <p>
+        <span>
+          A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices
+        </span>
+      </p>
+    </section>
+    <section
+      className="section"
+    >
+      <h2
+        className="component__H2-s3sj03-0 bgrCjd"
+      >
+        <span>
+          Try me!
+        </span>
+      </h2>
+      <form
+        className="form"
+        onSubmit={[Function]}
+      >
+        <label
+          htmlFor="username"
+        >
+          <span>
+            Show Github repositories by
+          </span>
+          <span
+            className="prefix"
+          >
+            <span>
+              @
+            </span>
+          </span>
+          <input
+            className="input"
+            id="username"
+            onChange={[Function]}
+            placeholder="username"
+            type="text"
+            value=""
+          />
+        </label>
+      </form>
+    </section>
+  </div>
+</article>
+`;

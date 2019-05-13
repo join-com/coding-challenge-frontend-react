@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`github Saga the repositories data are fetched successfully dispatches the setRepositories action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "SELECT": Object {
+    "args": Array [],
+    "selector": [Function],
+  },
+}
+`;
+
+exports[`github Saga the repositories data are fetched successfully dispatches the setRepositories action 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/users/alexander-elgin/repos",
+      Object {
+        "sort": "updated",
+        "type": "all",
+      },
+      "https://api.github.com",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;
+
+exports[`github Saga the request fails dispatches the setLoadRepositoriesError action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "SELECT": Object {
+    "args": Array [],
+    "selector": [Function],
+  },
+}
+`;
+
+exports[`github Saga the request fails dispatches the setLoadRepositoriesError action 2`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "CALL": Object {
+    "args": Array [
+      "/users/alexander-elgin/repos",
+      Object {
+        "sort": "updated",
+        "type": "all",
+      },
+      "https://api.github.com",
+    ],
+    "context": null,
+    "fn": [Function],
+  },
+}
+`;

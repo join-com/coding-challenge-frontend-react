@@ -1,0 +1,12 @@
+.auth-link-block {
+  padding-left: 1em;
+
+  a {
+    color: #000;
+    padding-left: 0.25em;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

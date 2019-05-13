@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UsernameField /> renders a username field with a value set 1`] = `
+<label
+  htmlFor="username"
+>
+  <span>
+    Show Github repositories by
+  </span>
+  <span
+    className="prefix"
+  >
+    <span>
+      @
+    </span>
+  </span>
+  <input
+    className="input"
+    id="username"
+    onChange={[Function]}
+    placeholder="username"
+    type="text"
+    value="name"
+  />
+</label>
+`;
+
+exports[`<UsernameField /> renders an empty username field with a placeholder 1`] = `
+<label
+  htmlFor="username"
+>
+  <span>
+    Show Github repositories by
+  </span>
+  <span
+    className="prefix"
+  >
+    <span>
+      @
+    </span>
+  </span>
+  <input
+    className="input"
+    id="username"
+    onChange={[Function]}
+    placeholder="username"
+    type="text"
+    value={undefined}
+  />
+</label>
+`;
