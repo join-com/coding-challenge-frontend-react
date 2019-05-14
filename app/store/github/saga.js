@@ -10,7 +10,7 @@ import { get } from '../../utils/request';
 const formSelector = formValueSelector(REPOSITORIES_FORM);
 
 export function* getRepositories() {
-  const username = yield select((state) => formSelector(state, 'username'));
+  const username = yield select((state) => formSelector(state, 'title'));
 
   const params = {
     type: 'all',
@@ -19,7 +19,7 @@ export function* getRepositories() {
 
   try {
     const repositories = yield call(get, `/users/${username}/repos`, params, 'https://api.github.com');
-    yield put(setRepositories(repositories, username));
+    yield put(setRepositories(repositories));
   } catch (err) {
     yield put(setLoadRepositoriesError(err));
   } finally {

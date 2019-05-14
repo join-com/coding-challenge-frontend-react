@@ -8,16 +8,14 @@ import styles from './styles.scss';
 
 const CriteriaForm = ({ handleSubmit, onSubmit }) => (
   <form onSubmit={onSubmit} className={styles.form}>
-    <label htmlFor="username">
-      <FormattedMessage {...messages.showRepositories} />
-      <span className={styles.prefix}><FormattedMessage {...messages.atPrefix} /></span>
-      <FormattedMessage {...messages.username}>
+    <label htmlFor="title">
+      <FormattedMessage {...messages.title}>
         {(placeholder) => (
           <Field
             className={styles.input}
             component="input"
-            id="username"
-            name="username"
+            id="title"
+            name="title"
             type="text"
             placeholder={placeholder}
           />

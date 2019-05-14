@@ -21,12 +21,10 @@ describe('#loadRepositories', () => {
 describe('#setRepositories', () => {
   it('returns an object containing the action type, the username and the repositories list', () => {
     const repositories = ['repository'];
-    const username = 'alexander-elgin';
 
-    expect(setRepositories(repositories, username)).toEqual({
+    expect(setRepositories(repositories)).toEqual({
       type: LOAD_REPOS_SUCCESS,
       repositories,
-      username,
     });
   });
 });

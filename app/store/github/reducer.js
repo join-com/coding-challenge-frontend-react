@@ -11,7 +11,6 @@ const initialState = fromJS({
     data: false,
     error: false,
   },
-  username: '',
 });
 
 function githubReducer(state = initialState, action = {}) {
@@ -22,7 +21,6 @@ function githubReducer(state = initialState, action = {}) {
         .setIn(['repositories', 'error'], false);
     case LOAD_REPOS_SUCCESS:
       return state
-        .set('username', action.username)
         .setIn(['repositories', 'data'], action.repositories);
     case LOAD_REPOS_ERROR:
       return state

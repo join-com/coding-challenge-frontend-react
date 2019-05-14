@@ -34,28 +34,18 @@ exports[`<MainPage /> renders an empty main page 1`] = `
         onSubmit={[Function]}
       >
         <label
-          htmlFor="username"
+          htmlFor="title"
         >
-          <span>
-            Show Github repositories by
-          </span>
-          <span
-            className="prefix"
-          >
-            <span>
-              @
-            </span>
-          </span>
           <input
             className="input"
-            id="username"
-            name="username"
+            id="title"
+            name="title"
             onBlur={[Function]}
             onChange={[Function]}
             onDragStart={[Function]}
             onDrop={[Function]}
             onFocus={[Function]}
-            placeholder="username"
+            placeholder="title"
             type="text"
             value=""
           />

@@ -4,11 +4,9 @@ import {
   selectGithub,
   makeSelectError,
   makeSelectRepositories,
-  makeSelectUsername,
 } from './selectors';
 
 describe('github selectors', () => {
-  const username = 'alexander-elgin';
   const repos = ['repository'];
   const error = new Error('something weird happen');
 
@@ -17,7 +15,6 @@ describe('github selectors', () => {
       data: repos,
       error,
     },
-    username,
   });
 
   const mockedState = fromJS({
@@ -36,10 +33,5 @@ describe('github selectors', () => {
   describe('#makeSelectRepositories', () => {
     const repositoriesSelector = makeSelectRepositories();
     it('select the repositories', () => expect(repositoriesSelector(mockedState)).toEqual(fromJS(repos)));
-  });
-
-  describe('#makeSelectUsername', () => {
-    const currentUsernameSelector = makeSelectUsername();
-    it('select the current username', () => expect(currentUsernameSelector(mockedState)).toEqual(username));
   });
 });

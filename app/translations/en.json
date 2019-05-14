@@ -5,8 +5,6 @@
   "boilerplate.pages.Home.start_project.message": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "boilerplate.pages.Home.tryme.header": "Try me!",
   "boilerplate.pages.Home.RepositoriesList.somethingWrong": "Something went wrong, please try again!",
-  "boilerplate.pages.Home.UsernameField.atPrefix": "@",
-  "boilerplate.pages.Home.UsernameField.showRepositories": "Show Github repositories by",
-  "boilerplate.pages.Home.UsernameField.username": "username",
+  "boilerplate.pages.Home.UsernameField.title": "title",
   "boilerplate.pages.NotFound.header": "Page not found."
 }

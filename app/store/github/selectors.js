@@ -3,12 +3,6 @@ import { createSelector } from 'reselect';
 const selectGithub = (state) => state.get('github');
 
 
-const makeSelectUsername = () => createSelector(
-  selectGithub,
-  (githubState) => githubState.get('username')
-);
-
-
 const makeSelectRepositoriesData = () => createSelector(
   selectGithub,
   (githubState) => githubState.get('repositories')
@@ -29,5 +23,4 @@ export {
   selectGithub,
   makeSelectError,
   makeSelectRepositories,
-  makeSelectUsername,
 };

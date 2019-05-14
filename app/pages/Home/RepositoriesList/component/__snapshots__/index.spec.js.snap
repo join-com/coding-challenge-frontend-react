@@ -70,7 +70,7 @@ exports[`<RepositoriesList /> renders the repository list if the list is not emp
           href="https://github.com/alexander-elgin/ta-maxlength"
           target="_blank"
         >
-          ta-maxlength
+          alexander-elgin/ta-maxlength
         </a>
         <a
           className="component__A-sc-1qxsdu7-0 component__IssuesLink-sc-1rshot1-0 ezZxTa"

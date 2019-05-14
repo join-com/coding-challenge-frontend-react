@@ -10,11 +10,10 @@ export function loadRepositories() {
   };
 }
 
-export function setRepositories(repositories, username) {
+export function setRepositories(repositories) {
   return {
     type: LOAD_REPOS_SUCCESS,
     repositories,
-    username,
   };
 }
 

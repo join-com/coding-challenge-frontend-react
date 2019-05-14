@@ -15,7 +15,6 @@ describe('github Reducer', () => {
       data: false,
       error: false,
     },
-    username: '',
   };
 
   beforeEach(() => {
@@ -35,10 +34,9 @@ describe('github Reducer', () => {
 
   describe('#setRepositories', () => {
     it('resets the error and the repositories list', () => {
-      const username = 'alexander-elgin';
       const reps = ['repository'];
-      const expectedResult = state.set('username', username).setIn(['repositories', 'data'], reps);
-      expect(githubReducer(state, setRepositories(reps, username))).toEqual(expectedResult);
+      const expectedResult = state.setIn(['repositories', 'data'], reps);
+      expect(githubReducer(state, setRepositories(reps))).toEqual(expectedResult);
     });
   });
 
