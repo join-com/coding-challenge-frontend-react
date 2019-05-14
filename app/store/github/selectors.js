@@ -8,16 +8,6 @@ const makeSelectUsername = () => createSelector(
   (githubState) => githubState.get('username')
 );
 
-const makeSelectCurrentUsername = () => createSelector(
-  makeSelectUsername(),
-  (githubUsernameState) => githubUsernameState.get('current')
-);
-
-const makeSelectSelectedUsername = () => createSelector(
-  makeSelectUsername(),
-  (githubUsernameState) => githubUsernameState.get('selected')
-);
-
 
 const makeSelectRepositoriesData = () => createSelector(
   selectGithub,
@@ -39,6 +29,5 @@ export {
   selectGithub,
   makeSelectError,
   makeSelectRepositories,
-  makeSelectCurrentUsername,
-  makeSelectSelectedUsername,
+  makeSelectUsername,
 };

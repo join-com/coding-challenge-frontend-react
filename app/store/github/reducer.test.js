@@ -3,7 +3,6 @@ import { fromJS } from 'immutable';
 import githubReducer from './reducer';
 
 import {
-  changeUsername,
   loadRepositories,
   setRepositories,
   setLoadRepositoriesError,
@@ -16,10 +15,7 @@ describe('github Reducer', () => {
       data: false,
       error: false,
     },
-    username: {
-      current: '',
-      selected: '',
-    },
+    username: '',
   };
 
   beforeEach(() => {
@@ -28,13 +24,6 @@ describe('github Reducer', () => {
 
   describe('default', () => {
     it('returns the initial state', () => expect(githubReducer()).toEqual(state));
-  });
-
-  describe('#changeUsername', () => {
-    it('changes the current username', () => {
-      const username = 'alexander-elgin';
-      expect(githubReducer(state, changeUsername(username))).toEqual(state.setIn(['username', 'current'], username));
-    });
   });
 
   describe('#loadRepositories', () => {
@@ -48,7 +37,7 @@ describe('github Reducer', () => {
     it('resets the error and the repositories list', () => {
       const username = 'alexander-elgin';
       const reps = ['repository'];
-      const expectedResult = state.setIn(['username', 'selected'], username).setIn(['repositories', 'data'], reps);
+      const expectedResult = state.set('username', username).setIn(['repositories', 'data'], reps);
       expect(githubReducer(state, setRepositories(reps, username))).toEqual(expectedResult);
     });
   });

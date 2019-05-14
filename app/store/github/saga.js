@@ -1,14 +1,16 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
+import { formValueSelector } from 'redux-form/immutable';
 
-import { LOAD_REPOS } from './constants';
+import { LOAD_REPOS, REPOSITORIES_FORM } from './constants';
 import { setRepositories, setLoadRepositoriesError } from './actions';
 import { resetLoading } from '../loading/actions';
 
 import { get } from '../../utils/request';
-import { makeSelectCurrentUsername } from './selectors';
+
+const formSelector = formValueSelector(REPOSITORIES_FORM);
 
 export function* getRepositories() {
-  const username = yield select(makeSelectCurrentUsername());
+  const username = yield select((state) => formSelector(state, 'username'));
 
   const params = {
     type: 'all',

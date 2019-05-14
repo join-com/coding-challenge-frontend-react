@@ -3,6 +3,7 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import RepositoriesList from '../RepositoriesList';
+import CriteriaForm from '../UsernameField';
 import { MetaIntl, TitleIntl } from '../../../molecules/Helmet';
 import HomePage from './';
 
@@ -22,7 +23,7 @@ describe('<Home />', () => {
   });
 
   it('renders the centered section', () => expect(component.find('.centered-section').length).toBe(1));
-  it('renders the form', () => expect(component.find('.form').length).toBe(1));
+  it('renders the criteria form', () => expect(component.find(CriteriaForm).length).toBe(1));
   it('renders the section', () => expect(component.find('.section').length).toBe(1));
 
   it('sets the page title', () => {

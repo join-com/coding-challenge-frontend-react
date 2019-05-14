@@ -49,7 +49,12 @@ exports[`<MainPage /> renders an empty main page 1`] = `
           <input
             className="input"
             id="username"
+            name="username"
+            onBlur={[Function]}
             onChange={[Function]}
+            onDragStart={[Function]}
+            onDrop={[Function]}
+            onFocus={[Function]}
             placeholder="username"
             type="text"
             value=""
