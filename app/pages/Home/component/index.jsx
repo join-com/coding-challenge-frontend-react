@@ -6,7 +6,7 @@ import H2 from '../../../atoms/H2';
 import { MetaIntl, TitleIntl } from '../../../molecules/Helmet';
 
 import RepositoriesList from '../RepositoriesList';
-import CriteriaForm from '../UsernameField';
+import CriteriaForm from '../CriteriaForm';
 
 import messages from './messages';
 

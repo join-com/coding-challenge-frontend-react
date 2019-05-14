@@ -3,7 +3,7 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import RepositoriesList from '../RepositoriesList';
-import CriteriaForm from '../UsernameField';
+import CriteriaForm from '../CriteriaForm';
 import { MetaIntl, TitleIntl } from '../../../molecules/Helmet';
 import HomePage from './';
 

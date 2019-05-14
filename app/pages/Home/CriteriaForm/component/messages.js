@@ -7,15 +7,15 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   atPrefix: {
-    id: 'boilerplate.pages.Home.UsernameField.atPrefix',
+    id: 'boilerplate.pages.Home.CriteriaForm.atPrefix',
     defaultMessage: '@',
   },
   showRepositories: {
-    id: 'boilerplate.pages.Home.UsernameField.showRepositories',
+    id: 'boilerplate.pages.Home.CriteriaForm.showRepositories',
     defaultMessage: 'Show Github repositories by',
   },
   username: {
-    id: 'boilerplate.pages.Home.UsernameField.username',
+    id: 'boilerplate.pages.Home.CriteriaForm.username',
     defaultMessage: 'username',
   },
 });
