@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@atlaskit/button": "^13.0.0",
-    "@atlaskit/dynamic-table": "^13.0.0",
+    "@atlaskit/icon": "^17.0.1",
+    "@atlaskit/pagination": "^11.0.1",
     "@craco/craco": "^5.0.2",
     "@types/axios": "^0.14.0",
     "@types/react": "^16.8.17",

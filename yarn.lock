@@ -23,19 +23,6 @@
     memoize-one "^3.0.1"
     tslib "^1.9.3"
 
-"@atlaskit/dynamic-table@^13.0.0":
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/dynamic-table/-/dynamic-table-13.0.0.tgz#a7153ddbc34e9363eee2600bbe1cb48f091d100a"
-  dependencies:
-    "@atlaskit/analytics-next" "^5.0.0"
-    "@atlaskit/pagination" "^11.0.1"
-    "@atlaskit/spinner" "^11.0.0"
-    "@atlaskit/theme" "^9.0.0"
-    "@atlaskit/type-helpers" "^4.0.0"
-    "@babel/runtime" "^7.0.0"
-    prop-types "^15.5.10"
-    react-beautiful-dnd "^10.0.2"
-
 "@atlaskit/icon@^17.0.1":
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/@atlaskit/icon/-/icon-17.0.1.tgz#642ba8aef4e60c9e76b9c06b25ef49564696d13e"
@@ -54,7 +41,7 @@
     "@atlaskit/theme" "^9.0.0"
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/spinner@11.0.0", "@atlaskit/spinner@^11.0.0":
+"@atlaskit/spinner@11.0.0":
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/@atlaskit/spinner/-/spinner-11.0.0.tgz#94877e847f1c1efde021dd6ee374a38261557f7d"
   dependencies:
@@ -828,13 +815,6 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
-
-"@babel/runtime-corejs2@^7.4.2":
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.4.4.tgz#4d4519a4c85e9d98fdff59f5371758a34ae07923"
-  dependencies:
-    core-js "^2.6.5"
-    regenerator-runtime "^0.13.2"
 
 "@babel/runtime@7.4.3":
   version "7.4.3"
@@ -2704,7 +2684,7 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.6.5:
+core-js@^2.4.0:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
@@ -2796,12 +2776,6 @@ css-blank-pseudo@^0.1.4:
   resolved "https://registry.yarnpkg.com/css-blank-pseudo/-/css-blank-pseudo-0.1.4.tgz#dfdefd3254bf8a82027993674ccf35483bfcb3c5"
   dependencies:
     postcss "^7.0.5"
-
-css-box-model@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/css-box-model/-/css-box-model-1.1.2.tgz#c0e2c9d23b1b2fd98759706b88cfd4e2c38db727"
-  dependencies:
-    tiny-invariant "^1.0.4"
 
 css-color-keywords@^1.0.0:
   version "1.0.0"
@@ -5660,7 +5634,7 @@ memoize-one@^3.0.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-3.1.1.tgz#ef609811e3bc28970eac2884eece64d167830d17"
 
-memoize-one@^5.0.0, memoize-one@^5.0.1:
+memoize-one@^5.0.0:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.0.4.tgz#005928aced5c43d890a4dfab18ca908b0ec92cbc"
 
@@ -7151,7 +7125,7 @@ prompts@^2.0.1:
     kleur "^3.0.2"
     sisteransi "^1.0.0"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -7245,10 +7219,6 @@ querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
 
-raf-schd@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/raf-schd/-/raf-schd-4.0.0.tgz#9855756c5045ff4ed4516e14a47719387c3c907b"
-
 raf@3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
@@ -7301,19 +7271,6 @@ react-app-polyfill@^1.0.0:
     regenerator-runtime "0.13.2"
     whatwg-fetch "3.0.0"
 
-react-beautiful-dnd@^10.0.2:
-  version "10.1.1"
-  resolved "https://registry.yarnpkg.com/react-beautiful-dnd/-/react-beautiful-dnd-10.1.1.tgz#d753088d77d7632e77cf8a8935fafcffa38f574b"
-  dependencies:
-    "@babel/runtime-corejs2" "^7.4.2"
-    css-box-model "^1.1.1"
-    memoize-one "^5.0.1"
-    prop-types "^15.6.1"
-    raf-schd "^4.0.0"
-    react-redux "^5.0.7"
-    redux "^4.0.1"
-    tiny-invariant "^1.0.4"
-
 react-dev-utils@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-9.0.0.tgz#356d95db442441c5d4748e0e49f4fd1e71aecbbd"
@@ -7361,21 +7318,9 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
 
-react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-
-react-redux@^5.0.7:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.1.1.tgz#88e368682c7fa80e34e055cd7ac56f5936b0f52f"
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-    hoist-non-react-statics "^3.1.0"
-    invariant "^2.2.4"
-    loose-envify "^1.1.0"
-    prop-types "^15.6.1"
-    react-is "^16.6.0"
-    react-lifecycles-compat "^3.0.0"
 
 react-redux@^7.0.3:
   version "7.0.3"
@@ -8537,7 +8482,7 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
 
-tiny-invariant@^1.0.2, tiny-invariant@^1.0.4:
+tiny-invariant@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.0.4.tgz#346b5415fd93cb696b0c4e8a96697ff590f92463"
 

@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux'
-import { casesReducer, storeKey as casesKey } from '@/features/case-list/ducks'
+import {
+  incidentsReducer,
+  storeKey as incidentsKey,
+} from '@/features/incidents-list/ducks'
 
 export const rootReducer = combineReducers({
-  [casesKey]: casesReducer,
+  [incidentsKey]: incidentsReducer,
 })

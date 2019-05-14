@@ -8,8 +8,8 @@ import 'normalize.css'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
 import { AppHeader } from '@/components/app-header'
-import { CaseList } from '@/features/case-list'
-import { CaseDetails } from '@/features/case-details'
+import { IncidentsList } from '@/features/incidents-list/components/IncidentsList'
+import { IncidentDetails } from '@/features/incident-details'
 import { configureStore } from '@/store'
 
 const store = configureStore()
@@ -20,8 +20,8 @@ const App = () => (
       <Router>
         <Route path="/" component={AppHeader} />
         <Switch>
-          <Route path="/" exact component={CaseList} />
-          <Route path="/cases/:id" exact component={CaseDetails} />
+          <Route path="/" exact component={IncidentsList} />
+          <Route path="/incidents/:id" exact component={IncidentDetails} />
         </Switch>
       </Router>
     </ThemeProvider>

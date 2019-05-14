@@ -1,5 +1,7 @@
-import axios from 'axios'
+import axiosBase from 'axios'
 
-axios.defaults.baseURL = 'https://bikewise.org:443/api/v2'
+const axios = axiosBase.create({
+  baseURL: 'https://bikewise.org:443/api/v2',
+})
 
 export { axios }

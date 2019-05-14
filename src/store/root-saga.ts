@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects'
-import { theftCasesSaga } from '@/features/case-list/saga'
+import { theftIncidentsSaga } from '@/features/incidents-list/saga'
 
 function* rootSaga() {
-  yield all([theftCasesSaga()])
+  yield all([theftIncidentsSaga()])
 }
 
 export { rootSaga }
