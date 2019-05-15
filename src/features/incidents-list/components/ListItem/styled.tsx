@@ -13,7 +13,7 @@ export const ItemContainer = styled.div`
 
 export const ImageContainer = styled.div`
   width: 220px;
-  height: 220px;
+  height: 214px;
   flex-grow: 0;
   flex-shrink: 0;
 `
