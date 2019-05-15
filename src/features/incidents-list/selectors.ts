@@ -2,8 +2,11 @@ import { createSelector } from 'reselect'
 import { storeKey } from './ducks'
 import { AppState } from '@/store/state'
 
+const byTimeOccured = (a: Incident, b: Incident) =>
+  b.occurred_at - a.occurred_at
+
 const mapToPages = (incidents: NormalizedIncidents) => {
-  const pages = Object.values(incidents)
+  const pages = Object.values(incidents).sort(byTimeOccured)
   const pagesCount = Math.ceil(pages.length / 10)
   const incidentsByPage = {}
   for (let page = 1; page <= pagesCount; page++) {

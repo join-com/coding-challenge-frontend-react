@@ -10,6 +10,7 @@ import {
 import { AppState } from '@/store/state'
 import { Pagination } from '@/ui/Pagination'
 import { ListItem } from '@/features/incidents-list/components/ListItem'
+import { SearchForm } from '@/features/incidents-list/components/SearchForm'
 
 interface Props {
   requestIncidents: () => void
@@ -33,6 +34,7 @@ const IncidentsListView = ({
   const displayedIncidents = pages[currentPage] || []
   return (
     <ListContainer>
+      <SearchForm />
       {displayedIncidents.length > 3 && (
         <Pagination
           selectedIndex={currentPage && currentPage - 1}

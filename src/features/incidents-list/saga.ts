@@ -12,10 +12,10 @@ const normalizeById: NormalizeById = incidents =>
     return acc
   }, {})
 
-function* loadIncidentsSaga() {
+function* loadIncidentsSaga({ payload }: { payload: object }) {
   const {
     data: { incidents },
-  } = yield call(getIncidents)
+  } = yield call(getIncidents, { ...payload })
   if (incidents) {
     const normalized = normalizeById(incidents)
     yield put(loadIncidents.success({ incidents: normalized }))
@@ -24,6 +24,7 @@ function* loadIncidentsSaga() {
 }
 
 function* theftIncidentsSaga() {
+  // @ts-ignore
   yield takeEvery(loadIncidents.request.getType(), loadIncidentsSaga)
 }
 
