@@ -4,6 +4,8 @@ import {
   LOAD_ITEMS,
   LOAD_ITEMS_ERROR,
   LOAD_ITEMS_SUCCESS,
+  SET_PAGE,
+  SET_TOTAL,
 } from './constants';
 
 const initialState = fromJS({
@@ -12,6 +14,7 @@ const initialState = fromJS({
     error: false,
   },
   page: 1,
+  total: Infinity,
 });
 
 export default function (state = initialState, action = {}) {
@@ -26,6 +29,12 @@ export default function (state = initialState, action = {}) {
     case LOAD_ITEMS_ERROR:
       return state
         .setIn(['items', 'error'], action.error);
+    case SET_PAGE:
+      return state
+        .set('page', action.page);
+    case SET_TOTAL:
+      return state
+        .set('total', action.total);
     default:
       return state;
   }

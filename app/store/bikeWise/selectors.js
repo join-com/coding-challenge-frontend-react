@@ -22,9 +22,15 @@ const makeSelectPage = () => createSelector(
   (rootState) => rootState.get('page')
 );
 
+const makeSelectTotal = () => createSelector(
+  selectRoot,
+  (rootState) => rootState.get('total')
+);
+
 export {
   selectRoot,
   makeSelectItemsError,
   makeSelectItemsData,
   makeSelectPage,
+  makeSelectTotal,
 };

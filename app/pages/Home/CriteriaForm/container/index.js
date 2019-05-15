@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form/immutable';
 
 import { CRITERIA_FORM } from '../../../../store/bikeWise/constants';
-import { loadItems } from '../../../../store/bikeWise/actions';
+import {loadItems, setPage, setTotal} from '../../../../store/bikeWise/actions';
 import { setLoading } from '../../../../store/loading/actions';
 
 import CriteriaForm from '../component';
@@ -10,6 +10,8 @@ import CriteriaForm from '../component';
 export const mapDispatchToProps = (dispatch) => ({
   onSubmit: (e) => {
     e.preventDefault();
+    dispatch(setPage(1));
+    dispatch(setTotal(Infinity));
     dispatch(setLoading());
     dispatch(loadItems());
   },
