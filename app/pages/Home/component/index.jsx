@@ -11,11 +11,12 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const {loading, error, items} = this.props;
+    const {loading, error, items, total} = this.props;
 
     return (
       <div>
         <CriteriaForm/>
+        {total === Infinity ? null : <div style={{textAlign: 'right', marginBottom: '0.5em'}}>Total: {total}</div>}
         <Paper elevation={1}>
           <ItemsList {...{loading, error, items}} />
         </Paper>

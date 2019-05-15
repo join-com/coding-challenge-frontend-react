@@ -11,7 +11,7 @@ import styles from './styles.scss';
 
 const CriteriaForm = ({ handleSubmit, onSubmit, invalid }) => (
   <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-    <Grid container direction="row" justify="flex-start" alignItems="stretch" spacing={8}>
+    <Grid container direction="row" justify="space-between" alignItems="stretch" spacing={8}>
       <Grid item>
         <FormattedMessage {...messages.caseDescription}>
           {label => (
