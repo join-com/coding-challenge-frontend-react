@@ -4,8 +4,9 @@ import moment from 'moment';
 
 import QueryBuilder from './QueryBuilder';
 import { LOAD_ITEMS, CRITERIA_FORM } from './constants';
-import { makeSelectPage } from './selectors';
-import { setItems, setLoadItemsError } from './actions';
+import { makeSelectPage, makeSelectTotal } from './selectors';
+import { setItems, setLoadItemsError, setTotal } from './actions';
+import { ITEMS_PER_PAGE } from './constants';
 import { resetLoading } from '../loading/actions';
 
 import { get } from '../../utils/request';
@@ -25,11 +26,34 @@ export function* getItems() {
 
   const query = yield select((state) => formSelector(state, 'title'));
   const page = yield select(makeSelectPage());
+  const total = yield select(makeSelectTotal());
   const queryBuilder = new QueryBuilder({...dateInterval, query });
 
   try {
-    const resData = yield call(get, queryBuilder.getPath(), queryBuilder.getParams(page), QueryBuilder.getHost());
-    yield put(setItems(resData.incidents));
+    if(total !== Infinity) {
+      const resData = yield call(get, queryBuilder.getPath(), queryBuilder.getParams(page),
+        QueryBuilder.getHost());
+      yield put(setItems(resData.incidents));
+    } else {
+
+      let currentPage = page;
+      let foundItemsNumber = Infinity;
+
+      while (foundItemsNumber >= ITEMS_PER_PAGE) {
+        const resData = yield call(get, queryBuilder.getPath(), queryBuilder.getParams(currentPage),
+          QueryBuilder.getHost());
+
+        if(currentPage === page) {
+          yield put(setItems(resData.incidents));
+        }
+
+        currentPage++;
+        foundItemsNumber = resData.incidents.length;
+      }
+
+      yield put(setTotal((currentPage - 2) * ITEMS_PER_PAGE + foundItemsNumber));
+
+    }
   } catch (err) {
     yield put(setLoadItemsError(err));
   } finally {

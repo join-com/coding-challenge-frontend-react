@@ -1,3 +1,5 @@
+import { ITEMS_PER_PAGE } from './constants';
+
 class QueryBuilder {
   static getHost() {
     return 'https://bikewise.org:443';
@@ -5,7 +7,7 @@ class QueryBuilder {
 
   constructor(optionalFields) {
     this.params = {
-      per_page: 10,
+      per_page: ITEMS_PER_PAGE,
       proximity: 'Berlin',
       proximity_square: 100,
     };

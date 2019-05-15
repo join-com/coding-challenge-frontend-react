@@ -1,4 +1,5 @@
 export const CRITERIA_FORM = 'forms/bikeWise/CRITERIA_FORM';
+export const ITEMS_PER_PAGE = 10;
 
 export const LOAD_ITEMS = 'actions/bikeWise/LOAD_ITEMS';
 export const LOAD_ITEMS_ERROR = 'actions/bikeWise/LOAD_ITEMS_ERROR';
