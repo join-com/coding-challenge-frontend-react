@@ -1,6 +1,7 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { formValueSelector } from 'redux-form/immutable';
 
+import QueryBuilder from './QueryBuilder';
 import { LOAD_ITEMS, CRITERIA_FORM } from './constants';
 import { setItems, setLoadItemsError } from './actions';
 import { resetLoading } from '../loading/actions';
@@ -11,14 +12,10 @@ const formSelector = formValueSelector(CRITERIA_FORM);
 
 export function* getItems() {
   const username = yield select((state) => formSelector(state, 'title'));
-
-  const params = {
-    type: 'all',
-    sort: 'updated',
-  };
+  const queryBuilder = new QueryBuilder({ username });
 
   try {
-    const items = yield call(get, `/users/${username}/repos`, params, 'https://api.github.com');
+    const items = yield call(get, queryBuilder.getPath(), queryBuilder.getParams(), QueryBuilder.getHost());
     yield put(setItems(items));
   } catch (err) {
     yield put(setLoadItemsError(err));
