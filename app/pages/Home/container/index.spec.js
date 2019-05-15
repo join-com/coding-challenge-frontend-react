@@ -6,11 +6,11 @@ import { Provider } from 'react-redux';
 
 import MainPage from './';
 import configureStore from '../../../utils/store';
-import githubReducer from '../../../store/github/reducer';
+import reducer from '../../../store/bikeWise/reducer';
 import loadingReducer from '../../../store/loading/reducer';
 
 const store = configureStore({
-  github: githubReducer,
+  bikeWise: reducer,
   loading: loadingReducer,
 });
 

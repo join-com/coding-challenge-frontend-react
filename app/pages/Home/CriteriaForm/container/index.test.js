@@ -1,5 +1,5 @@
 import { mapDispatchToProps } from './';
-import { loadRepositories } from '../../../../store/github/actions';
+import { loadItems } from '../../../../store/bikeWise/actions';
 
 describe('<CriteriaForm />', () => {
   describe('#mapDispatchToProps', () => {
@@ -10,11 +10,11 @@ describe('<CriteriaForm />', () => {
         expect(result.onSubmit).toBeDefined();
       });
 
-      it('dispatches the `loadRepositories` when called', () => {
+      it('dispatches the `loadItems` when called', () => {
         const dispatch = jest.fn();
         const result = mapDispatchToProps(dispatch);
         result.onSubmit();
-        expect(dispatch).toHaveBeenCalledWith(loadRepositories());
+        expect(dispatch).toHaveBeenCalledWith(loadItems());
       });
 
       it('prevents execution of the default handler if called with event', () => {

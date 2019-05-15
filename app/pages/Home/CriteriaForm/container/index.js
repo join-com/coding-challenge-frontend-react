@@ -2,11 +2,11 @@ import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form/immutable';
 
-import { REPOSITORIES_FORM } from '../../../../store/github/constants';
-import { loadRepositories } from '../../../../store/github/actions';
+import { CRITERIA_FORM } from '../../../../store/bikeWise/constants';
+import { loadItems } from '../../../../store/bikeWise/actions';
 import { setLoading } from '../../../../store/loading/actions';
 
-import RepositoriesForm from '../component';
+import CriteriaForm from '../component';
 
 export function mapDispatchToProps(dispatch) {
   return {
@@ -16,11 +16,11 @@ export function mapDispatchToProps(dispatch) {
       }
 
       dispatch(setLoading());
-      dispatch(loadRepositories());
+      dispatch(loadItems());
     },
   };
 }
 
 export default reduxForm({
-  form: REPOSITORIES_FORM,
-})(connect(null, mapDispatchToProps)(injectIntl(RepositoriesForm)));
+  form: CRITERIA_FORM,
+})(connect(null, mapDispatchToProps)(injectIntl(CriteriaForm)));

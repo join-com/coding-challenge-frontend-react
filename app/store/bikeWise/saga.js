@@ -1,15 +1,15 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { formValueSelector } from 'redux-form/immutable';
 
-import { LOAD_REPOS, REPOSITORIES_FORM } from './constants';
-import { setRepositories, setLoadRepositoriesError } from './actions';
+import { LOAD_ITEMS, CRITERIA_FORM } from './constants';
+import { setItems, setLoadItemsError } from './actions';
 import { resetLoading } from '../loading/actions';
 
 import { get } from '../../utils/request';
 
-const formSelector = formValueSelector(REPOSITORIES_FORM);
+const formSelector = formValueSelector(CRITERIA_FORM);
 
-export function* getRepositories() {
+export function* getItems() {
   const username = yield select((state) => formSelector(state, 'title'));
 
   const params = {
@@ -18,15 +18,15 @@ export function* getRepositories() {
   };
 
   try {
-    const repositories = yield call(get, `/users/${username}/repos`, params, 'https://api.github.com');
-    yield put(setRepositories(repositories));
+    const items = yield call(get, `/users/${username}/repos`, params, 'https://api.github.com');
+    yield put(setItems(items));
   } catch (err) {
-    yield put(setLoadRepositoriesError(err));
+    yield put(setLoadItemsError(err));
   } finally {
     yield put(resetLoading());
   }
 }
 
 export default function* rootSaga() {
-  yield takeLatest(LOAD_REPOS, getRepositories);
+  yield takeLatest(LOAD_ITEMS, getItems);
 }

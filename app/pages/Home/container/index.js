@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { makeSelectError, makeSelectRepositories } from '../../../store/github/selectors';
+import { makeSelectItemsError, makeSelectItemsData } from '../../../store/bikeWise/selectors';
 import { makeSelectLoading } from '../../../store/loading/selectors';
 
 import HomePageComponent from '../component';
 
 const mapStateToProps = createStructuredSelector({
-  items: makeSelectRepositories(),
+  items: makeSelectItemsData(),
   loading: makeSelectLoading(),
-  error: makeSelectError(),
+  error: makeSelectItemsError(),
 });
 
 export default connect(mapStateToProps)(HomePageComponent);
