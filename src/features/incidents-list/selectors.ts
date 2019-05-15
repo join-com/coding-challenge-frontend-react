@@ -30,24 +30,15 @@ export const getSelectedPage = (state: AppState) => state[storeKey].selectedPage
 export const getIncidentsLoadingStatus = (state: AppState) =>
   state[storeKey].isLoading
 
+export const getFirstPageLoadingStatus = (state: AppState) =>
+  state[storeKey].firstPageLoading
+
+export const selectIncidentsCount = createSelector(
+  [getIncidents, getIncidentsLoadingStatus],
+  (incidents, isLoading) => !isLoading && Object.values(incidents).length,
+)
+
 export const selectPagingData = createSelector(
   [getIncidents],
   mapToPages,
 )
-
-/*
-export const selectPageCount = createSelector(
-  [getIncidents],
-  incidents => Object.keys(incidents).length,
-)
-
-export const selectPages = createSelector(
-  [getIncidents],
-  incidents => Object.keys(incidents),
-)
-
-export const selectIncidentsByPage = createSelector(
-  [getIncidents, getSelectedPage],
-  (incidents, page) => (page ? incidents[page] : []),
-)
-*/

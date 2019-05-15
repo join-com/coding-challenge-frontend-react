@@ -6,24 +6,27 @@ import {
   getIncidentsLoadingStatus,
   selectPagingData,
   getSelectedPage,
+  getFirstPageLoadingStatus,
 } from '@/features/incidents-list/selectors'
 import { AppState } from '@/store/state'
 import { Pagination } from '@/ui/Pagination'
 import { ListItem } from '@/features/incidents-list/components/ListItem'
 import { SearchForm } from '@/features/incidents-list/components/SearchForm'
+import { IncidentsCounter } from '@/features/incidents-list/components/IncidentsCounter'
 
 interface Props {
   requestIncidents: () => void
   selectPage: ({ page }: { page: number }) => void
   pagingData: PagingData
   isLoading: boolean
+  firstPageLoading: boolean
   pages: number[]
   currentPage: number
 }
 
 const IncidentsListView = ({
   requestIncidents,
-  pagingData: { pages, pageCount },
+  pagingData: { pages },
   selectPage,
   currentPage,
   isLoading,
@@ -35,6 +38,7 @@ const IncidentsListView = ({
   return (
     <ListContainer>
       <SearchForm />
+      <IncidentsCounter />
       {displayedIncidents.length > 3 && (
         <Pagination
           selectedIndex={currentPage && currentPage - 1}
@@ -61,6 +65,7 @@ const IncidentsListView = ({
 export const IncidentsList = connect(
   (state: AppState) => ({
     isLoading: getIncidentsLoadingStatus(state),
+    firstPageLoading: getFirstPageLoadingStatus(state),
     pagingData: selectPagingData(state),
     currentPage: getSelectedPage(state),
   }),
