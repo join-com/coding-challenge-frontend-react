@@ -1,4 +1,3 @@
-import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form/immutable';
 
@@ -16,6 +15,14 @@ export const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default reduxForm({
+export default connect(null, mapDispatchToProps)(reduxForm({
   form: CRITERIA_FORM,
-})(connect(null, mapDispatchToProps)(injectIntl(CriteriaForm)));
+  validate: (fields) => {
+    const { from, to } = fields.toJS();
+
+    return (from > to
+      ? { from: 'It should be less', to: 'It should be greater', }
+      : {}
+    );
+  },
+})(CriteriaForm));

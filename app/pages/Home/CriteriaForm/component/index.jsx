@@ -9,23 +9,41 @@ import { TextField } from 'redux-form-material-ui';
 import messages from './messages';
 import styles from './styles.scss';
 
-const CriteriaForm = ({ handleSubmit, onSubmit }) => (
+const CriteriaForm = ({ handleSubmit, onSubmit, invalid }) => (
   <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-    <Grid container direction="row" justify="flex-start" alignItems="flex-end" spacing={8}>
+    <Grid container direction="row" justify="flex-start" alignItems="stretch" spacing={8}>
       <Grid item>
         <FormattedMessage {...messages.caseDescription}>
           {label => (
             <Field
               component={TextField}
               label={label}
-              type="text"
               name="title"
+              type="text"
             />
           )}
         </FormattedMessage>
       </Grid>
       <Grid item>
-        <Button onClick={onSubmit}>
+        <Field
+          component={TextField}
+          label="from"
+          name="from"
+          type="date"
+          style={{ paddingLeft: 40 }}
+        />
+      </Grid>
+      <Grid item>
+        <Field
+          component={TextField}
+          label="to"
+          name="to"
+          type="date"
+          style={{ paddingLeft: 20 }}
+        />
+      </Grid>
+      <Grid item>
+        <Button disabled={invalid} onClick={onSubmit} style={{marginTop: '0.9em'}}>
           <FormattedMessage {...messages.search} />
         </Button>
       </Grid>

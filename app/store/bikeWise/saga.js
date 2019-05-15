@@ -1,5 +1,6 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { formValueSelector } from 'redux-form/immutable';
+import moment from 'moment';
 
 import QueryBuilder from './QueryBuilder';
 import { LOAD_ITEMS, CRITERIA_FORM } from './constants';
@@ -12,9 +13,19 @@ import { get } from '../../utils/request';
 const formSelector = formValueSelector(CRITERIA_FORM);
 
 export function* getItems() {
-  const page = yield select(makeSelectPage());
+  const dateInterval = {};
+  dateInterval.occurred_after = yield select((state) => formSelector(state, 'from'));
+  dateInterval.occurred_before = yield select((state) => formSelector(state, 'to'));
+
+  Object.keys(dateInterval).forEach(field => {
+    if(dateInterval[field] !== undefined) {
+      dateInterval[field] = moment(dateInterval[field]).unix();
+    }
+  });
+
   const query = yield select((state) => formSelector(state, 'title'));
-  const queryBuilder = new QueryBuilder({ query });
+  const page = yield select(makeSelectPage());
+  const queryBuilder = new QueryBuilder({...dateInterval, query });
 
   try {
     const resData = yield call(get, queryBuilder.getPath(), queryBuilder.getParams(page), QueryBuilder.getHost());

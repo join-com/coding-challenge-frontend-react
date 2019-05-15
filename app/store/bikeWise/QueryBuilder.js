@@ -3,16 +3,18 @@ class QueryBuilder {
     return 'https://bikewise.org:443';
   }
 
-  constructor({ query }) {
+  constructor(optionalFields) {
     this.params = {
       per_page: 10,
       proximity: 'Berlin',
       proximity_square: 100,
     };
 
-    if(query !== undefined) {
-      this.params.query = query;
-    }
+    Object.keys(optionalFields).forEach(field => {
+      if(optionalFields[field] !== undefined) {
+        this.params[field] = optionalFields[field];
+      }
+    });
   }
 
   getParams(page) {

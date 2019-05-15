@@ -51,7 +51,10 @@ const getListItems = items => (
 
 const ItemsList = ({ loading, error, items }) => {
   if(loading || (items !== false)) {
-    return loading ? <LoadingIndicator /> : getListItems(items);
+    return loading ? <LoadingIndicator /> : (items.length === 0
+      ? <div style={{padding: 10}}>No results found</div>
+      : getListItems(items)
+    );
   }
 
   return error !== false ? <Error><FormattedMessage {...messages.somethingWrong} /></Error> : null;
