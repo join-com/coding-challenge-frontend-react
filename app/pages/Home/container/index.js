@@ -7,7 +7,7 @@ import { makeSelectLoading } from '../../../store/loading/selectors';
 import HomePageComponent from '../component';
 
 const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepositories(),
+  items: makeSelectRepositories(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
 });

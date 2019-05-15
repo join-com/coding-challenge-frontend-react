@@ -51,6 +51,9 @@ exports[`<MainPage /> renders an empty main page 1`] = `
           />
         </label>
       </form>
+      <div
+        className="MuiPaper-root-1 MuiPaper-elevation1-4 MuiPaper-rounded-2"
+      />
     </section>
   </div>
 </article>
