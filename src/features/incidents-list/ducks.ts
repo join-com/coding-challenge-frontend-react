@@ -8,6 +8,9 @@ export const storeKey = 'incidents'
 
 export const loadIncidents = createRequestAction(`${storeKey}/loadIncidents`)
 export const loadFirstPage = createRequestAction(`${storeKey}/loadFirstPage`)
+export const loadSingleIncident = createRequestAction(
+  `${storeKey}/loadSingleIncident`,
+)
 export const selectPage = createAction(`${storeKey}/selectPage`)
 
 export type State = {
@@ -30,10 +33,12 @@ incidentsReducer.on(loadIncidents.request, state => ({
   ...state,
   isLoading: true,
 }))
+
 incidentsReducer.on(selectPage, (state, { page }: { page: number }) => ({
   ...state,
   selectedPage: page,
 }))
+
 incidentsReducer.on(loadIncidents.success, (state, { incidents }) => ({
   ...state,
   isLoading: false,
@@ -43,6 +48,7 @@ incidentsReducer.on(loadIncidents.success, (state, { incidents }) => ({
     ...incidents,
   },
 }))
+
 incidentsReducer.on(loadIncidents.failure, state => ({
   ...state,
   firstPageLoading: false,
@@ -66,6 +72,14 @@ incidentsReducer.on(loadFirstPage.success, (state, { incidents }) => ({
 incidentsReducer.on(loadFirstPage.failure, state => ({
   ...state,
   firstPageLoading: false,
+}))
+
+incidentsReducer.on(loadSingleIncident.success, (state, { incident }) => ({
+  ...state,
+  incidents: {
+    ...state.incidents,
+    ...incident,
+  },
 }))
 
 export { incidentsReducer }

@@ -9,7 +9,7 @@ import './index.css'
 import * as serviceWorker from './serviceWorker'
 import { AppHeader } from '@/components/app-header'
 import { IncidentsList } from '@/features/incidents-list/components/IncidentsList'
-import { IncidentDetails } from '@/features/incident-details'
+import { IncidentDetails } from '@/features/incidents-list/components/IncidentDetails'
 import { configureStore } from '@/store'
 
 const store = configureStore()

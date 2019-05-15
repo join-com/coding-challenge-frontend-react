@@ -20,6 +20,7 @@ const apiFields: {
   occurredBefore: 'occurred_before',
   occurredAfter: 'occurred_after',
   query: 'query',
+  perPage: 'per_page',
 }
 
 const formatters: {
@@ -45,7 +46,6 @@ const formatParams = (params: Params) =>
 
 export const getIncidents = ({ perPage, ...rest }: Params) => {
   const resultsQty = perPage || RESULTS_MAX_QTY
-
   return axios.get('/incidents?page=1', {
     params: {
       per_page: resultsQty,
@@ -56,3 +56,6 @@ export const getIncidents = ({ perPage, ...rest }: Params) => {
     },
   })
 }
+
+export const getSingleIncident = ({ id }: { id: string }) =>
+  axios.get(`https://bikewise.org:443/api/v2/incidents/${id}`)

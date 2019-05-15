@@ -1,8 +1,8 @@
 import {
   takeEvery, call, put, fork, all,
 } from 'redux-saga/effects'
-import { loadIncidents, loadFirstPage } from './ducks'
-import { getIncidents } from './api'
+import { loadIncidents, loadFirstPage, loadSingleIncident } from './ducks'
+import { getIncidents, getSingleIncident } from './api'
 
 type NormalizeById = (incidents: Incidents) => NormalizedIncidents
 
@@ -43,9 +43,21 @@ function* loadIncidentsSaga({ payload }: { payload: object }) {
   ])
 }
 
+function* loadSingleIncidentSaga({ payload }: { payload: { id: string } }) {
+  const {
+    data: { incident },
+  } = yield call(getSingleIncident, { ...payload })
+
+  if (incident) {
+    const normalized = normalizeById([incident])
+    yield put(loadSingleIncident.success({ incident: normalized }))
+  }
+  yield put(loadSingleIncident.failure())
+}
+
 function* theftIncidentsSaga() {
-  // @ts-ignore
-  yield takeEvery(loadIncidents.request.getType(), loadIncidentsSaga)
+  yield takeEvery(loadIncidents.request, loadIncidentsSaga)
+  yield takeEvery(loadSingleIncident.request, loadSingleIncidentSaga)
 }
 
 export { theftIncidentsSaga }
