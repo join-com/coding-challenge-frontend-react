@@ -1,10 +1,6 @@
 {
-  "boilerplate.pages.Home.metaTitle": "Home",
-  "boilerplate.pages.Home.metaDescription": "The React.js Boilerplate application homepage",
-  "boilerplate.pages.Home.start_project.header": "Start your next react project in seconds",
-  "boilerplate.pages.Home.start_project.message": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
-  "boilerplate.pages.Home.tryme.header": "Try me!",
   "boilerplate.pages.Home.ItemsList.somethingWrong": "Something went wrong, please try again!",
-  "boilerplate.pages.Home.UsernameField.title": "title",
+  "boilerplate.pages.Home.UsernameField.caseDescription": "Case Description",
+  "boilerplate.pages.Home.UsernameField.search": "search",
   "boilerplate.pages.NotFound.header": "Page not found."
 }

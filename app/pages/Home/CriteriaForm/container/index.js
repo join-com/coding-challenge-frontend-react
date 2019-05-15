@@ -8,18 +8,13 @@ import { setLoading } from '../../../../store/loading/actions';
 
 import CriteriaForm from '../component';
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    onSubmit: (evt) => {
-      if (evt !== undefined && evt.preventDefault) {
-        evt.preventDefault();
-      }
-
-      dispatch(setLoading());
-      dispatch(loadItems());
-    },
-  };
-}
+export const mapDispatchToProps = (dispatch) => ({
+  onSubmit: (e) => {
+    e.preventDefault();
+    dispatch(setLoading());
+    dispatch(loadItems());
+  },
+});
 
 export default reduxForm({
   form: CRITERIA_FORM,

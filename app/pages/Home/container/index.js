@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import { loadItems } from '../../../store/bikeWise/actions';
+import { setLoading } from '../../../store/loading/actions';
 import { makeSelectItemsError, makeSelectItemsData } from '../../../store/bikeWise/selectors';
 import { makeSelectLoading } from '../../../store/loading/selectors';
 
-import HomePageComponent from '../component';
+import HomePage from '../component';
 
 const mapStateToProps = createStructuredSelector({
   items: makeSelectItemsData(),
@@ -12,4 +14,11 @@ const mapStateToProps = createStructuredSelector({
   error: makeSelectItemsError(),
 });
 
-export default connect(mapStateToProps)(HomePageComponent);
+export const mapDispatchToProps = dispatch => ({
+  search: () => {
+    dispatch(setLoading());
+    dispatch(loadItems());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

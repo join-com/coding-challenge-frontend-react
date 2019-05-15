@@ -11,6 +11,7 @@ const initialState = fromJS({
     data: false,
     error: false,
   },
+  page: 1,
 });
 
 export default function (state = initialState, action = {}) {

@@ -2,7 +2,6 @@ import { createSelector } from 'reselect';
 
 const selectRoot = (state) => state.get('bikeWise');
 
-
 const makeSelectItems = () => createSelector(
   selectRoot,
   (rootState) => rootState.get('items')
@@ -18,9 +17,14 @@ const makeSelectItemsError = () => createSelector(
   (itemsState) => itemsState.get('error')
 );
 
+const makeSelectPage = () => createSelector(
+  selectRoot,
+  (rootState) => rootState.get('page')
+);
 
 export {
   selectRoot,
   makeSelectItemsError,
   makeSelectItemsData,
+  makeSelectPage,
 };

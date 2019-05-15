@@ -6,8 +6,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  title: {
-    id: 'boilerplate.pages.Home.CriteriaForm.title',
-    defaultMessage: 'title',
+  caseDescription: {
+    id: 'boilerplate.pages.Home.CriteriaForm.caseDescription',
+    defaultMessage: 'Case Description',
+  },
+  search: {
+    id: 'boilerplate.pages.Home.CriteriaForm.search',
+    defaultMessage: 'search',
   },
 });

@@ -1,21 +1,26 @@
 class QueryBuilder {
   static getHost() {
-    return 'https://api.github.com';
+    return 'https://bikewise.org:443';
   }
 
-  constructor({ username }) {
-    this.username = username;
-  }
-
-  getParams() {
-    return {
-      type: 'all',
-      sort: 'updated',
+  constructor({ query }) {
+    this.params = {
+      per_page: 10,
+      proximity: 'Berlin',
+      proximity_square: 100,
     };
+
+    if(query !== undefined) {
+      this.params.query = query;
+    }
+  }
+
+  getParams(page) {
+    return {...this.params, ...{page}};
   }
 
   getPath() {
-    return `/users/${this.username}/repos`;
+    return '/api/v2/incidents';
   }
 }
 
