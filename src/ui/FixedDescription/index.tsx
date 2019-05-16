@@ -1,0 +1,1 @@
+export { FixedDescription } from './styled'

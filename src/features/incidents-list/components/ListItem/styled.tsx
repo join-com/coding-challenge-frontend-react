@@ -16,11 +16,10 @@ export const ImageContainer = styled.div`
   height: 214px;
   flex-grow: 0;
   flex-shrink: 0;
-`
-
-export const StyledImage = styled.img`
-  height: 100%;
-  width: 100%;
+  background-image: ${({ image }: { image: string }) => `url(${image})`};
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 `
 
 export const ContentContainer = styled.div`

@@ -1,7 +1,12 @@
 import {
   takeEvery, call, put, fork, all,
 } from 'redux-saga/effects'
-import { loadIncidents, loadFirstPage, loadSingleIncident } from './ducks'
+import {
+  loadIncidents,
+  loadFirstPage,
+  loadSingleIncident,
+  LoadIncidentsPayload,
+} from './ducks'
 import { getIncidents, getSingleIncident } from './api'
 
 type NormalizeById = (incidents: Incidents) => NormalizedIncidents
@@ -13,7 +18,7 @@ const normalizeById: NormalizeById = incidents =>
     return acc
   }, {})
 
-function* loadFirstPageSaga({ payload }: { payload: object }) {
+function* loadFirstPageSaga({ payload }: { payload: LoadIncidentsPayload }) {
   yield put(loadFirstPage.request())
   const {
     data: { incidents },
@@ -25,8 +30,7 @@ function* loadFirstPageSaga({ payload }: { payload: object }) {
   yield put(loadFirstPage.failure())
 }
 
-function* loadFullDataSaga({ payload }: { payload: object }) {
-  console.info(payload)
+function* loadFullDataSaga({ payload }: { payload: LoadIncidentsPayload }) {
   const {
     data: { incidents },
   } = yield call(getIncidents, { ...payload })
@@ -37,7 +41,7 @@ function* loadFullDataSaga({ payload }: { payload: object }) {
   yield put(loadIncidents.failure())
 }
 
-function* loadIncidentsSaga({ payload }: { payload: object }) {
+function* loadIncidentsSaga({ payload }: { payload: LoadIncidentsPayload }) {
   yield all([
     fork(loadFirstPageSaga, { payload }),
     fork(loadFullDataSaga, { payload }),

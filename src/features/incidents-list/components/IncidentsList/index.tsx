@@ -6,7 +6,7 @@ import {
   selectPage,
   LoadIncidentsPayload,
 } from '@/features/incidents-list/ducks'
-import { ListContainer } from './styled'
+import { ListContainer, CounterContainer } from './styled'
 import {
   getIncidentsLoadingStatus,
   selectPagingData,
@@ -48,15 +48,32 @@ const IncidentsListView = ({
   useEffect(() => {
     const queryParams = queryString.parse(search)
     console.log('hook')
-    console.log(queryParams)
     requestIncidents(queryParams)
   }, [])
   const displayedIncidents = (currentPage && pages[currentPage]) || []
+  const noResults = currentPage && displayedIncidents.length === 0
+  const manyResults = displayedIncidents.length > 3
   return (
     <ListContainer>
       <SearchForm />
-      <IncidentsCounter />
-      {displayedIncidents.length > 3 && (
+      <CounterContainer>
+        {manyResults && (
+          <Pagination
+            selectedIndex={currentPage && currentPage - 1}
+            onChange={(_, page: number) => {
+              selectPage({ page })
+            }}
+            pages={Object.keys(pages)}
+          />
+        )}
+        <IncidentsCounter />
+      </CounterContainer>
+
+      {noResults && 'No results'}
+      {displayedIncidents.map(incident => (
+        <ListItem key={incident.id} {...incident} />
+      ))}
+      {!noResults && (
         <Pagination
           selectedIndex={currentPage && currentPage - 1}
           onChange={(_, page: number) => {
@@ -65,16 +82,6 @@ const IncidentsListView = ({
           pages={Object.keys(pages)}
         />
       )}
-      {displayedIncidents.map(incident => (
-        <ListItem key={incident.id} {...incident} />
-      ))}
-      <Pagination
-        selectedIndex={currentPage && currentPage - 1}
-        onChange={(_, page: number) => {
-          selectPage({ page })
-        }}
-        pages={Object.keys(pages)}
-      />
     </ListContainer>
   )
 }
