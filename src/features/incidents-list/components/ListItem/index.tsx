@@ -20,7 +20,6 @@ export const ListItem = ({
   updated_at,
   address,
   id,
-  ...props
 }: Props) => (
   <ItemContainer>
     <ImageContainer
