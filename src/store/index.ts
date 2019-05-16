@@ -8,15 +8,21 @@ const sagaMiddleware = createSagaMiddleware()
 const configureStore = () => {
   // @ts-ignore
   const reduxDevTools = global.__REDUX_DEVTOOLS_EXTENSION__ && global.__REDUX_DEVTOOLS_EXTENSION__()
+  // @ts-ignore
+  const store = global.__REDUX_DEVTOOLS_EXTENSION__
+    ? createStore(
+      rootReducer,
 
-  const store = createStore(
-    rootReducer,
+      compose(
+        applyMiddleware(sagaMiddleware),
+        reduxDevTools,
+      ),
+    )
+    : createStore(
+      rootReducer,
 
-    compose(
-      applyMiddleware(sagaMiddleware),
-      reduxDevTools,
-    ),
-  )
+      compose(applyMiddleware(sagaMiddleware)),
+    )
   sagaMiddleware.run(rootSaga)
   return store
 }
