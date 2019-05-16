@@ -14,3 +14,8 @@ export const H3 = styled.h3`
   color: ${({ theme }) => theme.color.text};
   margin: 4px 0;
 `
+
+export const H4 = styled.h4`
+  color: ${({ theme }) => theme.color.text};
+  margin: 4px 0;
+`

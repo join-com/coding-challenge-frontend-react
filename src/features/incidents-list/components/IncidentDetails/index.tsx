@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import GoogleMapReact from 'google-map-react'
+import { format } from 'date-fns/esm'
 import { H3 } from '@/ui/typography'
 import { AppError } from '@/ui/AppError'
 import { GOOGLE_MAPS_API_KEY } from '@/constants'
@@ -10,7 +11,7 @@ import {
   getRequestError,
 } from '@/features/incidents-list/selectors'
 import { getGeoJson } from '@/features/incidents-list/api'
-import { DetailsContainer, MapContainer } from './styled'
+import { DetailsContainer, MapContainer, StyledInfo } from './styled'
 import { AppState } from '@/store/state'
 import { MapMarker } from '@/features/incidents-list/components/MapMarker'
 
@@ -39,6 +40,8 @@ const Details = ({
   description,
   loadSingleIncident,
   requestError,
+  occurred_at,
+  address,
   ...props
 }: Props) => {
   const [coordinates, updateCoordinates] = useState([] as Coordinates)
@@ -59,6 +62,8 @@ const Details = ({
           title,
           id,
           description,
+          occurred_at,
+          address,
           ...props,
         })
           .then(response => response.data.features[0].geometry.coordinates)
@@ -78,6 +83,16 @@ const Details = ({
     <DetailsContainer>
       {requestError && <AppError message={requestError} />}
       <H3>{title}</H3>
+      {occurred_at && (
+        <StyledInfo>
+          Stolen
+          {' '}
+          {format(new Date(occurred_at * 1000), "MMMM do, hh:mm aaaaa'm'")}
+          {' at '}
+          {address || 'unknown location'}
+        </StyledInfo>
+      )}
+
       <MapContainer>
         {geoDataError && <AppError message={geoDataError} />}
         {latitude && longitude && (
@@ -94,7 +109,9 @@ const Details = ({
           </GoogleMapReact>
         )}
       </MapContainer>
+
       <H3>DESCRIPTION OF INCEDENT</H3>
+
       <p>{description || 'None'}</p>
     </DetailsContainer>
   )

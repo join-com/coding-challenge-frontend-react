@@ -1,4 +1,5 @@
 import styled from '@/libs/styled-components'
+import { H4 } from '@/ui/typography'
 
 export const DetailsContainer = styled.div`
   width: 100%;
@@ -11,4 +12,8 @@ export const MapContainer = styled.div`
   width: 600px;
   margin-top: 16px;
   margin-bottom: 16px;
+`
+
+export const StyledInfo = styled(H4)`
+  margin-top: 24px;
 `

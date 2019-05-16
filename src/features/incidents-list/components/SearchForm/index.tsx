@@ -21,6 +21,8 @@ const onSubmit = (
 ) => (values: object) => {
   if (Object.keys(values).length) {
     push({ search: queryString.stringify(values) })
+  } else {
+    push({ search: '' })
   }
   requestIncidents(values)
 }
