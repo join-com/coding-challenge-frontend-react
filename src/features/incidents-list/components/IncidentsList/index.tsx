@@ -66,6 +66,7 @@ const IncidentsListView = ({
             selectedIndex={currentPage && currentPage - 1}
             onChange={(_, page: number) => {
               selectPage({ page })
+              window.scrollTo(0, 0)
             }}
             pages={Object.keys(pages)}
           />
@@ -77,11 +78,12 @@ const IncidentsListView = ({
       {displayedIncidents.map(incident => (
         <ListItem key={incident.id} {...incident} />
       ))}
-      {(!noResults && displayedIncidents.length > 0) && (
+      {!noResults && displayedIncidents.length > 0 && (
         <Pagination
           selectedIndex={currentPage && currentPage - 1}
           onChange={(_, page: number) => {
             selectPage({ page })
+            window.scrollTo(0, 0)
           }}
           pages={Object.keys(pages)}
         />
