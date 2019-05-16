@@ -26,4 +26,13 @@ export const mapToPages: MapToPages = (incidents) => {
   }
 }
 
-export const identity = (value: string) => value
+export const identity = (value: any) => value
+
+type NormalizeById = (incidents: Incidents) => NormalizedIncidents
+
+export const normalizeById: NormalizeById = incidents =>
+  incidents.reduce((acc: NormalizedIncidents, current) => {
+    const { id } = current
+    acc[id] = current
+    return acc
+  }, {})

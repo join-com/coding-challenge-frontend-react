@@ -55,17 +55,11 @@ export const getSingleIncident = ({ id }: { id: string }) =>
   axios.get(`https://bikewise.org:443/api/v2/incidents/${id}`)
 
 export const getGeoJson = ({ occurred_at, title }: Incident) =>
-  axios
-    .get('/locations?', {
-      params: {
-        occurred_before: occurred_at + 1, // api sometimes return nothing with exact timestamps
-        occurred_after: occurred_at - 1,
-        incident_type: THEFT,
-        query: title,
-      },
-    })
-
-    .then(response => response.data.features[0].geometry.coordinates)
-    .catch((error) => {
-      console.log(error)
-    })
+  axios.get('/locations?', {
+    params: {
+      occurred_before: occurred_at + 1, // api sometimes return nothing with exact timestamps
+      occurred_after: occurred_at - 1,
+      incident_type: THEFT,
+      query: title,
+    },
+  })

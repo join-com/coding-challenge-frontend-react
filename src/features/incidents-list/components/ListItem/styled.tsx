@@ -19,7 +19,7 @@ export const ImageContainer = styled.div`
   background-image: ${({ image }: { image: string }) => `url(${image})`};
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left center;
 `
 
 export const ContentContainer = styled.div`

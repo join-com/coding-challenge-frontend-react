@@ -8,15 +8,7 @@ import {
   LoadIncidentsPayload,
 } from './ducks'
 import { getIncidents, getSingleIncident } from './api'
-
-type NormalizeById = (incidents: Incidents) => NormalizedIncidents
-
-const normalizeById: NormalizeById = incidents =>
-  incidents.reduce((acc: NormalizedIncidents, current) => {
-    const { id } = current
-    acc[id] = current
-    return acc
-  }, {})
+import { normalizeById } from './utils'
 
 function* loadFirstPageSaga({ payload }: { payload: LoadIncidentsPayload }) {
   yield put(loadFirstPage.request())

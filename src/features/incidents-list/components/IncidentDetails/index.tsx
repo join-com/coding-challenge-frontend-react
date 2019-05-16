@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import GoogleMapReact from 'google-map-react'
 import { H3 } from '@/ui/typography'
+import { AppError } from '@/ui/AppError'
 import { GOOGLE_MAPS_API_KEY } from '@/constants'
 import { loadSingleIncident } from '@/features/incidents-list/ducks'
-import { getIncidentById } from '@/features/incidents-list/selectors'
+import {
+  getIncidentById,
+  getRequestError,
+} from '@/features/incidents-list/selectors'
 import { getGeoJson } from '@/features/incidents-list/api'
 import { DetailsContainer, MapContainer } from './styled'
 import { AppState } from '@/store/state'
@@ -18,21 +22,27 @@ type RouteProps = {
   }
 }
 
-type Props = Incident &
-  RouteProps & {
-    loadSingleIncident: ({ id }: { id: string }) => void
-  }
+type OwnProps = {
+  loadSingleIncident: ({ id }: { id: string }) => void
+  requestError: null | string
+}
+
+type Props = Incident & RouteProps & OwnProps
 
 type Coordinates = [number, number] | []
+
+type GeoDataError = string | null
 
 const Details = ({
   id,
   title,
   description,
   loadSingleIncident,
+  requestError,
   ...props
 }: Props) => {
   const [coordinates, updateCoordinates] = useState([] as Coordinates)
+  const [geoDataError, setGeoDataError] = useState(null as GeoDataError)
 
   useEffect(() => {
     if (!id) {
@@ -51,6 +61,11 @@ const Details = ({
           description,
           ...props,
         })
+          .then(response => response.data.features[0].geometry.coordinates)
+          .catch((error) => {
+            console.log(error)
+            setGeoDataError('Error loading geo data for incident')
+          })
         updateCoordinates(geoCoordinates)
       }
       getCoordinates()
@@ -61,8 +76,10 @@ const Details = ({
 
   return (
     <DetailsContainer>
+      {requestError && <AppError message={requestError} />}
       <H3>{title}</H3>
       <MapContainer>
+        {geoDataError && <AppError message={geoDataError} />}
         {latitude && longitude && (
           <GoogleMapReact
             bootstrapURLKeys={{ key: GOOGLE_MAPS_API_KEY }}
@@ -93,6 +110,7 @@ export const IncidentDetails = connect(
     }: RouteProps,
   ) => ({
     ...getIncidentById(state, id),
+    requestError: getRequestError(state),
   }),
   { loadSingleIncident: loadSingleIncident.request },
 )(Details)

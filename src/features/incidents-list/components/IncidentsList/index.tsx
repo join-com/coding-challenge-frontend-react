@@ -12,9 +12,11 @@ import {
   selectPagingData,
   getSelectedPage,
   getFirstPageLoadingStatus,
+  getRequestError,
 } from '@/features/incidents-list/selectors'
 import { AppState } from '@/store/state'
 import { Pagination } from '@/ui/Pagination'
+import { AppError } from '@/ui/AppError'
 import { ListItem } from '@/features/incidents-list/components/ListItem'
 import { SearchForm } from '@/features/incidents-list/components/SearchForm'
 import { IncidentsCounter } from '@/features/incidents-list/components/IncidentsCounter'
@@ -33,6 +35,7 @@ interface OwnProps {
   firstPageLoading: boolean
   pages: number[]
   currentPage: number | undefined
+  requestError: null | string
 }
 
 type Props = OwnProps & RouterProps
@@ -42,12 +45,12 @@ const IncidentsListView = ({
   pagingData: { pages },
   selectPage,
   currentPage,
+  requestError,
   isLoading,
   location: { search },
 }: Props) => {
   useEffect(() => {
     const queryParams = queryString.parse(search)
-    console.log('hook')
     requestIncidents(queryParams)
   }, [])
   const displayedIncidents = (currentPage && pages[currentPage]) || []
@@ -68,7 +71,7 @@ const IncidentsListView = ({
         )}
         <IncidentsCounter />
       </CounterContainer>
-
+      {requestError && <AppError message={requestError} />}
       {noResults && 'No results'}
       {displayedIncidents.map(incident => (
         <ListItem key={incident.id} {...incident} />
@@ -92,6 +95,7 @@ export const IncidentsList = connect(
     firstPageLoading: getFirstPageLoadingStatus(state),
     pagingData: selectPagingData(state),
     currentPage: getSelectedPage(state),
+    requestError: getRequestError(state),
   }),
   {
     requestIncidents: loadIncidents.request,

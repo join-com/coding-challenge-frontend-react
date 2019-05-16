@@ -3,6 +3,8 @@ import {
   createReducer,
   createAction,
 } from '@/libs/redux-act'
+import { StringableActionCreator } from '@redux-saga/types'
+import { INCIDENTS_ERROR } from './constants'
 
 export const storeKey = 'incidents'
 
@@ -25,6 +27,7 @@ export type State = {
   isLoading: boolean
   selectedPage: undefined | number
   firstPageLoading: boolean
+  requestError: null | string
 }
 
 const initialState = {
@@ -32,6 +35,7 @@ const initialState = {
   isLoading: false,
   firstPageLoading: false,
   selectedPage: undefined,
+  requestError: null,
 }
 
 const incidentsReducer = createReducer<State>({}, initialState)
@@ -50,12 +54,14 @@ incidentsReducer.on(loadIncidents.success, (state, { incidents }) => ({
   ...state,
   isLoading: false,
   selectedPage: 1,
+  requestError: null,
   incidents: {
     ...incidents,
   },
 }))
 
 incidentsReducer.on(loadIncidents.failure, state => ({
+  requestError: INCIDENTS_ERROR,
   ...state,
   firstPageLoading: false,
 }))
@@ -86,6 +92,11 @@ incidentsReducer.on(loadSingleIncident.success, (state, { incident }) => ({
     ...state.incidents,
     ...incident,
   },
+}))
+
+incidentsReducer.on(loadSingleIncident.failure, state => ({
+  ...state,
+  error: INCIDENTS_ERROR,
 }))
 
 export { incidentsReducer }

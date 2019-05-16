@@ -16,6 +16,8 @@ export const getIncidentsLoadingStatus = (state: AppState) =>
 export const getFirstPageLoadingStatus = (state: AppState) =>
   state[storeKey].firstPageLoading
 
+export const getRequestError = (state: AppState) => state[storeKey].requestError
+
 export const selectIncidentsCount = createSelector(
   [getIncidents, getIncidentsLoadingStatus],
   (incidents, isLoading) => !isLoading && Object.values(incidents).length,
