@@ -3,7 +3,6 @@ import {
   createReducer,
   createAction,
 } from '@/libs/redux-act'
-import { StringableActionCreator } from '@redux-saga/types'
 import { INCIDENTS_ERROR } from './constants'
 
 export const storeKey = 'incidents'

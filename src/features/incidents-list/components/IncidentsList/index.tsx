@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import { useDidMount } from 'react-hooks-lib'
 import queryString from 'query-string'
 import {
   loadIncidents,
@@ -49,10 +50,10 @@ const IncidentsListView = ({
   isLoading,
   location: { search },
 }: Props) => {
-  useEffect(() => {
+  useDidMount(() => {
     const queryParams = queryString.parse(search)
     requestIncidents(queryParams)
-  }, [])
+  })
   const displayedIncidents = (currentPage && pages[currentPage]) || []
   const noResults = currentPage && displayedIncidents.length === 0
   const manyResults = displayedIncidents.length > 3

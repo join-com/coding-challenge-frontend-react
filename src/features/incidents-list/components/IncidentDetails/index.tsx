@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useDidMount } from 'react-hooks-lib'
 import { connect } from 'react-redux'
 import GoogleMapReact from 'google-map-react'
 import { format } from 'date-fns/esm'
@@ -47,24 +48,20 @@ const Details = ({
   const [coordinates, updateCoordinates] = useState([] as Coordinates)
   const [geoDataError, setGeoDataError] = useState(null as GeoDataError)
 
-  useEffect(() => {
+  useDidMount(() => {
     if (!id) {
       const idFromRoute = props.match.params.id.toString()
 
       loadSingleIncident({ id: idFromRoute })
     }
-  })
+  }, [props.match.params.id])
 
   useEffect(() => {
     if (id) {
       const getCoordinates = async () => {
         const geoCoordinates: [number, number] = await getGeoJson({
-          title,
-          id,
-          description,
           occurred_at,
-          address,
-          ...props,
+          title,
         })
           .then(response => response.data.features[0].geometry.coordinates)
           .catch((error) => {
@@ -75,7 +72,7 @@ const Details = ({
       }
       getCoordinates()
     }
-  }, [id])
+  }, [id, title, occurred_at])
 
   const [longitude, latitude] = coordinates
 

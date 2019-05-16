@@ -6,3 +6,8 @@ declare module 'date-fns/esm' {
     isValid, getUnixTime, toDate, format,
   }
 }
+
+declare module 'react-hooks-lib' {
+  var useDidMount: any
+  export { useDidMount }
+}

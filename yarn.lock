@@ -7569,6 +7569,10 @@ react-final-form@^4.1.0:
   dependencies:
     "@babel/runtime" "^7.3.4"
 
+react-hooks-lib@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/react-hooks-lib/-/react-hooks-lib-0.0.18.tgz#4b646ba503fcb1cb40febe97e43a356dc6a5c38c"
+
 react-input-autosize@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"

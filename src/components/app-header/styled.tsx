@@ -14,7 +14,7 @@ export const PoliceEmblem = styled.div`
   width: 80px;
   height: 120px;
   background: ${`url(${PoliceSvg})`};
-  background-size: 60px;
+  background-size: 80px;
   background-position: center;
   background-repeat: no-repeat;
 `

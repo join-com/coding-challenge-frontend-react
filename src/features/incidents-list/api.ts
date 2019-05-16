@@ -54,7 +54,12 @@ export const getIncidents = ({ perPage, ...rest }: LoadIncidentsPayload) => {
 export const getSingleIncident = ({ id }: { id: string }) =>
   axios.get(`https://bikewise.org:443/api/v2/incidents/${id}`)
 
-export const getGeoJson = ({ occurred_at, title }: Incident) =>
+export interface GeoRequestParams {
+  occurred_at: number
+  title: string
+}
+
+export const getGeoJson = ({ occurred_at, title }: GeoRequestParams) =>
   axios.get('/locations?', {
     params: {
       occurred_before: occurred_at + 1, // api sometimes return nothing with exact timestamps
