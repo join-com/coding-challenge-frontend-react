@@ -19,3 +19,8 @@ export const H4 = styled.h4`
   color: ${({ theme }) => theme.color.text};
   margin: 4px 0;
 `
+
+export const P = styled.p`
+  color: ${({ theme }) => theme.color.text};
+  margin: 10px 0;
+`

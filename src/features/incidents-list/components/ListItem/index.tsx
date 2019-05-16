@@ -1,5 +1,5 @@
 import React from 'react'
-import { H3 } from '@/ui/typography'
+import { H3, P } from '@/ui/typography'
 import { format } from 'date-fns/esm'
 import { FixedDescription } from '@/ui/FixedDescription'
 import {
@@ -17,6 +17,7 @@ export const ListItem = ({
   description,
   media: { image_url_thumb },
   occurred_at,
+  updated_at,
   address,
   id,
   ...props
@@ -31,11 +32,15 @@ export const ListItem = ({
         <StyledLink to={`/incidents/${id}`}>{title}</StyledLink>
       </H3>
       <FixedDescription>{description || 'No description'}</FixedDescription>
-      <p>
+      <P>
         {format(new Date(occurred_at * 1000), 'MMMM dd yyyy')}
         {' - '}
         {address}
-      </p>
+      </P>
+      <P>
+        {'Reported: '}
+        {format(new Date(updated_at * 1000), 'MMMM dd yyyy')}
+      </P>
     </ContentContainer>
   </ItemContainer>
 )

@@ -77,7 +77,7 @@ const IncidentsListView = ({
       {displayedIncidents.map(incident => (
         <ListItem key={incident.id} {...incident} />
       ))}
-      {!noResults && (
+      {(!noResults && displayedIncidents.length > 0) && (
         <Pagination
           selectedIndex={currentPage && currentPage - 1}
           onChange={(_, page: number) => {
