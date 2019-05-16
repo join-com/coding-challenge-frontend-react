@@ -22,7 +22,10 @@ export const ListItem = ({
   ...props
 }: Props) => (
   <ItemContainer>
-    <ImageContainer image={image_url_thumb || BikePlaceholder} />
+    <ImageContainer
+      image={image_url_thumb || BikePlaceholder}
+      fallback={BikePlaceholder}
+    />
     <ContentContainer>
       <H3>
         <StyledLink to={`/incidents/${id}`}>{title}</StyledLink>

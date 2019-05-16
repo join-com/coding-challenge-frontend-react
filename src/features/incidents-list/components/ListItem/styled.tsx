@@ -16,7 +16,13 @@ export const ImageContainer = styled.div`
   height: 214px;
   flex-grow: 0;
   flex-shrink: 0;
-  background-image: ${({ image }: { image: string }) => `url(${image})`};
+  background-image: ${({
+    image,
+    fallback,
+  }: {
+  image: string
+  fallback: string
+  }) => `url(${image}), url(${fallback})`};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;
