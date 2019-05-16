@@ -21,5 +21,5 @@ declare type PagingData = {
   pages: {
     [page: string]: Incidents
   }
-  pageCount: number
+  pagesCount: number
 }

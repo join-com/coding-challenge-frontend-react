@@ -2,12 +2,7 @@ interface PagesMap {
   [page: string]: Incidents
 }
 
-type MapToPages = (
-  incidents: NormalizedIncidents,
-) => {
-  pages: PagesMap
-  pageCount: number
-}
+type MapToPages = (incidents: NormalizedIncidents) => PagingData
 
 const byTimeOccured = (a: Incident, b: Incident) =>
   b.occurred_at - a.occurred_at
@@ -19,10 +14,9 @@ export const mapToPages: MapToPages = (incidents) => {
   for (let page = 1; page <= pagesCount; page++) {
     incidentsByPage[page] = incidentsByTime.splice(0, 10)
   }
-  console.log('rest incidents', incidentsByTime)
   return {
     pages: incidentsByPage,
-    pageCount: Object.keys(incidentsByPage).length,
+    pagesCount,
   }
 }
 
