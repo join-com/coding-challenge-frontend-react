@@ -6,6 +6,13 @@ import {
 
 export const storeKey = 'incidents'
 
+export type LoadIncidentsPayload = {
+  perPage?: number
+  query?: string
+  occurredBefore?: string
+  occurredAfter?: string
+}
+
 export const loadIncidents = createRequestAction(`${storeKey}/loadIncidents`)
 export const loadFirstPage = createRequestAction(`${storeKey}/loadFirstPage`)
 export const loadSingleIncident = createRequestAction(
@@ -44,7 +51,6 @@ incidentsReducer.on(loadIncidents.success, (state, { incidents }) => ({
   isLoading: false,
   selectedPage: 1,
   incidents: {
-    ...state.incidents,
     ...incidents,
   },
 }))

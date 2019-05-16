@@ -6,11 +6,20 @@ import { PickerContainer } from './styled'
 export const FFDatePicker = ({
   input,
   placeholder,
+  meta: { error, touched },
 }: {
 input: object
 placeholder: string
+meta: {
+error?: string
+touched?: boolean
+}
 }) => (
   <PickerContainer>
-    <DatePicker {...input} placeholder={placeholder} />
+    <DatePicker
+      {...input}
+      placeholder={error && touched ? error : placeholder}
+      isInvalid={error && touched}
+    />
   </PickerContainer>
 )

@@ -26,6 +26,7 @@ function* loadFirstPageSaga({ payload }: { payload: object }) {
 }
 
 function* loadFullDataSaga({ payload }: { payload: object }) {
+  console.info(payload)
   const {
     data: { incidents },
   } = yield call(getIncidents, { ...payload })

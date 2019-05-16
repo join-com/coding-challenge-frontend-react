@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { loadIncidents, selectPage } from '@/features/incidents-list/ducks'
+import queryString from 'query-string'
+import {
+  loadIncidents,
+  selectPage,
+  LoadIncidentsPayload,
+} from '@/features/incidents-list/ducks'
 import { ListContainer } from './styled'
 import {
   getIncidentsLoadingStatus,
@@ -14,15 +19,23 @@ import { ListItem } from '@/features/incidents-list/components/ListItem'
 import { SearchForm } from '@/features/incidents-list/components/SearchForm'
 import { IncidentsCounter } from '@/features/incidents-list/components/IncidentsCounter'
 
-interface Props {
-  requestIncidents: () => void
+interface RouterProps {
+  location: {
+    search: string
+  }
+}
+
+interface OwnProps {
+  requestIncidents: (payload: LoadIncidentsPayload) => void
   selectPage: ({ page }: { page: number }) => void
   pagingData: PagingData
   isLoading: boolean
   firstPageLoading: boolean
   pages: number[]
-  currentPage: number
+  currentPage: number | undefined
 }
+
+type Props = OwnProps & RouterProps
 
 const IncidentsListView = ({
   requestIncidents,
@@ -30,11 +43,15 @@ const IncidentsListView = ({
   selectPage,
   currentPage,
   isLoading,
+  location: { search },
 }: Props) => {
   useEffect(() => {
-    requestIncidents()
+    const queryParams = queryString.parse(search)
+    console.log('hook')
+    console.log(queryParams)
+    requestIncidents(queryParams)
   }, [])
-  const displayedIncidents = pages[currentPage] || []
+  const displayedIncidents = (currentPage && pages[currentPage]) || []
   return (
     <ListContainer>
       <SearchForm />
@@ -73,5 +90,4 @@ export const IncidentsList = connect(
     requestIncidents: loadIncidents.request,
     selectPage,
   },
-  // @ts-ignore
 )(IncidentsListView)
