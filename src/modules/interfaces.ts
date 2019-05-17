@@ -17,6 +17,7 @@ export interface Report {
   readonly description: string
   readonly address: string
   readonly occurred_at: number
+  readonly updated_at: number
   readonly url: string
   readonly media: {
     readonly image_url?: string
@@ -31,7 +32,7 @@ export interface Error {
 
 export interface FetchDataAction {
   readonly type: typeof Types.FETCH_DATA
-  params: Filters
+  readonly params: Filters
 }
 export interface FetchDataSuccessAction {
   readonly type: typeof Types.FETCH_DATA_SUCCESS

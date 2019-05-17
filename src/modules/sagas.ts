@@ -24,13 +24,15 @@ function* watchFetchData() {
 }
 function sendRequest(params: Filters) {
   return axios.request<ServerData>({
-    url: 'https://bikewise.org:443/api/v2/incidents?page=1&incident_type=theft&proximity=Berlin&proximity_square=100',
-  })
+    url: 'https://bikewise.org:443/api/v2/incidents',
+    params,
+  });
 }
 function* fetchData(action: FetchDataActionType) {
-  const response = yield call(sendRequest, action.params);
-  console.log(response.data.incidents);
-  yield put(fetchDataSuccess(response.data.incidents));
-
-  // console.log(params);
+  try {
+    const response = yield call(sendRequest, action.params);
+    yield put(fetchDataSuccess(response.data.incidents));
+  } catch (e) {
+    yield put(fetchDataError({ field: 'request', message: 'Error request' }));
+  }
 }
