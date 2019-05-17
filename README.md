@@ -31,7 +31,7 @@ As a police officer:
 
 Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
 
-For that, you’ll need to make requests to a publicly-available [API](https://www.bikewise.org/documentation/api_v2) to get JSON content and print it on view. 
+For that, you’ll need to make requests to a publicly-available [API](https://www.bikewise.org/documentation/api_v2) to get JSON content and print it on view.
 
 The API is known to have some limitations. If you are not able to implement a particular requirement, please provide a description of what and why you could not implements.
 
