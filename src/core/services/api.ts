@@ -1,10 +1,9 @@
 import { create } from 'apisauce';
 
-const dev = 'http://192.168.88.68:9094/api/v1/';
+const baseURL = 'https://bikewise.org:443/api/v2/';
 
-// define the api
 const api = create({
-    baseURL: dev,
+    baseURL,
     headers: {
         Accept: 'application/json, text/plain, */*',
         'Access-Control-Allow-Origin': '*',

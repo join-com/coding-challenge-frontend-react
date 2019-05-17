@@ -9,17 +9,7 @@ export const history = createHistory();
 const navMiddleware = routerMiddleware(history);
 const sagaMiddleware = createSagaMiddleware();
 
-function getDevTools(): Function {
-    // @ts-ignore
-    if (window !== undefined && window.devToolsExtension !== undefined) {
-        // @ts-ignore
-        return window.devToolsExtension;
-    }
-
-    // @ts-ignore
-    return () => x => x;
-}
-
+/* eslint-disable @typescript-eslint/no-use-before-define */
 const devTools = getDevTools();
 
 const actionToPlainObject: Middleware = () => (next: Dispatch<void>) => <A extends Action>(action: A) => {
@@ -34,3 +24,14 @@ const enhancer = compose(
 export const store = createStore(reducers, appInitialState, enhancer);
 
 sagaMiddleware.run(sagas);
+
+function getDevTools(): Function {
+    // @ts-ignore
+    if (window !== undefined && window.devToolsExtension !== undefined) {
+        // @ts-ignore
+        return window.devToolsExtension;
+    }
+
+    // @ts-ignore
+    return () => x => x;
+}
