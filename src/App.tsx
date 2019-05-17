@@ -1,6 +1,7 @@
 import React from 'react';
-import './App.css';
 
-export const App: React.FC = (): React.ReactElement => {
-    return <div>Test</div>;
-};
+export class App extends React.Component {
+    public render(): React.ReactElement {
+        return <div>App</div>;
+    }
+}
