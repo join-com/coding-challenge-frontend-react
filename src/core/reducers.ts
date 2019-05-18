@@ -1,5 +1,6 @@
 import { routerReducer, RouterState } from 'react-router-redux';
 import { combineReducers } from 'redux';
+
 import { TIncidentsState, incidentsInitialState, incidents } from './incidents/reducer';
 
 export const reducers = combineReducers({

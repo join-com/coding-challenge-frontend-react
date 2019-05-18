@@ -7,11 +7,17 @@ export function camelToSnake(value: string) {
 }
 
 export function objKeysCamelToSnake(obj: object) {
-    const result = {};
+    if (!obj) {
+        return obj;
+    }
+
+    const result: { [key: string]: object } = {};
 
     for (const key of Object.keys(obj)) {
         // @ts-ignore
-        result[camelToSnake(key)] = obj[key];
+        const value = obj[key];
+
+        result[camelToSnake(key)] = typeof value === 'object' ? objKeysCamelToSnake(value) : value;
     }
 
     return result;

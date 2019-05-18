@@ -1,43 +1,94 @@
 import { Reducer } from 'redux';
+import * as R from 'ramda';
+
 import { AppState } from 'core/reducers';
-import { ActionTypes, ActionsAll } from './actions';
-import { Incident } from 'types';
 import { MAX_INCIDENTS_COUNT } from 'core/constants';
+import { arrayToObj } from 'core/utils/arrayToObj';
+import { objKeysSnakeToCamel } from 'core/utils/snakeCase';
+import { ActionTypes as GeoActionTypes, ActionsAll as GeoActionsAll } from 'core/geo/actions';
+import { Incident } from 'types';
+
+import { ActionTypes as IncidentsActionTypes, ActionsAll as IncidentsActionsAll } from './actions';
+
+interface Incidents {
+    [key: string]: Incident;
+}
+
+const initIncidents: Incidents = {};
 
 interface TState {
     error?: object | boolean;
     requesting?: boolean;
-    incidents: Incident[];
+    incidents: Incidents;
     countPages?: number;
     currentPage: number;
 }
 
 const initialState: TState = {
-    incidents: [],
+    incidents: initIncidents,
     requesting: false,
     currentPage: 1,
 };
 
 export type TIncidentsState = TState;
 export const incidentsInitialState = initialState;
-export const incidents: Reducer<TState> = (state: TState = initialState, action: ActionsAll) => {
+
+export const incidents: Reducer<TState> = (
+    state: TState = initialState,
+    action: IncidentsActionsAll | GeoActionsAll,
+) => {
     console.log(`action ${action.type}`, action);
 
     switch (action.type) {
-        case ActionTypes.SET_INITIAL_STATE:
+        case IncidentsActionTypes.SET_INITIAL_STATE:
             return initialState;
 
-        case ActionTypes.INCIDENTS_REQUEST:
+        case IncidentsActionTypes.INCIDENTS_REQUEST:
             return { ...state, requesting: true };
 
-        case ActionTypes.INCIDENTS_REQUEST_SUCCESS:
+        case IncidentsActionTypes.INCIDENTS_REQUEST_SUCCESS:
             if (action.requestOptions.perPage === MAX_INCIDENTS_COUNT) {
                 return { ...state, countPages: action.incidents.length, error: false };
             }
 
-            return { ...state, incidents: action.incidents, requesting: false, error: false };
+            return {
+                ...state,
+                // convert from database format
+                // @ts-ignore
+                incidents: arrayToObj(action.incidents.map(objKeysSnakeToCamel), 'id') as Incidents,
+                requesting: false,
+                error: false,
+            };
 
-        case ActionTypes.INCIDENTS_REQUEST_FAIL:
+        case IncidentsActionTypes.INCIDENTS_REQUEST_FAIL:
+            return { ...state, requesting: false, error: action.error };
+
+        case GeoActionTypes.GEO_REQUEST:
+            return { ...state, requesting: true };
+
+        case GeoActionTypes.GEO_REQUEST_SUCCESS:
+            const pairsWithUpdatedGeo: R.KeyValuePair<string, Incident>[] = R.toPairs<Incident>(state.incidents).map(
+                ([key, incident]) => {
+                    const features = action.geo.features.filter(feature => feature.properties.id === incident.id);
+
+                    return [
+                        key,
+                        features.length === 0
+                            ? incident
+                            : Object.assign({}, incident, { geometry: features[0].geometry }),
+                    ];
+                },
+            );
+
+            return {
+                ...state,
+                // update geometry in incident
+                incidents: R.fromPairs<Incident>(pairsWithUpdatedGeo),
+                requesting: false,
+                error: false,
+            };
+
+        case GeoActionTypes.GEO_REQUEST_FAIL:
             return { ...state, requesting: false, error: action.error };
 
         default:

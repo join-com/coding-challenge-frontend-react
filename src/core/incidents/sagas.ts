@@ -1,9 +1,10 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 
 import api from 'core/services/api';
-import { ActionTypes, IncidentsRequest, IncidentsRequestFail, IncidentsRequestSuccess } from './actions';
 import { objKeysCamelToSnake } from 'core/utils/camelCase';
 import { Incident } from 'types';
+
+import { ActionTypes, IncidentsRequest, IncidentsRequestFail, IncidentsRequestSuccess } from './actions';
 
 function* incidents({ options }: IncidentsRequest) {
     try {

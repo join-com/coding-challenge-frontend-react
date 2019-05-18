@@ -9,7 +9,7 @@ export const history = createHistory();
 const navMiddleware = routerMiddleware(history);
 const sagaMiddleware = createSagaMiddleware();
 
-/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable-next-line @typescript-eslint/no-use-before-define */
 const devTools = getDevTools();
 
 const actionToPlainObject: Middleware = () => (next: Dispatch<void>) => <A extends Action>(action: A) => {
