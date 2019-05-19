@@ -42,6 +42,14 @@ class PaginationComponent extends React.Component<PaginationProps, PaginationSta
       offset: (props.page - 1) * 10,
     };
   }
+  componentDidUpdate(props: PaginationProps) {
+    console.log(props);
+    if (this.state.offset !== (props.page - 1) * 10) {
+      this.setState({
+        offset: (props.page - 1) * 10,
+      });
+    }
+  }
   handleClick = (offset: number) => {
     this.setState({
       offset,

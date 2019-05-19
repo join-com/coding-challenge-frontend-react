@@ -94,7 +94,7 @@ class FiltersComponent extends React.Component<FiltersProps, FiltersState> {
       search: `?${qs.stringify({
         occurred_before: filters.occurred_before,
         occurred_after: filters.occurred_after,
-        query: filters.query,
+        query: filters.query ? filters.query : undefined,
       })}`,
     });
   }
