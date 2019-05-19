@@ -50,6 +50,12 @@ export interface IncidentRequestOptions {
     query?: string; // Full text search of incidents
 }
 
+export interface ChangePageOptions {
+    from: number;
+    to: number;
+    totalPages: number;
+}
+
 export interface Geo {
     type: 'FeatureCollection';
     features: [

@@ -19,8 +19,8 @@ interface TState {
     error: object | boolean;
     requesting?: boolean;
     incidents: Incidents;
-    countPages?: number;
     currentPage: number;
+    totalPages?: number;
 }
 
 const initialState: TState = {
@@ -48,7 +48,7 @@ export const incidents: Reducer<TState> = (
 
         case IncidentsActionTypes.INCIDENTS_REQUEST_SUCCESS:
             if (action.requestOptions.perPage === MAX_INCIDENTS_COUNT) {
-                return { ...state, countPages: action.incidents.length, error: false };
+                return { ...state, totalPages: action.incidents.length, error: false };
             }
 
             return {

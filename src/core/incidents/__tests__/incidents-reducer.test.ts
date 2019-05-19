@@ -75,7 +75,7 @@ describe('incidents reducer', () => {
             requesting: true,
             error: false,
             currentPage: 1,
-            countPages: 29,
+            totalPages: 29,
         };
         const action = new IncidentsRequestSuccess(incidentsCamel, options);
         expect(incidents(stateBefore, action)).toEqual(stateAfter);
