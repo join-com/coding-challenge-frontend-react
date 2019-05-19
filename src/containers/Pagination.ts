@@ -2,21 +2,20 @@ import {connect} from 'react-redux'
 import { Dispatch } from 'redux'
 
 import { AppState } from '../modules/interfaces'
-import DataComponent from '../components/Data'
+import PaginationComponent from '../components/Pagination'
 
 const mapStateToProps = (state : AppState) => ({
-  data: state.data,
   isLoading: state.isLoading,
-  error: (state.error !== undefined) && (state.error.field === 'request'),
-})
+  total: state.data.length,
+});
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
+  // onSubmit: (params: Filters) => dispatch(fetchDataAction(params))
+});
 
-})
-
-const DataContainer = connect(
+const PaginationContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(DataComponent);
+)(PaginationComponent);
 
-export default DataContainer;
+export default PaginationContainer;

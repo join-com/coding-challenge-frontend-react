@@ -110,7 +110,7 @@ class DataComponent extends React.Component<DataProps> {
         </Grid>
         {
           displayedData.map((item: Report) => (
-            <Grid container className={classes.item}>
+            <Grid container className={classes.item} key={item.id}>
               <Grid item xs={2} sm={3}>
                 { this.getImage(item) }
               </Grid>

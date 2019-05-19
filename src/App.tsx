@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import DateFnsUtils from '@date-io/date-fns'
 import configureStore from './modules/store'
@@ -7,8 +8,7 @@ import { withStyles, createStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 import Header from './components/Header'
-import Filters from './containers/Filters'
-import Data from './containers/Data'
+import Main from './components/Main'
 
 const reduxStore = configureStore();
 
@@ -33,8 +33,9 @@ class App extends Component<AppProps> {
         <ReduxProvider store={reduxStore}>
           <Grid container className={classes.root}>
             <Header />
-            <Filters />
-            <Data />
+            <Router>
+              <Route path="/:page?" component={Main} />
+            </Router>
           </Grid>
         </ReduxProvider>
       </MuiPickersUtilsProvider>

@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import qs from 'query-string'
 import { withStyles, createStyles } from '@material-ui/core/styles'
 
 import Grid from '@material-ui/core/Grid'
@@ -35,6 +36,12 @@ interface FiltersProps {
   }
   filters: Filters
   onSubmit: any
+  history?: {
+    push: any
+    location: {
+      search: string
+    }
+  }
   isLoading: boolean
 }
 
@@ -46,7 +53,10 @@ class FiltersComponent extends React.Component<FiltersProps, FiltersState> {
   constructor(props: FiltersProps) {
     super(props);
     this.state = {
-      filters: props.filters,
+      filters: {
+        ...props.filters,
+        ...(props.history ? qs.parse(props.history.location.search) : ''),
+      }
     }
   }
   componentDidMount() {
@@ -76,9 +86,18 @@ class FiltersComponent extends React.Component<FiltersProps, FiltersState> {
       }
     })
   )
-  onSubmit = () => (
-    this.props.onSubmit(this.state.filters)
-  )
+  onSubmit = () => {
+    const { filters } = this.state;
+    this.props.onSubmit(this.state.filters);
+    this.props.history && this.props.history.push({
+      pathname: '/',
+      search: `?${qs.stringify({
+        occurred_before: filters.occurred_before,
+        occurred_after: filters.occurred_after,
+        query: filters.query,
+      })}`,
+    });
+  }
   render() {
     const { classes, isLoading } = this.props;
     return (
@@ -107,7 +126,7 @@ class FiltersComponent extends React.Component<FiltersProps, FiltersState> {
         </Grid>
         <Grid item xs={6} sm={2} className={classes.cell}>
           <DatePicker
-            key="occurred_after"
+            key="occurred_before"
             label="Date to"
             value={this.state.filters.occurred_before ? new Date(this.state.filters.occurred_before * 1000) : null}
             onChange={this.onBeforeDateChange}
