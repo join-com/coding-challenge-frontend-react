@@ -1,0 +1,65 @@
+{
+  "name": "coding-challenge-frontend-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/date-fns": "^1.3.5",
+    "@material-ui/core": "^4.0.0-beta.2",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/pickers": "^3.0.0-beta.1",
+    "axios": "^0.18.0",
+    "date-fns": "^2.0.0-alpha.27",
+    "lodash": "^4.17.11",
+    "material-ui-flat-pagination": "^3.2.0",
+    "material-ui-next-pickers": "^0.0.20",
+    "moment": "^2.24.0",
+    "query-string": "^6.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-modal-image": "^2.3.2",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.0.2",
+    "typescript": "^3.4.5",
+    "eslint-plugin-react": "^7.13.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.1",
+    "@types/react-redux": "^7.0.8",
+    "@types/react-router-dom": "^4.3.3",
+    "@types/redux-logger": "^3.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+  }
+}
