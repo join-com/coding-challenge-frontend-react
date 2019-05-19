@@ -1,18 +1,10 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
-import { Provider } from 'react-redux';
-
-import { store, history } from 'store';
-import { Layout } from 'components/Layout';
-import { Incidents } from 'scenes/Incidents';
-import { IncidentDetails } from 'scenes/IncidentDetails';
-
+import { store } from 'store';
 import { MAX_INCIDENTS_COUNT, DEFAULT_PROXIMITY, DEFAULT_INCIDENTS_PER_PAGE } from 'core/constants';
 import { IncidentsRequest } from 'core/incidents/actions';
 import { GeoRequest } from 'core/geo/actions';
 
-export class App extends React.Component {
+export class Incidents extends React.Component {
     public componentDidMount() {
         store.dispatch(
             new IncidentsRequest({
@@ -39,18 +31,7 @@ export class App extends React.Component {
         }, 1000);
     }
 
-    public render() {
-        return (
-            <Provider store={store}>
-                <Layout>
-                    <ConnectedRouter history={history}>
-                        <Switch>
-                            <Route exact={true} path="/" component={Incidents} />
-                            <Route path="/case/:id" component={IncidentDetails} />
-                        </Switch>
-                    </ConnectedRouter>
-                </Layout>
-            </Provider>
-        );
+    public render(): React.ReactElement {
+        return <div>Incidents</div>;
     }
 }

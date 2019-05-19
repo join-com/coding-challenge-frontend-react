@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, compose, Action, Middleware, Dispatch } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createHashHistory';
+import { createHashHistory } from 'history';
 import createSagaMiddleware from 'redux-saga';
 
 import { reducers, appInitialState, sagas } from 'core';
 
-export const history = createHistory();
+export const history = createHashHistory();
 const navMiddleware = routerMiddleware(history);
 const sagaMiddleware = createSagaMiddleware();
 
