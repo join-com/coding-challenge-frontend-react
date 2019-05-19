@@ -6,9 +6,13 @@ export function camelToSnake(value: string) {
         .toLowerCase();
 }
 
-export function objKeysCamelToSnake(obj: object) {
+export function objKeysCamelToSnake(obj: object): object {
     if (!obj) {
         return obj;
+    }
+
+    if (Array.isArray(obj)) {
+        return obj.map(objKeysCamelToSnake);
     }
 
     const result: { [key: string]: object } = {};

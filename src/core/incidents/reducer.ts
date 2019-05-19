@@ -1,23 +1,22 @@
 import { Reducer } from 'redux';
 import * as R from 'ramda';
 
-import { AppState } from 'core/reducers';
 import { MAX_INCIDENTS_COUNT } from 'core/constants';
-import { arrayToObj } from 'core/utils/arrayToObj';
-import { objKeysSnakeToCamel } from 'core/utils/snakeCase';
 import { ActionTypes as GeoActionTypes, ActionsAll as GeoActionsAll } from 'core/geo/actions';
+import { AppState } from 'core/reducers';
+import { arrayToObj } from 'core/utils/arrayToObj';
 import { Incident } from 'types';
 
 import { ActionTypes as IncidentsActionTypes, ActionsAll as IncidentsActionsAll } from './actions';
 
-interface Incidents {
+export interface Incidents {
     [key: string]: Incident;
 }
 
 const initIncidents: Incidents = {};
 
 interface TState {
-    error?: object | boolean;
+    error: object | boolean;
     requesting?: boolean;
     incidents: Incidents;
     countPages?: number;
@@ -27,6 +26,7 @@ interface TState {
 const initialState: TState = {
     incidents: initIncidents,
     requesting: false,
+    error: false,
     currentPage: 1,
 };
 
@@ -37,7 +37,7 @@ export const incidents: Reducer<TState> = (
     state: TState = initialState,
     action: IncidentsActionsAll | GeoActionsAll,
 ) => {
-    console.log(`action ${action.type}`, action);
+    // console.log(`action ${action.type}`, action);
 
     switch (action.type) {
         case IncidentsActionTypes.SET_INITIAL_STATE:
@@ -53,9 +53,8 @@ export const incidents: Reducer<TState> = (
 
             return {
                 ...state,
-                // convert from database format
-                // @ts-ignore
-                incidents: arrayToObj(action.incidents.map(objKeysSnakeToCamel), 'id') as Incidents,
+                // @ts-ignore convert to obj with index - id
+                incidents: arrayToObj(action.incidents, 'id') as Incidents,
                 requesting: false,
                 error: false,
             };

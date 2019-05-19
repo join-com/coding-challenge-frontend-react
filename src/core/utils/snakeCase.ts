@@ -4,9 +4,13 @@ export function snakeToCamel(value: string) {
     });
 }
 
-export function objKeysSnakeToCamel(obj: object) {
+export function objKeysSnakeToCamel(obj: object): object {
     if (!obj) {
         return obj;
+    }
+
+    if (Array.isArray(obj)) {
+        return obj.map(objKeysSnakeToCamel);
     }
 
     const result: { [key: string]: object } = {};

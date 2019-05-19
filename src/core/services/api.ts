@@ -2,7 +2,7 @@ import { create } from 'apisauce';
 
 const baseURL = 'https://bikewise.org:443/api/v2/';
 
-const api = create({
+export const api = create({
     baseURL,
     headers: {
         Accept: 'application/json, text/plain, */*',
@@ -11,5 +11,3 @@ const api = create({
         Authorization: 'Bearer none',
     },
 });
-
-export default api;
