@@ -23,13 +23,18 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.0.2",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "eslint-plugin-react": "^7.13.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,7 +60,6 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.13.0",
     "prettier": "^1.17.1"
   }
 }
