@@ -75,7 +75,7 @@ describe('changePage flow', () => {
 
         const clone = generator.clone();
         expect(clone.next().value).toEqual(
-            put(new ChangePageFail('Cannot change page to 1 because page to is equal page from')),
+            put(new ChangePageFail(new Error('Cannot change page to 1 because page to is equal page from'))),
         );
         expect(clone.next().done).toEqual(true);
     });
@@ -92,7 +92,7 @@ describe('changePage flow', () => {
 
         const clone = generator.clone();
         expect(clone.next().value).toEqual(
-            put(new ChangePageFail('Cannot change page to -1 because value is out of range')),
+            put(new ChangePageFail(new Error('Cannot change page to -1 because value is out of range'))),
         );
         expect(clone.next().done).toEqual(true);
     });
@@ -109,7 +109,7 @@ describe('changePage flow', () => {
 
         const clone = generator.clone();
         expect(clone.next().value).toEqual(
-            put(new ChangePageFail('Cannot change page to 0 because value is out of range')),
+            put(new ChangePageFail(new Error('Cannot change page to 0 because value is out of range'))),
         );
         expect(clone.next().done).toEqual(true);
     });
@@ -126,7 +126,7 @@ describe('changePage flow', () => {
 
         const clone = generator.clone();
         expect(clone.next().value).toEqual(
-            put(new ChangePageFail('Cannot change page to 30 because value is out of range')),
+            put(new ChangePageFail(new Error('Cannot change page to 30 because value is out of range'))),
         );
         expect(clone.next().done).toEqual(true);
     });

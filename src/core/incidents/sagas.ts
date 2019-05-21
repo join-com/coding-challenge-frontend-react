@@ -36,10 +36,11 @@ export function* changePage({ options }: ChangePage) {
         const { from, to, totalPages } = options;
 
         if (from === to) {
-            throw `Cannot change page to ${to} because page to is equal page from`;
+            throw new Error(`Cannot change page to ${to} because page to is equal page from`);
         }
+
         if (to > totalPages || to < 1) {
-            throw `Cannot change page to ${to} because value is out of range`;
+            throw new Error(`Cannot change page to ${to} because value is out of range`);
         }
 
         yield put(

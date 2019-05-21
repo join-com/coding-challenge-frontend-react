@@ -21,13 +21,18 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
+		"test": "react-scripts test --coverage",
 		"eject": "react-scripts eject",
-		"storybook": "start-storybook -p 6006",
+		"storybook": "start-storybook -p 9001 -c .storybook",
 		"build-storybook": "build-storybook"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
+	},
+	"jest": {
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		]
 	},
 	"browserslist": {
 		"production": [
@@ -57,17 +62,29 @@
 		"@types/react-router-dom": "4.2.6",
 		"@types/react-router-redux": "5.0.15",
 		"@types/react-test-renderer": "16.8.1",
+		"@types/storybook__react": "^4.0.1",
+		"@types/styled-components": "^4.1.15",
+		"@types/styled-system": "^4.2.1",
 		"@types/url-parse": "1.1.0",
 		"@typescript-eslint/eslint-plugin": "^1.9.0",
 		"@typescript-eslint/parser": "^1.9.0",
+		"awesome-typescript-loader": "^5.2.1",
 		"babel-loader": "8.0.5",
+		"enzyme": "^3.8.0",
+		"enzyme-adapter-react-16": "^1.7.1",
+		"enzyme-to-json": "^3.3.5",
+		"eslint": "^5.16.0",
 		"eslint-config-prettier": "^4.3.0",
 		"eslint-plugin-prettier": "^3.1.0",
 		"eslint-plugin-react": "^7.13.0",
 		"prettier": "^1.17.1",
-		"eslint": "^5.16.0",
+		"react-docgen-typescript-loader": "^3.1.0",
+		"react-docgen-typescript-webpack-plugin": "^1.1.0",
 		"react-scripts": "3.0.1",
 		"react-test-renderer": "16.8.6",
+		"styled-components": "^4.2.0",
+		"styled-components-ts": "^0.0.15",
+		"styled-system": "^4.2.2",
 		"typescript": "3.4.5"
 	}
 }

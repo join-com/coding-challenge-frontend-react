@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<styled.div
+  id="my-button-two"
+  onClick={[Function]}
+>
+  Button 
+  true
+</styled.div>
+`;
+
+exports[`MyComponent should render correctly in "debug" mode 2`] = `
+<div
+  class="sc-bdVaJa ipstQh"
+  id="my-button-two"
+>
+  Button undefined
+</div>
+`;
+
+exports[`MyComponent should render correctly in "debug" mode 3`] = `
+<Button
+  debug={true}
+  onClick={[Function]}
+  text="test buttons"
+>
+  <styled.div
+    id="my-button-two"
+    onClick={[Function]}
+  >
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "ipstQh",
+            "rules": Array [
+              "
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      id="my-button-two"
+      onClick={[Function]}
+    >
+      <div
+        className="sc-bdVaJa ipstQh"
+        id="my-button-two"
+        onClick={[Function]}
+      >
+        Button 
+        true
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Button>
+`;

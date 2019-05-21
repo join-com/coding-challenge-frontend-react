@@ -3,6 +3,7 @@ import { store } from 'store';
 import { MAX_INCIDENTS_COUNT, DEFAULT_PROXIMITY, DEFAULT_INCIDENTS_PER_PAGE } from 'core/constants';
 import { IncidentsRequest } from 'core/incidents/actions';
 import { GeoRequest } from 'core/geo/actions';
+import { Button } from 'ui/Button';
 
 export class Incidents extends React.Component {
     public componentDidMount() {
@@ -32,6 +33,11 @@ export class Incidents extends React.Component {
     }
 
     public render(): React.ReactElement {
-        return <div>Incidents</div>;
+        return (
+            <div>
+                Incidents
+                <Button text={'asdf'} onClick={() => {}} />
+            </div>
+        );
     }
 }
