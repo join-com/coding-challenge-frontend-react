@@ -12,6 +12,9 @@ import { MAX_INCIDENTS_COUNT, DEFAULT_PROXIMITY, DEFAULT_INCIDENTS_PER_PAGE } fr
 import { IncidentsRequest } from 'core/incidents/actions';
 import { GeoRequest } from 'core/geo/actions';
 
+import './reset.css';
+import './App.css';
+
 export class App extends React.Component {
     public componentDidMount() {
         store.dispatch(

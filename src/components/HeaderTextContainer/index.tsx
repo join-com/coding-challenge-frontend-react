@@ -1,0 +1,1 @@
+export { HeaderTextContainer } from './HeaderTextContainer';

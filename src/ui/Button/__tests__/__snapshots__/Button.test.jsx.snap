@@ -1,74 +1,261 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyComponent should render correctly in "debug" mode 1`] = `
-<styled.div
-  id="my-button-two"
-  onClick={[Function]}
->
-  Button 
-  true
-</styled.div>
-`;
-
-exports[`MyComponent should render correctly in "debug" mode 2`] = `
-<div
-  class="sc-bdVaJa ipstQh"
-  id="my-button-two"
->
-  Button undefined
-</div>
-`;
-
-exports[`MyComponent should render correctly in "debug" mode 3`] = `
+exports[`MyComponent should render correctly 1`] = `
 <Button
   debug={true}
   onClick={[Function]}
-  text="test buttons"
+  text="Button test"
 >
-  <styled.div
-    id="my-button-two"
-    onClick={[Function]}
-  >
-    <StyledComponent
-      forwardedComponent={
-        Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "sc-bdVaJa",
-            "isStatic": true,
-            "lastClassName": "ipstQh",
-            "rules": Array [
-              "
-    display: inline-block;
-    border: 1px solid black;
-    padding: 5px;
-",
-            ],
-          },
-          "displayName": "styled.div",
-          "foldedComponentIds": Array [],
-          "render": [Function],
-          "styledComponentId": "sc-bdVaJa",
-          "target": "div",
-          "toString": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        }
+  <ThemeProvider
+    theme={
+      Object {
+        "colors": Object {
+          "UICheckboxIconCopy": "rgba(144, 156, 172, 0.2)",
+          "UIClientError": "#ff6c00",
+          "UIModalFooterLightBlueGray": "#f3f9ff",
+          "UIModalTitleDefault": "rgba(94, 102, 112, 0.4)",
+          "UIServerError": "#ff0000",
+          "UITriggerBlue": "#00a9f6",
+          "UITriggerRed": "#fe3d00",
+        },
+        "fontSizes": Array [
+          12,
+          14,
+          16,
+          18,
+          24,
+          32,
+          36,
+          72,
+          96,
+        ],
+        "space": Array [
+          0,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256,
+        ],
       }
-      forwardedRef={null}
-      id="my-button-two"
+    }
+  >
+    <styled.button
+      color="orange"
+      debug={true}
       onClick={[Function]}
+      p={2}
     >
-      <div
-        className="sc-bdVaJa ipstQh"
-        id="my-button-two"
+      <StyledComponent
+        color="orange"
+        debug={true}
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "lastClassName": "cMRHnp",
+              "rules": Array [
+                "
+	",
+                [Function],
+                "
+	",
+                [Function],
+                "
+	",
+                [Function],
+                "
+	",
+                [Function],
+                "
+",
+              ],
+            },
+            "defaultProps": Object {
+              "color": "orange",
+              "p": 2,
+            },
+            "displayName": "styled.button",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "button",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
         onClick={[Function]}
+        p={2}
       >
-        Button 
-        true
-      </div>
-    </StyledComponent>
-  </styled.div>
+        <button
+          className="sc-bdVaJa cMRHnp"
+          color="orange"
+          onClick={[Function]}
+        >
+          Button test
+        </button>
+      </StyledComponent>
+    </styled.button>
+  </ThemeProvider>
+</Button>
+`;
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+<Button
+  debug={true}
+  onClick={[Function]}
+  text="Button test"
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "buttonColors": Object {
+          "blue": "
+		background-color: #507bfc;
+		color: rgba(80, 123, 252, 0.5);
+	  ",
+          "default": "
+		background-color: #cccccc;
+		color: rgba(204, 204, 204, 0.5);
+	  ",
+          "green": "
+		background-color: #a2d628;
+		color: rgba(162, 214, 40, 0.5);
+	  ",
+          "lightBlue": "
+		background-color: #10aee7;
+		color: rgba(16, 174, 231, 0.5);
+	  ",
+        },
+        "buttonSizes": Object {
+          "default": "
+		height: 24px;
+		padding: 0 30px;
+		font-size: 13px;
+	  ",
+          "lg": "
+		height: 56px;
+		padding: 0 56px;
+		font-size: 20px;
+	  ",
+          "md": "
+		height: 34px;
+		padding: 0 34px;
+		font-size: 14px;
+		letter-spacing: 0.4px;
+	  ",
+          "sm": "
+		height: 24px;
+		padding: 0 24px;
+		font-size: 13px;
+	  ",
+          "xs": "
+		height: 16px;
+		padding: 0 16px;
+		font-size: 10px;
+	  ",
+        },
+        "colors": Object {
+          "UICheckboxIconCopy": "rgba(144, 156, 172, 0.2)",
+          "UIClientError": "#ff6c00",
+          "UIModalFooterLightBlueGray": "#f3f9ff",
+          "UIModalTitleDefault": "rgba(94, 102, 112, 0.4)",
+          "UIServerError": "#ff0000",
+          "UITriggerBlue": "#00a9f6",
+          "UITriggerRed": "#fe3d00",
+        },
+        "fontSizes": Array [
+          12,
+          14,
+          16,
+          18,
+          24,
+          32,
+          36,
+          72,
+          96,
+        ],
+        "space": Array [
+          0,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256,
+        ],
+      }
+    }
+  >
+    <styled.button
+      color="orange"
+      debug={true}
+      onClick={[Function]}
+      p={2}
+    >
+      <StyledComponent
+        color="orange"
+        debug={true}
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "lastClassName": "cMRHnp",
+              "rules": Array [
+                "
+	",
+                [Function],
+                "
+	",
+                [Function],
+                "
+	",
+                [Function],
+                "
+	",
+                [Function],
+                "
+",
+              ],
+            },
+            "defaultProps": Object {
+              "color": "orange",
+              "p": 2,
+            },
+            "displayName": "styled.button",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "button",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        onClick={[Function]}
+        p={2}
+      >
+        <button
+          className="sc-bdVaJa cMRHnp"
+          color="orange"
+          onClick={[Function]}
+        >
+          Button test
+        </button>
+      </StyledComponent>
+    </styled.button>
+  </ThemeProvider>
 </Button>
 `;

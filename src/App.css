@@ -1,0 +1,8 @@
+body {
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    background-color: #ffffff;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

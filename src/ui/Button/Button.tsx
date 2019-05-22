@@ -4,9 +4,9 @@ import styled, { ThemeProvider } from 'styled-components';
 import styledTs from 'styled-components-ts';
 import { theme } from '../theme';
 
-type StyledButtonProps = WidthProps & SpaceProps;
+type StyledProps = WidthProps & SpaceProps;
 
-export const StyledButton = styledTs<StyledButtonProps>(styled.div)`
+export const StyledButton = styledTs<StyledProps>(styled.button)`
 	${space}
 	${width}
 	${fontSize}
@@ -23,19 +23,15 @@ interface Props {
     onClick: () => void;
 }
 
-interface State {
-    test?: boolean;
-}
-
-export class Button extends React.PureComponent<Props, State> {
-    public state: State = {};
-    public componentDidMount() {
-        this.setState({ test: true });
-    }
+export class Button extends React.PureComponent<Props> {
     public render() {
+        const { text, onClick, ...rest } = this.props;
+
         return (
             <ThemeProvider theme={theme}>
-                <StyledButton>{this.props.text}</StyledButton>
+                <StyledButton onClick={onClick} {...rest}>
+                    {text}
+                </StyledButton>
             </ThemeProvider>
         );
     }
