@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import logo from 'components/assets/logo.png';
 import { HeaderTextContainer } from 'components/HeaderTextContainer';
 import { media } from 'ui/media';
+
+// require - storybook cannot find module by import
+const logo = require('components/assets/logo.png');
 
 const Container = styled.div`
     display: flex;

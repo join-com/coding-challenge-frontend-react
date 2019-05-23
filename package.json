@@ -21,7 +21,8 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test --coverage",
+		"test": "react-scripts test",
+		"test-coverage": "CI=true react-scripts test --coverage",
 		"eject": "react-scripts eject",
 		"storybook": "start-storybook -p 9001 -c .storybook",
 		"build-storybook": "build-storybook"
@@ -32,6 +33,14 @@
 	"jest": {
 		"snapshotSerializers": [
 			"enzyme-to-json/serializer"
+		],
+		"collectCoverageFrom": [
+			"src/**/*.{ts,tsx}",
+			"!<rootDir>/node_modules/",
+			"!<rootDir>/**/*.stories.tsx",
+			"!<rootDir>/**/*.d.ts",
+			"!<rootDir>/src/types.ts",
+			"!<rootDir>/src/setupTests.ts"
 		]
 	},
 	"browserslist": {

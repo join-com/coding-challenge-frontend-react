@@ -17,6 +17,28 @@ module.exports = ({config}) => {
 			}
 		]
 	});
-	config.resolve.extensions.push('.ts', '.tsx');
+
+	config.module.rules.push({
+		test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+		include: [SRC_PATH],
+		use: [
+			{
+				loader: require.resolve('url-loader'),
+				options: {
+				  limit: 10000,
+				  name: 'static/media/[name].[hash:8].[ext]',
+				}
+			}
+		]
+	});
+
+	config.resolve.extensions.push('.ts', '.tsx', '.png');
+
+	config.resolve.modules = [
+		...(config.resolve.modules || []),
+		path.resolve(__dirname, "../"),
+		path.resolve(__dirname, "../src"),
+	];
+
 	return config;
 };
