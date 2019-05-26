@@ -11,6 +11,10 @@
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --exclude 'src/**/*.spec.{ts,tsx}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "npm": "5.10.0",
+    "node": "8.9.4"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
