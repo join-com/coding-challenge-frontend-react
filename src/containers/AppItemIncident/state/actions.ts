@@ -1,10 +1,10 @@
 import { action } from 'typesafe-actions';
 
-import { Actions, StateQueryFilter } from './types';
+import { Actions } from './types';
 import API from '../../../resources';
 
 
-const doGetIncidentById = (id: number) => (dispatch) => {
+const doGetIncidentById = (id: number) => (dispatch: Function) => {
     dispatch(doClearError());
     dispatch({ type: Actions.DO_GET_INCIDENT_BY_ID, payload: { incident: undefined } });
     API.incidents.getIncidentById(id)

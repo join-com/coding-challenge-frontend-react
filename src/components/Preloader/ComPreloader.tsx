@@ -9,7 +9,7 @@ interface IProps {
     loading: boolean;
 }
 
-export default (props: IProps): React.ReactElement => {
+export default (props: IProps): React.ReactElement|null => {
     return props.loading && (
         <div className={ COM_NAME }>
             <div className="fa fa-spinner fa-spin"></div>

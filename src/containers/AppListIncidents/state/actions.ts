@@ -4,7 +4,7 @@ import { Actions, StateQueryFilter, StateQueryFilterDefault } from './types';
 import API from '../../../resources';
 
 
-const doFetchIncidents = (filter: StateQueryFilter) => (dispatch) => {
+const doFetchIncidents = (filter: StateQueryFilter) => (dispatch: Function) => {
     dispatch(doClearError());
     dispatch(doSetBusyStatus());
     dispatch(doSetFilter(filter));
@@ -37,7 +37,7 @@ const doSetBusyStatus = (isBusy: boolean = true) => action(Actions.DO_SET_BUSY_S
 
 const doSetFilter = (filter?: StateQueryFilter) => action(Actions.DO_SET_FILTER, { filter: filter || StateQueryFilterDefault });
 
-const doPaginate = (page: number) => action(Actions.DO_PAGINATE, { page: parseInt(page, 10) });
+const doPaginate = (page: number) => action(Actions.DO_PAGINATE, { page });
 
 
 export const actions = {

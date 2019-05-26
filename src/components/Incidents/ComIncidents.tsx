@@ -1,9 +1,10 @@
 import * as React from 'react';
+import * as _ from 'lodash';
 
 import ComPaginator from '../Paginator/ComPaginator';
 import IncIncident from './IncIncident';
 
-import { ApiList, Incident } from '../../../interfaces';
+import { ApiList, Incident } from '../../interfaces';
 
 import './ComIncidents.scss';
 
@@ -34,7 +35,7 @@ export default class AppListIncidents extends React.Component<IProps, IState> {
     public renderResults(): React.ReactElement {
         return (
             <div>
-                { this.props.data.collection.map((item: Incident, ind: number) => {
+                { _.get(this.props, ['data', 'collection'], []).map((item: Incident, ind: number) => {
                     return (
                         <div key={ ind }><IncIncident item={ item } /></div>
                     );

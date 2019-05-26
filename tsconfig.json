@@ -7,6 +7,7 @@
         "jsx": "react",
         "sourceMap": true,
         "allowJs": true,
+        "skipLibCheck": true,
         "moduleResolution": "node",
         "noImplicitReturns": true,
         "noImplicitThis": true,

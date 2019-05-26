@@ -6,17 +6,23 @@ import { withLastLocation } from 'react-router-last-location';
 import Link from '../../components/Hyperlink/ComHyperlink';
 import IncIncident from '../../components/Incidents/IncIncident';
 
+import { State as PropsState } from './state/types';
 import { Actions, State } from '../../store';
 
 import './AppItemIncident.scss';
 
 
-interface IProps {
+interface IProps extends PropsState {
     match: {
         params: {
             itemId: number;
         },
     };
+    history: {
+        goBack: () => void,
+    };
+    lastLocation: any;
+    doGetIncidentById: Function;
 }
 
 interface IState {
@@ -52,11 +58,11 @@ class AppItemIncident extends React.Component<IProps, IState> {
 }
 
 
-export default connect(
+export default withLastLocation(connect(
     (state: State) => ({
         ...state.AppItemIncident,
     }),
     (dispatch: any) => bindActionCreators({
         ...Actions.AppItemIncident,
     }, dispatch),
-)(withLastLocation(AppItemIncident));
+)(AppItemIncident) as any);

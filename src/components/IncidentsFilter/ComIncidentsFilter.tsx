@@ -3,23 +3,23 @@ import * as _ from 'lodash';
 import { toast } from 'react-toastify';
 import DatePicker from 'react-datepicker';
 
-import { StateQueryFilter } from '../../containers/state/types';
+import { StateQueryFilter } from '../../containers/AppListIncidents/state/types';
 
 import './ComIncidentsFilter.scss';
 
 
-interface Props {
+interface IProps {
     isBusy: boolean;
     onSearch: (filter: StateQueryFilter) => void;
 }
 
-interface State {
+interface IState {
     filter: StateQueryFilter;
 }
 
-export default class ComIncidentsFilter extends React.Component<Props, State> {
+export default class ComIncidentsFilter extends React.Component<IProps, IState> {
 
-    constructor(props: Props) {
+    constructor(props: IProps) {
         super(props);
 
         this.state = {
@@ -30,8 +30,12 @@ export default class ComIncidentsFilter extends React.Component<Props, State> {
         };
     }
 
-    public componentDidUpdate(propsPrev: Props, statePrev: State): void {
-        if (this.state.filter.occurred_before && this.state.filter.occurred_after > this.state.filter.occurred_before) {
+    public componentDidUpdate(propsPrev: IProps, statePrev: IState): void {
+        if (
+            this.state.filter !== statePrev.filter
+            &&
+            _.get(this.state.filter, ['occurred_after'], 0) > _.get(this.state.filter, ['occurred_before'], Number.MAX_SAFE_INTEGER)
+        ) {
             toast(
                 'Note: the specified dates range is empty.',
                 {
@@ -63,14 +67,14 @@ export default class ComIncidentsFilter extends React.Component<Props, State> {
                         type="text"
                         className="form-control"
                         placeholder="Search case descriptions..."
-                        onChange={ (evt: Event) => this.handleChange('query', evt.target.value) }
+                        onChange={ (evt: React.ChangeEvent) => this.handleChange('query', (evt.target as HTMLInputElement).value) }
                         />
                 </div>
                 <div className="col-6 col-md-2">
                     <DatePicker
                         className="form-control"
                         placeholderText="From"
-                        selected={this.state.filter.occurred_after}
+                        selected={ this.state.filter.occurred_after && new Date(this.state.filter.occurred_after) || null }
                         onChange={ (evt: Date) => this.handleChange('occurred_after', evt.getTime()) }
                         />
                     <span className="fa fa-calendar-alt"></span>
@@ -79,7 +83,7 @@ export default class ComIncidentsFilter extends React.Component<Props, State> {
                     <DatePicker
                         className="form-control"
                         placeholderText="To"
-                        selected={this.state.filter.occurred_before}
+                        selected={ this.state.filter.occurred_before && new Date(this.state.filter.occurred_before) || null }
                         onChange={ (evt: Date) => this.handleChange('occurred_before', evt.getTime()) }
                         />
                     <span className="fa fa-calendar-alt"></span>

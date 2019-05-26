@@ -61,7 +61,7 @@ export default class ComPaginator extends React.Component<IProps, IState> {
         return [
             this.renderPagesDropdown(tmp[0], -1),
             ...tmp[1].map((x, ind: number) => (
-                <li key={ ind } className={ `page-item link${parseInt(this.props.pagination.page, 10) === x ? ' active' : ''}` }>
+                <li key={ ind } className={ `page-item link${this.props.pagination.page === x ? ' active' : ''}` }>
                     <Link
                         to={this.getPath(x)}
                         className="page-link"

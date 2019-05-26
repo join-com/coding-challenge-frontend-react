@@ -1,9 +1,8 @@
 import * as React from 'react';
 
 import Link from '../Hyperlink/ComHyperlink';
-import IncIncident from './IncIncident';
 
-import { Incident } from '../../../interfaces';
+import { Incident } from '../../interfaces';
 
 import './IncIncident.scss';
 
@@ -28,7 +27,7 @@ export default (props: IProps): React.ReactElement => {
                 </h4>
                 <p>{ props.item.description }</p>
                 <p>
-                    { props.item.occured_at }
+                    { props.item.occurred_at }
                     <br/>
                     { props.item.address }
                 </p>

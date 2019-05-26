@@ -7,7 +7,7 @@ import IncAppHeader from './IncAppHeader';
 import AppListIncidents from '../AppListIncidents/AppListIncidents';
 import AppItemIncident from '../AppItemIncident/AppItemIncident';
 
-import { State, Actions } from '../../store';
+import { State } from '../../store';
 
 import './App.scss';
 import 'react-toastify/dist/ReactToastify.min.css';

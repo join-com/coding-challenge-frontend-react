@@ -55,7 +55,7 @@ module.exports = {
             },             
             { 
                 test: /\.(ts|tsx)?$/, 
-                use: [
+                use: [/*
                     {
                         loader: 'ts-loader',
                         options: {
@@ -71,7 +71,13 @@ module.exports = {
                               module: 'es2015'
                             }
                         },
-                    }, 
+                    },*/
+                    {
+                        loader: 'awesome-typescript-loader',
+                        options: {
+                            exclude: /node_modules/
+                        }
+                    },
                 ],
                 exclude: [resolve(__dirname, 'node_modules')],                
             },

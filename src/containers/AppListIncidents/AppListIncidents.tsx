@@ -2,24 +2,26 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import ComPaginator from '../../components/Paginator/ComPaginator';
 import ComPreloader from '../../components/Preloader/ComPreloader';
 import ComIncidents from '../../components/Incidents/ComIncidents';
 import ComIncidentsFilter from '../../components/IncidentsFilter/ComIncidentsFilter';
-import { StateQueryFilter } from './state/types';
 
+import { State as PropsState, StateQueryFilter } from './state/types';
 import { Actions, State } from '../../store';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import './AppListIncidents.scss';
 
 
-interface IProps {
+interface IProps extends PropsState {
     match: {
         params: {
             page?: number;
         },
     };
+    doFetchIncidents: Function;
+    doSetFilter: Function;
+    doPaginate: Function;
 }
 
 interface IState {
@@ -36,7 +38,7 @@ class AppListIncidents extends React.Component<IProps, IState> {
         this.props.doPaginate(this.props.match.params.page || 1);
     }
 
-    public componentDidUpdate(propsPrev, statePrev) {
+    public componentDidUpdate(propsPrev: IProps, statePrev: IState) {
         if (this.props.match.params.page !== propsPrev.match.params.page) {
             this.props.doPaginate(this.props.match.params.page);
         }

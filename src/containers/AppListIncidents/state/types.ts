@@ -1,4 +1,4 @@
-import { Incident } from '../../../interfaces';
+import { ApiList, Incident } from '../../../interfaces';
 
 
 export enum Actions {
@@ -13,7 +13,7 @@ export enum Actions {
 export interface State {
     readonly isBusy: boolean;
     readonly filter?: StateQueryFilter;
-    readonly incidents?: Incident[];
+    readonly incidents?: ApiList<Incident[]>;
     readonly error?: string;
 }
 

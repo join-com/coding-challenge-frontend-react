@@ -23,9 +23,6 @@
         ],
         "ban-types": [ true,
             ["Object", "Use {} instead."]
-        ],
-        "no-unused-variable": [ true,
-            {"ignore-pattern": "^.*"}
         ]
     },
     "rulesDirectory": []
