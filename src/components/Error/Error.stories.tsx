@@ -2,19 +2,19 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import { Layout } from './Layout';
+import { Error } from './Error';
 
-const stories = storiesOf('Layout', module);
+const stories = storiesOf('Error', module);
 stories.addDecorator(withKnobs);
 
-stories.add('Layout', () => {
+stories.add('Error', () => {
     return (
-        <Layout>
+        <Error>
             <div>{getKnobs()}</div>
-        </Layout>
+        </Error>
     );
 });
 
 function getKnobs() {
-    return text('Layout', 'Layout test');
+    return text('Error', 'Ooops, something wrong)');
 }

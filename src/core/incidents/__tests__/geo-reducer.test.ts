@@ -24,7 +24,7 @@ describe('incidents reducer', () => {
         const stateAfter = {
             // @ts-ignore
             incidents: incidentsOnePageObject as IIncidentsObj,
-            requesting: true,
+            requesting: false,
             error: false,
             currentPage: 1,
         };
@@ -36,7 +36,7 @@ describe('incidents reducer', () => {
         const stateBefore = {
             // @ts-ignore
             incidents: incidentsOnePageObject as IIncidentsObj,
-            requesting: true,
+            requesting: false,
             error: false,
             currentPage: 1,
         };
@@ -55,7 +55,7 @@ describe('incidents reducer', () => {
         const stateBefore = {
             // @ts-ignore
             incidents: incidentsOnePageObject as IIncidentsObj,
-            requesting: true,
+            requesting: false,
             error: false,
             currentPage: 1,
         };

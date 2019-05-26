@@ -2,8 +2,8 @@
 
 exports[`IncidentDetailsScene should render correctly 1`] = `
 <Component
-  dispatch={[Function]}
-  incidents={Array []}
+  error={false}
+  geoRequest={[Function]}
   match={
     Object {
       "params": Object {
@@ -11,6 +11,7 @@ exports[`IncidentDetailsScene should render correctly 1`] = `
       },
     }
   }
+  requesting={false}
   store={
     Object {
       "clearActions": [Function],

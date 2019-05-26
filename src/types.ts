@@ -10,11 +10,6 @@ export const IncidentTypeText: { [key in IncidentType]: string } = {
     chop_shop: 'Chop shop',
 };
 
-export interface IGeoGeometry {
-    type: 'Point';
-    coordinates: number[];
-}
-
 export interface IIncidentDatabase {
     id: number;
     title: string;
@@ -36,7 +31,11 @@ export interface IIncidentDatabase {
     locationDescription: string | null;
     type: IncidentType;
     typeProperties: string | null;
-    geometry?: IGeoGeometry;
+}
+
+export interface IGeoCoordinates {
+    lat: number;
+    lng: number;
 }
 
 export interface IIncident {
@@ -47,7 +46,7 @@ export interface IIncident {
     occurredAt: number;
     imageUrl: string | null;
     imageUrlThumb: string | null;
-    geometry?: IGeoGeometry;
+    geometry?: IGeoCoordinates;
 }
 
 export interface IIncidentRequestOptions {
@@ -65,6 +64,11 @@ export interface IChangePageOptions {
     from: number;
     to: number;
     totalPages: number;
+}
+
+export interface IGeoGeometry {
+    type: 'Point';
+    coordinates: number[];
 }
 
 export interface IGeo {

@@ -32,7 +32,7 @@ export const incidentsOnePageObjectWithGeo = {
         locationDescription: null,
         type: 'Theft',
         typeProperties: null,
-        geometry: { type: 'Point', coordinates: [13.4275004, 52.4890809] },
+        geometry: { lng: 13.4275004, lat: 52.4890809 },
     },
     '92457': {
         id: 92457,

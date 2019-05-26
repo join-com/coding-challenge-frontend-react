@@ -2,19 +2,19 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import { Layout } from './Layout';
+import { Loading } from './Loading';
 
-const stories = storiesOf('Layout', module);
+const stories = storiesOf('Loading', module);
 stories.addDecorator(withKnobs);
 
-stories.add('Layout', () => {
+stories.add('Loading', () => {
     return (
-        <Layout>
+        <Loading>
             <div>{getKnobs()}</div>
-        </Layout>
+        </Loading>
     );
 });
 
 function getKnobs() {
-    return text('Layout', 'Layout test');
+    return text('Loading', 'Loading ...');
 }

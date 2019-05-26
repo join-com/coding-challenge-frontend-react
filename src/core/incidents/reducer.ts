@@ -8,6 +8,7 @@ import { arrayToObj } from 'core/utils/arrayToObj';
 import { IIncident } from 'types';
 
 import { ActionTypes as IncidentsActionTypes, ActionsAll as IncidentsActionsAll } from './actions';
+import { convertCoordinates } from 'core/utils/convertCoordinates';
 
 export interface IIncidentsObj {
     [key: string]: IIncident;
@@ -17,7 +18,7 @@ const initIncidents: IIncidentsObj = {};
 
 export interface TState {
     error: object | boolean;
-    requesting?: boolean;
+    requesting: boolean;
     incidents: IIncidentsObj;
     currentPage: number;
     totalPages?: number;
@@ -61,14 +62,21 @@ export const incidents: Reducer<TState> = (
             return { ...state, requesting: false, error: action.error };
 
         case GeoActionTypes.GEO_REQUEST:
-            return { ...state, requesting: true };
+            return { ...state };
 
         case GeoActionTypes.GEO_REQUEST_SUCCESS:
             const pairsWithUpdatedGeo: R.KeyValuePair<string, IIncident>[] = R.toPairs<IIncident>(state.incidents).map(
                 ([id, incident]) => {
                     const feature = action.geo.features.filter(feature => String(feature.properties.id) === id)[0];
 
-                    return [id, feature ? Object.assign({}, incident, { geometry: feature.geometry }) : incident];
+                    return [
+                        id,
+                        feature
+                            ? Object.assign({}, incident, {
+                                  geometry: convertCoordinates(feature.geometry.coordinates),
+                              })
+                            : incident,
+                    ];
                 },
             );
 
@@ -76,12 +84,11 @@ export const incidents: Reducer<TState> = (
                 ...state,
                 // update geometry in incident
                 incidents: R.fromPairs<IIncident>(pairsWithUpdatedGeo),
-                requesting: false,
                 error: false,
             };
 
         case GeoActionTypes.GEO_REQUEST_FAIL:
-            return { ...state, requesting: false, error: action.error };
+            return { ...state, error: action.error };
 
         default:
             return state;
@@ -90,3 +97,5 @@ export const incidents: Reducer<TState> = (
 
 export const selectIncidents = (state: AppState): IIncident[] => Object.values(state.incidents.incidents);
 export const selectIncident = (state: AppState, id: string): IIncident => state.incidents.incidents[id];
+export const selectRequesting = (state: AppState): boolean => state.incidents.requesting;
+export const selectError = (state: AppState): boolean => Boolean(state.incidents.error);

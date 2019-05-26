@@ -10,38 +10,25 @@ import { IncidentDetailsScene } from 'scenes/IncidentDetailsScene';
 
 import { MAX_INCIDENTS_COUNT, DEFAULT_PROXIMITY, DEFAULT_INCIDENTS_PER_PAGE } from 'core/constants';
 import { IncidentsRequest } from 'core/incidents/actions';
-import { GeoRequest } from 'core/geo/actions';
 
 import './reset.css';
 import './App.css';
 
 export class App extends React.Component {
     public componentDidMount() {
-        setTimeout(() => {
-            store.dispatch(
-                new IncidentsRequest({
-                    perPage: MAX_INCIDENTS_COUNT,
-                    proximity: DEFAULT_PROXIMITY,
-                }),
-            );
+        store.dispatch(
+            new IncidentsRequest({
+                perPage: MAX_INCIDENTS_COUNT,
+                proximity: DEFAULT_PROXIMITY,
+            }),
+        );
 
-            store.dispatch(
-                new IncidentsRequest({
-                    perPage: DEFAULT_INCIDENTS_PER_PAGE,
-                    proximity: DEFAULT_PROXIMITY,
-                }),
-            );
-
-            setTimeout(() => {
-                store.dispatch(
-                    new GeoRequest({
-                        proximity: DEFAULT_PROXIMITY,
-                        occurredAfter: 1532152800,
-                        occurredBefore: 1532152800,
-                    }),
-                );
-            }, 1000);
-        }, 3000);
+        store.dispatch(
+            new IncidentsRequest({
+                perPage: DEFAULT_INCIDENTS_PER_PAGE,
+                proximity: DEFAULT_PROXIMITY,
+            }),
+        );
     }
 
     public render() {

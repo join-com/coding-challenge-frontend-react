@@ -7,6 +7,10 @@ it('should be camel case value', (): void => {
 });
 
 it('should be object with camel case keys', (): void => {
+    Object.is(objKeysSnakeToCamel(['occurred_after', 'occurred_at']), ['occurred_after', 'occurred_at']);
+
+    Object.is(objKeysSnakeToCamel([1, 2, 3, 4]), [1, 2, 3, 4]);
+
     Object.is(objKeysSnakeToCamel(optionsSnakeCase), optionsCamelCase);
 
     Object.is(objKeysSnakeToCamel(incidentsSnakeCaseArray), incidentsCamelCaseArray);

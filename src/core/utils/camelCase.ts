@@ -7,7 +7,7 @@ export function camelToSnake(value: string) {
 }
 
 export function objKeysCamelToSnake(obj: object): object {
-    if (!obj) {
+    if (!obj || typeof obj !== 'object') {
         return obj;
     }
 
