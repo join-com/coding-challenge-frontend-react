@@ -61,7 +61,7 @@ export default class ComIncidentsFilter extends React.Component<IProps, IState> 
     private handleChange(field: string, value: any) {
         this.setState({
             isDisabled: false,
-            filter: { ...this.state.filter, [field]: value }
+            filter: { ...this.state.filter, [field]: value },
         });
     }
 
