@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+Thumbs.db
+node_modules
+
+/nbproject
+/app

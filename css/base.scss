@@ -1,0 +1,23 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 400px;
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+    font-family: "NeoSansPro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+}
+
+div {
+    outline: none;
+}
+
+.form-control {
+    margin-bottom: 1em;
+}

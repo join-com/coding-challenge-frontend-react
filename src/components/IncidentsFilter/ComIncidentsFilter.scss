@@ -1,0 +1,20 @@
+@import '../../../css/_medias.scss';
+
+.ComIncidentsFilter {
+
+    margin-top: -15px;
+
+    .fa.fa-calendar-alt {
+        position: absolute;
+        top: 0.8em;
+        bottom: 0;
+        right: -0.4em;
+        color: #777;
+        
+        @media (max-width: $screen-xs) {
+            right: 1.2em;
+        }
+        
+    }
+    
+}
