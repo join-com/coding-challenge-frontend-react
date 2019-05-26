@@ -9,7 +9,7 @@
     "build": "./node_modules/.bin/webpack -d",
     "watch": "./node_modules/.bin/webpack -d --watch",
     "serve": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --hot --inline --watch",
-    "start": "serve -s app",
+    "start": "./node_modules/.bin/serve -s app",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --exclude 'src/**/*.spec.{ts,tsx}'",
     "test": "jest",
     "heroku-postbuild": "npm run build"
