@@ -24,6 +24,8 @@ const Title = styled.div`
 `;
 
 const Description = styled.div`
+	font-weight: 600;
+
 	${media.mobile`
     	font-size: 14px;
   	`}
