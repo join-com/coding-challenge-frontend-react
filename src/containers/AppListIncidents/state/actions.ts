@@ -19,13 +19,17 @@ const doFetchIncidents = (filter: StateQueryFilter) => (dispatch: Function) => {
                     },
                 });
                 dispatch(doClearError());
+                dispatch(doSetBusyStatus(false));
             },
             (err) => {
-                dispatch(doSetError('Oops, something went wrong...'));
+                if (err.name) {
+                    dispatch(doSetError('Oops, something went wrong...'));
+                    dispatch(doSetBusyStatus(false));
+                }
             },
         )
         .finally(() => {
-            dispatch(doSetBusyStatus(false));
+            // dispatch(doSetBusyStatus(false));
         });
 };
 

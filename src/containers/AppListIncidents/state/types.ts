@@ -1,3 +1,4 @@
+import * as CONFIG from '../../../config';
 import { ApiList, Incident } from '../../../interfaces';
 
 
@@ -27,5 +28,5 @@ export interface StateQueryFilter {
 
 export const StateQueryFilterDefault: StateQueryFilter = {
     page: 1,
-    per_page: 10,
+    per_page: CONFIG.INCIDENTS_PAGE_SIZE,
 };

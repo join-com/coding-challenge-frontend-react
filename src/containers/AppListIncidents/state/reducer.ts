@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 
-import { Actions, State } from './types';
+import { Actions, State, StateQueryFilterDefault } from './types';
 
 
 const initialState: State = {
@@ -30,7 +30,7 @@ export const reducer: Reducer<State> = (state = initialState, action) => {
             return { ...state, filter: action.payload.filter };
 
         case Actions.DO_PAGINATE:
-            return { ...state, filter: { ...state.filter, page: action.payload.page } };
+            return { ...state, filter: { ...(state.filter || StateQueryFilterDefault), page: action.payload.page } };
 
         default:
             return state;

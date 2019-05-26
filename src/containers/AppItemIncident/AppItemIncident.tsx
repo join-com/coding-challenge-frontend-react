@@ -15,7 +15,7 @@ import './AppItemIncident.scss';
 interface IProps extends PropsState {
     match: {
         params: {
-            itemId: number;
+            itemId: string;
         },
     };
     history: {

@@ -3,17 +3,18 @@ import * as _ from 'lodash';
 import { toast } from 'react-toastify';
 import DatePicker from 'react-datepicker';
 
+import * as CONFIG from '../../config';
 import { StateQueryFilter } from '../../containers/AppListIncidents/state/types';
 
 import './ComIncidentsFilter.scss';
 
 
 interface IProps {
-    isBusy: boolean;
     onSearch: (filter: StateQueryFilter) => void;
 }
 
 interface IState {
+    isDisabled: boolean;
     filter: StateQueryFilter;
 }
 
@@ -23,9 +24,10 @@ export default class ComIncidentsFilter extends React.Component<IProps, IState> 
         super(props);
 
         this.state = {
+            isDisabled: true,
             filter: {
                 page: 1,
-                per_page: 10,
+                per_page: CONFIG.INCIDENTS_PAGE_SIZE,
             },
         };
     }
@@ -53,10 +55,14 @@ export default class ComIncidentsFilter extends React.Component<IProps, IState> 
             occurred_after: this.state.filter.occurred_after && this.state.filter.occurred_after / 1000 || undefined,
             occurred_before: this.state.filter.occurred_before && this.state.filter.occurred_before / 1000 || undefined,
         });
+        this.setState({ isDisabled: true });
     }
 
     private handleChange(field: string, value: any) {
-        this.setState({ filter: { ...this.state.filter, [field]: value } });
+        this.setState({
+            isDisabled: false,
+            filter: { ...this.state.filter, [field]: value }
+        });
     }
 
     public render() {
@@ -75,7 +81,7 @@ export default class ComIncidentsFilter extends React.Component<IProps, IState> 
                         className="form-control"
                         placeholderText="From"
                         selected={ this.state.filter.occurred_after && new Date(this.state.filter.occurred_after) || null }
-                        onChange={ (evt: Date) => this.handleChange('occurred_after', evt.getTime()) }
+                        onChange={ (evt: Date) => this.handleChange('occurred_after', evt && evt.getTime()) }
                         />
                     <span className="fa fa-calendar-alt"></span>
                 </div>
@@ -84,14 +90,14 @@ export default class ComIncidentsFilter extends React.Component<IProps, IState> 
                         className="form-control"
                         placeholderText="To"
                         selected={ this.state.filter.occurred_before && new Date(this.state.filter.occurred_before) || null }
-                        onChange={ (evt: Date) => this.handleChange('occurred_before', evt.getTime()) }
+                        onChange={ (evt: Date) => this.handleChange('occurred_before', evt && evt.getTime()) }
                         />
                     <span className="fa fa-calendar-alt"></span>
                 </div>
                 <div className="col-12 col-md-2">
                     <button
                         className="form-control btn btn-primary"
-                        disabled={ this.props.isBusy }
+                        disabled={ this.state.isDisabled }
                         onClick={ () => this.onSearch() }
                         >
                         Find cases

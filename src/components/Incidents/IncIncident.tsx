@@ -1,7 +1,9 @@
 import * as React from 'react';
+import moment from 'moment';
 
 import Link from '../Hyperlink/ComHyperlink';
 
+import * as CONFIG from '../../config';
 import { Incident } from '../../interfaces';
 
 import './IncIncident.scss';
@@ -27,9 +29,9 @@ export default (props: IProps): React.ReactElement => {
                 </h4>
                 <p>{ props.item.description }</p>
                 <p>
-                    { props.item.occurred_at }
+                    <b>{ moment(props.item.occurred_at * 1000).format(CONFIG.DATE_FORMAT) }</b>
                     <br/>
-                    { props.item.address }
+                    <i>{ props.item.address }</i>
                 </p>
             </div>
         </div>

@@ -16,7 +16,7 @@ import './AppListIncidents.scss';
 interface IProps extends PropsState {
     match: {
         params: {
-            page?: number;
+            page: string;
         },
     };
     doFetchIncidents: Function;
@@ -35,12 +35,12 @@ class AppListIncidents extends React.Component<IProps, IState> {
     }
 
     public componentDidMount() {
-        this.props.doPaginate(this.props.match.params.page || 1);
+        this.props.doPaginate(parseInt(this.props.match.params.page, 10) || 1);
     }
 
     public componentDidUpdate(propsPrev: IProps, statePrev: IState) {
         if (this.props.match.params.page !== propsPrev.match.params.page) {
-            this.props.doPaginate(this.props.match.params.page);
+            this.props.doPaginate(parseInt(this.props.match.params.page, 10));
         }
         if (this.props.filter !== propsPrev.filter) {
             this.props.doFetchIncidents(this.props.filter);
@@ -56,10 +56,7 @@ class AppListIncidents extends React.Component<IProps, IState> {
         return (
             <div className={ this.constructor.name }>
                 <div className="mt-3 mb-3">
-                    <ComIncidentsFilter
-                        isBusy={ this.props.isBusy }
-                        onSearch={ (filter: StateQueryFilter) => this.onSearch(filter) }
-                        />
+                    <ComIncidentsFilter onSearch={ (filter: StateQueryFilter) => this.onSearch(filter) } />
                 </div>
                 { this.props.error && (
                     <h3 className="text-center text-danger mt-5 mb-5">{ this.props.error }</h3>
