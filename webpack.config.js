@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const tsImportPluginFactory = require('ts-import-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -123,12 +124,16 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css',
             chunkFilename: '[id].css'
-          }),
+        }),
         new webpack.HotModuleReplacementPlugin(),
         // enable HMR globally
         new webpack.NamedModulesPlugin(),
         // prints more readable module names in the browser console on HMR updates
         new HtmlWebpackPlugin({template: resolve(__dirname, 'index.html')}),
-        // inject <script> in html file. 
+        // inject <script> in html file.
+        new CopyPlugin([
+            { from: '../cdn', to: 'cdn' },
+            { from: '../favicon.ico', to: 'favicon.ico' },
+        ]),
     ],
 };

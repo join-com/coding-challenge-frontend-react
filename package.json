@@ -9,9 +9,10 @@
     "build": "./node_modules/.bin/webpack -d",
     "watch": "./node_modules/.bin/webpack -d --watch",
     "serve": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --hot --inline --watch",
-    "start": "npm run serve",
+    "start": "serve -s app",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --exclude 'src/**/*.spec.{ts,tsx}'",
-    "test": "jest"
+    "test": "jest",
+    "heroku-postbuild": "npm run build"
   },
   "engines": {
     "npm": "5.10.0",
@@ -51,6 +52,7 @@
   "devDependencies": {
     "@types/enzyme": "^3.9.3",
     "@types/jest": "^24.0.13",
+    "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
@@ -62,6 +64,7 @@
     "react-test-renderer": "^16.8.6",
     "resolve-url-loader": "^3.1.0",
     "sass-loader": "^7.1.0",
+    "serve": "^11.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "ts-import-plugin": "^1.5.5",
