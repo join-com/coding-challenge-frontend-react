@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from 'ui/media';
 
-const Container = styled.div``;
+const Container = styled.div`
+    padding-left: 15px;
+`;
 
 const Title = styled.div`
     font-weight: 600;

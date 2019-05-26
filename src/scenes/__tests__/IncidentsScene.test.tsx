@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
-import { IncidentDetailsScene } from '../IncidentDetailsScene';
+import { IncidentsScene } from '../IncidentsScene';
 
-describe('IncidentDetailsScene', () => {
+describe('IncidentsScene', () => {
     const initialState = {
         incidents: {
             incidents: {},
@@ -18,7 +18,7 @@ describe('IncidentDetailsScene', () => {
     it('should render correctly', () => {
         const store = mockStore(initialState);
         // @ts-ignore
-        const container = shallow(<IncidentDetailsScene match={{ params: { id: 4 } }} store={store} />);
+        const container = shallow(<IncidentsScene store={store} />);
         expect(container).toMatchSnapshot();
         container.unmount();
     });

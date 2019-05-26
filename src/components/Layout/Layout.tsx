@@ -6,11 +6,11 @@ const Container = styled.div`
     margin: 0 auto;
 
     ${media.mobile`
-		padding: 8px;
+		padding: 15px;
   	`}
 
 	${media.tablet`
-		padding: 16px;
+		padding: 15px;
 	`}
 
     ${media.desktop`

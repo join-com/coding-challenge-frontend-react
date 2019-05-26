@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 
 import { store, history } from 'store';
 import { Layout } from 'components/Layout';
-import { Incidents } from 'scenes/Incidents';
-import { IncidentDetails } from 'scenes/IncidentDetails';
+import { IncidentsScene } from 'scenes/IncidentsScene';
+import { IncidentDetailsScene } from 'scenes/IncidentDetailsScene';
 
 import { MAX_INCIDENTS_COUNT, DEFAULT_PROXIMITY, DEFAULT_INCIDENTS_PER_PAGE } from 'core/constants';
 import { IncidentsRequest } from 'core/incidents/actions';
@@ -17,29 +17,31 @@ import './App.css';
 
 export class App extends React.Component {
     public componentDidMount() {
-        store.dispatch(
-            new IncidentsRequest({
-                perPage: MAX_INCIDENTS_COUNT,
-                proximity: DEFAULT_PROXIMITY,
-            }),
-        );
-
-        store.dispatch(
-            new IncidentsRequest({
-                perPage: DEFAULT_INCIDENTS_PER_PAGE,
-                proximity: DEFAULT_PROXIMITY,
-            }),
-        );
-
         setTimeout(() => {
             store.dispatch(
-                new GeoRequest({
+                new IncidentsRequest({
+                    perPage: MAX_INCIDENTS_COUNT,
                     proximity: DEFAULT_PROXIMITY,
-                    occurredAfter: 1532152800,
-                    occurredBefore: 1532152800,
                 }),
             );
-        }, 1000);
+
+            store.dispatch(
+                new IncidentsRequest({
+                    perPage: DEFAULT_INCIDENTS_PER_PAGE,
+                    proximity: DEFAULT_PROXIMITY,
+                }),
+            );
+
+            setTimeout(() => {
+                store.dispatch(
+                    new GeoRequest({
+                        proximity: DEFAULT_PROXIMITY,
+                        occurredAfter: 1532152800,
+                        occurredBefore: 1532152800,
+                    }),
+                );
+            }, 1000);
+        }, 3000);
     }
 
     public render() {
@@ -48,8 +50,8 @@ export class App extends React.Component {
                 <Layout>
                     <ConnectedRouter history={history}>
                         <Switch>
-                            <Route exact={true} path="/" component={Incidents} />
-                            <Route path="/case/:id" component={IncidentDetails} />
+                            <Route exact={true} path="/" component={IncidentsScene} />
+                            <Route exact={true} path="/case/:id" component={IncidentDetailsScene} />
                         </Switch>
                     </ConnectedRouter>
                 </Layout>

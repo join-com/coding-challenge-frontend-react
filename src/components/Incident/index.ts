@@ -1,0 +1,1 @@
+export { Incident } from './Incident';

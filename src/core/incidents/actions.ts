@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { IncidentRequestOptions, Incident, ChangePageOptions } from 'types';
+import { IIncidentRequestOptions, IIncident, IChangePageOptions } from 'types';
 
 export enum ActionTypes {
     SET_INITIAL_STATE = 'Incidents/set initial state',
@@ -21,19 +21,19 @@ export class IncidentsSetInitialState implements Action {
 
 export class IncidentsRequest implements Action {
     public readonly type = ActionTypes.INCIDENTS_REQUEST;
-    public options: IncidentRequestOptions;
+    public options: IIncidentRequestOptions;
 
-    public constructor(options: IncidentRequestOptions) {
+    public constructor(options: IIncidentRequestOptions) {
         this.options = options;
     }
 }
 
 export class IncidentsRequestSuccess implements Action {
     public readonly type = ActionTypes.INCIDENTS_REQUEST_SUCCESS;
-    public incidents: Incident[];
-    public requestOptions: IncidentRequestOptions;
+    public incidents: IIncident[];
+    public requestOptions: IIncidentRequestOptions;
 
-    public constructor(incidents: Incident[], requestOptions: IncidentRequestOptions) {
+    public constructor(incidents: IIncident[], requestOptions: IIncidentRequestOptions) {
         this.incidents = incidents;
         this.requestOptions = requestOptions;
     }
@@ -50,9 +50,9 @@ export class IncidentsRequestFail implements Action {
 
 export class ChangePage implements Action {
     public readonly type = ActionTypes.CHANGE_PAGE;
-    public options: ChangePageOptions;
+    public options: IChangePageOptions;
 
-    public constructor(options: ChangePageOptions) {
+    public constructor(options: IChangePageOptions) {
         this.options = options;
     }
 }

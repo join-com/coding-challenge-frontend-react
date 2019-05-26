@@ -1,0 +1,1 @@
+export { IncidentImage } from './IncidentImage';

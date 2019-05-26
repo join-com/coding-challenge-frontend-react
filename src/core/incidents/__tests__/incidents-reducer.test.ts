@@ -1,6 +1,6 @@
 import { DEFAULT_INCIDENTS_PER_PAGE, DEFAULT_PROXIMITY, MAX_INCIDENTS_COUNT } from 'core/constants';
 import { objKeysSnakeToCamel } from 'core/utils/snakeCase';
-import { Incident } from 'types';
+import { IIncident } from 'types';
 
 import { IncidentsRequest, IncidentsRequestSuccess, IncidentsRequestFail } from '../actions';
 import { incidents, incidentsInitialState } from '../reducer';
@@ -45,7 +45,7 @@ describe('incidents reducer', () => {
         };
 
         // @ts-ignore convert from db snake case to camel
-        const loadedIncidents: Incident[] = objKeysSnakeToCamel(incidentsOnePageArray);
+        const loadedIncidents: IIncident[] = objKeysSnakeToCamel(incidentsOnePageArray);
         const stateAfter = {
             incidents: incidentsOnePageObject,
             requesting: false,
@@ -69,7 +69,7 @@ describe('incidents reducer', () => {
         };
 
         // @ts-ignore convert from db snake case to camel
-        const incidentsCamel: Incident[] = objKeysSnakeToCamel(incidentsMaxPerPage);
+        const incidentsCamel: IIncident[] = objKeysSnakeToCamel(incidentsMaxPerPage);
         const stateAfter = {
             incidents: {},
             requesting: true,

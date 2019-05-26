@@ -1,5 +1,7 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+
 import { HeaderTextContainer } from './HeaderTextContainer';
 
-storiesOf('HeaderTextContainer', module).add('HeaderTextContainer', () => <HeaderTextContainer />);
+const stories = storiesOf('HeaderTextContainer', module);
+stories.add('HeaderTextContainer', () => <HeaderTextContainer />);

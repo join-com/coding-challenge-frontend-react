@@ -10,12 +10,12 @@ export const IncidentTypeText: { [key in IncidentType]: string } = {
     chop_shop: 'Chop shop',
 };
 
-export interface GeoGeometry {
+export interface IGeoGeometry {
     type: 'Point';
     coordinates: number[];
 }
 
-export interface Incident {
+export interface IIncidentDatabase {
     id: number;
     title: string;
     description: string;
@@ -36,10 +36,21 @@ export interface Incident {
     locationDescription: string | null;
     type: IncidentType;
     typeProperties: string | null;
-    geometry?: GeoGeometry;
+    geometry?: IGeoGeometry;
 }
 
-export interface IncidentRequestOptions {
+export interface IIncident {
+    id: number;
+    title: string;
+    description: string;
+    address: string;
+    occurredAt: number;
+    imageUrl: string | null;
+    imageUrlThumb: string | null;
+    geometry?: IGeoGeometry;
+}
+
+export interface IIncidentRequestOptions {
     page?: number; // Page of results to fetch.
     perPage?: number; // Number of results to return per page.
     occurredBefore?: number; // End of period
@@ -50,13 +61,13 @@ export interface IncidentRequestOptions {
     query?: string; // Full text search of incidents
 }
 
-export interface ChangePageOptions {
+export interface IChangePageOptions {
     from: number;
     to: number;
     totalPages: number;
 }
 
-export interface Geo {
+export interface IGeo {
     type: 'FeatureCollection';
     features: [
         {
@@ -66,12 +77,12 @@ export interface Geo {
                 type: IncidentType;
                 occurredAt: number;
             };
-            geometry: GeoGeometry;
+            geometry: IGeoGeometry;
         }
     ];
 }
 
-export interface GeoRequestOptions {
+export interface IGeoRequestOptions {
     occurredBefore?: number; // End of period
     occurredAfter?: number; // Start of period
     incidentType?: IncidentType; // Only incidents of specific type

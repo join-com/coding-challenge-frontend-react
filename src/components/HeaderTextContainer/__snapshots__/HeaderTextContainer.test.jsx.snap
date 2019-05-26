@@ -11,8 +11,12 @@ exports[`HeaderTextContainer should render correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "lastClassName": "bDWFJH",
-            "rules": Array [],
+            "lastClassName": "kofWWD",
+            "rules": Array [
+              "
+    padding-left: 15px;
+",
+            ],
           },
           "displayName": "styled.div",
           "foldedComponentIds": Array [],
@@ -27,7 +31,7 @@ exports[`HeaderTextContainer should render correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa bDWFJH"
+        className="sc-bdVaJa kofWWD"
       >
         <styled.div>
           <StyledComponent

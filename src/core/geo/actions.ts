@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { GeoRequestOptions, Geo } from 'types';
+import { IGeoRequestOptions, IGeo } from 'types';
 
 export enum ActionTypes {
     SET_INITIAL_STATE = 'Geo/set initial state',
@@ -19,19 +19,19 @@ export class GeoSetInitialState implements Action {
 
 export class GeoRequest implements Action {
     public readonly type = ActionTypes.GEO_REQUEST;
-    public options: GeoRequestOptions;
+    public options: IGeoRequestOptions;
 
-    public constructor(options: GeoRequestOptions) {
+    public constructor(options: IGeoRequestOptions) {
         this.options = options;
     }
 }
 
 export class GeoRequestSuccess implements Action {
     public readonly type = ActionTypes.GEO_REQUEST_SUCCESS;
-    public geo: Geo;
-    public requestOptions: GeoRequestOptions;
+    public geo: IGeo;
+    public requestOptions: IGeoRequestOptions;
 
-    public constructor(geo: Geo, requestOptions: GeoRequestOptions) {
+    public constructor(geo: IGeo, requestOptions: IGeoRequestOptions) {
         this.geo = geo;
         this.requestOptions = requestOptions;
     }

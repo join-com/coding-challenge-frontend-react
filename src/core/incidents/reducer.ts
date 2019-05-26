@@ -5,20 +5,20 @@ import { MAX_INCIDENTS_COUNT } from 'core/constants';
 import { ActionTypes as GeoActionTypes, ActionsAll as GeoActionsAll } from 'core/geo/actions';
 import { AppState } from 'core/reducers';
 import { arrayToObj } from 'core/utils/arrayToObj';
-import { Incident } from 'types';
+import { IIncident } from 'types';
 
 import { ActionTypes as IncidentsActionTypes, ActionsAll as IncidentsActionsAll } from './actions';
 
-export interface Incidents {
-    [key: string]: Incident;
+export interface IIncidentsObj {
+    [key: string]: IIncident;
 }
 
-const initIncidents: Incidents = {};
+const initIncidents: IIncidentsObj = {};
 
-interface TState {
+export interface TState {
     error: object | boolean;
     requesting?: boolean;
-    incidents: Incidents;
+    incidents: IIncidentsObj;
     currentPage: number;
     totalPages?: number;
 }
@@ -37,8 +37,6 @@ export const incidents: Reducer<TState> = (
     state: TState = initialState,
     action: IncidentsActionsAll | GeoActionsAll,
 ) => {
-    // console.log(`action ${action.type}`, action);
-
     switch (action.type) {
         case IncidentsActionTypes.SET_INITIAL_STATE:
             return initialState;
@@ -54,7 +52,7 @@ export const incidents: Reducer<TState> = (
             return {
                 ...state,
                 // @ts-ignore convert to obj with index - id
-                incidents: arrayToObj(action.incidents, 'id') as Incidents,
+                incidents: arrayToObj(action.incidents, 'id') as IncidentsObj,
                 requesting: false,
                 error: false,
             };
@@ -66,23 +64,18 @@ export const incidents: Reducer<TState> = (
             return { ...state, requesting: true };
 
         case GeoActionTypes.GEO_REQUEST_SUCCESS:
-            const pairsWithUpdatedGeo: R.KeyValuePair<string, Incident>[] = R.toPairs<Incident>(state.incidents).map(
-                ([key, incident]) => {
-                    const features = action.geo.features.filter(feature => feature.properties.id === incident.id);
+            const pairsWithUpdatedGeo: R.KeyValuePair<string, IIncident>[] = R.toPairs<IIncident>(state.incidents).map(
+                ([id, incident]) => {
+                    const feature = action.geo.features.filter(feature => String(feature.properties.id) === id)[0];
 
-                    return [
-                        key,
-                        features.length === 0
-                            ? incident
-                            : Object.assign({}, incident, { geometry: features[0].geometry }),
-                    ];
+                    return [id, feature ? Object.assign({}, incident, { geometry: feature.geometry }) : incident];
                 },
             );
 
             return {
                 ...state,
                 // update geometry in incident
-                incidents: R.fromPairs<Incident>(pairsWithUpdatedGeo),
+                incidents: R.fromPairs<IIncident>(pairsWithUpdatedGeo),
                 requesting: false,
                 error: false,
             };
@@ -95,4 +88,5 @@ export const incidents: Reducer<TState> = (
     }
 };
 
-export const selectIncidents = (state: AppState): TIncidentsState => state.incidents;
+export const selectIncidents = (state: AppState): IIncident[] => Object.values(state.incidents.incidents);
+export const selectIncident = (state: AppState, id: string): IIncident => state.incidents.incidents[id];

@@ -1,8 +1,8 @@
 import { DEFAULT_PROXIMITY } from 'core/constants';
-import { Geo } from 'types';
+import { IGeo } from 'types';
 
 import { GeoRequest, GeoRequestSuccess, GeoRequestFail } from '../../geo/actions';
-import { incidents, Incidents } from '../reducer';
+import { incidents, IIncidentsObj } from '../reducer';
 import { incidentsOnePageObject } from '../__mocks__/incidentsOnePageObject';
 import { geoMock, incidentsOnePageObjectWithGeo } from 'core/geo/__mocks__/geo';
 
@@ -16,14 +16,14 @@ describe('incidents reducer', () => {
     it('should handle GeoRequest', () => {
         const stateBefore = {
             // @ts-ignore
-            incidents: incidentsOnePageObject as Incidents,
+            incidents: incidentsOnePageObject as IIncidentsObj,
             requesting: false,
             error: false,
             currentPage: 1,
         };
         const stateAfter = {
             // @ts-ignore
-            incidents: incidentsOnePageObject as Incidents,
+            incidents: incidentsOnePageObject as IIncidentsObj,
             requesting: true,
             error: false,
             currentPage: 1,
@@ -35,7 +35,7 @@ describe('incidents reducer', () => {
     it('should handle GeoRequestSuccess', () => {
         const stateBefore = {
             // @ts-ignore
-            incidents: incidentsOnePageObject as Incidents,
+            incidents: incidentsOnePageObject as IIncidentsObj,
             requesting: true,
             error: false,
             currentPage: 1,
@@ -47,14 +47,14 @@ describe('incidents reducer', () => {
             currentPage: 1,
         };
         // @ts-ignore
-        const action = new GeoRequestSuccess(geoMock as Geo, options);
+        const action = new GeoRequestSuccess(geoMock as IGeo, options);
         expect(incidents(stateBefore, action)).toEqual(stateAfter);
     });
 
     it('should handle GeoRequestFail', () => {
         const stateBefore = {
             // @ts-ignore
-            incidents: incidentsOnePageObject as Incidents,
+            incidents: incidentsOnePageObject as IIncidentsObj,
             requesting: true,
             error: false,
             currentPage: 1,
@@ -65,7 +65,7 @@ describe('incidents reducer', () => {
         };
         const stateAfter = {
             // @ts-ignore
-            incidents: incidentsOnePageObject as Incidents,
+            incidents: incidentsOnePageObject as IIncidentsObj,
             requesting: false,
             error,
             currentPage: 1,

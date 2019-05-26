@@ -2,7 +2,7 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 
 import { api } from 'core/services/api';
 import { DEFAULT_INCIDENTS_PER_PAGE, DEFAULT_PROXIMITY } from 'core/constants';
-import { Incident } from 'types';
+import { IIncident, IIncidentDatabase } from 'types';
 import { objKeysCamelToSnake } from 'core/utils/camelCase';
 import { objKeysSnakeToCamel } from 'core/utils/snakeCase';
 
@@ -23,9 +23,18 @@ export function* incidents({ options }: IncidentsRequest) {
         if (status !== 200) throw result;
 
         // @ts-ignore convert from db snake case to camel
-        const incidents: Incident[] = objKeysSnakeToCamel(data.incidents);
+        const incidents: IIncidentDatabase[] = objKeysSnakeToCamel(data.incidents);
+        const transformed: IIncident[] = incidents.map(({ id, title, description, address, occurredAt, media }) => ({
+            id,
+            title,
+            description,
+            address,
+            occurredAt,
+            imageUrl: media && media.imageUrl,
+            imageUrlThumb: media && media.imageUrlThumb,
+        }));
 
-        yield put(new IncidentsRequestSuccess(incidents, options));
+        yield put(new IncidentsRequestSuccess(transformed, options));
     } catch (error) {
         yield put(new IncidentsRequestFail(error));
     }

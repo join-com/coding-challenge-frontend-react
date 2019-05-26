@@ -6,3 +6,17 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:focus {
+	outline: none;
+}
+
+/* fix problem with width page when with / without scroll */
+#root {
+	width: 100vw;
+}
