@@ -11,3 +11,4 @@ it('renders the heading', () => {
     //console.log(' ++++++ ' + res.contains(<Link to="/">Test Link</Link>));
     expect(res).toBeTruthy();
 });
+
