@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComPreloader should match a snapshot 1`] = `
+<div
+  className="ComPreloader"
+>
+  <div
+    className="fa fa-spinner fa-spin"
+  />
+</div>
+`;

@@ -10,7 +10,7 @@ const initialState: State = {
 
 
 export const reducer: Reducer<State> = (state = initialState, action) => {
-    switch (action.type) {
+    switch (action && action.type || null) {
 
         case Actions.DO_GET_INCIDENT_BY_ID:
             return { ...state, incident: action.payload.incident };

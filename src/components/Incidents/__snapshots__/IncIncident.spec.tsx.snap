@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncIncident should match a snapshot 1`] = `
+<div
+  className="IncIncident row"
+>
+  <div
+    className="col-3"
+  >
+    <img
+      src="https://seeclickfix.com/files/issue_images/0136/5401/3AA630FA-E3E9-42A3-81D3-33AF8DE90D63_square.jpeg"
+    />
+  </div>
+  <div
+    className="col-9"
+  >
+    <h4>
+      <a
+        href="/incidents/item/100681"
+        onClick={[Function]}
+      >
+        Tree Pruning Request
+      </a>
+    </h4>
+    <p>
+      It’s impossible to wheel a stroller (and I imagine a wheelchair) through this section of sidewalk due to the bushes and the fact that two bikes are constantly chained there. 
+    </p>
+    <p>
+      <b>
+        Sun, May 26, 2019
+      </b>
+      <br />
+      <i>
+        Buena Vista Park & Richdale Ave Cambridge, MA, 02140, USA
+      </i>
+    </p>
+  </div>
+</div>
+`;

@@ -32,7 +32,7 @@ export default class AppListIncidents extends React.Component<IProps, IState> {
         }
     }
 
-    public renderResults(): React.ReactElement {
+    private renderResults(): React.ReactElement {
         return (
             <div>
                 { _.get(this.props, ['data', 'collection'], []).map((item: Incident, ind: number) => {

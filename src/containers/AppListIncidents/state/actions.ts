@@ -27,10 +27,7 @@ const doFetchIncidents = (filter: StateQueryFilter) => (dispatch: Function) => {
                     dispatch(doSetBusyStatus(false));
                 }
             },
-        )
-        .finally(() => {
-            // dispatch(doSetBusyStatus(false));
-        });
+        );
 };
 
 const doClearError = () => action(Actions.DO_CLEAR_ERROR);

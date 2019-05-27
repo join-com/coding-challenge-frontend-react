@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComHyperlink should match a snapshot 1`] = `
+<a
+  href="/test"
+  onClick={[Function]}
+>
+  Test Link
+</a>
+`;

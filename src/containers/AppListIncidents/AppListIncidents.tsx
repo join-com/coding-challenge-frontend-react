@@ -28,7 +28,7 @@ interface IState {
 
 }
 
-class AppListIncidents extends React.Component<IProps, IState> {
+export class AppListIncidents extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);

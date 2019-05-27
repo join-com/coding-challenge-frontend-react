@@ -12,7 +12,7 @@ const initialState: State = {
 
 
 export const reducer: Reducer<State> = (state = initialState, action) => {
-    switch (action.type) {
+    switch (action && action.type || null) {
 
         case Actions.DO_FETCH_INCIDENTS:
             return { ...state, incidents: action.payload.incidents };

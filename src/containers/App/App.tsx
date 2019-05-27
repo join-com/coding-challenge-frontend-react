@@ -21,7 +21,7 @@ interface IState {
 
 }
 
-class App extends React.Component<IProps, IState> {
+export class App extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);

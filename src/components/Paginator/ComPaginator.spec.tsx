@@ -5,15 +5,24 @@ import { mount } from 'enzyme';
 import * as sinon from 'sinon';
 import * as renderer from 'react-test-renderer';
 
-import ComHyperlink from './ComHyperlink';
+import ComPaginator from './ComPaginator';
+
+import * as mocks from '../../../mocks';
 
 
-describe('ComHyperlink', () => {
+describe('ComPaginator', () => {
 
-    let node, comp;
+    let node, comp, onNavigate;
 
     beforeEach(() => {
-        node = (<ComHyperlink to="/test">Test Link</ComHyperlink>);
+        onNavigate = sinon.spy();
+        node = (
+            <ComPaginator
+                urlPattern="/test/{page}"
+                pagination={ mocks.pagination }
+                onNavigate={ onNavigate }
+            />
+        );
         comp = mount(<MemoryRouter>{ node }</MemoryRouter>);
     });
 
@@ -21,18 +30,12 @@ describe('ComHyperlink', () => {
         expect(comp.length).toBe(1);
     });
 
-    it('should contain <a> element with a proper "href"', () => {
-        const element = comp.find('a[href="/test"]');
-        expect(element.length).toBe(1);
-        expect(element.text()).toEqual('Test Link');
-    });
-
-    it('should scroll to window top when clicked', () => {
-        const onClick = sinon.spy();
-        const element = comp.find('a[href="/test"]');
-        window.scrollTo = onClick;
+    it('should navigate to other page', () => {
+        const element = comp.find('li.page-item.link').at(2).find('a');
+        window.scrollTo = () => {};
         element.simulate('click');
-        expect(onClick.calledOnceWith(0, 0)).toBeTruthy();
+        expect(element.length).toBe(1);
+        expect(onNavigate.calledOnceWith(1)).toBeTruthy();
     });
 
     it('should match a snapshot', () => {

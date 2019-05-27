@@ -29,7 +29,7 @@ interface IState {
 
 }
 
-class AppItemIncident extends React.Component<IProps, IState> {
+export class AppItemIncident extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
