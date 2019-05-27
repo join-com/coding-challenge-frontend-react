@@ -1,5 +1,3 @@
-import * as sinon from 'sinon';
-
 import * as _ from 'lodash';
 
 import { reducer } from './reducer';
@@ -11,12 +9,13 @@ import * as mocks from '../../../../mocks';
 describe('AppListIncidents / reducers', () => {
 
     it('no-op', () => {
+        // @ts-ignore
         let state = reducer();
         expect(state).toEqual({});
     });
 
     it('no-op due to unexisting action type', () => {
-        let dummy = { incident: {}, ferror: 'Lorem ipsum...' };
+        let dummy = { error: 'Lorem ipsum...' } as any;
         let state = _.cloneDeep(dummy);
         state = reducer(state, {
             type: '_',
@@ -26,7 +25,7 @@ describe('AppListIncidents / reducers', () => {
     });
 
     it('DO_GET_INCIDENT_BY_ID', () => {
-        let state = { incident: undefined };
+        let state = { incident: undefined } as any;
         state = reducer(state, {
             type: ActionNames.DO_GET_INCIDENT_BY_ID,
             payload: { incident: mocks.incident },
@@ -35,7 +34,7 @@ describe('AppListIncidents / reducers', () => {
     });
 
     it('DO_CLEAR_ERROR', () => {
-        let state = { error: 'qwerty' };
+        let state = { error: 'qwerty' } as any;
         state = reducer(state, {
             type: ActionNames.DO_CLEAR_ERROR,
         });
@@ -43,7 +42,7 @@ describe('AppListIncidents / reducers', () => {
     });
 
     it('DO_SET_ERROR', () => {
-        let state = { error: 'qwerty' };
+        let state = { error: 'qwerty' } as any;
         state = reducer(state, {
             type: ActionNames.DO_SET_ERROR,
             payload: { error: 'Lorem ipsum dolor sit amet...' },

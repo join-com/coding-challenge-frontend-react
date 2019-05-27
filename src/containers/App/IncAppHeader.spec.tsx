@@ -9,7 +9,8 @@ import IncAppHeader from './IncAppHeader';
 
 describe('IncAppHeader', () => {
 
-    let node, comp;
+    let node: any;
+    let comp: any;
 
     beforeEach(() => {
         node = (
@@ -23,7 +24,7 @@ describe('IncAppHeader', () => {
     });
 
     it('should render the component', () => {
-        expect(1).toBe(1);
+        expect(comp.length).toBe(1);
     });
 
     it('should match a snapshot', () => {

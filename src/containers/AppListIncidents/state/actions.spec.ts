@@ -11,11 +11,11 @@ describe('AppListIncidents / actions', () => {
 
     it('doFetchIncidents / success', async () => {
         const spyDispatch = sinon.spy();
-        const spyGetState = sinon.spy();
 
+        // @ts-ignore
         API.incidents.fetchIncidents = (filter: StateQueryFilter) => Promise.resolve([mocks.incident, mocks.incident, mocks.incident]);
 
-        await actions.doFetchIncidents(StateQueryFilterDefault)(spyDispatch, spyGetState);
+        await actions.doFetchIncidents(StateQueryFilterDefault)(spyDispatch);
 
         expect(spyDispatch.calledWith(sinon.match({
             type: ActionNames.DO_CLEAR_ERROR,
@@ -61,11 +61,11 @@ describe('AppListIncidents / actions', () => {
 
     it('doFetchIncidents / failure', async () => {
         const spyDispatch = sinon.spy();
-        const spyGetState = sinon.spy();
 
+        // @ts-ignore
         API.incidents.fetchIncidents = (filter: StateQueryFilter) => Promise.reject({ name: 'qwerty' });
 
-        await actions.doFetchIncidents(StateQueryFilterDefault)(spyDispatch, spyGetState);
+        await actions.doFetchIncidents(StateQueryFilterDefault)(spyDispatch);
 
         expect(spyDispatch.calledWith(sinon.match({
             type: ActionNames.DO_CLEAR_ERROR,

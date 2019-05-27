@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { MemoryRouter } from 'react-router-dom'
-import * as moment from 'moment';
 
 import { shallow } from 'enzyme';
 import * as renderer from 'react-test-renderer';
@@ -12,10 +11,11 @@ import * as mocks from '../../../mocks';
 
 describe('IncIncident', () => {
 
-    let node, comp;
+    let node: any;
+    let comp: any;
 
     beforeEach(() => {
-        node = (<IncIncident item={ mocks.incident } />);
+        node = (<IncIncident item={ mocks.incident as any } />);
         comp = shallow(node);
     });
 

@@ -12,13 +12,15 @@ import * as mocks from '../../../mocks';
 
 describe('ComIncidents', () => {
 
-    let node, comp, onNavigate;
+    let node: any;
+    let comp: any;
+    let onNavigate: any;
 
     beforeEach(() => {
         onNavigate = sinon.spy();
         node = (
             <ComIncidents 
-                data={{ pagination: {...mocks.pagination, page_size: 4}, collection: [mocks.incident, mocks.incident, mocks.incident, mocks.incident] }}
+                data={ { pagination: {...mocks.pagination, page_size: 4}, collection: [mocks.incident, mocks.incident, mocks.incident, mocks.incident] } as any }
                 base="/test"
                 onNavigate={ onNavigate }
                 />

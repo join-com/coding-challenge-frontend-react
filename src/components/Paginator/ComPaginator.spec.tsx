@@ -12,7 +12,9 @@ import * as mocks from '../../../mocks';
 
 describe('ComPaginator', () => {
 
-    let node, comp, onNavigate;
+    let node: any;
+    let comp: any;
+    let onNavigate: any;
 
     beforeEach(() => {
         onNavigate = sinon.spy();

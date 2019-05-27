@@ -8,10 +8,12 @@ import ComPreloader from './ComPreloader';
 
 describe('ComPreloader', () => {
 
-    let comp;
+    let comp: any;
+    let node: any;
 
     beforeEach(() => {
-        comp = shallow(<ComPreloader loading={false} />);
+        node = (<ComPreloader loading={false} />);
+        comp = shallow(node);
     });
 
     it('should render an empty component', () => {

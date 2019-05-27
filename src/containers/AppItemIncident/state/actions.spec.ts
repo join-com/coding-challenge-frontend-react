@@ -11,11 +11,11 @@ describe('AppItemIncident / actions', () => {
 
     it('doGetIncidentById / success', async () => {
         const spyDispatch = sinon.spy();
-        const spyGetState = sinon.spy();
 
+        // @ts-ignore
         API.incidents.getIncidentById = (id: number) => Promise.resolve(mocks.incident);
 
-        await actions.doGetIncidentById(12345)(spyDispatch, spyGetState);
+        await actions.doGetIncidentById(12345)(spyDispatch);
 
         expect(spyDispatch.calledWith(sinon.match({
             type: ActionNames.DO_CLEAR_ERROR,
@@ -38,11 +38,11 @@ describe('AppItemIncident / actions', () => {
 
     it('doGetIncidentById / failure', async () => {
         const spyDispatch = sinon.spy();
-        const spyGetState = sinon.spy();
 
+        // @ts-ignore
         API.incidents.getIncidentById = (id: number) => Promise.reject({ response: { status: 404 } });
 
-        await actions.doGetIncidentById(12345)(spyDispatch, spyGetState);
+        await actions.doGetIncidentById(12345)(spyDispatch);
 
         expect(spyDispatch.calledWith(sinon.match({
             type: ActionNames.DO_CLEAR_ERROR,

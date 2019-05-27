@@ -8,12 +8,13 @@ import * as renderer from 'react-test-renderer';
 import ComIncidentsFilter from './ComIncidentsFilter';
 
 import * as CONFIG from '../../config';
-import * as mocks from '../../../mocks';
 
 
 describe('ComIncidentsFilter', () => {
 
-    let node, comp, onSearch;
+    let node: any;
+    let comp: any;
+    let onSearch: any;
 
     beforeEach(() => {
         onSearch = sinon.spy();

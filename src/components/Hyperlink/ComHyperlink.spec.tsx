@@ -10,7 +10,8 @@ import ComHyperlink from './ComHyperlink';
 
 describe('ComHyperlink', () => {
 
-    let node, comp;
+    let node: any;
+    let comp: any;
 
     beforeEach(() => {
         node = (<ComHyperlink to="/test">Test Link</ComHyperlink>);
