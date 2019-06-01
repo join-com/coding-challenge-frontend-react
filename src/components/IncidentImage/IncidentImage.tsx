@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import prevewSvg from 'components/assets/preview.svg';
 import { media } from 'ui/media';
+const prevewSvg = require('components/assets/preview.svg');
 
 interface IContainerProps {
     isPreview: boolean;

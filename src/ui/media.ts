@@ -2,7 +2,6 @@ import { mediaQuery } from './utils/styled-media-queries';
 
 const sizes = {
     mobile: 480,
-    tablet: 768,
     desktop: 992,
 };
 

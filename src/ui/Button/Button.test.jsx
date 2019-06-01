@@ -4,7 +4,7 @@ import { Button } from '../Button';
 
 describe('MyComponent', () => {
     it('should render correctly', () => {
-        const button = <Button text={'Button test'} onClick={() => {}} debug />;
+        const button = <Button text={'Button test'} onClick={() => {}} />;
 
         const mounted = mount(button);
         expect(mounted).toMatchSnapshot();

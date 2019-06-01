@@ -1,0 +1,1631 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination common should render correctly 1`] = `
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.9);
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px rgba(0,0,0,0.9);
+  border: 3px solid rgba(0,0,0,0.9);
+  line-height: 24px;
+  height: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.c2:active {
+  background-color: rgba(0,0,0,0.9);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.9);
+  border: 3px solid transparent;
+  color: #ffffff;
+}
+
+.c0 {
+  text-align: center;
+}
+
+.c3 {
+  margin-right: calc(15px + 3px);
+}
+
+.c3:last-child {
+  margin-right: 0;
+}
+
+.c1 {
+  margin-right: calc(15px + 3px);
+  display: none;
+}
+
+.c1:last-child {
+  margin-right: 0;
+}
+
+.c4 {
+  margin-right: calc(15px + 3px);
+  display: none;
+}
+
+.c4:last-child {
+  margin-right: 0;
+}
+
+@media (min-width:992px) {
+  .c1 {
+    display: inline-block;
+  }
+}
+
+@media (min-width:480px) {
+  .c4 {
+    display: inline-block;
+  }
+}
+
+<Pagination
+  changePage={[Function]}
+  current={7}
+  totalPages={18}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bwzfXH",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+    text-align: center;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bwzfXH",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <Styled(Styled(Button))
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bxivhb",
+                  "isStatic": true,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "992",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bxivhb",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c1"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c1"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c1"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c1 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      &lt;&lt; First
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+        <Styled(Button)
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "lastClassName": "c3",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                  ],
+                },
+                "displayName": "Styled(Button)",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c3"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c3"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c3"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c3 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      &lt; Prev
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Button)>
+        <Styled(Styled(Button))
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": true,
+                  "lastClassName": "c4",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c4"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c4"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c4"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c4 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      5
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+        <Styled(Styled(Button))
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": true,
+                  "lastClassName": "c4",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c4"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c4"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c4"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c4 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      6
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+        <Styled(Styled(Button))>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": true,
+                  "lastClassName": "c4",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <Button
+              className="c4"
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c4"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c4"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c4 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                    >
+                      7
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+        <Styled(Styled(Button))
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": true,
+                  "lastClassName": "c4",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c4"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c4"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c4"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c4 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      8
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+        <Styled(Styled(Button))
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": true,
+                  "lastClassName": "c4",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c4"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c4"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c4"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c4 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      9
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+        <Styled(Button)
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "lastClassName": "c3",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                  ],
+                },
+                "displayName": "Styled(Button)",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c3"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c3"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c3"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c3 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      Next &gt;
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Button)>
+        <Styled(Styled(Button))
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bxivhb",
+                  "isStatic": true,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
+    margin-right: calc(15px + 3px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+",
+                    "
+    display: none;
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "992",
+                    "px)",
+                    " {
+            ",
+                    "
+    	display: inline-block;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Styled(Button))",
+                "foldedComponentIds": Array [
+                  "sc-htpNat",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-bxivhb",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="c1"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      5,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="c1"
+                  fontSize={
+                    Array [
+                      3,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={3}
+                  py={1}
+                >
+                  <StyledComponent
+                    className="c1"
+                    fontSize={
+                      Array [
+                        3,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={3}
+                    py={1}
+                  >
+                    <div
+                      className="c1 c2"
+                      fontSize={
+                        Array [
+                          3,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      Last &gt;&gt;
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Styled(Button))>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Pagination>
+`;

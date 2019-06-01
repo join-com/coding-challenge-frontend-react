@@ -2,7 +2,6 @@
 
 exports[`MyComponent should render correctly 1`] = `
 <Button
-  debug={true}
   onClick={[Function]}
   text="Button test"
 >
@@ -10,13 +9,7 @@ exports[`MyComponent should render correctly 1`] = `
     theme={
       Object {
         "colors": Object {
-          "UICheckboxIconCopy": "rgba(144, 156, 172, 0.2)",
-          "UIClientError": "#ff6c00",
-          "UIModalFooterLightBlueGray": "#f3f9ff",
-          "UIModalTitleDefault": "rgba(94, 102, 112, 0.4)",
-          "UIServerError": "#ff0000",
-          "UITriggerBlue": "#00a9f6",
-          "UITriggerRed": "#fe3d00",
+          "buttonBackground": "rgba(0, 0, 0, 0.9)",
         },
         "fontSizes": Array [
           12,
@@ -31,26 +24,31 @@ exports[`MyComponent should render correctly 1`] = `
         ],
         "space": Array [
           0,
-          4,
-          8,
-          16,
-          32,
-          64,
-          128,
-          256,
+          5,
+          10,
+          15,
+          25,
         ],
       }
     }
   >
-    <styled.button
-      color="orange"
-      debug={true}
+    <styled.div
+      fontSize={
+        Array [
+          3,
+        ]
+      }
       onClick={[Function]}
-      p={2}
+      px={3}
+      py={1}
+      text="Button test"
     >
       <StyledComponent
-        color="orange"
-        debug={true}
+        fontSize={
+          Array [
+            3,
+          ]
+        }
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
@@ -58,33 +56,41 @@ exports[`MyComponent should render correctly 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": false,
-              "lastClassName": "cMRHnp",
+              "lastClassName": "kSjXXy",
               "rules": Array [
                 "
-	",
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
                 [Function],
                 "
-	",
-                [Function],
-                "
-	",
-                [Function],
-                "
-	",
+    ",
                 [Function],
                 "
 ",
               ],
             },
-            "defaultProps": Object {
-              "color": "orange",
-              "p": 2,
-            },
-            "displayName": "styled.button",
+            "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
             "styledComponentId": "sc-bdVaJa",
-            "target": "button",
+            "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
@@ -92,17 +98,21 @@ exports[`MyComponent should render correctly 1`] = `
         }
         forwardedRef={null}
         onClick={[Function]}
-        p={2}
+        px={3}
+        py={1}
+        text="Button test"
       >
-        <button
-          className="sc-bdVaJa cMRHnp"
-          color="orange"
+        <div
+          className="sc-bdVaJa kSjXXy"
+          fontSize={
+            Array [
+              3,
+            ]
+          }
           onClick={[Function]}
-        >
-          Button test
-        </button>
+        />
       </StyledComponent>
-    </styled.button>
+    </styled.div>
   </ThemeProvider>
 </Button>
 `;

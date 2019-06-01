@@ -1,38 +1,46 @@
 import React from 'react';
-import { space, width, fontSize, color, WidthProps, SpaceProps } from 'styled-system';
 import styled, { ThemeProvider } from 'styled-components';
-import styledTs from 'styled-components-ts';
+import { fontSize, space } from 'styled-system';
 import { theme } from '../theme';
 
-type StyledProps = WidthProps & SpaceProps;
+export const StyledButton = styled.div`
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
 
-export const StyledButton = styledTs<StyledProps>(styled.button)`
-	${space}
-	${width}
-	${fontSize}
-	${color}
+    line-height: 24px;
+    height: 40px;
+    user-select: none;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ${fontSize}
+    ${space}
 `;
 
-StyledButton.defaultProps = {
-    p: 2,
-    color: 'orange',
-};
-
 interface Props {
-    text: string;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 export class Button extends React.PureComponent<Props> {
     public render() {
-        const { text, onClick, ...rest } = this.props;
+        const { children, onClick, ...rest } = this.props;
 
-        return (
-            <ThemeProvider theme={theme}>
-                <StyledButton onClick={onClick} {...rest}>
-                    {text}
-                </StyledButton>
-            </ThemeProvider>
+        const button = (
+            // @ts-ignore
+            <StyledButton fontSize={[3]} px={3} py={1} onClick={onClick} {...rest}>
+                {children}
+            </StyledButton>
         );
+
+        return <ThemeProvider theme={theme}>{button}</ThemeProvider>;
     }
 }
