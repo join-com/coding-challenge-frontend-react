@@ -2,8 +2,11 @@
 
 exports[`IncidentsScene should render correctly 1`] = `
 <Component
-  dispatch={[Function]}
+  changePage={[Function]}
+  currentPage={1}
+  error={false}
   incidents={Array []}
+  requesting={false}
   store={
     Object {
       "clearActions": [Function],
@@ -35,5 +38,6 @@ exports[`IncidentsScene should render correctly 1`] = `
       "unsubscribe": [Function],
     }
   }
+  totalPages={NaN}
 />
 `;

@@ -18,6 +18,7 @@ export class App extends React.Component {
     public componentDidMount() {
         store.dispatch(
             new IncidentsRequest({
+                page: 1,
                 perPage: MAX_INCIDENTS_COUNT,
                 proximity: DEFAULT_PROXIMITY,
             }),
@@ -25,6 +26,7 @@ export class App extends React.Component {
 
         store.dispatch(
             new IncidentsRequest({
+                page: 1,
                 perPage: DEFAULT_INCIDENTS_PER_PAGE,
                 proximity: DEFAULT_PROXIMITY,
             }),

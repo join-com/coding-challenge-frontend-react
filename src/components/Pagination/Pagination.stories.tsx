@@ -6,5 +6,5 @@ import { Pagination } from './Pagination';
 const stories = storiesOf('Pagination', module);
 
 stories.add('Pagination', () => {
-    return <Pagination totalPages={18} current={3} changePage={() => {}} />;
+    return <Pagination totalPages={18} currentPage={3} changePage={() => {}} />;
 });

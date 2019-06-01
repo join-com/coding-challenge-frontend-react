@@ -21,7 +21,8 @@ export interface TState {
     requesting: boolean;
     incidents: IIncidentsObj;
     currentPage: number;
-    totalPages?: number;
+    totalIncidents: number;
+    incidentsPerPage: number;
 }
 
 const initialState: TState = {
@@ -29,6 +30,8 @@ const initialState: TState = {
     requesting: false,
     error: false,
     currentPage: 1,
+    totalIncidents: 0,
+    incidentsPerPage: 10,
 };
 
 export type TIncidentsState = TState;
@@ -47,13 +50,14 @@ export const incidents: Reducer<TState> = (
 
         case IncidentsActionTypes.INCIDENTS_REQUEST_SUCCESS:
             if (action.requestOptions.perPage === MAX_INCIDENTS_COUNT) {
-                return { ...state, totalPages: action.incidents.length, error: false };
+                return { ...state, totalIncidents: action.incidents.length, error: false };
             }
 
             return {
                 ...state,
                 // @ts-ignore convert to obj with index - id
                 incidents: arrayToObj(action.incidents, 'id') as IncidentsObj,
+                currentPage: action.requestOptions.page,
                 requesting: false,
                 error: false,
             };
@@ -99,3 +103,8 @@ export const selectIncidents = (state: AppState): IIncident[] => Object.values(s
 export const selectIncident = (state: AppState, id: string): IIncident => state.incidents.incidents[id];
 export const selectRequesting = (state: AppState): boolean => state.incidents.requesting;
 export const selectError = (state: AppState): boolean => Boolean(state.incidents.error);
+
+export const selectCurrentPage = (state: AppState): number => state.incidents.currentPage;
+export const selectTotalIncidents = (state: AppState): number => state.incidents.totalIncidents;
+export const selectTotalPage = (state: AppState): number =>
+    Math.ceil(selectTotalIncidents(state) / state.incidents.incidentsPerPage);

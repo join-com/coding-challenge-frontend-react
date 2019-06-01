@@ -31,6 +31,7 @@ exports[`Pagination common should render correctly 1`] = `
 
 .c0 {
   text-align: center;
+  margin: 15px 0;
 }
 
 .c3 {
@@ -59,6 +60,16 @@ exports[`Pagination common should render correctly 1`] = `
   margin-right: 0;
 }
 
+.c5 {
+  margin-right: calc(15px + 3px);
+  display: none;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c5:last-child {
+  margin-right: 0;
+}
+
 @media (min-width:992px) {
   .c1 {
     display: inline-block;
@@ -71,10 +82,16 @@ exports[`Pagination common should render correctly 1`] = `
   }
 }
 
+@media (min-width:480px) {
+  .c5 {
+    display: inline-block;
+  }
+}
+
 <Pagination
   changePage={[Function]}
-  current={7}
-  totalPages={18}
+  currentPage={7}
+  totalPages={15}
 >
   <styled.div>
     <StyledComponent
@@ -89,6 +106,7 @@ exports[`Pagination common should render correctly 1`] = `
             "rules": Array [
               "
     text-align: center;
+    margin: 15px 0;
 ",
             ],
           },
@@ -782,16 +800,16 @@ exports[`Pagination common should render correctly 1`] = `
             </Button>
           </StyledComponent>
         </Styled(Styled(Button))>
-        <Styled(Styled(Button))>
+        <Styled(Styled(Styled(Button)))>
           <StyledComponent
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-ifAKCX",
+                  "componentId": "sc-EHOje",
                   "isStatic": true,
-                  "lastClassName": "c4",
+                  "lastClassName": "c5",
                   "rules": Array [
                     "
     margin-right: calc(15px + 3px);
@@ -819,14 +837,18 @@ exports[`Pagination common should render correctly 1`] = `
     ",
                     "
 ",
+                    "
+    background-color: rgba(0, 0, 0, 0.1);
+",
                   ],
                 },
-                "displayName": "Styled(Styled(Button))",
+                "displayName": "Styled(Styled(Styled(Button)))",
                 "foldedComponentIds": Array [
                   "sc-htpNat",
+                  "sc-ifAKCX",
                 ],
                 "render": [Function],
-                "styledComponentId": "sc-ifAKCX",
+                "styledComponentId": "sc-EHOje",
                 "target": [Function],
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -836,7 +858,7 @@ exports[`Pagination common should render correctly 1`] = `
             forwardedRef={null}
           >
             <Button
-              className="c4"
+              className="c5"
             >
               <ThemeProvider
                 theme={
@@ -866,7 +888,7 @@ exports[`Pagination common should render correctly 1`] = `
                 }
               >
                 <styled.div
-                  className="c4"
+                  className="c5"
                   fontSize={
                     Array [
                       3,
@@ -876,7 +898,7 @@ exports[`Pagination common should render correctly 1`] = `
                   py={1}
                 >
                   <StyledComponent
-                    className="c4"
+                    className="c5"
                     fontSize={
                       Array [
                         3,
@@ -934,7 +956,7 @@ exports[`Pagination common should render correctly 1`] = `
                     py={1}
                   >
                     <div
-                      className="c4 c2"
+                      className="c5 c2"
                       fontSize={
                         Array [
                           3,
@@ -948,7 +970,7 @@ exports[`Pagination common should render correctly 1`] = `
               </ThemeProvider>
             </Button>
           </StyledComponent>
-        </Styled(Styled(Button))>
+        </Styled(Styled(Styled(Button)))>
         <Styled(Styled(Button))
           onClick={[Function]}
         >

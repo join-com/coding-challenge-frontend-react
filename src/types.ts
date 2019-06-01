@@ -50,7 +50,7 @@ export interface IIncident {
 }
 
 export interface IIncidentRequestOptions {
-    page?: number; // Page of results to fetch.
+    page: number; // Page of results to fetch.
     perPage?: number; // Number of results to return per page.
     occurredBefore?: number; // End of period
     occurredAfter?: number; // Start of period

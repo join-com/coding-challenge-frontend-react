@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { media } from 'ui/media';
 
 const Container = styled.div`
-    margin: 0 auto;
+    margin: 0 auto 15px;
 
     ${media.mobile`
 		padding: 15px;

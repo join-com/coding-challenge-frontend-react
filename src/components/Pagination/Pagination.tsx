@@ -6,12 +6,13 @@ import { media } from 'ui/media';
 
 export interface IProps {
     totalPages: number;
-    current: number;
-    changePage: (page: number) => void;
+    currentPage: number;
+    changePage: (from: number, to: number, totalPages: number) => void;
 }
 
 export const Container = styled.div`
     text-align: center;
+    margin: 15px 0;
 `;
 
 const Button = styled(ButtonBase)`
@@ -38,7 +39,15 @@ export const NumberButton = styled(Button)`
 	`}
 `;
 
-export class Pagination extends React.PureComponent<IProps> {
+export const CurrentPageButton = styled(NumberButton)`
+    background-color: rgba(0, 0, 0, 0.1);
+`;
+
+export class Pagination extends React.Component<IProps> {
+    public static defaultProps = {
+        totalPages: 0,
+    };
+
     public render() {
         return (
             <Container>
@@ -47,7 +56,7 @@ export class Pagination extends React.PureComponent<IProps> {
 
                 {this.getPrevPage(2) && <NumberButton onClick={this.onPrev2Click}>{this.getPrevPage(2)}</NumberButton>}
                 {this.getPrevPage() && <NumberButton onClick={this.onPrevClick}>{this.getPrevPage()}</NumberButton>}
-                <NumberButton>{this.props.current}</NumberButton>
+                <CurrentPageButton>{this.props.currentPage}</CurrentPageButton>
                 {this.getNextPage() && <NumberButton onClick={this.onNextClick}>{this.getNextPage()}</NumberButton>}
                 {this.getNextPage(2) && <NumberButton onClick={this.onNext2Click}>{this.getNextPage(2)}</NumberButton>}
 
@@ -57,51 +66,59 @@ export class Pagination extends React.PureComponent<IProps> {
         );
     }
 
+    private changePage(page: number) {
+        const { currentPage, totalPages } = this.props;
+
+        this.props.changePage(currentPage, page, totalPages);
+    }
+
     private onFirstClick = () => {
-        this.props.changePage(1);
+        this.changePage(1);
     };
 
     private onPrevClick = () => {
-        this.props.changePage(this.props.current - 1);
+        this.changePage(this.props.currentPage - 1);
     };
 
     private onPrev2Click = () => {
-        this.props.changePage(this.props.current - 2);
+        this.changePage(this.props.currentPage - 2);
     };
 
     private onNextClick = () => {
-        this.props.changePage(this.props.current + 1);
+        this.changePage(this.props.currentPage + 1);
     };
 
     private onNext2Click = () => {
-        this.props.changePage(this.props.current + 2);
+        this.changePage(this.props.currentPage + 2);
     };
 
     private onLastClick = () => {
-        this.props.changePage(this.props.totalPages);
+        const { totalPages } = this.props;
+
+        this.changePage(totalPages);
     };
 
     private canForward(offset = 1) {
-        const { totalPages, current } = this.props;
+        const { totalPages, currentPage } = this.props;
 
-        return current + offset <= totalPages;
+        return currentPage + offset <= totalPages;
     }
 
     private canBackward(offset = 1) {
-        const { current } = this.props;
+        const { currentPage, totalPages } = this.props;
 
-        return current - offset > 0;
+        return totalPages > 0 && currentPage - offset > 0;
     }
 
     private getNextPage(offset = 1) {
-        const { current } = this.props;
+        const { currentPage } = this.props;
 
-        return this.canForward(offset) ? current + offset : null;
+        return this.canForward(offset) ? currentPage + offset : null;
     }
 
     private getPrevPage(offset = 1) {
-        const { current } = this.props;
+        const { currentPage } = this.props;
 
-        return this.canBackward(offset) ? current - offset : null;
+        return this.canBackward(offset) ? currentPage - offset : null;
     }
 }

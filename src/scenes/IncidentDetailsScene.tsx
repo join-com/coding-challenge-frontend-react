@@ -138,6 +138,12 @@ export class Component extends React.Component<IProps> {
     }
 }
 
+const mapStateToProps = (state: AppState, props: IOwnProps) => ({
+    incident: selectIncident(state, R.path(['match', 'params', 'id'], props) || ''),
+    requesting: selectRequesting(state),
+    error: selectError(state),
+});
+
 const mapDispatchToProps = (dispatch: Dispatch<DispatchProps>) => ({
     geoRequest: (occurredAt: number) => {
         dispatch(
@@ -148,12 +154,6 @@ const mapDispatchToProps = (dispatch: Dispatch<DispatchProps>) => ({
             }),
         );
     },
-});
-
-const mapStateToProps = (state: AppState, props: IOwnProps) => ({
-    incident: selectIncident(state, R.path(['match', 'params', 'id'], props) || ''),
-    requesting: selectRequesting(state),
-    error: selectError(state),
 });
 
 export const IncidentDetailsScene = connect(

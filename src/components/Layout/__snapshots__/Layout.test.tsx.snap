@@ -11,10 +11,10 @@ exports[`Layout should render correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "lastClassName": "gvxfKF",
+            "lastClassName": "eEQlVk",
             "rules": Array [
               "
-    margin: 0 auto;
+    margin: 0 auto 15px;
 
     ",
               "
@@ -81,7 +81,7 @@ exports[`Layout should render correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa gvxfKF"
+        className="sc-bdVaJa eEQlVk"
       >
         <div>
           Layout test

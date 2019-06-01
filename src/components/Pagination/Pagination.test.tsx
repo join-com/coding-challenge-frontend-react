@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import 'jest-styled-components';
 
-import { Pagination, BoundButton, IProps, NumberButton } from './Pagination';
+import { Pagination, BoundButton, IProps, NumberButton, CurrentPageButton } from './Pagination';
 import { Button } from 'ui/Button';
 
 describe('Pagination', () => {
@@ -10,8 +10,8 @@ describe('Pagination', () => {
     let container: ReactWrapper;
 
     const inititalProps: IProps = {
-        totalPages: 18,
-        current: 7,
+        totalPages: 15,
+        currentPage: 7,
         changePage: () => {},
     };
 
@@ -31,6 +31,52 @@ describe('Pagination', () => {
         });
     });
 
+    describe('Pagination count of buttons when totalPage is zero', () => {
+        beforeEach(() => {
+            initComponent({ ...inititalProps, totalPages: 0 });
+            container = mount(component);
+        });
+
+        test('should render 1 simple buttons', () => {
+            expect(container.find(Button).length).toEqual(1);
+        });
+
+        test('should render 0 number buttons', () => {
+            expect(container.find(NumberButton).length).toEqual(0);
+        });
+
+        test('should render 1 current page button', () => {
+            expect(container.find(CurrentPageButton).length).toEqual(1);
+        });
+
+        test('should render 0 bound buttons', () => {
+            expect(container.find(BoundButton).length).toEqual(0);
+        });
+	});
+
+    describe('Pagination count of buttons a few pages', () => {
+        beforeEach(() => {
+            initComponent({ ...inititalProps, currentPage: 1, totalPages: 2 });
+            container = mount(component);
+        });
+
+        test('should render 4 simple buttons', () => {
+            expect(container.find(Button).length).toEqual(4);
+        });
+
+        test('should render 1 number buttons', () => {
+            expect(container.find(NumberButton).length).toEqual(1);
+        });
+
+        test('should render 1 current page button', () => {
+            expect(container.find(CurrentPageButton).length).toEqual(1);
+        });
+
+        test('should render 1 bound buttons', () => {
+            expect(container.find(BoundButton).length).toEqual(1);
+        });
+    });
+
     describe('Pagination count of buttons in the middle', () => {
         beforeEach(() => {
             initComponent(inititalProps);
@@ -41,8 +87,12 @@ describe('Pagination', () => {
             expect(container.find(Button).length).toEqual(9);
         });
 
-        test('should render 5 number buttons', () => {
-            expect(container.find(NumberButton).length).toEqual(5);
+        test('should render 4 number buttons', () => {
+            expect(container.find(NumberButton).length).toEqual(4);
+        });
+
+        test('should render 1 current page button', () => {
+            expect(container.find(CurrentPageButton).length).toEqual(1);
         });
 
         test('should render 2 bound buttons', () => {
@@ -52,7 +102,7 @@ describe('Pagination', () => {
 
     describe('Pagination count of buttons in the begin', () => {
         beforeEach(() => {
-            initComponent({ ...inititalProps, current: 1 });
+            initComponent({ ...inititalProps, currentPage: 1 });
             container = mount(component);
         });
 
@@ -60,8 +110,12 @@ describe('Pagination', () => {
             expect(container.find(Button).length).toEqual(5);
         });
 
-        test('should render 3 number buttons', () => {
-            expect(container.find(NumberButton).length).toEqual(3);
+        test('should render 2 number buttons', () => {
+            expect(container.find(NumberButton).length).toEqual(2);
+        });
+
+        test('should render 1 current page button', () => {
+            expect(container.find(CurrentPageButton).length).toEqual(1);
         });
 
         it('should render 1 bound buttons', () => {
@@ -71,7 +125,7 @@ describe('Pagination', () => {
 
     describe('Pagination count of buttons in the end', () => {
         beforeEach(() => {
-            initComponent({ ...inititalProps, current: 18 });
+            initComponent({ ...inititalProps, currentPage: 15 });
             container = mount(component);
         });
 
@@ -79,8 +133,12 @@ describe('Pagination', () => {
             expect(container.find(Button).length).toEqual(5);
         });
 
-        test('should render 3 number buttons', () => {
-            expect(container.find(NumberButton).length).toEqual(3);
+        test('should render 2 number buttons', () => {
+            expect(container.find(NumberButton).length).toEqual(2);
+        });
+
+        test('should render 1 current page button', () => {
+            expect(container.find(CurrentPageButton).length).toEqual(1);
         });
 
         it('should render 1 bound buttons', () => {
@@ -105,7 +163,7 @@ describe('Pagination', () => {
 
             expect(clickFn.mock.calls.length).toBe(1);
 
-            expect(clickFn.mock.calls[0][0]).toBe(1);
+            expect(clickFn.mock.calls[0][1]).toBe(1);
         });
 
         it('should change to last page', () => {
@@ -116,18 +174,7 @@ describe('Pagination', () => {
 
             expect(clickFn.mock.calls.length).toBe(1);
 
-            expect(clickFn.mock.calls[0][0]).toBe(18);
-        });
-
-        it('should change to 6 number page', () => {
-            container
-                .find(BoundButton)
-                .at(0)
-                .simulate('click');
-
-            expect(clickFn.mock.calls.length).toBe(1);
-
-            expect(clickFn.mock.calls[0][0]).toBe(1);
+            expect(clickFn.mock.calls[0][1]).toBe(15);
         });
 
         it('should change to 5 number page', () => {
@@ -138,24 +185,24 @@ describe('Pagination', () => {
 
             expect(clickFn.mock.calls.length).toBe(1);
 
-            expect(clickFn.mock.calls[0][0]).toBe(5);
+            expect(clickFn.mock.calls[0][1]).toBe(5);
         });
 
         it('should change to 9 number page', () => {
             container
                 .find(NumberButton)
-                .at(4)
+                .at(3)
                 .simulate('click');
 
             expect(clickFn.mock.calls.length).toBe(1);
 
-            expect(clickFn.mock.calls[0][0]).toBe(9);
+            expect(clickFn.mock.calls[0][1]).toBe(9);
         });
 
         it("should don't change number page", () => {
             container
-                .find(NumberButton)
-                .at(2)
+                .find(CurrentPageButton)
+                .at(0)
                 .simulate('click');
 
             expect(clickFn.mock.calls.length).toBe(0);

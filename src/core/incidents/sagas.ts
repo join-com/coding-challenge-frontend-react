@@ -44,6 +44,10 @@ export function* changePage({ options }: ChangePage) {
     try {
         const { from, to, totalPages } = options;
 
+        if (!totalPages) {
+            throw new Error(`Cannot change page to ${to} because total pages is ${totalPages}`);
+        }
+
         if (from === to) {
             throw new Error(`Cannot change page to ${to} because page to is equal page from`);
         }
@@ -64,4 +68,4 @@ export function* changePage({ options }: ChangePage) {
     }
 }
 
-export default [takeEvery(ActionTypes.INCIDENTS_REQUEST, incidents)];
+export default [takeEvery(ActionTypes.INCIDENTS_REQUEST, incidents), takeEvery(ActionTypes.CHANGE_PAGE, changePage)];
