@@ -6,7 +6,7 @@ import { media } from 'ui/media';
 
 interface Props {
     title?: string;
-    description?: string;
+    description?: string | null;
     occurredAt?: number;
     address?: string;
 }

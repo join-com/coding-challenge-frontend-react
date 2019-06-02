@@ -41,7 +41,7 @@ export interface IGeoCoordinates {
 export interface IIncident {
     id: number;
     title: string;
-    description: string;
+    description: string | null;
     address: string;
     occurredAt: number;
     imageUrl: string | null;

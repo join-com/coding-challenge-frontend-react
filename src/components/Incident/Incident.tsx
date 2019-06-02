@@ -8,7 +8,7 @@ import { media } from 'ui/media';
 interface IProps {
     id: number;
     title?: string;
-    description?: string;
+    description?: string | null;
     address?: string;
     occurredAt?: number;
     imageUrlThumb?: string | null;
