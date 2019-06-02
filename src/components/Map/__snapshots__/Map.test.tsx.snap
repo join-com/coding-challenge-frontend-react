@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map should render correctly 1`] = `
+<styled.div>
+  <GoogleMap
+    bootstrapURLKeys={
+      Object {
+        "key": "AIzaSyDaxTbb824BrjJMUfBeCc5Cxv6sbuwYnhs",
+      }
+    }
+    center={
+      Object {
+        "lat": 52.4890809,
+        "lng": 13.4275004,
+      }
+    }
+    debounced={true}
+    defaultZoom={15}
+    distanceToMouse={[Function]}
+    googleMapLoader={[Function]}
+    heatmap={Object {}}
+    heatmapLibrary={false}
+    hoverDistance={30}
+    layerTypes={Array []}
+    options={[Function]}
+    style={
+      Object {
+        "height": "100%",
+        "margin": 0,
+        "padding": 0,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+    yesIWantToUseGoogleMapApiInternals={false}
+  >
+    <styled.div
+      lat={52.4890809}
+      lng={13.4275004}
+      text=""
+    />
+  </GoogleMap>
+</styled.div>
+`;

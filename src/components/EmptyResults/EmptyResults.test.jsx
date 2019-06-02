@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Loading } from './Loading';
+import { EmptyResults } from './EmptyResults';
 
-describe('Loading', () => {
+describe('EmptyResults', () => {
     it('should render correctly', () => {
-        const component = <Loading />;
+        const component = <EmptyResults />;
 
         const container = mount(component);
         expect(container).toMatchSnapshot();

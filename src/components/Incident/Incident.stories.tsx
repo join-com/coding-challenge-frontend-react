@@ -1,12 +1,16 @@
 import * as React from 'react';
+import { MemoryRouter } from 'react-router';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 
 import { Incident } from './Incident';
 
+import 'reset.css';
+import 'App.css';
+
 const stories = storiesOf('Incident', module);
 stories.addDecorator(withKnobs);
-
+stories.addDecorator(story => <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>);
 stories.add('Incident', () => {
     return (
         <Incident

@@ -4,15 +4,16 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { AppState } from 'core/reducers';
-import { selectRequesting, selectError, selectTotalPage, selectCurrentPage } from 'core/incidents/reducer';
-import { selectIncidents } from 'core/incidents/reducer';
-import { Header } from 'components/Header/Header';
-import { Incidents } from 'components/Incidents';
-import { Loading } from 'components/Loading';
-import { Error } from 'components/Error';
-import { IIncident } from 'types';
-import { Pagination } from 'components/Pagination';
+import {
+    selectRequesting,
+    selectError,
+    selectTotalPage,
+    selectCurrentPage,
+    selectIncidents,
+} from 'core/incidents/reducer';
 import { ChangePage } from 'core/incidents/actions';
+import { Header, Incidents, Loading, Error, Pagination, EmptyResults } from 'components';
+import { IIncident } from 'types';
 
 interface DispatchProps {
     incidents: IIncident[];
@@ -24,11 +25,10 @@ interface DispatchProps {
 }
 
 const Container = styled.div``;
-const EmptyResults = styled.div``;
 
 export class Component extends React.Component<DispatchProps> {
     public render(): React.ReactElement {
-        const { incidents, requesting, error } = this.props;
+        const { requesting, error } = this.props;
 
         if (requesting || error) {
             return (
@@ -40,12 +40,13 @@ export class Component extends React.Component<DispatchProps> {
             );
         }
 
-        const { currentPage, totalPages, changePage } = this.props;
+        const { incidents, currentPage, totalPages, changePage } = this.props;
+        const isEmptyList = incidents.length === 0;
 
         return (
             <Container>
                 <Header />
-                {incidents.length > 0 ? <Incidents incidents={incidents} /> : <EmptyResults>No results</EmptyResults>}
+                {isEmptyList ? <EmptyResults /> : <Incidents incidents={incidents} />}
                 <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage} />
             </Container>
         );

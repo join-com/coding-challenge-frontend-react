@@ -3,7 +3,6 @@
 exports[`MyComponent should render correctly 1`] = `
 <Button
   onClick={[Function]}
-  text="Button test"
 >
   <ThemeProvider
     theme={
@@ -41,7 +40,6 @@ exports[`MyComponent should render correctly 1`] = `
       onClick={[Function]}
       px={3}
       py={1}
-      text="Button test"
     >
       <StyledComponent
         fontSize={
@@ -56,7 +54,7 @@ exports[`MyComponent should render correctly 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": false,
-              "lastClassName": "kSjXXy",
+              "lastClassName": "SGmdT",
               "rules": Array [
                 "
     display: inline-block;
@@ -70,6 +68,11 @@ exports[`MyComponent should render correctly 1`] = `
     line-height: 24px;
     height: 40px;
     user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
@@ -100,17 +103,18 @@ exports[`MyComponent should render correctly 1`] = `
         onClick={[Function]}
         px={3}
         py={1}
-        text="Button test"
       >
         <div
-          className="sc-bdVaJa kSjXXy"
+          className="sc-bdVaJa SGmdT"
           fontSize={
             Array [
               3,
             ]
           }
           onClick={[Function]}
-        />
+        >
+          Next page
+        </div>
       </StyledComponent>
     </styled.div>
   </ThemeProvider>

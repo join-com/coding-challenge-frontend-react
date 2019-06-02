@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { HeaderTextContainer } from '../HeaderTextContainer';
+import { HeaderTextContainer } from './HeaderTextContainer';
 
 describe('HeaderTextContainer', () => {
     it('should render correctly', () => {

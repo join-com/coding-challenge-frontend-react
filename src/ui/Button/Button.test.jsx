@@ -1,19 +1,21 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { Button } from '../Button';
+import { mount } from 'enzyme';
+
+import { Button } from './Button';
 
 describe('MyComponent', () => {
-    it('should render correctly', () => {
-        const button = <Button text={'Button test'} onClick={() => {}} />;
+    test('should render correctly', () => {
+        const button = <Button onClick={() => {}}>Next page</Button>;
 
         const mounted = mount(button);
         expect(mounted).toMatchSnapshot();
         mounted.unmount();
+    });
 
+    test('should clicked', () => {
         const clickFn = jest.fn();
-
-        const component = shallow(<Button id={'button-id'} onClick={clickFn} />);
-        component.find('#button-id').simulate('click');
+        const component = mount(<Button onClick={clickFn} />);
+        component.find(Button).simulate('click');
         expect(clickFn).toHaveBeenCalled();
     });
 });

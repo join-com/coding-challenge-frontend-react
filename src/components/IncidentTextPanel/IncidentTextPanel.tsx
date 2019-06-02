@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { media } from 'ui/media';
 import { convertFromUnixTimestamp } from 'core/utils/unixTimestamp';
+import { media } from 'ui/media';
 
 interface Props {
     title?: string;

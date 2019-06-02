@@ -16,6 +16,7 @@ import { incidents, changePage } from '../sagas';
 
 describe('incidents flow', () => {
     const options = {
+        page: 1,
         perPage: DEFAULT_INCIDENTS_PER_PAGE,
         proximity: DEFAULT_PROXIMITY,
     };

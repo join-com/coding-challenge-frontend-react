@@ -127,9 +127,11 @@ exports[`HeaderTextContainer should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-htpNat",
                   "isStatic": true,
-                  "lastClassName": "cxvLWi",
+                  "lastClassName": "cjVgDw",
                   "rules": Array [
                     "
+	font-weight: 600;
+
 	",
                     "
         @media ",
@@ -195,7 +197,7 @@ exports[`HeaderTextContainer should render correctly 1`] = `
             forwardedRef={null}
           >
             <div
-              className="sc-htpNat cxvLWi"
+              className="sc-htpNat cjVgDw"
             >
               Stolen bykes
             </div>

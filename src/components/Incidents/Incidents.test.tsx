@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Incidents } from '../Incidents';
+import { Incidents } from './Incidents';
 
 describe('Incidents', () => {
     it('should render correctly', () => {

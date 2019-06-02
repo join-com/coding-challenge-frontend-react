@@ -16,6 +16,11 @@ export const StyledButton = styled.div`
     height: 40px;
     user-select: none;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Incident } from 'components/Incident';
+import { Incident } from 'components';
 import { IIncident } from 'types';
 
 interface Props {

@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { HeaderTextContainer } from 'components/HeaderTextContainer';
+import { HeaderTextContainer } from 'components';
+import logo from 'components/assets/logo.png';
 import { media } from 'ui/media';
-
-// require - storybook cannot find module by import
-const logo = require('components/assets/logo.png');
 
 const Container = styled(Link)`
     display: flex;

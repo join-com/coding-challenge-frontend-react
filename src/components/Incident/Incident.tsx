@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { IncidentTextPanel } from 'components/IncidentTextPanel';
-import { IncidentImage } from 'components/IncidentImage';
+import { IncidentTextPanel, IncidentImage } from 'components';
 import { media } from 'ui/media';
 
 interface IProps {

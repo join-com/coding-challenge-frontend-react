@@ -18,21 +18,26 @@ module.exports = ({config}) => {
 		]
 	});
 
+	config.module.rules = config.module.rules.filter(
+		rule => rule.test.toString() !== '/\\.css$/'
+	);
+
 	config.module.rules.push({
-		test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-		include: [SRC_PATH],
+		test: /\.css$/,
 		use: [
 			{
-				loader: require.resolve('url-loader'),
-				options: {
-				  limit: 10000,
-				  name: 'static/media/[name].[hash:8].[ext]',
-				}
-			}
-		]
+			loader: 'style-loader',
+			},
+			{
+			loader: 'css-loader',
+			options: {
+				modules: true,
+				localIdentName: '[name]-[local]_[hash:base64:5]',
+				importLoaders: 1,
+			},
+			},
+		],
 	});
-
-	config.resolve.extensions.push('.ts', '.tsx', '.png');
 
 	config.resolve.modules = [
 		...(config.resolve.modules || []),

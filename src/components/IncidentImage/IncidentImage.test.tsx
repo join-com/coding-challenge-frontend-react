@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { IncidentImage } from '../IncidentImage';
+import { IncidentImage } from './IncidentImage';
 
 describe('IncidentImage', () => {
     it('should render correctly', () => {

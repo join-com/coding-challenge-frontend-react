@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { Layout } from '../Layout';
+import { Layout } from './Layout';
 
 describe('Layout', () => {
     it('should render correctly', () => {

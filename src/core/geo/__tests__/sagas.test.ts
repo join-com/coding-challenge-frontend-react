@@ -9,7 +9,7 @@ import { GeoRequest, GeoRequestSuccess, GeoRequestFail } from '../actions';
 import { geos } from '../sagas';
 import { geoMock } from '../__mocks__/geo';
 import { objKeysSnakeToCamel } from 'core/utils/snakeCase';
-import { Geo } from 'types';
+import { IGeo } from 'types';
 
 const options = {
     perPage: DEFAULT_INCIDENTS_PER_PAGE,
@@ -25,7 +25,7 @@ describe('locations flow', () => {
         const clone = generator.clone();
         const response = { data: geoMock, status: 200 };
         expect(clone.next(response).value).toEqual(
-            put(new GeoRequestSuccess(objKeysSnakeToCamel(geoMock) as Geo, options)),
+            put(new GeoRequestSuccess(objKeysSnakeToCamel(geoMock) as IGeo, options)),
         );
         expect(clone.next().done).toEqual(true);
     });

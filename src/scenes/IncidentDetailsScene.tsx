@@ -9,10 +9,8 @@ import { AppState } from 'core/reducers';
 import { GeoRequest } from 'core/geo/actions';
 import { selectIncident, selectRequesting, selectError } from 'core/incidents/reducer';
 import { dateToOrdinalString } from 'core/utils/dateToOrdinalString';
-import { Header } from 'components/Header';
-import { Map } from 'components/Map';
-import { Loading } from 'components/Loading';
-import { Error } from 'components/Error';
+
+import { Header, Map, Loading, Error } from 'components';
 import { IIncident } from 'types';
 import { media } from 'ui/media';
 

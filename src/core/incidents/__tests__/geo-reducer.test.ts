@@ -20,6 +20,8 @@ describe('incidents reducer', () => {
             requesting: false,
             error: false,
             currentPage: 1,
+            totalIncidents: 0,
+            incidentsPerPage: 10,
         };
         const stateAfter = {
             // @ts-ignore
@@ -27,6 +29,8 @@ describe('incidents reducer', () => {
             requesting: false,
             error: false,
             currentPage: 1,
+            totalIncidents: 0,
+            incidentsPerPage: 10,
         };
         const action = new GeoRequest(options);
         expect(incidents(stateBefore, action)).toEqual(stateAfter);
@@ -39,12 +43,16 @@ describe('incidents reducer', () => {
             requesting: false,
             error: false,
             currentPage: 1,
+            totalIncidents: 0,
+            incidentsPerPage: 10,
         };
         const stateAfter = {
             incidents: incidentsOnePageObjectWithGeo,
             requesting: false,
             error: false,
             currentPage: 1,
+            totalIncidents: 0,
+            incidentsPerPage: 10,
         };
         // @ts-ignore
         const action = new GeoRequestSuccess(geoMock as IGeo, options);
@@ -58,6 +66,8 @@ describe('incidents reducer', () => {
             requesting: false,
             error: false,
             currentPage: 1,
+            totalIncidents: 0,
+            incidentsPerPage: 10,
         };
         const error = {
             status: 403,
@@ -69,6 +79,8 @@ describe('incidents reducer', () => {
             requesting: false,
             error,
             currentPage: 1,
+            totalIncidents: 0,
+            incidentsPerPage: 10,
         };
         const action = new GeoRequestFail(error);
         expect(incidents(stateBefore, action)).toEqual(stateAfter);

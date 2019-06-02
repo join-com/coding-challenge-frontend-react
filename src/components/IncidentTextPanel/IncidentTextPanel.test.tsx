@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { IncidentTextPanel } from '../IncidentTextPanel';
+import { IncidentTextPanel } from './IncidentTextPanel';
 
 describe('IncidentTextPanel', () => {
     it('should render correctly', () => {

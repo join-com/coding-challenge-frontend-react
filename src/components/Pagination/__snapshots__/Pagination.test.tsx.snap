@@ -15,6 +15,10 @@ exports[`Pagination common should render correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
   font-size: 18px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -252,6 +256,11 @@ exports[`Pagination common should render correctly 1`] = `
     height: 40px;
     user-select: none;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
@@ -404,6 +413,11 @@ exports[`Pagination common should render correctly 1`] = `
     line-height: 24px;
     height: 40px;
     user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
@@ -579,6 +593,11 @@ exports[`Pagination common should render correctly 1`] = `
     height: 40px;
     user-select: none;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
@@ -753,6 +772,11 @@ exports[`Pagination common should render correctly 1`] = `
     height: 40px;
     user-select: none;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
@@ -926,6 +950,11 @@ exports[`Pagination common should render correctly 1`] = `
     height: 40px;
     user-select: none;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
@@ -1097,6 +1126,11 @@ exports[`Pagination common should render correctly 1`] = `
     line-height: 24px;
     height: 40px;
     user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
@@ -1272,6 +1306,11 @@ exports[`Pagination common should render correctly 1`] = `
     height: 40px;
     user-select: none;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
@@ -1424,6 +1463,11 @@ exports[`Pagination common should render correctly 1`] = `
     line-height: 24px;
     height: 40px;
     user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
@@ -1598,6 +1642,11 @@ exports[`Pagination common should render correctly 1`] = `
     line-height: 24px;
     height: 40px;
     user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 
     &:active {
         background-color: rgba(0, 0, 0, 0.9);
