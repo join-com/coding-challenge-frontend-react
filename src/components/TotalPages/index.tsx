@@ -1,0 +1,1 @@
+export { TotalPages } from './TotalPages';

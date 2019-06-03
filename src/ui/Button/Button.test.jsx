@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import { Button } from './Button';
 
-describe('MyComponent', () => {
+describe('Button', () => {
     test('should render correctly', () => {
         const button = <Button onClick={() => {}}>Next page</Button>;
 

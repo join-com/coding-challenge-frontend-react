@@ -65,9 +65,6 @@ export const incidents: Reducer<TState> = (
         case IncidentsActionTypes.INCIDENTS_REQUEST_FAIL:
             return { ...state, requesting: false, error: action.error };
 
-        case GeoActionTypes.GEO_REQUEST:
-            return { ...state };
-
         case GeoActionTypes.GEO_REQUEST_SUCCESS:
             const pairsWithUpdatedGeo: R.KeyValuePair<string, IIncident>[] = R.toPairs<IIncident>(state.incidents).map(
                 ([id, incident]) => {

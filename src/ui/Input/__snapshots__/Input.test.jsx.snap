@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render correctly 1`] = `
+<Input
+  placeholder="Enter your first name"
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "colors": Object {
+          "buttonBackground": "rgba(0, 0, 0, 0.9)",
+        },
+        "fontSizes": Array [
+          12,
+          14,
+          16,
+          18,
+          24,
+          32,
+          36,
+          72,
+          96,
+        ],
+        "space": Array [
+          0,
+          3,
+          5,
+          8,
+          10,
+          15,
+          25,
+        ],
+      }
+    }
+  >
+    <styled.input
+      placeholder="Enter your first name"
+    >
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": true,
+              "lastClassName": "bDWFJH",
+              "rules": Array [],
+            },
+            "displayName": "styled.input",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        placeholder="Enter your first name"
+      >
+        <input
+          className="sc-bdVaJa bDWFJH"
+          placeholder="Enter your first name"
+        />
+      </StyledComponent>
+    </styled.input>
+  </ThemeProvider>
+</Input>
+`;

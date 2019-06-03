@@ -12,8 +12,8 @@ export const StyledButton = styled.div`
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
     border: 3px solid rgba(0, 0, 0, 0.9);
 
-    line-height: 24px;
-    height: 40px;
+    line-height: 14px;
+    height: 30px;
     user-select: none;
 
     overflow: hidden;
@@ -41,7 +41,7 @@ export class Button extends React.PureComponent<Props> {
 
         const button = (
             // @ts-ignore
-            <StyledButton fontSize={[3]} px={3} py={1} onClick={onClick} {...rest}>
+            <StyledButton fontSize={[2]} px={5} py={2} onClick={onClick} {...rest}>
                 {children}
             </StyledButton>
         );

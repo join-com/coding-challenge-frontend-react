@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyComponent should render correctly 1`] = `
+exports[`Button should render correctly 1`] = `
 <Button
   onClick={[Function]}
 >
@@ -23,7 +23,9 @@ exports[`MyComponent should render correctly 1`] = `
         ],
         "space": Array [
           0,
+          3,
           5,
+          8,
           10,
           15,
           25,
@@ -34,17 +36,17 @@ exports[`MyComponent should render correctly 1`] = `
     <styled.div
       fontSize={
         Array [
-          3,
+          2,
         ]
       }
       onClick={[Function]}
-      px={3}
-      py={1}
+      px={5}
+      py={2}
     >
       <StyledComponent
         fontSize={
           Array [
-            3,
+            2,
           ]
         }
         forwardedComponent={
@@ -54,7 +56,7 @@ exports[`MyComponent should render correctly 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "sc-bdVaJa",
               "isStatic": false,
-              "lastClassName": "SGmdT",
+              "lastClassName": "fMrHvT",
               "rules": Array [
                 "
     display: inline-block;
@@ -65,8 +67,8 @@ exports[`MyComponent should render correctly 1`] = `
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
     border: 3px solid rgba(0, 0, 0, 0.9);
 
-    line-height: 24px;
-    height: 40px;
+    line-height: 14px;
+    height: 30px;
     user-select: none;
 
     overflow: hidden;
@@ -101,14 +103,14 @@ exports[`MyComponent should render correctly 1`] = `
         }
         forwardedRef={null}
         onClick={[Function]}
-        px={3}
-        py={1}
+        px={5}
+        py={2}
       >
         <div
-          className="sc-bdVaJa SGmdT"
+          className="sc-bdVaJa fMrHvT"
           fontSize={
             Array [
-              3,
+              2,
             ]
           }
           onClick={[Function]}

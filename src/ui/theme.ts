@@ -15,7 +15,9 @@ export const theme = {
     space: [
         // margin and padding
         0,
+        3,
         5,
+        8,
         10,
         15,
         25,

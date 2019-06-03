@@ -12,7 +12,7 @@ import {
     selectIncidents,
 } from 'core/incidents/reducer';
 import { ChangePage } from 'core/incidents/actions';
-import { Header, Incidents, Loading, Error, Pagination, EmptyResults } from 'components';
+import { Header, Incidents, Loading, Error, Pagination, EmptyResults, Search, TotalPages } from 'components';
 import { IIncident } from 'types';
 
 interface DispatchProps {
@@ -46,6 +46,8 @@ export class Component extends React.Component<DispatchProps> {
         return (
             <Container>
                 <Header />
+                <Search submit={() => {}} />
+                <TotalPages totalPages={18} />
                 {isEmptyList ? <EmptyResults /> : <Incidents incidents={incidents} />}
                 <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage} />
             </Container>

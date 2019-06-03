@@ -93,7 +93,10 @@ export class Component extends React.Component<IProps> {
     }
 
     public componentDidUpdate(prev: IProps) {
-        if (prev.incident !== this.props.incident) {
+        const prevIncidentId = prev.incident && prev.incident.id;
+        const currentIncidentId = this.props.incident && this.props.incident.id;
+
+        if (prevIncidentId !== currentIncidentId) {
             this.geoRequest();
         }
     }

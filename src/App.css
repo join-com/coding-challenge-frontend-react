@@ -18,5 +18,15 @@ a:focus {
 
 /* fix problem with width page when with / without scroll */
 #root {
-	width: calc(100vw - 30px);
+	@media (min-width: 992px) {
+		width: calc(100vw - 30px);
+	}
+}
+
+input {
+	height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+	font-size: 16px;
+	padding: 3px 5px;
 }
