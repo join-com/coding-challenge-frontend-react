@@ -22,11 +22,13 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
+		"deploy": "aws s3 sync build/ s3://stolen-bikes",
 		"test": "react-scripts test",
 		"test-coverage": "CI=true react-scripts test --coverage",
 		"eject": "react-scripts eject",
 		"storybook": "start-storybook -p 9001 -c .storybook",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"deploy-storybook": "aws s3 sync storybook-static/ s3://stolen-bikes-storybook"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
