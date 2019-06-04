@@ -1,7 +1,7 @@
 import { put, call } from 'redux-saga/effects';
 import { cloneableGenerator } from 'redux-saga/utils';
 
-import { DEFAULT_INCIDENTS_PER_PAGE, DEFAULT_PROXIMITY } from 'core/constants';
+import { DEFAULT_INCIDENTS_PER_PAGE, DEFAULT_PROXIMITY, MAX_INCIDENTS_COUNT } from 'core/constants';
 import { api } from 'core/services/api';
 import { objKeysCamelToSnake } from 'core/utils/camelCase';
 
@@ -11,8 +11,10 @@ import {
     IncidentsRequestFail,
     ChangePage,
     ChangePageFail,
+    SearchRequest,
 } from '../actions';
-import { incidents, changePage } from '../sagas';
+import { incidents, changePage, search } from '../sagas';
+import { ISearchRequestOptions, IIncidentRequestOptions } from 'types';
 
 describe('incidents flow', () => {
     const options = {
@@ -21,8 +23,8 @@ describe('incidents flow', () => {
         proximity: DEFAULT_PROXIMITY,
     };
     const action = new IncidentsRequest(options);
-
     const generator = cloneableGenerator(incidents)(action);
+
     expect(generator.next().value).toEqual(call(api.get, 'incidents', objKeysCamelToSnake(options)));
 
     test('incidents success', () => {
@@ -48,10 +50,9 @@ describe('changePage flow', () => {
             totalPages: 29,
         };
         const action = new ChangePage(options);
-
         const generator = cloneableGenerator(changePage)(action);
-
         const clone = generator.clone();
+
         expect(clone.next().value).toEqual(
             put(
                 new IncidentsRequest({
@@ -71,10 +72,9 @@ describe('changePage flow', () => {
             totalPages: 29,
         };
         const action = new ChangePage(options);
-
         const generator = cloneableGenerator(changePage)(action);
-
         const clone = generator.clone();
+
         expect(clone.next().value).toEqual(
             put(new ChangePageFail(new Error('Cannot change page to 1 because page to is equal page from'))),
         );
@@ -88,10 +88,9 @@ describe('changePage flow', () => {
             totalPages: 29,
         };
         const action = new ChangePage(options);
-
         const generator = cloneableGenerator(changePage)(action);
-
         const clone = generator.clone();
+
         expect(clone.next().value).toEqual(
             put(new ChangePageFail(new Error('Cannot change page to -1 because value is out of range'))),
         );
@@ -105,10 +104,9 @@ describe('changePage flow', () => {
             totalPages: 29,
         };
         const action = new ChangePage(options);
-
         const generator = cloneableGenerator(changePage)(action);
-
         const clone = generator.clone();
+
         expect(clone.next().value).toEqual(
             put(new ChangePageFail(new Error('Cannot change page to 0 because value is out of range'))),
         );
@@ -128,6 +126,106 @@ describe('changePage flow', () => {
         const clone = generator.clone();
         expect(clone.next().value).toEqual(
             put(new ChangePageFail(new Error('Cannot change page to 30 because value is out of range'))),
+        );
+        expect(clone.next().done).toEqual(true);
+    });
+});
+
+describe('search flow', () => {
+    const incidentsRequestOptions: IIncidentRequestOptions = {
+        page: 1,
+        perPage: DEFAULT_INCIDENTS_PER_PAGE,
+        proximity: DEFAULT_PROXIMITY,
+    };
+
+    test('empty search request', () => {
+        const options: ISearchRequestOptions = {
+            query: undefined,
+            from: null,
+            to: null,
+        };
+        const action = new SearchRequest(options);
+        const generator = cloneableGenerator(search)(action);
+        const clone = generator.clone();
+
+        expect(clone.next().value).toEqual(
+            put(
+                new IncidentsRequest({
+                    ...incidentsRequestOptions,
+                }),
+            ),
+        );
+        expect(clone.next().value).toEqual(
+            put(
+                new IncidentsRequest({
+                    ...incidentsRequestOptions,
+                    perPage: MAX_INCIDENTS_COUNT,
+                }),
+            ),
+        );
+        expect(clone.next().done).toEqual(true);
+    });
+
+    test('search request with from date', () => {
+        const options: ISearchRequestOptions = {
+            query: undefined,
+            from: new Date(1559665299160),
+            to: null,
+        };
+        const action = new SearchRequest(options);
+        const generator = cloneableGenerator(search)(action);
+        const clone = generator.clone();
+
+        expect(clone.next().value).toEqual(
+            put(
+                new IncidentsRequest({
+                    ...incidentsRequestOptions,
+                    occurredAfter: 1559665299,
+                }),
+            ),
+        );
+        expect(clone.next().value).toEqual(
+            put(
+                new IncidentsRequest({
+                    ...incidentsRequestOptions,
+                    perPage: MAX_INCIDENTS_COUNT,
+                    occurredAfter: 1559665299,
+                }),
+            ),
+        );
+        expect(clone.next().done).toEqual(true);
+    });
+
+    test('search request with full query', () => {
+        const options: ISearchRequestOptions = {
+            query: 'black',
+            from: new Date(1559660299160),
+            to: new Date(1559665299160),
+        };
+        const action = new SearchRequest(options);
+        const generator = cloneableGenerator(search)(action);
+        const clone = generator.clone();
+
+        expect(clone.next().value).toEqual(
+            put(
+                new IncidentsRequest({
+                    ...incidentsRequestOptions,
+                    query: 'black',
+                    occurredAfter: 1559660299,
+                    occurredBefore: 1559665299,
+                }),
+            ),
+        );
+        expect(clone.next().value).toEqual(
+            put(
+                new IncidentsRequest({
+                    ...incidentsRequestOptions,
+                    query: 'black',
+                    perPage: MAX_INCIDENTS_COUNT,
+                    occurredAfter: 1559660299,
+                    occurredBefore: 1559665299,
+                }),
+            ),
         );
         expect(clone.next().done).toEqual(true);
     });

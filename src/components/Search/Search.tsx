@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 
@@ -8,10 +8,11 @@ import { Button as ButtonBase } from 'ui/Button';
 import 'react-datepicker/dist/react-datepicker.css';
 
 interface IProps {
-    submit: (from?: Date | null, to?: Date | null) => void;
+    submit: (query?: string, from?: Date | null, to?: Date | null) => void;
 }
 
 interface IState {
+    query?: string;
     from?: Date | null;
     to?: Date | null;
 }
@@ -43,11 +44,11 @@ const DatePickerWrapper = styled.div`
     ${media.mobile`
 		width: calc(50% - 10px);
 
-		& > div {
+		& > div::first-child {
 			width: 100%;
 		}
 
-		& > div > div {
+		& > div:first-child > div {
 			width: 100%;
 		}
 
@@ -75,7 +76,7 @@ export class Search extends React.Component<IProps, IState> {
 
         return (
             <Container>
-                <QueryBox placeholder="Search case descriptions" />
+                <QueryBox placeholder="Search case descriptions" onChange={this.onChangeQuery} />
                 <DatePickerWrapper>
                     <DatePicker placeholderText={'from'} selected={from} onChange={this.onChangeFrom} />
                 </DatePickerWrapper>
@@ -89,9 +90,15 @@ export class Search extends React.Component<IProps, IState> {
 
     private onSubmit = () => {
         const { submit } = this.props;
-        const { from, to } = this.state;
+        const { query, from, to } = this.state;
 
-        submit(from, to);
+        submit(query, from, to);
+    };
+
+    private onChangeQuery = (event: ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value;
+
+        this.setState({ query: value });
     };
 
     private onChangeFrom = (value?: Date | null) => {

@@ -17,8 +17,8 @@ a:focus {
 }
 
 /* fix problem with width page when with / without scroll */
-#root {
-	@media (min-width: 992px) {
+@media (min-width: 992px) {
+	#root {
 		width: calc(100vw - 30px);
 	}
 }

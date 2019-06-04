@@ -39,7 +39,7 @@ export const Map: React.FC<IProps> = ({ coordinates }: IProps) => {
             <GoogleMap
                 defaultZoom={15}
                 bootstrapURLKeys={{
-                    key: 'AIzaSyDaxTbb824BrjJMUfBeCc5Cxv6sbuwYnhs',
+                    key: 'AIzaSyABCiNj4WIbN6a87pyG-xpue-2mwRlSEBs',
                 }}
                 center={coordinates}
             >

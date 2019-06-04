@@ -1,8 +1,8 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
 
 import { api } from 'core/services/api';
-import { DEFAULT_INCIDENTS_PER_PAGE, DEFAULT_PROXIMITY } from 'core/constants';
-import { IIncident, IIncidentDatabase } from 'types';
+import { DEFAULT_INCIDENTS_PER_PAGE, DEFAULT_PROXIMITY, MAX_INCIDENTS_COUNT } from 'core/constants';
+import { IIncident, IIncidentDatabase, IIncidentRequestOptions } from 'types';
 import { objKeysCamelToSnake } from 'core/utils/camelCase';
 import { objKeysSnakeToCamel } from 'core/utils/snakeCase';
 
@@ -13,7 +13,10 @@ import {
     IncidentsRequestSuccess,
     ChangePage,
     ChangePageFail,
+    SearchRequest,
+    SearchRequestFail,
 } from './actions';
+import { convertToUnixTimestamp } from 'core/utils/unixTimestamp';
 
 export function* incidents({ options }: IncidentsRequest) {
     try {
@@ -68,4 +71,46 @@ export function* changePage({ options }: ChangePage) {
     }
 }
 
-export default [takeEvery(ActionTypes.INCIDENTS_REQUEST, incidents), takeEvery(ActionTypes.CHANGE_PAGE, changePage)];
+export function* search({ options }: SearchRequest) {
+    try {
+        const { query, from, to } = options;
+
+        let incidentsRequestOptions: IIncidentRequestOptions = {
+            page: 1,
+            perPage: DEFAULT_INCIDENTS_PER_PAGE,
+            proximity: DEFAULT_PROXIMITY,
+        };
+
+        if (query) {
+            incidentsRequestOptions = {
+                ...incidentsRequestOptions,
+                query,
+            };
+        }
+
+        if (to) {
+            incidentsRequestOptions = {
+                ...incidentsRequestOptions,
+                occurredBefore: convertToUnixTimestamp(to.valueOf()),
+            };
+        }
+
+        if (from) {
+            incidentsRequestOptions = {
+                ...incidentsRequestOptions,
+                occurredAfter: convertToUnixTimestamp(from.valueOf()),
+            };
+        }
+
+        yield put(new IncidentsRequest(incidentsRequestOptions));
+        yield put(new IncidentsRequest({ ...incidentsRequestOptions, perPage: MAX_INCIDENTS_COUNT }));
+    } catch (error) {
+        yield put(new SearchRequestFail(error));
+    }
+}
+
+export default [
+    takeEvery(ActionTypes.INCIDENTS_REQUEST, incidents),
+    takeEvery(ActionTypes.CHANGE_PAGE, changePage),
+    takeEvery(ActionTypes.SEARCH_REQUEST, search),
+];

@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { TotalPages } from './TotalPages';
+import { TotalIncidents } from './TotalIncidents';
 
-describe('TotalPages', () => {
+describe('TotalIncidents', () => {
     it('should render correctly', () => {
-        const component = <TotalPages />;
+        const component = <TotalIncidents totalIncidents={18} />;
 
         const container = mount(component);
         expect(container).toMatchSnapshot();

@@ -11,8 +11,12 @@ exports[`Loading should render correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "lastClassName": "bDWFJH",
-            "rules": Array [],
+            "lastClassName": "iMNZJo",
+            "rules": Array [
+              "
+    margin-top: 40px;
+",
+            ],
           },
           "displayName": "styled.div",
           "foldedComponentIds": Array [],
@@ -27,7 +31,7 @@ exports[`Loading should render correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa bDWFJH"
+        className="sc-bdVaJa iMNZJo"
       >
         Loading ...
       </div>

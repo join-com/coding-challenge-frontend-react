@@ -1,0 +1,1 @@
+export { TotalIncidents } from './TotalIncidents';

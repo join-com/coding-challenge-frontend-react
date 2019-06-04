@@ -66,6 +66,12 @@ export interface IChangePageOptions {
     totalPages: number;
 }
 
+export interface ISearchRequestOptions {
+    query?: string;
+    from?: Date | null;
+    to?: Date | null;
+}
+
 export interface IGeoGeometry {
     type: 'Point';
     coordinates: number[];

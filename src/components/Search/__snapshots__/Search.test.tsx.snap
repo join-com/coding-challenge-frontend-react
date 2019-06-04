@@ -39,6 +39,7 @@ exports[`Search should render correctly 1`] = `
         className="sc-bwzfXH itjvTU"
       >
         <styled.input
+          onChange={[Function]}
           placeholder="Search case descriptions"
         >
           <StyledComponent
@@ -85,10 +86,12 @@ exports[`Search should render correctly 1`] = `
               }
             }
             forwardedRef={null}
+            onChange={[Function]}
             placeholder="Search case descriptions"
           >
             <input
               className="sc-htpNat kRokGZ"
+              onChange={[Function]}
               placeholder="Search case descriptions"
             />
           </StyledComponent>

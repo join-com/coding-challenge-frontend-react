@@ -1,5 +1,5 @@
 import { Action } from 'redux';
-import { IIncidentRequestOptions, IIncident, IChangePageOptions } from 'types';
+import { IIncidentRequestOptions, IIncident, IChangePageOptions, ISearchRequestOptions } from 'types';
 
 export enum ActionTypes {
     SET_INITIAL_STATE = 'Incidents/set initial state',
@@ -9,6 +9,8 @@ export enum ActionTypes {
     INCIDENTS_REQUEST_FAIL = 'Incidents/incidents request fail',
     CHANGE_PAGE = 'Incidents/change page',
     CHANGE_PAGE_FAIL = 'Incidents/change page fail',
+    SEARCH_REQUEST = 'Incidents/search request',
+    SEARCH_REQUEST_FAIL = 'Incidents/search request fail',
 }
 
 // Incidents Set InitialState
@@ -66,9 +68,29 @@ export class ChangePageFail implements Action {
     }
 }
 
+export class SearchRequest implements Action {
+    public readonly type = ActionTypes.SEARCH_REQUEST;
+    public options: ISearchRequestOptions;
+
+    public constructor(options: ISearchRequestOptions) {
+        this.options = options;
+    }
+}
+
+export class SearchRequestFail implements Action {
+    public readonly type = ActionTypes.SEARCH_REQUEST_FAIL;
+    public error: object | string;
+
+    public constructor(error: object | string) {
+        this.error = error;
+    }
+}
+
 export type ActionsAll =
     | IncidentsSetInitialState
     | IncidentsRequest
     | IncidentsRequestSuccess
     | IncidentsRequestFail
-    | ChangePage;
+    | ChangePage
+    | SearchRequest
+    | SearchRequestFail;

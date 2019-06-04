@@ -11,4 +11,4 @@ export { Loading } from './Loading';
 export { Map } from './Map';
 export { Pagination } from './Pagination';
 export { Search } from './Search';
-export { TotalPages } from './TotalPages';
+export { TotalIncidents } from './TotalIncidents';

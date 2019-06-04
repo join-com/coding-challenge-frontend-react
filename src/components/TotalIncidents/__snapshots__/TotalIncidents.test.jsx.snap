@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TotalPages should render correctly 1`] = `
-<TotalPages>
+exports[`TotalIncidents should render correctly 1`] = `
+<TotalIncidents
+  totalIncidents={18}
+>
   <styled.div>
     <StyledComponent
       forwardedComponent={
@@ -11,12 +13,15 @@ exports[`TotalPages should render correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": true,
-            "lastClassName": "jaMoQF",
+            "lastClassName": "fKVUqC",
             "rules": Array [
               "
     min-height: 40px;
     line-height: 40px;
     text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 ",
             ],
           },
@@ -33,11 +38,11 @@ exports[`TotalPages should render correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa jaMoQF"
+        className="sc-bdVaJa fKVUqC"
       >
-        Total: undefined
+        Total: 18
       </div>
     </StyledComponent>
   </styled.div>
-</TotalPages>
+</TotalIncidents>
 `;
