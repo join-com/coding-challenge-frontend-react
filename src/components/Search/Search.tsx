@@ -68,7 +68,7 @@ const Button = styled(ButtonBase)`
 	`}
 `;
 
-export class Search extends React.Component<IProps, IState> {
+export class Search extends React.PureComponent<IProps, IState> {
     public state: IState = {};
 
     public render(): React.ReactElement {

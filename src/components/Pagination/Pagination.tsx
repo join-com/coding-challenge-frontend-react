@@ -43,7 +43,7 @@ export const CurrentPageButton = styled(NumberButton)`
     background-color: rgba(0, 0, 0, 0.1);
 `;
 
-export class Pagination extends React.Component<IProps> {
+export class Pagination extends React.PureComponent<IProps> {
     public static defaultProps = {
         totalPages: 0,
     };
