@@ -1,11 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Layout = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-
 
   @media (min-width: 768px) {
     width: 750px;
@@ -18,7 +17,6 @@ const Layout = styled.div`
   @media (min-width: 1200px) {
     width: 1170px;
   }
+`;
 
-`
-
-export default Layout
+export default Layout;

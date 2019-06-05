@@ -1,9 +1,7 @@
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import Home from "./Home";
-import {
-  getTextRequest as getText
-} from "./Home.action";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import Home from './Home';
+import { getTextRequest as getText } from './Home.action';
 
 const mapStateToProps = state => ({
   loading: state.homeReducer.request,
@@ -19,7 +17,7 @@ const mapDispatchToProps = (dispatch: any) => {
     },
     dispatch
   );
-}
+};
 
 export default connect(
   mapStateToProps,

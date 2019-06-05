@@ -1,18 +1,16 @@
 import React from 'react';
-import styled from 'styled-components'
-import { Text } from '../../ui-kits/Text'
+import styled from 'styled-components';
+import { Text } from '../../ui-kits/Text';
 import { Image } from '../../ui-kits/Image';
 
 const HeaderWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
-`
+`;
 
-const HeaderTitle = styled.div`
-  
-`
+const HeaderTitle = styled.div``;
 
-function Header(props) {
+function Header() {
   return (
     <HeaderWrapper>
       <Image />
@@ -21,7 +19,7 @@ function Header(props) {
         <Text isBlock>Stolen bike</Text>
       </HeaderTitle>
     </HeaderWrapper>
-  )
+  );
 }
 
-export default Header
+export default Header;

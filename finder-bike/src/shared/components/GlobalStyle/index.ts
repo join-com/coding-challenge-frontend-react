@@ -1,2 +1,2 @@
-export { GlobalStyle } from './GlobalStyle'
-export { ResetStyle } from './ResetStyle'
+export { GlobalStyle } from './GlobalStyle';
+export { ResetStyle } from './ResetStyle';

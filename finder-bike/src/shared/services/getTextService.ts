@@ -1,7 +1,7 @@
 export const getTextService = () => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(() => {
-      resolve("Hello ⭐️")
-    }, 3000)
-  })
-}
+      resolve('Hello ⭐️');
+    }, 3000);
+  });
+};

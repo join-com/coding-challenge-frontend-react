@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { Home } from './pages/Home';
-import { Provider } from 'react-redux'
-import { store } from './App.store'
-import { ResetStyle, GlobalStyle } from './shared/components/GlobalStyle'
+import { Provider } from 'react-redux';
+import { store } from './App.store';
+import { ResetStyle, GlobalStyle } from './shared/components/GlobalStyle';
 
 const App = () => {
   return (
@@ -12,7 +12,6 @@ const App = () => {
       <Home />
     </Provider>
   );
-}
+};
 
-
-export default App
+export default App;

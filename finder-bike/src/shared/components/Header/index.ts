@@ -1,1 +1,1 @@
-export { default as Heafder } from './Header'
+export { default as Heafder } from './Header';

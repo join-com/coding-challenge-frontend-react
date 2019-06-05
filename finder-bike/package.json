@@ -18,22 +18,18 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run lint && npm run build-lib && build-storybook && mv storybook-static ./build",
-    "build-lib-watch": "tsc -w",
-    "build-lib": "tsc && npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
+    "build": "npm run lint && build-storybook && mv storybook-static ./build",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
-    "copy-woff2-to-lib": "cpx \"./src/**/*.woff2\" ./build/lib",
-    "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
-    "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    "lint": "eslint 'src/{page,shared}/**/*.{ts,tsx}'"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -55,6 +51,15 @@
     "@storybook/react": "^5.0.11",
     "@testing-library/react": "^8.0.1",
     "@types/storybook__react": "^4.0.1",
-    "babel-loader": "8.0.5"
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "babel-loader": "8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.3.0",
+    "prettier": "1.17.1",
+    "pretty-quick": "^1.11.0"
   }
 }
