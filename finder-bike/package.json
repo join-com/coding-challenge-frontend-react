@@ -1,0 +1,60 @@
+{
+  "name": "finder-bike",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.4",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2",
+    "styled-components": "^4.2.1",
+    "typescript": "3.5.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run lint && npm run build-lib && build-storybook",
+    "build-lib-watch": "tsc -w",
+    "build-lib": "tsc && npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
+    "test": "react-scripts test --env=jsdom",
+    "test:coverage": "npm test -- --coverage",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
+    "copy-woff2-to-lib": "cpx \"./src/**/*.woff2\" ./build/lib",
+    "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
+    "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "@testing-library/react": "^8.0.1",
+    "@types/storybook__react": "^4.0.1",
+    "babel-loader": "8.0.5"
+  }
+}

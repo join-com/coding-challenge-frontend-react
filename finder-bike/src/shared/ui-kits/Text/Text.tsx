@@ -1,0 +1,33 @@
+import React from 'react';
+import styled from 'styled-components'
+import * as Colors from '../Variables/Colors'
+
+export interface IText{
+  children?: React.ReactNode,
+  onClick?: (e: any) => void,
+  color?: string,
+  isBold?: boolean
+}
+
+const TextWithoutLink = styled.span<IText>`
+  color: ${(props) => Colors[props.color] || Colors.black};
+  font-weight: ${props => props.isBold ? 'bold' : 'normal'};
+  font-size: ${({ size }) => size ? `${size}px` : '1rem'};
+  display: ${({ isBlock }) => isBlock ? 'block' : 'inline-block' }
+`
+
+const TextWithLink = styled.a`
+  text-decoration: none;
+  color: ${(props) => Colors[props.color] || Colors.black};
+  font-weight: ${props => props.isBold ? 'bold' : 'normal'};
+  font-size: ${({ size }) => size ? `${size}px` : '1rem'};
+  display: ${({ isBlock }) => isBlock ? 'block' : 'inline-block' }
+`
+
+function Text(props) {
+  if (props.href) return <TextWithLink {...props} />
+
+  return <TextWithoutLink {...props} />
+}
+
+export default Text;

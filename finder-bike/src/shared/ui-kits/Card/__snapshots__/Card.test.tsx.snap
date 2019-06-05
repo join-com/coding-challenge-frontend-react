@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> spec renders the component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-bxivhb fGyFlA"
+      >
+        <img
+          class="sc-bdVaJa bDWFJH"
+          height="150"
+          src="https://seeclickfix.com/files/issue_images/0137/6393/img-image_480745259766912201753441_square.jpg"
+          width="150"
+        />
+        <div
+          class="sc-ifAKCX bgBBpA"
+        >
+          <a
+            class="sc-htpNat fRIlfl"
+            href="https://seeclickfix.com"
+            size="15"
+          >
+            Sidewalk - Damage
+          </a>
+          <span
+            class="sc-bwzfXH cEngQN"
+          >
+            5 plus inches of dangerous sidewalk looming in the shadows. Needs a ADA ramp built or raise the slab next to it to match. Cannot believe this has gone soo long without being addressed. It says Emeryville but the street signs are green (Oakland). Just a matter of time before someone loses some teeth going over bicycle handle bars or breaks a limb. At least start with painting it orange and putting a cone by it.
+          </span>
+          <span
+            class="sc-bwzfXH cEngQN"
+          >
+            12/12/2017 848 61st St Emeryville, CA, 94608, USA
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bxivhb fGyFlA"
+    >
+      <img
+        class="sc-bdVaJa bDWFJH"
+        height="150"
+        src="https://seeclickfix.com/files/issue_images/0137/6393/img-image_480745259766912201753441_square.jpg"
+        width="150"
+      />
+      <div
+        class="sc-ifAKCX bgBBpA"
+      >
+        <a
+          class="sc-htpNat fRIlfl"
+          href="https://seeclickfix.com"
+          size="15"
+        >
+          Sidewalk - Damage
+        </a>
+        <span
+          class="sc-bwzfXH cEngQN"
+        >
+          5 plus inches of dangerous sidewalk looming in the shadows. Needs a ADA ramp built or raise the slab next to it to match. Cannot believe this has gone soo long without being addressed. It says Emeryville but the street signs are green (Oakland). Just a matter of time before someone loses some teeth going over bicycle handle bars or breaks a limb. At least start with painting it orange and putting a cone by it.
+        </span>
+        <span
+          class="sc-bwzfXH cEngQN"
+        >
+          12/12/2017 848 61st St Emeryville, CA, 94608, USA
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
