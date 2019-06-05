@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run lint && npm run build-lib && build-storybook",
+    "build": "npm run lint && npm run build-lib && build-storybook && mv storybook-static ./build",
     "build-lib-watch": "tsc -w",
     "build-lib": "tsc && npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
     "test": "react-scripts test --env=jsdom",
