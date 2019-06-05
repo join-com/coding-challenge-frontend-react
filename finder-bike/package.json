@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run lint && build-storybook && mv storybook-static ./build",
+    "build": "npm run lint && react-scripts build && build-storybook --static-dir storybook-static && mv storybook-static ./build",
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
