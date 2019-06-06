@@ -1,23 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Text /> spec renders the component 1`] = `
+exports[`<Input /> spec renders the component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="sc-bdVaJa VOPaW"
+      <div
+        class="sc-bwzfXH hMFOCI"
       >
-        Hello
-      </span>
+        <input
+          class="sc-bxivhb dYoLVK"
+          value="hello"
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="sc-bdVaJa VOPaW"
+    <div
+      class="sc-bwzfXH hMFOCI"
     >
-      Hello
-    </span>
+      <input
+        class="sc-bxivhb dYoLVK"
+        value="hello"
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

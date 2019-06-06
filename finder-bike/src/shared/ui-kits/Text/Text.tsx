@@ -15,13 +15,16 @@ export interface IText {
 const TextWithoutLink = styled.span<IText>`
   color: ${props => Colors[props.color] || Colors.black};
   font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
-  font-size: ${({ size }) => (size ? `${size}px` : '1rem')};
+  font-size: ${({ size }) => (size ? `${size}px` : '1.3rem')};
   display: ${({ isBlock }) => (isBlock ? 'block' : 'inline-block')};
 `;
 
 const TextWithLink = styled.a`
   text-decoration: none;
-  ${TextWithoutLink}
+  color: ${props => Colors[props.color] || Colors.black};
+  font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
+  font-size: ${({ size }) => (size ? `${size}px` : '1.3rem')};
+  display: ${({ isBlock }) => (isBlock ? 'block' : 'inline-block')};
 `;
 
 function Text(props: IText) {

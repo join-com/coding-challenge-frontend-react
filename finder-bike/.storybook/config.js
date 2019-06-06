@@ -10,12 +10,12 @@ import React from 'react';
 // automatically import all files ending in *.stories.tsx
 const req = require.context('../src', true, /\.stories\.tsx$/);
 
-addDecorator(withKnobs);
 addDecorator(withInfo({ inline: true, header: false }));
 
 addDecorator(s => (
   <>
-    <ResetStyle /> <GlobalStyle /> <SStyle />
+    <GlobalStyle />
+    <SStyle />
     {s()}
   </>
 ));
