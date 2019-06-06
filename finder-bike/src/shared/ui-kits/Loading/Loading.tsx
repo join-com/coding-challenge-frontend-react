@@ -1,6 +1,11 @@
+import React from 'react';
 import styled from 'styled-components';
 
-const Loading = styled.div`
+export interface ILoading {
+  center?: boolean;
+}
+
+const StyledLoading = styled.div`
   width: 20px;
   height: 20px;
   border: 5px solid rgba(29, 161, 242, 0.2);
@@ -24,4 +29,6 @@ const Loading = styled.div`
   }
 `;
 
-export default Loading;
+export default function Loading(props: ILoading) {
+  return <StyledLoading {...props} />;
+}

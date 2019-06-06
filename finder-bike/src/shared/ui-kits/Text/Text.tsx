@@ -21,10 +21,7 @@ const TextWithoutLink = styled.span<IText>`
 
 const TextWithLink = styled.a`
   text-decoration: none;
-  color: ${props => Colors[props.color] || Colors.black};
-  font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
-  font-size: ${({ size }) => (size ? `${size}px` : '1rem')};
-  display: ${({ isBlock }) => (isBlock ? 'block' : 'inline-block')};
+  ${TextWithoutLink}
 `;
 
 function Text(props: IText) {

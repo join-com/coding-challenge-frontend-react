@@ -8,12 +8,13 @@ export interface IButtonProps {
   children?: React.ReactNode;
   onClick?: (e: any) => void;
   color: ButtonColor;
+  disabled?: boolean;
 }
 
-const Button = styled.button<IButtonProps>`
+const StyledButton = styled.button<IButtonProps>`
   color: ${Colors.white};
-  background-color: ${props => Colors[props.color]};
-  border-color: ${props => Colors[props.color]};
+  background-color: ${(props: IButtonProps) => Colors[props.color]};
+  border-color: ${(props: IButtonProps) => Colors[props.color]};
   outline: none;
 
   display: inline-block;
@@ -29,7 +30,11 @@ const Button = styled.button<IButtonProps>`
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  ${props => props.disabled && `background-color: ${Colors.grey};`}
+  ${(props: IButtonProps) =>
+    props.disabled && `background-color: ${Colors.grey};`}
   cursor: pointer;
 `;
-export default Button;
+
+export default function Button(props: IButtonProps) {
+  return <StyledButton {...props} />;
+}
