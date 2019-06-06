@@ -1,10 +1,8 @@
 import { configure, addDecorator } from '@storybook/react';
-import {
-  GlobalStyle,
-  ResetStyle,
-  SStyle
-} from '../src/shared/components/GlobalStyle';
+import { GlobalStyle, SStyle } from '../src/shared/components/GlobalStyle';
 import { withInfo } from '@storybook/addon-info';
+import '@storybook/addon-console';
+
 import React from 'react';
 
 // automatically import all files ending in *.stories.tsx

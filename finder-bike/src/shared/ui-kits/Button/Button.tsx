@@ -9,6 +9,8 @@ export interface IButtonProps {
   onClick?: (e: any) => void;
   color: ButtonColor;
   disabled?: boolean;
+  type?: string;
+  isFull?: boolean;
 }
 
 const StyledButton = styled.button<IButtonProps>`
@@ -33,6 +35,8 @@ const StyledButton = styled.button<IButtonProps>`
   ${(props: IButtonProps) =>
     props.disabled && `background-color: ${Colors.grey};`}
   cursor: pointer;
+
+  ${({ isFull }) => isFull && 'width: 100%'}
 `;
 
 export default function Button(props: IButtonProps) {

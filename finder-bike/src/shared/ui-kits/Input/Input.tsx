@@ -18,7 +18,7 @@ export interface IInput {
 const StyledInputWrapper = styled.div`
   display: grid;
   position: relative;
-  max-width: 200px;
+  max-width: 100%;
   grid-template-columns: auto;
 `;
 
