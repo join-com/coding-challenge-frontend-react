@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="sc-bdVaJa gJWcxq"
+        class="sc-bdVaJa gqEOYM"
         color="primary"
       >
         Hello
@@ -15,7 +15,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="sc-bdVaJa gJWcxq"
+      class="sc-bdVaJa gqEOYM"
       color="primary"
     >
       Hello

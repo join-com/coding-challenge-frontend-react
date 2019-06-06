@@ -13,7 +13,7 @@ export interface IText {
 }
 
 const TextWithoutLink = styled.span<IText>`
-  color: ${props => Colors[props.color] || Colors.black};
+  color: ${props => props.color && Colors[props.color]};
   font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
   font-size: ${({ size }) => (size ? `${size}px` : '1.3rem')};
   display: ${({ isBlock }) => (isBlock ? 'block' : 'inline-block')};
@@ -25,7 +25,7 @@ const TextWithoutLink = styled.span<IText>`
 
 const TextWithLink = styled.a`
   text-decoration: none;
-  color: ${props => Colors[props.color] || Colors.black};
+  color: ${props => props.color && Colors[props.color]};
   font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
   font-size: ${({ size }) => (size ? `${size}px` : '1.3rem')};
   display: ${({ isBlock }) => (isBlock ? 'block' : 'inline-block')};
