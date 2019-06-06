@@ -28,8 +28,7 @@ function FormPlayGround() {
         <Input type="date" name="endDate" placeholder="End date" />
       </FormItem>
       <Button color="primary" type="submit" isFull>
-        {' '}
-        Login{' '}
+        Login
       </Button>
     </Form>
   );
