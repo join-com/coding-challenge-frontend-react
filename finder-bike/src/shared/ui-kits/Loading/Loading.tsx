@@ -5,6 +5,19 @@ export interface ILoading {
   center?: boolean;
 }
 
+const StyledLoadingWrapper = styled.div`
+  height: 100%;
+
+  ${({ center }) =>
+    center &&
+    `
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    margin: 1rem 0;
+  `}
+`;
+
 const StyledLoading = styled.div`
   width: 20px;
   height: 20px;
@@ -17,7 +30,6 @@ const StyledLoading = styled.div`
   animation-duration: 1s;
   animation-timing-function: linear;
   position: relative;
-  ${({ center }) => center && 'margin: 0 auto;'}
 
   @keyframes rotate-s-loader {
     from {
@@ -30,5 +42,9 @@ const StyledLoading = styled.div`
 `;
 
 export default function Loading(props: ILoading) {
-  return <StyledLoading {...props} />;
+  return (
+    <StyledLoadingWrapper {...props}>
+      <StyledLoading />
+    </StyledLoadingWrapper>
+  );
 }

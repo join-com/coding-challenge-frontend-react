@@ -9,6 +9,7 @@ const StyledCardWrapper = styled.div`
   grid-template-columns: 1fr;
   background-color: ${Colors.white};
   border: 1px solid ${Colors.grey4};
+  margin: 1rem 0;
 
   @media only screen and (min-width: 680px) {
     grid-template-columns: 150px 5fr;

@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { Text } from '../../ui-kits/Text';
 import * as Colors from '../../ui-kits/Variables/Colors';
 import paginate from './paginate';
+import { Icon } from '../../ui-kits/Icon';
+import {
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons';
 
 export interface IPage {
   currentPage?: number;
@@ -13,13 +18,15 @@ export interface IPage {
 }
 
 const StyledPageWrapper = styled.div`
-  width: 2rem;
+  width: 100%;
+  margin: 1rem 0;
 `;
 
 const StyledPageList = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   grid-template-rows: 1fr;
+  text-align: center;
 `;
 
 const StyledPageListItem = styled.a`
@@ -79,7 +86,7 @@ function Page(props: IPage) {
           disabled={pages[0] === 1}
           onClick={() => selectPage(currentPage - 1)}
         >
-          <Text>Previous</Text>
+          <Icon size={'2x'} icon={faChevronLeft} />
         </StyledPageListItem>
 
         {pages.map(page => (
@@ -96,7 +103,7 @@ function Page(props: IPage) {
           disabled={pages[pages.length - 1] === totalPages}
           onClick={() => selectPage(currentPage + 1)}
         >
-          <Text>Next</Text>
+          <Icon size={'2x'} icon={faChevronRight} />
         </StyledPageListItem>
       </StyledPageList>
     </StyledPageWrapper>

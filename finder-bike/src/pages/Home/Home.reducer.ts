@@ -1,36 +1,37 @@
 import {
-  GET_TEXT_REQUEST,
-  GET_TEXT_SUCCESS,
-  GET_TEXT_FAILURE
+  GET_INCIDENTS_REQUEST,
+  GET_INCIDENTS_SUCCESS,
+  GET_INCIDENTS_FAILURE
 } from './Home.actionTypes';
 
 export interface IHomeState {
   request: boolean;
-  text: string;
+  data: any;
   error: typeof Error | null;
 }
 
 export const initialState: IHomeState = {
   request: false,
-  text: '',
+  data: [],
   error: null
 };
 
 export function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_TEXT_REQUEST:
+    case GET_INCIDENTS_REQUEST:
       return {
         ...state,
-        request: true
+        request: true,
+        data: []
       };
-    case GET_TEXT_SUCCESS:
+    case GET_INCIDENTS_SUCCESS:
       return {
         ...state,
         request: false,
-        text: action.data
+        data: action.data
       };
 
-    case GET_TEXT_FAILURE:
+    case GET_INCIDENTS_FAILURE:
       return {
         ...state,
         request: false,

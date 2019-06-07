@@ -1,17 +1,18 @@
-export const GET_TEXT_REQUEST = 'GET_TEXT_REQUEST';
-export const GET_TEXT_SUCCESS = 'GET_TEXT_SUCCESS';
-export const GET_TEXT_FAILURE = 'GET_TEXT_FAILURE';
+export const GET_INCIDENTS_REQUEST = 'GET_INCIDENTS_REQUEST';
+export const GET_INCIDENTS_SUCCESS = 'GET_INCIDENTS_SUCCESS';
+export const GET_INCIDENTS_FAILURE = 'GET_INCIDENTS_FAILURE';
 
-export interface IGetTextRequestAction {
-  type: typeof GET_TEXT_REQUEST;
+export interface IGetIncidenntsRequestAction {
+  type: typeof GET_INCIDENTS_REQUEST;
+  params: any;
 }
 
-export interface IGetTextSuccessAction {
-  type: typeof GET_TEXT_SUCCESS;
+export interface IGetIncidenntsSuccessAction {
+  type: typeof GET_INCIDENTS_SUCCESS;
   data: string;
 }
 
-export interface IGetTextFailureAction {
-  type: typeof GET_TEXT_FAILURE;
+export interface GetIncidenntsFailureAction {
+  type: typeof GET_INCIDENTS_FAILURE;
   error?: typeof Error;
 }

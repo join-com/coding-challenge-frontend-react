@@ -1,17 +1,17 @@
-import { takeLatest, put, call, all } from 'redux-saga/effects';
-import { getTextService } from '../../shared/services/getTextService';
-import { GET_TEXT_REQUEST } from './Home.actionTypes';
-import { getTextSuccess, getTextFailure } from './Home.action';
+import { takeLatest, put, call } from 'redux-saga/effects';
+import { GET_INCIDENTS_REQUEST } from './Home.actionTypes';
+import { getIncidentsSuccess, getIncidentsFailure } from './Home.action';
+import { getIncidents } from '../../shared/services/getIncidents';
 
-export const getText = function*() {
+export const getIncidentsAction = function*(action) {
   try {
-    const data = yield call(getTextService);
-    yield put(getTextSuccess(data));
+    const data = yield call(getIncidents, action.params);
+    yield put(getIncidentsSuccess(data.incidents));
   } catch (e) {
-    yield put(getTextFailure(e));
+    yield put(getIncidentsFailure(e));
   }
 };
 
 export const homeSaga = function*() {
-  yield all([takeLatest(GET_TEXT_REQUEST, getText)]);
+  yield takeLatest(GET_INCIDENTS_REQUEST, getIncidentsAction);
 };

@@ -74,7 +74,7 @@ function Input({ icon, ...props }: IInput) {
       return (
         <>
           <StyledInputIcon>
-            <Icon icon={icon} />
+            <Icon size="2x" icon={icon} />
           </StyledInputIcon>
           <StyledInput hasIcon {...props} />
         </>

@@ -10,14 +10,29 @@ export interface IForm {
 }
 
 const StyledFormWrapper = styled.div`
-  width: 30rem;
+  min-width: 30rem;
 `;
 
-const StyledForm = styled.form``;
+const StyledForm = styled.form`
+  ${({ inline }) =>
+    inline &&
+    `
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    `}
+`;
 
 function Form(props: IForm) {
+  const resetValues = e => () => {
+    [...e.target.elements].forEach(elm => (elm.value = ''));
+  };
+
   const onSubmit = e => {
     e.preventDefault();
+    const resetHandler = resetValues(e);
     const values = [...e.target.elements].reduce((acc, cur) => {
       if (!cur.name) return acc;
       return {
@@ -25,12 +40,12 @@ function Form(props: IForm) {
         [cur.name]: cur.value
       };
     }, {});
-
-    props.onSubmit(values);
+    // @ts-ignore
+    props.onSubmit(values, resetHandler);
   };
   return (
     <StyledFormWrapper>
-      <StyledForm onSubmit={onSubmit}>
+      <StyledForm onSubmit={onSubmit} inline={props.inline}>
         <FormContext.Provider value={props}>
           {props.children}
         </FormContext.Provider>

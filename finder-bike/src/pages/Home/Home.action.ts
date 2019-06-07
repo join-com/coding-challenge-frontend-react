@@ -1,28 +1,29 @@
 import {
-  GET_TEXT_REQUEST,
-  GET_TEXT_SUCCESS,
-  GET_TEXT_FAILURE,
-  IGetTextRequestAction,
-  IGetTextSuccessAction,
-  IGetTextFailureAction
+  GET_INCIDENTS_REQUEST,
+  GET_INCIDENTS_SUCCESS,
+  GET_INCIDENTS_FAILURE,
+  IGetIncidenntsRequestAction,
+  IGetIncidenntsSuccessAction,
+  GetIncidenntsFailureAction
 } from './Home.actionTypes';
 
-export function getTextRequest(): IGetTextRequestAction {
+export function getIncidentsRequest(params): IGetIncidenntsRequestAction {
   return {
-    type: GET_TEXT_REQUEST
+    type: GET_INCIDENTS_REQUEST,
+    params
   };
 }
 
-export function getTextSuccess(data): IGetTextSuccessAction {
+export function getIncidentsSuccess(data): IGetIncidenntsSuccessAction {
   return {
-    type: GET_TEXT_SUCCESS,
+    type: GET_INCIDENTS_SUCCESS,
     data
   };
 }
 
-export function getTextFailure(error): IGetTextFailureAction {
+export function getIncidentsFailure(error): GetIncidenntsFailureAction {
   return {
-    type: GET_TEXT_FAILURE,
+    type: GET_INCIDENTS_FAILURE,
     error
   };
 }
