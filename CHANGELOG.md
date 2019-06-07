@@ -1,3 +1,11 @@
+## 0.3.0 (2019-06-07)
+
+* SB-1: Hide google map key (#1) ([92153cd](https://github.com/or4/coding-challenge-frontend-react/commit/92153cd)), closes [#1](https://github.com/or4/coding-challenge-frontend-react/issues/1)
+* SB-2: remove cached env (#2) ([0f5e76a](https://github.com/or4/coding-challenge-frontend-react/commit/0f5e76a)), closes [#2](https://github.com/or4/coding-challenge-frontend-react/issues/2)
+* SB-3: Datepicker fixes for good mobile view (#3) ([c51c3da](https://github.com/or4/coding-challenge-frontend-react/commit/c51c3da)), closes [#3](https://github.com/or4/coding-challenge-frontend-react/issues/3)
+
+
+
 ## 0.2.0 (2019-06-07)
 
 * add aws deploy ([dc1a03f](https://github.com/or4/coding-challenge-frontend-react/commit/dc1a03f))
