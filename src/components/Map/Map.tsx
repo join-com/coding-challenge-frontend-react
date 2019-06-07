@@ -32,15 +32,15 @@ const Marker = styled.div`
 
 export const Map: React.FC<IProps> = ({ coordinates }: IProps) => {
     // @ts-ignore
-    const marker = <Marker {...coordinates} text="" />;
+	const marker = <Marker {...coordinates} text="" />;
+
+	const key = (process && process.env && process.env.REACT_APP_MAP_KEY) || '';
 
     return (
         <Container>
             <GoogleMap
                 defaultZoom={15}
-                bootstrapURLKeys={{
-                    key: 'AIzaSyABCiNj4WIbN6a87pyG-xpue-2mwRlSEBs',
-                }}
+                bootstrapURLKeys={{key}}
                 center={coordinates}
             >
                 {marker}
