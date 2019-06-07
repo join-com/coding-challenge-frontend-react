@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { Page } from '../../shared/components/Page';
 import { Text } from '../../shared/ui-kits/Text';
 import { Alert } from '../../shared/ui-kits/Alert';
-//     grid-template-rows: 10rem 10rem 0.3fr auto 1fr;
+
 const StyledHome = styled.div`
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));

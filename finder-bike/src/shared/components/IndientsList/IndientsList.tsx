@@ -1,6 +1,10 @@
 import React from 'react';
 import { Card } from '../../ui-kits/Card';
 import styled from 'styled-components';
+import { Text } from '../../ui-kits/Text';
+import { faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
+import { Icon } from '../../ui-kits/Icon';
+import { format } from 'date-fns';
 
 export interface IIndientSource {
   name: string;
@@ -39,13 +43,23 @@ function IndientsList(props: IIndientList) {
   return (
     <StyledIndientsList>
       {props.data.map(elm => (
-        <Card
-          key={elm.id}
-          title={elm.title}
-          description={elm.description}
-          thumbnailURL={elm.media.image_url_thumb}
-          date={elm.address}
-        />
+        <Card key={elm.id} thumbnailURL={elm.media.image_url_thumb}>
+          <Text size={15} isBold isBlock>
+            {elm.title}
+          </Text>
+          <Text isBlock>{elm.description}</Text>
+          <Text isBlock>
+            <Icon icon={faMapMarkedAlt} /> Address: {elm.address}
+          </Text>
+          <Text isBlock>
+            <Icon icon={faClock} /> Occurred at:{' '}
+            {format(elm.occurred_at, 'MM/DD/YYYY hh:ss a')}
+          </Text>
+          <Text isBlock>
+            <Icon icon={faClock} /> Updated at:{' '}
+            {format(elm.updated_at, 'MM/DD/YYYY hh:ss a')}
+          </Text>
+        </Card>
       ))}
     </StyledIndientsList>
   );

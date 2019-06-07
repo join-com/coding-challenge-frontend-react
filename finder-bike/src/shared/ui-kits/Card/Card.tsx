@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import * as Colors from '../Variables/Colors';
 import { Image } from '../Image';
-import { Text } from '../Text';
 
 const StyledCardWrapper = styled.div`
   display: grid;
@@ -14,7 +13,7 @@ const StyledCardWrapper = styled.div`
   transition: all 0.2s ease-out;
 
   @media only screen and (min-width: 680px) {
-    grid-template-columns: 150px 5fr;
+    grid-template-columns: 180px 1fr;
   }
 
   :hover {
@@ -25,8 +24,7 @@ const StyledCardWrapper = styled.div`
 const StyledCardContent = styled.div`
   display: grid;
   grid-row-gap: 5px;
-  padding: 10px;
-  grid-template-rows: 1fr 2fr 1fr;
+  padding: 1rem;
   align-items: center;
 `;
 
@@ -41,23 +39,14 @@ const StyledCardThumbnail = styled(Image)`
 
 export interface ICard {
   thumbnailURL: string;
-  title: string;
-  description: string;
-  date: string;
-  titleLink?: string;
+  children?: React.ReactNode;
 }
 
 function Card(props: ICard) {
   return (
     <StyledCardWrapper>
       <StyledCardThumbnail src={props.thumbnailURL} />
-      <StyledCardContent>
-        <Text size={15} isBold isBlock href={props.titleLink}>
-          {props.title}
-        </Text>
-        <Text isBlock>{props.description}</Text>
-        <Text isBlock>{props.date}</Text>
-      </StyledCardContent>
+      <StyledCardContent>{props.children}</StyledCardContent>
     </StyledCardWrapper>
   );
 }
