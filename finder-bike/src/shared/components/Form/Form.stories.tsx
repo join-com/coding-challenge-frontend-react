@@ -5,13 +5,13 @@ import Form from './Form';
 import Input from '../../ui-kits/Input/Input';
 import { Button } from '../../ui-kits/Button';
 
-function FormPlayGround() {
+function FormPlayGround(props) {
   const onSubmit = useCallback(values => {
     console.log('onSubmit', values);
   }, []);
 
   return (
-    <Form onSubmit={onSubmit} inline>
+    <Form onSubmit={onSubmit} inline={props.inline}>
       <FormItem label="Email">
         <Input type="email" name="email" placeholder="Email" />
       </FormItem>
@@ -34,6 +34,6 @@ function FormPlayGround() {
   );
 }
 
-storiesOf('Components/Form', module).add('Playground', () => (
-  <FormPlayGround />
-));
+storiesOf('Components/Form', module)
+  .add('Playground Inline', () => <FormPlayGround inline />)
+  .add('Playground', () => <FormPlayGround />);
