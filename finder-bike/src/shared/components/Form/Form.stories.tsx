@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/react';
 import React, { useCallback } from 'react';
 import FormItem from './Form.Item';
-import Form from './Form';
+import Form, { IForm } from './Form';
 import Input from '../../ui-kits/Input/Input';
 import { Button } from '../../ui-kits/Button';
 
-function FormPlayGround(props) {
+function FormPlayGround(props: IForm) {
   const onSubmit = useCallback(values => {
     console.log('onSubmit', values);
   }, []);
