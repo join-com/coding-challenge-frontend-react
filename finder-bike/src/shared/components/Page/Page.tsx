@@ -35,7 +35,7 @@ const StyledPageListItem = styled.a`
   padding: 0.75rem 1.25rem;
   margin-left: -1px;
   line-height: 1.25;
-
+  transition: all 0.2s ease-out;
   border: 1px solid ${Colors.grey2};
 
   ${({ selected }) =>

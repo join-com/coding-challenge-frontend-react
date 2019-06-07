@@ -7,13 +7,13 @@ import { IIndient } from '../../shared/components/IndientsList/IndientsList';
 
 export interface IHomeState {
   request: boolean;
-  data: IIndient[];
+  data: IIndient[] | null;
   error: typeof Error | null;
 }
 
 export const initialState: IHomeState = {
   request: false,
-  data: [],
+  data: null,
   error: null
 };
 
@@ -23,6 +23,7 @@ export function homeReducer(state = initialState, action) {
       return {
         ...state,
         request: true,
+        error: null,
         data: []
       };
     case GET_INCIDENTS_SUCCESS:

@@ -10,9 +10,15 @@ const StyledCardWrapper = styled.div`
   background-color: ${Colors.white};
   border: 1px solid ${Colors.grey4};
   margin: 1rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
 
   @media only screen and (min-width: 680px) {
     grid-template-columns: 150px 5fr;
+  }
+
+  :hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
 

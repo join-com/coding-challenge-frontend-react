@@ -7,8 +7,8 @@ import logo from '../../../assets/images/logo.png';
 const HeaderWrapper = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: 100px auto;
   justify-content: center;
+  grid-template-columns: 100px auto;
   grid-column-gap: 1rem;
 `;
 

@@ -18,10 +18,16 @@ const StyledForm = styled.form`
     inline &&
     `
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-column-gap: 2rem;
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fr));
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (min-width: 680px) {
+      grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+      grid-column-gap: 2rem;
+    }
     `}
 `;
 

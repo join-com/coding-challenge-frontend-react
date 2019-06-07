@@ -1,4 +1,6 @@
 // colors
+export type MainColor = 'success' | 'warning' | 'danger' | 'primary';
+
 export const primary = '#007bff';
 export const white = '#fff';
 export const danger = '#dc3545';
