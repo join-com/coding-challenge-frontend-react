@@ -42,15 +42,15 @@ export default function Home(props) {
           : undefined
       };
 
-      setParams({ ...params, ..._params });
+      setParams(p => ({ ...p, ..._params }));
       resetValues();
     },
-    [getIncidents]
+    [setParams]
   );
 
   const onClickPage = useCallback(
     nextPage => {
-      setParams({ ...params, page: nextPage });
+      setParams(p => ({ ...p, page: nextPage }));
     },
     [setParams]
   );

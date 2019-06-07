@@ -4,7 +4,7 @@ import Image from './Image';
 
 describe('<Image /> spec', () => {
   it('renders the component', () => {
-    const component = render(<Image />);
+    const component = render(<Image src="" />);
     expect(component).toMatchSnapshot();
   });
 });

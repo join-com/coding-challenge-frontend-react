@@ -4,7 +4,11 @@ import Input from '../../ui-kits/Input/Input';
 import { Button } from '../../ui-kits/Button';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
-function SearchIndients(props) {
+export interface ISearchIndient {
+  onSubmit: (e: any, g: any) => void;
+}
+
+function SearchIndients(props: ISearchIndient) {
   return (
     <Form onSubmit={props.onSubmit} inline>
       <FormItem>

@@ -3,10 +3,11 @@ import {
   GET_INCIDENTS_SUCCESS,
   GET_INCIDENTS_FAILURE
 } from './Home.actionTypes';
+import { IIndient } from '../../shared/components/IndientsList/IndientsList';
 
 export interface IHomeState {
   request: boolean;
-  data: any;
+  data: IIndient[];
   error: typeof Error | null;
 }
 

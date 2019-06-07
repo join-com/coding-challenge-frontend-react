@@ -5,7 +5,7 @@ export const FormContext = React.createContext({});
 
 export interface IForm {
   children: React.ReactNode;
-  onSubmit: (e: any) => void;
+  onSubmit: (e: any, g?: any) => void;
   inline?: boolean;
 }
 

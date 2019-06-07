@@ -6,7 +6,11 @@ const StyledImage = styled.img`
   width: 100%;
 `;
 
-function Image({ src, ...props }) {
+export interface IImageProps {
+  src: string;
+}
+
+function Image({ src, ...props }: IImageProps) {
   return <StyledImage src={src ? src : noImage} {...props} />;
 }
 export default Image;
