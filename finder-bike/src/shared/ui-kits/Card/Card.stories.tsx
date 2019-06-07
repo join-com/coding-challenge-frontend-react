@@ -4,9 +4,10 @@ import Card from './Card';
 import { Text } from '../Text';
 import { Icon } from '../Icon';
 import { faClock, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import thumbnail from '../../../assets/images/no-image.png';
 
 storiesOf('UI-Kit', module).add('Card', () => (
-  <Card thumbnailURL="https://seeclickfix.com/files/issue_images/0137/6393/img-image_480745259766912201753441_square.jpg">
+  <Card thumbnailURL={thumbnail}>
     <Text size={15} isBold isBlock>
       Sidewalk - Damage
     </Text>

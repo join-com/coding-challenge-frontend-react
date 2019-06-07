@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Image from './Image';
+import thumbnail from '../../../assets/images/no-image.png';
 
-storiesOf('UI-Kit/Image', module).add('with src', () => (
-  <Image src="https://seeclickfix.com/files/issue_images/0137/6393/img-image_480745259766912201753441.jpg" />
-));
+storiesOf('UI-Kit', module).add('Image', () => <Image src={thumbnail} />);
