@@ -23,6 +23,7 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"deploy": "react-scripts build && aws s3 sync build/ s3://stolen-bikes",
+		"release": "./.scripts/release.sh",
 		"test": "react-scripts test",
 		"test-coverage": "CI=true react-scripts test --coverage",
 		"eject": "react-scripts eject",
