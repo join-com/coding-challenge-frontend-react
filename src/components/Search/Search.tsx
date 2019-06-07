@@ -42,13 +42,13 @@ const DatePickerWrapper = styled.div`
     }
 
     ${media.mobile`
-		width: calc(50% - 10px);
+		width: 100%;
 
-		& > div::first-child {
+		& .react-datepicker-wrapper {
 			width: 100%;
 		}
 
-		& > div:first-child > div {
+		& .react-datepicker__input-container {
 			width: 100%;
 		}
 

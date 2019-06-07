@@ -105,7 +105,7 @@ exports[`Search should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bxivhb",
                   "isStatic": true,
-                  "lastClassName": "hfJswJ",
+                  "lastClassName": "iozMWL",
                   "rules": Array [
                     "
     margin: 5px 5px;
@@ -123,13 +123,13 @@ exports[`Search should render correctly 1`] = `
                     " {
             ",
                     "
-		width: calc(50% - 10px);
+		width: 100%;
 
-		& > div::first-child {
+		& .react-datepicker-wrapper {
 			width: 100%;
 		}
 
-		& > div:first-child > div {
+		& .react-datepicker__input-container {
 			width: 100%;
 		}
 
@@ -157,7 +157,7 @@ exports[`Search should render correctly 1`] = `
             forwardedRef={null}
           >
             <div
-              className="sc-bxivhb hfJswJ"
+              className="sc-bxivhb iozMWL"
             >
               <DatePicker
                 allowSameDay={false}
@@ -271,7 +271,7 @@ exports[`Search should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bxivhb",
                   "isStatic": true,
-                  "lastClassName": "hfJswJ",
+                  "lastClassName": "iozMWL",
                   "rules": Array [
                     "
     margin: 5px 5px;
@@ -289,13 +289,13 @@ exports[`Search should render correctly 1`] = `
                     " {
             ",
                     "
-		width: calc(50% - 10px);
+		width: 100%;
 
-		& > div::first-child {
+		& .react-datepicker-wrapper {
 			width: 100%;
 		}
 
-		& > div:first-child > div {
+		& .react-datepicker__input-container {
 			width: 100%;
 		}
 
@@ -323,7 +323,7 @@ exports[`Search should render correctly 1`] = `
             forwardedRef={null}
           >
             <div
-              className="sc-bxivhb hfJswJ"
+              className="sc-bxivhb iozMWL"
             >
               <DatePicker
                 allowSameDay={false}

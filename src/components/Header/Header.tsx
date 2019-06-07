@@ -12,7 +12,8 @@ const Container = styled(Link)`
 	cursor: pointer;
 
 	${media.mobile`
-    	height: 60px;
+		height: 60px;
+		margin-bottom: 15px;
   	`}
 
 	${media.tablet`

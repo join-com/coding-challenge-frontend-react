@@ -5,7 +5,7 @@ exports[`Map should render correctly 1`] = `
   <GoogleMap
     bootstrapURLKeys={
       Object {
-        "key": "AIzaSyABCiNj4WIbN6a87pyG-xpue-2mwRlSEBs",
+        "key": "",
       }
     }
     center={

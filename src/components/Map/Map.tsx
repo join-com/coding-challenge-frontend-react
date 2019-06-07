@@ -6,7 +6,8 @@ import { IGeoCoordinates } from 'types';
 import { media } from 'ui/media';
 
 interface IProps {
-    coordinates: IGeoCoordinates;
+	coordinates: IGeoCoordinates;
+	debug?: boolean;
 }
 
 const Container = styled.div`
@@ -30,11 +31,11 @@ const Marker = styled.div`
     height: 20px;
 `;
 
-export const Map: React.FC<IProps> = ({ coordinates }: IProps) => {
+export const Map: React.FC<IProps> = ({ coordinates, debug }: IProps) => {
     // @ts-ignore
 	const marker = <Marker {...coordinates} text="" />;
 
-	const key = (process && process.env && process.env.REACT_APP_MAP_KEY) || '';
+	const key = debug ? '' : (process && process.env && process.env.REACT_APP_MAP_KEY) || '';
 
     return (
         <Container>

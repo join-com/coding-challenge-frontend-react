@@ -10348,10 +10348,10 @@ react-color@^2.17.0:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-datepicker@^2.6.0:
-  version "2.6.0"
-  resolved "http://storage.mds.yandex.net/get-npm/1893478/react-datepicker-2.6.0.tgz#d40413f8a857a14c7d0540e28e1720460a1d168b"
-  integrity sha512-EcgQPqwHpQ80jvRrBowkvEcDfx0Rxf6mK3zUOuJQG9VdB4JXPGyQK6kZaCv9KgCAtCuu2f/12dU0Utw0+JAnDw==
+react-datepicker@^2.7.0:
+  version "2.7.0"
+  resolved "http://storage.mds.yandex.net/get-npm/1890008/react-datepicker-2.7.0.tgz#5084556e997781d620b50ae953a4017cb8e3a8f2"
+  integrity sha512-hGe55tPi+ZWqv8GZ4TLKR8J1iCd/DNFM3JA9b5s51nsv+flfWCwrPyPDLxZGnO2aAPZbOazcHpUisCswlYManQ==
   dependencies:
     classnames "^2.2.5"
     date-fns "^2.0.0-alpha.23"

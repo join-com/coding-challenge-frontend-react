@@ -6,7 +6,7 @@ import { Map } from './Map';
 
 describe('Map', () => {
     test('should render correctly', () => {
-        const container = shallow(<Map coordinates={{ lng: 13.4275004, lat: 52.4890809 }} />);
+        const container = shallow(<Map coordinates={{ lng: 13.4275004, lat: 52.4890809 }} debug />);
         expect(container).toMatchSnapshot();
     });
 });
