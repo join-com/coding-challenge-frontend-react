@@ -9,11 +9,15 @@
 - ✅ Styled-Component
 - ✅ Storybook
 - ✅ Jest
+- ✅ CSS Grid
+- ✅ ESlint
+- ✅ Prettier
 
 ## Live demo:
 
 - App:
   [https://tai-finder-bike.netlify.com](https://tai-finder-bike.netlify.com)
+
 - Storybook:
   [https://tai-finder-bike-storybook.netlify.com](https://tai-finder-bike-storybook.netlify.com)
 

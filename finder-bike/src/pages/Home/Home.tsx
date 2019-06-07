@@ -71,7 +71,12 @@ export default function Home(props) {
     if (hasData)
       return (
         <>
-          <StyledCount>Total: XXX results</StyledCount>
+          <StyledCount>Total: results</StyledCount>
+          {/*
+            Total record is API limitation
+            What: This a value that how many record found in database
+            Why: We can not calculate total_record since we dont know about database contain.
+          */}
           <IndientsList data={data} />
         </>
       );
@@ -88,6 +93,11 @@ export default function Home(props) {
         {renderContent()}
 
         <StyledPage>
+          {/*
+            totalItems: hard code "100" here
+            What: This a value that how many record found in database
+            Why: We can not calculate length of pages since we dont know total records
+          */}
           {hasData && (
             <Page
               totalItems={100}
