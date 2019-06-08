@@ -33,7 +33,13 @@ const StyledCount = styled(Text)`
 export default function Home(props) {
   const { data, getIncidents, loading, error, emptyData, hasData } = props;
 
-  const [params, setParams] = useState({ per_page: 10, page: 1 });
+  const [params, setParams] = useState({
+    per_page: 10,
+    page: 1,
+    incident_type: 'theft',
+    proximity: 'Berlin',
+    proximity_square: 30
+  });
 
   const getTimeFromString = date => getTime(new Date(date));
 
