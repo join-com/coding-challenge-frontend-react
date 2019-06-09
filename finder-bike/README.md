@@ -1,5 +1,21 @@
 ### Finder Bikes
 
+## Limitation API:
+
+- incident_total: It should be returned from backend side since it relatives to
+  database.
+- Frontend side, we should not use "trick" by getting all result first. Because
+  it's not good for performance and it will impacted to user experience. This is
+  not an good idea to resolve this problem.
+- To resolve: We should ask backend side to add new totalResult field like:
+
+```
+{
+  "incidents": [{ ... }],
+  "incident_total": 221 // backend side should return this value
+}
+```
+
 ## Technologies:
 
 - ✅ ReactJS

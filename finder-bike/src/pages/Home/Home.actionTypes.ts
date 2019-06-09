@@ -1,4 +1,4 @@
-import { IIndient } from '../../shared/components/IndientsList/IndientsList';
+import { IIncident } from '../../shared/components/IndientList/IndientList';
 
 export const GET_INCIDENTS_REQUEST = 'GET_INCIDENTS_REQUEST';
 export const GET_INCIDENTS_SUCCESS = 'GET_INCIDENTS_SUCCESS';
@@ -11,7 +11,7 @@ export interface IGetIncidenntsRequestAction {
 
 export interface IGetIncidenntsSuccessAction {
   type: typeof GET_INCIDENTS_SUCCESS;
-  data: IIndient[];
+  data: IIncident[];
 }
 
 export interface GetIncidenntsFailureAction {

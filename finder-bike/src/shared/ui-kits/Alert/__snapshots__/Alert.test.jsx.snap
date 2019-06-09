@@ -1,21 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Image /> spec renders the component 1`] = `
+exports[`<Alert /> spec renders the component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <img
-        class="sc-bdVaJa UoSJW"
-        src="no-image.png"
-      />
+      <span
+        class="sc-htpNat plgRz sc-bdVaJa ikvDJf"
+        color="primary"
+      >
+        Hello
+      </span>
     </div>
   </body>,
   "container": <div>
-    <img
-      class="sc-bdVaJa UoSJW"
-      src="no-image.png"
-    />
+    <span
+      class="sc-htpNat plgRz sc-bdVaJa ikvDJf"
+      color="primary"
+    >
+      Hello
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

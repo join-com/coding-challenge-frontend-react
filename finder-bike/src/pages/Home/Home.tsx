@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import Header from '../../shared/components/Header/Header';
 import { Layout } from '../../shared/components/Layout';
-import { SearchIndients } from '../../shared/components/SearchIndients';
-import { IndientsList } from '../../shared/components/IndientsList';
+import { SearchIncidents } from '../../shared/components/SearchIncidents';
+import { IndientList } from '../../shared/components/IndientList';
 import { getTime } from 'date-fns';
 import Loading from '../../shared/ui-kits/Loading/Loading';
 import styled from 'styled-components';
@@ -32,7 +32,6 @@ const StyledCount = styled(Text)`
 
 export default function Home(props) {
   const { data, getIncidents, loading, error, emptyData, hasData } = props;
-
   const [params, setParams] = useState({
     per_page: 10,
     page: 1,
@@ -47,6 +46,7 @@ export default function Home(props) {
     (values, resetValues) => {
       const _params = {
         ...values,
+        page: 1,
         occurred_after: values.occurred_after
           ? getTimeFromString(values.occurred_after)
           : undefined,
@@ -83,7 +83,7 @@ export default function Home(props) {
             What: This a value that how many record found in database
             Why: We can not calculate total_record since we dont know about database contain.
           */}
-          <IndientsList data={data} />
+          <IndientList data={data} />
         </>
       );
     if (error) return <Alert color="danger">{error.message}</Alert>;
@@ -94,7 +94,7 @@ export default function Home(props) {
     <Layout>
       <StyledHome>
         <Header />
-        <SearchIndients onSubmit={onSearch} />
+        <SearchIncidents onSubmit={onSearch} />
 
         {renderContent()}
 

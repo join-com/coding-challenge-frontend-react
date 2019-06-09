@@ -6,18 +6,18 @@ import { faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Icon } from '../../ui-kits/Icon';
 import { format } from 'date-fns';
 
-export interface IIndientSource {
+export interface IIncidentSource {
   name: string;
   html_url: string;
   api_url: string;
 }
 
-export interface IIndientMedia {
+export interface IIncidentMedia {
   image_url: string;
   image_url_thumb: string;
 }
 
-export interface IIndient {
+export interface IIncident {
   id: number;
   title: string;
   description: string;
@@ -25,23 +25,23 @@ export interface IIndient {
   occurred_at: number;
   updated_at: number;
   url: string;
-  source: IIndientSource;
-  media: IIndientMedia;
+  source: IIncidentSource;
+  media: IIncidentMedia;
   location_type?: string;
   location_description?: string;
   type: string;
   type_properties: string;
 }
 
-export interface IIndientList {
-  data: IIndient[];
+export interface IIncidentList {
+  data: IIncident[];
 }
 
-const StyledIndientsList = styled.div``;
+const StyledincidentsList = styled.div``;
 
-function IndientsList(props: IIndientList) {
+function incidentsList(props: IIncidentList) {
   return (
-    <StyledIndientsList>
+    <StyledincidentsList>
       {props.data.map(elm => (
         <Card key={elm.id} thumbnailURL={elm.media.image_url_thumb}>
           <Text size={15} isBold isBlock>
@@ -61,8 +61,8 @@ function IndientsList(props: IIndientList) {
           </Text>
         </Card>
       ))}
-    </StyledIndientsList>
+    </StyledincidentsList>
   );
 }
 
-export default IndientsList;
+export default incidentsList;

@@ -13,6 +13,7 @@ export interface IInput {
   defaultValue?: string;
   placeholder?: string;
   icon?: IconProp;
+  id?: string;
 }
 
 const StyledInputWrapper = styled.div`

@@ -15,7 +15,7 @@ export interface ISearchIndient {
   onSubmit: (e: any, g: any) => void;
 }
 
-function SearchIndients(props: ISearchIndient) {
+function SearchIncidents(props: ISearchIndient) {
   return (
     <StyledForm onSubmit={props.onSubmit} inline>
       <FormItem>
@@ -38,10 +38,10 @@ function SearchIndients(props: ISearchIndient) {
         />
       </FormItem>
       <Button color="primary" type="submit" isFull>
-        Seartch
+        Search
       </Button>
     </StyledForm>
   );
 }
 
-export default SearchIndients;
+export default SearchIncidents;

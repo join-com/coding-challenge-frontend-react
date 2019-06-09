@@ -6,21 +6,24 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-bxivhb hCYxpp"
+        class="sc-bxivhb kiwMTT"
       >
         <img
-          class="sc-htpNat KtFsv"
+          class="sc-htpNat daVAfG"
+          src="logo.png"
         />
         <div
           class="sc-ifAKCX cFlEyZ"
         >
           <span
-            class="sc-bdVaJa bcEtJl"
+            class="sc-bdVaJa cVUQRj"
+            size="20"
           >
-            Police department
+            POLICE DEPARTMENT
           </span>
           <span
-            class="sc-bdVaJa bcEtJl"
+            class="sc-bdVaJa cVUQRj"
+            size="20"
           >
             Stolen bike
           </span>
@@ -30,21 +33,24 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-bxivhb hCYxpp"
+      class="sc-bxivhb kiwMTT"
     >
       <img
-        class="sc-htpNat KtFsv"
+        class="sc-htpNat daVAfG"
+        src="logo.png"
       />
       <div
         class="sc-ifAKCX cFlEyZ"
       >
         <span
-          class="sc-bdVaJa bcEtJl"
+          class="sc-bdVaJa cVUQRj"
+          size="20"
         >
-          Police department
+          POLICE DEPARTMENT
         </span>
         <span
-          class="sc-bdVaJa bcEtJl"
+          class="sc-bdVaJa cVUQRj"
+          size="20"
         >
           Stolen bike
         </span>
