@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Card, { CardProps } from '../Card/Card';
+import { connect } from 'react-redux';
+
+import { Incident } from '../../types';
+import { StoreState } from '../../store';
+
+import Card from '../Card/Card';
 import { Pagination } from 'antd';
 
 const TotalBlock = styled.div`
@@ -13,16 +18,16 @@ const ItemsWrapper = styled.div`
 `;
 
 type ResultItemsProps = {
-  items: Array<CardProps>;
+  incidents?: Array<Incident>;
 };
 
-const Results: React.FC<ResultItemsProps> = ({ items }) => (
+const Results: React.FC<ResultItemsProps> = ({ incidents = [] }) => (
   <div>
-    <TotalBlock>Total: {items.length}</TotalBlock>
+    <TotalBlock>Total: {incidents.length}</TotalBlock>
 
     <ItemsWrapper>
-      {items.map(item => (
-        <Card {...item} key={item.id} />
+      {incidents.map(incident => (
+        <Card {...incident} key={incident.id} />
       ))}
     </ItemsWrapper>
 
@@ -30,4 +35,6 @@ const Results: React.FC<ResultItemsProps> = ({ items }) => (
   </div>
 );
 
-export default Results;
+const mapStateToProps = ({ incidents }: StoreState) => ({ incidents });
+
+export default connect(mapStateToProps)(Results);

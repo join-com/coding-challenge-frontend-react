@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Incident } from '../../types';
 
 import colors from '../../constants/colors';
 import bycicleIcon from './bycicle.svg';
@@ -36,16 +37,7 @@ const Image = styled.img`
   height: 100%;
 `;
 
-export type CardProps = {
-  id: number;
-  title: string;
-  description?: string;
-  reportDate?: number;
-  address?: string;
-  imageUrl?: string;
-};
-
-const Card: React.FC<CardProps> = ({ title, description, imageUrl }) => (
+const Card: React.FC<Incident> = ({ title, description, imageUrl }) => (
   <Wrapper>
     <ImageWrapper>
       <Image src={imageUrl} />
