@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../shared/components/Header/Header';
 import { Layout } from '../../shared/components/Layout';
 import { format } from 'date-fns';
@@ -26,7 +26,7 @@ export default function IncidentDetail(props) {
   useEffect(() => {
     const { id } = props.match.params;
     getIncident(id);
-  }, [getIncident]);
+  }, [getIncident, props.match.params]);
 
   const renderContent = () => {
     if (loading || !data) return <Loading center />;
