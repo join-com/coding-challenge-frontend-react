@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import colors from '../../constants/colors';
 import bycicleIcon from './bycicle.svg';
+import getFormattedDate from '../../utils/getFormattedDate';
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,25 +28,31 @@ const IMAGE_SIZE = 180;
 const ImageWrapper = styled.div`
   width: ${IMAGE_SIZE}px;
   height: ${IMAGE_SIZE}px;
+  border-right: 1px solid ${colors.gray4};
+  border-bottom: 1px solid ${colors.gray4};
+  margin-bottom: -1px;
   flex-shrink: 0;
-  background-image: url(${bycicleIcon});
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
 `;
 
 const Image = styled.img`
   height: 100%;
 `;
 
-const Card: React.FC<Incident> = ({ id, title, description, imageUrl }) => {
+const Card: React.FC<Incident> = ({
+  id,
+  title,
+  description,
+  imageUrlThumb,
+  address,
+  incidentDate
+}) => {
   const linkPath = `/incident/${id}`;
 
   return (
     <Wrapper>
       <NavLink to={linkPath}>
         <ImageWrapper>
-          <Image src={imageUrl} />
+          <Image src={imageUrlThumb || bycicleIcon} />
         </ImageWrapper>
       </NavLink>
 
@@ -54,7 +61,13 @@ const Card: React.FC<Incident> = ({ id, title, description, imageUrl }) => {
           <Title>{title}</Title>
         </NavLink>
 
-        {description || 'No description'}
+        <p>{description || 'No description'}</p>
+
+        <p>
+          {!!incidentDate && getFormattedDate(incidentDate)}
+          {!!(incidentDate && address) && ` - `}
+          {address}
+        </p>
       </Content>
     </Wrapper>
   );

@@ -27,13 +27,14 @@ const ELEMS_PER_PAGE = 10;
 
 const getCurPageIncidents = (incidents: any, page: number) =>
   Object.keys(incidents)
+    .reverse()
     .map(key => incidents[key])
     .slice(ELEMS_PER_PAGE * (page - 1), ELEMS_PER_PAGE * page);
 
 const renderPageButton = (
   page: number,
   type: 'page' | 'prev' | 'next' | 'jump-prev' | 'jump-next'
-) => {
+): React.ReactNode => {
   switch (type) {
     case 'page':
       return <NavLink to={`/?page=${page}`}>{page}</NavLink>;

@@ -15,7 +15,7 @@ export interface Action {
   };
 }
 
-function requestIncidents(query: object) {
+function requestIncidents(query: object): Action {
   return {
     type: ActionType.REQUEST_INCIDENTS,
     payload: {
@@ -52,7 +52,7 @@ export function fetchIncidents() {
             id: item.id,
             title: item.title,
             description: item.description,
-            incidentDate: item.occurredAt,
+            incidentDate: item.occurred_at,
             address: item.address,
             imageUrl: item.media && item.media.image_url,
             imageUrlThumb: item.media && item.media.image_url_thumb
