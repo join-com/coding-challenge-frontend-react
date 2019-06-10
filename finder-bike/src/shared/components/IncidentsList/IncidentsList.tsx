@@ -5,7 +5,6 @@ import { Text } from '../../ui-kits/Text';
 import { faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Icon } from '../../ui-kits/Icon';
 import { format } from 'date-fns';
-import { Link } from 'react-router-dom';
 
 export interface IIncidentSource {
   name: string;
