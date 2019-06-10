@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorPage from '../ErrorPage/ErrorPage';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 import { NavLink } from 'react-router-dom';
 import { Button, Typography } from 'antd';
 

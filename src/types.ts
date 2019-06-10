@@ -1,3 +1,5 @@
+import { ActionType } from './actions/ActionType';
+
 export type Incident = {
   id: number;
   title: string;
@@ -5,6 +7,7 @@ export type Incident = {
   reportDate?: number;
   incidentDate?: number;
   address?: string;
+  coordinates?: Coordinates;
   imageUrl?: string;
   imageUrlThumb?: string;
 };
@@ -12,3 +15,15 @@ export type Incident = {
 export type Incidents = {
   [id: number]: Incident;
 };
+
+export interface Coordinates {
+  lng: number;
+  lat: number;
+}
+
+export interface Action {
+  type: ActionType;
+  payload: {
+    [key: string]: any;
+  };
+}

@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { connect } from 'react-redux';
 
 import { Incidents } from '../../types';
-import { StoreState } from '../../store';
 
 import { NavLink } from 'react-router-dom';
 import Card from '../Card/Card';
 import { Pagination, Icon } from 'antd';
+import { RESULTS_PER_PAGE } from '../../constants/main';
 
 const TotalBlock = styled.div`
   text-align: right;
@@ -23,13 +22,11 @@ type ResultItemsProps = {
   page?: number;
 };
 
-const ELEMS_PER_PAGE = 10;
-
 const getCurPageIncidents = (incidents: any, page: number) =>
   Object.keys(incidents)
     .reverse()
     .map(key => incidents[key])
-    .slice(ELEMS_PER_PAGE * (page - 1), ELEMS_PER_PAGE * page);
+    .slice(RESULTS_PER_PAGE * (page - 1), RESULTS_PER_PAGE * page);
 
 const renderPageButton = (
   page: number,
@@ -78,7 +75,7 @@ const Results: React.FC<ResultItemsProps> = ({ incidents = [], page = 1 }) => {
           hideOnSinglePage
           current={page}
           total={incidentsCount}
-          pageSize={ELEMS_PER_PAGE}
+          pageSize={RESULTS_PER_PAGE}
           itemRender={renderPageButton}
         />
       }
@@ -86,6 +83,4 @@ const Results: React.FC<ResultItemsProps> = ({ incidents = [], page = 1 }) => {
   );
 };
 
-const mapStateToProps = ({ incidents }: StoreState) => ({ incidents });
-
-export default connect(mapStateToProps)(Results);
+export default Results;

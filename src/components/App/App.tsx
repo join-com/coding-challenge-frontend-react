@@ -4,21 +4,15 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
-import MainPage from '../pages/MainPage';
-import IncidentPage from '../pages/IncidentPage';
-import UnknownPage from '../pages/UnknownPage';
-
-import { fetchIncidents } from '../../actions';
+import MainPage from '../../pages/MainPage';
+import IncidentPage from '../../pages/IncidentPage';
+import UnknownPage from '../../pages/UnknownPage';
 
 import store from '../../store';
 
 import 'antd/dist/antd.css';
 
 class App extends Component {
-  componentDidMount() {
-    store.dispatch(fetchIncidents());
-  }
-
   render() {
     return (
       <ErrorBoundary>
