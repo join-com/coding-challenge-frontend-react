@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 
-import { Incident } from '../../types';
+import { Incidents } from '../../types';
 import { StoreState } from '../../store';
 
 import { NavLink } from 'react-router-dom';
@@ -19,14 +19,16 @@ const ItemsWrapper = styled.div`
 `;
 
 type ResultItemsProps = {
-  incidents?: Array<Incident>;
+  incidents?: Incidents;
   page?: number;
 };
 
 const ELEMS_PER_PAGE = 10;
 
-const getCurPageIncidents = (incidents: Array<any>, page: number) =>
-  incidents.slice(ELEMS_PER_PAGE * (page - 1), ELEMS_PER_PAGE * page);
+const getCurPageIncidents = (incidents: any, page: number) =>
+  Object.keys(incidents)
+    .map(key => incidents[key])
+    .slice(ELEMS_PER_PAGE * (page - 1), ELEMS_PER_PAGE * page);
 
 const renderPageButton = (
   page: number,
@@ -58,9 +60,11 @@ const renderPageButton = (
 };
 
 const Results: React.FC<ResultItemsProps> = ({ incidents = [], page = 1 }) => {
+  const incidentsCount = Object.keys(incidents).length;
+
   return (
     <div>
-      <TotalBlock>Total: {incidents.length}</TotalBlock>
+      <TotalBlock>Total: {incidentsCount}</TotalBlock>
 
       <ItemsWrapper>
         {getCurPageIncidents(incidents, page).map(incident => (
@@ -72,7 +76,7 @@ const Results: React.FC<ResultItemsProps> = ({ incidents = [], page = 1 }) => {
         <Pagination
           hideOnSinglePage
           current={page}
-          total={incidents.length}
+          total={incidentsCount}
           pageSize={ELEMS_PER_PAGE}
           itemRender={renderPageButton}
         />
