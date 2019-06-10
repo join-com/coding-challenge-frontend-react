@@ -9,8 +9,6 @@ export type Incident = {
   imageUrlThumb?: string;
 };
 
-export type Incidents =
-  | {
-      [id: number]: Incident;
-    }
-  | {};
+export type Incidents = {
+  [id: number]: Incident;
+};

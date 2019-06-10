@@ -64,7 +64,8 @@ const Card: React.FC<Incident> = ({
         <p>{description || 'No description'}</p>
 
         <p>
-          {!!incidentDate && getFormattedDate(incidentDate)}
+          {!!incidentDate &&
+            getFormattedDate(incidentDate, { withTime: false })}
           {!!(incidentDate && address) && ` - `}
           {address}
         </p>
