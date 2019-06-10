@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { fetchIncidents } from '../../actions';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 import MainPage from '../pages/MainPage';
 import IncidentPage from '../pages/IncidentPage';
+import UnknownPage from '../pages/UnknownPage';
 
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import { fetchIncidents } from '../../actions';
 
 import store from '../../store';
 
@@ -22,8 +24,11 @@ class App extends Component {
       <ErrorBoundary>
         <Provider store={store}>
           <Router>
-            <Route path="/" exact component={MainPage} />
-            <Route path="/incident/:id" component={IncidentPage} />
+            <Switch>
+              <Route path="/" exact component={MainPage} />
+              <Route path="/incident/:id" component={IncidentPage} />
+              <Route component={UnknownPage} />
+            </Switch>
           </Router>
         </Provider>
       </ErrorBoundary>
