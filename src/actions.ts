@@ -10,7 +10,9 @@ export enum ActionType {
 
 export interface Action {
   type: ActionType;
-  payload: any;
+  payload: {
+    [key: string]: any;
+  };
 }
 
 function requestIncidents(query: object) {

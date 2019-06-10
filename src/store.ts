@@ -10,7 +10,7 @@ export interface StoreState {
   incidents?: Incidents;
 }
 
-const store = createStore(
+const store = createStore<StoreState, any, any, any>(
   rootReducer,
   { incidents: [] },
   composeEnhancers(applyMiddleware(thunkMiddleware))

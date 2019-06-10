@@ -5,7 +5,9 @@ import Page from '../Page/Page';
 import queryString from 'query-string';
 
 type MainPageProps = {
-  location: any;
+  location: {
+    search: string;
+  };
 };
 
 const MainPage: React.FC<MainPageProps> = ({ location }) => {

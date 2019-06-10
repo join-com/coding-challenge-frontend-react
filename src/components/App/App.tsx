@@ -1,33 +1,34 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { fetchIncidents } from '../../actions';
+
 import MainPage from '../pages/MainPage';
 import IncidentPage from '../pages/IncidentPage';
 
-import { Action, fetchIncidents } from '../../actions';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
-import { StoreState } from '../../store';
+import store from '../../store';
 
 import 'antd/dist/antd.css';
 
-type AppProps = {
-  dispatch: ThunkDispatch<StoreState, any, Action>;
-};
-
-class App extends Component<AppProps> {
+class App extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchIncidents());
+    store.dispatch(fetchIncidents());
   }
 
   render() {
     return (
-      <Router>
-        <Route path="/" exact component={MainPage} />
-        <Route path="/incident/:id" component={IncidentPage} />
-      </Router>
+      <ErrorBoundary>
+        <Provider store={store}>
+          <Router>
+            <Route path="/" exact component={MainPage} />
+            <Route path="/incident/:id" component={IncidentPage} />
+          </Router>
+        </Provider>
+      </ErrorBoundary>
     );
   }
 }
 
-export default connect()(App);
+export default App;
