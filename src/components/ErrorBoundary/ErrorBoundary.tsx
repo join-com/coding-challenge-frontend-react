@@ -21,7 +21,7 @@ class ErrorBoundary extends Component {
             <Fragment>
               Something has gone wrong(
               <br />
-              Please try reload the page
+              Please reload the page
             </Fragment>
           }
           actionsBlock={

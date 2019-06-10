@@ -36,7 +36,7 @@ const Header: React.FC = () => (
     </NavLink>
 
     <div>
-      <Title>Police Departament of Berlin</Title>
+      <Title>Police Department of Berlin</Title>
       <SubTitle>Stolen Bikes</SubTitle>
     </div>
   </Wrapper>
