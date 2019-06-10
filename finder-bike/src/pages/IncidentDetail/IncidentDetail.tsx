@@ -49,10 +49,14 @@ export default function IncidentDetail(props) {
               lng: data.geometry.coordinates[0]
             }}
           />
-          <Text size={20} isBlock isBold>
-            DESCRIPTION OF INCIDENT
-          </Text>
-          <Text>{data.description}</Text>
+          {data.description && (
+            <>
+              <Text size={20} isBlock isBold>
+                DESCRIPTION OF INCIDENT
+              </Text>
+              <Text>{data.description}</Text>
+            </>
+          )}
         </>
       );
     if (error) return <Alert color="danger">{error.message}</Alert>;
