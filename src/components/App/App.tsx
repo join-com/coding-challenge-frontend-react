@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import MainPage from '../pages/MainPage';
+import IncidentPage from '../pages/IncidentPage';
 
 import { Action, fetchIncidents } from '../../actions';
 
 import { StoreState } from '../../store';
-
-import Page from '../Page/Page';
-import FilterRow from '../FilterRow/FilterRow';
-import Results from '../Results/Results';
 
 import 'antd/dist/antd.css';
 
@@ -23,10 +22,10 @@ class App extends Component<AppProps> {
 
   render() {
     return (
-      <Page>
-        <FilterRow />
-        <Results />
-      </Page>
+      <Router>
+        <Route path="/" exact component={MainPage} />
+        <Route path="/incident/:id" component={IncidentPage} />
+      </Router>
     );
   }
 }

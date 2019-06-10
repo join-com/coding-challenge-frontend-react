@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import logo from './logo.svg';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.header`
   display: flex;
@@ -29,7 +30,9 @@ const SubTitle = styled.h2`
 
 const Header: React.FC = () => (
   <Wrapper>
-    <Logo src={logo} alt="logo" />
+    <NavLink to={'/'}>
+      <Logo src={logo} alt="logo" />
+    </NavLink>
 
     <div>
       <Title>Police Departament of Berlin</Title>

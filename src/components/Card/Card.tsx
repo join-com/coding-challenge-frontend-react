@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Incident } from '../../types';
+import { NavLink } from 'react-router-dom';
 
 import colors from '../../constants/colors';
 import bycicleIcon from './bycicle.svg';
@@ -37,17 +38,26 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const Card: React.FC<Incident> = ({ title, description, imageUrl }) => (
-  <Wrapper>
-    <ImageWrapper>
-      <Image src={imageUrl} />
-    </ImageWrapper>
+const Card: React.FC<Incident> = ({ id, title, description, imageUrl }) => {
+  const linkPath = `/incident/${id}`;
 
-    <Content>
-      <Title>{title}</Title>
-      {description}
-    </Content>
-  </Wrapper>
-);
+  return (
+    <Wrapper>
+      <NavLink to={linkPath}>
+        <ImageWrapper>
+          <Image src={imageUrl} />
+        </ImageWrapper>
+      </NavLink>
+
+      <Content>
+        <NavLink to={linkPath}>
+          <Title>{title}</Title>
+        </NavLink>
+
+        {description || 'No description'}
+      </Content>
+    </Wrapper>
+  );
+};
 
 export default Card;
