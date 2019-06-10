@@ -20,7 +20,7 @@ function Header() {
       <Image src={logo} />
       <HeaderTitle>
         <Text isBlock size={20}>
-          POLICE DEPARTMENT
+          BERLIN POLICE DEPARTMENT
         </Text>
         <Text isBlock size={20}>
           Stolen bike
