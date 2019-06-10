@@ -21,7 +21,6 @@ const StyledHome = styled.div`
 
 export default function IncidentDetail(props) {
   const { data, getIncident, loading, error } = props;
-  console.log(props);
 
   useEffect(() => {
     const { id } = props.match.params;

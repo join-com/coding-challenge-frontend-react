@@ -22,7 +22,6 @@ export const getIncidentAction = function*(action) {
     );
     const geometry = featureWithId.geometry;
 
-    console.log(geometry);
     yield put(getIncidentDetailSuccess({ ...incident, geometry }));
   } catch (e) {
     yield put(getIncidentDetailFailure(e));
