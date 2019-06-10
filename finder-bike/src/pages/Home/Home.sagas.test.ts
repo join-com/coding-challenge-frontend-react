@@ -6,8 +6,12 @@ import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { getIncidents } from '../../shared/services/getIncidents';
 import { getIncidentsSuccess, getIncidentsFailure } from './Home.action';
 import { GET_INCIDENTS_REQUEST } from './Home.actionTypes';
-import { homeSaga, getIncidentsAction } from './Home.sagas';
-import { IIndient } from '../../shared/components/incidentsList/incidentsList';
+import { getIncidentsAction } from './Home.sagas';
+import {
+  IIncidentList,
+  IIncident
+} from '../../shared/components/IncidentsList/IncidentsList';
+import { mainSaga } from '../../App.store';
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -42,14 +46,14 @@ describe('sagas', () => {
     }
   ];
   it('should watch Home Sagas', () => {
-    const gen = homeSaga();
+    const gen = mainSaga();
     expect(gen.next().value).toEqual(
       takeLatest(GET_INCIDENTS_REQUEST, getIncidentsAction)
     );
   });
 
   it('should dispatch action "GET_INCIDENTS_SUCCESS" with result ', () => {
-    const result: IIndient[] = mockData;
+    const result: IIncident[] = mockData;
     (<jest.Mock>getIncidents).mockImplementationOnce(() => ({
       incidents: [...result]
     }));

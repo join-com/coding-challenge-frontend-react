@@ -5,6 +5,7 @@ import { Text } from '../../ui-kits/Text';
 import { faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Icon } from '../../ui-kits/Icon';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 export interface IIncidentSource {
   name: string;
@@ -33,17 +34,25 @@ export interface IIncident {
   type_properties: string;
 }
 
+export interface IIncidentProps extends IIncidentList {
+  onSelect: (e: any) => void;
+}
+
 export interface IIncidentList {
   data: IIncident[];
 }
 
 const StyledincidentsList = styled.div``;
 
-function incidentsList(props: IIncidentList) {
+function IncidentsList(props: IIncidentProps) {
   return (
     <StyledincidentsList>
       {props.data.map(elm => (
-        <Card key={elm.id} thumbnailURL={elm.media.image_url_thumb}>
+        <Card
+          key={elm.id}
+          thumbnailURL={elm.media.image_url_thumb}
+          onClick={() => props.onSelect(elm.id)}
+        >
           <Text size={15} isBold isBlock>
             {elm.title}
           </Text>
@@ -65,4 +74,4 @@ function incidentsList(props: IIncidentList) {
   );
 }
 
-export default incidentsList;
+export default IncidentsList;

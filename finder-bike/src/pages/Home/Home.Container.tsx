@@ -2,6 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Home from './Home';
 import { getIncidentsRequest } from './Home.action';
+import { withRouter } from 'react-router-dom';
 
 const emtyDataSelector = state => {
   return (
@@ -36,7 +37,9 @@ const mapDispatchToProps = (dispatch: any) => {
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Home)
+);

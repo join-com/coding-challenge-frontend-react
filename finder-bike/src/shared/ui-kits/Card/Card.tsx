@@ -40,11 +40,12 @@ const StyledCardThumbnail = styled(Image)`
 export interface ICard {
   thumbnailURL: string;
   children?: React.ReactNode;
+  onClick?: (e: any) => void;
 }
 
 function Card(props: ICard) {
   return (
-    <StyledCardWrapper>
+    <StyledCardWrapper onClick={props.onClick}>
       <StyledCardThumbnail src={props.thumbnailURL} />
       <StyledCardContent>{props.children}</StyledCardContent>
     </StyledCardWrapper>

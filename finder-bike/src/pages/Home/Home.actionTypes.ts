@@ -1,4 +1,4 @@
-import { IIncident } from '../../shared/components/IndientList/IndientList';
+import { IIncident } from '../../shared/components/IncidentsList/IncidentsList';
 
 export const GET_INCIDENTS_REQUEST = 'GET_INCIDENTS_REQUEST';
 export const GET_INCIDENTS_SUCCESS = 'GET_INCIDENTS_SUCCESS';

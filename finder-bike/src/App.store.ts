@@ -1,10 +1,20 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { homeSaga, homeReducer } from './pages/Home';
+import {
+  incidentDetailReducer,
+  incidentDetailSaga
+} from './pages/IncidentDetail';
+import { all, fork } from 'redux-saga/effects';
 
 const rootReducer = combineReducers({
-  homeReducer
+  homeReducer,
+  incidentDetailReducer
 });
+
+export function* mainSaga() {
+  yield all([fork(homeSaga), fork(incidentDetailSaga)]);
+}
 
 export type AppState = ReturnType<typeof rootReducer>;
 const sagaMiddleware = createSagaMiddleware();
@@ -19,4 +29,4 @@ export const store = createStore(
   )
 );
 
-sagaMiddleware.run(homeSaga);
+sagaMiddleware.run(mainSaga);

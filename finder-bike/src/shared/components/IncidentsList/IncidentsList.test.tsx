@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import IndientList from './IndientList';
+import IncidentsList from './IncidentsList';
 
-describe('<IndientList /> spec', () => {
+describe('<IncidentsList /> spec', () => {
   const mockData = [
     {
       id: 99362,
@@ -32,7 +32,9 @@ describe('<IndientList /> spec', () => {
   ];
 
   it('renders the component', () => {
-    const component = render(<IndientList data={mockData} />);
+    const component = render(
+      <IncidentsList data={mockData} onSelect={jest.fn} />
+    );
     expect(component).toMatchSnapshot();
   });
 });

@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from 'react';
 import Header from '../../shared/components/Header/Header';
 import { Layout } from '../../shared/components/Layout';
 import { SearchIncidents } from '../../shared/components/SearchIncidents';
-import { IndientList } from '../../shared/components/IndientList';
+import { IndientList } from '../../shared/components/IncidentsList';
 import { getTime } from 'date-fns';
 import Loading from '../../shared/ui-kits/Loading/Loading';
 import styled from 'styled-components';
@@ -68,6 +68,13 @@ export default function Home(props) {
     [setParams]
   );
 
+  const onSelectIncident = useCallback(
+    value => {
+      props.history.push(`/case/${value}`);
+    },
+    [props.history]
+  );
+
   useEffect(() => {
     getIncidents({ ...params });
   }, [getIncidents, params]);
@@ -83,7 +90,7 @@ export default function Home(props) {
             What: This a value that how many record found in database
             Why: We can not calculate total_record since we dont know about database contain.
           */}
-          <IndientList data={data} />
+          <IndientList data={data} onSelect={onSelectIncident} />
         </>
       );
     if (error) return <Alert color="danger">{error.message}</Alert>;
