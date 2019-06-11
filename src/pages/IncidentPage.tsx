@@ -50,7 +50,8 @@ class IncidentPage extends Component<IncidentPageProps> {
       description,
       incidentDate,
       address,
-      coordinates
+      coordinates,
+      updateDate
     } = this.props;
 
     return (
@@ -70,6 +71,8 @@ class IncidentPage extends Component<IncidentPageProps> {
           <b>Date stolen:</b> {getFormattedDate(incidentDate)}
           <br />
           <b>Location:</b> {address}
+          <br />
+          <b>Report was updated:</b> {getFormattedDate(updateDate)}
         </p>
 
         {!!description && (

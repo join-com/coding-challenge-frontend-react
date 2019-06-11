@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import colors from '../../constants/colors';
 import bycicleIcon from './bycicle.svg';
 import getFormattedDate from '../../utils/getFormattedDate';
+import { getTextWithDots } from './utils';
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +15,10 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 24px;
+  padding: 16px 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.div`
@@ -23,7 +27,7 @@ const Title = styled.div`
   line-height: 1.4;
 `;
 
-const IMAGE_SIZE = 180;
+const IMAGE_SIZE = 200;
 
 const ImageWrapper = styled.div`
   width: ${IMAGE_SIZE}px;
@@ -38,13 +42,20 @@ const Image = styled.img`
   height: 100%;
 `;
 
+const UpdateBlock = styled.div`
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 13px;
+`;
+
 const Card: React.FC<Incident> = ({
   id,
   title,
   description,
   imageUrlThumb,
   address,
-  incidentDate
+  incidentDate,
+  updateDate
 }) => {
   const linkPath = `/incident/${id}`;
 
@@ -61,7 +72,7 @@ const Card: React.FC<Incident> = ({
           <Title>{title}</Title>
         </NavLink>
 
-        <p>{description || 'No description'}</p>
+        <p>{getTextWithDots(description || 'No description', 315)}</p>
 
         <p>
           {!!incidentDate &&
@@ -69,6 +80,12 @@ const Card: React.FC<Incident> = ({
           {!!(incidentDate && address) && ` - `}
           {address}
         </p>
+
+        {!!updateDate && (
+          <UpdateBlock>
+            Updated: {getFormattedDate(updateDate, { withTime: false })}
+          </UpdateBlock>
+        )}
       </Content>
     </Wrapper>
   );

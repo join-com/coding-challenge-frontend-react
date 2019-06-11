@@ -7,6 +7,7 @@ export const pickProps = (incident: any) => ({
   title: incident.title,
   description: incident.description,
   incidentDate: incident.occurred_at,
+  updateDate: incident.updated_at,
   address: incident.address,
   imageUrl: incident.media && incident.media.image_url,
   imageUrlThumb: incident.media && incident.media.image_url_thumb

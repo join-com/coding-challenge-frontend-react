@@ -6,6 +6,7 @@ export type Incident = {
   description?: string;
   reportDate?: number;
   incidentDate?: number;
+  updateDate?: number;
   address?: string;
   coordinates?: Coordinates;
   imageUrl?: string;
