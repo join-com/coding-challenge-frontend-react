@@ -28,16 +28,26 @@ const getCurPageIncidents = (incidents: any, page: number) =>
     .map(key => incidents[key])
     .slice(RESULTS_PER_PAGE * (page - 1), RESULTS_PER_PAGE * page);
 
+const scrollTop = () =>
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
 const renderPageButton = (
   page: number,
   type: 'page' | 'prev' | 'next' | 'jump-prev' | 'jump-next'
 ): React.ReactNode => {
   switch (type) {
     case 'page':
-      return <NavLink to={`/?page=${page}`}>{page}</NavLink>;
+      return (
+        <NavLink to={`/?page=${page}`} onClick={scrollTop}>
+          {page}
+        </NavLink>
+      );
     case 'prev':
       return page > 0 ? (
-        <NavLink to={`/?page=${page}`}>
+        <NavLink to={`/?page=${page}`} onClick={scrollTop}>
           <Icon type="left" />
         </NavLink>
       ) : (
@@ -47,7 +57,7 @@ const renderPageButton = (
       );
     case 'next':
       return (
-        <NavLink to={`/?page=${page}`}>
+        <NavLink to={`/?page=${page}`} onClick={scrollTop}>
           <Icon type="right" />
         </NavLink>
       );
