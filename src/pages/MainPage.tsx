@@ -7,13 +7,16 @@ import color from '../constants/colors';
 
 import { fetchIncidents } from '../actions/fetchIncidents';
 
-import FilterRow from '../components/FilterRow/FilterRow';
+import Filter from '../components/Filter/Filter';
 import Results from '../components/Results/Results';
 import Page from '../components/Page/Page';
 import { Icon, Spin } from 'antd';
 
 import { StoreState, Dispatch } from '../store';
-import { Incidents, RequestStatus } from '../types';
+import { Incident, RequestStatus } from '../types';
+import { RouteComponentProps } from 'react-router';
+import { RESULTS_PER_PAGE } from '../constants/main';
+import objectToArray from '../utils/objectToArray';
 
 const SpinnerWrapper = styled.div`
   padding-top: 42px;
@@ -24,14 +27,13 @@ const ErrorBlock = styled.div`
   color: ${color.red};
 `;
 
-type MainPageProps = {
-  incidents?: Incidents;
+interface MainPageProps extends RouteComponentProps {
+  curPage: number;
+  curPageResults: Array<Incident>;
   incidentsLoadingStatus: RequestStatus;
   dispatch: Dispatch;
-  location: {
-    search: string;
-  };
-};
+  totalResultsCount: number;
+}
 
 class MainPage extends Component<MainPageProps> {
   componentDidMount() {
@@ -39,7 +41,12 @@ class MainPage extends Component<MainPageProps> {
   }
 
   renderResults() {
-    const { location, incidents, incidentsLoadingStatus } = this.props;
+    const {
+      curPage,
+      curPageResults = [],
+      incidentsLoadingStatus,
+      totalResultsCount
+    } = this.props;
 
     switch (incidentsLoadingStatus) {
       case RequestStatus.FETCHING: {
@@ -57,9 +64,13 @@ class MainPage extends Component<MainPageProps> {
       }
 
       default: {
-        const page = +(queryString.parse(location.search).page || 1);
-
-        return <Results page={page} incidents={incidents} />;
+        return (
+          <Results
+            curPage={curPage}
+            curPageResults={curPageResults}
+            totalCount={totalResultsCount}
+          />
+        );
       }
     }
   }
@@ -67,7 +78,7 @@ class MainPage extends Component<MainPageProps> {
   render() {
     return (
       <Page>
-        <FilterRow />
+        <Filter history={this.props.history} />
 
         {this.renderResults()}
       </Page>
@@ -75,9 +86,35 @@ class MainPage extends Component<MainPageProps> {
   }
 }
 
-const mapStateToProps = (storeState: StoreState) => ({
-  incidents: storeState.incidents.byId,
-  incidentsLoadingStatus: storeState.incidents.loadingStatus
-});
+const getCurPageElems = (incidents: Array<any>, page: number) =>
+  incidents.slice(RESULTS_PER_PAGE * (page - 1), RESULTS_PER_PAGE * page);
+
+const mapStateToProps = (storeState: StoreState, ownProps: MainPageProps) => {
+  const incidentsArray = objectToArray(storeState.incidents.byId).reverse();
+  const { page, query, startDate, endDate } = queryString.parse(
+    ownProps.location.search
+  );
+
+  const curPage = +(page || 1);
+  const normalizedQuery = query && (query as string).toLowerCase();
+
+  const filteredIncidents = incidentsArray.filter(incident => {
+    return (
+      !(
+        normalizedQuery &&
+        incident.title.toLowerCase().indexOf(normalizedQuery) == -1
+      ) &&
+      !(startDate && startDate >= incident.incidentDate) &&
+      !(endDate && endDate <= incident.incidentDate)
+    );
+  });
+
+  return {
+    curPage,
+    totalResultsCount: filteredIncidents.length,
+    curPageResults: getCurPageElems(filteredIncidents, curPage),
+    incidentsLoadingStatus: storeState.incidents.loadingStatus
+  };
+};
 
 export default connect(mapStateToProps)(MainPage);

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from '@emotion/styled';
 
-import { Incidents } from '../../types';
+import { Incident } from '../../types';
 
 import { NavLink } from 'react-router-dom';
 import Card from '../Card/Card';
@@ -16,17 +16,6 @@ const TotalBlock = styled.div`
 const ItemsWrapper = styled.div`
   padding-bottom: 12px;
 `;
-
-type ResultItemsProps = {
-  incidents?: Incidents;
-  page?: number;
-};
-
-const getCurPageIncidents = (incidents: any, page: number) =>
-  Object.keys(incidents)
-    .reverse()
-    .map(key => incidents[key])
-    .slice(RESULTS_PER_PAGE * (page - 1), RESULTS_PER_PAGE * page);
 
 const scrollTop = () =>
   window.scrollTo({
@@ -67,28 +56,41 @@ const renderPageButton = (
   }
 };
 
-const Results: React.FC<ResultItemsProps> = ({ incidents = [], page = 1 }) => {
-  const incidentsCount = Object.keys(incidents).length;
+type ResultItemsProps = {
+  curPageResults?: Array<Incident>;
+  totalCount: number;
+  curPage?: number;
+};
 
+const Results: React.FC<ResultItemsProps> = ({
+  curPageResults,
+  curPage = 1,
+  totalCount
+}) => {
   return (
     <div>
-      <TotalBlock>Total: {incidentsCount}</TotalBlock>
+      <TotalBlock>Total: {totalCount}</TotalBlock>
 
-      <ItemsWrapper>
-        {getCurPageIncidents(incidents, page).map(incident => (
-          <Card {...incident} key={incident.id} />
-        ))}
-      </ItemsWrapper>
+      {totalCount < 1 ? (
+        <div>No results</div>
+      ) : (
+        <Fragment>
+          <ItemsWrapper>
+            {curPageResults &&
+              curPageResults.map(incident => (
+                <Card {...incident} key={incident.id} />
+              ))}
+          </ItemsWrapper>
 
-      {
-        <Pagination
-          hideOnSinglePage
-          current={page}
-          total={incidentsCount}
-          pageSize={RESULTS_PER_PAGE}
-          itemRender={renderPageButton}
-        />
-      }
+          <Pagination
+            hideOnSinglePage
+            current={curPage}
+            total={totalCount}
+            pageSize={RESULTS_PER_PAGE}
+            itemRender={renderPageButton}
+          />
+        </Fragment>
+      )}
     </div>
   );
 };
