@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <ErrorBoundary>
         <Provider store={store}>
-          <Router>
+          <Router basename="/coding-challenge-frontend-react/">
             <Switch>
               <Route path="/" exact component={MainPage} />
               <Route path="/incident/:id" component={IncidentPage} />
