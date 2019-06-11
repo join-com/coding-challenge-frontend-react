@@ -5,8 +5,10 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
+    "@types/fetch-mock": "^7.3.0",
     "@types/react-router-dom": "^4.3.3",
     "antd": "^3.19.2",
+    "fetch-mock": "^7.3.3",
     "query-string": "^6.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

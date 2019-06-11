@@ -13,8 +13,7 @@ export function fetchIncidents() {
 
   return (dispatch: Dispatch) => {
     dispatch({
-      type: ActionType.INCIDENTS_REQUEST,
-      payload: { query }
+      type: ActionType.INCIDENTS_REQUEST
     });
 
     return fetch(`${BIKEWISE_API}/incidents/?${queryString.stringify(query)}`)
