@@ -9,7 +9,7 @@ import getFormattedDate from '../../utils/getFormattedDate';
 
 const Wrapper = styled.div`
   display: flex;
-  border: 1px solid ${colors.gray4};
+  border: 1px solid ${colors.gray};
   margin: 12px 0;
 `;
 
@@ -28,8 +28,8 @@ const IMAGE_SIZE = 180;
 const ImageWrapper = styled.div`
   width: ${IMAGE_SIZE}px;
   height: ${IMAGE_SIZE}px;
-  border-right: 1px solid ${colors.gray4};
-  border-bottom: 1px solid ${colors.gray4};
+  border-right: 1px solid ${colors.gray};
+  border-bottom: 1px solid ${colors.gray};
   margin-bottom: -1px;
   flex-shrink: 0;
 `;

@@ -27,3 +27,10 @@ export interface Action {
     [key: string]: any;
   };
 }
+
+export enum RequestStatus {
+  UNINITED = 'UNINITED',
+  FETCHING = 'FETCHING',
+  SUCCESS = 'SUCCESS',
+  FAILURE = 'FAILURE'
+}

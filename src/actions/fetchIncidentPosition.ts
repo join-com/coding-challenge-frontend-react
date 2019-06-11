@@ -1,11 +1,12 @@
-import { BIKEWISE_API, INCIDENT_TYPE, PROXIMITY } from '../constants/main';
+import { BIKEWISE_API, INCIDENT_TYPE } from '../constants/main';
 import { Dispatch } from 'redux';
 import queryString from 'query-string';
 import { ActionType } from './ActionType';
+import getIncident from '../store/selectors';
 
 export function fetchIncidentPosition({ id }: { id: number }) {
   return (dispatch: Dispatch, getState: Function) => {
-    const { title, incidentDate } = getState().incidents[id];
+    const { title, incidentDate } = getIncident(getState(), id);
 
     const query = {
       query: title,
@@ -38,7 +39,7 @@ export function fetchIncidentPosition({ id }: { id: number }) {
           : null;
 
         dispatch({
-          type: ActionType.INCIDENT_POSITION_RECEIVE,
+          type: ActionType.INCIDENT_POSITION_REQUEST_SUCCESS,
           payload: { id, coordinates }
         });
       });

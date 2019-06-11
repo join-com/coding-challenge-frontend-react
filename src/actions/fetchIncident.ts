@@ -23,7 +23,7 @@ export function fetchIncident({ id }: { id: number }) {
       .then(({ incident }) => pickProps(incident))
       .then(incident =>
         dispatch({
-          type: ActionType.INCIDENT_RECEIVE,
+          type: ActionType.INCIDENT_REQUEST_SUCCESS,
           payload: { id, incident }
         })
       );

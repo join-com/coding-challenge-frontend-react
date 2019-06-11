@@ -14,6 +14,7 @@ import Map from '../components/Map/Map';
 
 import { fetchIncidentPosition } from '../actions/fetchIncidentPosition';
 import { fetchIncidentAndPosition } from '../actions/fetchIncidentAndPosition';
+import getIncident from '../store/selectors';
 
 const NavBlock = styled.div`
   margin-bottom: 12px;
@@ -87,14 +88,14 @@ class IncidentPage extends Component<IncidentPageProps> {
 }
 
 const mapStateToProps = (
-  { incidents = [] }: StoreState,
+  storeState: StoreState,
   ownProps: IncidentPageProps
 ) => {
   const id = +ownProps.match.params.id;
 
   return {
     id,
-    ...incidents[id]
+    ...getIncident(storeState, id)
   };
 };
 

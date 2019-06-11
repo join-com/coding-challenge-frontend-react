@@ -6,7 +6,6 @@ import { pickProps } from './fetchIncident';
 
 export function fetchIncidents() {
   const query = {
-    page: 1,
     per_page: 1000000,
     incident_type: 'theft',
     proximity: PROXIMITY
@@ -28,8 +27,14 @@ export function fetchIncidents() {
       )
       .then(incidents =>
         dispatch({
-          type: ActionType.INCIDENTS_RECEIVE,
+          type: ActionType.INCIDENTS_REQUEST_SUCCESS,
           payload: { incidents }
+        })
+      )
+      .catch(error =>
+        dispatch({
+          type: ActionType.INCIDENTS_REQUEST_FAILURE,
+          payload: { message: error.messsage }
         })
       );
   };
