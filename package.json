@@ -1,16 +1,17 @@
 {
-  "name": "src",
-  "version": "0.1.0",
+  "name": "Bike",
+  "version": "01.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "16",
+    "react-dom": "16",
     "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "yarn run test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -27,5 +28,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme-adapter-react-16": "^1.14.0",
+    "react-test-renderer": "^16.8.6",
+    "enzyme": "^3.10.0"
   }
 }
