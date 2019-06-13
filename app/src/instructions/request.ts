@@ -8,7 +8,7 @@ export type RequestState = {
   key: unknown
 }
 
-function createRequestState(key: any): RequestState {
+export function createRequestState(key: any): RequestState {
   return {
     key,
     isLoading: true,

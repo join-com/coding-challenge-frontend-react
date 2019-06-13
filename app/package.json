@@ -29,10 +29,14 @@
     "use-react-router": "^1.0.7"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.9.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-redux": "^7.0.9",
     "@types/react-router": "^5.0.1",
     "@types/react-router-dom": "^4.3.3",
     "@types/styled-jsx": "^2.2.8",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "husky": "^2.4.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.0",
