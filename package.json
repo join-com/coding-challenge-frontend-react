@@ -1,39 +1,62 @@
 {
-  "name": "Bike",
-  "version": "01.0",
-  "private": true,
-  "dependencies": {
-    "react": "16",
-    "react-dom": "16",
-    "react-scripts": "3.0.1",
-    "styled-components": "^4.3.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "yarn run test --coverage",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "jest-styled-components": "^6.3.1",
-    "react-test-renderer": "^16.8.6"
-  }
+    "name": "Bike",
+    "version": "01.0",
+    "private": true,
+    "dependencies": {
+        "react": "16",
+        "react-dom": "16",
+        "react-scripts": "3.0.1",
+        "styled-components": "^4.3.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "coverage": "yarn run test --coverage",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "eslint": "^5.16.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^4.3.0",
+        "eslint-plugin-import": "^2.17.3",
+        "eslint-plugin-jest": "^22.6.4",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.13.0",
+        "husky": ">=1",
+        "jest-styled-components": "^6.3.1",
+        "lint-staged": "^8.2.0",
+        "prettier": "^1.18.2",
+        "react-test-renderer": "^16.8.6"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,css,md}": [
+            "prettier --write",
+            "eslint src/ --fix",
+            "git add"
+        ]
+    }
 }

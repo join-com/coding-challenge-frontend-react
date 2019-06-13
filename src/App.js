@@ -1,11 +1,11 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
 const AppWrapper = styled.div`
-    text-align: center;
+  text-align: center;
 `
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         </a>
       </header>
     </AppWrapper>
-  );
+  )
 }
 
-export default App;
+export default App
