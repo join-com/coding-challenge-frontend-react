@@ -1,10 +1,16 @@
 import React from 'react';
+import styled, { keyframes } from 'styled-components'
+
 import logo from './logo.svg';
 import './App.css';
 
+const AppWrapper = styled.div`
+    text-align: center;
+`
+
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p id="test">
@@ -19,7 +25,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </AppWrapper>
   );
 }
 
