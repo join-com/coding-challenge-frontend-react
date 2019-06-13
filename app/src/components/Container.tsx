@@ -12,6 +12,8 @@ export const Container: React.FC = ({ children }) => (
           background-color: #fff;
           box-shadow: 0 0 10px -3px;
           margin: 0 auto;
+          display: flex;
+          flex-direction: column;
         }
       `}
     </style>

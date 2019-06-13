@@ -1,8 +1,14 @@
 import * as React from 'react'
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement>
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  onValueChange?: (newValue: string) => void
+}
 
-export const Input: React.FC<InputProps> = ({ ...props }) => {
+export const Input: React.FC<InputProps> = ({ onValueChange, ...props }) => {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
+    props.onChange && props.onChange(event)
+    onValueChange && onValueChange(event.target.value)
+  }
   return (
     <>
       <style jsx={true}>
@@ -15,6 +21,7 @@ export const Input: React.FC<InputProps> = ({ ...props }) => {
             outline: none;
             width: 100%;
             display: inline-flex;
+            font-size: 14px;
             height: 36px;
             &:focus {
               border-color: #0577ff;
@@ -22,7 +29,7 @@ export const Input: React.FC<InputProps> = ({ ...props }) => {
           }
         `}
       </style>
-      <input {...props} />
+      <input onChange={onChange} {...props} />
     </>
   )
 }

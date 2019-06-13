@@ -17,6 +17,8 @@ export type Actions = {
 
 export type Selectors = {
   incidentsArray: (state: any) => Incident[]
+  incidentExists: (state: any, key: number) => boolean
+  incident: (state: any, key: number) => Incident
 }
 
 type Pack = [PackData<Store, Selectors, Actions, PackDataEpic>]
@@ -32,6 +34,8 @@ export const pack = createPack<Pack>([
     },
     selectors: (selectors) => ({
       incidentsArray: (state) => Array.from(selectors.incidents(state).values()),
+      incidentExists: (state, key) => selectors.incidents(state).has(key),
+      incident: (state, key) => selectors.incidents(state).get(key)!,
     }),
     reducerCreator: (actions, selectors) => ({
       [actions.set.toString()]: updateState(selectors.incidents, setMap),

@@ -60,8 +60,8 @@ export const BikeShortInfo: React.FC<BikeShortInfoProps> = ({ incident }) => (
       <p>{lo.truncate(incident.description, { length: 180 })}</p>
       <p>Location: {incident.location_description || 'Unknown'}</p>
       <small>
-        Stolen at: {formatDate(incident.occurred_at * 1000)}
-        <span>Reported at: {formatDate(incident.updated_at * 1000)}</span>
+        Stolen: {formatDate(incident.occurred_at * 1000)}
+        <span>Reported: {formatDate(incident.updated_at * 1000)}</span>
       </small>
     </div>
   </article>

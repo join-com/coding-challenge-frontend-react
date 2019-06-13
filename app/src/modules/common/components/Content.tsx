@@ -6,6 +6,9 @@ export const Content: React.FC = ({ children }) => (
       {/* language=SCSS */ `
         div {
           padding: 20px 40px;
+          display: flex;
+          flex: 1;
+          flex-direction: column;
         }
       `}
     </style>

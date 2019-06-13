@@ -1,13 +1,14 @@
 import * as React from 'react'
 
 export const Header: React.FC = () => (
-  <div>
+  <div onClick={() => (window.location.href = '/')}>
     <style jsx>
       {/* language=SCSS */ `
         div {
           width: 100%;
           padding: 30px 15px 30px 50px;
           display: flex;
+          cursor: pointer;
 
           img {
             width: 100px;

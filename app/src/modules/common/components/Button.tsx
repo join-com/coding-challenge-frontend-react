@@ -16,6 +16,7 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
             cursor: pointer;
             padding: 8px 15px;
             height: 36px;
+            font-size: 14px;
 
             &:hover:not(:focus) {
               background-color: #0640bf;
