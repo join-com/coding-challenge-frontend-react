@@ -1,0 +1,65 @@
+{
+  "name": "@iamawebgeek/join-test-task-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^5.2.1",
+    "@types/jest": "24.0.13",
+    "@types/lodash": "^4.14.134",
+    "@types/node": "12.0.7",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
+    "immer": "^3.1.2",
+    "lodash": "^4.17.11",
+    "react": "^16.8.6",
+    "react-datepicker": "^2.7.0",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-observable": "^1.1.0",
+    "redux-packed": "^0.0.1",
+    "redux-packed-observable-middleware": "^0.0.1",
+    "rxjs": "^6.5.2",
+    "styled-jsx": "^3.2.1",
+    "styled-jsx-plugin-sass": "^1.0.0",
+    "typescript": "3.5.1",
+    "use-react-router": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.9.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/react-redux": "^7.0.9",
+    "@types/react-router": "^5.0.1",
+    "@types/react-router-dom": "^4.3.3",
+    "@types/styled-jsx": "^2.2.8",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "husky": "^2.4.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.0",
+    "pretty-quick": "^1.11.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
