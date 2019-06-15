@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FetchAllCases should return correct data 1`] = `
+Array [
+  Object {
+    "address": "801 Van White Memorial Blvd Minneapolis, MN 55411, USA",
+    "description": "wondering if all the birch trees",
+    "id": 102152,
+    "occurred_at": 1560614519,
+    "source": Object {
+      "api_url": "https://seeclickfix.com/api/v2/issues/6034466",
+      "html_url": "https://seeclickfix.com/issues/6034466",
+      "name": "SeeClickFix.com",
+    },
+    "title": "Post to Neighbors",
+    "updated_at": 1560620028,
+    "url": "https://bikewise.org/api/v1/incidents/102152",
+  },
+]
+`;
