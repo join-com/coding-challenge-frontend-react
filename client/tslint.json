@@ -3,7 +3,27 @@
     "extends": [
         "tslint:recommended"
     ],
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+    "jsRules": {
+        "no-any": true
+    },
+    "rules": {
+        "max-line-length": {
+            "options": [120]
+        },
+        "new-parens": true,
+        "no-arg": true,
+        "no-bitwise": true,
+        "no-conditional-assignment": true,
+        "no-consecutive-blank-lines": false,
+        "no-console": {
+            "severity": "warning",
+            "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+        },
+        "no-constant-condition": true,
+        "ter-no-sparse-arrays": [true],
+       "no-unexpected-multiline": true,
+       "block-spacing": true
+
+    },
+    "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"]
 }
