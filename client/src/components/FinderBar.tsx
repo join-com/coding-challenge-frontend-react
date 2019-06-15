@@ -1,22 +1,22 @@
-import React, { FC } from 'react';
-import Styled from 'styled-components';
-import { FaCalendarAlt } from 'react-icons/fa';
+import React, { FC } from "react";
+import { FaCalendarAlt } from "react-icons/fa";
+import Styled from "styled-components";
 
 interface IFinderBarProps {
-    className? :string
+    className?: string;
 }
 
-const FinderBar: FC<IFinderBarProps> = ({ className = '' }) =>
+const FinderBar: FC<IFinderBarProps> = ({ className = "" }) =>
 <div className={className}>
   <form>
       <input />
       <FaCalendarAlt />
-      <input type='date' placeholder='From' />
+      <input type="date" placeholder="From" />
       <FaCalendarAlt />
-      <input type='date' />
+      <input type="date" />
       <button>Find cases</button>
   </form>
-</div>
+</div>;
 
 export default Styled(FinderBar)`
   display: flex;
