@@ -4,11 +4,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import List from './pages/List'
 import Details from './pages/Details'
-import Header from './components/Header'
+import Header from './components/Header/Header'
 
-const AppWrapper = styled.div`
-  text-align: center;
-`
+const AppWrapper = styled.div``
 
 function App() {
   return (

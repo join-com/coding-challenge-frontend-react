@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the header 1`] = `
+<styled.div>
+  <NavLink
+    to="/"
+  >
+    <styled.img
+      alt="logo"
+      src="logo.svg"
+    />
+  </NavLink>
+  <div>
+    <styled.h1>
+      Police Departement of Berlin
+    </styled.h1>
+    <styled.h2>
+      Stolen bikes
+    </styled.h2>
+  </div>
+</styled.div>
+`;
