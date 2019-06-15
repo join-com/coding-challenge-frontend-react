@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Styled from 'styled-components';
-import { FaCalendarAlt } from 'react-icons/fa'
+import { FaCalendarAlt } from 'react-icons/fa';
 
 interface IFinderBarProps {
     className? :string
