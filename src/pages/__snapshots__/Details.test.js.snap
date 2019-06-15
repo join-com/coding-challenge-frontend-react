@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Details 1`] = `
+<h1>
+  Id 
+  1
+  !
+</h1>
+`;
