@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
-import Case from '../models/Case';
+import Case from "../models/Case";
 
 interface ITheftCaseProps {
     className?: string;
@@ -12,15 +12,15 @@ const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
 
   return <div className={className}>
     <div className="col media">
-      <div role="image" className='image' />
+      <div role="image" className="image" />
     </div>
     <div className="col info">
-    <Link to={`/case/${data.id || ''}`} className="title" href="#">{data.title}</Link>
+    <Link to={`/case/${data.id || ""}`} className="title" href="#">{data.title}</Link>
     <p className="description">{data.description}</p>
     <p className="date">{data.updated_at}</p>
     </div>
   </div>;
-}
+};
 
 export default Styled(TheftCase)`
   border: 4px solid black;
