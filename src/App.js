@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import logo from './logo.svg'
-import './App.css'
+import List from './pages/List'
+import Details from './pages/Details'
+import Header from './components/Header'
 
 const AppWrapper = styled.div`
   text-align: center;
@@ -11,20 +13,13 @@ const AppWrapper = styled.div`
 function App() {
   return (
     <AppWrapper>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p id="test">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>
+          <Header />
+          <Route exact path="/" component={List} />
+          <Route path="/case/:id" component={Details} />
+        </div>
+      </Router>
     </AppWrapper>
   )
 }
