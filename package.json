@@ -1,6 +1,9 @@
 {
     "name": "Bike",
     "version": "1.0.0",
+    "engines": {
+      "yarn": "1.16.0"
+    },
     "private": true,
     "dependencies": {
         "react": "16",
