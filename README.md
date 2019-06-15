@@ -1,3 +1,6 @@
+### License and external resouces
+- Berlin Coat of arm police logo by Montrisha from [kisspng](https://www.kisspng.com/png-berlin-police-forze-di-polizia-in-germania-branden-2005632/) (Personal usage only)
+
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 ![JOIN Stolen Bike Cases](https://github.com/join-com/coding-challenge-frontend-react/raw/master/illustration.png)
 
