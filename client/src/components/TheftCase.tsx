@@ -1,22 +1,26 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
+import Case from '../models/Case';
 
 interface ITheftCaseProps {
     className?: string;
-    id?: number;
+    data: Case;
 }
 
-const TheftCase: FC<ITheftCaseProps> = ({ className = "", id }) => <div className={className}>
-  <div className="col">
-    <img alt="bike" src="https://via.placeholder.com/125x125?text=125x125+Square+Button" />
-  </div>
-  <div className="col">
-  <Link to={`/case/${id}`} className="title" href="#">title title</Link>
-  <p className="description">description description</p>
-  <p className="date">Thuesday 26 May</p>
-  </div>
-</div>;
+const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
+
+  return <div className={className}>
+    <div className="col media">
+      <div role="image" className='image' />
+    </div>
+    <div className="col info">
+    <Link to={`/case/${data.id || ''}`} className="title" href="#">{data.title}</Link>
+    <p className="description">{data.description}</p>
+    <p className="date">{data.updated_at}</p>
+    </div>
+  </div>;
+}
 
 export default Styled(TheftCase)`
   border: 4px solid black;
@@ -24,6 +28,12 @@ export default Styled(TheftCase)`
   margin: 20px 10px;
   padding: 10px;
   display: flex;
+  .image {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    background-image: url(${({ data }) => data.media.image_thumb || data.media.image_url});
+  }
   .title {
     font-size: 1.2em;
   }
@@ -34,5 +44,11 @@ export default Styled(TheftCase)`
       padding: 5px;
       display: flex;
       flex-direction: column;
+  }
+  .info {
+    flex: 4;
+  }
+  .media {
+    flex: 1;
   }
 `;
