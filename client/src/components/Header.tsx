@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
-import Styled from 'styled-components';
+import React, { FC } from "react";
+import Styled from "styled-components";
 
-interface HeaderProps {
-  className? :string;
+interface IHeaderProps {
+  className?: string;
 }
 
-const Header: FC<HeaderProps> = ({ className = '' }) => 
+const Header: FC<IHeaderProps> = ({ className = "" }) =>
 <header className={className}>
   <h1>Stolen Bike index</h1>
-</header>
+</header>;
 
 export default Styled(Header)`
   display: flex;
   justify-content: center;
-`
+`;
