@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
+import { FormatUTCDate } from "../helpers/Formatters";
 import Case from "../models/ICase";
 
 interface ITheftCaseProps {
@@ -9,7 +10,7 @@ interface ITheftCaseProps {
 }
 
 const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
-
+  console.log(data);
   return <div className={className}>
     <div className="col media">
       <div role="image" className="image" />
@@ -17,7 +18,7 @@ const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
     <div className="col info">
     <Link to={`/case/${data.id || ""}`} className="title" href="#">{data.title}</Link>
     <p className="description">{data.description}</p>
-    <p className="date">{data.updated_at}</p>
+    <p className="date">{FormatUTCDate(data.occurred_at)}</p>
     </div>
   </div>;
 };
