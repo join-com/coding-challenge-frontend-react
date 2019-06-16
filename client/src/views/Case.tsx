@@ -3,6 +3,7 @@ import { match as IMatch } from "react-router-dom";
 import Styled from "styled-components";
 import Map from "../components/Map";
 import { fetchCaseDetails, fetchSourceDetails} from "../helpers/Api";
+import { FormatUTCDate } from "../helpers/Formatters";
 import Case from "../models/ICase";
 
 interface ICaseMatch {
@@ -26,7 +27,7 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match }) => {
     <h2> {caseData.title} </h2>
     <section>
         <p>
-            Stolen {caseData.occured_at}
+            Stolen {FormatUTCDate(caseData.occurred_at)}
             <span className="signify">at</span>
             <span className="address">{caseData.address}</span>
        </p>
@@ -45,5 +46,9 @@ export default Styled(CaseDetails)`
   padding: 10px;
   h2 {
     font-size: 1.8em;
+  }
+  .signify {
+    font-weight: 800;
+    margin: 5px;
   }
 `;

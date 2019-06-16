@@ -30,7 +30,7 @@ export const fetchAllCases = async () => {
    const theftCases:ApiResponse<ICasesResponse> = await axios.request<ICasesResponse>({
      url: '/incidents',
      method: 'get',
-     params: { proximity: 'berlin' },
+     params: { proximity: 'berlin', incident_type: 'theft' },
      cancelToken: fetchSourceAll.token
    });
    return theftCases.data.incidents;
@@ -49,17 +49,16 @@ export const fetchCaseDetails = async (id: string) => {
   const theftCase:ApiResponse<ICaseResponse> = await axios.request<ICaseResponse>({
      url: `/incidents/${id}`,
      method: 'get',
+     params: { proximity: 'berlin', incident_type: 'theft' },
      cancelToken: fetchSourceDetails.token
    });
    const { incident } = theftCase.data;
    const features: ApiResponse<ILocationsResponse> = await axios.request<ILocationsResponse>({
      url: '/locations',
      method: 'get',
-     params: { query: incident.title },
+     params: { query: incident.title, proximity: 'berlin', incident_type: 'theft' },
      cancelToken: fetchSourceDetails.token
    });
-   console.log(features);
    incident.feature = features.data.features.find(f => f.properties.id === incident.id);
-   console.log(incident)
    return incident;
 }

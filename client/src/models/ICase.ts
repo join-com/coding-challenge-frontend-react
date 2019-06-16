@@ -12,7 +12,7 @@ interface ICase {
   address: string; 
   title: string;
   description: string;
-  occured_at: number;
+  occurred_at: number;
   updated_at: number;
   url: string;
   location_description: string;
