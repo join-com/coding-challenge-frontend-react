@@ -1,7 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { EffectCallback, FC, Fragment, useEffect, useState } from "react";
 import { match as IMatch } from "react-router-dom";
 import Styled from "styled-components";
 import Map from "../components/Map";
+import Spinner from "../components/Spinner";
 import { fetchCaseDetails, fetchSourceDetails} from "../helpers/Api";
 import { FormatUTCDate } from "../helpers/Formatters";
 import Case from "../models/ICase";
@@ -16,15 +17,18 @@ interface ICaseDetailsProps {
 
 const CaseDetails: FC<ICaseDetailsProps> = ({ className, match }) => {
    const [caseData, setCaseData] = useState({} as Case);
+   const [loading, setLoading] = useState(true);
    useEffect(() => {
     const doFetchAllCases = async () => {
         const result = await fetchCaseDetails(match.params.id);
         setCaseData(result);
+        setLoading(false);
       };
     doFetchAllCases();
    }, []);
    return <div className={className}>
-    <h2> {caseData.title} </h2>
+    {!loading && <Fragment>
+      <h2> {caseData.title} </h2>
     <section>
         <p>
             Stolen {FormatUTCDate(caseData.occurred_at)}
@@ -39,6 +43,8 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match }) => {
       Description of incident
     </h2>
     <p>{caseData.description}</p>
+    </Fragment>}
+    {loading && <Spinner />}
 </div>;
 };
 
