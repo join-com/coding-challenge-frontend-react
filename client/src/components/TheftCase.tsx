@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
-import Case from "../models/Case";
+import Case from "../models/ICase";
 
 interface ITheftCaseProps {
     className?: string;
