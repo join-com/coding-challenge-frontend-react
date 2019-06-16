@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import Styled from "styled-components";
-import { fetchAllCases, fetchAllCasesSource } from "../helpers/Api";
-import Case from "../models/Case";
+import { fetchAllCases, fetchSourceAll } from "../helpers/Api";
+import Case from "../models/ICase";
 import TheftCase from "./TheftCase";
 
 interface ICaseContainerProps {
@@ -17,8 +17,7 @@ useEffect(() => {
     setCases(result);
   };
   doFetchAllCases();
-  return () => fetchAllCasesSource.cancel();
-});
+}, []);
 const [currentPage, setcurrentPage] = useState(0);
 
 return <div className={className}>

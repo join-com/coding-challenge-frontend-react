@@ -1,3 +1,4 @@
+import IFeature from './IFeature';
 interface IMedia {
   image_url: string;
   image_thumb: string;
@@ -6,7 +7,7 @@ interface ISource {
   name: string;
   html_url: string;
 }
-interface Case {
+interface ICase {
   id: number;
   address: string; 
   title: string;
@@ -18,6 +19,7 @@ interface Case {
   location_type: string; 
   media: IMedia;
   source: ISource;
+  feature?: IFeature;
 }
 
-export default Case;
+export default ICase;
