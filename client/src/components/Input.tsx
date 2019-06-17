@@ -1,22 +1,22 @@
 import React, { FC, useState } from "react";
-import { FaCalendarAlt } from "react-icons/fa";
 import Styled from "styled-components";
 interface IInput {
   className?: string;
+  placeholder?: string;
   type?: string;
-  postfix ?: React.ElementType;
+  postfix ?: any;
 }
 
-const Input: FC<IInput> = ({ className, type, postfix }) => {
+const Input: FC<IInput> = ({ className, type, postfix, placeholder }) => {
 const [focus, setFocus] = useState(false);
 const [content, setContent] = useState("");
 return <div className={`${className} ${focus ? "focused" : ""} ${content.length ? "full" : "empty"}`}>
-  <label>Placeholder</label>
+  <label>{placeholder}</label>
   <input type={type}
          onChange={(e) => setContent(e.target.value)}
          onFocus={() => setFocus(true)}
          onBlur={() => setFocus(false)}/>
-  <span className="postfix"><FaCalendarAlt /></span>
+  <span className="postfix">{postfix}</span>
   <div className="underline"/>
 </div>;
 };
@@ -37,11 +37,14 @@ export default Styled(Input)`
   label {
     width: auto;
     position: absolute;
-    height: 14px;
+    height: 20px;
     overflow: hidden;
     font-size: 100%;
     display: block;
     transition: font-size 0.314s;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
   }
   input {
     border: 0;
@@ -56,6 +59,7 @@ export default Styled(Input)`
   }
   &.focused label, &.full label{
       font-size: 8px;
+      flex-direction: row;
   }
   &.focused, &.full {
     input {

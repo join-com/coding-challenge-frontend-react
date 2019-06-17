@@ -33,6 +33,8 @@ return <div className={className}>
 
 };
 export default Styled(CasesContainer)`
-  max-width: 720px;
+  max-width: 800px;
+  padding: 50px;
+  overflow: scroll;
   margin: auto;
 `;

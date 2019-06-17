@@ -7,6 +7,9 @@ import * as serviceWorker from "./serviceWorker";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  html {
+    font-family: 'Dosis', sans-serif;
+  }
 `;
 
 ReactDOM.render(
