@@ -2,8 +2,15 @@ import React, {Fragment } from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { reducer } from './reducers';
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+
+const _window: any = window;
+const devTools: any = _window.__REDUX_DEVTOOLS_EXTENSION__;
+const store = createStore(reducer, devTools && devTools());
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -15,7 +22,9 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
 <Fragment>
   <GlobalStyle />
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
 </Fragment>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
