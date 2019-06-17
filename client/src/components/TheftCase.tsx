@@ -10,7 +10,6 @@ interface ITheftCaseProps {
 }
 
 const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
-  console.log(data);
   return <div className={className}>
     <div className="col media">
       <div role="image" className="image" />
@@ -24,7 +23,8 @@ const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
 };
 
 export default Styled(TheftCase)`
-  border: 4px solid black;
+  border: 1px solid #CCC;
+  box-shadow: 0px 0px 30px -22px black;
   width: 100%;
   margin: 20px 10px;
   padding: 10px;
