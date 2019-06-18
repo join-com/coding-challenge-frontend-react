@@ -5,7 +5,8 @@ interface ISpinner {
     className?: string;
 }
 
-const Spinner: FC<ISpinner> = ({ className = "" }) => <svg viewBox="0 0 50 50" className={className}>
+const Spinner: FC<ISpinner> = ({ className = "" }) => <div className={className}>
+  <svg viewBox="0 0 50 50">
     <circle
       className="path"
       cx="25"
@@ -13,23 +14,26 @@ const Spinner: FC<ISpinner> = ({ className = "" }) => <svg viewBox="0 0 50 50" c
       r="20"
       fill="none"
       strokeWidth="4"/>
-</svg>;
+</svg>
+</div>;
 
 export default Styled(Spinner)`
-  animation: rotate 2s linear infinite;
-  margin: -25px 0 0 -25px;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  svg {
+    display: flex;
+    animation: rotate 2s linear infinite;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+  }
   & .path {
     stroke: #5652BF;
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
-
   @keyframes rotate {
     100% {
       transform: rotate(360deg);

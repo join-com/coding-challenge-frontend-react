@@ -1,20 +1,20 @@
 import React, {Fragment } from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { reducer } from './reducers';
 import App from "./App";
+import { reducer } from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 
-const _window: any = window;
-const devTools: any = _window.__REDUX_DEVTOOLS_EXTENSION__;
+const self: any = window;
+const devTools: any = self.__REDUX_DEVTOOLS_EXTENSION__;
 const store = createStore(reducer, devTools && devTools());
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  html {
+  body {
     font-family: 'Dosis', sans-serif;
   }
 `;

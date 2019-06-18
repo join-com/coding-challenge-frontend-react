@@ -26,11 +26,12 @@ interface ApiResponse<T> extends AxiosResponse<T>{
 /**
  * Description Get all theft cases from Bikewise API, it's not paginated due to API limitations
  */
-export const fetchAllCases = async () => {
+export const fetchAllCases = async (search?: string, from?: string, to?: string) => {
+   const toTimeStamp = (date?: string) => date ? Math.ceil(Date.parse(date)/1000) : '';
    const theftCases:ApiResponse<ICasesResponse> = await axios.request<ICasesResponse>({
      url: '/incidents',
      method: 'get',
-     params: { proximity: 'berlin', incident_type: 'theft' },
+     params: { proximity: 'berlin', incident_type: 'theft', query: search, occurred_before: toTimeStamp(to), occurred_after: toTimeStamp(from) },
      cancelToken: fetchSourceAll.token
    });
    return theftCases.data.incidents;

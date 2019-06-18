@@ -25,10 +25,11 @@ const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
 export default Styled(TheftCase)`
   border: 1px solid #CCC;
   box-shadow: 0px 0px 30px -22px black;
-  width: 100%;
-  margin: 20px 10px;
+  max-width: 100%;
+  margin: 20px 0;
   padding: 10px;
   display: flex;
+  height: 300px;
   .image {
     width: 100%;
     height: 100%;
