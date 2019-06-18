@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Styled from "styled-components";
+import history from "../History";
 // Use double resolution for retina display
 import logo from "../assets/images/logo.png";
 interface IHeaderProps {
@@ -7,7 +8,7 @@ interface IHeaderProps {
 }
 
 const Header: FC<IHeaderProps> = ({ className = "" }) =>
-<header className={className}>
+<header className={className} onClick={() => history.push('/')}>
   <div className="logo">
     <img alt="Berlin Police Logo" src={logo} />
   </div>
@@ -18,6 +19,7 @@ const Header: FC<IHeaderProps> = ({ className = "" }) =>
 </header>;
 
 export default Styled(Header)`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   padding: 20px 0;
