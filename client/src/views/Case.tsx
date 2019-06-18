@@ -45,6 +45,7 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
         <span className="signify">at</span>
         <span className="address">{caseData.address}</span>
       </p>
+      <p>Last update {FormatUTCDate(caseData.updated_at)}</p>
     </section>
     <section>
         {caseData.feature && <Map coordinates={caseData.feature.geometry.coordinates}/>}
