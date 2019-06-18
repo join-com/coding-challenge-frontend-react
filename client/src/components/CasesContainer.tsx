@@ -34,12 +34,14 @@ const [currentPage, setcurrentPage] = useState(0);
 const pageCount = Math.ceil(cases.length / ITEMS_PER_PAGE);
 return <div className={className}>
   <section>
+    <div className="cases">
     {!loading &&
       cases
         .slice(currentPage * ITEMS_PER_PAGE, (currentPage + 1) * ITEMS_PER_PAGE)
         .map((data) => <TheftCase data={data}/>)}
+    </div>
     {!loading && cases.length === 0 &&
-    <div className="not-found">:37
+    <div className="not-found">
       <h1>Sorry No Reports Found</h1>
     </div>
     }
@@ -75,6 +77,14 @@ export default Styled(connectedCasesContainer)`
    flex: 1;
    overflow-y: auto;
    padding: 0 50px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+  }
+  .cases {
+    justify-content: left;
+    display: flex;
+    flex-wrap: inherit;
   }
   .not-found {
     display: flex;

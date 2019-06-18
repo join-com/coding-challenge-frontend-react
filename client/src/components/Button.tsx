@@ -17,8 +17,10 @@ const Button: FC<IButton> = ({ className, children, onClick = null }) => <div cl
 
 export default Styled(Button)`
   align-self: center;
+  width: 100%;
   button {
     border: 0;
+    width: 100%;
     background-color: #5652BF;
     color: white;
     border-radius: 2px;

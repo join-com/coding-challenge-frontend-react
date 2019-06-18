@@ -23,33 +23,40 @@ return <div className={`${className} ${focus ? "focused" : ""} ${content.length 
            onBlur={() => setFocus(false)}/>
     <span className="postfix">{postfix}</span>
   </div>
+  <div className="underline-premament"/>
   <div className="underline"/>
 </div>;
 };
 
 export default Styled(Input)`
   padding: 0;
-  background: #FAFAFA;
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
   height: 40px;
   margin: 5px;
   border-radius: 2px;
+  color: inherit;
   .overline {
     display: flex;
     padding: 2px;
   }
+  .underline-premament {
+    width: 100%;
+    height: 2px;
+    transition: width 0.314s;
+    border-bottom: 1px solid white;
+  }
   .underline {
     width: 0%;
-    height: 100%;
+    height: 0%;
     transition: width 0.314s;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
   }
   label {
     width: auto;
-    position: absolute;
     height: 20px;
+    position: fixed;
     overflow: hidden;
     font-size: 100%;
     display: block;
@@ -58,12 +65,19 @@ export default Styled(Input)`
     display: flex;
     flex-direction: column;
   }
+  @media(max-width: 500px) {
+    label {
+      position: relative;
+      font-size: 8px;
+    }
+  }
   input {
     border: 0;
     width: 100%;
     background: transparent;
     height: 90%;
     padding: 10px 0 0 0;
+    color: inherit;
     &:focus{
       outline: none;
     }
@@ -78,14 +92,11 @@ export default Styled(Input)`
   &.focused, &.full {
     input {
       &[type="date"] {
-        color: black;
+        color: inherit;
       }
     }
     .underline {
       width: 100%;
     }
-  }
-  .postfix {
-
   }
 `;

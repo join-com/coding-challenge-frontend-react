@@ -6,6 +6,7 @@ import Spinner from "../components/Spinner";
 import { fetchCaseDetails, fetchSourceDetails} from "../helpers/Api";
 import { FormatUTCDate } from "../helpers/Formatters";
 import Case from "../models/ICase";
+import ImagePlaceHolder from "../assets/images/no-image.jpg";
 
 interface ICaseMatch {
   id: string;
@@ -41,8 +42,8 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
     {!loading && <Fragment>
     <section className="split">
       <div className="col">
-        <div>
           <h2> {caseData.title} </h2>
+        <div>
           <p>
             Stolen {FormatUTCDate(caseData.occurred_at)}
             <span className="signify">at</span>
@@ -56,7 +57,7 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
         </div>
       </div>
       <div className="col">
-        <img src={caseData.media.image_url || caseData.media.image_thumb} alt="Bike Image"/>
+        <img src={caseData.media.image_url || caseData.media.image_thumb || ImagePlaceHolder} alt="Bike Image"/>
       </div>
     </section>
     <section>

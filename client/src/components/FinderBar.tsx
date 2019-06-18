@@ -4,17 +4,21 @@ import { connect } from "react-redux";
 import Styled from "styled-components";
 import history from "../History";
 import { setSearchQuery } from "../reducers";
+import Switch from "react-switch";
 import Button from "./Button";
 import Header from "./Header";
 import Input from "./Input";
-
+import { FaMoon } from "react-icons/fa";
+import { setNightMode } from "../reducers";
 interface IFinderBarProps {
     className?: string;
     itemsCount?: number;
+    nightMode?: boolean;
+    _setNightMode: (value: boolean) => void;
     _setSearchQuery: (search: string, from: string, to: string) => void;
 }
 
-const FinderBar: FC<IFinderBarProps> = ({ className = "", itemsCount, _setSearchQuery }) => {
+const FinderBar: FC<IFinderBarProps> = ({ className = "", itemsCount, _setSearchQuery, nightMode = false, _setNightMode }) => {
 const [search, setSearch] = useState("");
 const [from, setFrom] = useState("");
 const [to, setTo] = useState("");
@@ -30,13 +34,19 @@ return <div className={className}>
       }} >Find cases</Button>
   </form>
   <div className="itemsCount">{itemsCount ? `${itemsCount} ${itemsCount > 1 ? "Cases" : "Case"} found` : ""} </div>
+  <div>
+    <FaMoon className="moon"/>
+    <Switch onChange={_setNightMode} checked={nightMode}/>
+  </div>
 </div>;
 };
 const dispatchToProps = (dispatch: any) => ({
   _setSearchQuery: (search: string, from: string, to: string) => dispatch(setSearchQuery(search, from, to)),
+  _setNightMode: (value: boolean) => dispatch(setNightMode(value))
 });
 const mapStateToProps = (state: any) => ({
   itemsCount: state.items.itemsCount,
+  nightMode: state.theme.nightMode
 });
 const connectedFinderBar = connect(mapStateToProps, dispatchToProps)(FinderBar);
 
@@ -45,15 +55,24 @@ export default Styled(connectedFinderBar)`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 50px;
+  padding: 15px 50px;
   height: 100%;
-  background-color: #CCC;
+  background-color: #1d1d1d;
+  color: white;
+  .moon {
+    padding: 7px;
+    margin: 0 4px;
+  }
+  @media(max-width: 500px) {
+    padding: 4px;
+  }
   form {
     width: 100;
     display: flex;
     flex-direction: column;
   }
   .itemsCount {
+    margin: 20px;
     text-align: center;
   }
 `;
