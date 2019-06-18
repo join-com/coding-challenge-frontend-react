@@ -2,12 +2,15 @@
     "name": "Bike",
     "version": "1.0.0",
     "engines": {
-      "yarn": "1.16.0"
+        "yarn": "1.16.0"
     },
     "private": true,
     "dependencies": {
+        "moment": "^2.24.0",
         "react": "16",
+        "react-day-picker": "^7.3.0",
         "react-dom": "16",
+        "react-google-maps": "^9.4.5",
         "react-router": "^5.0.1",
         "react-router-dom": "^5.0.1",
         "react-scripts": "3.0.1",
@@ -67,7 +70,7 @@
     },
     "jest": {
         "snapshotSerializers": [
-          "enzyme-to-json/serializer"
+            "enzyme-to-json/serializer"
         ]
-      }
+    }
 }

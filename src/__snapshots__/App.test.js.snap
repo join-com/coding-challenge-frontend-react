@@ -5,15 +5,17 @@ exports[`renders without crashing 1`] = `
   <BrowserRouter>
     <div>
       <Header />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-        path="/case/:id"
-      />
+      <styled.div>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/incident/:id"
+        />
+      </styled.div>
     </div>
   </BrowserRouter>
 </styled.div>

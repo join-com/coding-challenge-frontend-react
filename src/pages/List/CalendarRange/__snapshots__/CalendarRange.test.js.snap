@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the CalendarRange 1`] = `
+<styled.div>
+  <DayPickerInput
+    classNames={
+      Object {
+        "container": "DayPickerInput",
+        "overlay": "DayPickerInput-Overlay",
+        "overlayWrapper": "DayPickerInput-OverlayWrapper",
+      }
+    }
+    clickUnselectsDay={false}
+    component="input"
+    dayPickerProps={
+      Object {
+        "disabledDays": Object {
+          "after": undefined,
+        },
+        "modifiers": Object {
+          "end": undefined,
+          "start": undefined,
+        },
+        "numberOfMonths": 2,
+        "onDayClick": [Function],
+        "selectedDays": Array [
+          undefined,
+          Object {
+            "from": undefined,
+            "to": undefined,
+          },
+        ],
+        "toMonth": undefined,
+      }
+    }
+    format="LL"
+    formatDate={[Function]}
+    hideOnDayClick={true}
+    inputProps={Object {}}
+    keepFocus={true}
+    onDayChange={[Function]}
+    overlayComponent={[Function]}
+    parseDate={[Function]}
+    placeholder="From"
+    showOverlay={false}
+    value=""
+  />
+   
+  <span
+    className="InputFromTo-to"
+  >
+    <DayPickerInput
+      classNames={
+        Object {
+          "container": "DayPickerInput",
+          "overlay": "DayPickerInput-Overlay",
+          "overlayWrapper": "DayPickerInput-OverlayWrapper",
+        }
+      }
+      clickUnselectsDay={false}
+      component="input"
+      dayPickerProps={
+        Object {
+          "disabledDays": Object {
+            "before": undefined,
+          },
+          "fromMonth": undefined,
+          "modifiers": Object {
+            "end": undefined,
+            "start": undefined,
+          },
+          "month": undefined,
+          "numberOfMonths": 2,
+          "selectedDays": Array [
+            undefined,
+            Object {
+              "from": undefined,
+              "to": undefined,
+            },
+          ],
+        }
+      }
+      format="LL"
+      formatDate={[Function]}
+      hideOnDayClick={true}
+      inputProps={Object {}}
+      keepFocus={true}
+      onDayChange={[Function]}
+      overlayComponent={[Function]}
+      parseDate={[Function]}
+      placeholder="To"
+      showOverlay={false}
+      value=""
+    />
+  </span>
+</styled.div>
+`;

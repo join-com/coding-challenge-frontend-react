@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Case 1`] = `
+<div>
+  <styled.h1>
+    title
+  </styled.h1>
+  <p>
+    Stolen 
+    12214324324
+     at 
+    Halle, 06120, DE
+  </p>
+  <div>
+    Map
+  </div>
+   
+  <styled.h2>
+    Description of incident
+  </styled.h2>
+  <p>
+    description
+  </p>
+</div>
+`;

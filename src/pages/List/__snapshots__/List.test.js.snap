@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the List 1`] = `
+<styled.div>
+  <styled.div>
+    <div>
+      Loading...
+    </div>
+  </styled.div>
+</styled.div>
+`;
