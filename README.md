@@ -1,5 +1,15 @@
 ### License and external resouces
 - Berlin Coat of arm police logo by Montrisha from [kisspng](https://www.kisspng.com/png-berlin-police-forze-di-polizia-in-germania-branden-2005632/) (Personal usage only)
+- Image for Image not available is for (Personal usage only)
+
+### To Improve
+- Lazy load application
+- Use a well tested UI kit (Implemented my own for demonstration)
+- Have better code coverage
+- Persist Night Mode
+- Use TDD approach, even when the setup is complete, I didn't follow the rules.
+- Improve design
+- Make image gallery from images from /v1
 
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 ![JOIN Stolen Bike Cases](https://github.com/join-com/coding-challenge-frontend-react/raw/master/illustration.png)
@@ -58,11 +68,11 @@ Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 
 ## Tech Requirements
 
-- React
-- Tests: Jest + react-testing-library / enzyme
-- Code Linter
-- Typescript is a plus
-- CSSinJS is a plus: styled-components, styled-system, ...
+- [x] React
+- [x] Tests: Jest + react-testing-library / enzyme
+- [x] Code Linter (used TSLINT)
+- [x] Typescript is a plus
+- [x] CSSinJS is a plus: styled-components, styled-system, ...
 
 ## Instructions
 
