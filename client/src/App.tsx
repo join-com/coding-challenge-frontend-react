@@ -10,10 +10,11 @@ import Search from "./views/Search";
 
 interface IApp {
   className?: string;
-  nightMode? :boolean;
+  nightMode?: boolean;
 }
 
-const App: React.FC<IApp> = ({ className, nightMode = false }) => <div className={`${className} ${nightMode?'nm':''}`}>
+const App: React.FC<IApp> = ({ className, nightMode = false }) =>
+<div className={`${className} ${nightMode ? "nm" : ""}`}>
   <FinderBar />
   <section className="page">
     <Router history={history}>
@@ -26,10 +27,10 @@ const App: React.FC<IApp> = ({ className, nightMode = false }) => <div className
       </Switch>
     </Router>
   </section>
-</div>
+</div>;
 
 const mapStateToProps = (state: any) => ({
-  nightMode: state.theme.nightMode
+  nightMode: state.theme.nightMode,
 });
 
 const styledApp = Styled(App)`
@@ -37,8 +38,8 @@ const styledApp = Styled(App)`
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background: ${(props: any) => props.nightMode ? '#000' : '#fff'};
-  color: ${(props: any) => props.nightMode ? '#fff' : '#000'};
+  background: ${(props: any) => props.nightMode ? "rgba(0,0,0, 0.87)" : "#fff"};
+  color: ${(props: any) => props.nightMode ? "#fff" : "rgba(0,0,0, 0.87)"};
   @media (max-width: 500px) {
     flex-direction: column;
     overflow: scroll;
@@ -48,4 +49,4 @@ const styledApp = Styled(App)`
   }
 `;
 
-export default connect(mapStateToProps)(styledApp)
+export default connect(mapStateToProps)(styledApp);

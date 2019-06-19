@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import Styled from "styled-components";
-import history from "../History";
 // Use double resolution for retina display
 import logo from "../assets/images/logo.png";
+import history from "../History";
 interface IHeaderProps {
   className?: string;
 }
 
 const Header: FC<IHeaderProps> = ({ className = "" }) =>
-<header className={className} onClick={() => history.push('/')}>
+<header className={className} onClick={() => history.push("/")}>
   <div className="logo">
     <img alt="Berlin Police Logo" src={logo} />
   </div>

@@ -1,4 +1,4 @@
-import IFeature from './IFeature';
+import IFeature from "./IFeature";
 interface IMedia {
   image_url: string;
   image_thumb: string;
@@ -9,14 +9,14 @@ interface ISource {
 }
 interface ICase {
   id: number;
-  address: string; 
+  address: string;
   title: string;
   description: string;
   occurred_at: number;
   updated_at: number;
   url: string;
   location_description: string;
-  location_type: string; 
+  location_type: string;
   media: IMedia;
   source: ISource;
   feature?: IFeature;

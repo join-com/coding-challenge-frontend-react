@@ -1,12 +1,12 @@
 import React, { FC, Fragment, useEffect, useState } from "react";
 import { match as IMatch, withRouter } from "react-router-dom";
 import Styled from "styled-components";
+import ImagePlaceHolder from "../assets/images/no-image.jpg";
 import Map from "../components/Map";
 import Spinner from "../components/Spinner";
 import { fetchCaseDetails, fetchSourceDetails} from "../helpers/Api";
 import { FormatUTCDate } from "../helpers/Formatters";
 import Case from "../models/ICase";
-import ImagePlaceHolder from "../assets/images/no-image.jpg";
 
 interface ICaseMatch {
   id: string;
@@ -37,7 +37,6 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
       };
     doFetchAllCases();
    }, []);
-   console.log(caseData);
    return <div className={className}>
     {!loading && <Fragment>
     <section className="split">
@@ -67,7 +66,7 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
     </section>
     </Fragment>}
     {loading && <Spinner />}
-   </div>
+   </div>;
 };
 
 export default Styled(withRouter(CaseDetails))`

@@ -99,4 +99,7 @@ export default Styled(Input)`
       width: 100%;
     }
   }
+  .postfix {
+    padding-top: 5px;
+  }
 `;

@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
+import ImagePlaceHolder from "../assets/images/no-image.jpg";
 import { FormatUTCDate } from "../helpers/Formatters";
 import Case from "../models/ICase";
-import ImagePlaceHolder from "../assets/images/no-image.jpg";
 
 interface ITheftCaseProps {
     className?: string;
