@@ -18,13 +18,13 @@ interface ICaseDetailsProps {
 }
 
 const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
-   const [caseData, setCaseData] = useState({} as Case);
-   const [loading, setLoading] = useState(true);
-   useEffect(() => {
+  const [caseData, setCaseData] = useState({} as Case);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
     const doFetchAllCases = async () => {
-        try {
-          const result = await fetchCaseDetails(match.params.id);
-          setCaseData(result);
+      try {
+        const result = await fetchCaseDetails(match.params.id);
+        setCaseData(result);
         } catch (e) {
           if (e.response.status >= 400 && e.response.status < 500) {
             history.push("/404");
@@ -37,7 +37,7 @@ const CaseDetails: FC<ICaseDetailsProps> = ({ className, match, history }) => {
       };
     doFetchAllCases();
    }, []);
-   return <div className={className}>
+  return <div className={className}>
     {!loading && <Fragment>
     <section className="split">
       <div className="col">

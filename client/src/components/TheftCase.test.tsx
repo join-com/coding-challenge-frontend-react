@@ -18,13 +18,21 @@ describe("Pagniate component", () => {
     const data: ICase = {
         address: DUMMY_ADDRESS,
         description: DUMMY_DESCRIPTION,
+        id: 0,
+        location_description: "",
+        location_type: "",
         media: {
             image_thumb: DUMMY_THUMB,
             image_url: DUMMY_IMAGEURL,
         },
         occurred_at: Date.now(),
+        source: {
+            html_url: "",
+            name: "",
+        },
         title: DUMMY_TITLE,
         updated_at: Date.now(),
+        url: "url",
     };
     // Act
     const { getByText, getByTestId } = render(withMockProviders(<TheftCase data={data} />));
