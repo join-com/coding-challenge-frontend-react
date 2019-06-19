@@ -46,7 +46,7 @@ return <ul className={className}>
         {"<"}
       </PageLink>
       {[...Array(pageCount)].map((p, i) =>
-        <PageLink index={i} active={i === currentPage} onClick={() => setCurrentPage(i)}>
+        <PageLink key={`page-${i}`} index={i} active={i === currentPage} onClick={() => setCurrentPage(i)}>
           {i + 1}
         </PageLink>)
       }
