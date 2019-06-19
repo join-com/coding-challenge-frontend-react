@@ -15,7 +15,7 @@ const TheftCase: FC<ITheftCaseProps> = ({ className = "", data }) => {
     <div className="col info">
       <Link to={`/case/${data.id || ""}`} className="title" href="#">{data.title}</Link>
       <div className="col media">
-        <div role="image" className="image" />
+        <div data-testid="image" role="image" className="image" />
       </div>
       <p className="description">{data.description}</p>
       <p className="date">{FormatUTCDate(data.occurred_at)}</p>
