@@ -1,3 +1,16 @@
+### License and external resouces
+- Berlin Coat of arm police logo by Montrisha from [kisspng](https://www.kisspng.com/png-berlin-police-forze-di-polizia-in-germania-branden-2005632/) (Personal usage only)
+- Image for Image not available is for (Personal usage only)
+
+### To Improve
+- Lazy load application
+- Use a well tested UI kit (Implemented my own for demonstration)
+- Have better code coverage
+- Persist Night Mode
+- Use TDD approach, even when the setup is complete, I didn't follow the rules.
+- Improve design
+- Make image gallery from images from /v1
+
 # Stolen Bike Index - JOIN Coding Challenge - Frontend (React)
 ![JOIN Stolen Bike Cases](https://github.com/join-com/coding-challenge-frontend-react/raw/master/illustration.png)
 
@@ -11,21 +24,21 @@ This app needs to display the list of reported bike thefts based on the Bikewise
 
 As a police officer:
 
-- [ ] I want to see a list of reported bike thefts for the Berlin area.
-- [ ] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
-- [ ] I want to see a total number of bike theft cases.
-- [ ] For each reported bike theft I want to see:
-  - [ ] Case title
-  - [ ] Case description
-  - [ ] Date of the theft
-  - [ ] Date of when the case was reported
-  - [ ] Location of the theft
-  - [ ] Picture of the bike, if available
-- [ ] I want to filter reported bike thefts by partial case title.
-- [ ] I want to filter reported bike thefts by date range.
-- [ ] I want to see a loading state until the list is available.
-- [ ] I want to see an error state if the list is unavailable.
-- [ ] I want to see an empty state if there are no results.
+- [x] I want to see a list of reported bike thefts for the Berlin area.
+- [x] I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
+- [x] I want to see a total number of bike theft cases.
+- [x] For each reported bike theft I want to see:
+  - [x] Case title
+  - [x] Case description
+  - [x] Date of the theft
+  - [x] Date of when the case was reported
+  - [x] Location of the theft
+  - [x] Picture of the bike, if available
+- [x] I want to filter reported bike thefts by partial case title.
+- [x] I want to filter reported bike thefts by date range.
+- [x] I want to see a loading state until the list is available.
+- [x] I want to see an error state if the list is unavailable.
+- [x] I want to see an empty state if there are no results.
 
 ## Your Mission
 
@@ -55,11 +68,11 @@ Host the website on the service of your choice (zeit, Heroku, AWS, GCloud, ...)
 
 ## Tech Requirements
 
-- React
-- Tests: Jest + react-testing-library / enzyme
-- Code Linter
-- Typescript is a plus
-- CSSinJS is a plus: styled-components, styled-system, ...
+- [x] React
+- [x] Tests: Jest + react-testing-library / enzyme
+- [x] Code Linter (used TSLINT)
+- [x] Typescript is a plus
+- [x] CSSinJS is a plus: styled-components, styled-system, ...
 
 ## Instructions
 
