@@ -25,5 +25,4 @@ const LeafletMap: FC<ILeafletMapProps> = ({ className, coordinates = [51, 23] })
 export default Styled(LeafletMap)`
   width: 100%;
   height: 400px;
-  background-color: red;
 `;
