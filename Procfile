@@ -1,1 +1,1 @@
-web: npm run start --prefix client
+web: npm run deploy --prefix client
