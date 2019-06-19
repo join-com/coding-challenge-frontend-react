@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagniate component should call setCurrentPage on Click 1`] = `
+Array [
+  Array [
+    0,
+  ],
+]
+`;

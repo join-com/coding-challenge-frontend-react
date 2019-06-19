@@ -13,6 +13,6 @@ describe('Pagniate component', () => {
     })
     it('should call setCurrentPage on Click', () => {
       fireEvent.click(getByText('1'));
-      expect(setCurrentPage).toHaveBeenCalled();
+      expect(setCurrentPage.mock.calls).toMatchSnapshot();
     })
 })
