@@ -1,5 +1,5 @@
 {
-  "name": "Join-code-challenge-antoine-raoul",
+  "name": "code-challenge",
   "version": "0.1.0",
   "scripts": {
     "postinstall": "npm install --prefix client"
