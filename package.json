@@ -1,0 +1,31 @@
+{
+    "name": "bikevex",
+    "version": "0.0.1",
+    "description": "Find missing bike",
+    "main": "index.js",
+    "scripts": {
+        "format": "npm run prettier -- --write --list-different",
+        "prettier": "prettier \"**/*.+(js|jsx|css|html|json|md)\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nseepana/coding-challenge-frontend-react.git"
+    },
+    "author": "naresh@seepana.com",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nseepana/coding-challenge-frontend-react/issues"
+    },
+    "homepage": "https://github.com/nseepana/coding-challenge-frontend-react#readme",
+    "dependencies": {
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-react": "^7.0.0",
+        "prettier": "^1.18.2"
+    }
+}
