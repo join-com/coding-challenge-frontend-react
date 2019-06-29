@@ -4,9 +4,11 @@
     "description": "Find missing bike",
     "main": "index.js",
     "scripts": {
+        "start": "npm run build:prod",
         "format": "npm run prettier -- --write --list-different",
         "prettier": "prettier \"**/*.+(js|jsx|css|html|json|md)\"",
         "build:dev": "webpack-dev-server --open --config ./webpack.config.js --mode=development",
+        "build:prod": "webpack --open --config ./webpack.config.js --mode=production",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
