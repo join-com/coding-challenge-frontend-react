@@ -3,13 +3,18 @@
     "version": "0.0.1",
     "description": "Find missing bike",
     "main": "index.js",
+    "engines": {
+        "node": "10.15.3",
+        "npm": "6.4.1"
+    },
     "scripts": {
         "start": "npm run build:prod",
         "format": "npm run prettier -- --write --list-different",
         "prettier": "prettier \"**/*.+(js|jsx|css|html|json|md)\"",
         "build:dev": "webpack-dev-server --open --config ./webpack.config.js --mode=development",
         "build:prod": "webpack --open --config ./webpack.config.js --mode=production",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
     },
     "repository": {
         "type": "git",
