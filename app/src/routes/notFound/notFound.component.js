@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { injectIntl, FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 
 import messages from './notFound.messages';
 import { Container } from './notFound.styles';
-import { H1 } from '../../theme/typography';
+import ImageNotFound from '../../images/404.svg';
 
 export class NotFoundComponent extends PureComponent {
   static propTypes = {
@@ -17,10 +17,7 @@ export class NotFoundComponent extends PureComponent {
     return (
       <Container>
         <Helmet title={this.props.intl.formatMessage(messages.pageTitle)} />
-
-        <H1>
-          <FormattedMessage {...messages.title} />
-        </H1>
+        <img src={ImageNotFound} width="500" />
       </Container>
     );
   }
