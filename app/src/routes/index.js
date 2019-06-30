@@ -7,10 +7,12 @@ import App from './app.container';
 import { DEFAULT_LOCALE, appLocales, translationMessages } from '../i18n';
 import { Home } from './home';
 import { NotFound } from './notFound';
+import { BikeInfo } from './bikeInfo';
 
 export const ROUTES = {
   home: '/',
   notFound: '/404',
+  incident: '/incident',
 };
 
 class MatchedLanguageComponent extends Component {
@@ -20,12 +22,12 @@ class MatchedLanguageComponent extends Component {
 
   render() {
     const { match } = this.props;
-
+    // eslint-disable-next-line no-debugger
     return (
       <App>
         <Switch>
           <Route exact path={`${match.path}${ROUTES.home}`} component={Home} />
-
+          <Route path={`${match.path}${ROUTES.incident}/:id`} exact component={BikeInfo} />
           <Route component={NotFound} />
         </Switch>
       </App>
