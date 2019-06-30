@@ -1,0 +1,77 @@
+{
+  "extends": [
+    "plugin:prettier/recommended",
+    "@apptension/eslint-config-react"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "plugins": [
+    "chai-friendly",
+    "react-hooks"
+  ],
+  "rules": {
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "List",
+          "Map",
+          "Record",
+          "OrderedMap",
+          "OrderedSet",
+          "Immutable"
+        ]
+      }
+    ],
+    "babel/new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "List",
+          "Map",
+          "Immutable"
+        ]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "redux-saga/yield-effects": 0,
+    "react/display-name": 0,
+    // https://github.com/pke/eslint-plugin-redux-saga/issues/15
+    "redux-saga/no-unhandled-errors": 0,
+    // https://github.com/pke/eslint-plugin-redux-saga/issues/15
+    "no-unused-expressions": 0,
+    // https://github.com/eslint/eslint/issues/2102
+    "chai-friendly/no-unused-expressions": 1,
+    // https://github.com/eslint/eslint/issues/2102
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "internals/**",
+          "**/*.spec.js"
+        ]
+      }
+    ],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/core-modules": [
+      "local-env-config",
+      "env-config",
+      "report-error",
+      "json-server",
+      "nock",
+      "inquirer-directory"
+    ]
+  }
+}

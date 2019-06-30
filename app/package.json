@@ -1,0 +1,90 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apptension/react-scripts": "0.3.1",
+    "@babel/polyfill": "^7.2.5",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-links": "^5.0.6",
+    "@storybook/addon-storyshots": "^5.0.6",
+    "@storybook/react": "^5.0.6",
+    "axios": "^0.18.0",
+    "babel-loader": "8.0.5",
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "chai-jest-diff": "^1.0.2",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "es5-shim": "^4.5.12",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "fontfaceobserver": "^2.1.0",
+    "history": "^4.7.2",
+    "http-status-codes": "^1.3.0",
+    "husky": "^1.3.1",
+    "intl": "^1.2.5",
+    "isomorphic-fetch": "^2.2.1",
+    "jest-enzyme": "^7.0.1",
+    "lint-staged": "^8.1.0",
+    "nock": "^10.0.6",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.6.2",
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-hot-loader": "^4.6.3",
+    "react-intl": "^2.7.2",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-devtools": "^3.5.0",
+    "redux-devtools-dock-monitor": "^1.1.3",
+    "redux-devtools-log-monitor": "^1.4.0",
+    "redux-saga": "^1.0.2",
+    "redux-saga-test-plan": "4.0.0-beta.2",
+    "reduxsauce": "^1.0.1",
+    "require-context.macro": "^1.0.4",
+    "reselect": "^4.0.0",
+    "seamless-immutable": "^7.1.4",
+    "semver-compare": "^1.0.0",
+    "sinon": "^7.2.2",
+    "sinon-chai": "^3.3.0",
+    "styled-components": "^4.1.3",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-custom-processor-loader": "^0.6.0",
+    "stylelint-processor-styled-components": "^1.6.0",
+    "ua-parser-js": "^0.7.19"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "extract-intl": "react-scripts extractIntl en pl",
+    "lint": "yarn run lint:js && yarn run lint:css",
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:js": "eslint .",
+    "storybook": "start-storybook --config-dir './src/.storybook'",
+    "build-storybook": "build-storybook"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint"
+    ]
+  }
+}

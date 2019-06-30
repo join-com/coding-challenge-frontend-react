@@ -1,0 +1,9 @@
+{
+  "app.pageTitle": "Apptension Boilerplate",
+  "home.pageTitle": "Homepage",
+  "home.welcome": "Hello World!",
+  "notFound.pageTitle": "Not found",
+  "notFound.title": "Error: 404",
+  "unsupported.pageTitle": "Unsupported Browser",
+  "unsupported.title": "Unsupported Browser"
+}
