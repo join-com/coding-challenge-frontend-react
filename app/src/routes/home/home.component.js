@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Skeleton, Form } from 'antd';
-import defaultBike from '../../images/icons/logo.svg';
+import defaultBike from '../../images/defaultBike.svg';
 
 import messages from './home.messages';
 import {
