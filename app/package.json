@@ -9,6 +9,7 @@
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addon-storyshots": "^5.0.6",
     "@storybook/react": "^5.0.6",
+    "antd": "^3.20.0",
     "axios": "^0.18.0",
     "babel-loader": "8.0.5",
     "chai": "^4.2.0",
