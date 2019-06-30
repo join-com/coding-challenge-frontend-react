@@ -24,7 +24,8 @@ const baseConfig = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HTMLWebpackPlugin({
-			template: "./src/index.html"
+			template: "./src/index.html",
+			filename: "index.html"
 		})
 	]
 }

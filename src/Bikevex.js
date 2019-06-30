@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 class Bikevex extends React.Component {
 	render() {
 		return (
