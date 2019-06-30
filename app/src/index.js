@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
 
 // Needed for redux-saga es6 generator support
 import '@babel/polyfill';
