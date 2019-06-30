@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://khaldiamer.github.io/coding-challenge-frontend-react",
   "dependencies": {
     "@apptension/react-scripts": "0.3.1",
     "@babel/polyfill": "^7.2.5",
@@ -20,6 +21,7 @@
     "es5-shim": "^4.5.12",
     "eslint-plugin-react-hooks": "^1.6.0",
     "fontfaceobserver": "^2.1.0",
+    "gh-pages": "^2.0.1",
     "history": "^4.7.2",
     "http-status-codes": "^1.3.0",
     "husky": "^1.3.1",
@@ -70,7 +72,9 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint .",
     "storybook": "start-storybook --config-dir './src/.storybook'",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
