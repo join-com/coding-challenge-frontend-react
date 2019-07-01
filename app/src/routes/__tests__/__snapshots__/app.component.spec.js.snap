@@ -8,7 +8,7 @@ exports[`App: Component should render App when language is set 1`] = `
   locale="en"
   messages={
     Object {
-      "app.pageTitle": "Apptension Boilerplate",
+      "app.pageTitle": "Stolen Bikes ",
       "home.pageTitle": "Homepage",
       "home.welcome": "Hello World!",
       "notFound.pageTitle": "Not found",
@@ -19,7 +19,7 @@ exports[`App: Component should render App when language is set 1`] = `
   }
 >
   <FormattedMessage
-    defaultMessage="Apptension Boilerplate"
+    defaultMessage="Stolen Bikes "
     id="app.pageTitle"
     values={Object {}}
   >
