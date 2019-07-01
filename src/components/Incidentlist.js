@@ -1,15 +1,12 @@
 import React from 'react';
-import { Router, Link } from "@reach/router";
 import Incident from "./Incident";
 
 const Incidentlist = (props) => {
-	const { bikes } = props;
-	if (!bikes.incidents.length) return (<p>No data found!</p>);
-
+	const { data } = props;
 	return (
 		<ul>
-			{bikes.incidents.map((data) => {
-				let { id, title, description, address, occured_at, media, type, source } = data;
+			{data.map((info) => {
+				let { id, title, description, address, occured_at, media, type, source } = info;
 				return (
 					<Incident
 						key={id}

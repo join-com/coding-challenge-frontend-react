@@ -5,12 +5,12 @@ import Details from "./Details";
 
 const Bikevex = () => {
 	return (
-		<div>
+		<main>
 			<Router>
 				<Incidents path="incidents" />
 				<Details path="incidents/:id" />
 			</Router>
-		</div>
+		</main>
 	)
 }
 

@@ -2,9 +2,8 @@ let path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-
 const baseConfig = {
-	entry: "./src/index.js",
+	entry: "./src/App.js",
 	output: {
 		path: path.resolve("dist"),
 		filename: "bundle.js",
@@ -16,10 +15,23 @@ const baseConfig = {
 				test: /\.(js)$/,
 				exclude: /node_modules/,
 				use: "babel-loader"
+			}, {
+				test: /\.css$/,
+				use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+			},
+			{
+				test: /\.(png|svg|jpg|gif)$/,
+				use: [
+					'file-loader'
+				]
 			}
 		]
 	},
 	resolve: {
+		alias: {
+			"assets": path.resolve('src/assets/'),
+			"styles": path.resolve('src/assets/styles/')
+		},
 		extensions: ["*", ".js"]
 	},
 	devServer: {

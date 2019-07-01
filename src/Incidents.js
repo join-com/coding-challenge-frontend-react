@@ -4,18 +4,23 @@ import Loader from "./components/Loader";
 import Incidentlist from "./components/Incidentlist";
 import Bikevexapi from "./components/Bikevexapi";
 
+import ErrorBoundary from "./components/ErrorBoundary";
+import Filters from "./components/Filters";
+
 // bikevex/src/components/Incident.js
 class Incidents extends React.Component {
 	render() {
-		let incidents = `${Bikevexapi.incidents}`
+		let req = Bikevexapi.incidents;
 		let Bikes = Loader(Incidentlist);
 		return (
-			<Fetcher path={incidents}>
-				{props => {
-					const { data = {}, code, } = props;
-					return <Bikes status={code} bikes={data} />
-				}}
-			</Fetcher>
+			<ErrorBoundary>
+				<Filters></Filters>
+				<Fetcher {...req}>
+					{props => {
+						return <Bikes {...props} />
+					}}
+				</Fetcher>
+			</ErrorBoundary>
 		);
 	}
 }

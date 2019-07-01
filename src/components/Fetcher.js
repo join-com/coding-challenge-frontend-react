@@ -6,8 +6,11 @@ class Fetcher extends React.Component {
 		data: null,
 		code: null
 	}
+	static displayName = "Fectcher";
 	static defaultProps = {
-		method: "GET"
+		method: "GET",
+		name: "result",
+		rtype: "sing2"
 	}
 	getHttpRequest(method) {
 		switch (method) {
@@ -18,31 +21,50 @@ class Fetcher extends React.Component {
 		}
 	}
 	componentWillUnmount() {
-		console.log("status")
+		// console.log("hello componentWillUnmount", Fetcher.displayName);
+	}
+	handleSetState(obj, handler) {
+		let rname = this.props.name;
+		const { [rname]: response } = obj.data;
+		let udata = { code: obj.code };
+		if (typeof response === 'object' && Array.isArray(response)) {
+			udata["data"] = response;
+		} else {
+			udata["data"] = [response];
+		}
+		this.setState(udata);
+		handler && handler();
 	}
 
+	// fetchData = async () => {
+	// 	try {
+	// 		this.setState({ code: Status.LOADING });
+	// 		let req = this.getHttpRequest(this.props.method);
+	// 		const response = await fetch(this.props.path, req);
+	// 		let code = response.ok ? Status.SUCCESS : Status.FAILURE;
+	// 		const data = await response.json();
+	// 		this.handleSetState({ code, data })
+	// 	} catch (error) {
+	// 		this.setState({ code: Status.ERROR })
+	// 		throw new Error(error.message);
+	// 	}
+	// }
 
 	componentDidMount() {
 		this.setState({ code: Status.LOADING });
 		let req = this.getHttpRequest(this.props.method);
-		console.log(this.props.path)
+		let code = Status.LOADING;
 		fetch(this.props.path, req)
-			.then(response => {
-				let responseJson = response.json();
-				if (response.status !== 200) {
-					this.setState({ code: Status.FAILURE, data: responseJson })
-					return;
-				}
-				return responseJson;
+			.then((response) => {
+				code = response.ok ? Status.SUCCESS : Status.FAILURE;
+				return response.json()
 			})
-			.then((responseJson) => {
-				console.log("s--");
-				return this.setState({ code: Status.SUCCESS, data: responseJson })
-			}
-			)
+			.then((data) => {
+				this.handleSetState({ code, data })
+			})
 			.catch((error) => {
-				console.log("e--");
 				this.setState({ code: Status.ERROR })
+				throw new Error(error.message);
 			})
 	}
 	render() {

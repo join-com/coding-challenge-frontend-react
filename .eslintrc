@@ -13,7 +13,8 @@
     ],
     "rules": {
         "no-console": "off",
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "react/display-name": 2
     },
     "parserOptions": {
         "ecmaVersion": 2018,

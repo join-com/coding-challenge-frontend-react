@@ -4,23 +4,22 @@ import Status from './Status';
 function Loader(Component) {
 	return class extends React.Component {
 		static defaultProps = {
-			status: Status.LOADING,
+			code: Status.LOADING,
 		}
 		render() {
-			let { status, ...props } = this.props;
-			if (status === Status.ERROR) {
-				return <p>Opps, an error occurred</p>;
-			} else if (status === Status.FAILURE) {
+			let { code, ...props } = this.props;
+			if (code === Status.ERROR) {
+				return <p>Opps, an error occurred.</p>;
+			} else if (code === Status.FAILURE) {
 				return <p>No data found.</p>;
-			} else if (status === Status.SUCCESS) {
+			} else if (code === Status.SUCCESS) {
 				return <Component {...props} />;
 			} else {
-				return <p>{status} Fetching incident(s). Please wait...</p>;
+				return <p>Fetching incident(s). Please wait...</p>;
 			}
 
 		}
 	}
 }
-
 
 export default Loader;

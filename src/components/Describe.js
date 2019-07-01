@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 class Describe extends Component {
 	render() {
-		let { id, title, uri, description, address, occuredat, media = {}, type, source = {} } = this.props;
+		const [data] = this.props.data;
+		console.log(this.props)
+		let { title, description, address, occuredat, media = {}, type } = data;
+
 		return (
 			<div>
 				<h1>
@@ -15,10 +18,16 @@ class Describe extends Component {
 				</div>
 				{description}
 				{address}
-
 			</div>
 		);
 	}
 }
 
 export default Describe;
+// export default function DescribeWithErrorBoundary(props) {
+// 	return (
+// 		<ErrorBoundary>
+// 			<Describe {...props} />
+// 		</ErrorBoundary>
+// 	)
+// };

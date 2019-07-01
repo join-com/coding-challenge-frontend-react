@@ -1,10 +1,22 @@
 const API = "https://bikewise.org/api/v2";
-// const API = "http://localhost:8080/json";
 
 const Bikevexapi = {
-	locations: `${API}/locations`,
-	markers: `${API}/locations/markers`,
-	incidents: `${API}/incidents`
+	locations: {
+		path: `${API}/locations`,
+		name: "locations"
+	},
+	markers: {
+		path: `${API}/locations/markers`,
+		name: "markers"
+	},
+	incidents: {
+		path: `${API}/incidents`,
+		name: "incidents"
+	},
+	incident: {
+		path: `${API}/incidents/`,
+		name: "incident"
+	}
 }
 
 export default Bikevexapi;

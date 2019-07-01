@@ -1,0 +1,69 @@
+.hero-image {
+    /* background-image: url(~../hero.png); */
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    display: block;
+    font-family: "Open Sans", sans-serif;
+}
+
+img {
+    width: 186px;
+    height: auto;
+    border-style: none;
+    background-color: lightgray;
+    padding: 4px;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav,
+footer {
+    background-color: rgb(61, 61, 61) !important;
+    color: white;
+    min-height: 60px;
+}
+
+nav>a,
+footer>a {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+li>a {
+    color: white;
+}
+
+.rlink {
+    color: white;
+    font-size: 1rem;
+}
+
+.brand {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.rlink {
+    margin: 1rem;
+}
+
+.rlink>a {
+    color: white;
+}
+
+.card-panel {
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+}
