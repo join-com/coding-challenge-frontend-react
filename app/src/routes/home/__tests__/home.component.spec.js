@@ -588,6 +588,11 @@ describe('Home: Component', () => {
     loading: false,
     error: null,
     selected: null,
+    form: {
+      getFieldDecorator() {
+        return () => {};
+      },
+    },
   };
   const spy = jest.spyOn(defaultProps, 'loadList');
   const component = props => <Home {...defaultProps} {...props} />;
@@ -605,15 +610,16 @@ describe('Home: Component', () => {
   });
   it('should include theft cases  for the berlin area', () => {
     const wrapper = mount(component());
-    expect(spy).toHaveBeenCalledWith(1, 1000, 'theft', 'berlin', null, null);
+    expect(spy).toHaveBeenCalledWith(1, 1000, 'theft', 'berlin', null, null, null);
   });
   it('should be able to filter reported bike thefts by date range', () => {
     const wrapper = mount(component());
-    expect(wrapper.find('.ant-calendar-range-picker-input').length).toEqual(2);
+    expect(wrapper.find('[data-testid="range"]').length).toEqual(2);
   });
   it('should be able to filter reported bike thefts by parial case title', () => {
     const wrapper = mount(component());
-    expect(wrapper.find('input').exists()).toBeTruthy();
+    wrapper.debug();
+    expect(wrapper.find('[data-testid="search"]').length).toBeTruthy();
   });
   it('should have a loading state untill list is available', () => {
     const wrapper = mount(component({ loading: true }));
