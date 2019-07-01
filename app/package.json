@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://khaldiamer.github.io/coding-challenge-frontend-react",
+  "homepage": "./",
   "dependencies": {
     "@apptension/react-scripts": "0.3.1",
     "@babel/polyfill": "^7.2.5",
