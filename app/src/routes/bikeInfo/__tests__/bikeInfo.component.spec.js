@@ -5,12 +5,11 @@ import { shallow } from 'enzyme';
 import { BikeInfo } from '../bikeInfo.component';
 
 describe('BikeInfo: Component', () => {
-  const googleMapsUrl = address => `https://maps.google.com/maps/places/${address}`;
   const defaultProps = {
     selectBikeInfo: () => {},
     requestBikeInfo: () => {},
     match: { params: { id: 5555 } },
-    selected: {
+    bike: {
       id: 102799,
       title: 'Non Emergency Traffic Concerns',
       description:
@@ -41,12 +40,11 @@ describe('BikeInfo: Component', () => {
 
   it('should include title, description date of theft, updated date, location of the theft and image if any.', () => {
     const wrapper = render();
-    expect(wrapper.find('h1').text()).toEqual(defaultProps.selected.title);
-    expect(wrapper.find('p').text()).toEqual(defaultProps.selected.description);
-    expect(wrapper.find('img').prop('src')).toEqual(defaultProps.selected.media.image_url);
-    expect(wrapper.find('img').prop('src')).toEqual(defaultProps.selected.media.image_url);
-    expect(wrapper.find('a').prop('href')).toEqual(googleMapsUrl(defaultProps.selected.address));
-    expect(wrapper.prop('selected').occurred_at).toEqual(defaultProps.selected.occurred_at);
-    expect(wrapper.prop('selected').updated_at).toEqual(defaultProps.selected.updated_at);
+    expect(wrapper.instance().props.bike.title).toEqual(defaultProps.bike.title);
+    expect(wrapper.instance().props.bike.description).toEqual(defaultProps.bike.description);
+    expect(wrapper.instance().props.bike.media.image_url).toEqual(defaultProps.bike.media.image_url);
+    expect(wrapper.instance().props.bike.address).toEqual(defaultProps.bike.address);
+    expect(wrapper.instance().props.bike.occurred_at).toEqual(defaultProps.bike.occurred_at);
+    expect(wrapper.instance().props.bike.updated_at).toEqual(defaultProps.bike.updated_at);
   });
 });
