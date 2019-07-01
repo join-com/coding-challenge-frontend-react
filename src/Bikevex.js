@@ -1,23 +1,17 @@
-import React from "react";
-import Fetcher from "./components/Fetcher";
-import Loader from "./components/Loader";
-import List from "./components/List";
-import Bikevexapi from "./components/Bikevexapi";
+import React from 'react';
+import Incidents from './Incidents';
+import { Router } from "@reach/router";
+import Details from "./Details";
 
-class Bikevex extends React.Component {
-
-	render() {
-		let incidents = `${Bikevexapi.incidents}`
-		let Bikes = Loader(List);
-		return (
-			<Fetcher path={incidents}>
-				{props => {
-					const { data = {}, code } = props;
-					return <Bikes status={code} bikes={data} />
-				}}
-			</Fetcher>
-		);
-	}
+const Bikevex = () => {
+	return (
+		<div>
+			<Router>
+				<Incidents path="incidents" />
+				<Details path="incidents/:id" />
+			</Router>
+		</div>
+	)
 }
 
 export default Bikevex;

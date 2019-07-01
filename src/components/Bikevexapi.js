@@ -1,4 +1,5 @@
 const API = "https://bikewise.org/api/v2";
+// const API = "http://localhost:8080/json";
 
 const Bikevexapi = {
 	locations: `${API}/locations`,

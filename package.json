@@ -27,6 +27,7 @@
     },
     "homepage": "https://github.com/nseepana/coding-challenge-frontend-react#readme",
     "dependencies": {
+        "@reach/router": "^1.2.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
     },

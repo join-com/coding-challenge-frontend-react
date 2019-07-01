@@ -7,7 +7,8 @@ const baseConfig = {
 	entry: "./src/index.js",
 	output: {
 		path: path.resolve("dist"),
-		filename: "bundle.js"
+		filename: "bundle.js",
+		publicPath: '/'
 	},
 	module: {
 		rules: [
@@ -20,6 +21,9 @@ const baseConfig = {
 	},
 	resolve: {
 		extensions: ["*", ".js"]
+	},
+	devServer: {
+		historyApiFallback: true,
 	},
 	plugins: [
 		new CleanWebpackPlugin(),

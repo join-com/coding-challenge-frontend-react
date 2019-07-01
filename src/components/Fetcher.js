@@ -17,6 +17,10 @@ class Fetcher extends React.Component {
 				return { method };
 		}
 	}
+	componentWillUnmount() {
+		console.log("status")
+	}
+
 
 	componentDidMount() {
 		this.setState({ code: Status.LOADING });
@@ -31,8 +35,13 @@ class Fetcher extends React.Component {
 				}
 				return responseJson;
 			})
-			.then(responseJson => this.setState({ code: Status.SUCCESS, data: responseJson }))
-			.catch(() => {
+			.then((responseJson) => {
+				console.log("s--");
+				return this.setState({ code: Status.SUCCESS, data: responseJson })
+			}
+			)
+			.catch((error) => {
+				console.log("e--");
 				this.setState({ code: Status.ERROR })
 			})
 	}
