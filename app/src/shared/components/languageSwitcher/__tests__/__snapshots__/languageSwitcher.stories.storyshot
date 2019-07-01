@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots LanguageSwitcher Default 1`] = `
+<select
+  className="sc-bdVaJa bDWFJH"
+  onChange={[Function]}
+  value="en"
+>
+  <option
+    value="en"
+  >
+    en
+  </option>
+  <option
+    value="pl"
+  >
+    pl
+  </option>
+</select>
+`;
