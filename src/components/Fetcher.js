@@ -9,8 +9,7 @@ class Fetcher extends React.Component {
 	static displayName = "Fectcher";
 	static defaultProps = {
 		method: "GET",
-		name: "result",
-		rtype: "sing2"
+		name: "result"
 	}
 	getHttpRequest(method) {
 		switch (method) {

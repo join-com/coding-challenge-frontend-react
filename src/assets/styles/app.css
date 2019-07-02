@@ -15,7 +15,6 @@ img {
     height: auto;
     border-style: none;
     background-color: lightgray;
-    padding: 4px;
 }
 
 a {
@@ -36,6 +35,12 @@ footer>a {
 
 ul {
     list-style: none;
+    width: 94%;
+}
+
+li {
+    border-bottom: 1px dotted black;
+    padding: 10px 0;
 }
 
 li>a {
@@ -64,6 +69,5 @@ li>a {
 }
 
 .card-panel {
-    border-bottom: 1px solid darkgray;
     width: 100%;
 }

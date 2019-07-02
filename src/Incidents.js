@@ -11,6 +11,7 @@ import Filters from "./components/Filters";
 class Incidents extends React.Component {
 	render() {
 		let req = Bikevexapi.incidents;
+		req.path = Bikevexapi.incidents.path + this.props.location.search;
 		let Bikes = Loader(Incidentlist);
 		return (
 			<ErrorBoundary>

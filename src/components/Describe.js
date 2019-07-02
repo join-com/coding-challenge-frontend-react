@@ -5,7 +5,6 @@ class Describe extends Component {
 		const [data] = this.props.data;
 		console.log(this.props)
 		let { title, description, address, occuredat, media = {}, type } = data;
-
 		return (
 			<div>
 				<h1>
@@ -24,10 +23,3 @@ class Describe extends Component {
 }
 
 export default Describe;
-// export default function DescribeWithErrorBoundary(props) {
-// 	return (
-// 		<ErrorBoundary>
-// 			<Describe {...props} />
-// 		</ErrorBoundary>
-// 	)
-// };

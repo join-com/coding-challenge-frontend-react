@@ -2,7 +2,7 @@
     "name": "bikevex",
     "version": "0.0.1",
     "description": "Find missing bike",
-    "main": "index.js",
+    "main": "App.js",
     "engines": {
         "node": "10.15.3",
         "npm": "6.4.1"
@@ -14,7 +14,8 @@
         "prettier": "prettier \"**/*.+(js|jsx|css|html|json|md)\"",
         "build:dev": "webpack-dev-server --open --config wpconfig/webpack.config.js --env.env=dev",
         "build": "webpack --config wpconfig/webpack.config.js --env.env=prod",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "heroku-postbuild": "npm install"
     },
     "repository": {
         "type": "git",
