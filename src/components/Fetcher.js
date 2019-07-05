@@ -9,7 +9,8 @@ class Fetcher extends React.Component {
 	static displayName = "Fectcher";
 	static defaultProps = {
 		method: "GET",
-		name: "result"
+		name: "result",
+		fetcherID: 1
 	}
 	getHttpRequest(method) {
 		switch (method) {
@@ -25,7 +26,8 @@ class Fetcher extends React.Component {
 	handleSetState(obj, handler) {
 		let rname = this.props.name;
 		const { [rname]: response } = obj.data;
-		let udata = { code: obj.code };
+		let udata = { code: obj.code, fetcherID: this.props.fetcherID };
+		console.log();
 		if (typeof response === 'object' && Array.isArray(response)) {
 			udata["data"] = response;
 		} else {
@@ -35,25 +37,13 @@ class Fetcher extends React.Component {
 		handler && handler();
 	}
 
-	// fetchData = async () => {
-	// 	try {
-	// 		this.setState({ code: Status.LOADING });
-	// 		let req = this.getHttpRequest(this.props.method);
-	// 		const response = await fetch(this.props.path, req);
-	// 		let code = response.ok ? Status.SUCCESS : Status.FAILURE;
-	// 		const data = await response.json();
-	// 		this.handleSetState({ code, data })
-	// 	} catch (error) {
-	// 		this.setState({ code: Status.ERROR })
-	// 		throw new Error(error.message);
-	// 	}
-	// }
-
-	componentDidMount() {
+	fetchdata() {
 		this.setState({ code: Status.LOADING });
 		let req = this.getHttpRequest(this.props.method);
 		let code = Status.LOADING;
-		fetch(this.props.path, req)
+		const { path, query = "?" } = this.props;
+		let url = path + query
+		fetch(url, req)
 			.then((response) => {
 				code = response.ok ? Status.SUCCESS : Status.FAILURE;
 				return response.json()
@@ -65,6 +55,16 @@ class Fetcher extends React.Component {
 				this.setState({ code: Status.ERROR })
 				throw new Error(error.message);
 			})
+	}
+
+	componentDidMount() {
+		this.fetchdata();
+	}
+
+	componentDidUpdate(prevProps) {
+		if (this.props.fetcherID !== prevProps.fetcherID) {
+			this.fetchdata();
+		}
 	}
 	render() {
 		return this.props.children(this.state);

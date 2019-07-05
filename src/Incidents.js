@@ -6,22 +6,36 @@ import Bikevexapi from "./components/Bikevexapi";
 
 import ErrorBoundary from "./components/ErrorBoundary";
 import Filters from "./components/Filters";
+import Showmore from "./components/Showmore";
 
 // bikevex/src/components/Incident.js
 class Incidents extends React.Component {
+	state = {
+		reqID: 1,
+		query: ""
+	}
+	onShowmore(data) {
+		this.setState({
+			reqID: data.pageID,
+			query: data.query
+		});
+	}
+	payload = Bikevexapi.incidents;
+	IncidentList = Loader(Incidentlist);
+
+
 	render() {
-		let req = Bikevexapi.incidents;
-		req.path = Bikevexapi.incidents.path + this.props.location.search;
-		let Bikes = Loader(Incidentlist);
+		let IncidentList = this.IncidentList;
 		return (
 			<ErrorBoundary>
 				<Filters></Filters>
-				<Fetcher {...req}>
+				<Fetcher fetcherID={this.state.reqID} query={this.state.query} {...this.payload}>
 					{props => {
-						return <Bikes {...props} />
+						return <IncidentList {...props} />
 					}}
 				</Fetcher>
-			</ErrorBoundary>
+				<Showmore name="incidents" handleShowmore={this.onShowmore.bind(this)}></Showmore>
+			</ErrorBoundary >
 		);
 	}
 }

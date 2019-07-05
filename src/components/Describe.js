@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Describe extends Component {
 	render() {
 		const [data] = this.props.data;
+
 		console.log(this.props)
 		let { title, description, address, occuredat, media = {}, type } = data;
 		return (

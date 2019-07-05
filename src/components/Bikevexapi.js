@@ -34,9 +34,9 @@ const Bikevexapi = {
 		name: "incidents",
 		qparams: {
 			"page": 1,
-			"per_page": 10,
+			"per_page": 2,
 			"occurred_before": 0,
-			"occurred_after": 1,
+			"occurred_after": 0,
 			"incident_type": "",
 			"proximity": "",
 			"proximity_square": 100,

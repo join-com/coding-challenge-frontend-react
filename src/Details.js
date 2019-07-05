@@ -10,22 +10,16 @@ import ErrorBoundary from "./components/ErrorBoundary";
 class Details extends React.Component {
 
 	render() {
-
+		console.log(this.props)
 		let req = Bikevexapi.incident;
 		let IncidentDetails = Loader(Describe);
 		let uri = `${req.path}/${this.props.id}`;
+		req.path = uri;
 		return (
 			<ErrorBoundary>
-				<Fetcher path={uri} name={req.name}>
+				<Fetcher fetcherID={this.props.id} {...req}>
 					{(props) => {
-						// const { data, code } = props;
-						// if (data) {
-						// const { id, title, description, address, occured_at, media, type, source } = data[0];
 						return (<IncidentDetails {...props} />);
-						// } else {
-						// 	return <Describe  {...props}></Describe>
-						// }
-
 					}}
 				</Fetcher>
 			</ErrorBoundary >
