@@ -8,8 +8,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Filters from "./components/Filters";
 import Showmore from "./components/Showmore";
 import Bikevexquery from "./components/Bikevexquery";
+import InnerHeader from "./components/InnerHeader";
 
-// bikevex/src/components/Incident.js
 class Incidents extends React.Component {
 	state = {
 		reqID: 1,
@@ -30,7 +30,9 @@ class Incidents extends React.Component {
 	}
 
 	handleSubmit = (data) => {
+		console.log({ ...data })
 		this.setState(({
+			reqID: this.state.reqID + 1,
 			req: {
 				...this.state.req,
 				qparams: {
@@ -40,7 +42,6 @@ class Incidents extends React.Component {
 				}
 			}
 		}), () => {
-			//let query = Bikevexquery(this.state.req);
 			this.setState({
 				query: Bikevexquery(this.state.req)
 			})
@@ -50,15 +51,32 @@ class Incidents extends React.Component {
 	render() {
 		let Incidentlist = this.withIncidents;
 		return (
-			<ErrorBoundary>
-				<Filters handleSubmit={this.handleSubmit} {...this.state.req}></Filters>
-				<Fetcher fetcherID={this.state.reqID} query={this.state.query} {...this.state.req}>
-					{props => {
-						return <Incidentlist {...props} />
-					}}
-				</Fetcher>
-				<Showmore name="incidents" query={this.state.query} handleShowmore={this.onShowmore.bind(this)}></Showmore>
-			</ErrorBoundary >
+			<div className="container">
+				<div className="row">
+					<InnerHeader></InnerHeader>
+					<ErrorBoundary>
+						<Fetcher fetcherID={this.state.reqID} query={this.state.query} {...this.state.req}>
+							{props => {
+								return (
+									<React.Fragment>
+										<div className="col-md-3 col-lg-3">
+											<Filters handleSubmit={this.handleSubmit} {...this.state.req}></Filters>
+										</div>
+										<div className="col">
+											< Incidentlist {...props} />
+										</div>
+									</React.Fragment>
+								)
+							}}
+						</Fetcher>
+					</ErrorBoundary >
+				</div>
+				<div className="row">
+					<div className="offset-md-3 offset-lg-3">
+						{/* <Showmore name="incidents" query={this.state.query} handleShowmore={this.onShowmore.bind(this)}></Showmore> */}
+					</div>
+				</div>
+			</div>
 		);
 	}
 }

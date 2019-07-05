@@ -1,0 +1,72 @@
+.navbar {
+    margin-bottom: 0;
+    border: none;
+}
+
+.navbar-brand .glyphicon {
+    margin-right: 6px;
+}
+
+.hero {
+    background: url(~../hero.png) no-repeat center;
+    background-size: cover;
+    border: none;
+    background-blend-mode: difference;
+}
+
+@media (min-width:992px) {
+    .hero .get-it {
+        text-align: right;
+        margin-top: 80px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width:992px) {
+    .hero .get-it {
+        text-align: center;
+    }
+}
+
+@media (max-width:992px) {
+    .hero .phone-preview {
+        text-align: center;
+    }
+}
+
+.hero .get-it h1,
+.hero .get-it p {
+    color: #fff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+.hero .get-it .btn {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-shadow: none;
+}
+
+.testimonials blockquote {
+    text-align: center;
+}
+
+section.testimonials {
+    margin: 50px 0;
+}
+
+.site-footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+@media (min-width:768px) {
+    .site-footer h5 {
+        text-align: left;
+    }
+}
+
+.site-footer h5 {
+    color: inherit;
+    font-size: 20px;
+}

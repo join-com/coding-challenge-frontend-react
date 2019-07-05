@@ -7,30 +7,34 @@ class Describe extends Component {
 	render() {
 		const [data] = this.props.data;
 		const { path, name } = Bikevexapi.markers;
-		let { title, description, address, occuredat, media = {}, source = {}, type } = data;
+		let { title, description, address, occuredat, source = {}, type } = data;
 		return (
-			<div>
-				<h1>
-					<strong>{type}</strong>
-					{occuredat}
-					{title}
-				</h1>
-				<div>
-					<img src={media.image_url} alt={title} />
+			<div className="col">
+				<div className="card or-card">
+					<div className="card-body">
+						<h4 className="card-title">{title}</h4>
+						<h6 className="card-subtitle">
+							{occuredat}:{type}
+						</h6>
+						<p className="card-text">{description}</p>
+						<small>
+							<i>	Source: <a href={source.html_url}>{source.name}</a></i>
+						</small>
+						<div className="row o-row">
+							<div className="col-lg-8">
+								<Fetcher path={path} name={name} {...data}>
+									{props => {
+										console.log(props);
+										return (
+											(props && props.data) ? (<div className="border border-primary"><Geolocation {...props}></Geolocation></div>) : (null)
+										)
+									}}
+								</Fetcher>
+							</div>
+							<div className="col">{address}</div>
+						</div>
+					</div>
 				</div>
-				{description}
-				<div>Source: <a href={source.html_url}>{source.name}</a>
-				</div>
-				<Fetcher path={path} name={name} {...data}>
-					{props => {
-						console.log(props);
-						return (
-							(props && props.data) ? (<Geolocation {...props}></Geolocation>) : (null)
-						)
-					}}
-				</Fetcher>
-
-				{address}
 			</div>
 		);
 	}

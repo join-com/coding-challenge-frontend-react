@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import Bikevexquery from './Bikevexquery';
+// import Bikevexquery from './Bikevexquery';
 
 class Showmore extends React.Component {
 	state = {

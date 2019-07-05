@@ -14,7 +14,8 @@
     "rules": {
         "no-console": "off",
         "react/prop-types": 0,
-        "react/display-name": 2
+        "react/display-name": 2,
+        "import/no-unresolved": "off"
     },
     "parserOptions": {
         "ecmaVersion": 2018,

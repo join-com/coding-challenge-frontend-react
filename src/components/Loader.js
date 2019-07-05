@@ -2,6 +2,7 @@ import React from 'react';
 import Status from './Status';
 
 function Loader(Component) {
+	/*eslint-disable react/display-name */
 	return class extends React.Component {
 		static defaultProps = {
 			code: Status.LOADING,

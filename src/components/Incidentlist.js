@@ -24,11 +24,10 @@ class Incidentlist extends React.Component {
 	}
 	render() {
 		const data = this.state.incidents;
-		console.log(this.props.fetcherID)
 		return (
-			<ul>
+			<div className="card-body">
 				{data.map((info) => {
-					let { id, title, description, address, occured_at, media, type, source } = info;
+					let { id, title, description, address, occurred_at, media, type, source } = info;
 					return (
 						<Incident
 							key={id}
@@ -36,13 +35,13 @@ class Incidentlist extends React.Component {
 							title={title}
 							description={description}
 							address={address}
-							occuredat={occured_at}
+							occurredat={occurred_at}
 							media={media}
 							type={type}
 							source={source} />
 					)
 				})}
-			</ul>
+			</div>
 		)
 	}
 }

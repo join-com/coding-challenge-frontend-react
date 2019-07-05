@@ -16,6 +16,7 @@ class Geolocation extends React.Component {
 			center: latLng,
 			mapTypeId: google.maps.MapTypeId.TERRAIN
 		});
+		/*eslint-disable*/
 		var marker = new google.maps.Marker({
 			position: latLng,
 			map: map,
@@ -26,7 +27,7 @@ class Geolocation extends React.Component {
 		let script = document.getElementById('GoogleAPI$Script$Map');
 		if (!script) {
 			let script = document.createElement('script');
-			script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAeIUZEGL5vfKB12rz9AstWgnbOyTP3Fl8";
+			script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.VEX_GEO_API_KEY}`;
 			script.id = 'GoogleAPI$Script$Map';
 			script.onload = () => {
 				this.initMap()

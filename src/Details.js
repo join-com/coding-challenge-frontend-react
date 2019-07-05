@@ -5,6 +5,7 @@ import Describe from "./components/Describe";
 
 import Bikevexapi from "./components/Bikevexapi";
 import ErrorBoundary from "./components/ErrorBoundary";
+import InnerHeader from "./components/InnerHeader";
 
 
 
@@ -13,18 +14,21 @@ class Details extends React.Component {
 	withDescriber = Loader(Describe);
 
 	render() {
-		console.log(this.props)
+
 		let req = this.req,
 			uri = `${req.path}/${this.props.id}`;
 		const Describer = this.withDescriber;
 		return (
-			<ErrorBoundary>
-				<Fetcher path={uri} name={req.name}>
-					{(props) => {
-						return ((props) ? <Describer {...props} /> : null);
-					}}
-				</Fetcher>
-			</ErrorBoundary >
+			<div className="container">
+				<InnerHeader></InnerHeader>
+				<ErrorBoundary>
+					<Fetcher path={uri} name={req.name}>
+						{(props) => {
+							return ((props) ? <Describer {...props} /> : null);
+						}}
+					</Fetcher>
+				</ErrorBoundary >
+			</div>
 		);
 	}
 }

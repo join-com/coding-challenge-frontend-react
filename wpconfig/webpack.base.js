@@ -3,10 +3,14 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const baseConfig = {
-	entry: "./src/App.js",
+	entry: {
+		app: "./src/App",
+		incidents: "./src/Incidents",
+		details: "./src/Details"
+	},
 	output: {
 		path: path.resolve("dist"),
-		filename: "bundle.js",
+		filename: "[name].bundle.js",
 		publicPath: '/'
 	},
 	module: {
