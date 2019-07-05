@@ -3,7 +3,7 @@ const API = "https://bikewise.org/api/v2";
 const Bikevexapi = {
 	locations: {
 		path: `${API}/locations`,
-		name: "locations",
+		name: "features",
 		qparams: {
 			"occurred_before": 0,
 			"occurred_after": 1,
@@ -17,7 +17,7 @@ const Bikevexapi = {
 	},
 	markers: {
 		path: `${API}/locations/markers`,
-		name: "markers",
+		name: "features",
 		qparams: {
 			"occurred_before": 0,
 			"occurred_after": 1,

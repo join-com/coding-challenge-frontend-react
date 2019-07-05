@@ -5,69 +5,13 @@
     background-size: cover;
 }
 
+.map-row {
+    min-height: 320px;
+    width: 100%;
+    overflow: auto;
+}
+
 body {
     display: block;
     font-family: "Open Sans", sans-serif;
-}
-
-img {
-    width: 186px;
-    height: auto;
-    border-style: none;
-    background-color: lightgray;
-}
-
-a {
-    text-decoration: none;
-}
-
-nav,
-footer {
-    background-color: rgb(61, 61, 61) !important;
-    color: white;
-    min-height: 60px;
-}
-
-nav>a,
-footer>a {
-    color: white;
-}
-
-ul {
-    list-style: none;
-    width: 94%;
-}
-
-li {
-    border-bottom: 1px dotted black;
-    padding: 10px 0;
-}
-
-li>a {
-    color: white;
-}
-
-.rlink {
-    color: white;
-    font-size: 1rem;
-}
-
-.brand {
-    text-align: left;
-}
-
-.right {
-    text-align: right;
-}
-
-.rlink {
-    margin: 1rem;
-}
-
-.rlink>a {
-    color: white;
-}
-
-.card-panel {
-    width: 100%;
 }

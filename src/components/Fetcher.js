@@ -20,21 +20,21 @@ class Fetcher extends React.Component {
 				return { method };
 		}
 	}
-	componentWillUnmount() {
-		// console.log("hello componentWillUnmount", Fetcher.displayName);
-	}
 	handleSetState(obj, handler) {
 		let rname = this.props.name;
-		const { [rname]: response } = obj.data;
-		let udata = { code: obj.code, fetcherID: this.props.fetcherID };
-		console.log();
-		if (typeof response === 'object' && Array.isArray(response)) {
-			udata["data"] = response;
+		if (obj.data) {
+			const { [rname]: response } = obj.data;
+			let udata = { code: obj.code, fetcherID: this.props.fetcherID };
+			if (typeof response === 'object' && Array.isArray(response)) {
+				udata["data"] = response;
+			} else {
+				udata["data"] = [response];
+			}
+			this.setState(udata);
+			handler && handler();
 		} else {
-			udata["data"] = [response];
+			console.log("got null")
 		}
-		this.setState(udata);
-		handler && handler();
 	}
 
 	fetchdata() {
@@ -67,7 +67,7 @@ class Fetcher extends React.Component {
 		}
 	}
 	render() {
-		return this.props.children(this.state);
+		return this.state.data ? this.props.children(this.state) : null;
 	}
 }
 

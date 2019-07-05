@@ -7,19 +7,21 @@ import Bikevexapi from "./components/Bikevexapi";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 
+
 class Details extends React.Component {
+	req = Bikevexapi.incident;
+	withDescriber = Loader(Describe);
 
 	render() {
 		console.log(this.props)
-		let req = Bikevexapi.incident;
-		let IncidentDetails = Loader(Describe);
-		let uri = `${req.path}/${this.props.id}`;
-		req.path = uri;
+		let req = this.req,
+			uri = `${req.path}/${this.props.id}`;
+		const Describer = this.withDescriber;
 		return (
 			<ErrorBoundary>
-				<Fetcher fetcherID={this.props.id} {...req}>
+				<Fetcher path={uri} name={req.name}>
 					{(props) => {
-						return (<IncidentDetails {...props} />);
+						return ((props) ? <Describer {...props} /> : null);
 					}}
 				</Fetcher>
 			</ErrorBoundary >
