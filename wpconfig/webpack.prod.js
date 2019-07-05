@@ -8,8 +8,7 @@ const prodconfig = {
 		contentBase: path.join(__dirname, './dist')
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new Dotenv()
+		new webpack.HotModuleReplacementPlugin()
 	]
 }
 
