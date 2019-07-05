@@ -27,7 +27,7 @@ class Geolocation extends React.Component {
 		let script = document.getElementById('GoogleAPI$Script$Map');
 		if (!script) {
 			let script = document.createElement('script');
-			script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.VEX_GEO_API_KEY}`;
+			script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NODE_VEX_GEO_API_KEY}`;
 			script.id = 'GoogleAPI$Script$Map';
 			script.onload = () => {
 				this.initMap()
