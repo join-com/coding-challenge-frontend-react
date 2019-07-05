@@ -14,9 +14,9 @@ class Details extends React.Component {
 	withDescriber = Loader(Describe);
 
 	render() {
-
 		let req = this.req,
 			uri = `${req.path}/${this.props.id}`;
+		console.log(uri)
 		const Describer = this.withDescriber;
 		return (
 			<div className="container">

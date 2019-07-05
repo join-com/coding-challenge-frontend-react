@@ -6,7 +6,7 @@ import Bikevexapi from "./components/Bikevexapi";
 
 import ErrorBoundary from "./components/ErrorBoundary";
 import Filters from "./components/Filters";
-import Showmore from "./components/Showmore";
+// import Showmore from "./components/Showmore";
 import Bikevexquery from "./components/Bikevexquery";
 import InnerHeader from "./components/InnerHeader";
 

@@ -13,9 +13,8 @@
         "format": "npm run prettier -- --write --list-different",
         "prettier": "prettier \"**/*.+(js|jsx|css|html|json|md)\"",
         "build:dev": "webpack-dev-server --open --config wpconfig/webpack.config.js --env.env=dev",
-        "build": "webpack --config wpconfig/webpack.config.js --env.env=prod",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "heroku-postbuild": "npm install"
+        "build": "webpack -p --config wpconfig/webpack.config.js --env.env=prod",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
