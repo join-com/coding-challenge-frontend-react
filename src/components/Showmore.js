@@ -5,29 +5,22 @@ import Bikevexquery from './Bikevexquery';
 class Showmore extends React.Component {
 	state = {
 		page: 1,
-		count: 2,
+		count: 1,
 		query: ""
 	}
 	static defaultProps = {
-		perPage: 2
+		perPage: 1
 	}
-	getQuery(page) {
-		return Bikevexquery({
-			page: page,
-			name: this.props.name
-		})
-	}
+
 	showmore() {
 		let { count, page } = this.state,
 			ncount = count + this.props.perPage,
-			newPage = page + 1,
-			newQuery = this.getQuery(newPage);
+			newPage = page + 1
 		this.setState({
 			count: ncount,
-			page: newPage,
-			query: newQuery
+			page: newPage
 		}, () => {
-			this.props.handleShowmore({ pageID: newPage, query: newQuery });
+			this.props.handleShowmore({ pageID: newPage });
 		})
 	}
 
@@ -36,7 +29,7 @@ class Showmore extends React.Component {
 	}
 	render() {
 		return (this.props.name) ? (
-			<Link to={this.state.query} onClick={this.showmore.bind(this)}>Next {this.props.perPage} incidents</Link>
+			<Link to={this.props.query} onClick={this.showmore.bind(this)}>Next {this.props.perPage} incidents</Link>
 		) : null;
 	}
 }

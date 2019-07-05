@@ -8,7 +8,7 @@ const Bikevexquery = (props) => {
 	}
 	let qparams = Bikevexapi[name].qparams;
 	for (const [key, value] of Object.entries(qparams)) {
-		let newvalue = props[key] ? props[key] : value;
+		let newvalue = props.qparams[key] ? props.qparams[key] : value;
 		if (!newvalue) {
 			continue;
 		}
