@@ -8,7 +8,7 @@ const prodconfig = {
 		contentBase: path.join(__dirname, './dist')
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.EnvironmentPlugin(['NODE_VEX_GEO_API_KEY'])
 	]
 }
 
