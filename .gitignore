@@ -1,0 +1,8 @@
+.vscode/*
+node_modules
+.DS_STORE
+*.log
+tmp/*
+dist
+.env
+.env.*

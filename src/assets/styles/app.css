@@ -1,0 +1,49 @@
+#map {
+    height: 100%;
+}
+
+.map-row {
+    min-height: 320px;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    display: block;
+    font-family: "Open Sans", sans-serif;
+}
+
+.b-border {
+    border: 1px solid rgba(0, 0, 0, .125)
+}
+
+.incident-thumb {
+    width: 186px;
+    height: auto;
+    border-style: none;
+    background-color: lightgray;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.or-card {
+    border: none;
+}
+
+or-col {
+    padding-right: 0px;
+    padding-left: 0px;
+}
