@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 
 import { store, history } from 'store';
-import { Layout } from 'components/Layout';
+import { Layout } from 'components';
 import { IncidentsScene } from 'scenes/IncidentsScene';
 import { IncidentDetailsScene } from 'scenes/IncidentDetailsScene';
 

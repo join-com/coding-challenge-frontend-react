@@ -13,7 +13,16 @@ import {
     selectTotalIncidents,
 } from 'core/incidents/reducer';
 import { ChangePage, SearchRequest } from 'core/incidents/actions';
-import { Header, Incidents, Loading, Error, Pagination, EmptyResults, Search, TotalIncidents } from 'components';
+import {
+    Header,
+    Loading,
+    Error,
+    Pagination,
+    EmptyResults,
+    SearchPanel,
+    TotalIncidentsPanel,
+    Incident,
+} from 'components';
 import { IIncident } from 'types';
 
 interface DispatchProps {
@@ -37,7 +46,7 @@ export class Component extends React.Component<DispatchProps> {
             return (
                 <Container>
                     <Header />
-                    <Search submit={search} />
+                    <SearchPanel submit={search} />
                     {requesting && <Loading />}
                     {error && <Error />}
                 </Container>
@@ -50,9 +59,17 @@ export class Component extends React.Component<DispatchProps> {
         return (
             <Container>
                 <Header />
-                <Search submit={search} />
-                <TotalIncidents totalIncidents={totalIncidents} />
-                {isEmptyList ? <EmptyResults /> : <Incidents incidents={incidents} />}
+                <SearchPanel submit={search} />
+                <TotalIncidentsPanel totalIncidents={totalIncidents} />
+                {isEmptyList ? (
+                    <EmptyResults />
+                ) : (
+                    <div>
+                        {incidents.map((incident, index) => (
+                            <Incident key={index} {...incident} />
+                        ))}
+                    </div>
+                )}
                 <Pagination currentPage={currentPage} totalPages={totalPages} changePage={changePage} />
             </Container>
         );

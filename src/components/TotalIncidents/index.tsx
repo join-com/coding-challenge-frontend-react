@@ -1,1 +1,0 @@
-export { TotalIncidents } from './TotalIncidents';

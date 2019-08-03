@@ -1,0 +1,609 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPanel should render correctly 1`] = `
+<SearchPanel
+  submit={[Function]}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bwzfXH",
+            "isStatic": true,
+            "lastClassName": "itjvTU",
+            "rules": Array [
+              "
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -5px -5px;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bwzfXH",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="sc-bwzfXH itjvTU"
+      >
+        <styled.input
+          onChange={[Function]}
+          placeholder="SearchPanel case descriptions"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "lastClassName": "kRokGZ",
+                  "rules": Array [
+                    "
+    margin: 5px 5px;
+    flex-grow: 1;
+    min-width: 220px;
+
+    ",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "991",
+                    "px)",
+                    " {
+            ",
+                    "
+		width: 100%;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "styled.input",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": "input",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onChange={[Function]}
+            placeholder="SearchPanel case descriptions"
+          >
+            <input
+              className="sc-htpNat kRokGZ"
+              onChange={[Function]}
+              placeholder="SearchPanel case descriptions"
+            />
+          </StyledComponent>
+        </styled.input>
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bxivhb",
+                  "isStatic": true,
+                  "lastClassName": "iozMWL",
+                  "rules": Array [
+                    "
+    margin: 5px 5px;
+
+    & input {
+        width: 180px;
+    }
+
+    ",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "479",
+                    "px)",
+                    " {
+            ",
+                    "
+		width: 100%;
+
+		& .react-datepicker-wrapper {
+			width: 100%;
+		}
+
+		& .react-datepicker__input-container {
+			width: 100%;
+		}
+
+		& input {
+			width: 100%;
+		}
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bxivhb",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-bxivhb iozMWL"
+            >
+              <DatePicker
+                allowSameDay={false}
+                dateFormat="MM/dd/yyyy"
+                dateFormatCalendar="LLLL yyyy"
+                disabled={false}
+                disabledKeyboardNavigation={false}
+                dropdownMode="scroll"
+                inlineFocusSelectedMonth={false}
+                monthsShown={1}
+                nextMonthButtonLabel="Next month"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClickOutside={[Function]}
+                onFocus={[Function]}
+                onInputClick={[Function]}
+                onInputError={[Function]}
+                onKeyDown={[Function]}
+                onMonthChange={[Function]}
+                onSelect={[Function]}
+                onYearChange={[Function]}
+                placeholderText="from"
+                preventOpenOnFocus={false}
+                previousMonthButtonLabel="Previous Month"
+                readOnly={false}
+                renderDayContents={[Function]}
+                shouldCloseOnSelect={true}
+                showMonthYearPicker={false}
+                showTimeInput={false}
+                showTimeSelect={false}
+                strictParsing={false}
+                timeCaption="Time"
+                timeInputLabel="Time"
+                timeIntervals={30}
+                withPortal={false}
+              >
+                <PopperComponent
+                  hidePopper={true}
+                  popperComponent={null}
+                  popperModifiers={
+                    Object {
+                      "preventOverflow": Object {
+                        "boundariesElement": "viewport",
+                        "enabled": true,
+                        "escapeWithReference": true,
+                      },
+                    }
+                  }
+                  popperPlacement="bottom-start"
+                  popperProps={Object {}}
+                  targetComponent={
+                    <div
+                      className="react-datepicker__input-container"
+                    >
+                      <input
+                        className=""
+                        disabled={false}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="from"
+                        readOnly={false}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  }
+                >
+                  <Manager>
+                    <Reference>
+                      <InnerReference
+                        setReferenceNode={[Function]}
+                      >
+                        <div
+                          className="react-datepicker-wrapper"
+                        >
+                          <div
+                            className="react-datepicker__input-container"
+                          >
+                            <input
+                              className=""
+                              disabled={false}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="from"
+                              readOnly={false}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </InnerReference>
+                    </Reference>
+                  </Manager>
+                </PopperComponent>
+              </DatePicker>
+            </div>
+          </StyledComponent>
+        </styled.div>
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bxivhb",
+                  "isStatic": true,
+                  "lastClassName": "iozMWL",
+                  "rules": Array [
+                    "
+    margin: 5px 5px;
+
+    & input {
+        width: 180px;
+    }
+
+    ",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "479",
+                    "px)",
+                    " {
+            ",
+                    "
+		width: 100%;
+
+		& .react-datepicker-wrapper {
+			width: 100%;
+		}
+
+		& .react-datepicker__input-container {
+			width: 100%;
+		}
+
+		& input {
+			width: 100%;
+		}
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bxivhb",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-bxivhb iozMWL"
+            >
+              <DatePicker
+                allowSameDay={false}
+                dateFormat="MM/dd/yyyy"
+                dateFormatCalendar="LLLL yyyy"
+                disabled={false}
+                disabledKeyboardNavigation={false}
+                dropdownMode="scroll"
+                inlineFocusSelectedMonth={false}
+                monthsShown={1}
+                nextMonthButtonLabel="Next month"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClickOutside={[Function]}
+                onFocus={[Function]}
+                onInputClick={[Function]}
+                onInputError={[Function]}
+                onKeyDown={[Function]}
+                onMonthChange={[Function]}
+                onSelect={[Function]}
+                onYearChange={[Function]}
+                placeholderText="to"
+                preventOpenOnFocus={false}
+                previousMonthButtonLabel="Previous Month"
+                readOnly={false}
+                renderDayContents={[Function]}
+                shouldCloseOnSelect={true}
+                showMonthYearPicker={false}
+                showTimeInput={false}
+                showTimeSelect={false}
+                strictParsing={false}
+                timeCaption="Time"
+                timeInputLabel="Time"
+                timeIntervals={30}
+                withPortal={false}
+              >
+                <PopperComponent
+                  hidePopper={true}
+                  popperComponent={null}
+                  popperModifiers={
+                    Object {
+                      "preventOverflow": Object {
+                        "boundariesElement": "viewport",
+                        "enabled": true,
+                        "escapeWithReference": true,
+                      },
+                    }
+                  }
+                  popperPlacement="bottom-start"
+                  popperProps={Object {}}
+                  targetComponent={
+                    <div
+                      className="react-datepicker__input-container"
+                    >
+                      <input
+                        className=""
+                        disabled={false}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="to"
+                        readOnly={false}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  }
+                >
+                  <Manager>
+                    <Reference>
+                      <InnerReference
+                        setReferenceNode={[Function]}
+                      >
+                        <div
+                          className="react-datepicker-wrapper"
+                        >
+                          <div
+                            className="react-datepicker__input-container"
+                          >
+                            <input
+                              className=""
+                              disabled={false}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="to"
+                              readOnly={false}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </InnerReference>
+                    </Reference>
+                  </Manager>
+                </PopperComponent>
+              </DatePicker>
+            </div>
+          </StyledComponent>
+        </styled.div>
+        <Styled(Button)
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": true,
+                  "lastClassName": "ejTcQQ",
+                  "rules": Array [
+                    "
+    min-width: 120px;
+    margin: 5px 5px;
+
+    ",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "479",
+                    "px)",
+                    " {
+            ",
+                    "
+		text-align: center;
+		width: 100%;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "Styled(Button)",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <Button
+              className="sc-ifAKCX ejTcQQ"
+              onClick={[Function]}
+            >
+              <ThemeProvider
+                theme={
+                  Object {
+                    "colors": Object {
+                      "buttonBackground": "rgba(0, 0, 0, 0.9)",
+                    },
+                    "fontSizes": Array [
+                      12,
+                      14,
+                      16,
+                      18,
+                      24,
+                      32,
+                      36,
+                      72,
+                      96,
+                    ],
+                    "space": Array [
+                      0,
+                      3,
+                      5,
+                      8,
+                      10,
+                      15,
+                      25,
+                    ],
+                  }
+                }
+              >
+                <styled.div
+                  className="sc-ifAKCX ejTcQQ"
+                  fontSize={
+                    Array [
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  px={5}
+                  py={2}
+                >
+                  <StyledComponent
+                    className="sc-ifAKCX ejTcQQ"
+                    fontSize={
+                      Array [
+                        2,
+                      ]
+                    }
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "fMrHvT",
+                          "rules": Array [
+                            "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 14px;
+    height: 30px;
+    user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                            [Function],
+                            "
+    ",
+                            [Function],
+                            "
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    px={5}
+                    py={2}
+                  >
+                    <div
+                      className="sc-ifAKCX ejTcQQ sc-bdVaJa fMrHvT"
+                      fontSize={
+                        Array [
+                          2,
+                        ]
+                      }
+                      onClick={[Function]}
+                    >
+                      Find cases
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </ThemeProvider>
+            </Button>
+          </StyledComponent>
+        </Styled(Button)>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</SearchPanel>
+`;

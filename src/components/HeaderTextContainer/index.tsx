@@ -1,1 +1,0 @@
-export { HeaderTextContainer } from './HeaderTextContainer';

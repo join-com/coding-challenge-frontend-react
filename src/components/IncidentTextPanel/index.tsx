@@ -1,1 +1,0 @@
-export { IncidentTextPanel } from './IncidentTextPanel';

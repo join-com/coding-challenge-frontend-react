@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderTextBlock should render correctly 1`] = `
+<HeaderTextBlock>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "kofWWD",
+            "rules": Array [
+              "
+    padding-left: 15px;
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="sc-bdVaJa kofWWD"
+      >
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": true,
+                  "lastClassName": "keAcTh",
+                  "rules": Array [
+                    "
+    font-weight: 600;
+
+	",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "479",
+                    "px)",
+                    " {
+            ",
+                    "
+    	font-size: 18px;
+  	",
+                    "
+        }
+    ",
+                    "
+
+	",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px) and (max-width: ",
+                    "991",
+                    "px)",
+                    " {
+            ",
+                    "
+    	font-size: 32px;
+	",
+                    "
+        }
+    ",
+                    "
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "992",
+                    "px)",
+                    " {
+            ",
+                    "
+    	font-size: 48px;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-bwzfXH keAcTh"
+            >
+              Police Department of Berlin
+            </div>
+          </StyledComponent>
+        </styled.div>
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "lastClassName": "cjVgDw",
+                  "rules": Array [
+                    "
+	font-weight: 600;
+
+	",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "479",
+                    "px)",
+                    " {
+            ",
+                    "
+    	font-size: 14px;
+  	",
+                    "
+        }
+    ",
+                    "
+
+	",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "480",
+                    "px) and (max-width: ",
+                    "991",
+                    "px)",
+                    " {
+            ",
+                    "
+    	font-size: 16px;
+	",
+                    "
+        }
+    ",
+                    "
+
+    ",
+                    "
+        @media ",
+                    "(min-width: ",
+                    "992",
+                    "px)",
+                    " {
+            ",
+                    "
+    	font-size: 32px;
+	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-htpNat cjVgDw"
+            >
+              Stolen bikes
+            </div>
+          </StyledComponent>
+        </styled.div>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</HeaderTextBlock>
+`;

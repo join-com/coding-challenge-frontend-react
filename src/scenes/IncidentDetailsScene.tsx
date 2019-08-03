@@ -12,7 +12,7 @@ import { dateToOrdinalString } from 'core/utils/dateToOrdinalString';
 
 import { Header, Map, Loading, Error } from 'components';
 import { IIncident } from 'types';
-import { media } from 'ui/media';
+import { media } from 'ui/utils';
 
 interface IOwnProps {
     match: {

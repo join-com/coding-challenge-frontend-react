@@ -24,7 +24,7 @@
 * add separator ([3d95249](https://github.com/or4/coding-challenge-frontend-react/commit/3d95249))
 * add storybook ([72f98e8](https://github.com/or4/coding-challenge-frontend-react/commit/72f98e8))
 * adds illustration ([5f1efa7](https://github.com/or4/coding-challenge-frontend-react/commit/5f1efa7))
-* change Pagination, Search to React.PureComponent ([835e707](https://github.com/or4/coding-challenge-frontend-react/commit/835e707))
+* change Pagination, SearchPanel to React.PureComponent ([835e707](https://github.com/or4/coding-challenge-frontend-react/commit/835e707))
 * connect Pagination ([b25b72c](https://github.com/or4/coding-challenge-frontend-react/commit/b25b72c))
 * Fixes README ([d3a17ef](https://github.com/or4/coding-challenge-frontend-react/commit/d3a17ef))
 * Fixes README ([e802dd3](https://github.com/or4/coding-challenge-frontend-react/commit/e802dd3))
