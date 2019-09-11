@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncidentImage should render correctly 1`] = `
+<IncidentImage>
+  <styled.div
+    isPreview={true}
+  >
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "eYDVYe",
+            "rules": Array [
+              "
+    ",
+              "
+        @media ",
+              "(max-width: ",
+              "479",
+              "px)",
+              " {
+            ",
+              "
+		display: ",
+              [Function],
+              ";
+		padding-bottom: 10px;
+  	",
+              "
+        }
+    ",
+              "
+
+    ",
+              "
+        @media ",
+              "(min-width: ",
+              "480",
+              "px)",
+              " {
+            ",
+              "
+		width: 100px;
+		height: 100px;
+		min-width: 100px;
+		min-height: 100px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+		border-radius: 4px;
+		border: 1px solid rgba(0, 0, 0, 0.05);
+    	background: rgba(0, 0, 0, 0.02);
+	",
+              "
+        }
+    ",
+              "
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      isPreview={true}
+    >
+      <div
+        className="sc-bdVaJa eYDVYe"
+      >
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "lastClassName": "kYgIrP",
+                  "rules": Array [
+                    "
+    background-image: url(",
+                    "preview.svg",
+                    ");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 55px;
+    height: 32px;
+
+    ",
+                    "
+        @media ",
+                    "(max-width: ",
+                    "479",
+                    "px)",
+                    " {
+            ",
+                    "
+		display: none;
+  	",
+                    "
+        }
+    ",
+                    "
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-htpNat kYgIrP"
+            />
+          </StyledComponent>
+        </styled.div>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</IncidentImage>
+`;

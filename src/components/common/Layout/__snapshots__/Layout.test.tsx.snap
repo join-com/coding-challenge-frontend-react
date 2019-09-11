@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should render correctly 1`] = `
+<Layout>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "eEQlVk",
+            "rules": Array [
+              "
+    margin: 0 auto 15px;
+
+    ",
+              "
+        @media ",
+              "(max-width: ",
+              "479",
+              "px)",
+              " {
+            ",
+              "
+		padding: 15px;
+  	",
+              "
+        }
+    ",
+              "
+
+	",
+              "
+        @media ",
+              "(min-width: ",
+              "480",
+              "px) and (max-width: ",
+              "991",
+              "px)",
+              " {
+            ",
+              "
+		padding: 15px;
+	",
+              "
+        }
+    ",
+              "
+
+    ",
+              "
+        @media ",
+              "(min-width: ",
+              "992",
+              "px)",
+              " {
+            ",
+              "
+		max-width: 940px;
+	",
+              "
+        }
+    ",
+              "
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="sc-bdVaJa eEQlVk"
+      >
+        <div>
+          Layout test
+        </div>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Layout>
+`;

@@ -1,0 +1,1 @@
+export { EmptyResults } from './EmptyResults';

@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly 1`] = `
+<Button
+  onClick={[Function]}
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "colors": Object {
+          "buttonBackground": "rgba(0, 0, 0, 0.9)",
+        },
+        "fontSizes": Array [
+          12,
+          14,
+          16,
+          18,
+          24,
+          32,
+          36,
+          72,
+          96,
+        ],
+        "space": Array [
+          0,
+          3,
+          5,
+          8,
+          10,
+          15,
+          25,
+        ],
+      }
+    }
+  >
+    <styled.div
+      fontSize={
+        Array [
+          2,
+        ]
+      }
+      onClick={[Function]}
+      px={5}
+      py={2}
+    >
+      <StyledComponent
+        fontSize={
+          Array [
+            2,
+          ]
+        }
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": false,
+              "lastClassName": "fMrHvT",
+              "rules": Array [
+                "
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    border: 3px solid rgba(0, 0, 0, 0.9);
+
+    line-height: 14px;
+    height: 30px;
+    user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9);
+        border: 3px solid transparent;
+        color: #ffffff;
+    }
+    ",
+                [Function],
+                "
+    ",
+                [Function],
+                "
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        onClick={[Function]}
+        px={5}
+        py={2}
+      >
+        <div
+          className="sc-bdVaJa fMrHvT"
+          fontSize={
+            Array [
+              2,
+            ]
+          }
+          onClick={[Function]}
+        >
+          Next page
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </ThemeProvider>
+</Button>
+`;

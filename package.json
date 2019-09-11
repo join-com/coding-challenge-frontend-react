@@ -1,0 +1,113 @@
+{
+	"name": "stolen-bikes",
+	"version": "0.3.0",
+	"private": true,
+	"dependencies": {
+		"apisauce": "0.14.3",
+		"axios": "0.19.0",
+		"classnames": "2.2.5",
+		"google-map-react": "^1.1.4",
+		"history": "^4.9.0",
+		"ramda": "^0.25.0",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"react-redux": "5.1.1",
+		"react-router": "4.2.0",
+		"react-router-dom": "4.2.2",
+		"react-router-redux": "5.0.0-alpha.9",
+		"redux": "3.7.2",
+		"redux-saga": "0.16.0",
+		"reselect": "3.0.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"deploy": "react-scripts build && aws s3 sync build/ s3://stolen-bikes",
+		"release": "./.scripts/release.sh",
+		"test": "react-scripts test",
+		"test-coverage": "CI=true react-scripts test --coverage",
+		"eject": "react-scripts eject",
+		"storybook": "start-storybook -p 9001 -c .storybook",
+		"build-storybook": "build-storybook",
+		"deploy-storybook": "build-storybook && aws s3 sync storybook-static/ s3://stolen-bikes-storybook"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"jest": {
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		],
+		"collectCoverageFrom": [
+			"src/**/*.{ts,tsx}",
+			"!<rootDir>/node_modules/",
+			"!<rootDir>/**/*.stories.tsx",
+			"!<rootDir>/**/*.d.ts",
+			"!<rootDir>/src/types.ts",
+			"!<rootDir>/src/setupTests.ts"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.4",
+		"@storybook/addon-actions": "^5.0.11",
+		"@storybook/addon-knobs": "^5.0.11",
+		"@storybook/addon-links": "^5.0.11",
+		"@storybook/addons": "^5.0.11",
+		"@storybook/react": "^5.0.11",
+		"@types/classnames": "2.2.3",
+		"@types/enzyme": "^3.9.3",
+		"@types/enzyme-adapter-react-16": "^1.0.5",
+		"@types/google-map-react": "^0.23.11",
+		"@types/jest": "24.0.13",
+		"@types/node": "12.0.2",
+		"@types/ramda": "^0.25.23",
+		"@types/react": "16.8.17",
+		"@types/react-datepicker": "^2.3.0",
+		"@types/react-dom": "16.8.4",
+		"@types/react-redux": "7.0.1",
+		"@types/react-router-dom": "4.2.6",
+		"@types/react-router-redux": "5.0.15",
+		"@types/react-test-renderer": "16.8.1",
+		"@types/redux-mock-store": "^1.0.1",
+		"@types/storybook__addon-knobs": "^5.0.0",
+		"@types/storybook__react": "^4.0.1",
+		"@types/styled-components": "^4.1.15",
+		"@types/styled-system": "^4.2.1",
+		"@types/url-parse": "1.1.0",
+		"@typescript-eslint/eslint-plugin": "^1.9.0",
+		"@typescript-eslint/parser": "^1.9.0",
+		"awesome-typescript-loader": "^5.2.1",
+		"babel-loader": "8.0.5",
+		"enzyme": "^3.8.0",
+		"enzyme-adapter-react-16": "^1.7.1",
+		"enzyme-to-json": "^3.3.5",
+		"eslint": "^5.16.0",
+		"eslint-config-prettier": "^4.3.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-react": "^7.13.0",
+		"jest-styled-components": "^6.3.1",
+		"prettier": "^1.17.1",
+		"react-datepicker": "^2.7.0",
+		"react-docgen-typescript-loader": "^3.1.0",
+		"react-docgen-typescript-webpack-plugin": "^1.1.0",
+		"react-scripts": "3.0.1",
+		"react-test-renderer": "16.8.6",
+		"redux-mock-store": "^1.5.3",
+		"styled-components": "^4.2.0",
+		"styled-components-ts": "^0.0.15",
+		"styled-system": "^4.2.2",
+		"typescript": "3.4.5"
+	}
+}
