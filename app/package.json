@@ -1,0 +1,74 @@
+{
+	"name": "stolen-bike-index",
+	"version": "1.0.0",
+	"private": false,
+	"dependencies": {
+		"react": "16.8.6",
+		"react-dom": "16.8.6",
+		"styled-components": "4.2.0"
+	},
+	"devDependencies": {
+		"@types/enzyme": "3.9.3",
+		"@types/enzyme-adapter-react-16": "1.0.5",
+		"@types/jest": "24.0.19",
+		"@types/node": "12.11.1",
+		"@types/react": "16.9.9",
+		"@types/react-dom": "16.9.2",
+		"@types/react-test-renderer": "16.8.1",
+		"@types/styled-components": "4.1.15",
+		"@typescript-eslint/eslint-plugin": "1.9.0",
+		"@typescript-eslint/parser": "1.9.0",
+		"enzyme": "3.8.0",
+		"enzyme-adapter-react-16": "1.7.1",
+		"enzyme-to-json": "3.3.5",
+		"eslint": "5.16.0",
+		"eslint-config-prettier": "4.3.0",
+		"eslint-plugin-prettier": "3.1.0",
+		"eslint-plugin-react": "7.13.0",
+		"jest-styled-components": "6.3.1",
+		"prettier": "1.17.1",
+		"react-scripts": "3.0.1",
+		"react-test-renderer": "16.8.6",
+		"styled-components-ts": "0.0.15",
+		"typescript": "3.6.4",
+		"webpack": "4.29.6"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"jest": {
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		],
+		"collectCoverageFrom": [
+			"src/**/*.{ts,tsx}",
+			"!<rootDir>/node_modules/",
+			"!<rootDir>/**/*.stories.tsx",
+			"!<rootDir>/**/*.d.ts",
+			"!<rootDir>/src/types.ts",
+			"!<rootDir>/src/setupTests.ts"
+		]
+	},
+	"engines": {
+		"node": "10.11",
+		"npm": "6.4.1"
+	}
+}
