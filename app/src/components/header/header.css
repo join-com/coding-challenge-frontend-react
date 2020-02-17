@@ -1,5 +1,5 @@
-header {
-  display: flex;
+header.flex-container {
+  margin-bottom: 20px;
 }
 
 h1 small {
