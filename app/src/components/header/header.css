@@ -1,0 +1,7 @@
+header {
+  display: flex;
+}
+
+h1 small {
+  display: block;
+}
