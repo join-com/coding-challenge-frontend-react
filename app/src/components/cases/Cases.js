@@ -6,7 +6,9 @@ export default class Cases extends React.Component {
   render() {
     let content;
 
-    if (this.props.loading) {
+    if (this.props.error) {
+      content = <p className="text-danger">Ooops, something went wrong</p>
+    } else if (this.props.loading) {
       content = <p>Loading...</p>
     } else if (this.props.cases.length === 0) {
       content = <p>No results</p>

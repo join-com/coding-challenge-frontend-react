@@ -10,6 +10,7 @@ export default class App extends React.Component {
     this.state = {
       cases: [],
       loading: false,
+      error: false,
     };
   }
 
@@ -18,6 +19,9 @@ export default class App extends React.Component {
       .then((results) => results.json())
       .then((data) => {
         this.setState({ cases: data.incidents })
+      })
+      .catch((e) => {
+        this.setState({ error: true })
       })
     ;
   }
