@@ -12,18 +12,47 @@ export default class App extends React.Component {
       cases: [],
       loading: false,
       error: false,
-      page: 1,
+      pageNum: 1,
+      searchText: null,
+      fromDate: null,
+      toDate: null,
     };
-    this.visitPage = this.visitPage.bind(this);
-  }
+    this.setCases = this.setCases.bind(this);
+  };
 
-  visitPage(pageNum) {
+  updateState(o) {
+    let newState = {};
+
+    if (o.loading === true || o.loading === false) { newState.loading = o.loading; }
+    if (o.pageNum) { newState.pageNum = o.pageNum; }
+    if (o.searchText) { newState.searchText = o.searchText; }
+    if (o.fromDate) { newState.fromDate = o.fromDate; }
+    if (o.toDate) { newState.toDate = o.toDate; }
+
+    this.setState(newState);
+  };
+
+  getUrlForSettingCases() {
+    let url = `https://bikewise.org:443/api/v2/incidents?page=${this.state.pageNum}&per_page=10&incident_type=theft&proximity=Berlin%2C%20DE&proximity_square=100`;
+
+    if (this.state.searchText) { url += `&search=${this.state.searchText}`; }
+    if (this.state.fromDate) { url += `&from=${this.state.fromDate}`; }
+    if (this.state.toDate) { url += `&to=${this.state.toDate}`; }
+
+    return url;
+  };
+
+  setCases(o) {
     if (this.state.loading) {
       return; // TODO: disable links when loading
     }
 
-    this.setState({ loading: true, page: pageNum });
-    fetch(`https://bikewise.org:443/api/v2/incidents?page=${pageNum}&per_page=10&incident_type=theft&proximity=Berlin%2C%20DE&proximity_square=100`)
+    let url;
+
+    o.loading = true;
+    this.updateState(o);
+    url = this.getUrlForSettingCases();
+    fetch(url)
       .then((results) => results.json())
       .then((data) => {
         this.setState({ cases: data.incidents, loading: false })
@@ -35,16 +64,16 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    this.visitPage(1);
-  }
+    this.setCases({ pageNum: 1 });
+  };
 
   render() {
     return (
       <section className="container">
         <Header />
-        <Filters />
+        <Filters applyFilters={this.setCases}/>
         <Cases cases={this.state.cases} loading={this.state.loading}/>
-        <Pagination currPage={this.state.page} numPages={5} visitPage={this.visitPage} />
+        <Pagination currPage={this.state.pageNum} numPages={5} setCases={this.setCases} />
       </section>
     )
   };
