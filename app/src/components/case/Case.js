@@ -7,7 +7,7 @@ export default class Case extends React.Component {
       <section className="card mb-3">
         <section className="row no-gutters">
           <section className="col-md-3">
-            <img src={this.props.imageSrc} className="card-img" />
+            <img src={this.props.imageSrc} className="card-img" alt="Stolen bike" />
           </section>
           <section className="col-md-9">
             <section className="card-body">

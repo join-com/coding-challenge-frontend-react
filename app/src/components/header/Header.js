@@ -5,7 +5,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="flex-container">
-        <img src="http://www.odmp.org/media/image/agency/302/302.jpg" width="100"/>
+        <img src="http://www.odmp.org/media/image/agency/302/302.jpg" width="100" alt="Police department of berlin" />
         <h1>
           Police Department of Berlin
           <small>Stolen bikes</small>
