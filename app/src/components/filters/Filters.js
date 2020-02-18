@@ -33,6 +33,7 @@ export default class Filters extends React.Component {
         <button
           type="button"
           className="btn btn-primary"
+          onClick={this.props.setCases.bind(this, {})}
         >
           Find cases
         </button>

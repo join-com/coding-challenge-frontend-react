@@ -13,7 +13,7 @@ export default class App extends React.Component {
       loading: false,
       error: false,
       pageNum: 1,
-      searchText: null,
+      searchText: '',
       fromDate: null,
       toDate: null,
     };
@@ -51,9 +51,9 @@ export default class App extends React.Component {
   getUrlForSettingCases() {
     let url = `https://bikewise.org:443/api/v2/incidents?page=${this.state.pageNum}&per_page=10&incident_type=theft&proximity=Berlin%2C%20DE&proximity_square=100`;
 
-    if (this.state.searchText) { url += `&search=${this.state.searchText}`; }
-    if (this.state.fromDate) { url += `&from=${this.state.fromDate}`; }
-    if (this.state.toDate) { url += `&to=${this.state.toDate}`; }
+    if (this.state.searchText) { url += `&query=${this.state.searchText}`; }
+    // if (this.state.fromDate) { url += `&occurred_after=${this.state.fromDate.getTime()}`; }
+    // if (this.state.toDate) { url += `&occurred_before=${this.state.toDate.getTime()}`; }
 
     return url;
   };
