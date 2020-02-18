@@ -1,0 +1,17 @@
+.flex-container input[type=text] {
+  flex-grow: 1;
+}
+
+.flex-container > span {
+  display: flex;
+  height: 38px;
+  align-items: center;
+}
+
+.flex-container input[type=date] {
+  margin-left: 10px;
+}
+
+.flex-container button {
+  height: 38px;
+}
