@@ -4,17 +4,17 @@ import './Filters.css';
 export default class Filters extends React.Component {
   render() {
     return (
-      <section class="flex-container">
-        <input type="text" class="form-control" placeholder="Search case descriptions" />
+      <section className="flex-container">
+        <input type="text" className="form-control" placeholder="Search case descriptions" />
         <span>
           From:
-          <input type="date" class="form-control" />
+          <input type="date" className="form-control" />
         </span>
         <span>
           To:
-          <input type="date" class="form-control" />
+          <input type="date" className="form-control" />
         </span>
-        <button type="button" class="btn btn-primary">Find cases</button>
+        <button type="button" className="btn btn-primary">Find cases</button>
       </section>
     )
   }

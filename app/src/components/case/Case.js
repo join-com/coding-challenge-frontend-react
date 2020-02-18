@@ -4,24 +4,24 @@ import './Case.css';
 export default class Case extends React.Component {
   render() {
     return (
-      <section class="card mb-3">
-        <section class="row no-gutters">
-          <section class="col-md-3">
-            <img src={this.props.imageSrc} class="card-img" />
+      <section className="card mb-3">
+        <section className="row no-gutters">
+          <section className="col-md-3">
+            <img src={this.props.imageSrc} className="card-img" />
           </section>
-          <section class="col-md-9">
-            <section class="card-body">
-              <h5 class="card-title">{this.props.title}</h5>
-              <p class="card-text">{this.props.description}</p>
-              <p class="card-text">
+          <section className="col-md-9">
+            <section className="card-body">
+              <h5 className="card-title">{this.props.title}</h5>
+              <p className="card-text">{this.props.description}</p>
+              <p className="card-text">
                 <strong>Date of theft: </strong>
                 {this.props.dateOfTheft}
               </p>
-              <p class="card-text">
+              <p className="card-text">
                 <strong>Reported: </strong>
                 {this.props.reported}
               </p>
-              <p class="card-text">
+              <p className="card-text">
                 <strong>Location: </strong>
                 {this.props.location}
               </p>

@@ -16,7 +16,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <section class="container">
+      <section className="container">
         <Header />
         <Filters />
         <Cases cases={this.state.cases} loading={this.state.loading} />
