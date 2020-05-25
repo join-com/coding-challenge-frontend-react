@@ -23,7 +23,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
 [
   {
     id: 117899,
@@ -76,3 +75,27 @@ yarn-error.log*
     type_properties: null,
   },
 ];
+
+
+{
+  "id": 112697,
+  "title": "Stolen 2017 BULLS Bikes Copperhead 3 RS(black)",
+  "description": "",
+  "address": "Neubrandenburg, 17033, DE",
+  "occurred_at": 1579978800,
+  "updated_at": 1587578605,
+  "url": "https://bikewise.org/api/v1/incidents/112697",
+  "source": {
+    "name": "BikeIndex.org",
+    "html_url": "https://bikeindex.org/bikes/689044",
+    "api_url": "https://bikeindex.org/api/v1/bikes/689044"
+  },
+  "media": {
+    "image_url": "https://files.bikeindex.org/uploads/Pu/217889/large_Bulls_Copperhead_3_RS.jpg",
+    "image_url_thumb": "https://files.bikeindex.org/uploads/Pu/217889/small_Bulls_Copperhead_3_RS.jpg"
+  },
+  "location_type": null,
+  "location_description": null,
+  "type": "Theft",
+  "type_properties": null
+}
