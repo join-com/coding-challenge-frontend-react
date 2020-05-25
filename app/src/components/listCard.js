@@ -16,7 +16,7 @@ function ListCard({ incident }) {
       </Box>
       <Box marginLeft={2}>
         <Typography variant="h6">
-          <Link href={`/case/:${incident.id}`}>{incident.title}</Link>
+          <Link href={`/case/${incident.id}`}>{incident.title}</Link>
         </Typography>
         <Typography variant="h6">{incident.description}</Typography>
         <Typography variant="h6">

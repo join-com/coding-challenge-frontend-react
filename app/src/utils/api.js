@@ -33,13 +33,11 @@ function create() {
       query: text,
     };
 
-    console.log(params);
-
     return api.get('/api/v2/incidents', params);
   };
 
   const getById = (caseId) => {
-    return api.get(`${caseId}`);
+    return api.get(`/api/v2/incidents/${caseId}`);
   };
 
   return {

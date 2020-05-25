@@ -4,10 +4,12 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Pagination from '@material-ui/lab/Pagination';
 import { KeyboardDatePicker } from '@material-ui/pickers';
 
 import ListCard from '../components/listCard';
 import api from '../utils/api';
+import { TOTALCASE } from '../utils/constants';
 
 function BikesPage() {
   const [fromDate, setFromDate] = useState(0);
@@ -19,31 +21,33 @@ function BikesPage() {
   const [isLoadedOk, setIsLoadedOk] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     handleSearch();
   }, []);
 
-  const handleFindCases = () => {
-    handleSearch();
-  };
-
   const handleSearch = () => {
+    setIsLoading(true);
+
     return api
       .get(currentPage, fromDate, toDate, searchText)
       .then(({ ok, data }) => {
+        setIsLoading(false);
         if (!ok) {
           setIsLoadedOk(false);
           return;
         }
 
         setIsLoadedOk(true);
-        setIsLoading(false);
         setIncidents(data.incidents);
       });
   };
 
   const handleTextChange = (event) => {
     setSearchText(event.target.value);
+  };
+
+  const handlePagenationChange = (event, page) => {
+    setCurrentPage(page);
+    handleSearch();
   };
 
   const renderList = () => {
@@ -59,13 +63,32 @@ function BikesPage() {
     return (
       <Box>
         <Box display="flex" justifyContent="flex-end">
-          <Typography variant="h6">total: {incidents.length}</Typography>
+          <Typography variant="h6">total: {TOTALCASE}</Typography>
         </Box>
         <Box>
           {incidents.map((incident) => (
             <ListCard key={incident.id} incident={incident} />
           ))}
         </Box>
+      </Box>
+    );
+  };
+
+  const renderPaginations = () => {
+    const pageCount =
+      TOTALCASE % 10 ? Math.floor(TOTALCASE / 10 + 1) : TOTALCASE / 10;
+
+    return (
+      <Box marginTop={2} marginBottom={2}>
+        <Pagination
+          page={currentPage}
+          count={pageCount}
+          shape="rounded"
+          variant="outlined"
+          showFirstButton
+          showLastButton
+          onChange={handlePagenationChange}
+        />
       </Box>
     );
   };
@@ -116,11 +139,12 @@ function BikesPage() {
             value={toDate}
             onChange={setToDate}
           />
-          <Button variant="contained" color="primary" onClick={handleFindCases}>
+          <Button variant="contained" color="primary" onClick={handleSearch}>
             Find Cases
           </Button>
         </Box>
         {renderList()}
+        {Boolean(incidents.length) && !isLoading && renderPaginations()}
       </Box>
     </Container>
   );
