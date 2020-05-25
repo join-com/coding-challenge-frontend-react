@@ -10,6 +10,7 @@ function ListCard({ incident }) {
       <Box>
         <img
           src={incident.media.image_url_thumb || incident.media.image_url}
+          alt=""
           width="150px"
           height="150px"
         />
