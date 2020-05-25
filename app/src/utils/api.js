@@ -1,4 +1,5 @@
 import apisauce from 'apisauce';
+import moment from 'moment';
 import {
   BIKEWISE_API_URL,
   ADDRESS,
@@ -13,19 +14,28 @@ function create() {
     responseType: 'json',
   });
 
-  const get = (page = 1, from = 0, to = Date.now(), text = 'Berlin') => {
-    const fullQuery = `?page=${page}&
-      per_page=${PAGESIZE}&
-      occurred_before=${from}
-      occurred_after=${to}&
-      incident_type=${CASETYPE}&
-      proximity=${ADDRESS}&
-      proximity_square=${SEARCHSQUARE}&
-      query=${text}`;
+  const get = (
+    page = 1,
+    from = new Date(0),
+    to = new Date(),
+    text = 'Berlin'
+  ) => {
+    const fromValue = moment(from).format('X');
+    const toValue = moment(to).format('X');
+    const params = {
+      page: page,
+      per_page: PAGESIZE,
+      occurred_after: fromValue,
+      occurred_before: toValue,
+      incident_type: CASETYPE,
+      proximity: ADDRESS,
+      proximity_square: SEARCHSQUARE,
+      query: text,
+    };
 
-    console.log('fullQuery', fullQuery);
+    console.log(params);
 
-    return api.get(fullQuery);
+    return api.get('/api/v2/incidents', params);
   };
 
   const getById = (caseId) => {
