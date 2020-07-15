@@ -1,0 +1,15 @@
+@mixin non-selectable() {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Currently supported by Chrome and Opera */
+}
+
+
+@mixin truncate() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

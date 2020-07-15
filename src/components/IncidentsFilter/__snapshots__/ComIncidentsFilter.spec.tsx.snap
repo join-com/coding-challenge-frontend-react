@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComIncidentsFilter should match a snapshot 1`] = `
+<div
+  className="ComIncidentsFilter row"
+>
+  <div
+    className="col-12 col-md-6"
+  >
+    <input
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Search case descriptions..."
+      type="text"
+    />
+  </div>
+  <div
+    className="col-6 col-md-2"
+  >
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <input
+          className="form-control"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="From"
+          readOnly={false}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <span
+      className="fa fa-calendar-alt"
+    />
+  </div>
+  <div
+    className="col-6 col-md-2"
+  >
+    <div
+      className="react-datepicker-wrapper"
+    >
+      <div
+        className="react-datepicker__input-container"
+      >
+        <input
+          className="form-control"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="To"
+          readOnly={false}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <span
+      className="fa fa-calendar-alt"
+    />
+  </div>
+  <div
+    className="col-12 col-md-2"
+  >
+    <button
+      className="form-control btn btn-primary"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Find cases
+    </button>
+  </div>
+</div>
+`;

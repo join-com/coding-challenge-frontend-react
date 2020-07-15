@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncAppHeader should match a snapshot 1`] = `
+<div
+  className="IncAppHeader row"
+>
+  <div
+    className="col-3 col-xs-4 col-lg-2 pt-2 pl-3"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        className="logo"
+        src="/test/logo.png"
+      />
+    </a>
+  </div>
+  <div
+    className="col-9 col-xs-8 col-lg-10"
+  >
+    <h1>
+      Lorem Ppsum
+    </h1>
+    <h2>
+      dolor sit amet...
+    </h2>
+  </div>
+</div>
+`;

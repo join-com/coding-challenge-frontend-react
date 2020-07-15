@@ -1,0 +1,15 @@
+.IncAppHeader {
+
+    margin: 1em 0 3em;
+    
+    img.logo {
+        max-width: 100%;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+}

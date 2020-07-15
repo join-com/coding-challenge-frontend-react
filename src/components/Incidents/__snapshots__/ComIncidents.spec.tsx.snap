@@ -1,0 +1,357 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComIncidents should match a snapshot 1`] = `
+<div
+  className="AppListIncidents"
+>
+  <div>
+    <div>
+      <div
+        className="IncIncident row"
+      >
+        <div
+          className="col-3"
+        >
+          <img
+            src="https://seeclickfix.com/files/issue_images/0136/5401/3AA630FA-E3E9-42A3-81D3-33AF8DE90D63_square.jpeg"
+          />
+        </div>
+        <div
+          className="col-9"
+        >
+          <h4>
+            <a
+              href="/incidents/item/100681"
+              onClick={[Function]}
+            >
+              Tree Pruning Request
+            </a>
+          </h4>
+          <p>
+            It’s impossible to wheel a stroller (and I imagine a wheelchair) through this section of sidewalk due to the bushes and the fact that two bikes are constantly chained there. 
+          </p>
+          <p>
+            <b>
+              Sun, May 26, 2019
+            </b>
+            <br />
+            <i>
+              Buena Vista Park & Richdale Ave Cambridge, MA, 02140, USA
+            </i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="IncIncident row"
+      >
+        <div
+          className="col-3"
+        >
+          <img
+            src="https://seeclickfix.com/files/issue_images/0136/5401/3AA630FA-E3E9-42A3-81D3-33AF8DE90D63_square.jpeg"
+          />
+        </div>
+        <div
+          className="col-9"
+        >
+          <h4>
+            <a
+              href="/incidents/item/100681"
+              onClick={[Function]}
+            >
+              Tree Pruning Request
+            </a>
+          </h4>
+          <p>
+            It’s impossible to wheel a stroller (and I imagine a wheelchair) through this section of sidewalk due to the bushes and the fact that two bikes are constantly chained there. 
+          </p>
+          <p>
+            <b>
+              Sun, May 26, 2019
+            </b>
+            <br />
+            <i>
+              Buena Vista Park & Richdale Ave Cambridge, MA, 02140, USA
+            </i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="IncIncident row"
+      >
+        <div
+          className="col-3"
+        >
+          <img
+            src="https://seeclickfix.com/files/issue_images/0136/5401/3AA630FA-E3E9-42A3-81D3-33AF8DE90D63_square.jpeg"
+          />
+        </div>
+        <div
+          className="col-9"
+        >
+          <h4>
+            <a
+              href="/incidents/item/100681"
+              onClick={[Function]}
+            >
+              Tree Pruning Request
+            </a>
+          </h4>
+          <p>
+            It’s impossible to wheel a stroller (and I imagine a wheelchair) through this section of sidewalk due to the bushes and the fact that two bikes are constantly chained there. 
+          </p>
+          <p>
+            <b>
+              Sun, May 26, 2019
+            </b>
+            <br />
+            <i>
+              Buena Vista Park & Richdale Ave Cambridge, MA, 02140, USA
+            </i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="IncIncident row"
+      >
+        <div
+          className="col-3"
+        >
+          <img
+            src="https://seeclickfix.com/files/issue_images/0136/5401/3AA630FA-E3E9-42A3-81D3-33AF8DE90D63_square.jpeg"
+          />
+        </div>
+        <div
+          className="col-9"
+        >
+          <h4>
+            <a
+              href="/incidents/item/100681"
+              onClick={[Function]}
+            >
+              Tree Pruning Request
+            </a>
+          </h4>
+          <p>
+            It’s impossible to wheel a stroller (and I imagine a wheelchair) through this section of sidewalk due to the bushes and the fact that two bikes are constantly chained there. 
+          </p>
+          <p>
+            <b>
+              Sun, May 26, 2019
+            </b>
+            <br />
+            <i>
+              Buena Vista Park & Richdale Ave Cambridge, MA, 02140, USA
+            </i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ComPaginator"
+    >
+      <ul
+        className="pagination"
+      >
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/1"
+            onClick={[Function]}
+          >
+            &lt;&lt;
+          </a>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/2"
+            onClick={[Function]}
+          >
+            &lt;
+          </a>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/1"
+            onClick={[Function]}
+          >
+            1
+          </a>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/2"
+            onClick={[Function]}
+          >
+            2
+          </a>
+        </li>
+        <li
+          className="page-item link active"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/3"
+            onClick={[Function]}
+          >
+            3
+          </a>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/4"
+            onClick={[Function]}
+          >
+            4
+          </a>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/5"
+            onClick={[Function]}
+          >
+            5
+          </a>
+        </li>
+        <li
+          className="page-item"
+        >
+          <div>
+            <select
+              className="page-link"
+              onChange={[Function]}
+            >
+              <option>
+                . . . .
+              </option>
+              <option>
+                6
+              </option>
+              <option>
+                7
+              </option>
+              <option>
+                8
+              </option>
+              <option>
+                9
+              </option>
+              <option>
+                10
+              </option>
+              <option>
+                11
+              </option>
+              <option>
+                12
+              </option>
+              <option>
+                13
+              </option>
+              <option>
+                14
+              </option>
+              <option>
+                15
+              </option>
+              <option>
+                16
+              </option>
+              <option>
+                17
+              </option>
+              <option>
+                18
+              </option>
+              <option>
+                19
+              </option>
+              <option>
+                20
+              </option>
+              <option>
+                21
+              </option>
+              <option>
+                22
+              </option>
+              <option>
+                23
+              </option>
+              <option>
+                24
+              </option>
+              <option>
+                25
+              </option>
+              <option>
+                26
+              </option>
+              <option>
+                27
+              </option>
+              <option>
+                28
+              </option>
+              <option>
+                29
+              </option>
+              <option>
+                30
+              </option>
+              <option>
+                31
+              </option>
+            </select>
+          </div>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/4"
+            onClick={[Function]}
+          >
+            &gt;
+          </a>
+        </li>
+        <li
+          className="page-item link"
+        >
+          <a
+            className="page-link"
+            href="/incidents/page/31"
+            onClick={[Function]}
+          >
+            &gt;&gt;
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

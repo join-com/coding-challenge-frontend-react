@@ -1,0 +1,33 @@
+.ComPaginator {
+
+    display: flex;
+    margin: 2em 0 3em;
+
+    ul.pagination {
+
+        margin: auto;
+
+        li > span {
+
+            padding: 0;
+
+            select {
+
+                min-width: 2.5em;
+                padding: 6px;
+                border: none;
+                background: white;
+                cursor: pointer;
+
+                > option {
+                    text-align: center;
+                    text-align-last: center;
+                }
+
+            }
+
+        }
+
+    }
+
+}
