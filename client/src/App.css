@@ -1,0 +1,96 @@
+.App {
+  /* text-align: center; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* general styles */
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.text-light-blue {
+  color: #19afd8;
+}
+.text-red {
+  color: #f55e5e;
+}
+.text-green {
+  color: #2bc258;
+}
+.fs-1-5 {
+  font-size: 1.5rem;
+}
+.p-0 {
+  padding: 0;
+}
+.m-0 {
+  margin: 0;
+}
+
+/* incident list styles */
+.incidents-list li {
+  border-radius: 0.2rem;
+  display: flex;
+  margin: 1rem 3rem;
+}
+.incidents-list li:nth-child(2n + 1) {
+  background: #8080802a;
+}
+
+.incidents-list li .stolen-item-image {
+  height: 12rem;
+  width: 12%;
+  margin: 1rem;
+}
+
+.incidents-list li .details {
+  width: 58%;
+  margin: 1rem 2rem;
+}
+.incidents-list li .details h3 {
+  color: #19afd8;
+  margin: 0;
+}
+.incidents-list li .date-details {
+  width: 30%;
+  margin: 1rem 0;
+  align-self: center;
+}
+.incidents-list li .date-details span {
+  line-height: 2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
