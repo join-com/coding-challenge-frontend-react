@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "../loader.gif";
 import Pagination from "./common/pagination";
 import RenderResults from "./common/renderResults";
+import Header from "./common/header";
 
 export default class Landing extends Component {
   state = {
@@ -23,29 +24,36 @@ export default class Landing extends Component {
       axios.get(
         `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100`
       ),
-    ]).then(([res1, res2]) => {
-      const total = res1.data.incidents.length;
-      const totalPagesCount = this.getPageCount(total, 10);
-      console.log("total:", total + ", totalPages:", totalPagesCount);
-      this.setState({
-        totalResults: total,
-        totalPages: totalPagesCount,
-        currentPageNumber: currentPageNumber,
-      });
+    ])
+      .then(([res1, res2]) => {
+        const total = res1.data.incidents.length;
+        const totalPagesCount = this.getPageCount(total, 10);
+        console.log("total:", total + ", totalPages:", totalPagesCount);
+        this.setState({
+          totalResults: total,
+          totalPages: totalPagesCount,
+          currentPageNumber: currentPageNumber,
+        });
 
-      console.log(res2.data.incidents);
-      if (res2.data.incidents) {
+        console.log(res2.data.incidents);
+        if (res2.data.incidents) {
+          this.setState({
+            incidents: res2.data.incidents,
+            loading: false,
+          });
+        } else {
+          this.setState({
+            message: "No Results...",
+            loading: false,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
         this.setState({
-          incidents: res2.data.incidents,
-          loading: false,
+          message: "Error in fetching List!",
         });
-      } else {
-        this.setState({
-          message: "No Results...",
-          loading: false,
-        });
-      }
-    });
+      });
   };
 
   getPageCount = (total, denominator) => {
@@ -73,6 +81,12 @@ export default class Landing extends Component {
             loading: false,
           });
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          message: "Error in fetching List!",
+        });
       });
   };
 
@@ -103,31 +117,34 @@ export default class Landing extends Component {
       message,
       currentPageNumber,
       totalPages,
+      totalResults,
     } = this.state;
 
     const showPrevLink = currentPageNumber > 1;
     const showNextLink = totalPages > currentPageNumber;
 
     return (
-      <div className="container-fluid">
+      <div className="container">
         {/* heading */}
-        <div className="heading">
-          <h1 className="display-4 text-center m-0 mt-4">
-            Police Department of Berlin
-          </h1>
-          <h4 className="text-center m-0 mb-4 h3">Stolen Bikes</h4>
+        <Header />
 
-          {/* Search Input */}
-          <label htmlFor="search-input" className="search-label">
-            <input
-              type="text"
-              value=""
-              id="search-input"
-              placeholder="title..."
-            />
-          </label>
-          <input type="submit" value="Search" />
-        </div>
+        {/* Search Input */}
+        <label htmlFor="search-input" className="search-label">
+          <input
+            type="text"
+            value=""
+            id="search-input"
+            placeholder="title..."
+          />
+        </label>
+        <input type="submit" value="Search" />
+
+        {/* Total Cases */}
+        {!loading && totalResults && (
+          <div className="total-result">
+            <span>Total Cases in Berlin: {totalResults}</span>
+          </div>
+        )}
 
         {/* Error Message */}
         {message && <p className="message display-4">{message}</p>}
