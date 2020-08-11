@@ -1,89 +1,160 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Loader from "../loader.gif";
+import Pagination from "./common/pagination";
+import RenderResults from "./common/renderResults";
 
 export default class Landing extends Component {
   state = {
     incidents: [],
+    loading: true,
+    message: "",
+    totalResults: 0,
+    totalPages: 0,
+    currentPageNumber: 1,
   };
 
-  componentDidMount = async () => {
-    await axios
+  componentDidMount = () => {
+    const { currentPageNumber } = this.state;
+    Promise.all([
+      axios.get(
+        `https://bikewise.org/api/v2/incidents?per_page=100&proximity=Berlin&proximity_square=100`
+      ),
+      axios.get(
+        `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100`
+      ),
+    ]).then(([res1, res2]) => {
+      const total = res1.data.incidents.length;
+      const totalPagesCount = this.getPageCount(total, 10);
+      console.log("total:", total + ", totalPages:", totalPagesCount);
+      this.setState({
+        totalResults: total,
+        totalPages: totalPagesCount,
+        currentPageNumber: currentPageNumber,
+      });
+
+      console.log(res2.data.incidents);
+      if (res2.data.incidents) {
+        this.setState({
+          incidents: res2.data.incidents,
+          loading: false,
+        });
+      } else {
+        this.setState({
+          message: "No Results...",
+          loading: false,
+        });
+      }
+    });
+  };
+
+  getPageCount = (total, denominator) => {
+    const divisible = 0 === total % denominator;
+    const valueToBeAdded = divisible ? 0 : 1;
+    return Math.floor(total / denominator) + valueToBeAdded;
+  };
+
+  fetchSearchResults = (updatedPage) => {
+    axios
       .get(
-        "https://bikewise.org/api/v2/incidents?per_page=100&proximity=Berlin&proximity_square=100"
+        `https://bikewise.org/api/v2/incidents?per_page=10&page=${updatedPage}&proximity=Berlin&proximity_square=100`
       )
       .then((res) => {
         console.log(res.data.incidents);
-        this.setState({
-          incidents: res.data.incidents,
-        });
+        if (res.data.incidents) {
+          this.setState({
+            incidents: res.data.incidents,
+            loading: false,
+            currentPageNumber: updatedPage,
+          });
+        } else {
+          this.setState({
+            message: "No Results...",
+            loading: false,
+          });
+        }
       });
+  };
 
-    //  await axios
-    //    .get(
-    //      "https://bikewise.org/api/v2/locations/markers?per_page=100&proximity=Berlin&proximity_square=100"
-    //    )
-    //    .then((res) => console.log(res.data.features));
+  handlePageClick = (type, event) => {
+    event.preventDefault();
+    const updatedPage =
+      "prev" === type
+        ? this.state.currentPageNumber - 1
+        : this.state.currentPageNumber + 1;
+
+    if (!this.state.loading) {
+      this.setState(
+        {
+          loading: true,
+          message: "",
+        },
+        () => {
+          this.fetchSearchResults(updatedPage);
+        }
+      );
+    }
   };
 
   render() {
-    const { incidents } = this.state;
+    const {
+      incidents,
+      loading,
+      message,
+      currentPageNumber,
+      totalPages,
+    } = this.state;
+
+    const showPrevLink = currentPageNumber > 1;
+    const showNextLink = totalPages > currentPageNumber;
 
     return (
-      <div>
-        <ul className="incidents-list">
-          {incidents.map((incident, key) => {
-            return (
-              <li key={key}>
-                <img
-                  src={
-                    incident.media.image_url ||
-                    incident.media.image_url_thumb ||
-                    "https://images.assetsdelivery.com/compings_v2/vectorknight/vectorknight1801/vectorknight180100065.jpg"
-                  }
-                  alt="Not Found"
-                  className="stolen-item-image"
-                />
-                <div className="details">
-                  <h3>{incident.title.slice(7)}</h3>
-                  <p>
-                    <strong>Description: </strong>{" "}
-                    {incident.description || "NOT AVAILABLE"}
-                  </p>
-                </div>
-                <div className="date-details">
-                  <span>
-                    <strong className="text-red">Stolen on </strong>{" "}
-                    {new Date(incident.occurred_at * 1000)
-                      .toUTCString()
-                      .slice(0, 16)}
-                    <strong className="text-red"> at </strong>
-                    {new Date(incident.occurred_at * 1000)
-                      .toLocaleTimeString()
-                      .replace(/:.* /, "")
-                      .toLowerCase()}
-                  </span>
-                  <br />
-                  <span>
-                    <strong>Location </strong>
-                    {incident.address.replace(/,.* /, " - ")}
-                  </span>
-                  <br />
-                  <span>
-                    <strong className="text-green">Reported on </strong>{" "}
-                    {new Date(incident.updated_at * 1000)
-                      .toUTCString()
-                      .slice(0, 16)}
-                    <strong className="text-green"> at </strong>
-                    {new Date(incident.updated_at * 1000)
-                      .toLocaleTimeString()
-                      .replace(/:.* /, "")
-                      .toLowerCase()}
-                  </span>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="container-fluid">
+        {/* heading */}
+        <div className="heading">
+          <h1 className="display-4 text-center m-0 mt-4">
+            Police Department of Berlin
+          </h1>
+          <h4 className="text-center m-0 mb-4 h3">Stolen Bikes</h4>
+
+          {/* Search Input */}
+          <label htmlFor="search-input" className="search-label">
+            <input
+              type="text"
+              value=""
+              id="search-input"
+              placeholder="title..."
+            />
+          </label>
+          <input type="submit" value="Search" />
+        </div>
+
+        {/* Error Message */}
+        {message && <p className="message display-4">{message}</p>}
+
+        {/* loader */}
+        <img
+          src={Loader}
+          className={`search-loading ${loading ? "show" : "hide"}`}
+          alt="loader"
+        />
+
+        {/* Result */}
+        {<RenderResults incidents={incidents} />}
+
+        {/* Pagination */}
+        {!loading ? (
+          <Pagination
+            loading={loading}
+            showPrevLink={showPrevLink}
+            showNextLink={showNextLink}
+            currentPageNumber={currentPageNumber}
+            handlePrevClick={() => this.handlePageClick("prev", window.event)}
+            handleNextClick={() => this.handlePageClick("next", window.event)}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }

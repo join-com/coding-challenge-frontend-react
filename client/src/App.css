@@ -12,34 +12,18 @@ ul {
   padding: 0;
   list-style: none;
 }
-
-.text-light-blue {
-  color: #19afd8;
-}
-.text-red {
-  color: #f55e5e;
-}
-.text-green {
-  color: #2bc258;
-}
-.fs-1-5 {
-  font-size: 1.5rem;
-}
-.p-0 {
-  padding: 0;
-}
-.m-0 {
-  margin: 0;
+.fs-2 {
+  font-size: 2rem;
 }
 
 /* incident list styles */
 .incidents-list li {
   border-radius: 0.2rem;
   display: flex;
-  margin: 1rem 3rem;
+  margin: 0 5rem;
 }
 .incidents-list li:nth-child(2n + 1) {
-  background: #8080802a;
+  background: #8080801a;
 }
 
 .incidents-list li .stolen-item-image {
@@ -52,10 +36,6 @@ ul {
   width: 58%;
   margin: 1rem 2rem;
 }
-.incidents-list li .details h3 {
-  color: #19afd8;
-  margin: 0;
-}
 .incidents-list li .date-details {
   width: 30%;
   margin: 1rem 0;
@@ -63,6 +43,41 @@ ul {
 }
 .incidents-list li .date-details span {
   line-height: 2rem;
+}
+
+/* search loading styles */
+.search-loading {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 30%;
+}
+.show {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+
+/* nav link styles */
+.nav-link-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.nav-link {
+  color: white;
+  background-color: dodgerblue;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  margin: 0 0.5rem;
+}
+
+.greyed-out {
+  background: #808080;
+  opacity: 0.5;
 }
 
 @media (prefers-reduced-motion: no-preference) {
