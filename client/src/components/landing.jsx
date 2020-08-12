@@ -15,6 +15,8 @@ export default class Landing extends Component {
     totalPages: 0,
     currentPageNumber: 1,
     searchInput: "",
+    startDate: 0,
+    endDate: 0,
   };
 
   componentDidMount = () => {
@@ -119,12 +121,38 @@ export default class Landing extends Component {
     });
   };
 
+  handleStartDateChange = (date) => {
+    this.setState({
+      startDate: date,
+    });
+    console.log(new Date(date / 1000).getTime());
+  };
+
+  handleEndDateChange = (date) => {
+    this.setState({
+      endDate: date,
+    });
+    console.log(new Date(date / 1000).getTime());
+  };
+
   handleSearchClick = (e) => {
     e.preventDefault();
-    const { searchInput, currentPageNumber } = this.state;
+    this.setState({
+      incidents: [],
+      loading: true,
+      message: "",
+    });
+    const { searchInput, currentPageNumber, startDate, endDate } = this.state;
+    const sDate =
+      startDate != 0 ? new Date(startDate / 1000).getTime() : startDate;
+    const eDate = endDate != 0 ? new Date(endDate / 1000).getTime() : endDate;
+    const searchQuery =
+      (searchInput ? `&query=${searchInput}` : "") +
+      (startDate != 0 ? `&occurred_after=${sDate}` : "") +
+      (endDate != 0 ? `&occurred_before=${eDate}` : "");
     axios
       .get(
-        `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100&query=${searchInput}`
+        `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100${searchQuery}`
       )
       .then((res) => {
         console.log(res.data.incidents);
@@ -165,6 +193,8 @@ export default class Landing extends Component {
       currentPageNumber,
       totalPages,
       totalResults,
+      startDate,
+      endDate,
     } = this.state;
 
     const showPrevLink = currentPageNumber > 1;
@@ -179,12 +209,16 @@ export default class Landing extends Component {
         <Search
           handleSearchClick={this.handleSearchClick}
           handleSearchInput={this.handleSearchInput}
+          handleStartDateChange={this.handleStartDateChange}
+          handleEndDateChange={this.handleEndDateChange}
+          startDate={startDate}
+          endDate={endDate}
         />
 
         {/* Total Cases */}
         {!loading && !message && totalResults && (
           <div className="total-result text-right my-3">
-            <span className="bg-primary text-white p-2 rounded my-2">
+            <span className="bg-dark text-white p-2 rounded my-2">
               Total Cases in Berlin: {totalResults}
             </span>
           </div>

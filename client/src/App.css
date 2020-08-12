@@ -12,6 +12,17 @@ ul {
   padding: 0;
   list-style: none;
 }
+input {
+  border: none;
+  background: transparent;
+  outline: none;
+  background: #8080801e;
+  border: 2px solid #708090a2;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+}
+
 .fs-2 {
   font-size: 2rem;
 }
@@ -36,13 +47,13 @@ ul {
 } */
 
 .incidents-list li .stolen-item-image {
-  height: 12rem;
+  height: 25vh;
   width: 15%;
   margin: 1rem;
 }
 
 .incidents-list li .details {
-  width: 55%;
+  width: 45%;
   margin: 1rem 2rem;
 }
 .incidents-list li .date-details {
