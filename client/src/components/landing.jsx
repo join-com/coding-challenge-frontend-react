@@ -53,7 +53,7 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Error in fetching List!",
+          message: "Oops, Something went wrong!",
           loading: false,
         });
       });
@@ -143,13 +143,12 @@ export default class Landing extends Component {
       message: "",
     });
     const { searchInput, currentPageNumber, startDate, endDate } = this.state;
-    const sDate =
-      startDate != 0 ? new Date(startDate / 1000).getTime() : startDate;
-    const eDate = endDate != 0 ? new Date(endDate / 1000).getTime() : endDate;
+    const sDate = startDate ? new Date(startDate / 1000).getTime() : startDate;
+    const eDate = endDate ? new Date(endDate / 1000).getTime() : endDate;
     const searchQuery =
       (searchInput ? `&query=${searchInput}` : "") +
-      (startDate != 0 ? `&occurred_after=${sDate}` : "") +
-      (endDate != 0 ? `&occurred_before=${eDate}` : "");
+      (startDate ? `&occurred_after=${sDate}` : "") +
+      (endDate ? `&occurred_before=${eDate}` : "");
     axios
       .get(
         `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100${searchQuery}`
@@ -179,7 +178,7 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Error in fetching List!",
+          message: "Oops, Something went wrong!",
           loading: false,
         });
       });

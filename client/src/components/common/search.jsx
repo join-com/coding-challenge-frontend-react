@@ -13,7 +13,7 @@ export default (props) => {
   return (
     <form
       onSubmit={handleSearchClick}
-      className="search-form my-5 d-flex justify-content-between"
+      className="search-form m-5 d-flex justify-content-between align-items-start flex-wrap"
     >
       <label htmlFor="search-input" className="search-label">
         <input
@@ -42,7 +42,7 @@ export default (props) => {
       <input
         type="submit"
         value="Search"
-        className="bg-primary text-white border-0 px-4"
+        className="bg-primary text-white border-0"
       />
     </form>
   );
