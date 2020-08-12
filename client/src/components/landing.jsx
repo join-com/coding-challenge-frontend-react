@@ -4,6 +4,7 @@ import Loader from "../loader.gif";
 import Pagination from "./common/pagination";
 import RenderResults from "./common/renderResults";
 import Header from "./common/header";
+import Search from "./common/search";
 
 export default class Landing extends Component {
   state = {
@@ -13,6 +14,7 @@ export default class Landing extends Component {
     totalResults: 0,
     totalPages: 0,
     currentPageNumber: 1,
+    searchInput: "",
   };
 
   componentDidMount = () => {
@@ -28,11 +30,9 @@ export default class Landing extends Component {
       .then(([res1, res2]) => {
         const total = res1.data.incidents.length;
         const totalPagesCount = this.getPageCount(total, 10);
-        console.log("total:", total + ", totalPages:", totalPagesCount);
         this.setState({
           totalResults: total,
           totalPages: totalPagesCount,
-          currentPageNumber: currentPageNumber,
         });
 
         console.log(res2.data.incidents);
@@ -52,14 +52,9 @@ export default class Landing extends Component {
         console.log(err);
         this.setState({
           message: "Error in fetching List!",
+          loading: false,
         });
       });
-  };
-
-  getPageCount = (total, denominator) => {
-    const divisible = 0 === total % denominator;
-    const valueToBeAdded = divisible ? 0 : 1;
-    return Math.floor(total / denominator) + valueToBeAdded;
   };
 
   fetchSearchResults = (updatedPage) => {
@@ -69,7 +64,7 @@ export default class Landing extends Component {
       )
       .then((res) => {
         console.log(res.data.incidents);
-        if (res.data.incidents) {
+        if (res.data.incidents.length) {
           this.setState({
             incidents: res.data.incidents,
             loading: false,
@@ -85,9 +80,16 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Error in fetching List!",
+          message: "Oops, Something went wrong!",
+          loading: false,
         });
       });
+  };
+
+  getPageCount = (total, denominator) => {
+    const divisible = 0 === total % denominator;
+    const valueToBeAdded = divisible ? 0 : 1;
+    return Math.floor(total / denominator) + valueToBeAdded;
   };
 
   handlePageClick = (type, event) => {
@@ -100,6 +102,7 @@ export default class Landing extends Component {
     if (!this.state.loading) {
       this.setState(
         {
+          incidents: [],
           loading: true,
           message: "",
         },
@@ -108,6 +111,50 @@ export default class Landing extends Component {
         }
       );
     }
+  };
+
+  handleSearchInput = (e) => {
+    this.setState({
+      searchInput: e.target.value,
+    });
+  };
+
+  handleSearchClick = (e) => {
+    e.preventDefault();
+    const { searchInput, currentPageNumber } = this.state;
+    axios
+      .get(
+        `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100&query=${searchInput}`
+      )
+      .then((res) => {
+        console.log(res.data.incidents);
+
+        const total = res.data.incidents.length;
+        const totalPagesCount = this.getPageCount(total, 10);
+
+        if (res.data.incidents.length > 0) {
+          this.setState({
+            incidents: res.data.incidents,
+            loading: false,
+            message: "",
+            totalResults: total,
+            totalPages: totalPagesCount,
+          });
+        } else {
+          this.setState({
+            incidents: [],
+            message: "No Results...",
+            loading: false,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          message: "Error in fetching List!",
+          loading: false,
+        });
+      });
   };
 
   render() {
@@ -129,20 +176,17 @@ export default class Landing extends Component {
         <Header />
 
         {/* Search Input */}
-        <label htmlFor="search-input" className="search-label">
-          <input
-            type="text"
-            value=""
-            id="search-input"
-            placeholder="title..."
-          />
-        </label>
-        <input type="submit" value="Search" />
+        <Search
+          handleSearchClick={this.handleSearchClick}
+          handleSearchInput={this.handleSearchInput}
+        />
 
         {/* Total Cases */}
-        {!loading && totalResults && (
-          <div className="total-result">
-            <span>Total Cases in Berlin: {totalResults}</span>
+        {!loading && !message && totalResults && (
+          <div className="total-result text-right my-3">
+            <span className="bg-primary text-white p-2 rounded my-2">
+              Total Cases in Berlin: {totalResults}
+            </span>
           </div>
         )}
 
@@ -160,7 +204,7 @@ export default class Landing extends Component {
         {<RenderResults incidents={incidents} />}
 
         {/* Pagination */}
-        {!loading ? (
+        {!loading && !message && (
           <Pagination
             loading={loading}
             showPrevLink={showPrevLink}
@@ -169,8 +213,6 @@ export default class Landing extends Component {
             handlePrevClick={() => this.handlePageClick("prev", window.event)}
             handleNextClick={() => this.handlePageClick("next", window.event)}
           />
-        ) : (
-          ""
         )}
       </div>
     );

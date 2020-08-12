@@ -16,24 +16,24 @@ ul {
   font-size: 2rem;
 }
 
-.total-result {
-  background: dodgerblue;
-  color: white;
-  width: 25%;
-  text-align: center;
-  border-radius: 0.2rem;
-  padding: 0.5rem 0;
-  font-size: 1.2rem;
+/* heading styles */
+.logo {
+  width: 8%;
 }
 
 /* incident list styles */
 .incidents-list li {
   border-radius: 0.2rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .incidents-list li:nth-child(2n + 1) {
   background: #8080801a;
 }
+
+/* .incidents-list li:hover {
+  box-shadow: 0 6px 12px 2px grey;
+} */
 
 .incidents-list li .stolen-item-image {
   height: 12rem;
