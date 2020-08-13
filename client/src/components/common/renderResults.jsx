@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Bike from "../../bike.png";
 
 export default (props) => {
@@ -10,7 +11,7 @@ export default (props) => {
           return (
             <li
               key={incident.id}
-              className="row my-3 py-3 rounded animate__animated animate__fadeInUp"
+              className="row mx-0 my-3 py-3 rounded animate__animated animate__fadeInUp"
             >
               <img
                 src={
@@ -19,16 +20,20 @@ export default (props) => {
                   Bike
                 }
                 alt="Not Found"
-                className="stolen-item-image col-12 col-lg-2"
+                className="stolen-item-image mx-auto mx-md-0 col-7 col-md-2"
               />
-              <div className="details col-12 col-lg-6">
-                <h5 className="text-primary m-0">{incident.title.slice(7)}</h5>
+              <div className="details mt-3 mt-md-0 col-12 col-md-6">
+                <Link to={`/bike/${incident.id}`}>
+                  <h5 className="text-primary m-0">
+                    {incident.title.slice(7)}
+                  </h5>
+                </Link>
                 <p>
                   <strong>Description: </strong>{" "}
-                  {incident.description || "NOT AVAILABLE"}
+                  {incident.description || "Not Available"}
                 </p>
               </div>
-              <div className="date-details col-12 col-lg-4">
+              <div className="date-details col-12 col-md-4">
                 <span>
                   <strong className="text-danger">Stolen on </strong>{" "}
                   {new Date(incident.occurred_at * 1000)

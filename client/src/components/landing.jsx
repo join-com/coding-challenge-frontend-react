@@ -4,7 +4,6 @@ import Loader from "../loader.gif";
 
 import Pagination from "./common/pagination";
 import RenderResults from "./common/renderResults";
-import Header from "./common/header";
 import Search from "./common/search";
 
 import HelperUtils from "../utils/helper/HelperUtils";
@@ -41,7 +40,7 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Oops, Something went wrong!",
+          message: HelperUtils.message.Error,
           loading: false,
         });
       });
@@ -62,7 +61,7 @@ export default class Landing extends Component {
         } else {
           this.setState({
             incidents: [],
-            message: "No Results...",
+            message: HelperUtils.message.Empty,
             loading: false,
           });
         }
@@ -70,14 +69,14 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Oops, Something went wrong!",
+          message: HelperUtils.message.Error,
           loading: false,
         });
       });
   };
 
-  fetchSearchResults = (updatedPage) => {
-    axios
+  fetchSearchResults = async (updatedPage) => {
+    await axios
       .get(
         ApiConfig.incidents +
           `?proximity=Berlin&proximity_square=100&per_page=10&page=${updatedPage}`
@@ -94,7 +93,7 @@ export default class Landing extends Component {
         } else {
           this.setState({
             incidents: [],
-            message: "No Results...",
+            message: HelperUtils.message.Empty,
             loading: false,
           });
         }
@@ -102,7 +101,7 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Oops, Something went wrong!",
+          message: HelperUtils.message.Error,
           loading: false,
         });
       });
@@ -149,7 +148,7 @@ export default class Landing extends Component {
     console.log(new Date(date / 1000).getTime());
   };
 
-  handleSearchClick = (e) => {
+  handleSearchClick = async (e) => {
     e.preventDefault();
     this.setState({
       incidents: [],
@@ -167,12 +166,12 @@ export default class Landing extends Component {
 
     if (searchQuery === `&page=${currentPageNumber}`) {
       this.setState({
-        message: "Oops, fields are empty!",
+        message: HelperUtils.message.FieldEmpty,
         loading: false,
       });
       return;
     }
-    axios
+    await axios
       .get(
         ApiConfig.incidents +
           `?proximity=Berlin&proximity_square=100&per_page=10${searchQuery}`
@@ -194,7 +193,7 @@ export default class Landing extends Component {
         } else {
           this.setState({
             incidents: [],
-            message: "No Results...",
+            message: HelperUtils.message.Empty,
             loading: false,
           });
         }
@@ -202,7 +201,7 @@ export default class Landing extends Component {
       .catch((err) => {
         console.log(err);
         this.setState({
-          message: "Oops, Something went wrong!",
+          message: HelperUtils.message.Error,
           loading: false,
         });
       });
@@ -225,9 +224,6 @@ export default class Landing extends Component {
 
     return (
       <div className="container">
-        {/* heading */}
-        <Header />
-
         {/* Search Input */}
         <Search
           handleSearchClick={this.handleSearchClick}

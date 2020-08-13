@@ -4,4 +4,9 @@ module.exports = {
     const valueToBeAdded = divisible ? 0 : 1;
     return Math.floor(total / denominator) + valueToBeAdded;
   },
+  message: {
+    Error: "Oops, Something went wrong!!",
+    Empty: "No results found!!",
+    FieldEmpty: "Oops, fields are empty!",
+  },
 };
