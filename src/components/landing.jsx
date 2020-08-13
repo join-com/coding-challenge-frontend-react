@@ -155,16 +155,15 @@ export default class Landing extends Component {
       loading: true,
       message: "",
     });
-    const { searchInput, currentPageNumber, startDate, endDate } = this.state;
+    const { searchInput, startDate, endDate } = this.state;
     const sDate = startDate ? new Date(startDate / 1000).getTime() : startDate;
     const eDate = endDate ? new Date(endDate / 1000).getTime() : endDate;
     const searchQuery =
-      `&page=${currentPageNumber}` +
       (searchInput ? `&query=${searchInput}` : "") +
       (startDate ? `&occurred_after=${sDate}` : "") +
       (endDate ? `&occurred_before=${eDate}` : "");
 
-    if (searchQuery === `&page=${currentPageNumber}`) {
+    if (!searchQuery) {
       this.setState({
         message: HelperUtils.message.FieldEmpty,
         loading: false,
@@ -189,6 +188,7 @@ export default class Landing extends Component {
             message: "",
             totalResults: total,
             totalPages: totalPagesCount,
+            currentPageNumber: 1,
           });
         } else {
           this.setState({
