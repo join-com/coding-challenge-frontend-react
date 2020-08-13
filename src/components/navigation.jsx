@@ -3,7 +3,7 @@ import Logo from "../logo.png";
 
 export default (props) => {
   return (
-    <div className="heading my-4 d-flex justify-content-center align-items-center">
+    <div className="heading d-flex justify-content-center align-items-center jumbotron">
       <a href="/" className="logo">
         <img src={Logo} alt="Site Logo" className="rounded-circle" />
       </a>

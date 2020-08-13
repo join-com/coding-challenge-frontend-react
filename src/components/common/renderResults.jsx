@@ -25,7 +25,7 @@ export default (props) => {
               <div className="details mt-3 mt-md-0 col-12 col-md-6">
                 <Link to={`/bike/${incident.id}`}>
                   <h5 className="text-primary m-0">
-                    {incident.title.slice(7)}
+                    {incident.title.slice(7).split(/[()]/)[0]}
                   </h5>
                 </Link>
                 <p>
