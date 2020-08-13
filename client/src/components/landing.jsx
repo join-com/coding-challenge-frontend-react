@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Loader from "../loader.gif";
+
 import Pagination from "./common/pagination";
 import RenderResults from "./common/renderResults";
 import Header from "./common/header";
 import Search from "./common/search";
+
+import HelperUtils from "../utils/helper/HelperUtils";
+import ApiConfig from "../utils/config/ApiConfig";
 
 export default class Landing extends Component {
   state = {
@@ -19,32 +23,45 @@ export default class Landing extends Component {
     endDate: 0,
   };
 
-  componentDidMount = () => {
-    const { currentPageNumber } = this.state;
-    Promise.all([
-      axios.get(
-        `https://bikewise.org/api/v2/incidents?per_page=100&proximity=Berlin&proximity_square=100`
-      ),
-      axios.get(
-        `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100`
-      ),
-    ])
-      .then(([res1, res2]) => {
-        const total = res1.data.incidents.length;
-        const totalPagesCount = this.getPageCount(total, 10);
+  componentDidMount = async () => {
+    await axios
+      .get(
+        ApiConfig.incidents +
+          `?proximity=Berlin&proximity_square=100&per_page=100`
+      )
+      .then((res) => res.data)
+      .then((data) => {
+        const total = data.incidents.length;
+        const totalPagesCount = HelperUtils.getPageCount(total, 10);
         this.setState({
           totalResults: total,
           totalPages: totalPagesCount,
         });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          message: "Oops, Something went wrong!",
+          loading: false,
+        });
+      });
 
-        console.log(res2.data.incidents);
-        if (res2.data.incidents) {
+    await axios
+      .get(
+        ApiConfig.incidents +
+          `?proximity=Berlin&proximity_square=100&per_page=10&page=1`
+      )
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data.incidents);
+        if (data.incidents) {
           this.setState({
-            incidents: res2.data.incidents,
+            incidents: data.incidents,
             loading: false,
           });
         } else {
           this.setState({
+            incidents: [],
             message: "No Results...",
             loading: false,
           });
@@ -62,18 +79,21 @@ export default class Landing extends Component {
   fetchSearchResults = (updatedPage) => {
     axios
       .get(
-        `https://bikewise.org/api/v2/incidents?per_page=10&page=${updatedPage}&proximity=Berlin&proximity_square=100`
+        ApiConfig.incidents +
+          `?proximity=Berlin&proximity_square=100&per_page=10&page=${updatedPage}`
       )
-      .then((res) => {
-        console.log(res.data.incidents);
-        if (res.data.incidents.length) {
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data.incidents);
+        if (data.incidents.length) {
           this.setState({
-            incidents: res.data.incidents,
+            incidents: data.incidents,
             loading: false,
             currentPageNumber: updatedPage,
           });
         } else {
           this.setState({
+            incidents: [],
             message: "No Results...",
             loading: false,
           });
@@ -86,12 +106,6 @@ export default class Landing extends Component {
           loading: false,
         });
       });
-  };
-
-  getPageCount = (total, denominator) => {
-    const divisible = 0 === total % denominator;
-    const valueToBeAdded = divisible ? 0 : 1;
-    return Math.floor(total / denominator) + valueToBeAdded;
   };
 
   handlePageClick = (type, event) => {
@@ -146,22 +160,32 @@ export default class Landing extends Component {
     const sDate = startDate ? new Date(startDate / 1000).getTime() : startDate;
     const eDate = endDate ? new Date(endDate / 1000).getTime() : endDate;
     const searchQuery =
+      `&page=${currentPageNumber}` +
       (searchInput ? `&query=${searchInput}` : "") +
       (startDate ? `&occurred_after=${sDate}` : "") +
       (endDate ? `&occurred_before=${eDate}` : "");
+
+    if (searchQuery === `&page=${currentPageNumber}`) {
+      this.setState({
+        message: "Oops, fields are empty!",
+        loading: false,
+      });
+      return;
+    }
     axios
       .get(
-        `https://bikewise.org/api/v2/incidents?per_page=10&page=${currentPageNumber}&proximity=Berlin&proximity_square=100${searchQuery}`
+        ApiConfig.incidents +
+          `?proximity=Berlin&proximity_square=100&per_page=10${searchQuery}`
       )
-      .then((res) => {
-        console.log(res.data.incidents);
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data.incidents);
+        const total = data.incidents.length;
+        const totalPagesCount = HelperUtils.getPageCount(total, 10);
 
-        const total = res.data.incidents.length;
-        const totalPagesCount = this.getPageCount(total, 10);
-
-        if (res.data.incidents.length > 0) {
+        if (data.incidents.length) {
           this.setState({
-            incidents: res.data.incidents,
+            incidents: data.incidents,
             loading: false,
             message: "",
             totalResults: total,
@@ -216,8 +240,8 @@ export default class Landing extends Component {
 
         {/* Total Cases */}
         {!loading && !message && totalResults && (
-          <div className="total-result text-right my-3">
-            <span className="bg-dark text-white p-2 rounded my-2">
+          <div className="total-result text-right ">
+            <span className="bg-dark text-white p-3 rounded h6">
               Total Cases in Berlin: {totalResults}
             </span>
           </div>

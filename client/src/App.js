@@ -2,6 +2,7 @@ import React from "react";
 // import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
+import "animate.css/animate.css";
 import "./App.css";
 import Landing from "./components/landing";
 

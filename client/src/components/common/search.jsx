@@ -42,7 +42,7 @@ export default (props) => {
       <input
         type="submit"
         value="Search"
-        className="bg-primary text-white border-0"
+        className="btn btn-primary border-0"
       />
     </form>
   );

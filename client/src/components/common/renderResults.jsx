@@ -3,13 +3,15 @@ import Bike from "../../bike.png";
 
 export default (props) => {
   const { incidents } = props;
-
   if (incidents) {
     return (
       <ul className="incidents-list">
         {incidents.map((incident) => {
           return (
-            <li key={incident.id} className="row my-2 py-3 rounded">
+            <li
+              key={incident.id}
+              className="row my-3 py-3 rounded animate__animated animate__fadeInUp"
+            >
               <img
                 src={
                   incident.media.image_url ||
@@ -20,7 +22,7 @@ export default (props) => {
                 className="stolen-item-image col-12 col-lg-2"
               />
               <div className="details col-12 col-lg-6">
-                <h3 className="text-primary m-0">{incident.title.slice(7)}</h3>
+                <h5 className="text-primary m-0">{incident.title.slice(7)}</h5>
                 <p>
                   <strong>Description: </strong>{" "}
                   {incident.description || "NOT AVAILABLE"}

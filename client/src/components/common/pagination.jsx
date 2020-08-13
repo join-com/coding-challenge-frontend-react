@@ -10,21 +10,21 @@ export default (props) => {
     handleNextClick,
   } = props;
   return (
-    <div className="nav-link-container">
+    <div className="nav-link-container d-flex justify-content-center align-items-center">
       <a
         href="#"
-        className={`nav-link ${showPrevLink ? "show" : "hide"} 
+        className={`nav-link btn btn-primary ${showPrevLink ? "show" : "hide"} 
         ${loading ? "greyed-out" : ""}`}
         onClick={handlePrevClick}
       >
         Prev
       </a>
-      <a href="#" className="nav-link">
+      <a href="#" className="nav-link btn btn-primary">
         {currentPageNumber}
       </a>
       <a
         href="#"
-        className={`nav-link ${showNextLink ? "show" : "hide"} 
+        className={`nav-link btn btn-primary ${showNextLink ? "show" : "hide"} 
         ${loading ? "greyed-out" : ""}`}
         onClick={handleNextClick}
       >

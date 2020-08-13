@@ -29,12 +29,15 @@ input {
 
 /* heading styles */
 .logo {
-  width: 8%;
+  width: 10%;
+}
+.logo img {
+  width: 90%;
 }
 
 /* incident list styles */
 .incidents-list li {
-  box-shadow: 1px 1px 2px 0 #808080a9;
+  box-shadow: 2px 2px 4px 0 #808080a9;
 }
 .incidents-list li:nth-child(2n + 1) {
   background: #8080801a;
@@ -65,15 +68,8 @@ input {
 /* nav link styles */
 .nav-link-container {
   margin: 2rem 0;
-  display: flex;
-  justify-content: center;
 }
 .nav-link {
-  color: white;
-  background-color: dodgerblue;
-  text-decoration: none;
-  border: 1px solid white;
-  border-radius: 0.2rem;
   margin: 0 0.5rem;
 }
 
