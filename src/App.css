@@ -1,0 +1,96 @@
+/* general styles */
+ul {
+  padding: 0;
+  list-style: none;
+}
+input {
+  border: none;
+  background: transparent;
+  outline: none;
+  background: #8080801e;
+  border-left: 4px solid #708090a2;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+}
+
+.jumbotron {
+  padding: 1rem 2rem;
+}
+
+.fs-2 {
+  font-size: 2rem;
+}
+
+/* heading styles */
+.logo {
+  width: 10%;
+}
+.logo img {
+  width: 90%;
+}
+
+/* incident list styles */
+.incidents-list li {
+  box-shadow: 2px 2px 4px 0 #808080a9;
+}
+.incidents-list li:nth-child(2n + 1) {
+  background: #8080801a;
+}
+
+.incidents-list li .stolen-item-image {
+  height: 25vh;
+}
+.incidents-list li .date-details span {
+  line-height: 2rem;
+}
+
+/* search loading styles */
+.search-loading {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 30%;
+}
+.show {
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+
+/* nav link styles */
+.nav-link-container {
+  margin: 2rem 0;
+}
+.nav-link {
+  margin: 0 0.5rem;
+}
+
+.greyed-out {
+  background: #808080;
+  opacity: 0.5;
+}
+
+.bike-name {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  input {
+    padding: 0.2rem 1.5rem;
+  }
+  .logo {
+    width: 18%;
+  }
+  .display-4 {
+    font-size: 1.6rem;
+  }
+  .details h3 {
+    font-size: 1rem;
+  }
+  .w-50 {
+    width: 100% !important;
+  }
+}
